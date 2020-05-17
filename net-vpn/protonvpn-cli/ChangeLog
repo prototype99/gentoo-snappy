@@ -1,0 +1,3 @@
+*net-vpn/protonvpn-cli-2.2.2-r1
+::gentoo		base ebuild
+::prototype99	update url, add pypy3 support, use slightly newer version, add reusable GITPAGE variable
