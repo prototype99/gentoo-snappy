@@ -1,0 +1,1590 @@
+From 7cc7f8ba803c537f982917a98f48bd69f126df77 Mon Sep 17 00:00:00 2001
+From: Jaimie85 <alsemgeest@gmail.com>
+Date: Thu, 7 May 2020 09:23:38 +0000
+Subject: [PATCH] Translated using Weblate (Dutch)
+
+Currently translated at 100.0% (135 of 135 strings)
+
+Translation: Files/Files (Extra)
+Translate-URL: https://l10n.elementary.io/projects/files/extra/nl/
+Update translation files (nl)
+
+Updated by "Update PO files to match POT (msgmerge)" hook in Weblate.
+
+Translation: Files/Files (Extra)
+Translate-URL: https://l10n.elementary.io/projects/files/extra/
+Update translation files (nl)
+
+Updated by "Update PO files to match POT (msgmerge)" hook in Weblate.
+
+Translation: Files/Files
+Translate-URL: https://l10n.elementary.io/projects/files/files/
+Translated using Weblate (Dutch)
+
+Currently translated at 100.0% (134 of 134 strings)
+
+Translation: Files/Files (Extra)
+Translate-URL: https://l10n.elementary.io/projects/files/extra/nl/
+---
+ po/extra/nl.po | 310 +++++++++++++++++++++++++------------------------
+ po/nl.po       | 292 +++++++++++++++++++++++-----------------------
+ 2 files changed, 307 insertions(+), 295 deletions(-)
+
+diff --git a/po/extra/nl.po b/po/extra/nl.po
+index 558388807..39b33ea12 100644
+--- a/po/extra/nl.po
++++ b/po/extra/nl.po
+@@ -7,8 +7,8 @@ msgid ""
+ msgstr ""
+ "Project-Id-Version: pantheon-files\n"
+ "Report-Msgid-Bugs-To: \n"
+-"POT-Creation-Date: 2020-03-17 17:33+0000\n"
+-"PO-Revision-Date: 2020-03-22 20:09+0000\n"
++"POT-Creation-Date: 2020-04-20 09:16+0000\n"
++"PO-Revision-Date: 2020-05-08 10:10+0000\n"
+ "Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
+ "Language-Team: Dutch <https://l10n.elementary.io/projects/files/extra/nl/>\n"
+ "Language: nl\n"
+@@ -67,240 +67,252 @@ msgstr ""
+ "FTP, SFTP, AFP, Webdav of Windows share."
+ 
+ #: data/io.elementary.files.appdata.xml.in.in:63
+-#: data/io.elementary.files.appdata.xml.in.in:77
++#: data/io.elementary.files.appdata.xml.in.in:73
++#: data/io.elementary.files.appdata.xml.in.in:87
+ msgid "Minor updates:"
+ msgstr "Kleine updates:"
+ 
+ #: data/io.elementary.files.appdata.xml.in.in:65
++msgid "Fix an issue that prevented file modification times from showing"
++msgstr ""
++"Een bug opgelost die verhinderde dat de datum en tijd van wijziging van een "
++"bestand werden getoond"
++
++#: data/io.elementary.files.appdata.xml.in.in:66
++msgid "Show file info overlay in List View as well"
++msgstr "Toon de bestandsinfo ook in lijstweergave"
++
++#: data/io.elementary.files.appdata.xml.in.in:67
++#: data/io.elementary.files.appdata.xml.in.in:81
++#: data/io.elementary.files.appdata.xml.in.in:94
++#: data/io.elementary.files.appdata.xml.in.in:107
++#: data/io.elementary.files.appdata.xml.in.in:139
++#: data/io.elementary.files.appdata.xml.in.in:161
++#: data/io.elementary.files.appdata.xml.in.in:170
++#: data/io.elementary.files.appdata.xml.in.in:179
++#: data/io.elementary.files.appdata.xml.in.in:190
++#: data/io.elementary.files.appdata.xml.in.in:199
++#: data/io.elementary.files.appdata.xml.in.in:218
++#: data/io.elementary.files.appdata.xml.in.in:229
++#: data/io.elementary.files.appdata.xml.in.in:237
++#: data/io.elementary.files.appdata.xml.in.in:269
++msgid "Updated translations"
++msgstr "Bijgewerkte vertalingen"
++
++#: data/io.elementary.files.appdata.xml.in.in:75
+ msgid "Fix crash when a device icon is coming from a file"
+ msgstr "Crash opgelost als een apparaat icoon van een bestand komt"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:66
++#: data/io.elementary.files.appdata.xml.in.in:76
+ msgid "Fix device icon sometimes missing"
+ msgstr "Een probleem opgelost waarbij het apparaat-icoon soms verdween"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:67
++#: data/io.elementary.files.appdata.xml.in.in:77
+ msgid "Fix occasional view freeze after renaming"
+ msgstr "Een probleem opgelost waarbij na hernoemen het scherm soms bevroor"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:68
++#: data/io.elementary.files.appdata.xml.in.in:78
+ msgid "Improve renaming logic when dealing with leading/trailing whitespace"
+ msgstr ""
+ "Verbeterde hernoem logica bij het dealen met een spatie aan het begin of "
+ "einde"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:69
++#: data/io.elementary.files.appdata.xml.in.in:79
+ msgid "Fix breadcrumbs sometimes incorrect at startup"
+ msgstr "Een probleem opgelost met verkeerde broodkruimels bij het opstarten"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:70
++#: data/io.elementary.files.appdata.xml.in.in:80
+ msgid "Do not show file:// prefix in navigation buttons menus"
+ msgstr "Toon de file:// prefix niet in de navigatie knoppen menu’s"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:71
+-#: data/io.elementary.files.appdata.xml.in.in:84
+-#: data/io.elementary.files.appdata.xml.in.in:97
+-#: data/io.elementary.files.appdata.xml.in.in:129
+-#: data/io.elementary.files.appdata.xml.in.in:151
+-#: data/io.elementary.files.appdata.xml.in.in:160
+-#: data/io.elementary.files.appdata.xml.in.in:169
+-#: data/io.elementary.files.appdata.xml.in.in:180
+-#: data/io.elementary.files.appdata.xml.in.in:189
+-#: data/io.elementary.files.appdata.xml.in.in:208
+-#: data/io.elementary.files.appdata.xml.in.in:219
+-#: data/io.elementary.files.appdata.xml.in.in:227
+-#: data/io.elementary.files.appdata.xml.in.in:259
+-msgid "Updated translations"
+-msgstr "Bijgewerkte vertalingen"
+-
+-#: data/io.elementary.files.appdata.xml.in.in:79
++#: data/io.elementary.files.appdata.xml.in.in:89
+ msgid "Fix \"New Folder\" keyboard shortcut label in menu"
+ msgstr "Een probleem met het “nieuwe map” sneltoets label in het menu opgelost"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:80
++#: data/io.elementary.files.appdata.xml.in.in:90
+ msgid "Fix navigation with back/forward button context menu"
+ msgstr ""
+ "Een probleem opgelost met navigeren door middel van de terug/vooruit knop "
+ "context menu"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:81
++#: data/io.elementary.files.appdata.xml.in.in:91
+ msgid "Fix path bar sometimes showing wrong path when closing a tab"
+ msgstr ""
+ "Een probleem opgelost waarbij de adresbalk soms een verkeerd adres toonde "
+ "bij het sluiten van een tabblad"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:82
++#: data/io.elementary.files.appdata.xml.in.in:92
+ msgid ""
+ "Ensure keyboard shortcuts work immediately after creating or renaming a file"
+ msgstr ""
+ "Zorg ervoor dat sneltoetsen direct werken na het aanmaken of hernoemen van "
+ "een bestand"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:83
++#: data/io.elementary.files.appdata.xml.in.in:93
+ msgid "Do not include \"file://\" in pathbar text or when pasting path as text"
+ msgstr ""
+ "\"file://\" wordt niet toegevoegd in de adresbalk of bij het plakken van een "
+ "bestandspad als tekst"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:91
++#: data/io.elementary.files.appdata.xml.in.in:101
+ msgid "Show keyboard shortcuts in menu items"
+ msgstr "Toon toetsenbord sneltoetsen in menu items"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:92
++#: data/io.elementary.files.appdata.xml.in.in:102
+ msgid "Fix an issue with breadcrumbs in the file chooser"
+ msgstr "Een probleem met broodkruimels opgelost in de bestandskiezer"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:93
++#: data/io.elementary.files.appdata.xml.in.in:103
+ msgid "Show a warning when ejecting a volume that's still in use"
+ msgstr ""
+ "Toon een waarschuwing bij het ontkoppelen van een volume dat nog steeds in "
+ "gebruik is"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:94
++#: data/io.elementary.files.appdata.xml.in.in:104
+ msgid "Fix cursor update after horizontal scroll in Column View"
+ msgstr ""
+ "Een probleem met het verversen van de cursor opgelost tijdens het "
+ "horizontaal scrollen in kolomweergave"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:95
++#: data/io.elementary.files.appdata.xml.in.in:105
+ msgid "Fix folder-open icon persisting after closing Column View"
+ msgstr ""
+ "Een probleem opgelost met het blijvende map open icoon na het sluiten van de "
+ "kolomweergave"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:96
++#: data/io.elementary.files.appdata.xml.in.in:106
+ msgid "Use destructive action styling for some trash dialog buttons"
+ msgstr ""
+ "Gebruik destructieve actie styling voor sommige prullenbak dialoogvenster "
+ "knoppen"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:103
++#: data/io.elementary.files.appdata.xml.in.in:113
+ msgid "New features:"
+ msgstr "Nieuwe functies:"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:105
++#: data/io.elementary.files.appdata.xml.in.in:115
+ msgid "Initial git plugin support"
+ msgstr "Directe ondersteuning voor een git plug-in"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:106
++#: data/io.elementary.files.appdata.xml.in.in:116
+ msgid "Follow global history setting when restoring and saving tabs"
+ msgstr ""
+ "Bij het herstellen en opslaan van tabs wordt de algemene geschiedenis "
+ "instelling gevolgd"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:108
++#: data/io.elementary.files.appdata.xml.in.in:118
+ msgid "Other updates:"
+ msgstr "Andere updates:"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:110
++#: data/io.elementary.files.appdata.xml.in.in:120
+ msgid "Ensure tabs showing same folder remain synchronized"
+ msgstr "Tabs die dezelfde map tonen blijven gesynchroniseerd"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:111
++#: data/io.elementary.files.appdata.xml.in.in:121
+ msgid "Fix drag with secondary button on empty space"
+ msgstr ""
+ "Een probleem opgelost met slepen door middel van de tweede knop naar lege "
+ "ruimte"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:112
++#: data/io.elementary.files.appdata.xml.in.in:122
+ msgid "Show custom media type icons for installed apps"
+ msgstr "Toon aangepaste mediatype iconen voor geïnstalleerde apps"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:113
++#: data/io.elementary.files.appdata.xml.in.in:123
+ msgid "Fix appearance of inactive diskspace indicator"
+ msgstr ""
+ "Een probleem opgelost met het tonen van de “inactieve diskruimte” indicator"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:114
++#: data/io.elementary.files.appdata.xml.in.in:124
+ msgid "Improve pathbar animation"
+ msgstr "Een verbeterde padbalk animatie"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:115
++#: data/io.elementary.files.appdata.xml.in.in:125
+ msgid "Update documentation"
+ msgstr "Documentatie bijgewerkt"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:116
++#: data/io.elementary.files.appdata.xml.in.in:126
+ msgid "Update translations"
+ msgstr "Bijgewerkte vertalingen"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:123
++#: data/io.elementary.files.appdata.xml.in.in:133
+ msgid "Initial cloudproviders plugin support"
+ msgstr "Directe ondersteuning voor de cloudproviders plug-in"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:124
++#: data/io.elementary.files.appdata.xml.in.in:134
+ msgid "Fix selecting pasted files"
+ msgstr "Een probleem opgelost met het selecteren van geplakte bestanden"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:125
++#: data/io.elementary.files.appdata.xml.in.in:135
+ msgid "Fix color label visibility while using dark theme"
+ msgstr ""
+ "Een probleem opgelost met de zichtbaarheid van kleurlabels bij gebruik van "
+ "het donkere thema"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:126
++#: data/io.elementary.files.appdata.xml.in.in:136
+ msgid "Fix selecting files using Shift key"
+ msgstr ""
+ "Een probleem opgelost met het selecteren van bestanden met gebruik van de "
+ "Shift knop"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:127
++#: data/io.elementary.files.appdata.xml.in.in:137
+ msgid "Draw checkerboard background for image items"
+ msgstr "Teken een schaakbord achtergrond voor afbeelding items"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:128
++#: data/io.elementary.files.appdata.xml.in.in:138
+ msgid "Improved styling for disk space bars"
+ msgstr "Verbeterde styling van schijfruimte balken"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:136
++#: data/io.elementary.files.appdata.xml.in.in:146
+ msgid "Show more search results"
+ msgstr "Toon meer zoekresultaten"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:137
++#: data/io.elementary.files.appdata.xml.in.in:147
+ msgid "Ensure valid tab name generation"
+ msgstr "Verbetering bij het genereren van valide namen voor tabbladen"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:138
++#: data/io.elementary.files.appdata.xml.in.in:148
+ msgid "Properly sort folders by date and size"
+ msgstr "Mappen worden juist gesorteerd op datum en grootte"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:139
++#: data/io.elementary.files.appdata.xml.in.in:149
+ msgid "Launching Files from Terminal now opens new tab instead of new window"
+ msgstr ""
+ "Het openen van Bestanden vanuit Terminal gebeurt in een nieuw tabblad in "
+ "plaats van een nieuw venster"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:140
++#: data/io.elementary.files.appdata.xml.in.in:150
+ msgid "Improve MTP support"
+ msgstr "Verbeterde ondersteuning voor MTP"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:141
++#: data/io.elementary.files.appdata.xml.in.in:151
+ msgid "Various tagging feature refinements"
+ msgstr "Diverse verbeteringen aan de tagging functionaliteit"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:142
++#: data/io.elementary.files.appdata.xml.in.in:152
+ msgid "Keyboard navigation improvements"
+ msgstr "Toetsenbord navigatie verbeterd"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:143
++#: data/io.elementary.files.appdata.xml.in.in:153
+ msgid "Symlink copy and paste fixes"
+ msgstr ""
+ "Problemen opgelost met het kopiëren en plakken van symbolische koppelingen"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:144
++#: data/io.elementary.files.appdata.xml.in.in:154
+ msgid "Avoid crash when Templates folder is null"
+ msgstr "Een crash als de Templates map niet bestaat wordt voorkomen"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:145
++#: data/io.elementary.files.appdata.xml.in.in:155
+ msgid "Reduce memory footprint of FileChooserDialog"
+ msgstr "Het geheugengebruik van het BestandKiesScherm is verminderd"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:146
++#: data/io.elementary.files.appdata.xml.in.in:156
+ msgid "Avoid crash when selecting image file in some situations"
+ msgstr ""
+ "Een crash voorkomen bij het selecteren van een afbeeldingsbestand in sommige "
+ "situaties"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:147
++#: data/io.elementary.files.appdata.xml.in.in:157
+ msgid ""
+ "Fix unclosable progress window while copying network files to removable "
+ "storage"
+@@ -309,49 +321,49 @@ msgstr ""
+ "gesloten tijdens het kopiëren van bestanden op het netwerk naar "
+ "verwisselbare opslagruimte"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:148
++#: data/io.elementary.files.appdata.xml.in.in:158
+ msgid "Fix drag and drop after double clicking a blank area"
+ msgstr ""
+ "Probleem opgelost met klikken en verslepen na het dubbelklikken op een leeg "
+ "gebied"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:149
++#: data/io.elementary.files.appdata.xml.in.in:159
+ msgid "Avoid crash while scrolling over view switcher"
+ msgstr "Een crash voorkomen tijdens het scrollen over de weergave wisselaar"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:150
++#: data/io.elementary.files.appdata.xml.in.in:160
+ msgid "Avoid possible crash in some copy and paste situations"
+ msgstr "Een mogelijke crash voorkomen in sommige knip en plak situaties"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:158
++#: data/io.elementary.files.appdata.xml.in.in:168
+ msgid "Keyboard navigation fix for cherry picking select files in icon view"
+ msgstr ""
+ "Een probleem opgelost met toetsenbord navigatie bij het kiezen van bepaalde "
+ "bestanden in de iconen weergave"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:159
++#: data/io.elementary.files.appdata.xml.in.in:169
+ msgid "Don't hardcode search placeholder text style, fixes dark theme issue"
+ msgstr ""
+ "Probleem met de zoektekst markering style, waardoor een probleem met het "
+ "donkere thema wordt opgelost"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:167
++#: data/io.elementary.files.appdata.xml.in.in:177
+ msgid "Minor spacing adjustments to location bar"
+ msgstr "Kleine verandering in tussenruimte van de locatie balk"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:168
++#: data/io.elementary.files.appdata.xml.in.in:178
+ msgid "Fix F2 renaming behavior"
+ msgstr "Een probleem opgelost met het hernoemen van F2"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:176
++#: data/io.elementary.files.appdata.xml.in.in:186
+ msgid "Minor spacing adjustments to location breadcrumbs"
+ msgstr "Kleine wijzigingen in de tussenruimte bij de locatie broodkruimels"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:177
++#: data/io.elementary.files.appdata.xml.in.in:187
+ msgid "Consistently remember color tags"
+ msgstr "Beter onthouden van kleurlabels"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:178
++#: data/io.elementary.files.appdata.xml.in.in:188
+ msgid ""
+ "Reload thumbnails when changing zoom level to avoid showing placeholder "
+ "unnecessarily"
+@@ -359,215 +371,215 @@ msgstr ""
+ "Herlaad de thumbnails bij in- en uitzoomen zodat het standaardplaatje niet "
+ "onnodig wordt getoond"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:179
++#: data/io.elementary.files.appdata.xml.in.in:189
+ msgid "Fix running scripts with spaces in filename"
+ msgstr ""
+ "Een probleem opgelost met het uitvoeren van scripts met een spatie in de naam"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:187
++#: data/io.elementary.files.appdata.xml.in.in:197
+ msgid "Fix high CPU regression in version 4.1.4"
+ msgstr "Een probleem met hoog CPU verbruik in versie 4.1.4 opgelost"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:188
++#: data/io.elementary.files.appdata.xml.in.in:198
+ msgid "File sorting fixes"
+ msgstr "Probleem met het sorteren van bestanden opgelost"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:196
++#: data/io.elementary.files.appdata.xml.in.in:206
+ msgid "Meson: fix soversion names"
+ msgstr "Meson: een probleem opgelost met soversion namen"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:197
++#: data/io.elementary.files.appdata.xml.in.in:207
+ msgid "Remove CMake build system"
+ msgstr "Het CMake installeer systeem verwijderd"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:198
++#: data/io.elementary.files.appdata.xml.in.in:208
+ msgid "Fix missing File System properties menu"
+ msgstr ""
+ "Een probleem opgelost met het verdwijnende bestandssysteem eigenschappen menu"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:199
++#: data/io.elementary.files.appdata.xml.in.in:209
+ msgid "Drop intltool dependency"
+ msgstr "Niet meer afhankelijk van het intltool pakket"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:200
++#: data/io.elementary.files.appdata.xml.in.in:210
+ msgid "Fix default file type handler logic"
+ msgstr ""
+ "Een probleem opgelost met de standaard afhandeling van een bestandstype"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:201
++#: data/io.elementary.files.appdata.xml.in.in:211
+ msgid "Fix initial search window size too small"
+ msgstr "Een probleem opgelost waarbij het zoekvenster initieel te klein was"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:202
++#: data/io.elementary.files.appdata.xml.in.in:212
+ msgid "Add option to disable local file thumbnails"
+ msgstr ""
+ "Een optie toegevoegd om thumbnails van lokale bestanden uit te schakelen"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:203
++#: data/io.elementary.files.appdata.xml.in.in:213
+ msgid "Fix crash when opening multiple video files"
+ msgstr "Crash bij het openen van meerdere videobestanden opgelost"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:204
++#: data/io.elementary.files.appdata.xml.in.in:214
+ msgid "Fix some timing issues around adding and removing files"
+ msgstr ""
+ "Timing problemen opgelost met het toevoegen en verwijderen van bestanden"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:205
++#: data/io.elementary.files.appdata.xml.in.in:215
+ msgid "Meson: fix missing library headers"
+ msgstr "Meson: missende bibliotheek koppen toegevoegd"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:206
++#: data/io.elementary.files.appdata.xml.in.in:216
+ msgid "Fix color tag display"
+ msgstr "Een probleem met het tonen van kleurlabel opgelost"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:207
++#: data/io.elementary.files.appdata.xml.in.in:217
+ msgid "Show reserved space in Properties window"
+ msgstr "Toon gereserveerde ruimte in het eigenschappen venster"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:215
++#: data/io.elementary.files.appdata.xml.in.in:225
+ msgid "Add border radius to text background"
+ msgstr "Voeg ronde hoeken toe aan de tekstachtergrond"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:216
++#: data/io.elementary.files.appdata.xml.in.in:226
+ msgid "Fix file mimetype association regression"
+ msgstr "Een probleem opgelost met mimetype associatie regressie"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:217
++#: data/io.elementary.files.appdata.xml.in.in:227
+ msgid "New pathbar tooltips"
+ msgstr "Nieuwe tooltips voor de adresbalk"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:218
++#: data/io.elementary.files.appdata.xml.in.in:228
+ msgid "Build fixes"
+ msgstr "Problemen met installeren opgelost"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:226
++#: data/io.elementary.files.appdata.xml.in.in:236
+ msgid "Plugin build fixes"
+ msgstr "Problemen met het installeren van plug-ins opgelost"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:234
++#: data/io.elementary.files.appdata.xml.in.in:244
+ msgid "Fix Ctrl+Tab behavior"
+ msgstr "Verbeter Ctrl+Tab-gedrag"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:235
++#: data/io.elementary.files.appdata.xml.in.in:245
+ msgid "Fix building without Unity library"
+ msgstr "Een probleem opgelost met het installeren zonder de Unity bibliotheek"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:242
++#: data/io.elementary.files.appdata.xml.in.in:252
+ msgid "Hide breadcrumbs and show placeholder and search icon in home folder"
+ msgstr ""
+ "Broodkruimels verbergen en toon een vrije ruimte en zoek icoon in de home map"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:243
++#: data/io.elementary.files.appdata.xml.in.in:253
+ msgid "Style error dialogs"
+ msgstr "Stijlfouten vensters"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:244
++#: data/io.elementary.files.appdata.xml.in.in:254
+ msgid "Right click fixes"
+ msgstr "Problemen met rechts klikken opgelost"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:245
++#: data/io.elementary.files.appdata.xml.in.in:255
+ msgid "Reload recent view when privacy setting changes"
+ msgstr "Herlaad recente weergave als de privacy instellingen worden gewijzigd"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:246
++#: data/io.elementary.files.appdata.xml.in.in:256
+ msgid "`Connect Server` fixes"
+ msgstr "`Verbinden met server` problemen opgelost"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:247
++#: data/io.elementary.files.appdata.xml.in.in:257
+ msgid "Do not activate multiple files with single click"
+ msgstr "Activeer meerdere bestanden niet met een enkele klik"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:248
++#: data/io.elementary.files.appdata.xml.in.in:258
+ msgid "Use `Tab` to toggle View and Sidebar keyboard focus"
+ msgstr ""
+ "Gebruik `Tab` om met het toetsenbord te focussen op Weergave en Zijbalk"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:249
++#: data/io.elementary.files.appdata.xml.in.in:259
+ msgid "Delete color tag database entries for trashed files"
+ msgstr "Verwijder kleurlabels voor bestanden in de prullenbak uit de database"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:250
++#: data/io.elementary.files.appdata.xml.in.in:260
+ msgid "Throttle tab closing"
+ msgstr "Beperk het sluiten van tabbladen"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:251
++#: data/io.elementary.files.appdata.xml.in.in:261
+ msgid "`Ctrl` key fixes"
+ msgstr "Problemen met de `Ctrl` toets opgelost"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:252
++#: data/io.elementary.files.appdata.xml.in.in:262
+ msgid "Drag and drop fixes"
+ msgstr "Problemen met slepen en verplaatsen opgelost"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:253
++#: data/io.elementary.files.appdata.xml.in.in:263
+ msgid "Show icons in `Open with` menus"
+ msgstr "Toon iconen in de `Open met` menu's"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:254
++#: data/io.elementary.files.appdata.xml.in.in:264
+ msgid "Tooltip fixes"
+ msgstr "Problemen met tooltips opgelost"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:255
++#: data/io.elementary.files.appdata.xml.in.in:265
+ msgid "Memory leak fixes"
+ msgstr "Geheugenlek opgelost"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:256
++#: data/io.elementary.files.appdata.xml.in.in:266
+ msgid "Crash fixes"
+ msgstr "Crashes opgelost"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:257
++#: data/io.elementary.files.appdata.xml.in.in:267
+ msgid "Trash: respect sound setting"
+ msgstr "Prullenbak: respecteer geluidsinstelling"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:258
++#: data/io.elementary.files.appdata.xml.in.in:268
+ msgid "Localization fixes"
+ msgstr "Localisatieproblemen opgelost"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:266
++#: data/io.elementary.files.appdata.xml.in.in:276
+ msgid "Over 100 major and minor bug fixes and improvements"
+ msgstr "Meer dan 100 grote en kleine bugs verholpen en verbeteringen"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:273
++#: data/io.elementary.files.appdata.xml.in.in:283
+ msgid "Honor 12/24hr system setting"
+ msgstr "Respecteer de 12- of 24-uurs systeem instelling"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:274
++#: data/io.elementary.files.appdata.xml.in.in:284
+ msgid "Distinguish between tabs with the same name"
+ msgstr "Maak onderscheid tussen tabbladen met dezelfde naam"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:275
++#: data/io.elementary.files.appdata.xml.in.in:285
+ msgid "Support launching from other applications with a target file selected"
+ msgstr ""
+ "Ondersteuning voor het opstarten vanuit andere toepassingen met een bestand "
+ "geselecteerd"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:276
+-#: data/io.elementary.files.appdata.xml.in.in:289
+-#: data/io.elementary.files.appdata.xml.in.in:303
++#: data/io.elementary.files.appdata.xml.in.in:286
++#: data/io.elementary.files.appdata.xml.in.in:299
+ #: data/io.elementary.files.appdata.xml.in.in:313
+-#: data/io.elementary.files.appdata.xml.in.in:324
++#: data/io.elementary.files.appdata.xml.in.in:323
++#: data/io.elementary.files.appdata.xml.in.in:334
+ msgid "New translations"
+ msgstr "Nieuwe vertalingen"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:277
+-#: data/io.elementary.files.appdata.xml.in.in:290
+-#: data/io.elementary.files.appdata.xml.in.in:304
++#: data/io.elementary.files.appdata.xml.in.in:287
++#: data/io.elementary.files.appdata.xml.in.in:300
+ #: data/io.elementary.files.appdata.xml.in.in:314
+-#: data/io.elementary.files.appdata.xml.in.in:325
+-#: data/io.elementary.files.appdata.xml.in.in:332
+-#: data/io.elementary.files.appdata.xml.in.in:339
+-#: data/io.elementary.files.appdata.xml.in.in:363
++#: data/io.elementary.files.appdata.xml.in.in:324
++#: data/io.elementary.files.appdata.xml.in.in:335
++#: data/io.elementary.files.appdata.xml.in.in:342
++#: data/io.elementary.files.appdata.xml.in.in:349
++#: data/io.elementary.files.appdata.xml.in.in:373
+ msgid "Minor bug fixes"
+ msgstr "Kleine bugfixes"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:284
++#: data/io.elementary.files.appdata.xml.in.in:294
+ msgid "Improved networking support"
+ msgstr "Verbeterde ondersteuning voor netwerken"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:285
++#: data/io.elementary.files.appdata.xml.in.in:295
+ msgid "Correct window geometry when snapping to left or right"
+ msgstr "Venster geometrie gecorrigeerd bij het springen naar links of rechts"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:286
++#: data/io.elementary.files.appdata.xml.in.in:296
+ msgid ""
+ "Pressing Ctrl no longer cancels renaming while the \"Reveal Pointer\" "
+ "setting is active"
+@@ -575,73 +587,73 @@ msgstr ""
+ "Het indrukken van Ctrl annuleert niet langer het hernoemen als de “Toon "
+ "Aanwijzer” instelling actief is"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:287
++#: data/io.elementary.files.appdata.xml.in.in:297
+ msgid "Switching input language cancels actions"
+ msgstr "Het wisselen van input talen annuleert acties"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:288
+-#: data/io.elementary.files.appdata.xml.in.in:302
++#: data/io.elementary.files.appdata.xml.in.in:298
+ #: data/io.elementary.files.appdata.xml.in.in:312
+-#: data/io.elementary.files.appdata.xml.in.in:323
++#: data/io.elementary.files.appdata.xml.in.in:322
++#: data/io.elementary.files.appdata.xml.in.in:333
+ msgid "Various crash fixes"
+ msgstr "Diverse crashes gemaakt"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:297
++#: data/io.elementary.files.appdata.xml.in.in:307
+ msgid ""
+ "Web browsers like Firefox now remember the most recently used downloads "
+ "directory"
+ msgstr ""
+ "Webbrowsers zoals Firefox onthouden nu de meest recent gebruikte downloadmap"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:298
++#: data/io.elementary.files.appdata.xml.in.in:308
+ msgid "Remember preferred zoom level"
+ msgstr "Onthoud het gewenste zoomlevel"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:299
++#: data/io.elementary.files.appdata.xml.in.in:309
+ msgid "Improved input method support"
+ msgstr "Verbeterde inputmethode ondersteuning"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:300
++#: data/io.elementary.files.appdata.xml.in.in:310
+ msgid "910x640 minimum window size"
+ msgstr "910x640 minimum venstergrootte"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:301
++#: data/io.elementary.files.appdata.xml.in.in:311
+ msgid "Security fixes"
+ msgstr "Beveilingsupdates"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:311
++#: data/io.elementary.files.appdata.xml.in.in:321
+ msgid "Enable drag and drop tabs between windows"
+ msgstr "Slepen en neerzetten van tabbladen tussen vensters is ingeschakeld"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:321
++#: data/io.elementary.files.appdata.xml.in.in:331
+ msgid "Merge search functionality into Ctrl+F"
+ msgstr "Zoekfunctionaliteit samengevoegd in Ctrl+F"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:322
++#: data/io.elementary.files.appdata.xml.in.in:332
+ msgid "Improved translation support"
+ msgstr "Verbeterde ondersteuning voor vertalingen"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:346
++#: data/io.elementary.files.appdata.xml.in.in:356
+ msgid "Fix appdata release dates"
+ msgstr "Een probleem met appdata release data opgelost"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:353
++#: data/io.elementary.files.appdata.xml.in.in:363
+ msgid "Improve file opening over Samba shares"
+ msgstr "Bestanden openen via Samba shares verbeterd"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:354
++#: data/io.elementary.files.appdata.xml.in.in:364
+ msgid "Fix a crash when restoring items from the Trash"
+ msgstr "Crash bij het herstellen van items uit de prullenbak verholpen"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:355
++#: data/io.elementary.files.appdata.xml.in.in:365
+ msgid "Improve cut/copy/paste sensitivity in context menu"
+ msgstr "Knippen/kopiëren/plakken sensitiviteit in context menu verbeterd"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:356
++#: data/io.elementary.files.appdata.xml.in.in:366
+ msgid "Translation updates"
+ msgstr "Bijgewerkte vertalingen"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:368
++#: data/io.elementary.files.appdata.xml.in.in:378
+ msgid "elementary LLC."
+ msgstr "elementary LLC."
+ 
+diff --git a/po/nl.po b/po/nl.po
+index b65aed9c5..3f8b17ffe 100644
+--- a/po/nl.po
++++ b/po/nl.po
+@@ -7,7 +7,7 @@ msgid ""
+ msgstr ""
+ "Project-Id-Version: marlin\n"
+ "Report-Msgid-Bugs-To: \n"
+-"POT-Creation-Date: 2020-03-23 11:11+0000\n"
++"POT-Creation-Date: 2020-04-20 09:16+0000\n"
+ "PO-Revision-Date: 2020-03-24 22:09+0000\n"
+ "Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
+ "Language-Team: Dutch <https://l10n.elementary.io/projects/files/files/nl/>\n"
+@@ -87,30 +87,30 @@ msgstr "Info"
+ msgid "General"
+ msgstr "Algemeen"
+ 
+-#: src/Dialogs/AbstractPropertiesDialog.vala:76 libcore/StockDialogs.vala:101
++#: src/Dialogs/AbstractPropertiesDialog.vala:75 libcore/StockDialogs.vala:101
+ msgid "Close"
+ msgstr "Sluiten"
+ 
+-#: src/Dialogs/AbstractPropertiesDialog.vala:135
++#: src/Dialogs/AbstractPropertiesDialog.vala:134
+ msgid "Device Usage"
+ msgstr "Apparaatgebruik"
+ 
+-#: src/Dialogs/AbstractPropertiesDialog.vala:155
++#: src/Dialogs/AbstractPropertiesDialog.vala:154
+ msgid "Capacity:"
+ msgstr "Capaciteit:"
+ 
+-#: src/Dialogs/AbstractPropertiesDialog.vala:156
+-#: src/Dialogs/AbstractPropertiesDialog.vala:159
+-#: src/Dialogs/AbstractPropertiesDialog.vala:162
+-#: src/Dialogs/PropertiesWindow.vala:442 src/Dialogs/PropertiesWindow.vala:481
++#: src/Dialogs/AbstractPropertiesDialog.vala:155
++#: src/Dialogs/AbstractPropertiesDialog.vala:158
++#: src/Dialogs/AbstractPropertiesDialog.vala:161
++#: src/Dialogs/PropertiesWindow.vala:444 src/Dialogs/PropertiesWindow.vala:483
+ msgid "Unknown"
+ msgstr "Onbekend"
+ 
+-#: src/Dialogs/AbstractPropertiesDialog.vala:158
++#: src/Dialogs/AbstractPropertiesDialog.vala:157
+ msgid "Available:"
+ msgstr "Beschikbaar:"
+ 
+-#: src/Dialogs/AbstractPropertiesDialog.vala:161
++#: src/Dialogs/AbstractPropertiesDialog.vala:160
+ msgid "Used:"
+ msgstr "Gebruikt:"
+ 
+@@ -119,15 +119,15 @@ msgid "Set as default"
+ msgstr "Instellen als standaard"
+ 
+ #: src/Dialogs/PropertiesWindow.vala:123
+-#: src/View/AbstractDirectoryView.vala:1962 src/View/PopupMenuBuilder.vala:81
++#: src/View/AbstractDirectoryView.vala:1965 src/View/PopupMenuBuilder.vala:81
+ msgid "Properties"
+ msgstr "Eigenschappen"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:225
++#: src/Dialogs/PropertiesWindow.vala:227
+ msgid "Permissions"
+ msgstr "Rechten"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:246
++#: src/Dialogs/PropertiesWindow.vala:248
+ #, c-format
+ msgid "%i file could not be read due to permissions or other errors."
+ msgid_plural "%i files could not be read due to permissions or other errors."
+@@ -137,99 +137,99 @@ msgstr[1] ""
+ "%i bestanden konden niet gelezen worden door bevoegdheids- of andere "
+ "problemen."
+ 
+-#: src/Dialogs/PropertiesWindow.vala:250
++#: src/Dialogs/PropertiesWindow.vala:252
+ msgid "Actual Size Could Be Larger"
+ msgstr "De daadwerkelijke grootte kan groter zijn"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:270 src/Dialogs/PropertiesWindow.vala:289
++#: src/Dialogs/PropertiesWindow.vala:272 src/Dialogs/PropertiesWindow.vala:291
+ msgid "unknown"
+ msgstr "onbekend"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:453
++#: src/Dialogs/PropertiesWindow.vala:455
+ msgid "Loading…"
+ msgstr "Laden…"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:487
++#: src/Dialogs/PropertiesWindow.vala:489
+ msgid "Could not be determined"
+ msgstr "Kon niet bepaald worden"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:513 libcore/FileConflictDialog.vala:120
+-#: libcore/FileConflictDialog.vala:148
++#: src/Dialogs/PropertiesWindow.vala:515 libcore/FileConflictDialog.vala:121
++#: libcore/FileConflictDialog.vala:149
+ msgid "Size:"
+ msgstr "Grootte:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:520 libcore/ConnectServerDialog.vala:164
+-#: libcore/FileConflictDialog.vala:128 libcore/FileConflictDialog.vala:156
++#: src/Dialogs/PropertiesWindow.vala:522 libcore/ConnectServerDialog.vala:164
++#: libcore/FileConflictDialog.vala:129 libcore/FileConflictDialog.vala:157
+ msgid "Type:"
+ msgstr "Type:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:523
++#: src/Dialogs/PropertiesWindow.vala:525
+ msgid "Contains:"
+ msgstr "Bevat:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:546
++#: src/Dialogs/PropertiesWindow.vala:549
+ msgid "Created:"
+ msgstr "Gemaakt:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:556
++#: src/Dialogs/PropertiesWindow.vala:560
+ msgid "Modified:"
+ msgstr "Gewijzigd:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:568
++#: src/Dialogs/PropertiesWindow.vala:572
+ msgid "Deleted:"
+ msgstr "Verwijderd:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:578
++#: src/Dialogs/PropertiesWindow.vala:582
+ msgid "Media type:"
+ msgstr "Media type:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:585
++#: src/Dialogs/PropertiesWindow.vala:589
+ msgid "Resolution:"
+ msgstr "Resolutie:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:593
++#: src/Dialogs/PropertiesWindow.vala:597
+ #: src/Dialogs/VolumePropertiesWindow.vala:78
+ msgid "Location:"
+ msgstr "Locatie:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:603
++#: src/Dialogs/PropertiesWindow.vala:607
+ msgid "Target:"
+ msgstr "Doel:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:611
++#: src/Dialogs/PropertiesWindow.vala:615
+ msgid "Original Location:"
+ msgstr "Oorspronkelijke locatie:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:634
+-#: src/View/AbstractDirectoryView.vala:1930
++#: src/Dialogs/PropertiesWindow.vala:638
++#: src/View/AbstractDirectoryView.vala:1933
+ msgid "Other Application…"
+ msgstr "Andere toepassing…"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:654
++#: src/Dialogs/PropertiesWindow.vala:658
+ msgid "Open with:"
+ msgstr "Openen met:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:919 src/Dialogs/PropertiesWindow.vala:929
++#: src/Dialogs/PropertiesWindow.vala:923 src/Dialogs/PropertiesWindow.vala:933
+ msgid "Owner:"
+ msgstr "Eigenaar:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:923 src/Dialogs/PropertiesWindow.vala:932
++#: src/Dialogs/PropertiesWindow.vala:927 src/Dialogs/PropertiesWindow.vala:936
+ msgid "Group:"
+ msgstr "Groep:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:935
++#: src/Dialogs/PropertiesWindow.vala:939
+ msgid "Everyone:"
+ msgstr "Iedereen:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:1216
++#: src/Dialogs/PropertiesWindow.vala:1220
+ #, c-format
+ msgid "%u subfolder"
+ msgid_plural "%u subfolders"
+ msgstr[0] "%u submap"
+ msgstr[1] "%u submappen"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:1220
+-#: src/Dialogs/PropertiesWindow.vala:1242
++#: src/Dialogs/PropertiesWindow.vala:1224
++#: src/Dialogs/PropertiesWindow.vala:1246
+ #, c-format
+ msgid "%u file"
+ msgid_plural "%u files"
+@@ -237,19 +237,19 @@ msgstr[0] "%u bestand"
+ msgstr[1] "%u bestanden"
+ 
+ #. TRANSLATORS: folders, files
+-#: src/Dialogs/PropertiesWindow.vala:1225
++#: src/Dialogs/PropertiesWindow.vala:1229
+ #, c-format
+ msgid "%s, %s"
+ msgstr "%s, %s"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:1238 src/View/Widgets/OverlayBar.vala:225
++#: src/Dialogs/PropertiesWindow.vala:1242 src/View/Widgets/OverlayBar.vala:218
+ #, c-format
+ msgid "%u folder"
+ msgid_plural "%u folders"
+ msgstr[0] "%u map"
+ msgstr[1] "%u mappen"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:1247
++#: src/Dialogs/PropertiesWindow.vala:1251
+ #, c-format
+ msgid "%u selected item"
+ msgid_plural "%u selected items"
+@@ -257,7 +257,7 @@ msgstr[0] "%u item geselecteerd"
+ msgstr[1] "%u items geselecteerd"
+ 
+ #. TRANSLATORS: total (folders, files)
+-#: src/Dialogs/PropertiesWindow.vala:1249
++#: src/Dialogs/PropertiesWindow.vala:1253
+ #, c-format
+ msgid "%s (%s, %s)"
+ msgstr "%s (%s, %s)"
+@@ -303,11 +303,11 @@ msgstr "(als Beheerder)"
+ msgid "Filename"
+ msgstr "Bestandsnaam"
+ 
+-#: src/View/ListView.vala:27 src/View/AbstractDirectoryView.vala:2158
++#: src/View/ListView.vala:27 src/View/AbstractDirectoryView.vala:2167
+ msgid "Size"
+ msgstr "Grootte"
+ 
+-#: src/View/ListView.vala:28 src/View/AbstractDirectoryView.vala:2163
++#: src/View/ListView.vala:28 src/View/AbstractDirectoryView.vala:2172
+ msgid "Type"
+ msgstr "Type"
+ 
+@@ -315,7 +315,7 @@ msgstr "Type"
+ msgid "Modified"
+ msgstr "Gewijzigd"
+ 
+-#: src/View/DirectoryNotFound.vala:27 src/View/ViewContainer.vala:407
++#: src/View/DirectoryNotFound.vala:27 src/View/ViewContainer.vala:406
+ msgid "This Folder Does Not Exist"
+ msgstr "Deze map bestaat niet"
+ 
+@@ -362,205 +362,205 @@ msgstr "Ongeldige bestandsnaam opgegeven"
+ msgid "New Tab"
+ msgstr "Nieuwe tab"
+ 
+-#: src/View/AbstractDirectoryView.vala:1866
++#: src/View/AbstractDirectoryView.vala:1869
+ msgid "Run"
+ msgstr "Uitvoeren"
+ 
+-#: src/View/AbstractDirectoryView.vala:1873
++#: src/View/AbstractDirectoryView.vala:1876
+ #, c-format
+ msgid "Open in %s"
+ msgstr "Openen in %s"
+ 
+-#: src/View/AbstractDirectoryView.vala:1942
++#: src/View/AbstractDirectoryView.vala:1945
+ msgid "Open in"
+ msgstr "Openen in"
+ 
+-#: src/View/AbstractDirectoryView.vala:1944
+-#: src/View/Widgets/BreadcrumbsEntry.vala:491
++#: src/View/AbstractDirectoryView.vala:1947
++#: src/View/Widgets/BreadcrumbsEntry.vala:487
+ msgid "Open with"
+ msgstr "Openen met"
+ 
+-#: src/View/AbstractDirectoryView.vala:1950
++#: src/View/AbstractDirectoryView.vala:1953
+ msgid "Paste"
+ msgstr "Plakken"
+ 
+-#: src/View/AbstractDirectoryView.vala:1955
++#: src/View/AbstractDirectoryView.vala:1958
+ msgid "Bookmark"
+ msgstr "Bladwijzer"
+ 
+-#: src/View/AbstractDirectoryView.vala:1970
++#: src/View/AbstractDirectoryView.vala:1973
+ msgid "Cut"
+ msgstr "Knippen"
+ 
+-#: src/View/AbstractDirectoryView.vala:1977
++#: src/View/AbstractDirectoryView.vala:1980
+ msgid "Copy"
+ msgstr "Kopieëren"
+ 
+-#: src/View/AbstractDirectoryView.vala:1984
++#: src/View/AbstractDirectoryView.vala:1987
+ msgid "Move to Trash"
+ msgstr "Verplaats naar prullenbak"
+ 
+-#: src/View/AbstractDirectoryView.vala:1989
++#: src/View/AbstractDirectoryView.vala:1992
+ msgid "Delete permanently"
+ msgstr "Permanent verwijderen"
+ 
+-#: src/View/AbstractDirectoryView.vala:1994
++#: src/View/AbstractDirectoryView.vala:1997
+ msgid "Restore from Trash"
+ msgstr "Herstel uit prullenbak"
+ 
+-#: src/View/AbstractDirectoryView.vala:2005
++#: src/View/AbstractDirectoryView.vala:2008
+ msgid "Open Parent Folder"
+ msgstr "Open de bovenliggende map"
+ 
+-#: src/View/AbstractDirectoryView.vala:2008
++#: src/View/AbstractDirectoryView.vala:2011
+ msgid "Remove from History"
+ msgstr "Verwijderen uit historie"
+ 
+-#: src/View/AbstractDirectoryView.vala:2024
++#: src/View/AbstractDirectoryView.vala:2027
+ msgid "Rename…"
+ msgstr "Hernoemen…"
+ 
+-#: src/View/AbstractDirectoryView.vala:2031
++#: src/View/AbstractDirectoryView.vala:2034
+ msgid "Copy as Link"
+ msgstr "Kopieer als link"
+ 
+-#: src/View/AbstractDirectoryView.vala:2047
++#: src/View/AbstractDirectoryView.vala:2052
+ msgid "Paste Link into Folder"
+ msgstr "Link plakken in map"
+ 
+-#: src/View/AbstractDirectoryView.vala:2049
++#: src/View/AbstractDirectoryView.vala:2054
+ msgid "Paste into Folder"
+ msgstr "Plakken in map"
+ 
+-#: src/View/AbstractDirectoryView.vala:2075
++#: src/View/AbstractDirectoryView.vala:2082
+ msgid "Show Hidden Files"
+ msgstr "Laat verborgen bestanden zien"
+ 
+-#: src/View/AbstractDirectoryView.vala:2078
++#: src/View/AbstractDirectoryView.vala:2085
+ msgid "Show Remote Thumbnails"
+ msgstr "Laat externe thumbnails zien"
+ 
+-#: src/View/AbstractDirectoryView.vala:2081
++#: src/View/AbstractDirectoryView.vala:2088
+ msgid "Hide Thumbnails"
+ msgstr "Verberg miniatuurweergaven"
+ 
+-#: src/View/AbstractDirectoryView.vala:2101
++#: src/View/AbstractDirectoryView.vala:2108
+ msgid "Paste Link"
+ msgstr "Link plakken"
+ 
+-#: src/View/AbstractDirectoryView.vala:2153
++#: src/View/AbstractDirectoryView.vala:2162
+ msgid "Name"
+ msgstr "Naam"
+ 
+-#: src/View/AbstractDirectoryView.vala:2168
++#: src/View/AbstractDirectoryView.vala:2177
+ msgid "Date"
+ msgstr "Datum"
+ 
+-#: src/View/AbstractDirectoryView.vala:2173
++#: src/View/AbstractDirectoryView.vala:2182
+ msgid "Reversed Order"
+ msgstr "Omgekeerde volgorde"
+ 
+-#: src/View/AbstractDirectoryView.vala:2176
++#: src/View/AbstractDirectoryView.vala:2185
+ msgid "Folders Before Files"
+ msgstr "Mappen voor bestanden"
+ 
+-#: src/View/AbstractDirectoryView.vala:2188
++#: src/View/AbstractDirectoryView.vala:2197
+ msgid "Sort by"
+ msgstr "Sorteer op"
+ 
+-#: src/View/AbstractDirectoryView.vala:2196
++#: src/View/AbstractDirectoryView.vala:2205
+ msgid "Folder"
+ msgstr "Map"
+ 
+-#: src/View/AbstractDirectoryView.vala:2202
++#: src/View/AbstractDirectoryView.vala:2211
+ msgid "Empty File"
+ msgstr "Leeg bestand"
+ 
+-#: src/View/AbstractDirectoryView.vala:2252
++#: src/View/AbstractDirectoryView.vala:2262
+ msgid "New"
+ msgstr "Nieuw"
+ 
+-#: src/View/AbstractDirectoryView.vala:2489
++#: src/View/AbstractDirectoryView.vala:2499
+ #, c-format
+ msgid "Untitled %s"
+ msgstr "%s zonder naam"
+ 
+-#: src/View/AbstractDirectoryView.vala:2850
+-#: src/View/AbstractDirectoryView.vala:3045
++#: src/View/AbstractDirectoryView.vala:2860
++#: src/View/AbstractDirectoryView.vala:3055
+ msgid "Cannot remove files from here"
+ msgstr "Kan de bestanden hier niet verwijderen"
+ 
+-#: src/View/AbstractDirectoryView.vala:2851
+-#: src/View/AbstractDirectoryView.vala:3030
+-#: src/View/AbstractDirectoryView.vala:3046
++#: src/View/AbstractDirectoryView.vala:2861
++#: src/View/AbstractDirectoryView.vala:3040
++#: src/View/AbstractDirectoryView.vala:3056
+ msgid "You do not have permission to change this location"
+ msgstr "U heeft geen toestemming om hier wijzigingen aan te brengen"
+ 
+-#: src/View/AbstractDirectoryView.vala:3005
++#: src/View/AbstractDirectoryView.vala:3015
+ msgid "Cannot copy files that are in the trash"
+ msgstr "Bestanden in de prullenbak kunnen niet gekopieerd worden"
+ 
+-#: src/View/AbstractDirectoryView.vala:3006
++#: src/View/AbstractDirectoryView.vala:3016
+ msgid "Cutting the selection instead"
+ msgstr "De geselecteerde objecten worden in plaats daarvan geknipt"
+ 
+-#: src/View/AbstractDirectoryView.vala:3029
++#: src/View/AbstractDirectoryView.vala:3039
+ msgid "Cannot paste files here"
+ msgstr "Kan bestanden hier niet plakken"
+ 
+-#: src/View/ViewContainer.vala:386 src/View/Sidebar.vala:578
++#: src/View/ViewContainer.vala:385 src/View/Sidebar.vala:578
+ msgid "Home"
+ msgstr "Persoonlijke map"
+ 
+-#: src/View/ViewContainer.vala:408
++#: src/View/ViewContainer.vala:407
+ msgid "You cannot create a folder here."
+ msgstr "U kan hier geen map aanmaken."
+ 
+-#: src/View/ViewContainer.vala:411
++#: src/View/ViewContainer.vala:410
+ msgid "The network is unavailable"
+ msgstr "Het netwerk is niet beschikbaar"
+ 
+-#: src/View/ViewContainer.vala:412
++#: src/View/ViewContainer.vala:411
+ msgid "A working network is needed to reach this folder"
+ msgstr "Een functionerend netwerk is nodig om toegang tot deze map te hebben"
+ 
+-#: src/View/ViewContainer.vala:415
++#: src/View/ViewContainer.vala:414
+ msgid "This Folder Does Not Belong to You"
+ msgstr "Deze map is niet van u"
+ 
+-#: src/View/ViewContainer.vala:416
++#: src/View/ViewContainer.vala:415
+ msgid "You don't have permission to view this folder."
+ msgstr "U heeft niet de rechten om deze map te bekijken."
+ 
+-#: src/View/ViewContainer.vala:418
++#: src/View/ViewContainer.vala:417
+ msgid "Unable to Mount Folder"
+ msgstr "De map kan niet aangekoppeld worden"
+ 
+-#: src/View/ViewContainer.vala:419
++#: src/View/ViewContainer.vala:418
+ msgid "Could not connect to the server for this folder."
+ msgstr "Kon voor deze map niet niet met de server verbinden."
+ 
+-#: src/View/ViewContainer.vala:422
++#: src/View/ViewContainer.vala:421
+ msgid "Unable to Display Folder Contents"
+ msgstr "De inhoud van de map kan niet weergeven worden"
+ 
+-#: src/View/ViewContainer.vala:423
++#: src/View/ViewContainer.vala:422
+ msgid "The operation timed out."
+ msgstr "De bewerking duurde te lang."
+ 
+-#: src/View/ViewContainer.vala:425
++#: src/View/ViewContainer.vala:424
+ msgid "Unable to Show Folder"
+ msgstr "De map kan niet worden weergegeven"
+ 
+-#: src/View/ViewContainer.vala:426
++#: src/View/ViewContainer.vala:425
+ msgid "The server for this folder could not be located."
+ msgstr "De server voor deze map kon niet gevonden worden."
+ 
+-#: src/View/ViewContainer.vala:437
++#: src/View/ViewContainer.vala:436
+ msgid "File not Found"
+ msgstr "Bestand niet gevonden"
+ 
+-#: src/View/ViewContainer.vala:438
++#: src/View/ViewContainer.vala:437
+ msgid "The file selected no longer exists."
+ msgstr "Het gekozen bestand bestaat niet meer."
+ 
+@@ -708,15 +708,15 @@ msgstr "Uitw_erpen"
+ msgid "Search or Type Path"
+ msgstr "Zoek of typ een pad"
+ 
+-#: src/View/Widgets/BreadcrumbsEntry.vala:452
++#: src/View/Widgets/BreadcrumbsEntry.vala:448
+ msgid "Open in New Tab"
+ msgstr "Openen in nieuw tabblad"
+ 
+-#: src/View/Widgets/BreadcrumbsEntry.vala:459
++#: src/View/Widgets/BreadcrumbsEntry.vala:455
+ msgid "Open in New Window"
+ msgstr "Openen in nieuw venster"
+ 
+-#: src/View/Widgets/BreadcrumbsEntry.vala:498
++#: src/View/Widgets/BreadcrumbsEntry.vala:494
+ msgid "Open in Other Application…"
+ msgstr "Openen in andere toepassing…"
+ 
+@@ -738,70 +738,70 @@ msgstr "Herlaad deze map"
+ msgid "Searching…"
+ msgstr "Aan het zoeken…"
+ 
+-#: src/View/Widgets/OverlayBar.vala:216
++#: src/View/Widgets/OverlayBar.vala:209
+ #, c-format
+ msgid "%u folders"
+ msgstr "%u mappen"
+ 
+-#: src/View/Widgets/OverlayBar.vala:218 src/View/Widgets/OverlayBar.vala:228
++#: src/View/Widgets/OverlayBar.vala:211 src/View/Widgets/OverlayBar.vala:221
+ #, c-format
+ msgid " and %u other item (%s) selected"
+ msgstr " en %u ander item (%s) geselecteerd"
+ 
+-#: src/View/Widgets/OverlayBar.vala:219 src/View/Widgets/OverlayBar.vala:229
++#: src/View/Widgets/OverlayBar.vala:212 src/View/Widgets/OverlayBar.vala:222
+ #, c-format
+ msgid " and %u other items (%s) selected"
+ msgstr " en %u andere items (%s) geselecteerd"
+ 
+-#: src/View/Widgets/OverlayBar.vala:222 src/View/Widgets/OverlayBar.vala:232
++#: src/View/Widgets/OverlayBar.vala:215 src/View/Widgets/OverlayBar.vala:225
+ msgid " selected"
+ msgstr " geselecteerd"
+ 
+-#: src/View/Widgets/OverlayBar.vala:235
++#: src/View/Widgets/OverlayBar.vala:228
+ #, c-format
+ msgid "%u items selected (%s)"
+ msgstr "%u items geselecteerd (%s)"
+ 
+ #. TRANSLATORS: %u will be substituted by the number of sub folders
+-#: src/View/Widgets/OverlayBar.vala:279
++#: src/View/Widgets/OverlayBar.vala:272
+ #, c-format
+ msgid "%u sub-folder, "
+ msgstr "%u submap, "
+ 
+-#: src/View/Widgets/OverlayBar.vala:279
++#: src/View/Widgets/OverlayBar.vala:272
+ #, c-format
+ msgid "%u sub-folders, "
+ msgstr "%u submappen, "
+ 
+ #. TRANSLATORS: %u will be substituted by the number of readable files
+-#: src/View/Widgets/OverlayBar.vala:285
++#: src/View/Widgets/OverlayBar.vala:278
+ #, c-format
+ msgid "%u file, "
+ msgstr "%u bestand, "
+ 
+-#: src/View/Widgets/OverlayBar.vala:285
++#: src/View/Widgets/OverlayBar.vala:278
+ #, c-format
+ msgid "%u files, "
+ msgstr "%u bestanden, "
+ 
+ #. TRANSLATORS: %s will be substituted by the approximate disk space used by the folder
+-#: src/View/Widgets/OverlayBar.vala:295
++#: src/View/Widgets/OverlayBar.vala:288
+ #, c-format
+ msgid "%s approx."
+ msgstr "%s ong."
+ 
+ #. TRANSLATORS: 'size' refers to disk space
+-#: src/View/Widgets/OverlayBar.vala:298
++#: src/View/Widgets/OverlayBar.vala:291
+ msgid "unknown size"
+ msgstr "onbekende grootte"
+ 
+ #. TRANSLATORS: %u will be substituted by the number of unreadable files
+-#: src/View/Widgets/OverlayBar.vala:302
++#: src/View/Widgets/OverlayBar.vala:295
+ #, c-format
+ msgid "%u file not readable"
+ msgstr "%u bestand niet leesbaar"
+ 
+-#: src/View/Widgets/OverlayBar.vala:302
++#: src/View/Widgets/OverlayBar.vala:295
+ #, c-format
+ msgid "%u files not readable"
+ msgstr "%u bestanden niet leesbaar"
+@@ -907,7 +907,7 @@ msgid "Remember this password"
+ msgstr "Dit wachtwoord onthouden"
+ 
+ #: libcore/ConnectServerDialog.vala:189 libcore/DndHandler.vala:103
+-#: libcore/FileConflictDialog.vala:189
++#: libcore/FileConflictDialog.vala:190
+ msgid "Cancel"
+ msgstr "Annuleren"
+ 
+@@ -948,56 +948,56 @@ msgstr "Hierheen een snelkoppeling maken"
+ msgid "File conflict"
+ msgstr "Bestandsconflict"
+ 
+-#: libcore/FileConflictDialog.vala:115
++#: libcore/FileConflictDialog.vala:116
+ msgid "Original file"
+ msgstr "Origineel bestand"
+ 
+-#: libcore/FileConflictDialog.vala:133 libcore/FileConflictDialog.vala:161
++#: libcore/FileConflictDialog.vala:134 libcore/FileConflictDialog.vala:162
+ msgid "Last modified:"
+ msgstr "Laatst bewerkt:"
+ 
+-#: libcore/FileConflictDialog.vala:143
++#: libcore/FileConflictDialog.vala:144
+ msgid "Replace with"
+ msgstr "Vervang met"
+ 
+-#: libcore/FileConflictDialog.vala:171
++#: libcore/FileConflictDialog.vala:172
+ msgid "Reset"
+ msgstr "Herstel"
+ 
+-#: libcore/FileConflictDialog.vala:181
++#: libcore/FileConflictDialog.vala:182
+ msgid "_Select a new name for the destination"
+ msgstr "_Selecteer een nieuwe naam voor de bestemming"
+ 
+-#: libcore/FileConflictDialog.vala:184
++#: libcore/FileConflictDialog.vala:185
+ msgid "Apply this action to all files"
+ msgstr "Pas deze actie toe op alle bestanden"
+ 
+-#: libcore/FileConflictDialog.vala:186 libcore/StockDialogs.vala:22
++#: libcore/FileConflictDialog.vala:187 libcore/StockDialogs.vala:22
+ msgid "_Skip"
+ msgstr "_Overslaan"
+ 
+-#: libcore/FileConflictDialog.vala:187
++#: libcore/FileConflictDialog.vala:188
+ msgid "Re_name"
+ msgstr "Her_noemen"
+ 
+-#: libcore/FileConflictDialog.vala:191
++#: libcore/FileConflictDialog.vala:192
+ msgid "Keep Newest"
+ msgstr "Nieuwste behouden"
+ 
+-#: libcore/FileConflictDialog.vala:192
++#: libcore/FileConflictDialog.vala:193
+ msgid "Skip if original was modified more recently"
+ msgstr "Overslaan als het origineel recenter gewijzigd is"
+ 
+-#: libcore/FileConflictDialog.vala:194
++#: libcore/FileConflictDialog.vala:195
+ msgid "Replace"
+ msgstr "Vervang"
+ 
+-#: libcore/FileConflictDialog.vala:310
++#: libcore/FileConflictDialog.vala:307
+ #, c-format
+ msgid "Merge folder \"%s\"?"
+ msgstr "Map ‘%s’ samenvoegen?"
+ 
+-#: libcore/FileConflictDialog.vala:311
++#: libcore/FileConflictDialog.vala:308
+ msgid ""
+ "Merging will ask for confirmation before replacing any files in the folder "
+ "that conflict with the files being copied."
+@@ -1005,61 +1005,61 @@ msgstr ""
+ "Bij samenvoegen zal eerst om bevestiging gevraagd worden voordat bestanden "
+ "in de map die conflicteren met de verplaatste bestanden, vervangen worden."
+ 
+-#: libcore/FileConflictDialog.vala:313
++#: libcore/FileConflictDialog.vala:310
+ #, c-format
+ msgid "An older folder with the same name already exists in \"%s\"."
+ msgstr "Er bestaat al een oudere map met dezelfde naam in \"%s\"."
+ 
+-#: libcore/FileConflictDialog.vala:315
++#: libcore/FileConflictDialog.vala:312
+ #, c-format
+ msgid "A newer folder with the same name already exists in \"%s\"."
+ msgstr "Er bestaat al een nieuwere map met dezelfde naam in \"%s\"."
+ 
+-#: libcore/FileConflictDialog.vala:317
++#: libcore/FileConflictDialog.vala:314
+ #, c-format
+ msgid "Another folder with the same name already exists in \"%s\"."
+ msgstr "Er bestaat al een andere map met dezelfde naam in \"%s\"."
+ 
+-#: libcore/FileConflictDialog.vala:320
++#: libcore/FileConflictDialog.vala:317
+ #, c-format
+ msgid "Replace folder \"%s\"?"
+ msgstr "Vervang map \"%s\"?"
+ 
+-#: libcore/FileConflictDialog.vala:321
++#: libcore/FileConflictDialog.vala:318
+ msgid "Replacing it will remove all files in the folder."
+ msgstr ""
+ "Bij het vervangen ervan zullen alle bestanden in de map verwijderd worden."
+ 
+-#: libcore/FileConflictDialog.vala:322
++#: libcore/FileConflictDialog.vala:319
+ #, c-format
+ msgid "A folder with the same name already exists in \"%s\"."
+ msgstr "Er bestaat al een map met dezelfde naam in \"%s\"."
+ 
+-#: libcore/FileConflictDialog.vala:325
++#: libcore/FileConflictDialog.vala:322
+ #, c-format
+ msgid "Replace file \"%s\"?"
+ msgstr "Vervang bestand \"%s\"?"
+ 
+-#: libcore/FileConflictDialog.vala:326
++#: libcore/FileConflictDialog.vala:323
+ msgid "Replacing it will overwrite its content."
+ msgstr "Vervangen zal de inhoud overschrijven."
+ 
+-#: libcore/FileConflictDialog.vala:329
++#: libcore/FileConflictDialog.vala:326
+ #, c-format
+ msgid "An older file with the same name already exists in \"%s\"."
+ msgstr "Er bestaat al een ouder bestand met dezelfde naam in \"%s\"."
+ 
+-#: libcore/FileConflictDialog.vala:331
++#: libcore/FileConflictDialog.vala:328
+ #, c-format
+ msgid "A newer file with the same name already exists in \"%s\"."
+ msgstr "Er bestaat al een nieuwer bestand met dezelfde naam in \"%s\"."
+ 
+-#: libcore/FileConflictDialog.vala:333
++#: libcore/FileConflictDialog.vala:330
+ #, c-format
+ msgid "Another file with the same name already exists in \"%s\"."
+ msgstr "Er bestaat al een ander bestand met dezelfde naam in \"%s\"."
+ 
+-#: libcore/FileConflictDialog.vala:359
++#: libcore/FileConflictDialog.vala:356
+ msgid "Merge"
+ msgstr "Samenvoegen"
+ 
+@@ -1084,13 +1084,13 @@ msgid "Today at %s"
+ msgstr "Vandaag om %s"
+ 
+ #. TRANSLATORS '%s' is a placeholder for the time. It may be moved but not changed.
+-#: libcore/FileUtils.vala:540
++#: libcore/FileUtils.vala:542
+ #, c-format
+ msgid "Yesterday at %s"
+ msgstr "Gisteren om %s"
+ 
+ #. TRANSLATORS '%%A' is a placeholder for the day name, '%s' is a placeholder for the time. These may be moved and reordered but not changed.
+-#: libcore/FileUtils.vala:546
++#: libcore/FileUtils.vala:550
+ #, c-format
+ msgid "%%A at %s"
+ msgstr "%%A om %s"
+@@ -1948,15 +1948,15 @@ msgstr "Bladwijzers"
+ msgid "Recently used"
+ msgstr "Recent gebruikt"
+ 
+-#: libwidgets/Chrome/ViewSwitcher.vala:35
++#: libwidgets/Chrome/ViewSwitcher.vala:34
+ msgid "View as Grid"
+ msgstr "Als rooster weergeven"
+ 
+-#: libwidgets/Chrome/ViewSwitcher.vala:40
++#: libwidgets/Chrome/ViewSwitcher.vala:39
+ msgid "View as List"
+ msgstr "Lijst-weergave"
+ 
+-#: libwidgets/Chrome/ViewSwitcher.vala:45
++#: libwidgets/Chrome/ViewSwitcher.vala:44
+ msgid "View in Columns"
+ msgstr "Kolom-weergave"
+ 

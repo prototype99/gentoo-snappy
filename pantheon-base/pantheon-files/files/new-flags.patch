@@ -1,0 +1,186 @@
+From 90c18cfb572893cce714ca1ec5d9f2e83efcaf5c Mon Sep 17 00:00:00 2001
+From: Jeremy Wootten <jeremy@elementaryos.org>
+Date: Tue, 5 May 2020 08:32:51 +0100
+Subject: [PATCH] Make Unity and Zeitgeist feature options (#1313)
+
+* Make unity and zeitgeist feature options; bump minimum meson version
+---
+ libwidgets/View/SearchResults.vala | 15 ++++++++++++---
+ meson.build                        | 22 ++++++++++++++--------
+ meson_options.txt                  |  3 ++-
+ src/View/Browser.vala              |  2 ++
+ src/ZeitgeistManager.vala          |  3 +++
+ 5 files changed, 33 insertions(+), 12 deletions(-)
+
+diff --git a/libwidgets/View/SearchResults.vala b/libwidgets/View/SearchResults.vala
+index 0d17523a7..4ff9bf3f5 100644
+--- a/libwidgets/View/SearchResults.vala
++++ b/libwidgets/View/SearchResults.vala
+@@ -109,9 +109,10 @@ namespace Marlin.View.Chrome {
+         Cancellable? current_operation = null;
+         Cancellable? file_search_operation = null;
+ 
++#if HAVE_ZEITGEIST
+         Zeitgeist.Index zg_index;
+         GenericArray<Zeitgeist.Event> templates;
+-
++#endif
+         int current_count;
+         int deep_count;
+         int max_results = MAX_RESULTS;
+@@ -142,6 +143,7 @@ namespace Marlin.View.Chrome {
+         }
+ 
+         construct {
++#if HAVE_ZEITGEIST
+             var template = new Zeitgeist.Event ();
+ 
+             var template_subject = new Zeitgeist.Subject ();
+@@ -152,7 +154,7 @@ namespace Marlin.View.Chrome {
+             templates.add (template);
+ 
+             zg_index = new Zeitgeist.Index ();
+-
++#endif
+             var frame = new Gtk.Frame (null);
+             frame.shadow_type = Gtk.ShadowType.ETCHED_IN;
+ 
+@@ -235,10 +237,12 @@ namespace Marlin.View.Chrome {
+                         0, get_category_header (_("Bookmarks")),
+                         5, Category.CURRENT_HEADER.to_string ());
+ 
++#if HAVE_ZEITGEIST
+             list.append (out zeitgeist_results, null);
+             list.@set (zeitgeist_results,
+                         0, get_category_header (_("Recently used")),
+                         5, Category.CURRENT_HEADER.to_string ());
++#endif
+ 
+             scroll.add (view);
+             frame.add (scroll);
+@@ -350,8 +354,11 @@ namespace Marlin.View.Chrome {
+                 return null;
+             });
+ 
++#if HAVE_ZEITGEIST
+             get_zg_results.begin (search_term);
+-
++#else
++            global_search_finished = true;
++#endif
+             var bookmarks_matched = new Gee.LinkedList<Match> ();
+             var begins_with = false;
+             foreach (var bookmark in BookmarkList.get_instance ().list) {
+@@ -1014,6 +1021,7 @@ namespace Marlin.View.Chrome {
+             }
+         }
+ 
++#if HAVE_ZEITGEIST
+         async void get_zg_results (string term) {
+             global_search_finished = false;
+ 
+@@ -1109,6 +1117,7 @@ namespace Marlin.View.Chrome {
+             global_search_finished = true;
+             Idle.add (send_search_finished);
+         }
++#endif
+ 
+         bool term_matches (string term, string name, out bool begins_with ) {
+             /* term is assumed to be down */
+diff --git a/meson.build b/meson.build
+index 51804829d..38ac252a1 100644
+--- a/meson.build
++++ b/meson.build
+@@ -2,7 +2,7 @@ project(
+     'io.elementary.files',
+     'vala', 'c',
+     version: '4.4.2',
+-    meson_version: '>= 0.46.0'
++    meson_version: '>= 0.47.0'
+ )
+ 
+ #
+@@ -62,7 +62,6 @@ common_deps = [
+ pango_dep = dependency('pango', version: '>=1.1.2')
+ sqlite3_dep = dependency('sqlite3')
+ libcanberra_dep = dependency('libcanberra', version: '>=0.30')
+-zeitgeist_dep = dependency('zeitgeist-2.0')
+ 
+ notify_dep = dependency('libnotify', version: '>=0.7.2')
+ 
+@@ -72,14 +71,21 @@ math_dep = cc.find_library('m')
+ 
+ unity_dep = []
+ plank_dep = []
+-if get_option('with-unity')
+-    unity_dep = dependency('unity', version: '>=4.0.0')
++
++
++unity_dep = dependency('unity', version: '>=4.0.0', required: get_option('with-unity'))
++if (unity_dep.found())
+     add_project_arguments('--define=HAVE_UNITY', language: 'vala')
++endif
++
++plank_dep = dependency('plank', version: '>=0.10.9', required: get_option('with-unity'))
++if (plank_dep.found() )
++	add_project_arguments('--define=HAVE_PLANK_0_11', language: 'vala')
++endif
+ 
+-    plank_dep = dependency('plank')
+-    if plank_dep.version().version_compare('>=0.10.9')
+-        add_project_arguments('--define=HAVE_PLANK_0_11', language: 'vala')
+-    endif
++zeitgeist_dep = dependency('zeitgeist-2.0', required: get_option('with-zeitgeist'))
++if (zeitgeist_dep.found())
++	add_project_arguments('--define=HAVE_ZEITGEIST', language: 'vala')
+ endif
+ 
+ add_project_arguments(
+diff --git a/meson_options.txt b/meson_options.txt
+index 9fa0b68a4..7f1919eef 100644
+--- a/meson_options.txt
++++ b/meson_options.txt
+@@ -1 +1,2 @@
+-option('with-unity', type : 'boolean', value : 'true', description : 'Add Unity launcher support')
++option('with-unity', type : 'feature', value : 'auto', description : 'Add Unity launcher support')
++option('with-zeitgeist', type : 'feature', value : 'auto', description : 'Add Zeitgeist support')
+diff --git a/src/View/Browser.vala b/src/View/Browser.vala
+index 2a1688e06..441061e7c 100644
+--- a/src/View/Browser.vala
++++ b/src/View/Browser.vala
+@@ -50,8 +50,10 @@ namespace Marlin.View {
+                         forward_stack.clear ();
+                         back_stack.push (current_uri);
+ 
++#if HAVE_ZEITGEIST
+                         ZeitgeistManager.report_event (current_uri, Zeitgeist.ZG.LEAVE_EVENT);
+                         ZeitgeistManager.report_event (uri, Zeitgeist.ZG.ACCESS_EVENT);
++#endif
+                     }
+                 } else { /* If current uri is not loadable remember previous uri anyway so that back button works */
+                     back_stack.push (current_uri);
+diff --git a/src/ZeitgeistManager.vala b/src/ZeitgeistManager.vala
+index 031f935a2..3a76f15c1 100644
+--- a/src/ZeitgeistManager.vala
++++ b/src/ZeitgeistManager.vala
+@@ -17,10 +17,12 @@
+ ***/
+ namespace Marlin {
+     public class ZeitgeistManager : Object {
++
+         const string FILES_ACTOR = "application://" + Marlin.APP_DESKTOP;
+         const string ATTRS = FileAttribute.STANDARD_DISPLAY_NAME + "," + FileAttribute.STANDARD_CONTENT_TYPE;
+ 
+         public static void report_event (string uri, string interpretation) {
++#if HAVE_ZEITGEIST
+             var file = File.new_for_commandline_arg (uri);
+ 
+             file.query_info_async.begin (ATTRS, 0, Priority.DEFAULT, null, (obj, res) => {
+@@ -54,6 +56,7 @@ namespace Marlin {
+                     warning (e.message);
+                 }
+             });
++#endif
+         }
+     }
+ }

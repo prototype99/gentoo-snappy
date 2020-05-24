@@ -1,0 +1,83 @@
+From 08316bce443d863e95f3167b1d110f39a72cd092 Mon Sep 17 00:00:00 2001
+From: Jeremy Wootten <jeremy@elementaryos.org>
+Date: Mon, 20 Apr 2020 10:14:28 +0100
+Subject: [PATCH] Show overlaybar in all view modes. (#1288)
+
+* Show overlaybar in all view modes.
+
+* Update release appdata
+
+* Remove unused `showbar` boolean in OverlayBar.vala
+---
+ data/io.elementary.files.appdata.xml.in.in |  1 +
+ src/View/ViewContainer.vala                |  1 -
+ src/View/Widgets/OverlayBar.vala           | 11 ++---------
+ 3 files changed, 3 insertions(+), 10 deletions(-)
+
+diff --git a/data/io.elementary.files.appdata.xml.in.in b/data/io.elementary.files.appdata.xml.in.in
+index 3b89906fb..5e0b6c1b8 100644
+--- a/data/io.elementary.files.appdata.xml.in.in
++++ b/data/io.elementary.files.appdata.xml.in.in
+@@ -63,6 +63,7 @@
+         <p>Minor updates:</p>
+         <ul>
+           <li>Fix an issue that prevented file modification times from showing</li>
++          <li>Show file info overlay in List View as well</li>
+           <li>Updated translations</li>
+         </ul>
+       </description>
+diff --git a/src/View/ViewContainer.vala b/src/View/ViewContainer.vala
+index 502cda4e0..78f17a756 100644
+--- a/src/View/ViewContainer.vala
++++ b/src/View/ViewContainer.vala
+@@ -262,7 +262,6 @@ namespace Marlin.View {
+             }
+ 
+             overlay_statusbar = new Marlin.View.OverlayBar (view.overlay);
+-            overlay_statusbar.showbar = view_mode != Marlin.ViewMode.LIST;
+ 
+             connect_slot_signals (this.view);
+             directory_is_loading (loc);
+diff --git a/src/View/Widgets/OverlayBar.vala b/src/View/Widgets/OverlayBar.vala
+index 61749239d..b8671174e 100644
+--- a/src/View/Widgets/OverlayBar.vala
++++ b/src/View/Widgets/OverlayBar.vala
+@@ -36,8 +36,6 @@ namespace Marlin.View {
+         private Marlin.DeepCount? deep_counter = null;
+         private uint deep_count_timeout_id = 0;
+ 
+-        public bool showbar = false;
+-
+         public OverlayBar (Gtk.Overlay overlay) {
+             base (overlay); /* this adds the overlaybar to the overlay (ViewContainer) */
+ 
+@@ -54,10 +52,6 @@ namespace Marlin.View {
+             cancel ();
+             visible = false;
+ 
+-            if (!showbar) {
+-                return;
+-            }
+-
+             update_timeout_id = GLib.Timeout.add_full (GLib.Priority.LOW, STATUS_UPDATE_DELAY, () => {
+                 if (files != null) {
+                     selected_files = files.copy ();
+@@ -78,8 +72,7 @@ namespace Marlin.View {
+         public void update_hovered (GOF.File? file) {
+             hover_cancel (); /* This will stop and hide spinner, and reset the hover timeout */
+ 
+-            if (!showbar ||
+-                (file != null && goffile != null && file.location.equal (goffile.location))) {
++            if (file != null && goffile != null && file.location.equal (goffile.location)) {
+ 
+                 return;
+             }
+@@ -180,7 +173,7 @@ namespace Marlin.View {
+                 }
+             }
+ 
+-            visible = showbar && (label.length > 0);
++            visible = label != "";
+         }
+ 
+         private string update_status () {

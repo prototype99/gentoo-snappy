@@ -11,5 +11,7 @@
 	</maintainer>
 	<use>
 		<flag name="gvfs">Pull in gnome-base/gvfs to enable various virtual filesystems</flag>
+		<flag name="img-dim-hover-list">require that the file manager is able to display an image's pixel dimensions when you hover on a file in list view</flag>
+		<flag name="mod-date-prop">require that the file manager can display the modification date of a file via the properties dialog</flag>
 	</use>
 </pkgmetadata>
