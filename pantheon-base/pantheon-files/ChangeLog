@@ -1,3 +1,6 @@
+*pantheon-files-4.4.2-r2
+	::prototype99	add patch to show modified time
+
 *pantheon-files-4.4.2
 	::gnome-next	improve dependencies
 	::prototype99	fix what appears to be a dependency error
