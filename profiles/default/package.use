@@ -40,6 +40,7 @@ sys-libs/pam cracklib
 virtual/linux-sources debug
 www-client/chromium -custom-cflags
 www-client/firefox clang
+x11-libs/libva X
 x11-wm/fvwm png
 x11-wm/fluxbox -toolbar -systray
 # required by net-misc/curl[threads]
