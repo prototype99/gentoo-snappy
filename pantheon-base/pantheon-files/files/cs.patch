@@ -1,0 +1,2290 @@
+From 6a2bcc654a856958f4a20a16b948f2182c771b71 Mon Sep 17 00:00:00 2001
+From: p-bo <pavel.borecki@gmail.com>
+Date: Sun, 10 May 2020 12:51:33 +0000
+Subject: [PATCH] Translated using Weblate (Czech)
+
+Currently translated at 32.6% (44 of 135 strings)
+
+Translation: Files/Files (Extra)
+Translate-URL: https://l10n.elementary.io/projects/files/extra/cs/
+Translated using Weblate (Czech)
+
+Currently translated at 100.0% (398 of 398 strings)
+
+Translation: Files/Files
+Translate-URL: https://l10n.elementary.io/projects/files/files/cs/
+Translated using Weblate (Czech)
+
+Currently translated at 84.4% (336 of 398 strings)
+
+Translation: Files/Files
+Translate-URL: https://l10n.elementary.io/projects/files/files/cs/
+Update translation files (cs)
+
+Updated by "Update PO files to match POT (msgmerge)" hook in Weblate.
+
+Translation: Files/Files (Extra)
+Translate-URL: https://l10n.elementary.io/projects/files/extra/
+Update translation files (cs)
+
+Updated by "Update PO files to match POT (msgmerge)" hook in Weblate.
+
+Translation: Files/Files
+Translate-URL: https://l10n.elementary.io/projects/files/files/
+---
+ po/cs.po       | 594 ++++++++++++++++++++++++-------------------------
+ po/extra/cs.po | 353 +++++++++++++++--------------
+ 2 files changed, 464 insertions(+), 483 deletions(-)
+
+diff --git a/po/cs.po b/po/cs.po
+index 422fdb25b..6744237f9 100644
+--- a/po/cs.po
++++ b/po/cs.po
+@@ -7,17 +7,16 @@ msgid ""
+ msgstr ""
+ "Project-Id-Version: marlin\n"
+ "Report-Msgid-Bugs-To: \n"
+-"POT-Creation-Date: 2020-03-23 11:11+0000\n"
+-"PO-Revision-Date: 2018-12-14 00:08+0000\n"
+-"Last-Translator: Daniel Zvir <zvir.daniel@seznam.cz>\n"
+-"Language-Team: Czech <https://weblate.elementary.io/projects/files/files/cs/"
+-">\n"
++"POT-Creation-Date: 2020-04-20 09:16+0000\n"
++"PO-Revision-Date: 2020-05-11 19:11+0000\n"
++"Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
++"Language-Team: Czech <https://l10n.elementary.io/projects/files/files/cs/>\n"
+ "Language: cs\n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
+ "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+-"X-Generator: Weblate 3.0.1\n"
++"X-Generator: Weblate 3.9.1\n"
+ "X-Launchpad-Export-Date: 2017-06-11 06:25+0000\n"
+ 
+ #: src/Application.vala:124
+@@ -25,9 +24,8 @@ msgid "Show the version of the program"
+ msgstr "Zobrazit verzi programu"
+ 
+ #: src/Application.vala:126
+-#, fuzzy
+ msgid "Open one or more URIs, each in their own tab"
+-msgstr "Otevři jednu (či více) adres, každou v novém panelu"
++msgstr "Otevřít jednu (nebo více) URL adres, každou v novém panelu"
+ 
+ #: src/Application.vala:128 src/View/AbstractDirectoryView.vala:1855
+ msgid "New Window"
+@@ -89,30 +87,30 @@ msgstr "Informace"
+ msgid "General"
+ msgstr "Obecné"
+ 
+-#: src/Dialogs/AbstractPropertiesDialog.vala:76 libcore/StockDialogs.vala:101
++#: src/Dialogs/AbstractPropertiesDialog.vala:75 libcore/StockDialogs.vala:101
+ msgid "Close"
+ msgstr "Zavřít"
+ 
+-#: src/Dialogs/AbstractPropertiesDialog.vala:135
++#: src/Dialogs/AbstractPropertiesDialog.vala:134
+ msgid "Device Usage"
+ msgstr "Využití zařízení"
+ 
+-#: src/Dialogs/AbstractPropertiesDialog.vala:155
++#: src/Dialogs/AbstractPropertiesDialog.vala:154
+ msgid "Capacity:"
+ msgstr "Kapacita:"
+ 
+-#: src/Dialogs/AbstractPropertiesDialog.vala:156
+-#: src/Dialogs/AbstractPropertiesDialog.vala:159
+-#: src/Dialogs/AbstractPropertiesDialog.vala:162
+-#: src/Dialogs/PropertiesWindow.vala:442 src/Dialogs/PropertiesWindow.vala:481
++#: src/Dialogs/AbstractPropertiesDialog.vala:155
++#: src/Dialogs/AbstractPropertiesDialog.vala:158
++#: src/Dialogs/AbstractPropertiesDialog.vala:161
++#: src/Dialogs/PropertiesWindow.vala:444 src/Dialogs/PropertiesWindow.vala:483
+ msgid "Unknown"
+ msgstr "Neznámý"
+ 
+-#: src/Dialogs/AbstractPropertiesDialog.vala:158
++#: src/Dialogs/AbstractPropertiesDialog.vala:157
+ msgid "Available:"
+ msgstr "Dostupný:"
+ 
+-#: src/Dialogs/AbstractPropertiesDialog.vala:161
++#: src/Dialogs/AbstractPropertiesDialog.vala:160
+ msgid "Used:"
+ msgstr "Použitý:"
+ 
+@@ -121,15 +119,15 @@ msgid "Set as default"
+ msgstr "Nastavit jako výchozí"
+ 
+ #: src/Dialogs/PropertiesWindow.vala:123
+-#: src/View/AbstractDirectoryView.vala:1962 src/View/PopupMenuBuilder.vala:81
++#: src/View/AbstractDirectoryView.vala:1965 src/View/PopupMenuBuilder.vala:81
+ msgid "Properties"
+ msgstr "Vlastnosti"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:225
++#: src/Dialogs/PropertiesWindow.vala:227
+ msgid "Permissions"
+ msgstr "Oprávnění"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:246
++#: src/Dialogs/PropertiesWindow.vala:248
+ #, c-format
+ msgid "%i file could not be read due to permissions or other errors."
+ msgid_plural "%i files could not be read due to permissions or other errors."
+@@ -137,92 +135,91 @@ msgstr[0] "%i soubor nemohl být přečten kvůli právům nebo jiným chybám."
+ msgstr[1] "%i soubory nemohli být přečteny kvůli právům nebo jiným chybám."
+ msgstr[2] "%i souborů nemohlo být přečteno kvůli právům nebo jiným chybám."
+ 
+-#: src/Dialogs/PropertiesWindow.vala:250
++#: src/Dialogs/PropertiesWindow.vala:252
+ msgid "Actual Size Could Be Larger"
+ msgstr "Skutečná velikost může být větší"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:270 src/Dialogs/PropertiesWindow.vala:289
++#: src/Dialogs/PropertiesWindow.vala:272 src/Dialogs/PropertiesWindow.vala:291
+ msgid "unknown"
+ msgstr "neznámý"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:453
++#: src/Dialogs/PropertiesWindow.vala:455
+ msgid "Loading…"
+ msgstr "Načítání…"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:487
++#: src/Dialogs/PropertiesWindow.vala:489
+ msgid "Could not be determined"
+ msgstr "Nepodařilo se zjistit"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:513 libcore/FileConflictDialog.vala:120
+-#: libcore/FileConflictDialog.vala:148
++#: src/Dialogs/PropertiesWindow.vala:515 libcore/FileConflictDialog.vala:121
++#: libcore/FileConflictDialog.vala:149
+ msgid "Size:"
+ msgstr "Velikost:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:520 libcore/ConnectServerDialog.vala:164
+-#: libcore/FileConflictDialog.vala:128 libcore/FileConflictDialog.vala:156
++#: src/Dialogs/PropertiesWindow.vala:522 libcore/ConnectServerDialog.vala:164
++#: libcore/FileConflictDialog.vala:129 libcore/FileConflictDialog.vala:157
+ msgid "Type:"
+ msgstr "Typ:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:523
++#: src/Dialogs/PropertiesWindow.vala:525
+ msgid "Contains:"
+ msgstr "Obsahuje:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:546
++#: src/Dialogs/PropertiesWindow.vala:549
+ msgid "Created:"
+ msgstr "Vytvořeno:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:556
++#: src/Dialogs/PropertiesWindow.vala:560
+ msgid "Modified:"
+ msgstr "Změněno:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:568
++#: src/Dialogs/PropertiesWindow.vala:572
+ msgid "Deleted:"
+ msgstr "Smazáno:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:578
+-#, fuzzy
++#: src/Dialogs/PropertiesWindow.vala:582
+ msgid "Media type:"
+-msgstr "MIME typ obsahu:"
++msgstr "Typ média:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:585
++#: src/Dialogs/PropertiesWindow.vala:589
+ msgid "Resolution:"
+ msgstr "Rozlišení:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:593
++#: src/Dialogs/PropertiesWindow.vala:597
+ #: src/Dialogs/VolumePropertiesWindow.vala:78
+ msgid "Location:"
+ msgstr "Umístění:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:603
++#: src/Dialogs/PropertiesWindow.vala:607
+ msgid "Target:"
+ msgstr "Cíl:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:611
++#: src/Dialogs/PropertiesWindow.vala:615
+ msgid "Original Location:"
+ msgstr "Původní umístění:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:634
+-#: src/View/AbstractDirectoryView.vala:1930
++#: src/Dialogs/PropertiesWindow.vala:638
++#: src/View/AbstractDirectoryView.vala:1933
+ msgid "Other Application…"
+ msgstr "Jiná aplikace…"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:654
++#: src/Dialogs/PropertiesWindow.vala:658
+ msgid "Open with:"
+ msgstr "Oteřít s:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:919 src/Dialogs/PropertiesWindow.vala:929
++#: src/Dialogs/PropertiesWindow.vala:923 src/Dialogs/PropertiesWindow.vala:933
+ msgid "Owner:"
+ msgstr "Vlastník:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:923 src/Dialogs/PropertiesWindow.vala:932
++#: src/Dialogs/PropertiesWindow.vala:927 src/Dialogs/PropertiesWindow.vala:936
+ msgid "Group:"
+ msgstr "Skupina:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:935
++#: src/Dialogs/PropertiesWindow.vala:939
+ msgid "Everyone:"
+ msgstr "Ostatní:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:1216
++#: src/Dialogs/PropertiesWindow.vala:1220
+ #, c-format
+ msgid "%u subfolder"
+ msgid_plural "%u subfolders"
+@@ -230,8 +227,8 @@ msgstr[0] "%u podsložka"
+ msgstr[1] "%u podsložky"
+ msgstr[2] "%u podsložek"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:1220
+-#: src/Dialogs/PropertiesWindow.vala:1242
++#: src/Dialogs/PropertiesWindow.vala:1224
++#: src/Dialogs/PropertiesWindow.vala:1246
+ #, c-format
+ msgid "%u file"
+ msgid_plural "%u files"
+@@ -240,12 +237,12 @@ msgstr[1] "%u soubory"
+ msgstr[2] "%u souborů"
+ 
+ #. TRANSLATORS: folders, files
+-#: src/Dialogs/PropertiesWindow.vala:1225
++#: src/Dialogs/PropertiesWindow.vala:1229
+ #, c-format
+ msgid "%s, %s"
+ msgstr "%s, %s"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:1238 src/View/Widgets/OverlayBar.vala:225
++#: src/Dialogs/PropertiesWindow.vala:1242 src/View/Widgets/OverlayBar.vala:218
+ #, c-format
+ msgid "%u folder"
+ msgid_plural "%u folders"
+@@ -253,7 +250,7 @@ msgstr[0] "%u složka"
+ msgstr[1] "%u složky"
+ msgstr[2] "%u složek"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:1247
++#: src/Dialogs/PropertiesWindow.vala:1251
+ #, c-format
+ msgid "%u selected item"
+ msgid_plural "%u selected items"
+@@ -262,7 +259,7 @@ msgstr[1] "%u vybrané soubory"
+ msgstr[2] "%u vybraných souborů"
+ 
+ #. TRANSLATORS: total (folders, files)
+-#: src/Dialogs/PropertiesWindow.vala:1249
++#: src/Dialogs/PropertiesWindow.vala:1253
+ #, c-format
+ msgid "%s (%s, %s)"
+ msgstr "%s (%s, %s)"
+@@ -308,11 +305,11 @@ msgstr "(jako administrátor)"
+ msgid "Filename"
+ msgstr "Název souboru"
+ 
+-#: src/View/ListView.vala:27 src/View/AbstractDirectoryView.vala:2158
++#: src/View/ListView.vala:27 src/View/AbstractDirectoryView.vala:2167
+ msgid "Size"
+ msgstr "Velikost"
+ 
+-#: src/View/ListView.vala:28 src/View/AbstractDirectoryView.vala:2163
++#: src/View/ListView.vala:28 src/View/AbstractDirectoryView.vala:2172
+ msgid "Type"
+ msgstr "Typ"
+ 
+@@ -320,7 +317,7 @@ msgstr "Typ"
+ msgid "Modified"
+ msgstr "Změněno"
+ 
+-#: src/View/DirectoryNotFound.vala:27 src/View/ViewContainer.vala:407
++#: src/View/DirectoryNotFound.vala:27 src/View/ViewContainer.vala:406
+ msgid "This Folder Does Not Exist"
+ msgstr "Tato složka neexistuje"
+ 
+@@ -339,18 +336,16 @@ msgid "Create the folder \"%s\""
+ msgstr "Vytvořit složku „%s“"
+ 
+ #: src/View/DirectoryNotFound.vala:45
+-#, fuzzy
+ msgid "Failed to create the folder"
+ msgstr ""
+-"Selhalo vytvoření složky\n"
++"Nepodařilo se vytvořit složku\n"
+ "\n"
+ "%s"
+ 
+ #: src/View/AbstractDirectoryView.vala:820
+ #: src/View/AbstractDirectoryView.vala:1127
+-#, fuzzy
+ msgid "Cannot execute this file"
+-msgstr "Tento soubor nelze otevřít"
++msgstr "Tento soubor nelze spustit"
+ 
+ #: src/View/AbstractDirectoryView.vala:841
+ msgid "Cannot open this file"
+@@ -372,208 +367,205 @@ msgstr "Zadán neplatný název souboru"
+ msgid "New Tab"
+ msgstr "Nová karta"
+ 
+-#: src/View/AbstractDirectoryView.vala:1866
++#: src/View/AbstractDirectoryView.vala:1869
+ msgid "Run"
+ msgstr "Spustit"
+ 
+-#: src/View/AbstractDirectoryView.vala:1873
++#: src/View/AbstractDirectoryView.vala:1876
+ #, c-format
+ msgid "Open in %s"
+ msgstr "Otevřít v %s"
+ 
+-#: src/View/AbstractDirectoryView.vala:1942
++#: src/View/AbstractDirectoryView.vala:1945
+ msgid "Open in"
+ msgstr "Otevřít v"
+ 
+-#: src/View/AbstractDirectoryView.vala:1944
+-#: src/View/Widgets/BreadcrumbsEntry.vala:491
++#: src/View/AbstractDirectoryView.vala:1947
++#: src/View/Widgets/BreadcrumbsEntry.vala:487
+ msgid "Open with"
+ msgstr "Otevřít s"
+ 
+-#: src/View/AbstractDirectoryView.vala:1950
++#: src/View/AbstractDirectoryView.vala:1953
+ msgid "Paste"
+ msgstr "Vložit"
+ 
+-#: src/View/AbstractDirectoryView.vala:1955
++#: src/View/AbstractDirectoryView.vala:1958
+ msgid "Bookmark"
+ msgstr "Vytvořit záložku"
+ 
+-#: src/View/AbstractDirectoryView.vala:1970
++#: src/View/AbstractDirectoryView.vala:1973
+ msgid "Cut"
+ msgstr "Vyjmout"
+ 
+-#: src/View/AbstractDirectoryView.vala:1977
++#: src/View/AbstractDirectoryView.vala:1980
+ msgid "Copy"
+ msgstr "Kopírovat"
+ 
+-#: src/View/AbstractDirectoryView.vala:1984
++#: src/View/AbstractDirectoryView.vala:1987
+ msgid "Move to Trash"
+ msgstr "Přesunout do koše"
+ 
+-#: src/View/AbstractDirectoryView.vala:1989
++#: src/View/AbstractDirectoryView.vala:1992
+ msgid "Delete permanently"
+ msgstr "Odstranit navždy"
+ 
+-#: src/View/AbstractDirectoryView.vala:1994
++#: src/View/AbstractDirectoryView.vala:1997
+ msgid "Restore from Trash"
+ msgstr "Obnovit z Koše"
+ 
+-#: src/View/AbstractDirectoryView.vala:2005
++#: src/View/AbstractDirectoryView.vala:2008
+ msgid "Open Parent Folder"
+ msgstr "Otevřít nadřazenou složku"
+ 
+-#: src/View/AbstractDirectoryView.vala:2008
++#: src/View/AbstractDirectoryView.vala:2011
+ msgid "Remove from History"
+ msgstr "Odebrat z historie"
+ 
+-#: src/View/AbstractDirectoryView.vala:2024
+-#, fuzzy
+-#| msgid "Rename"
++#: src/View/AbstractDirectoryView.vala:2027
+ msgid "Rename…"
+-msgstr "Přejmenovat"
++msgstr "Přejmenovat…"
+ 
+-#: src/View/AbstractDirectoryView.vala:2031
++#: src/View/AbstractDirectoryView.vala:2034
+ msgid "Copy as Link"
+ msgstr "Kopírovat jako odkaz"
+ 
+-#: src/View/AbstractDirectoryView.vala:2047
++#: src/View/AbstractDirectoryView.vala:2052
+ msgid "Paste Link into Folder"
+ msgstr "Vložit odkaz do složky"
+ 
+-#: src/View/AbstractDirectoryView.vala:2049
++#: src/View/AbstractDirectoryView.vala:2054
+ msgid "Paste into Folder"
+ msgstr "Vložit do složky"
+ 
+-#: src/View/AbstractDirectoryView.vala:2075
++#: src/View/AbstractDirectoryView.vala:2082
+ msgid "Show Hidden Files"
+ msgstr "Zobrazovat skryté soubory"
+ 
+-#: src/View/AbstractDirectoryView.vala:2078
++#: src/View/AbstractDirectoryView.vala:2085
+ msgid "Show Remote Thumbnails"
+ msgstr "Zobrazit vzdálené náhledy"
+ 
+-#: src/View/AbstractDirectoryView.vala:2081
+-#, fuzzy
++#: src/View/AbstractDirectoryView.vala:2088
+ msgid "Hide Thumbnails"
+-msgstr "Zobrazit vzdálené náhledy"
++msgstr "Skrýt náhledy"
+ 
+-#: src/View/AbstractDirectoryView.vala:2101
++#: src/View/AbstractDirectoryView.vala:2108
+ msgid "Paste Link"
+ msgstr "Vložit odkaz"
+ 
+-#: src/View/AbstractDirectoryView.vala:2153
++#: src/View/AbstractDirectoryView.vala:2162
+ msgid "Name"
+ msgstr "Název souboru"
+ 
+-#: src/View/AbstractDirectoryView.vala:2168
++#: src/View/AbstractDirectoryView.vala:2177
+ msgid "Date"
+ msgstr "Změněno"
+ 
+-#: src/View/AbstractDirectoryView.vala:2173
++#: src/View/AbstractDirectoryView.vala:2182
+ msgid "Reversed Order"
+ msgstr "Opačné pořadí"
+ 
+-#: src/View/AbstractDirectoryView.vala:2176
++#: src/View/AbstractDirectoryView.vala:2185
+ msgid "Folders Before Files"
+ msgstr "Složky před soubory"
+ 
+-#: src/View/AbstractDirectoryView.vala:2188
++#: src/View/AbstractDirectoryView.vala:2197
+ msgid "Sort by"
+ msgstr "Seřadit podle"
+ 
+-#: src/View/AbstractDirectoryView.vala:2196
++#: src/View/AbstractDirectoryView.vala:2205
+ msgid "Folder"
+ msgstr "Složka"
+ 
+-#: src/View/AbstractDirectoryView.vala:2202
++#: src/View/AbstractDirectoryView.vala:2211
+ msgid "Empty File"
+ msgstr "Prázdný soubor"
+ 
+-#: src/View/AbstractDirectoryView.vala:2252
++#: src/View/AbstractDirectoryView.vala:2262
+ msgid "New"
+ msgstr "Nový"
+ 
+-#: src/View/AbstractDirectoryView.vala:2489
++#: src/View/AbstractDirectoryView.vala:2499
+ #, c-format
+ msgid "Untitled %s"
+ msgstr "Nepojmenovaný soubor %s"
+ 
+-#: src/View/AbstractDirectoryView.vala:2850
+-#: src/View/AbstractDirectoryView.vala:3045
++#: src/View/AbstractDirectoryView.vala:2860
++#: src/View/AbstractDirectoryView.vala:3055
+ msgid "Cannot remove files from here"
+ msgstr "Nelze odstranit soubory z tohoto místa"
+ 
+-#: src/View/AbstractDirectoryView.vala:2851
+-#: src/View/AbstractDirectoryView.vala:3030
+-#: src/View/AbstractDirectoryView.vala:3046
++#: src/View/AbstractDirectoryView.vala:2861
++#: src/View/AbstractDirectoryView.vala:3040
++#: src/View/AbstractDirectoryView.vala:3056
+ msgid "You do not have permission to change this location"
+ msgstr "Nemáte oprávnění měnit toto umístění"
+ 
+-#: src/View/AbstractDirectoryView.vala:3005
++#: src/View/AbstractDirectoryView.vala:3015
+ msgid "Cannot copy files that are in the trash"
+ msgstr "Nelze kopírovat soubory, které se nacházejí v koši"
+ 
+-#: src/View/AbstractDirectoryView.vala:3006
++#: src/View/AbstractDirectoryView.vala:3016
+ msgid "Cutting the selection instead"
+ msgstr "Místo toho vyjmout výběr"
+ 
+-#: src/View/AbstractDirectoryView.vala:3029
++#: src/View/AbstractDirectoryView.vala:3039
+ msgid "Cannot paste files here"
+ msgstr "Na toto místo nelze vložit soubory"
+ 
+-#: src/View/ViewContainer.vala:386 src/View/Sidebar.vala:578
++#: src/View/ViewContainer.vala:385 src/View/Sidebar.vala:578
+ msgid "Home"
+ msgstr "Domů"
+ 
+-#: src/View/ViewContainer.vala:408
++#: src/View/ViewContainer.vala:407
+ msgid "You cannot create a folder here."
+ msgstr "Zde nelze vytvořit složku."
+ 
+-#: src/View/ViewContainer.vala:411
++#: src/View/ViewContainer.vala:410
+ msgid "The network is unavailable"
+ msgstr "Síť není k dispozici"
+ 
+-#: src/View/ViewContainer.vala:412
++#: src/View/ViewContainer.vala:411
+ msgid "A working network is needed to reach this folder"
+ msgstr "Pro přístup k této složce je potřeba funkgující síť"
+ 
+-#: src/View/ViewContainer.vala:415
++#: src/View/ViewContainer.vala:414
+ msgid "This Folder Does Not Belong to You"
+ msgstr "Tato složka nepatří Vám"
+ 
+-#: src/View/ViewContainer.vala:416
++#: src/View/ViewContainer.vala:415
+ msgid "You don't have permission to view this folder."
+ msgstr "Nemáte dostatečná práva k prohlížení této složky."
+ 
+-#: src/View/ViewContainer.vala:418
++#: src/View/ViewContainer.vala:417
+ msgid "Unable to Mount Folder"
+ msgstr "Složku nelze připojit"
+ 
+-#: src/View/ViewContainer.vala:419
++#: src/View/ViewContainer.vala:418
+ msgid "Could not connect to the server for this folder."
+ msgstr "Pro tuto složku se nepodařilo připojit k serveru."
+ 
+-#: src/View/ViewContainer.vala:422
++#: src/View/ViewContainer.vala:421
+ msgid "Unable to Display Folder Contents"
+ msgstr "Nelze zobrazit obsah složky"
+ 
+-#: src/View/ViewContainer.vala:423
++#: src/View/ViewContainer.vala:422
+ msgid "The operation timed out."
+ msgstr "Vypršel časový limit operace."
+ 
+-#: src/View/ViewContainer.vala:425
++#: src/View/ViewContainer.vala:424
+ msgid "Unable to Show Folder"
+ msgstr "Nelze zobrazit složku"
+ 
+-#: src/View/ViewContainer.vala:426
++#: src/View/ViewContainer.vala:425
+ msgid "The server for this folder could not be located."
+ msgstr "Server pro tuto složku nelze nalézt."
+ 
+-#: src/View/ViewContainer.vala:437
++#: src/View/ViewContainer.vala:436
+ msgid "File not Found"
+ msgstr "Soubor nenalezen"
+ 
+-#: src/View/ViewContainer.vala:438
++#: src/View/ViewContainer.vala:437
+ msgid "The file selected no longer exists."
+ msgstr "Vybraný soubor již neexistuje."
+ 
+@@ -670,19 +662,19 @@ msgstr "Přístup odepřen"
+ 
+ #: src/View/PrivacyModeOn.vala:28
+ msgid "Privacy mode is on"
+-msgstr ""
++msgstr "Anonymní režim je zapnutý"
+ 
+ #: src/View/PrivacyModeOn.vala:28
+ msgid "No recent files are remembered"
+-msgstr ""
++msgstr "Nejsou zapamatovány nedávno otevřené soubory"
+ 
+ #: src/View/PrivacyModeOn.vala:30
+ msgid "Change security settings"
+-msgstr ""
++msgstr "Změnit nastavení zabezpečení"
+ 
+ #: src/View/PrivacyModeOn.vala:31
+ msgid "Open the system security and privacy settings app"
+-msgstr ""
++msgstr "Otevřít aplikaci pro zabezpečení systému a nastavení soukromí"
+ 
+ #: src/View/PopupMenuBuilder.vala:49
+ msgid "Open"
+@@ -721,15 +713,15 @@ msgstr "V_ysunout"
+ msgid "Search or Type Path"
+ msgstr "Hledat nebo zadat cestu"
+ 
+-#: src/View/Widgets/BreadcrumbsEntry.vala:452
++#: src/View/Widgets/BreadcrumbsEntry.vala:448
+ msgid "Open in New Tab"
+ msgstr "Otevřít v nové kartě"
+ 
+-#: src/View/Widgets/BreadcrumbsEntry.vala:459
++#: src/View/Widgets/BreadcrumbsEntry.vala:455
+ msgid "Open in New Window"
+ msgstr "Otevřít v novém okně"
+ 
+-#: src/View/Widgets/BreadcrumbsEntry.vala:498
++#: src/View/Widgets/BreadcrumbsEntry.vala:494
+ msgid "Open in Other Application…"
+ msgstr "Otevřít v jiné aplikaci…"
+ 
+@@ -751,70 +743,70 @@ msgstr "Obnovit složku"
+ msgid "Searching…"
+ msgstr "Hledání…"
+ 
+-#: src/View/Widgets/OverlayBar.vala:216
++#: src/View/Widgets/OverlayBar.vala:209
+ #, c-format
+ msgid "%u folders"
+ msgstr "%u složek"
+ 
+-#: src/View/Widgets/OverlayBar.vala:218 src/View/Widgets/OverlayBar.vala:228
++#: src/View/Widgets/OverlayBar.vala:211 src/View/Widgets/OverlayBar.vala:221
+ #, c-format
+ msgid " and %u other item (%s) selected"
+ msgstr " a %u další položka (%s) zvolena"
+ 
+-#: src/View/Widgets/OverlayBar.vala:219 src/View/Widgets/OverlayBar.vala:229
++#: src/View/Widgets/OverlayBar.vala:212 src/View/Widgets/OverlayBar.vala:222
+ #, c-format
+ msgid " and %u other items (%s) selected"
+ msgstr " a %u dalších položek (%s) zvoleno"
+ 
+-#: src/View/Widgets/OverlayBar.vala:222 src/View/Widgets/OverlayBar.vala:232
++#: src/View/Widgets/OverlayBar.vala:215 src/View/Widgets/OverlayBar.vala:225
+ msgid " selected"
+ msgstr " zvoleno"
+ 
+-#: src/View/Widgets/OverlayBar.vala:235
++#: src/View/Widgets/OverlayBar.vala:228
+ #, c-format
+ msgid "%u items selected (%s)"
+ msgstr "%u označených položek (%s)"
+ 
+ #. TRANSLATORS: %u will be substituted by the number of sub folders
+-#: src/View/Widgets/OverlayBar.vala:279
++#: src/View/Widgets/OverlayBar.vala:272
+ #, c-format
+ msgid "%u sub-folder, "
+ msgstr "%u podsložka, "
+ 
+-#: src/View/Widgets/OverlayBar.vala:279
++#: src/View/Widgets/OverlayBar.vala:272
+ #, c-format
+ msgid "%u sub-folders, "
+ msgstr "%u podsložky, "
+ 
+ #. TRANSLATORS: %u will be substituted by the number of readable files
+-#: src/View/Widgets/OverlayBar.vala:285
++#: src/View/Widgets/OverlayBar.vala:278
+ #, c-format
+ msgid "%u file, "
+ msgstr "%u soubor, "
+ 
+-#: src/View/Widgets/OverlayBar.vala:285
++#: src/View/Widgets/OverlayBar.vala:278
+ #, c-format
+ msgid "%u files, "
+ msgstr "%u soubory, "
+ 
+ #. TRANSLATORS: %s will be substituted by the approximate disk space used by the folder
+-#: src/View/Widgets/OverlayBar.vala:295
++#: src/View/Widgets/OverlayBar.vala:288
+ #, c-format
+ msgid "%s approx."
+ msgstr "%s přibl."
+ 
+ #. TRANSLATORS: 'size' refers to disk space
+-#: src/View/Widgets/OverlayBar.vala:298
++#: src/View/Widgets/OverlayBar.vala:291
+ msgid "unknown size"
+ msgstr "neznámá velikost"
+ 
+ #. TRANSLATORS: %u will be substituted by the number of unreadable files
+-#: src/View/Widgets/OverlayBar.vala:302
++#: src/View/Widgets/OverlayBar.vala:295
+ #, c-format
+ msgid "%u file not readable"
+ msgstr "%u soubor nečitelný"
+ 
+-#: src/View/Widgets/OverlayBar.vala:302
++#: src/View/Widgets/OverlayBar.vala:295
+ #, c-format
+ msgid "%u files not readable"
+ msgstr "%u souborů nečitelných"
+@@ -920,7 +912,7 @@ msgid "Remember this password"
+ msgstr "Zapamatovat si heslo"
+ 
+ #: libcore/ConnectServerDialog.vala:189 libcore/DndHandler.vala:103
+-#: libcore/FileConflictDialog.vala:189
++#: libcore/FileConflictDialog.vala:190
+ msgid "Cancel"
+ msgstr "Zrušit"
+ 
+@@ -961,56 +953,56 @@ msgstr "Odkaz sem"
+ msgid "File conflict"
+ msgstr "Konflikt souborů"
+ 
+-#: libcore/FileConflictDialog.vala:115
++#: libcore/FileConflictDialog.vala:116
+ msgid "Original file"
+ msgstr "Původní soubor"
+ 
+-#: libcore/FileConflictDialog.vala:133 libcore/FileConflictDialog.vala:161
++#: libcore/FileConflictDialog.vala:134 libcore/FileConflictDialog.vala:162
+ msgid "Last modified:"
+ msgstr "Naposledy změněno:"
+ 
+-#: libcore/FileConflictDialog.vala:143
++#: libcore/FileConflictDialog.vala:144
+ msgid "Replace with"
+ msgstr "Nahradit s"
+ 
+-#: libcore/FileConflictDialog.vala:171
++#: libcore/FileConflictDialog.vala:172
+ msgid "Reset"
+ msgstr "Obnovit výchozí"
+ 
+-#: libcore/FileConflictDialog.vala:181
++#: libcore/FileConflictDialog.vala:182
+ msgid "_Select a new name for the destination"
+ msgstr "Vybrat nový název pro _cíl"
+ 
+-#: libcore/FileConflictDialog.vala:184
++#: libcore/FileConflictDialog.vala:185
+ msgid "Apply this action to all files"
+ msgstr "Použít tuto akci na všechny soubory"
+ 
+-#: libcore/FileConflictDialog.vala:186 libcore/StockDialogs.vala:22
++#: libcore/FileConflictDialog.vala:187 libcore/StockDialogs.vala:22
+ msgid "_Skip"
+ msgstr "Pře_skočit"
+ 
+-#: libcore/FileConflictDialog.vala:187
++#: libcore/FileConflictDialog.vala:188
+ msgid "Re_name"
+ msgstr "Přejme_novat"
+ 
+-#: libcore/FileConflictDialog.vala:191
++#: libcore/FileConflictDialog.vala:192
+ msgid "Keep Newest"
+ msgstr "Udržovat nejnovější"
+ 
+-#: libcore/FileConflictDialog.vala:192
++#: libcore/FileConflictDialog.vala:193
+ msgid "Skip if original was modified more recently"
+ msgstr "Přeskočit pokud byl originální soubor nedávno změněn"
+ 
+-#: libcore/FileConflictDialog.vala:194
++#: libcore/FileConflictDialog.vala:195
+ msgid "Replace"
+ msgstr "Nahradit"
+ 
+-#: libcore/FileConflictDialog.vala:310
++#: libcore/FileConflictDialog.vala:307
+ #, c-format
+ msgid "Merge folder \"%s\"?"
+ msgstr "Sloučit složku „%s“?"
+ 
+-#: libcore/FileConflictDialog.vala:311
++#: libcore/FileConflictDialog.vala:308
+ msgid ""
+ "Merging will ask for confirmation before replacing any files in the folder "
+ "that conflict with the files being copied."
+@@ -1018,60 +1010,60 @@ msgstr ""
+ "Pokud při slučování bude kterýkoliv ze souborů ve složce v konfliktu s "
+ "kopírovanými soubory, budete před jeho nahrazením dotázáni na potvrzení."
+ 
+-#: libcore/FileConflictDialog.vala:313
++#: libcore/FileConflictDialog.vala:310
+ #, c-format
+ msgid "An older folder with the same name already exists in \"%s\"."
+ msgstr "Starší složka se stejným názvem již existuje v „%s“."
+ 
+-#: libcore/FileConflictDialog.vala:315
++#: libcore/FileConflictDialog.vala:312
+ #, c-format
+ msgid "A newer folder with the same name already exists in \"%s\"."
+ msgstr "Novější složka se stejným názvem již existuje v „%s“."
+ 
+-#: libcore/FileConflictDialog.vala:317
++#: libcore/FileConflictDialog.vala:314
+ #, c-format
+ msgid "Another folder with the same name already exists in \"%s\"."
+ msgstr "Jiná složka se stejným názvem již existuje v „%s“."
+ 
+-#: libcore/FileConflictDialog.vala:320
++#: libcore/FileConflictDialog.vala:317
+ #, c-format
+ msgid "Replace folder \"%s\"?"
+ msgstr "Nahradit složku „%s“?"
+ 
+-#: libcore/FileConflictDialog.vala:321
++#: libcore/FileConflictDialog.vala:318
+ msgid "Replacing it will remove all files in the folder."
+ msgstr "Nahrazením se odstraní všechny soubory ve složce."
+ 
+-#: libcore/FileConflictDialog.vala:322
++#: libcore/FileConflictDialog.vala:319
+ #, c-format
+ msgid "A folder with the same name already exists in \"%s\"."
+ msgstr "Složka se stejným názvem již existuje v „%s“."
+ 
+-#: libcore/FileConflictDialog.vala:325
++#: libcore/FileConflictDialog.vala:322
+ #, c-format
+ msgid "Replace file \"%s\"?"
+ msgstr "Nahradit soubor „%s“?"
+ 
+-#: libcore/FileConflictDialog.vala:326
++#: libcore/FileConflictDialog.vala:323
+ msgid "Replacing it will overwrite its content."
+ msgstr "Při nahrazení se přepíše jeho obsah."
+ 
+-#: libcore/FileConflictDialog.vala:329
++#: libcore/FileConflictDialog.vala:326
+ #, c-format
+ msgid "An older file with the same name already exists in \"%s\"."
+ msgstr "Starší soubor se stejným názvem již existuje v „%s“."
+ 
+-#: libcore/FileConflictDialog.vala:331
++#: libcore/FileConflictDialog.vala:328
+ #, c-format
+ msgid "A newer file with the same name already exists in \"%s\"."
+ msgstr "Novější soubor se stejným názvem již existuje v „%s“."
+ 
+-#: libcore/FileConflictDialog.vala:333
++#: libcore/FileConflictDialog.vala:330
+ #, c-format
+ msgid "Another file with the same name already exists in \"%s\"."
+ msgstr "Jiný soubor se stejným názvem již existuje v „%s“."
+ 
+-#: libcore/FileConflictDialog.vala:359
++#: libcore/FileConflictDialog.vala:356
+ msgid "Merge"
+ msgstr "Sloučit"
+ 
+@@ -1091,21 +1083,21 @@ msgstr "Přejmenování na '%s' se nezdařilo"
+ 
+ #. TRANSLATORS '%s' is a placeholder for the time. It may be moved but not changed.
+ #: libcore/FileUtils.vala:534
+-#, fuzzy, c-format
++#, c-format
+ msgid "Today at %s"
+-msgstr "Dnes v %-H:%M"
++msgstr "Dnes v %s"
+ 
+ #. TRANSLATORS '%s' is a placeholder for the time. It may be moved but not changed.
+-#: libcore/FileUtils.vala:540
+-#, fuzzy, c-format
++#: libcore/FileUtils.vala:542
++#, c-format
+ msgid "Yesterday at %s"
+-msgstr "Včera v %-H:%M"
++msgstr "Včera v %s"
+ 
+ #. TRANSLATORS '%%A' is a placeholder for the day name, '%s' is a placeholder for the time. These may be moved and reordered but not changed.
+-#: libcore/FileUtils.vala:546
+-#, fuzzy, c-format
++#: libcore/FileUtils.vala:550
++#, c-format
+ msgid "%%A at %s"
+-msgstr "%A v %-H:%M"
++msgstr "%%A v %s"
+ 
+ #: libcore/gof-directory-async.vala:690
+ msgid "Server did not respond within time limit"
+@@ -1117,14 +1109,12 @@ msgid "Preparing"
+ msgstr "Připravuje se"
+ 
+ #: libcore/StockDialogs.vala:20
+-#, fuzzy
+ msgid "_Cancel"
+-msgstr "Zrušit"
++msgstr "_Zrušit"
+ 
+ #: libcore/StockDialogs.vala:21
+-#, fuzzy
+ msgid "Delete"
+-msgstr "Smazáno:"
++msgstr "Smazat"
+ 
+ #: libcore/StockDialogs.vala:23
+ msgid "S_kip All"
+@@ -1191,10 +1181,9 @@ msgid "Emptying Trash"
+ msgstr "Vyprazdňuje se koš"
+ 
+ #: libcore/FileOperations/MountUtils.vala:26
+-#, fuzzy, c-format
+-#| msgid "Unable to mount %s"
++#, c-format
+ msgid "Unable to mount '%s'"
+-msgstr "Nelze připojit %s"
++msgstr "„%s“ se nedaří připojit (mount)"
+ 
+ #: libcore/marlin-file-operations.c:156
+ #, c-format
+@@ -1270,9 +1259,9 @@ msgstr " (%'d"
+ #. TRANSLATORS: '\"%s\"' is a placeholder for the quoted basename of a file.  It may change position but must not be translated or removed
+ #. '\"' is an escaped quoted mark.  This may be replaced with another suitable character (escaped if necessary)
+ #: libcore/marlin-file-operations.c:1060
+-#, fuzzy, c-format
++#, c-format
+ msgid "Are you sure you want to permanently delete \"%s\" from the trash?"
+-msgstr "Jste si jisti, že chcete z koše nenávratně smazat „%B“?"
++msgstr "Opravdu chcete „%s“ vysypat z koše a nadobro tak smazat?"
+ 
+ #: libcore/marlin-file-operations.c:1064
+ #, c-format
+@@ -1293,10 +1282,9 @@ msgstr "Pokud položku smažete, bude nenávratně ztracena."
+ #. TRANSLATORS: '\"%s\"' is a placeholder for the quoted basename of a file.  It may change position but must not be translated or removed
+ #. '\"' is an escaped quoted mark.  This may be replaced with another suitable character (escaped if necessary)
+ #: libcore/marlin-file-operations.c:1100
+-#, fuzzy, c-format
+-#| msgid "Permanently delete all items from Trash?"
++#, c-format
+ msgid "Permanently delete “%s”?"
+-msgstr "Trvale smazat všechny položky z koše?"
++msgstr "Smazat nadobro „%s“?"
+ 
+ #: libcore/marlin-file-operations.c:1103
+ #, c-format
+@@ -1309,7 +1297,7 @@ msgstr[2] "Opravdu chcete nenávratně smazat %'d vybraných položek?"
+ 
+ #: libcore/marlin-file-operations.c:1112
+ msgid "Deleted items are not sent to Trash and are not recoverable."
+-msgstr ""
++msgstr "Smazané položky nejsou posílány do Koše a proto není možné je obnovit."
+ 
+ #: libcore/marlin-file-operations.c:1146
+ #, c-format
+@@ -1326,12 +1314,12 @@ msgstr "Mazání souborů"
+ #. TRANSLATORS: %s will expand to a time like "2 minutes". It must not be translated or removed.
+ #. The singular/plural form will be used depending on the remaining time (i.e. the %s argument).
+ #: libcore/marlin-file-operations.c:1166
+-#, fuzzy, c-format
++#, c-format
+ msgid "%s left"
+ msgid_plural "%s left"
+-msgstr[0] "%T zbývá"
+-msgstr[1] "%T zbývají"
+-msgstr[2] "%T zbývá"
++msgstr[0] "%s zbývá"
++msgstr[1] "%s zbývají"
++msgstr[2] "%s zbývá"
+ 
+ #: libcore/marlin-file-operations.c:1235 libcore/marlin-file-operations.c:1275
+ #: libcore/marlin-file-operations.c:1321 libcore/marlin-file-operations.c:1403
+@@ -1342,22 +1330,22 @@ msgstr "Chyba během mazání."
+ #. TRANSLATORS: '\"%s\"' is a placeholder for the quoted basename of a file.  It may change position but must not be translated or removed
+ #. '\"' is an escaped quoted mark.  This may be replaced with another suitable character (escaped if necessary)
+ #: libcore/marlin-file-operations.c:1241
+-#, fuzzy, c-format
++#, c-format
+ msgid ""
+ "Files in the folder \"%s\" cannot be deleted because you do not have "
+ "permissions to see them."
+ msgstr ""
+-"Soubory ve složce „%B“ nelze smazat, protože nemáte oprávnění na jejich "
++"Soubory ve složce „%s“ nelze smazat, protože nemáte oprávnění na jejich "
+ "zobrazení."
+ 
+ #. TRANSLATORS: '\"%s\"' is a placeholder for the quoted basename of a file.  It may change position but must not be translated or removed
+ #. '\"' is an escaped quoted mark.  This may be replaced with another suitable character (escaped if necessary)
+ #: libcore/marlin-file-operations.c:1246 libcore/marlin-file-operations.c:1974
+ #: libcore/marlin-file-operations.c:3052
+-#, fuzzy, c-format
++#, c-format
+ msgid ""
+ "There was an error getting information about the files in the folder \"%s\"."
+-msgstr "Nastala chyba při zjišťování informací o souborech ve složce \"%B\"."
++msgstr "Nastala chyba při zjišťování informací o souborech ve složce „%s“."
+ 
+ #: libcore/marlin-file-operations.c:1256 libcore/marlin-file-operations.c:3062
+ msgid "_Skip files"
+@@ -1366,31 +1354,31 @@ msgstr "Pře_skočit soubory"
+ #. TRANSLATORS: '\"%s\"' is a placeholder for the quoted basename of a file.  It may change position but must not be translated or removed
+ #. '\"' is an escaped quoted mark.  This may be replaced with another suitable character (escaped if necessary)
+ #: libcore/marlin-file-operations.c:1280
+-#, fuzzy, c-format
++#, c-format
+ msgid ""
+ "The folder \"%s\" cannot be deleted because you do not have permissions to "
+ "read it."
+-msgstr "Složku „%B“ nelze smazat, protože nemáte oprávnění na její zobrazení."
++msgstr "Složku „%s“ nelze smazat, protože nemáte oprávnění na její zobrazení."
+ 
+ #. TRANSLATORS: '\"%s\"' is a placeholder for the quoted basename of a file.  It may change position but must not be translated or removed
+ #. '\"' is an escaped quoted mark.  This may be replaced with another suitable character (escaped if necessary)
+ #: libcore/marlin-file-operations.c:1285 libcore/marlin-file-operations.c:2019
+ #: libcore/marlin-file-operations.c:3104
+-#, fuzzy, c-format
++#, c-format
+ msgid "There was an error reading the folder \"%s\"."
+-msgstr "Došlo k chybě při čtení složky \"%B\"."
++msgstr "Došlo k chybě při čtení složky „%s“."
+ 
+ #. TRANSLATORS: %s is a placeholder for the basename of a file.  It may change position but must not be translated or removed
+ #: libcore/marlin-file-operations.c:1324
+-#, fuzzy, c-format
++#, c-format
+ msgid "Could not remove the folder %s."
+-msgstr "Nelze odstranit složku %B."
++msgstr "Nelze odstranit složku %s."
+ 
+ #. TRANSLATORS: %s is a placeholder for the basename of a file.  It may change position but must not be translated or removed
+ #: libcore/marlin-file-operations.c:1406
+-#, fuzzy, c-format
++#, c-format
+ msgid "There was an error deleting %s."
+-msgstr "Při mazání %B došlo k chybě."
++msgstr "Při mazání %s došlo k chybě."
+ 
+ #: libcore/marlin-file-operations.c:1491
+ msgid "Moving files to trash"
+@@ -1475,36 +1463,36 @@ msgstr "Mazání souborů"
+ #. So this represents something like "Preparing to copy 100 files (200 MB)"
+ #. The order in which %'d and %s appear can be changed by using the right positional specifier.
+ #: libcore/marlin-file-operations.c:1844
+-#, fuzzy, c-format
++#, c-format
+ msgid "Preparing to copy %'d file (%s)"
+ msgid_plural "Preparing to copy %'d files (%s)"
+-msgstr[0] "Připravuje se kopírování %'d souboru (%S)"
+-msgstr[1] "Připravuje se kopírování %'d souborů (%S)"
+-msgstr[2] "Připravuje se kopírování %'d souborů (%S)"
++msgstr[0] "Připravuje se kopírování %'d souboru (%s)"
++msgstr[1] "Připravuje se kopírování %'d souborů (%s)"
++msgstr[2] "Připravuje se kopírování %'d souborů (%s)"
+ 
+ #. TRANSLATORS: %'d is a placeholder for a number. It must be translated or removed.
+ #. %s is a placeholder for a size like "2 bytes" or "3 MB".  It must not be translated or removed.
+ #. So this represents something like "Preparing to move 100 files (200 MB)"
+ #. The order in which %'d and %s appear can be changed by using the right positional specifier.
+ #: libcore/marlin-file-operations.c:1856
+-#, fuzzy, c-format
++#, c-format
+ msgid "Preparing to move %'d file (%s)"
+ msgid_plural "Preparing to move %'d files (%s)"
+-msgstr[0] "Připravuje se přesun %'d souboru (%S)"
+-msgstr[1] "Připravuje se přesun %'d souborů (%S)"
+-msgstr[2] "Připravuje se přesun %'d souborů (%S)"
++msgstr[0] "Připravuje se přesun %'d souboru (%s)"
++msgstr[1] "Připravuje se přesun %'d souborů (%s)"
++msgstr[2] "Připravuje se přesun %'d souborů (%s)"
+ 
+ #. TRANSLATORS: %'d is a placeholder for a number. It must be translated or removed.
+ #. %s is a placeholder for a size like "2 bytes" or "3 MB".  It must not be translated or removed.
+ #. So this represents something like "Preparing to delete 100 files (200 MB)"
+ #. The order in which %'d and %s appear can be changed by using the right positional specifier.
+ #: libcore/marlin-file-operations.c:1868
+-#, fuzzy, c-format
++#, c-format
+ msgid "Preparing to delete %'d file (%s)"
+ msgid_plural "Preparing to delete %'d files (%s)"
+-msgstr[0] "Připravuje se smazání %'d souboru (%S)"
+-msgstr[1] "Připravuje se smazání %'d souborů (%S)"
+-msgstr[2] "Připravuje se smazání %'d souborů (%S)"
++msgstr[0] "Připravuje se smazání %'d souboru (%s)"
++msgstr[1] "Připravuje se smazání %'d souborů (%s)"
++msgstr[2] "Připravuje se smazání %'d souborů (%s)"
+ 
+ #: libcore/marlin-file-operations.c:1875
+ #, c-format
+@@ -1531,46 +1519,46 @@ msgstr "Chyba při přesunu souborů do koše."
+ #. TRANSLATORS: '\"%s\"' is a placeholder for the quoted basename of a file.  It may change position but must not be translated or removed
+ #. '\"' is an escaped quoted mark.  This may be replaced with another suitable character (escaped if necessary)
+ #: libcore/marlin-file-operations.c:1969
+-#, fuzzy, c-format
++#, c-format
+ msgid ""
+ "Files in the folder \"%s\" cannot be handled because you do not have "
+ "permissions to see them."
+ msgstr ""
+-"Soubory ve složce \"%B\" nelze spravovat, protože nemáte oprávnění pro "
+-"jejich zobrazení."
++"Soubory ve složce „%s“ nelze spravovat, protože nemáte oprávnění pro jejich "
++"zobrazení."
+ 
+ #. TRANSLATORS: '\"%s\"' is a placeholder for the quoted basename of a file.  It may change position but must not be translated or removed
+ #. '\"' is an escaped quoted mark.  This may be replaced with another suitable character (escaped if necessary)
+ #: libcore/marlin-file-operations.c:2014
+-#, fuzzy, c-format
++#, c-format
+ msgid ""
+ "The folder \"%s\" cannot be handled because you do not have permissions to "
+ "read it."
+-msgstr "Složku \"%B\" nelze spravovat, protože nemáte oprávnění na její čtení."
++msgstr "Složku „%s“ nelze spravovat, protože nemáte oprávnění na její čtení."
+ 
+ #. TRANSLATORS: '\"%s\"' is a placeholder for the quoted basename of a file.  It may change position but must not be translated or removed
+ #. '\"' is an escaped quoted mark.  This may be replaced with another suitable character (escaped if necessary)
+ #: libcore/marlin-file-operations.c:2101
+-#, fuzzy, c-format
++#, c-format
+ msgid ""
+ "The file \"%s\" cannot be handled because you do not have permissions to "
+ "read it."
+-msgstr "Soubor \"%B\" nelze spravovat, protože nemáte oprávnění jej číst."
++msgstr "Soubor „%s“ nelze spravovat, protože nemáte oprávnění jej číst."
+ 
+ #. TRANSLATORS: '\"%s\"' is a placeholder for the quoted basename of a file.  It may change position but must not be translated or removed
+ #. '\"' is an escaped quoted mark.  This may be replaced with another suitable character (escaped if necessary)
+ #: libcore/marlin-file-operations.c:2106
+-#, fuzzy, c-format
++#, c-format
+ msgid "There was an error getting information about \"%s\"."
+-msgstr "Při získávání informací o \"%B\" došlo k chybě."
++msgstr "Při získávání informací o „%s“ došlo k chybě."
+ 
+ #. TRANSLATORS: '\"%s\"' is a placeholder for the quoted basename of a file.  It may change position but must not be translated or removed
+ #. '\"' is an escaped quoted mark.  This may be replaced with another suitable character (escaped if necessary)
+ #: libcore/marlin-file-operations.c:2212 libcore/marlin-file-operations.c:2258
+ #: libcore/marlin-file-operations.c:2296 libcore/marlin-file-operations.c:2336
+-#, fuzzy, c-format
++#, c-format
+ msgid "Error while copying to \"%s\"."
+-msgstr "Chyba při kopírování do \"%B\"."
++msgstr "Chyba při kopírování do „%s“."
+ 
+ #: libcore/marlin-file-operations.c:2217
+ msgid "You do not have permissions to access the destination folder."
+@@ -1593,9 +1581,9 @@ msgstr "V cíli není dostatek místa. Zkuste uvolnit místo odstraněním soubo
+ #. TRANSLATORS: %s is a placeholder for a size like "2 bytes" or "3 MB".  It must not be translated or removed.
+ #. So this represents something like "There is 100 MB available, but 150 MB is required".
+ #: libcore/marlin-file-operations.c:2304
+-#, fuzzy, c-format
++#, c-format
+ msgid "There is %s available, but %s is required."
+-msgstr "Dostupno je %S, ale vyžadováno je %S."
++msgstr "Dostupné je %s, ale vyžadováno je %s."
+ 
+ #: libcore/marlin-file-operations.c:2338
+ msgid "The destination is read-only."
+@@ -1604,71 +1592,71 @@ msgstr "Cílové umístění je pouze pro čtení."
+ #. TRANSLATORS: \"%s\" is a placeholder for the quoted basename of a file.  It may change position but must not be translated or removed.
+ #. \" is an escaped quotation mark.  This may be replaced with another suitable character (escaped if necessary).
+ #: libcore/marlin-file-operations.c:2410
+-#, fuzzy, c-format
++#, c-format
+ msgid "Moving \"%s\" to \"%s\""
+-msgstr "Přesouvá se \"%B\" do \"%B\""
++msgstr "Přesouvá se „%s“ do „%s“"
+ 
+ #: libcore/marlin-file-operations.c:2411
+-#, fuzzy, c-format
++#, c-format
+ msgid "Copying \"%s\" to \"%s\""
+-msgstr "Kopíruje se \"%B\" do \"%B\""
++msgstr "Kopíruje se „%s“ do „%s“"
+ 
+ #. TRANSLATORS: \"%s\" is a placeholder for the quoted basename of a file.  It may change position but must not be translated or removed.
+ #. \" is an escaped quotation mark.  This may be replaced with another suitable character (escaped if necessary).
+ #: libcore/marlin-file-operations.c:2415
+-#, fuzzy, c-format
++#, c-format
+ msgid "Duplicating \"%s\""
+-msgstr "Zdvojování \"%B\""
++msgstr "Duplikuje se „%s“"
+ 
+ #. TRANSLATORS: \"%s\" is a placeholder for the quoted basename of a file.  It may change position but must not be translated or removed.
+ #. \" is an escaped quotation mark.  This may be replaced with another suitable character (escaped if necessary).
+ #. %'d is a placeholder for a number. It must not be translated or removed.
+ #. Placeholders must appear in the same order but otherwise may change position.
+ #: libcore/marlin-file-operations.c:2423
+-#, fuzzy, c-format
++#, c-format
+ msgid "Moving %'d file (in \"%s\") to \"%s\""
+ msgid_plural "Moving %'d files (in \"%s\") to \"%s\""
+-msgstr[0] "Přesouvá se %'d soubor (z \"%B\") do \"%B\""
+-msgstr[1] "Přesouvají se %'d soubory (z \"%B\") do \"%B\""
+-msgstr[2] "Přesouvá se %'d souborů (z \"%B\") do \"%B\""
++msgstr[0] "Přesouvá se %'d soubor (z „%s“) do „%s“"
++msgstr[1] "Přesouvají se %'d soubory (z „%s“) do „%s“"
++msgstr[2] "Přesouvá se %'d souborů (z „%s“) do „%s“"
+ 
+ #: libcore/marlin-file-operations.c:2426
+-#, fuzzy, c-format
++#, c-format
+ msgid "Copying %'d file (in \"%s\") to \"%s\""
+ msgid_plural "Copying %'d files (in \"%s\") to \"%s\""
+-msgstr[0] "Kopíruje se %'d soubor (z \"%B\") do \"%B\""
+-msgstr[1] "Kopírují se %'d soubory (z \"%B\") do \"%B\""
+-msgstr[2] "Kopíruje se %'d souborů (z \"%B\") do \"%B\""
++msgstr[0] "Kopíruje se %'d soubor (z „%s“) do „%s“"
++msgstr[1] "Kopírují se %'d soubory (z „%s“) do „%s“"
++msgstr[2] "Kopíruje se %'d souborů (z „%s“) do „%s“"
+ 
+ #. TRANSLATORS: \"%s\" is a placeholder for the quoted basename of a file.  It may change position but must not be translated or removed.
+ #. \" is an escaped quotation mark.  This may be replaced with another suitable character (escaped if necessary).
+ #: libcore/marlin-file-operations.c:2435
+-#, fuzzy, c-format
++#, c-format
+ msgid "Duplicating %'d file (in \"%s\")"
+ msgid_plural "Duplicating %'d files (in \"%s\")"
+-msgstr[0] "Zdvojuje se %'d soubor (v \"%B\")"
+-msgstr[1] "Zdvojují se %'d soubory (v \"%B\")"
+-msgstr[2] "Zdvojuje se %'d souborů (v \"%B\")"
++msgstr[0] "Duplikuje se %'d soubor (v „%s“)"
++msgstr[1] "Duplikují se %'d soubory (v „%s“)"
++msgstr[2] "Duplikuje se %'d souborů (v „%s“)"
+ 
+ #. TRANSLATORS: \"%s\" is a placeholder for the quoted basename of a file.  It may change position but must not be translated or removed.
+ #. \" is an escaped quotation mark.  This may be replaced with another suitable character (escaped if necessary).
+ #. %'d is a placeholder for a number. It must not be translated or removed.
+ #. Placeholders must appear in the same order but otherwise may change position.
+ #: libcore/marlin-file-operations.c:2447
+-#, fuzzy, c-format
++#, c-format
+ msgid "Moving %'d file to \"%s\""
+ msgid_plural "Moving %'d files to \"%s\""
+-msgstr[0] "Přesouvá se %'d soubor do \"%B\""
+-msgstr[1] "Přesouvají se %'d soubory do \"%B\""
+-msgstr[2] "Přesouvá se %'d souborů do \"%B\""
++msgstr[0] "Přesouvá se %'d soubor do „%s“"
++msgstr[1] "Přesouvají se %'d soubory do „%s“"
++msgstr[2] "Přesouvá se %'d souborů do „%s“"
+ 
+ #: libcore/marlin-file-operations.c:2450
+-#, fuzzy, c-format
++#, c-format
+ msgid "Copying %'d file to \"%s\""
+ msgid_plural "Copying %'d files to \"%s\""
+-msgstr[0] "Kopíruje se %'d soubor do \"%B\""
+-msgstr[1] "Kopírují se %'d soubory do \"%B\""
+-msgstr[2] "Kopíruje se %'d souborů do \"%B\""
++msgstr[0] "Kopíruje se %'d soubor do „%s“"
++msgstr[1] "Kopírují se %'d soubory do „%s“"
++msgstr[2] "Kopíruje se %'d souborů do „%s“"
+ 
+ #: libcore/marlin-file-operations.c:2456
+ #, c-format
+@@ -1680,9 +1668,9 @@ msgstr[2] "Zdvojuje se %'d souborů"
+ 
+ #. TRANSLATORS: %s is a placeholder for a size like "2 bytes" or "3 MB".  It must not be translated or removed. So this represents something like "4 kb of 4 MB".
+ #: libcore/marlin-file-operations.c:2486
+-#, fuzzy, c-format
++#, c-format
+ msgid "%s of %s"
+-msgstr "%S z %S"
++msgstr "%s z %s"
+ 
+ #. TRANSLATORS: The two first %s and the last %s will expand to a size
+ #. like "2 bytes" or "3 MB", the third %s to a time duration like
+@@ -1691,51 +1679,50 @@ msgstr "%S z %S"
+ #. The singular/plural form will be used depending on the remaining time (i.e. the "%s left" part).
+ #. The order in which %s appear can be changed by using the right positional specifier.
+ #: libcore/marlin-file-operations.c:2506
+-#, fuzzy, c-format
++#, c-format
+ msgid "%s of %s — %s left (%s/sec)"
+ msgid_plural "%s of %s — %s left (%s/sec)"
+-msgstr[0] "%S z %S — zbývá %T (%S/s)"
+-msgstr[1] "%S z %S — zbývají %T (%S/s)"
+-msgstr[2] "%S z %S — zbývá %T (%S/s)"
++msgstr[0] "%s z %s — zbývá %s (%s/s)"
++msgstr[1] "%s z %s — zbývají %s (%s/s)"
++msgstr[2] "%s z %s — zbývá %s (%s/s)"
+ 
+ #. TRANSLATORS: '\"%s\"' is a placeholder for the quoted basename of a file.  It may change position but must not be translated or removed
+ #. '\"' is an escaped quoted mark.  This may be replaced with another suitable character (escaped if necessary)
+ #: libcore/marlin-file-operations.c:2906
+-#, fuzzy, c-format
++#, c-format
+ msgid ""
+ "The folder \"%s\" cannot be copied because you do not have permissions to "
+ "create it in the destination."
+ msgstr ""
+-"Složku \"%B\" nelze zkopírovat, protože nemáte oprávnění vytvořit ji v "
+-"cílovém umístění."
++"Složku „%s“ nelze zkopírovat, protože nemáte oprávnění vytvořit ji v cílovém "
++"umístění."
+ 
+ #. TRANSLATORS: '\"%s\"' is a placeholder for the quoted basename of a file.  It may change position but must not be translated or removed
+ #. '\"' is an escaped quoted mark.  This may be replaced with another suitable character (escaped if necessary)
+ #: libcore/marlin-file-operations.c:2911
+-#, fuzzy, c-format
++#, c-format
+ msgid "There was an error creating the folder \"%s\"."
+-msgstr "Při vytváření složky \"%B\" došlo k chybě."
++msgstr "Při vytváření složky „%s“ došlo k chybě."
+ 
+ #. TRANSLATORS: '\"%s\"' is a placeholder for the quoted basename of a file.  It may change position but must not be translated or removed
+ #. '\"' is an escaped quoted mark.  This may be replaced with another suitable character (escaped if necessary)
+ #: libcore/marlin-file-operations.c:3047
+-#, fuzzy, c-format
++#, c-format
+ msgid ""
+ "Files in the folder \"%s\" cannot be copied because you do not have "
+ "permissions to see them."
+ msgstr ""
+-"Soubory ve složce \"%B\" nelze zkopírovat, protože nemáte oprávnění na "
+-"jejich zobrazení."
++"Soubory ve složce „%s“ nelze zkopírovat, protože nemáte oprávnění na jejich "
++"zobrazení."
+ 
+ #. TRANSLATORS: '\"%s\"' is a placeholder for the quoted basename of a file.  It may change position but must not be translated or removed
+ #. '\"' is an escaped quoted mark.  This may be replaced with another suitable character (escaped if necessary)
+ #: libcore/marlin-file-operations.c:3099
+-#, fuzzy, c-format
++#, c-format
+ msgid ""
+ "The folder \"%s\" cannot be copied because you do not have permissions to "
+ "read it."
+-msgstr ""
+-"Složku \"%B\" nelze zkopírovat, protože nemáte oprávnění na její čtení."
++msgstr "Složku „%s“ nelze zkopírovat, protože nemáte oprávnění na její čtení."
+ 
+ #. TRANSLATORS: '\"%s\"' is a placeholder for the quoted basename of a file.  It may change position but must not be translated or removed
+ #. '\"' is an escaped quoted mark.  This may be replaced with another suitable character (escaped if necessary)
+@@ -1743,9 +1730,9 @@ msgstr ""
+ #. '\"' is an escaped quoted mark.  This may be replaced with another suitable character (escaped if necessary)
+ #: libcore/marlin-file-operations.c:3152 libcore/marlin-file-operations.c:3885
+ #: libcore/marlin-file-operations.c:4480
+-#, fuzzy, c-format
++#, c-format
+ msgid "Error while moving \"%s\"."
+-msgstr "Chyba při přesunu \"%B\"."
++msgstr "Chyba při přesouvání „%s“."
+ 
+ #: libcore/marlin-file-operations.c:3154
+ msgid "Could not remove the source folder."
+@@ -1755,21 +1742,21 @@ msgstr "Nelze odstranit zdrojovou složku."
+ #. '\"' is an escaped quoted mark.  This may be replaced with another suitable character (escaped if necessary)
+ #: libcore/marlin-file-operations.c:3243 libcore/marlin-file-operations.c:3294
+ #: libcore/marlin-file-operations.c:3889
+-#, fuzzy, c-format
++#, c-format
+ msgid "Error while copying \"%s\"."
+-msgstr "Chyba při kopírování \"%B\"."
++msgstr "Chyba při kopírování „%s“."
+ 
+ #. TRANSLATORS: %s is a placeholder for the full path of a file.  It may change position but must not be translated or removed
+ #: libcore/marlin-file-operations.c:3248
+-#, fuzzy, c-format
++#, c-format
+ msgid "Could not remove files from the already existing folder %s."
+-msgstr "Nelze odstranit soubory z již existující složky %F."
++msgstr "Nelze odstranit soubory z už existující složky %s."
+ 
+ #. TRANSLATORS: %s is a placeholder for the full path of a file.  It may change position but must not be translated or removed
+ #: libcore/marlin-file-operations.c:3299
+-#, fuzzy, c-format
++#, c-format
+ msgid "Could not remove the already existing file %s."
+-msgstr "Nelze odstranit již existující soubor %F."
++msgstr "Nelze odstranit už existující soubor %s."
+ 
+ #: libcore/marlin-file-operations.c:3618 libcore/marlin-file-operations.c:4317
+ msgid "You cannot move a folder into itself."
+@@ -1797,22 +1784,22 @@ msgstr "Zdrojový soubor by byl přepsán cílovým."
+ 
+ #. TRANSLATORS: %s is a placeholder for the full path of a file.  It may change position but must not be translated or removed
+ #: libcore/marlin-file-operations.c:3895
+-#, fuzzy, c-format
++#, c-format
+ msgid "Could not remove the already existing file with the same name in %s."
+-msgstr "Nelze odstranit již existující soubor se stejným názvem v %F."
++msgstr "Nelze odstranit již existující soubor se stejným názvem v %s."
+ 
+ #. TRANSLATORS: '\"%s\"' is a placeholder for the quoted basename of a file.  It may change position but must not be translated or removed
+ #. '\"' is an escaped quoted mark.  This may be replaced with another suitable character (escaped if necessary)
+ #: libcore/marlin-file-operations.c:3965
+-#, fuzzy, c-format
++#, c-format
+ msgid "Cannot copy \"%s\" here."
+-msgstr "\"%B\" zde nelze zkopírovat."
++msgstr "„%s“ zde nelze zkopírovat."
+ 
+ #. TRANSLATORS: %s is a placeholder for the basename of a file.  It may change position but must not be translated or removed
+ #: libcore/marlin-file-operations.c:3970
+-#, fuzzy, c-format
++#, c-format
+ msgid "There was an error copying the file into %s."
+-msgstr "Při kopírování souboru do %B došlo k chybě."
++msgstr "Při kopírování souboru do %s došlo k chybě."
+ 
+ #: libcore/marlin-file-operations.c:4189
+ msgid "Copying Files"
+@@ -1821,9 +1808,9 @@ msgstr "Soubory se kopírují"
+ #. TRANSLATORS: '\"%s\"' is a placeholder for the quoted basename of a file.  It may change position but must not be translated or removed
+ #. '\"' is an escaped quoted mark.  This may be replaced with another suitable character (escaped if necessary)
+ #: libcore/marlin-file-operations.c:4225
+-#, fuzzy, c-format
++#, c-format
+ msgid "Preparing to move to \"%s\""
+-msgstr "Připravuje se přesun do \"%B\""
++msgstr "Připravuje se přesun do „%s“"
+ 
+ #: libcore/marlin-file-operations.c:4230
+ #, c-format
+@@ -1835,9 +1822,9 @@ msgstr[2] "Připravuje se přesun %'d souborů"
+ 
+ #. TRANSLATORS: %s is a placeholder for the full path of a file.  It may change position but must not be translated or removed
+ #: libcore/marlin-file-operations.c:4484
+-#, fuzzy, c-format
++#, c-format
+ msgid "There was an error moving the file into %s."
+-msgstr "Při přesunu souboru do %F došlo k chybě."
++msgstr "Při přesunu souboru do %s došlo k chybě."
+ 
+ #: libcore/marlin-file-operations.c:4743
+ msgid "Moving Files"
+@@ -1846,9 +1833,9 @@ msgstr "Soubory se přesouvají"
+ #. TRANSLATORS: '\"%s\"' is a placeholder for the quoted basename of a file.  It may change position but must not be translated or removed
+ #. '\"' is an escaped quoted mark.  This may be replaced with another suitable character (escaped if necessary)
+ #: libcore/marlin-file-operations.c:4782
+-#, fuzzy, c-format
++#, c-format
+ msgid "Creating links in \"%s\""
+-msgstr "Vytváří se odkazy v \"%B\""
++msgstr "Vytváří se odkazy v „%s“"
+ 
+ #: libcore/marlin-file-operations.c:4787
+ #, c-format
+@@ -1860,9 +1847,9 @@ msgstr[2] "Vytváří se odkazy na %'d souborů"
+ 
+ #. TRANSLATORS: %s is a placeholder for the basename of a file.  It may change position but must not be translated or removed
+ #: libcore/marlin-file-operations.c:4930
+-#, fuzzy, c-format
++#, c-format
+ msgid "Error while creating link to %s."
+-msgstr "Chyba při vytváření odkazu na %B."
++msgstr "Chyba při vytváření odkazu na %s."
+ 
+ #: libcore/marlin-file-operations.c:4933
+ msgid "Symbolic links only supported for local files"
+@@ -1874,9 +1861,9 @@ msgstr "Tento cíl nepodporuje symbolické odkazy."
+ 
+ #. TRANSLATORS: %s is a placeholder for the full path of a file.  It may change position but must not be translated or removed
+ #: libcore/marlin-file-operations.c:4941
+-#, fuzzy, c-format
++#, c-format
+ msgid "There was an error creating the symlink in %s."
+-msgstr "Při vytváření symbolického odkazu v %F došlo k chybě."
++msgstr "Při vytváření symbolického odkazu v %s došlo k chybě."
+ 
+ #: libcore/marlin-file-operations.c:5268
+ msgid "Setting permissions"
+@@ -1900,21 +1887,21 @@ msgstr "nový soubor"
+ 
+ #. TRANSLATORS: %s is a placeholder for the basename of a file.  It may change position but must not be translated or removed
+ #: libcore/marlin-file-operations.c:5787
+-#, fuzzy, c-format
++#, c-format
+ msgid "Error while creating directory %s."
+-msgstr "Chyba při vytváření složky %B."
++msgstr "Chyba při vytváření složky %s."
+ 
+ #. TRANSLATORS: %s is a placeholder for the basename of a file.  It may change position but must not be translated or removed
+ #: libcore/marlin-file-operations.c:5790
+-#, fuzzy, c-format
++#, c-format
+ msgid "Error while creating file %s."
+-msgstr "Chyba při vytváření souboru %B."
++msgstr "Chyba při vytváření souboru %s."
+ 
+ #. TRANSLATORS: %s is a placeholder for the full path of a file.  It may change position but must not be translated or removed
+ #: libcore/marlin-file-operations.c:5796
+-#, fuzzy, c-format
++#, c-format
+ msgid "There was an error creating the directory in %s."
+-msgstr "Při vytváření složky v %F došlo k chybě."
++msgstr "Při vytváření složky v %s došlo k chybě."
+ 
+ #: libwidgets/Chrome/BasicLocationBar.vala:88
+ msgid "Type a path"
+@@ -1931,13 +1918,12 @@ msgid "Go to %s"
+ msgstr "Přejít do %s"
+ 
+ #: libwidgets/Chrome/BasicBreadcrumbsEntry.vala:363
+-#, fuzzy
+ msgid "Type Path"
+-msgstr "Napište cestu"
++msgstr "Zadejte popis umístění"
+ 
+ #: libwidgets/View/SearchResults.vala:82
+ msgid "More Results …"
+-msgstr ""
++msgstr "Další výsledky…"
+ 
+ #: libwidgets/View/SearchResults.vala:225
+ msgid "In This Folder"
+@@ -1955,15 +1941,15 @@ msgstr "Záložky"
+ msgid "Recently used"
+ msgstr "Nedávno použité"
+ 
+-#: libwidgets/Chrome/ViewSwitcher.vala:35
++#: libwidgets/Chrome/ViewSwitcher.vala:34
+ msgid "View as Grid"
+ msgstr "Zobrazit v mřížce"
+ 
+-#: libwidgets/Chrome/ViewSwitcher.vala:40
++#: libwidgets/Chrome/ViewSwitcher.vala:39
+ msgid "View as List"
+ msgstr "Zobrazit jako seznam"
+ 
+-#: libwidgets/Chrome/ViewSwitcher.vala:45
++#: libwidgets/Chrome/ViewSwitcher.vala:44
+ msgid "View in Columns"
+ msgstr "Zobrazit ve sloupcích"
+ 
+diff --git a/po/extra/cs.po b/po/extra/cs.po
+index 2cd89f46e..751518465 100644
+--- a/po/extra/cs.po
++++ b/po/extra/cs.po
+@@ -7,17 +7,16 @@ msgid ""
+ msgstr ""
+ "Project-Id-Version: pantheon-files\n"
+ "Report-Msgid-Bugs-To: \n"
+-"POT-Creation-Date: 2020-03-17 17:33+0000\n"
+-"PO-Revision-Date: 2018-06-01 00:07+0000\n"
+-"Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
+-"Language-Team: Czech <https://weblate.elementary.io/projects/files/extra/cs/"
+-">\n"
++"POT-Creation-Date: 2020-04-20 09:16+0000\n"
++"PO-Revision-Date: 2020-05-11 19:11+0000\n"
++"Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
++"Language-Team: Czech <https://l10n.elementary.io/projects/files/extra/cs/>\n"
+ "Language: cs\n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
+ "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+-"X-Generator: Weblate 2.18\n"
++"X-Generator: Weblate 3.9.1\n"
+ "X-Launchpad-Export-Date: 2017-06-11 06:29+0000\n"
+ 
+ #: data/io.elementary.files.desktop.in.in:3
+@@ -68,469 +67,465 @@ msgstr ""
+ "AFP, Webdav nebo sdílení Windows."
+ 
+ #: data/io.elementary.files.appdata.xml.in.in:63
+-#: data/io.elementary.files.appdata.xml.in.in:77
+-#, fuzzy
+-#| msgid "Minor bug fixes"
++#: data/io.elementary.files.appdata.xml.in.in:73
++#: data/io.elementary.files.appdata.xml.in.in:87
+ msgid "Minor updates:"
+-msgstr "Menší opravy chyb"
++msgstr "Menší aktualizace:"
+ 
+ #: data/io.elementary.files.appdata.xml.in.in:65
+-#, fuzzy
+-msgid "Fix crash when a device icon is coming from a file"
+-msgstr "Oprava padání při obnově soborů z koše"
++msgid "Fix an issue that prevented file modification times from showing"
++msgstr "Oprava problému který bránil zobrazování okamžiků úpravy souborů"
+ 
+ #: data/io.elementary.files.appdata.xml.in.in:66
+-msgid "Fix device icon sometimes missing"
++msgid "Show file info overlay in List View as well"
+ msgstr ""
+ 
+ #: data/io.elementary.files.appdata.xml.in.in:67
++#: data/io.elementary.files.appdata.xml.in.in:81
++#: data/io.elementary.files.appdata.xml.in.in:94
++#: data/io.elementary.files.appdata.xml.in.in:107
++#: data/io.elementary.files.appdata.xml.in.in:139
++#: data/io.elementary.files.appdata.xml.in.in:161
++#: data/io.elementary.files.appdata.xml.in.in:170
++#: data/io.elementary.files.appdata.xml.in.in:179
++#: data/io.elementary.files.appdata.xml.in.in:190
++#: data/io.elementary.files.appdata.xml.in.in:199
++#: data/io.elementary.files.appdata.xml.in.in:218
++#: data/io.elementary.files.appdata.xml.in.in:229
++#: data/io.elementary.files.appdata.xml.in.in:237
++#: data/io.elementary.files.appdata.xml.in.in:269
++msgid "Updated translations"
++msgstr "Aktualizovány překlady"
++
++#: data/io.elementary.files.appdata.xml.in.in:75
++msgid "Fix crash when a device icon is coming from a file"
++msgstr "Oprava padání v případě, kdy ikona zařízení pochází ze souboru"
++
++#: data/io.elementary.files.appdata.xml.in.in:76
++msgid "Fix device icon sometimes missing"
++msgstr ""
++
++#: data/io.elementary.files.appdata.xml.in.in:77
+ msgid "Fix occasional view freeze after renaming"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:68
++#: data/io.elementary.files.appdata.xml.in.in:78
+ msgid "Improve renaming logic when dealing with leading/trailing whitespace"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:69
++#: data/io.elementary.files.appdata.xml.in.in:79
+ msgid "Fix breadcrumbs sometimes incorrect at startup"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:70
++#: data/io.elementary.files.appdata.xml.in.in:80
+ msgid "Do not show file:// prefix in navigation buttons menus"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:71
+-#: data/io.elementary.files.appdata.xml.in.in:84
+-#: data/io.elementary.files.appdata.xml.in.in:97
+-#: data/io.elementary.files.appdata.xml.in.in:129
+-#: data/io.elementary.files.appdata.xml.in.in:151
+-#: data/io.elementary.files.appdata.xml.in.in:160
+-#: data/io.elementary.files.appdata.xml.in.in:169
+-#: data/io.elementary.files.appdata.xml.in.in:180
+-#: data/io.elementary.files.appdata.xml.in.in:189
+-#: data/io.elementary.files.appdata.xml.in.in:208
+-#: data/io.elementary.files.appdata.xml.in.in:219
+-#: data/io.elementary.files.appdata.xml.in.in:227
+-#: data/io.elementary.files.appdata.xml.in.in:259
+-#, fuzzy
+-msgid "Updated translations"
+-msgstr "Nové překlady"
+-
+-#: data/io.elementary.files.appdata.xml.in.in:79
++#: data/io.elementary.files.appdata.xml.in.in:89
+ msgid "Fix \"New Folder\" keyboard shortcut label in menu"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:80
++#: data/io.elementary.files.appdata.xml.in.in:90
+ msgid "Fix navigation with back/forward button context menu"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:81
++#: data/io.elementary.files.appdata.xml.in.in:91
+ msgid "Fix path bar sometimes showing wrong path when closing a tab"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:82
++#: data/io.elementary.files.appdata.xml.in.in:92
+ msgid ""
+ "Ensure keyboard shortcuts work immediately after creating or renaming a file"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:83
++#: data/io.elementary.files.appdata.xml.in.in:93
+ msgid "Do not include \"file://\" in pathbar text or when pasting path as text"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:91
++#: data/io.elementary.files.appdata.xml.in.in:101
+ msgid "Show keyboard shortcuts in menu items"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:92
++#: data/io.elementary.files.appdata.xml.in.in:102
+ msgid "Fix an issue with breadcrumbs in the file chooser"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:93
++#: data/io.elementary.files.appdata.xml.in.in:103
+ msgid "Show a warning when ejecting a volume that's still in use"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:94
++#: data/io.elementary.files.appdata.xml.in.in:104
+ msgid "Fix cursor update after horizontal scroll in Column View"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:95
++#: data/io.elementary.files.appdata.xml.in.in:105
+ msgid "Fix folder-open icon persisting after closing Column View"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:96
++#: data/io.elementary.files.appdata.xml.in.in:106
+ msgid "Use destructive action styling for some trash dialog buttons"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:103
++#: data/io.elementary.files.appdata.xml.in.in:113
+ msgid "New features:"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:105
++#: data/io.elementary.files.appdata.xml.in.in:115
+ msgid "Initial git plugin support"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:106
++#: data/io.elementary.files.appdata.xml.in.in:116
+ msgid "Follow global history setting when restoring and saving tabs"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:108
++#: data/io.elementary.files.appdata.xml.in.in:118
+ msgid "Other updates:"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:110
++#: data/io.elementary.files.appdata.xml.in.in:120
+ msgid "Ensure tabs showing same folder remain synchronized"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:111
++#: data/io.elementary.files.appdata.xml.in.in:121
+ msgid "Fix drag with secondary button on empty space"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:112
++#: data/io.elementary.files.appdata.xml.in.in:122
+ msgid "Show custom media type icons for installed apps"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:113
++#: data/io.elementary.files.appdata.xml.in.in:123
+ msgid "Fix appearance of inactive diskspace indicator"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:114
+-#, fuzzy
++#: data/io.elementary.files.appdata.xml.in.in:124
+ msgid "Improve pathbar animation"
+-msgstr "Vylepšena podpora překladů"
++msgstr "Vylepšena animace lišty s popisem umístění"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:115
+-#, fuzzy
++#: data/io.elementary.files.appdata.xml.in.in:125
+ msgid "Update documentation"
+-msgstr "Nové překlady"
++msgstr "Aktualizace dokumentace"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:116
+-#, fuzzy
++#: data/io.elementary.files.appdata.xml.in.in:126
+ msgid "Update translations"
+-msgstr "Nové překlady"
++msgstr "Aktualizovány překlady"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:123
++#: data/io.elementary.files.appdata.xml.in.in:133
+ msgid "Initial cloudproviders plugin support"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:124
++#: data/io.elementary.files.appdata.xml.in.in:134
+ msgid "Fix selecting pasted files"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:125
++#: data/io.elementary.files.appdata.xml.in.in:135
+ msgid "Fix color label visibility while using dark theme"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:126
++#: data/io.elementary.files.appdata.xml.in.in:136
+ msgid "Fix selecting files using Shift key"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:127
++#: data/io.elementary.files.appdata.xml.in.in:137
+ msgid "Draw checkerboard background for image items"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:128
++#: data/io.elementary.files.appdata.xml.in.in:138
+ msgid "Improved styling for disk space bars"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:136
++#: data/io.elementary.files.appdata.xml.in.in:146
+ msgid "Show more search results"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:137
++#: data/io.elementary.files.appdata.xml.in.in:147
+ msgid "Ensure valid tab name generation"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:138
++#: data/io.elementary.files.appdata.xml.in.in:148
+ msgid "Properly sort folders by date and size"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:139
++#: data/io.elementary.files.appdata.xml.in.in:149
+ msgid "Launching Files from Terminal now opens new tab instead of new window"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:140
+-#, fuzzy
++#: data/io.elementary.files.appdata.xml.in.in:150
+ msgid "Improve MTP support"
+-msgstr "Vylepšená podpora práce v síti"
++msgstr "Vylepšená podpora protokolu MTP"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:141
++#: data/io.elementary.files.appdata.xml.in.in:151
+ msgid "Various tagging feature refinements"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:142
++#: data/io.elementary.files.appdata.xml.in.in:152
+ msgid "Keyboard navigation improvements"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:143
++#: data/io.elementary.files.appdata.xml.in.in:153
+ msgid "Symlink copy and paste fixes"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:144
++#: data/io.elementary.files.appdata.xml.in.in:154
+ msgid "Avoid crash when Templates folder is null"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:145
++#: data/io.elementary.files.appdata.xml.in.in:155
+ msgid "Reduce memory footprint of FileChooserDialog"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:146
++#: data/io.elementary.files.appdata.xml.in.in:156
+ msgid "Avoid crash when selecting image file in some situations"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:147
++#: data/io.elementary.files.appdata.xml.in.in:157
+ msgid ""
+ "Fix unclosable progress window while copying network files to removable "
+ "storage"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:148
++#: data/io.elementary.files.appdata.xml.in.in:158
+ msgid "Fix drag and drop after double clicking a blank area"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:149
++#: data/io.elementary.files.appdata.xml.in.in:159
+ msgid "Avoid crash while scrolling over view switcher"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:150
++#: data/io.elementary.files.appdata.xml.in.in:160
+ msgid "Avoid possible crash in some copy and paste situations"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:158
++#: data/io.elementary.files.appdata.xml.in.in:168
+ msgid "Keyboard navigation fix for cherry picking select files in icon view"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:159
++#: data/io.elementary.files.appdata.xml.in.in:169
+ msgid "Don't hardcode search placeholder text style, fixes dark theme issue"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:167
++#: data/io.elementary.files.appdata.xml.in.in:177
+ msgid "Minor spacing adjustments to location bar"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:168
++#: data/io.elementary.files.appdata.xml.in.in:178
+ msgid "Fix F2 renaming behavior"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:176
++#: data/io.elementary.files.appdata.xml.in.in:186
+ msgid "Minor spacing adjustments to location breadcrumbs"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:177
++#: data/io.elementary.files.appdata.xml.in.in:187
+ msgid "Consistently remember color tags"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:178
++#: data/io.elementary.files.appdata.xml.in.in:188
+ msgid ""
+ "Reload thumbnails when changing zoom level to avoid showing placeholder "
+ "unnecessarily"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:179
++#: data/io.elementary.files.appdata.xml.in.in:189
+ msgid "Fix running scripts with spaces in filename"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:187
++#: data/io.elementary.files.appdata.xml.in.in:197
+ msgid "Fix high CPU regression in version 4.1.4"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:188
+-#, fuzzy
++#: data/io.elementary.files.appdata.xml.in.in:198
+ msgid "File sorting fixes"
+-msgstr "Menší opravy chyb"
++msgstr "Opravy řazení souborů"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:196
++#: data/io.elementary.files.appdata.xml.in.in:206
+ msgid "Meson: fix soversion names"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:197
++#: data/io.elementary.files.appdata.xml.in.in:207
+ msgid "Remove CMake build system"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:198
++#: data/io.elementary.files.appdata.xml.in.in:208
+ msgid "Fix missing File System properties menu"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:199
++#: data/io.elementary.files.appdata.xml.in.in:209
+ msgid "Drop intltool dependency"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:200
++#: data/io.elementary.files.appdata.xml.in.in:210
+ msgid "Fix default file type handler logic"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:201
++#: data/io.elementary.files.appdata.xml.in.in:211
+ msgid "Fix initial search window size too small"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:202
++#: data/io.elementary.files.appdata.xml.in.in:212
+ msgid "Add option to disable local file thumbnails"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:203
+-#, fuzzy
++#: data/io.elementary.files.appdata.xml.in.in:213
+ msgid "Fix crash when opening multiple video files"
+-msgstr "Oprava padání při obnově soborů z koše"
++msgstr "Oprava padání při otevírání vícero videosouborů"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:204
++#: data/io.elementary.files.appdata.xml.in.in:214
+ msgid "Fix some timing issues around adding and removing files"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:205
++#: data/io.elementary.files.appdata.xml.in.in:215
+ msgid "Meson: fix missing library headers"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:206
++#: data/io.elementary.files.appdata.xml.in.in:216
+ msgid "Fix color tag display"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:207
++#: data/io.elementary.files.appdata.xml.in.in:217
+ msgid "Show reserved space in Properties window"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:215
++#: data/io.elementary.files.appdata.xml.in.in:225
+ msgid "Add border radius to text background"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:216
++#: data/io.elementary.files.appdata.xml.in.in:226
+ msgid "Fix file mimetype association regression"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:217
++#: data/io.elementary.files.appdata.xml.in.in:227
+ msgid "New pathbar tooltips"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:218
+-#, fuzzy
++#: data/io.elementary.files.appdata.xml.in.in:228
+ msgid "Build fixes"
+-msgstr "Bezpečnostní opravy"
++msgstr "Opravy pro sestavování (build)"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:226
+-#, fuzzy
++#: data/io.elementary.files.appdata.xml.in.in:236
+ msgid "Plugin build fixes"
+-msgstr "Menší opravy chyb"
++msgstr "Opravy sestavování (build) zásuvných modulů"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:234
++#: data/io.elementary.files.appdata.xml.in.in:244
+ msgid "Fix Ctrl+Tab behavior"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:235
++#: data/io.elementary.files.appdata.xml.in.in:245
+ msgid "Fix building without Unity library"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:242
++#: data/io.elementary.files.appdata.xml.in.in:252
+ msgid "Hide breadcrumbs and show placeholder and search icon in home folder"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:243
++#: data/io.elementary.files.appdata.xml.in.in:253
+ msgid "Style error dialogs"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:244
++#: data/io.elementary.files.appdata.xml.in.in:254
+ msgid "Right click fixes"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:245
++#: data/io.elementary.files.appdata.xml.in.in:255
+ msgid "Reload recent view when privacy setting changes"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:246
++#: data/io.elementary.files.appdata.xml.in.in:256
+ msgid "`Connect Server` fixes"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:247
++#: data/io.elementary.files.appdata.xml.in.in:257
+ msgid "Do not activate multiple files with single click"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:248
++#: data/io.elementary.files.appdata.xml.in.in:258
+ msgid "Use `Tab` to toggle View and Sidebar keyboard focus"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:249
++#: data/io.elementary.files.appdata.xml.in.in:259
+ msgid "Delete color tag database entries for trashed files"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:250
++#: data/io.elementary.files.appdata.xml.in.in:260
+ msgid "Throttle tab closing"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:251
++#: data/io.elementary.files.appdata.xml.in.in:261
+ msgid "`Ctrl` key fixes"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:252
++#: data/io.elementary.files.appdata.xml.in.in:262
+ msgid "Drag and drop fixes"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:253
++#: data/io.elementary.files.appdata.xml.in.in:263
+ msgid "Show icons in `Open with` menus"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:254
++#: data/io.elementary.files.appdata.xml.in.in:264
+ msgid "Tooltip fixes"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:255
+-#, fuzzy
++#: data/io.elementary.files.appdata.xml.in.in:265
+ msgid "Memory leak fixes"
+-msgstr "Menší opravy chyb"
++msgstr "Opravy neuvolňování operační paměti (leak)"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:256
+-#, fuzzy
++#: data/io.elementary.files.appdata.xml.in.in:266
+ msgid "Crash fixes"
+-msgstr "Několik oprav pádů"
++msgstr "Opravy pádů"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:257
++#: data/io.elementary.files.appdata.xml.in.in:267
+ msgid "Trash: respect sound setting"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:258
++#: data/io.elementary.files.appdata.xml.in.in:268
+ msgid "Localization fixes"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:266
++#: data/io.elementary.files.appdata.xml.in.in:276
+ msgid "Over 100 major and minor bug fixes and improvements"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:273
++#: data/io.elementary.files.appdata.xml.in.in:283
+ msgid "Honor 12/24hr system setting"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:274
++#: data/io.elementary.files.appdata.xml.in.in:284
+ msgid "Distinguish between tabs with the same name"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:275
++#: data/io.elementary.files.appdata.xml.in.in:285
+ msgid "Support launching from other applications with a target file selected"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:276
+-#: data/io.elementary.files.appdata.xml.in.in:289
+-#: data/io.elementary.files.appdata.xml.in.in:303
++#: data/io.elementary.files.appdata.xml.in.in:286
++#: data/io.elementary.files.appdata.xml.in.in:299
+ #: data/io.elementary.files.appdata.xml.in.in:313
+-#: data/io.elementary.files.appdata.xml.in.in:324
++#: data/io.elementary.files.appdata.xml.in.in:323
++#: data/io.elementary.files.appdata.xml.in.in:334
+ msgid "New translations"
+ msgstr "Nové překlady"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:277
+-#: data/io.elementary.files.appdata.xml.in.in:290
+-#: data/io.elementary.files.appdata.xml.in.in:304
++#: data/io.elementary.files.appdata.xml.in.in:287
++#: data/io.elementary.files.appdata.xml.in.in:300
+ #: data/io.elementary.files.appdata.xml.in.in:314
+-#: data/io.elementary.files.appdata.xml.in.in:325
+-#: data/io.elementary.files.appdata.xml.in.in:332
+-#: data/io.elementary.files.appdata.xml.in.in:339
+-#: data/io.elementary.files.appdata.xml.in.in:363
++#: data/io.elementary.files.appdata.xml.in.in:324
++#: data/io.elementary.files.appdata.xml.in.in:335
++#: data/io.elementary.files.appdata.xml.in.in:342
++#: data/io.elementary.files.appdata.xml.in.in:349
++#: data/io.elementary.files.appdata.xml.in.in:373
+ msgid "Minor bug fixes"
+ msgstr "Menší opravy chyb"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:284
++#: data/io.elementary.files.appdata.xml.in.in:294
+ msgid "Improved networking support"
+ msgstr "Vylepšená podpora práce v síti"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:285
++#: data/io.elementary.files.appdata.xml.in.in:295
+ msgid "Correct window geometry when snapping to left or right"
+ msgstr "Oprava geometrie okna, když je připnuto nalevo nebo napravo"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:286
++#: data/io.elementary.files.appdata.xml.in.in:296
+ msgid ""
+ "Pressing Ctrl no longer cancels renaming while the \"Reveal Pointer\" "
+ "setting is active"
+@@ -538,18 +533,18 @@ msgstr ""
+ "Stisknutí Ctrl již nezruší přejmenování, když je aktivována funkce "
+ "\"Zobrazit ukazatel\""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:287
++#: data/io.elementary.files.appdata.xml.in.in:297
+ msgid "Switching input language cancels actions"
+ msgstr "Přepnutí vstupního jazyka zruší akce"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:288
+-#: data/io.elementary.files.appdata.xml.in.in:302
++#: data/io.elementary.files.appdata.xml.in.in:298
+ #: data/io.elementary.files.appdata.xml.in.in:312
+-#: data/io.elementary.files.appdata.xml.in.in:323
++#: data/io.elementary.files.appdata.xml.in.in:322
++#: data/io.elementary.files.appdata.xml.in.in:333
+ msgid "Various crash fixes"
+ msgstr "Několik oprav pádů"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:297
++#: data/io.elementary.files.appdata.xml.in.in:307
+ msgid ""
+ "Web browsers like Firefox now remember the most recently used downloads "
+ "directory"
+@@ -557,55 +552,55 @@ msgstr ""
+ "Webové prohlížeče jako Firefox si nyní pamatují naposledy použitou složku "
+ "pro stahování"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:298
++#: data/io.elementary.files.appdata.xml.in.in:308
+ msgid "Remember preferred zoom level"
+ msgstr "Pamatovat si preferovanou úroveň přiblížení"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:299
++#: data/io.elementary.files.appdata.xml.in.in:309
+ msgid "Improved input method support"
+ msgstr "Vylepšená podpora vstupních metod"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:300
++#: data/io.elementary.files.appdata.xml.in.in:310
+ msgid "910x640 minimum window size"
+ msgstr "910x640 minimální velikost okna"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:301
++#: data/io.elementary.files.appdata.xml.in.in:311
+ msgid "Security fixes"
+ msgstr "Bezpečnostní opravy"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:311
++#: data/io.elementary.files.appdata.xml.in.in:321
+ msgid "Enable drag and drop tabs between windows"
+ msgstr "Povolit přetahování záložek mezi okny"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:321
++#: data/io.elementary.files.appdata.xml.in.in:331
+ msgid "Merge search functionality into Ctrl+F"
+ msgstr "Sloučit funkci hledání do Ctrl+F"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:322
++#: data/io.elementary.files.appdata.xml.in.in:332
+ msgid "Improved translation support"
+ msgstr "Vylepšena podpora překladů"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:346
++#: data/io.elementary.files.appdata.xml.in.in:356
+ msgid "Fix appdata release dates"
+ msgstr "Oprava appdata dat vydání"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:353
++#: data/io.elementary.files.appdata.xml.in.in:363
+ msgid "Improve file opening over Samba shares"
+ msgstr "Vylepšeno otevírání souborů pomocí Samba sdílení"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:354
++#: data/io.elementary.files.appdata.xml.in.in:364
+ msgid "Fix a crash when restoring items from the Trash"
+ msgstr "Oprava padání při obnově soborů z koše"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:355
++#: data/io.elementary.files.appdata.xml.in.in:365
+ msgid "Improve cut/copy/paste sensitivity in context menu"
+ msgstr "Vylepšena citlivost vyjmout/kopírovat/vložit v kontextovém menu"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:356
++#: data/io.elementary.files.appdata.xml.in.in:366
+ msgid "Translation updates"
+ msgstr "Aktualizace překladů"
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:368
++#: data/io.elementary.files.appdata.xml.in.in:378
+ msgid "elementary LLC."
+ msgstr ""
+ 

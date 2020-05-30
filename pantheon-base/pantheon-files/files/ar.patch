@@ -1,0 +1,2019 @@
+From 82fc8b8c4dc66549a98dcc33209a83031be27440 Mon Sep 17 00:00:00 2001
+From: nasserbinlaboun <nasser1990com@gmail.com>
+Date: Fri, 15 May 2020 02:07:09 +0000
+Subject: [PATCH] Translated using Weblate (Arabic)
+
+Currently translated at 93.2% (371 of 398 strings)
+
+Translation: Files/Files
+Translate-URL: https://l10n.elementary.io/projects/files/files/ar/
+Update translation files (ar)
+
+Updated by "Update PO files to match POT (msgmerge)" hook in Weblate.
+
+Translation: Files/Files (Extra)
+Translate-URL: https://l10n.elementary.io/projects/files/extra/
+Update translation files (ar)
+
+Updated by "Update PO files to match POT (msgmerge)" hook in Weblate.
+
+Translation: Files/Files
+Translate-URL: https://l10n.elementary.io/projects/files/files/
+---
+ po/ar.po       | 485 +++++++++++++++++++++++++------------------------
+ po/extra/ar.po | 306 ++++++++++++++++---------------
+ 2 files changed, 401 insertions(+), 390 deletions(-)
+
+diff --git a/po/ar.po b/po/ar.po
+index 036ad5040..fd79da4d3 100644
+--- a/po/ar.po
++++ b/po/ar.po
+@@ -7,8 +7,8 @@ msgid ""
+ msgstr ""
+ "Project-Id-Version: marlin\n"
+ "Report-Msgid-Bugs-To: \n"
+-"POT-Creation-Date: 2020-03-23 11:11+0000\n"
+-"PO-Revision-Date: 2020-03-19 19:09+0000\n"
++"POT-Creation-Date: 2020-04-20 09:16+0000\n"
++"PO-Revision-Date: 2020-05-16 11:10+0000\n"
+ "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
+ "Language-Team: Arabic <https://l10n.elementary.io/projects/files/files/ar/>\n"
+ "Language: ar\n"
+@@ -41,9 +41,8 @@ msgid "Enable debug logging"
+ msgstr "تمكين تسجيل التصحيح"
+ 
+ #: src/Application.vala:135
+-#, fuzzy
+ msgid "[URI…]"
+-msgstr "[العنوان...]"
++msgstr "[عنوان URI...]"
+ 
+ #: src/Application.vala:138
+ msgid ""
+@@ -89,30 +88,30 @@ msgstr "معلومات"
+ msgid "General"
+ msgstr "عامّ"
+ 
+-#: src/Dialogs/AbstractPropertiesDialog.vala:76 libcore/StockDialogs.vala:101
++#: src/Dialogs/AbstractPropertiesDialog.vala:75 libcore/StockDialogs.vala:101
+ msgid "Close"
+ msgstr "أغلق"
+ 
+-#: src/Dialogs/AbstractPropertiesDialog.vala:135
++#: src/Dialogs/AbstractPropertiesDialog.vala:134
+ msgid "Device Usage"
+ msgstr "إستخدام الجهاز"
+ 
+-#: src/Dialogs/AbstractPropertiesDialog.vala:155
++#: src/Dialogs/AbstractPropertiesDialog.vala:154
+ msgid "Capacity:"
+ msgstr "السعة:"
+ 
+-#: src/Dialogs/AbstractPropertiesDialog.vala:156
+-#: src/Dialogs/AbstractPropertiesDialog.vala:159
+-#: src/Dialogs/AbstractPropertiesDialog.vala:162
+-#: src/Dialogs/PropertiesWindow.vala:442 src/Dialogs/PropertiesWindow.vala:481
++#: src/Dialogs/AbstractPropertiesDialog.vala:155
++#: src/Dialogs/AbstractPropertiesDialog.vala:158
++#: src/Dialogs/AbstractPropertiesDialog.vala:161
++#: src/Dialogs/PropertiesWindow.vala:444 src/Dialogs/PropertiesWindow.vala:483
+ msgid "Unknown"
+ msgstr "مجهول"
+ 
+-#: src/Dialogs/AbstractPropertiesDialog.vala:158
++#: src/Dialogs/AbstractPropertiesDialog.vala:157
+ msgid "Available:"
+ msgstr "متاح:"
+ 
+-#: src/Dialogs/AbstractPropertiesDialog.vala:161
++#: src/Dialogs/AbstractPropertiesDialog.vala:160
+ msgid "Used:"
+ msgstr "مُستعمَل:"
+ 
+@@ -121,15 +120,15 @@ msgid "Set as default"
+ msgstr "عيّن كإفتراضي"
+ 
+ #: src/Dialogs/PropertiesWindow.vala:123
+-#: src/View/AbstractDirectoryView.vala:1962 src/View/PopupMenuBuilder.vala:81
++#: src/View/AbstractDirectoryView.vala:1965 src/View/PopupMenuBuilder.vala:81
+ msgid "Properties"
+ msgstr "خصائص"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:225
++#: src/Dialogs/PropertiesWindow.vala:227
+ msgid "Permissions"
+ msgstr "الصلاحيات"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:246
++#: src/Dialogs/PropertiesWindow.vala:248
+ #, c-format
+ msgid "%i file could not be read due to permissions or other errors."
+ msgid_plural "%i files could not be read due to permissions or other errors."
+@@ -140,91 +139,91 @@ msgstr[3] "%i لم يتم التمكن من قراءة الملفات بسبب 
+ msgstr[4] "%i لم يتم التمكن من قراءة الملفات بسبب الصلاحيات أو أخطاء أخرى."
+ msgstr[5] "%i لم يتم التمكن من قراءة الملفات بسبب الصلاحيات أو أخطاء أخرى."
+ 
+-#: src/Dialogs/PropertiesWindow.vala:250
++#: src/Dialogs/PropertiesWindow.vala:252
+ msgid "Actual Size Could Be Larger"
+ msgstr "الحجم الحالي يمكن أن يكون أكبر"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:270 src/Dialogs/PropertiesWindow.vala:289
++#: src/Dialogs/PropertiesWindow.vala:272 src/Dialogs/PropertiesWindow.vala:291
+ msgid "unknown"
+ msgstr "مجهول"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:453
++#: src/Dialogs/PropertiesWindow.vala:455
+ msgid "Loading…"
+ msgstr "تحميل …"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:487
++#: src/Dialogs/PropertiesWindow.vala:489
+ msgid "Could not be determined"
+ msgstr "لم يكن من الممكن تحديده"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:513 libcore/FileConflictDialog.vala:120
+-#: libcore/FileConflictDialog.vala:148
++#: src/Dialogs/PropertiesWindow.vala:515 libcore/FileConflictDialog.vala:121
++#: libcore/FileConflictDialog.vala:149
+ msgid "Size:"
+ msgstr "الحجم:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:520 libcore/ConnectServerDialog.vala:164
+-#: libcore/FileConflictDialog.vala:128 libcore/FileConflictDialog.vala:156
++#: src/Dialogs/PropertiesWindow.vala:522 libcore/ConnectServerDialog.vala:164
++#: libcore/FileConflictDialog.vala:129 libcore/FileConflictDialog.vala:157
+ msgid "Type:"
+ msgstr "النوع:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:523
++#: src/Dialogs/PropertiesWindow.vala:525
+ msgid "Contains:"
+ msgstr "يحتوي:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:546
++#: src/Dialogs/PropertiesWindow.vala:549
+ msgid "Created:"
+ msgstr "مُنشأ:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:556
++#: src/Dialogs/PropertiesWindow.vala:560
+ msgid "Modified:"
+ msgstr "مُعدَّل:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:568
++#: src/Dialogs/PropertiesWindow.vala:572
+ msgid "Deleted:"
+ msgstr "محذوف:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:578
++#: src/Dialogs/PropertiesWindow.vala:582
+ msgid "Media type:"
+ msgstr "نوع الوسائط:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:585
++#: src/Dialogs/PropertiesWindow.vala:589
+ msgid "Resolution:"
+ msgstr "الدقة:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:593
++#: src/Dialogs/PropertiesWindow.vala:597
+ #: src/Dialogs/VolumePropertiesWindow.vala:78
+ msgid "Location:"
+ msgstr "المكان:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:603
++#: src/Dialogs/PropertiesWindow.vala:607
+ msgid "Target:"
+ msgstr "الهدف:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:611
++#: src/Dialogs/PropertiesWindow.vala:615
+ msgid "Original Location:"
+ msgstr "المكان اﻷصلي:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:634
+-#: src/View/AbstractDirectoryView.vala:1930
++#: src/Dialogs/PropertiesWindow.vala:638
++#: src/View/AbstractDirectoryView.vala:1933
+ msgid "Other Application…"
+ msgstr "تطبيقات أخرى …"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:654
++#: src/Dialogs/PropertiesWindow.vala:658
+ msgid "Open with:"
+ msgstr "إفتح باستخدام:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:919 src/Dialogs/PropertiesWindow.vala:929
++#: src/Dialogs/PropertiesWindow.vala:923 src/Dialogs/PropertiesWindow.vala:933
+ msgid "Owner:"
+ msgstr "المالك:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:923 src/Dialogs/PropertiesWindow.vala:932
++#: src/Dialogs/PropertiesWindow.vala:927 src/Dialogs/PropertiesWindow.vala:936
+ msgid "Group:"
+ msgstr "مجموعة:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:935
++#: src/Dialogs/PropertiesWindow.vala:939
+ msgid "Everyone:"
+ msgstr "الكل:"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:1216
++#: src/Dialogs/PropertiesWindow.vala:1220
+ #, c-format
+ msgid "%u subfolder"
+ msgid_plural "%u subfolders"
+@@ -235,8 +234,8 @@ msgstr[3] "%u مجلدات فرعية"
+ msgstr[4] "%u مجلدات فرعية"
+ msgstr[5] "%u مجلدات فرعية"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:1220
+-#: src/Dialogs/PropertiesWindow.vala:1242
++#: src/Dialogs/PropertiesWindow.vala:1224
++#: src/Dialogs/PropertiesWindow.vala:1246
+ #, c-format
+ msgid "%u file"
+ msgid_plural "%u files"
+@@ -248,12 +247,12 @@ msgstr[4] "%u ملفات"
+ msgstr[5] "%u ملفات"
+ 
+ #. TRANSLATORS: folders, files
+-#: src/Dialogs/PropertiesWindow.vala:1225
++#: src/Dialogs/PropertiesWindow.vala:1229
+ #, c-format
+ msgid "%s, %s"
+ msgstr "%s، %s"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:1238 src/View/Widgets/OverlayBar.vala:225
++#: src/Dialogs/PropertiesWindow.vala:1242 src/View/Widgets/OverlayBar.vala:218
+ #, c-format
+ msgid "%u folder"
+ msgid_plural "%u folders"
+@@ -264,7 +263,7 @@ msgstr[3] "%u ملفات"
+ msgstr[4] "%u ملفات"
+ msgstr[5] "%u ملفات"
+ 
+-#: src/Dialogs/PropertiesWindow.vala:1247
++#: src/Dialogs/PropertiesWindow.vala:1251
+ #, c-format
+ msgid "%u selected item"
+ msgid_plural "%u selected items"
+@@ -276,7 +275,7 @@ msgstr[4] "%u عناصر محددة"
+ msgstr[5] "%u عنصر محدد"
+ 
+ #. TRANSLATORS: total (folders, files)
+-#: src/Dialogs/PropertiesWindow.vala:1249
++#: src/Dialogs/PropertiesWindow.vala:1253
+ #, c-format
+ msgid "%s (%s, %s)"
+ msgstr "%s (%s, %s)"
+@@ -308,11 +307,11 @@ msgstr "فشل في فتح الملفات"
+ 
+ #: src/Utils/MimeActions.vala:323
+ msgid "Could not open URIs"
+-msgstr ""
++msgstr "لم يتم فتح عنوان URI"
+ 
+ #: src/Utils/MimeActions.vala:326
+ msgid "Could not open files or URIs with this app"
+-msgstr ""
++msgstr "لم يتم فتح الملفات او عنوان URI في هذا التطبيق"
+ 
+ #: src/View/Window.vala:557 src/View/Window.vala:567
+ msgid "(as Administrator)"
+@@ -322,11 +321,11 @@ msgstr "(كمسؤول)"
+ msgid "Filename"
+ msgstr "اسم ملف"
+ 
+-#: src/View/ListView.vala:27 src/View/AbstractDirectoryView.vala:2158
++#: src/View/ListView.vala:27 src/View/AbstractDirectoryView.vala:2167
+ msgid "Size"
+ msgstr "الحجم"
+ 
+-#: src/View/ListView.vala:28 src/View/AbstractDirectoryView.vala:2163
++#: src/View/ListView.vala:28 src/View/AbstractDirectoryView.vala:2172
+ msgid "Type"
+ msgstr "النّوع"
+ 
+@@ -334,7 +333,7 @@ msgstr "النّوع"
+ msgid "Modified"
+ msgstr "عُدِّل"
+ 
+-#: src/View/DirectoryNotFound.vala:27 src/View/ViewContainer.vala:407
++#: src/View/DirectoryNotFound.vala:27 src/View/ViewContainer.vala:406
+ msgid "This Folder Does Not Exist"
+ msgstr "هذا المجلد غير موجود"
+ 
+@@ -381,210 +380,207 @@ msgstr "اسم الملف غير صالح"
+ msgid "New Tab"
+ msgstr "علامة تبويب جديدة"
+ 
+-#: src/View/AbstractDirectoryView.vala:1866
++#: src/View/AbstractDirectoryView.vala:1869
+ msgid "Run"
+ msgstr "شغل"
+ 
+-#: src/View/AbstractDirectoryView.vala:1873
++#: src/View/AbstractDirectoryView.vala:1876
+ #, c-format
+ msgid "Open in %s"
+ msgstr "إفتح في %s"
+ 
+-#: src/View/AbstractDirectoryView.vala:1942
++#: src/View/AbstractDirectoryView.vala:1945
+ msgid "Open in"
+ msgstr "إفتح في"
+ 
+-#: src/View/AbstractDirectoryView.vala:1944
+-#: src/View/Widgets/BreadcrumbsEntry.vala:491
++#: src/View/AbstractDirectoryView.vala:1947
++#: src/View/Widgets/BreadcrumbsEntry.vala:487
+ msgid "Open with"
+ msgstr "فتح باستخدام"
+ 
+-#: src/View/AbstractDirectoryView.vala:1950
++#: src/View/AbstractDirectoryView.vala:1953
+ msgid "Paste"
+ msgstr "لصق"
+ 
+-#: src/View/AbstractDirectoryView.vala:1955
++#: src/View/AbstractDirectoryView.vala:1958
+ msgid "Bookmark"
+ msgstr "علامة مرجعية"
+ 
+-#: src/View/AbstractDirectoryView.vala:1970
++#: src/View/AbstractDirectoryView.vala:1973
+ msgid "Cut"
+ msgstr "قص"
+ 
+-#: src/View/AbstractDirectoryView.vala:1977
++#: src/View/AbstractDirectoryView.vala:1980
+ msgid "Copy"
+ msgstr "نسخ"
+ 
+-#: src/View/AbstractDirectoryView.vala:1984
++#: src/View/AbstractDirectoryView.vala:1987
+ msgid "Move to Trash"
+ msgstr "انقل إلى المُهملات"
+ 
+-#: src/View/AbstractDirectoryView.vala:1989
++#: src/View/AbstractDirectoryView.vala:1992
+ msgid "Delete permanently"
+ msgstr "حذف بشكل دائم"
+ 
+-#: src/View/AbstractDirectoryView.vala:1994
++#: src/View/AbstractDirectoryView.vala:1997
+ msgid "Restore from Trash"
+ msgstr "استعد من المُهملات"
+ 
+-#: src/View/AbstractDirectoryView.vala:2005
+-#, fuzzy
++#: src/View/AbstractDirectoryView.vala:2008
+ msgid "Open Parent Folder"
+-msgstr "افتح مجلّدك الشخصي"
++msgstr "فتح الملف الاعلى"
+ 
+-#: src/View/AbstractDirectoryView.vala:2008
++#: src/View/AbstractDirectoryView.vala:2011
+ msgid "Remove from History"
+ msgstr "امسح من السجل"
+ 
+-#: src/View/AbstractDirectoryView.vala:2024
++#: src/View/AbstractDirectoryView.vala:2027
+ msgid "Rename…"
+ msgstr "إعادة تسمية…"
+ 
+-#: src/View/AbstractDirectoryView.vala:2031
++#: src/View/AbstractDirectoryView.vala:2034
+ msgid "Copy as Link"
+ msgstr "نسخ كرابط"
+ 
+-#: src/View/AbstractDirectoryView.vala:2047
++#: src/View/AbstractDirectoryView.vala:2052
+ msgid "Paste Link into Folder"
+-msgstr ""
++msgstr "لصق الرابط في المجلد"
+ 
+-#: src/View/AbstractDirectoryView.vala:2049
++#: src/View/AbstractDirectoryView.vala:2054
+ msgid "Paste into Folder"
+-msgstr ""
++msgstr "لصق في المجلد"
+ 
+-#: src/View/AbstractDirectoryView.vala:2075
++#: src/View/AbstractDirectoryView.vala:2082
+ msgid "Show Hidden Files"
+ msgstr "أظهر الملفات المخفية"
+ 
+-#: src/View/AbstractDirectoryView.vala:2078
+-#, fuzzy
++#: src/View/AbstractDirectoryView.vala:2085
+ msgid "Show Remote Thumbnails"
+-msgstr "أظهر _تفاصيل أكثر"
++msgstr "اظهر تفاصيل عن بعد أكثر"
+ 
+-#: src/View/AbstractDirectoryView.vala:2081
+-#, fuzzy
++#: src/View/AbstractDirectoryView.vala:2088
+ msgid "Hide Thumbnails"
+-msgstr "أظهر _تفاصيل أكثر"
++msgstr "اخفي التفاصيل"
+ 
+-#: src/View/AbstractDirectoryView.vala:2101
++#: src/View/AbstractDirectoryView.vala:2108
+ msgid "Paste Link"
+-msgstr ""
++msgstr "لصق الرابط"
+ 
+-#: src/View/AbstractDirectoryView.vala:2153
++#: src/View/AbstractDirectoryView.vala:2162
+ msgid "Name"
+-msgstr "الإسم"
++msgstr "الاسم"
+ 
+-#: src/View/AbstractDirectoryView.vala:2168
++#: src/View/AbstractDirectoryView.vala:2177
+ msgid "Date"
+ msgstr "التاريخ"
+ 
+-#: src/View/AbstractDirectoryView.vala:2173
++#: src/View/AbstractDirectoryView.vala:2182
+ msgid "Reversed Order"
+ msgstr "ترتيب عكسي"
+ 
+-#: src/View/AbstractDirectoryView.vala:2176
++#: src/View/AbstractDirectoryView.vala:2185
+ msgid "Folders Before Files"
+ msgstr "المجلدات قبل الملفات"
+ 
+-#: src/View/AbstractDirectoryView.vala:2188
++#: src/View/AbstractDirectoryView.vala:2197
+ msgid "Sort by"
+ msgstr "ترتيب حسب"
+ 
+-#: src/View/AbstractDirectoryView.vala:2196
++#: src/View/AbstractDirectoryView.vala:2205
+ msgid "Folder"
+ msgstr "مجلد"
+ 
+-#: src/View/AbstractDirectoryView.vala:2202
++#: src/View/AbstractDirectoryView.vala:2211
+ msgid "Empty File"
+ msgstr "ملف فارغ"
+ 
+-#: src/View/AbstractDirectoryView.vala:2252
++#: src/View/AbstractDirectoryView.vala:2262
+ msgid "New"
+ msgstr "جديد"
+ 
+-#: src/View/AbstractDirectoryView.vala:2489
++#: src/View/AbstractDirectoryView.vala:2499
+ #, c-format
+ msgid "Untitled %s"
+ msgstr "بدون عنوان %s"
+ 
+-#: src/View/AbstractDirectoryView.vala:2850
+-#: src/View/AbstractDirectoryView.vala:3045
++#: src/View/AbstractDirectoryView.vala:2860
++#: src/View/AbstractDirectoryView.vala:3055
+ msgid "Cannot remove files from here"
+ msgstr "لا يمكن إزالة الملفات من هنا"
+ 
+-#: src/View/AbstractDirectoryView.vala:2851
+-#: src/View/AbstractDirectoryView.vala:3030
+-#: src/View/AbstractDirectoryView.vala:3046
++#: src/View/AbstractDirectoryView.vala:2861
++#: src/View/AbstractDirectoryView.vala:3040
++#: src/View/AbstractDirectoryView.vala:3056
+ msgid "You do not have permission to change this location"
+ msgstr "ليس لديك إذن لتغيير هذا الموقع"
+ 
+-#: src/View/AbstractDirectoryView.vala:3005
++#: src/View/AbstractDirectoryView.vala:3015
+ msgid "Cannot copy files that are in the trash"
+ msgstr "لا يمكن نسخ الملفات الموجودة في سلة المهملات"
+ 
+-#: src/View/AbstractDirectoryView.vala:3006
++#: src/View/AbstractDirectoryView.vala:3016
+ msgid "Cutting the selection instead"
+ msgstr "قص المحدد بدلاً من ذلك"
+ 
+-#: src/View/AbstractDirectoryView.vala:3029
++#: src/View/AbstractDirectoryView.vala:3039
+ msgid "Cannot paste files here"
+ msgstr "لا يمكن لصق الملفات هنا"
+ 
+-#: src/View/ViewContainer.vala:386 src/View/Sidebar.vala:578
++#: src/View/ViewContainer.vala:385 src/View/Sidebar.vala:578
+ msgid "Home"
+ msgstr "المنزل"
+ 
+-#: src/View/ViewContainer.vala:408
++#: src/View/ViewContainer.vala:407
+ msgid "You cannot create a folder here."
+ msgstr "لا يمكنك إنشاء مجلد هنا."
+ 
+-#: src/View/ViewContainer.vala:411
++#: src/View/ViewContainer.vala:410
+ msgid "The network is unavailable"
+ msgstr "الشبكة غير متاحة"
+ 
+-#: src/View/ViewContainer.vala:412
++#: src/View/ViewContainer.vala:411
+ msgid "A working network is needed to reach this folder"
+ msgstr "هناك حاجة إلى شبكة عمل للوصول إلى هذا المجلد"
+ 
+-#: src/View/ViewContainer.vala:415
++#: src/View/ViewContainer.vala:414
+ msgid "This Folder Does Not Belong to You"
+ msgstr "هذا المجلد لا ينتمي إليك"
+ 
+-#: src/View/ViewContainer.vala:416
++#: src/View/ViewContainer.vala:415
+ msgid "You don't have permission to view this folder."
+ msgstr "أنت لا تملك الصلاحية للإطلاع على الملف."
+ 
+-#: src/View/ViewContainer.vala:418
++#: src/View/ViewContainer.vala:417
+ msgid "Unable to Mount Folder"
+ msgstr "تعذر تحميل المجلد"
+ 
+-#: src/View/ViewContainer.vala:419
++#: src/View/ViewContainer.vala:418
+ msgid "Could not connect to the server for this folder."
+ msgstr "تعذر الاتصال بالخادم لهذا المجلد."
+ 
+-#: src/View/ViewContainer.vala:422
++#: src/View/ViewContainer.vala:421
+ msgid "Unable to Display Folder Contents"
+-msgstr ""
++msgstr "لم نتمكن من عرض محتويات المجلد"
+ 
+-#: src/View/ViewContainer.vala:423
++#: src/View/ViewContainer.vala:422
+ msgid "The operation timed out."
+-msgstr ""
++msgstr "زاد وقت العملية عن المدة المسموح بها."
+ 
+-#: src/View/ViewContainer.vala:425
++#: src/View/ViewContainer.vala:424
+ msgid "Unable to Show Folder"
+-msgstr ""
++msgstr "لم نتمكن من عرض المجلد"
+ 
+-#: src/View/ViewContainer.vala:426
++#: src/View/ViewContainer.vala:425
+ msgid "The server for this folder could not be located."
+-msgstr ""
++msgstr "لم يتم العثور على مكان الخادم لهذا المجلد."
+ 
+-#: src/View/ViewContainer.vala:437
++#: src/View/ViewContainer.vala:436
+ msgid "File not Found"
+-msgstr ""
++msgstr "لم يتم ايجاد الملف"
+ 
+-#: src/View/ViewContainer.vala:438
++#: src/View/ViewContainer.vala:437
+ msgid "The file selected no longer exists."
+-msgstr ""
++msgstr "الملف المختار لم يعد موجودا."
+ 
+ #: src/View/Sidebar.vala:565
+ msgid "Personal"
+@@ -600,7 +596,7 @@ msgstr "افتح مجلّدك الشخصي"
+ 
+ #: src/View/Sidebar.vala:600
+ msgid "View the list of recently used files"
+-msgstr ""
++msgstr "عرض قائمة الملفات المفتوحة مؤخرا"
+ 
+ #: src/View/Sidebar.vala:626 libwidgets/Resources.vala:65
+ msgid "Trash"
+@@ -608,7 +604,7 @@ msgstr "المهملات"
+ 
+ #: src/View/Sidebar.vala:633
+ msgid "Open the Trash"
+-msgstr ""
++msgstr "فتح المهملات"
+ 
+ #: src/View/Sidebar.vala:638
+ msgid "Devices"
+@@ -628,7 +624,7 @@ msgstr "شبكتك المحلية"
+ 
+ #: src/View/Sidebar.vala:801
+ msgid "Entire Network"
+-msgstr ""
++msgstr "الشبكة كاملة"
+ 
+ #: src/View/Sidebar.vala:808
+ msgid "Browse the contents of the network"
+@@ -639,19 +635,18 @@ msgid "Connect Server"
+ msgstr "اتصل بالخادم"
+ 
+ #: src/View/Sidebar.vala:812
+-#, fuzzy
+ msgid "Connect to a network server"
+-msgstr "اتصل بالخادوم"
++msgstr "اتصل بشبكة الخادم"
+ 
+ #: src/View/Sidebar.vala:971
+ #, c-format
+ msgid "(%s Free of %s)"
+-msgstr ""
++msgstr "( %s خالية من %s )"
+ 
+ #: src/View/Sidebar.vala:1464
+ #, c-format
+ msgid "Error mounting volume %s"
+-msgstr ""
++msgstr "خطأ في تحميل القسم %s"
+ 
+ #: src/View/Sidebar.vala:1479
+ #, c-format
+@@ -664,39 +659,39 @@ msgstr "أفرغ ال_مهملات"
+ 
+ #: src/View/Slot.vala:31
+ msgid "This Folder Is Empty"
+-msgstr ""
++msgstr "المجلد فارغ"
+ 
+ #: src/View/Slot.vala:32
+ msgid "Trash Is Empty"
+-msgstr ""
++msgstr "المهملات فارغة"
+ 
+ #: src/View/Slot.vala:33
+ msgid "There Are No Recent Files"
+-msgstr ""
++msgstr "لا توجد ملفات حديثة"
+ 
+ #: src/View/Slot.vala:34
+ msgid "Access Denied"
+-msgstr ""
++msgstr "الوصول ممنوع"
+ 
+ #: src/View/PrivacyModeOn.vala:28
+ msgid "Privacy mode is on"
+-msgstr ""
++msgstr "وضع الخصوصية مفعل"
+ 
+ #: src/View/PrivacyModeOn.vala:28
+ msgid "No recent files are remembered"
+-msgstr ""
++msgstr "لا توجد ملفات اخيرة تم تذكرها"
+ 
+ #: src/View/PrivacyModeOn.vala:30
+ msgid "Change security settings"
+-msgstr ""
++msgstr "تغيير إعدادات الأمان"
+ 
+ #: src/View/PrivacyModeOn.vala:31
+ msgid "Open the system security and privacy settings app"
+-msgstr ""
++msgstr "فتح إعدادات الخصوصية والأمان للنظام"
+ 
+ #: src/View/PopupMenuBuilder.vala:49
+ msgid "Open"
+-msgstr ""
++msgstr "فتح"
+ 
+ #: src/View/PopupMenuBuilder.vala:53
+ msgid "Open in New _Tab"
+@@ -712,7 +707,7 @@ msgstr "أزِل"
+ 
+ #: src/View/PopupMenuBuilder.vala:65
+ msgid "Rename"
+-msgstr ""
++msgstr "إعادة تسمية"
+ 
+ #: src/View/PopupMenuBuilder.vala:69
+ msgid "_Mount"
+@@ -729,105 +724,105 @@ msgstr "أ_خرِج"
+ #: src/View/Widgets/BreadcrumbsEntry.vala:133
+ #: src/View/Widgets/LocationBar.vala:198
+ msgid "Search or Type Path"
+-msgstr ""
++msgstr "البحث أو كتابة المسار"
+ 
+-#: src/View/Widgets/BreadcrumbsEntry.vala:452
++#: src/View/Widgets/BreadcrumbsEntry.vala:448
+ msgid "Open in New Tab"
+ msgstr "فتح في علامة تبويب جديدة"
+ 
+-#: src/View/Widgets/BreadcrumbsEntry.vala:459
++#: src/View/Widgets/BreadcrumbsEntry.vala:455
+ msgid "Open in New Window"
+-msgstr ""
++msgstr "فتح في نافذة جديدة"
+ 
+-#: src/View/Widgets/BreadcrumbsEntry.vala:498
++#: src/View/Widgets/BreadcrumbsEntry.vala:494
+ msgid "Open in Other Application…"
+-msgstr ""
++msgstr "فتح في تطبيق آخر…"
+ 
+ #: src/View/Widgets/HeaderBar.vala:63
+ #: filechooser-module/FileChooserDialog.vala:75
+ msgid "Previous"
+-msgstr ""
++msgstr "السابق"
+ 
+ #: src/View/Widgets/HeaderBar.vala:68
+ #: filechooser-module/FileChooserDialog.vala:79
+ msgid "Next"
+-msgstr ""
++msgstr "التالي"
+ 
+ #: src/View/Widgets/LocationBar.vala:194
+ msgid "Reload this folder"
+-msgstr ""
++msgstr "إعادة تحميل المجلد"
+ 
+ #: src/View/Widgets/LocationBar.vala:207
+ msgid "Searching…"
+-msgstr ""
++msgstr "جاري البحث…"
+ 
+-#: src/View/Widgets/OverlayBar.vala:216
++#: src/View/Widgets/OverlayBar.vala:209
+ #, c-format
+ msgid "%u folders"
+ msgstr "%u المجلدات"
+ 
+-#: src/View/Widgets/OverlayBar.vala:218 src/View/Widgets/OverlayBar.vala:228
++#: src/View/Widgets/OverlayBar.vala:211 src/View/Widgets/OverlayBar.vala:221
+ #, c-format
+ msgid " and %u other item (%s) selected"
+ msgstr " و %u عناصر أخرى (%s)  تم تحديدها"
+ 
+-#: src/View/Widgets/OverlayBar.vala:219 src/View/Widgets/OverlayBar.vala:229
++#: src/View/Widgets/OverlayBar.vala:212 src/View/Widgets/OverlayBar.vala:222
+ #, c-format
+ msgid " and %u other items (%s) selected"
+ msgstr " و %u عناصر أخرى (%s)  تم تحديدها"
+ 
+-#: src/View/Widgets/OverlayBar.vala:222 src/View/Widgets/OverlayBar.vala:232
++#: src/View/Widgets/OverlayBar.vala:215 src/View/Widgets/OverlayBar.vala:225
+ msgid " selected"
+ msgstr " محددة"
+ 
+-#: src/View/Widgets/OverlayBar.vala:235
++#: src/View/Widgets/OverlayBar.vala:228
+ #, c-format
+ msgid "%u items selected (%s)"
+ msgstr "%u العناصر المحددة (%s)"
+ 
+ #. TRANSLATORS: %u will be substituted by the number of sub folders
+-#: src/View/Widgets/OverlayBar.vala:279
++#: src/View/Widgets/OverlayBar.vala:272
+ #, c-format
+ msgid "%u sub-folder, "
+-msgstr ""
++msgstr "%u مجلد فرعي, "
+ 
+-#: src/View/Widgets/OverlayBar.vala:279
++#: src/View/Widgets/OverlayBar.vala:272
+ #, c-format
+ msgid "%u sub-folders, "
+-msgstr ""
++msgstr "%u مجلدات فرعية, "
+ 
+ #. TRANSLATORS: %u will be substituted by the number of readable files
+-#: src/View/Widgets/OverlayBar.vala:285
++#: src/View/Widgets/OverlayBar.vala:278
+ #, c-format
+ msgid "%u file, "
+-msgstr ""
++msgstr "%u ملف, "
+ 
+-#: src/View/Widgets/OverlayBar.vala:285
++#: src/View/Widgets/OverlayBar.vala:278
+ #, c-format
+ msgid "%u files, "
+-msgstr ""
++msgstr "%u ملفات, "
+ 
+ #. TRANSLATORS: %s will be substituted by the approximate disk space used by the folder
+-#: src/View/Widgets/OverlayBar.vala:295
++#: src/View/Widgets/OverlayBar.vala:288
+ #, c-format
+ msgid "%s approx."
+-msgstr ""
++msgstr "%s مقدر."
+ 
+ #. TRANSLATORS: 'size' refers to disk space
+-#: src/View/Widgets/OverlayBar.vala:298
++#: src/View/Widgets/OverlayBar.vala:291
+ msgid "unknown size"
+-msgstr ""
++msgstr "مساحة القرص غير معلومة"
+ 
+ #. TRANSLATORS: %u will be substituted by the number of unreadable files
+-#: src/View/Widgets/OverlayBar.vala:302
++#: src/View/Widgets/OverlayBar.vala:295
+ #, c-format
+ msgid "%u file not readable"
+-msgstr ""
++msgstr "%u ملف غير قابل للقراءة"
+ 
+-#: src/View/Widgets/OverlayBar.vala:302
++#: src/View/Widgets/OverlayBar.vala:295
+ #, c-format
+ msgid "%u files not readable"
+-msgstr ""
++msgstr "%u ملفات غير قابلة للقراءة"
+ 
+ #: src/View/Widgets/PermissionButton.vala:38
+ msgid "Read"
+@@ -875,7 +870,7 @@ msgstr "تفاصيل الخادوم"
+ 
+ #: libcore/ConnectServerDialog.vala:132
+ msgid "Server name or IP address"
+-msgstr ""
++msgstr "اسم الخادم أو IP address"
+ 
+ #: libcore/ConnectServerDialog.vala:135
+ msgid "Server:"
+@@ -887,7 +882,7 @@ msgstr "المنفذ:"
+ 
+ #: libcore/ConnectServerDialog.vala:167
+ msgid "Name of share on server"
+-msgstr ""
++msgstr "اسم المشاركة على الخادم"
+ 
+ #: libcore/ConnectServerDialog.vala:168
+ msgid "Share:"
+@@ -895,7 +890,7 @@ msgstr "المشاركة:"
+ 
+ #: libcore/ConnectServerDialog.vala:170
+ msgid "Path of shared folder on server"
+-msgstr ""
++msgstr "مسار المجلد المشارك على الخادم"
+ 
+ #: libcore/ConnectServerDialog.vala:171
+ msgid "Folder:"
+@@ -906,9 +901,8 @@ msgid "User Details"
+ msgstr "تفاصيل المستخدم"
+ 
+ #: libcore/ConnectServerDialog.vala:175
+-#, fuzzy
+ msgid "Name of Windows domain"
+-msgstr "نافذة جديدة كمسؤول"
++msgstr "اسم نطاق ويندوز"
+ 
+ #: libcore/ConnectServerDialog.vala:176
+ msgid "Domain name:"
+@@ -916,7 +910,7 @@ msgstr "اسم النطاق:"
+ 
+ #: libcore/ConnectServerDialog.vala:178
+ msgid "Name of user on server"
+-msgstr ""
++msgstr "اسم المستخدم على الخادم"
+ 
+ #: libcore/ConnectServerDialog.vala:179
+ msgid "User name:"
+@@ -931,7 +925,7 @@ msgid "Remember this password"
+ msgstr "تذكر كلمة السر هذه"
+ 
+ #: libcore/ConnectServerDialog.vala:189 libcore/DndHandler.vala:103
+-#: libcore/FileConflictDialog.vala:189
++#: libcore/FileConflictDialog.vala:190
+ msgid "Cancel"
+ msgstr "ألغِ"
+ 
+@@ -954,74 +948,74 @@ msgstr "من فضلك راجع تفاصيل المستخدم."
+ #: libcore/DndHandler.vala:49
+ #, c-format
+ msgid "Failed to execute \"%s\""
+-msgstr ""
++msgstr "فشل في تنفيذ “%s”"
+ 
+ #: libcore/DndHandler.vala:98
+ msgid "Move Here"
+-msgstr ""
++msgstr "حرك هنا"
+ 
+ #: libcore/DndHandler.vala:99
+ msgid "Copy Here"
+-msgstr ""
++msgstr "نسخ إلى هنا"
+ 
+ #: libcore/DndHandler.vala:100
+ msgid "Link Here"
+-msgstr ""
++msgstr "اضف الرابط إلى هنا"
+ 
+ #: libcore/FileConflictDialog.vala:64
+ msgid "File conflict"
+ msgstr "تعارض الملف"
+ 
+-#: libcore/FileConflictDialog.vala:115
++#: libcore/FileConflictDialog.vala:116
+ msgid "Original file"
+ msgstr "الملف الأصلي"
+ 
+-#: libcore/FileConflictDialog.vala:133 libcore/FileConflictDialog.vala:161
++#: libcore/FileConflictDialog.vala:134 libcore/FileConflictDialog.vala:162
+ msgid "Last modified:"
+ msgstr "آخر تعديل:"
+ 
+-#: libcore/FileConflictDialog.vala:143
++#: libcore/FileConflictDialog.vala:144
+ msgid "Replace with"
+ msgstr "إستبدال بـ"
+ 
+-#: libcore/FileConflictDialog.vala:171
++#: libcore/FileConflictDialog.vala:172
+ msgid "Reset"
+ msgstr "أعد ضبط"
+ 
+-#: libcore/FileConflictDialog.vala:181
++#: libcore/FileConflictDialog.vala:182
+ msgid "_Select a new name for the destination"
+ msgstr "_حدد اسما جديدا للوِجهة"
+ 
+-#: libcore/FileConflictDialog.vala:184
++#: libcore/FileConflictDialog.vala:185
+ msgid "Apply this action to all files"
+ msgstr "طبق هذا الإجراء على كل الملفات"
+ 
+-#: libcore/FileConflictDialog.vala:186 libcore/StockDialogs.vala:22
++#: libcore/FileConflictDialog.vala:187 libcore/StockDialogs.vala:22
+ msgid "_Skip"
+ msgstr "_تخطَّ"
+ 
+-#: libcore/FileConflictDialog.vala:187
++#: libcore/FileConflictDialog.vala:188
+ msgid "Re_name"
+ msgstr "إعادة تسمية"
+ 
+-#: libcore/FileConflictDialog.vala:191
++#: libcore/FileConflictDialog.vala:192
+ msgid "Keep Newest"
+-msgstr ""
++msgstr "ابق الاجدد"
+ 
+-#: libcore/FileConflictDialog.vala:192
++#: libcore/FileConflictDialog.vala:193
+ msgid "Skip if original was modified more recently"
+-msgstr ""
++msgstr "تخطى اذا الاصلي قد تم التعديل عليه كثيرا مؤخرا"
+ 
+-#: libcore/FileConflictDialog.vala:194
++#: libcore/FileConflictDialog.vala:195
+ msgid "Replace"
+ msgstr "إستبدل"
+ 
+-#: libcore/FileConflictDialog.vala:310
++#: libcore/FileConflictDialog.vala:307
+ #, c-format
+ msgid "Merge folder \"%s\"?"
+ msgstr "أأدمج المجلد \"%s\"؟"
+ 
+-#: libcore/FileConflictDialog.vala:311
++#: libcore/FileConflictDialog.vala:308
+ msgid ""
+ "Merging will ask for confirmation before replacing any files in the folder "
+ "that conflict with the files being copied."
+@@ -1029,60 +1023,60 @@ msgstr ""
+ "الدمج سيطلب التأكيد قبل استبدال أي ملفات في المجلد تتعارض مع الملفات الجاري "
+ "نسخها."
+ 
+-#: libcore/FileConflictDialog.vala:313
++#: libcore/FileConflictDialog.vala:310
+ #, c-format
+ msgid "An older folder with the same name already exists in \"%s\"."
+ msgstr "هناك مجلّد أقدم بنفس الاسم موجود في \"%s\"."
+ 
+-#: libcore/FileConflictDialog.vala:315
++#: libcore/FileConflictDialog.vala:312
+ #, c-format
+ msgid "A newer folder with the same name already exists in \"%s\"."
+ msgstr "هناك مجلّد أحدث بنفس الاسم موجود في \"%s\"."
+ 
+-#: libcore/FileConflictDialog.vala:317
++#: libcore/FileConflictDialog.vala:314
+ #, c-format
+ msgid "Another folder with the same name already exists in \"%s\"."
+ msgstr "هناك مجلّد آخر بنفس الاسم موجود في \"%s\"."
+ 
+-#: libcore/FileConflictDialog.vala:320
++#: libcore/FileConflictDialog.vala:317
+ #, c-format
+ msgid "Replace folder \"%s\"?"
+ msgstr "أأستبدل المجلد \"%s\"؟"
+ 
+-#: libcore/FileConflictDialog.vala:321
++#: libcore/FileConflictDialog.vala:318
+ msgid "Replacing it will remove all files in the folder."
+ msgstr "استبداله سيحذف كل الملفات داخل المجلد."
+ 
+-#: libcore/FileConflictDialog.vala:322
++#: libcore/FileConflictDialog.vala:319
+ #, c-format
+ msgid "A folder with the same name already exists in \"%s\"."
+ msgstr "هناك مجلّد بنفس الاسم موجود في \"%s\"."
+ 
+-#: libcore/FileConflictDialog.vala:325
++#: libcore/FileConflictDialog.vala:322
+ #, c-format
+ msgid "Replace file \"%s\"?"
+ msgstr "أأستبدل الملف \"%s\"؟"
+ 
+-#: libcore/FileConflictDialog.vala:326
++#: libcore/FileConflictDialog.vala:323
+ msgid "Replacing it will overwrite its content."
+ msgstr "استبداله سيستبدل محتواه."
+ 
+-#: libcore/FileConflictDialog.vala:329
++#: libcore/FileConflictDialog.vala:326
+ #, c-format
+ msgid "An older file with the same name already exists in \"%s\"."
+ msgstr "هناك ملف أقدم بنفس الاسم موجود في \"%s\"."
+ 
+-#: libcore/FileConflictDialog.vala:331
++#: libcore/FileConflictDialog.vala:328
+ #, c-format
+ msgid "A newer file with the same name already exists in \"%s\"."
+ msgstr "هناك ملف أحدث بنفس الاسم موجود في \"%s\"."
+ 
+-#: libcore/FileConflictDialog.vala:333
++#: libcore/FileConflictDialog.vala:330
+ #, c-format
+ msgid "Another file with the same name already exists in \"%s\"."
+ msgstr "هناك ملف آخر بنفس الاسم موجود في \"%s\"."
+ 
+-#: libcore/FileConflictDialog.vala:359
++#: libcore/FileConflictDialog.vala:356
+ msgid "Merge"
+ msgstr "إدمج"
+ 
+@@ -1098,7 +1092,7 @@ msgstr "لا يمكن إستعادة العنصر من المهملات"
+ #: libcore/FileUtils.vala:445
+ #, c-format
+ msgid "Could not rename to '%s'"
+-msgstr ""
++msgstr "لم تتم إعادة التسمية إلى “%s”"
+ 
+ #. TRANSLATORS '%s' is a placeholder for the time. It may be moved but not changed.
+ #: libcore/FileUtils.vala:534
+@@ -1107,20 +1101,20 @@ msgid "Today at %s"
+ msgstr "اليوم في %s"
+ 
+ #. TRANSLATORS '%s' is a placeholder for the time. It may be moved but not changed.
+-#: libcore/FileUtils.vala:540
++#: libcore/FileUtils.vala:542
+ #, c-format
+ msgid "Yesterday at %s"
+ msgstr "أمس في %s"
+ 
+ #. TRANSLATORS '%%A' is a placeholder for the day name, '%s' is a placeholder for the time. These may be moved and reordered but not changed.
+-#: libcore/FileUtils.vala:546
++#: libcore/FileUtils.vala:550
+ #, c-format
+ msgid "%%A at %s"
+-msgstr ""
++msgstr "يوم %%A الساعة %s"
+ 
+ #: libcore/gof-directory-async.vala:690
+ msgid "Server did not respond within time limit"
+-msgstr ""
++msgstr "الخادم لم يستجب في الوقت المحدد"
+ 
+ #: libcore/ProgressInfo.vala:29 libcore/ProgressInfo.vala:30
+ #: libcore/ProgressInfo.vala:31
+@@ -1128,9 +1122,8 @@ msgid "Preparing"
+ msgstr "يحضّر"
+ 
+ #: libcore/StockDialogs.vala:20
+-#, fuzzy
+ msgid "_Cancel"
+-msgstr "ألغِ"
++msgstr "الغاء"
+ 
+ #: libcore/StockDialogs.vala:21
+ msgid "Delete"
+@@ -1170,11 +1163,11 @@ msgstr "انسخ _على أي حال"
+ 
+ #: libcore/UndoManager.vala:310
+ msgid "Original location could not be determined"
+-msgstr ""
++msgstr "الموقع الاصلي لم يتم تحديده"
+ 
+ #: libcore/UndoManager.vala:311
+ msgid "Open trash folder and restore manually"
+-msgstr ""
++msgstr "فتح مجلد المهملات وقم بالإستعادة يدويا"
+ 
+ #: libcore/FileOperations/EmptyTrashJob.vala:40
+ msgid "Permanently delete all items from Trash?"
+@@ -1185,24 +1178,25 @@ msgid ""
+ "All items in all trash directories, including those on any mounted external "
+ "drives, will be permanently deleted."
+ msgstr ""
++"جميع الأشياء في كل مجلدات المهملات، تشمل التي تم تركيبها على أي قرص خارجي، "
++"ستحذف نهائيا."
+ 
+ #: libcore/FileOperations/EmptyTrashJob.vala:44
+ msgid "Permanently delete all items from Trash on this mount?"
+-msgstr ""
++msgstr "حذف كل الأشياء نهائيا من المهملات على هذا القرص؟"
+ 
+ #: libcore/FileOperations/EmptyTrashJob.vala:45
+ msgid "All items in the trash on this mount, will be permanently deleted."
+-msgstr ""
++msgstr "جميع الأشياء في المهملات على هذا القرص, سيتم حذفها نهائيا."
+ 
+ #: libcore/FileOperations/EmptyTrashJob.vala:104
+ msgid "Emptying Trash"
+ msgstr "إفراغ المهملات"
+ 
+ #: libcore/FileOperations/MountUtils.vala:26
+-#, fuzzy, c-format
+-#| msgid "Unable to mount %s"
++#, c-format
+ msgid "Unable to mount '%s'"
+-msgstr "تعذّر وصْل %s"
++msgstr "تعذّر التركيب '%s'"
+ 
+ #: libcore/marlin-file-operations.c:156
+ #, c-format
+@@ -1210,7 +1204,7 @@ msgid "%'d second"
+ msgid_plural "%'d seconds"
+ msgstr[0] "أقل من ثانية"
+ msgstr[1] "ثانية واحدة"
+-msgstr[2] "ثانيتين"
++msgstr[2] "ثانيتان"
+ msgstr[3] "%'d ثوان"
+ msgstr[4] "%'d ثانية"
+ msgstr[5] "%'d ثانية"
+@@ -1219,7 +1213,7 @@ msgstr[5] "%'d ثانية"
+ #, c-format
+ msgid "%'d minute"
+ msgid_plural "%'d minutes"
+-msgstr[0] "دقيقة"
++msgstr[0] "اقل من دقيقة"
+ msgstr[1] "دقيقة واحدة"
+ msgstr[2] "دقيقتان"
+ msgstr[3] "%'d دقائق"
+@@ -1230,7 +1224,7 @@ msgstr[5] "%'d دقائق"
+ #, c-format
+ msgid "%'d hour"
+ msgid_plural "%'d hours"
+-msgstr[0] "ساعة"
++msgstr[0] "اقل من ساعة"
+ msgstr[1] "ساعة واحدة"
+ msgstr[2] "ساعتان"
+ msgstr[3] "%'d ساعات"
+@@ -1334,7 +1328,7 @@ msgstr[5] "أمتأكد أنّك تريد حذف الـ%I'd عنصر المخت
+ 
+ #: libcore/marlin-file-operations.c:1112
+ msgid "Deleted items are not sent to Trash and are not recoverable."
+-msgstr ""
++msgstr "الأشياء المحذوفة لن ترسل إلى المهملات ولن تكون قابلة للإستعادة."
+ 
+ #: libcore/marlin-file-operations.c:1146
+ #, c-format
+@@ -1446,28 +1440,33 @@ msgstr "لا يمكن نقل الملف إلى سلة المهملات أو حذ
+ #: libcore/marlin-file-operations.c:1592
+ msgid "It is not permitted to trash or delete files on a read only filesystem."
+ msgstr ""
++"غير مسموح بحذف أو الارسال إلى سلة المهملات لملفات النظام المخصصة للقراءة فقط."
+ 
+ #: libcore/marlin-file-operations.c:1595
+ msgid ""
+ "It is not permitted to trash or delete files inside folders for which you do "
+ "not have write privileges."
+ msgstr ""
++"غير مسموح بحذف أو الارسال إلى سلة المهملات للملفات داخل المجلدات التي ليس "
++"لديك الإذن بالكتابة عليها."
+ 
+ #: libcore/marlin-file-operations.c:1598
+ msgid ""
+ "It is not permitted to trash or delete folders for which you do not have "
+ "write privileges."
+ msgstr ""
++"غير مسموح لك بالحذف أو الارسال إلى سلة المهملات للمجلدات التي ليس لديك الإذن "
++"بالكتابة عليها."
+ 
+ #: libcore/marlin-file-operations.c:1600
+ msgid "Cannot move file to trash. Try to delete it immediately?"
+-msgstr ""
++msgstr "لا يمكن تحريك الملف إلى سلة المهملات. تريد حذفها مباشرة؟"
+ 
+ #: libcore/marlin-file-operations.c:1601
+ msgid ""
+ "This file could not be moved to trash. See details below for further "
+ "information."
+-msgstr ""
++msgstr "الملف لا يمكن نقلة إلى سلة المهملات. انظر للأسفل لمزيد من المعلومات."
+ 
+ #: libcore/marlin-file-operations.c:1605
+ msgid "Cannot move file to trash.  Try to delete it?"
+@@ -1477,13 +1476,15 @@ msgstr "لا يمكن نقل الملف إلى سلة المهملات.  أتح
+ msgid ""
+ "This file could not be moved to trash. You may not be able to delete it "
+ "either."
+-msgstr ""
++msgstr "هذا الملف لا يمكن نقله إلى سلة المهملات.  و ربما لن تستطيع حذفه أيضا."
+ 
+ #: libcore/marlin-file-operations.c:1612
+ msgid ""
+ "\n"
+ " Deleting a file removes it permanently"
+ msgstr ""
++"\n"
++" حذف الملفات سيتسبب بإزالتها نهائيا"
+ 
+ #: libcore/marlin-file-operations.c:1802
+ msgid "Trashing Files"
+@@ -1951,7 +1952,7 @@ msgstr "لا يمكنك نسخ مجلد إلى نفسه."
+ 
+ #: libcore/marlin-file-operations.c:5459 libcore/marlin-file-operations.c:5467
+ msgid "It is not permitted to copy files into the trash"
+-msgstr ""
++msgstr "ليس مسموحا بنسخ الملفات إلى سلة المهملات"
+ 
+ #: libcore/marlin-file-operations.c:5607
+ msgid "untitled folder"
+@@ -1981,12 +1982,12 @@ msgstr "حدث خطأ عند إنشاء المجلد في %F."
+ 
+ #: libwidgets/Chrome/BasicLocationBar.vala:88
+ msgid "Type a path"
+-msgstr ""
++msgstr "اكتب المسار"
+ 
+ #: libwidgets/Chrome/BasicBreadcrumbsEntry.vala:171
+ #, c-format
+ msgid "Navigate to %s"
+-msgstr ""
++msgstr "انتقل إلى %s"
+ 
+ #: libwidgets/Chrome/BasicBreadcrumbsEntry.vala:285
+ #, c-format
+@@ -2000,33 +2001,33 @@ msgstr "النّوع"
+ 
+ #: libwidgets/View/SearchResults.vala:82
+ msgid "More Results …"
+-msgstr ""
++msgstr "المزيد من النتائج …"
+ 
+ #: libwidgets/View/SearchResults.vala:225
+ msgid "In This Folder"
+-msgstr ""
++msgstr "في هذا المجلد"
+ 
+ #: libwidgets/View/SearchResults.vala:230
+ msgid "Below This Folder"
+-msgstr ""
++msgstr "تحت هذا المجلد"
+ 
+ #: libwidgets/View/SearchResults.vala:235
+ msgid "Bookmarks"
+-msgstr ""
++msgstr "المؤشرات"
+ 
+ #: libwidgets/View/SearchResults.vala:240
+ msgid "Recently used"
+-msgstr ""
++msgstr "تم استخدامه مؤخرا"
+ 
+-#: libwidgets/Chrome/ViewSwitcher.vala:35
++#: libwidgets/Chrome/ViewSwitcher.vala:34
+ msgid "View as Grid"
+ msgstr "عرض كشبكة"
+ 
+-#: libwidgets/Chrome/ViewSwitcher.vala:40
++#: libwidgets/Chrome/ViewSwitcher.vala:39
+ msgid "View as List"
+ msgstr "اعرض كقائمة"
+ 
+-#: libwidgets/Chrome/ViewSwitcher.vala:45
++#: libwidgets/Chrome/ViewSwitcher.vala:44
+ msgid "View in Columns"
+ msgstr "العرض في الأعمدة"
+ 
+@@ -2060,19 +2061,19 @@ msgstr "كتلة رسائل النّظام (SMB)"
+ 
+ #: libwidgets/Resources.vala:66
+ msgid "Recent"
+-msgstr ""
++msgstr "مؤخرا"
+ 
+ #: libwidgets/Resources.vala:67
+ msgid "MTP"
+-msgstr ""
++msgstr "MTP"
+ 
+ #: plugins/pantheon-files-trash/plugin.vala:19
+ msgid "Restore All"
+-msgstr ""
++msgstr "إستعادة الكل"
+ 
+ #: plugins/pantheon-files-trash/plugin.vala:20
+ msgid "Empty the Trash"
+-msgstr ""
++msgstr "افراغ سلة المهملات"
+ 
+ #: plugins/pantheon-files-trash/plugin.vala:21
+ #, fuzzy
+diff --git a/po/extra/ar.po b/po/extra/ar.po
+index af3c10163..2ce7e59dd 100644
+--- a/po/extra/ar.po
++++ b/po/extra/ar.po
+@@ -1,7 +1,7 @@
+ msgid ""
+ msgstr ""
+ "Report-Msgid-Bugs-To: \n"
+-"POT-Creation-Date: 2020-03-17 17:33+0000\n"
++"POT-Creation-Date: 2020-04-20 09:16+0000\n"
+ "PO-Revision-Date: 2019-08-26 04:22+0000\n"
+ "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
+ "Language-Team: Arabic <https://l10n.elementary.io/projects/files/extra/ar/>\n"
+@@ -56,526 +56,536 @@ msgid ""
+ msgstr ""
+ 
+ #: data/io.elementary.files.appdata.xml.in.in:63
+-#: data/io.elementary.files.appdata.xml.in.in:77
++#: data/io.elementary.files.appdata.xml.in.in:73
++#: data/io.elementary.files.appdata.xml.in.in:87
+ msgid "Minor updates:"
+ msgstr ""
+ 
+ #: data/io.elementary.files.appdata.xml.in.in:65
+-msgid "Fix crash when a device icon is coming from a file"
++msgid "Fix an issue that prevented file modification times from showing"
+ msgstr ""
+ 
+ #: data/io.elementary.files.appdata.xml.in.in:66
+-msgid "Fix device icon sometimes missing"
++msgid "Show file info overlay in List View as well"
+ msgstr ""
+ 
+ #: data/io.elementary.files.appdata.xml.in.in:67
++#: data/io.elementary.files.appdata.xml.in.in:81
++#: data/io.elementary.files.appdata.xml.in.in:94
++#: data/io.elementary.files.appdata.xml.in.in:107
++#: data/io.elementary.files.appdata.xml.in.in:139
++#: data/io.elementary.files.appdata.xml.in.in:161
++#: data/io.elementary.files.appdata.xml.in.in:170
++#: data/io.elementary.files.appdata.xml.in.in:179
++#: data/io.elementary.files.appdata.xml.in.in:190
++#: data/io.elementary.files.appdata.xml.in.in:199
++#: data/io.elementary.files.appdata.xml.in.in:218
++#: data/io.elementary.files.appdata.xml.in.in:229
++#: data/io.elementary.files.appdata.xml.in.in:237
++#: data/io.elementary.files.appdata.xml.in.in:269
++msgid "Updated translations"
++msgstr ""
++
++#: data/io.elementary.files.appdata.xml.in.in:75
++msgid "Fix crash when a device icon is coming from a file"
++msgstr ""
++
++#: data/io.elementary.files.appdata.xml.in.in:76
++msgid "Fix device icon sometimes missing"
++msgstr ""
++
++#: data/io.elementary.files.appdata.xml.in.in:77
+ msgid "Fix occasional view freeze after renaming"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:68
++#: data/io.elementary.files.appdata.xml.in.in:78
+ msgid "Improve renaming logic when dealing with leading/trailing whitespace"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:69
++#: data/io.elementary.files.appdata.xml.in.in:79
+ msgid "Fix breadcrumbs sometimes incorrect at startup"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:70
++#: data/io.elementary.files.appdata.xml.in.in:80
+ msgid "Do not show file:// prefix in navigation buttons menus"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:71
+-#: data/io.elementary.files.appdata.xml.in.in:84
+-#: data/io.elementary.files.appdata.xml.in.in:97
+-#: data/io.elementary.files.appdata.xml.in.in:129
+-#: data/io.elementary.files.appdata.xml.in.in:151
+-#: data/io.elementary.files.appdata.xml.in.in:160
+-#: data/io.elementary.files.appdata.xml.in.in:169
+-#: data/io.elementary.files.appdata.xml.in.in:180
+-#: data/io.elementary.files.appdata.xml.in.in:189
+-#: data/io.elementary.files.appdata.xml.in.in:208
+-#: data/io.elementary.files.appdata.xml.in.in:219
+-#: data/io.elementary.files.appdata.xml.in.in:227
+-#: data/io.elementary.files.appdata.xml.in.in:259
+-msgid "Updated translations"
+-msgstr ""
+-
+-#: data/io.elementary.files.appdata.xml.in.in:79
++#: data/io.elementary.files.appdata.xml.in.in:89
+ msgid "Fix \"New Folder\" keyboard shortcut label in menu"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:80
++#: data/io.elementary.files.appdata.xml.in.in:90
+ msgid "Fix navigation with back/forward button context menu"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:81
++#: data/io.elementary.files.appdata.xml.in.in:91
+ msgid "Fix path bar sometimes showing wrong path when closing a tab"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:82
++#: data/io.elementary.files.appdata.xml.in.in:92
+ msgid ""
+ "Ensure keyboard shortcuts work immediately after creating or renaming a file"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:83
++#: data/io.elementary.files.appdata.xml.in.in:93
+ msgid "Do not include \"file://\" in pathbar text or when pasting path as text"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:91
++#: data/io.elementary.files.appdata.xml.in.in:101
+ msgid "Show keyboard shortcuts in menu items"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:92
++#: data/io.elementary.files.appdata.xml.in.in:102
+ msgid "Fix an issue with breadcrumbs in the file chooser"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:93
++#: data/io.elementary.files.appdata.xml.in.in:103
+ msgid "Show a warning when ejecting a volume that's still in use"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:94
++#: data/io.elementary.files.appdata.xml.in.in:104
+ msgid "Fix cursor update after horizontal scroll in Column View"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:95
++#: data/io.elementary.files.appdata.xml.in.in:105
+ msgid "Fix folder-open icon persisting after closing Column View"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:96
++#: data/io.elementary.files.appdata.xml.in.in:106
+ msgid "Use destructive action styling for some trash dialog buttons"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:103
++#: data/io.elementary.files.appdata.xml.in.in:113
+ msgid "New features:"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:105
++#: data/io.elementary.files.appdata.xml.in.in:115
+ msgid "Initial git plugin support"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:106
++#: data/io.elementary.files.appdata.xml.in.in:116
+ msgid "Follow global history setting when restoring and saving tabs"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:108
++#: data/io.elementary.files.appdata.xml.in.in:118
+ msgid "Other updates:"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:110
++#: data/io.elementary.files.appdata.xml.in.in:120
+ msgid "Ensure tabs showing same folder remain synchronized"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:111
++#: data/io.elementary.files.appdata.xml.in.in:121
+ msgid "Fix drag with secondary button on empty space"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:112
++#: data/io.elementary.files.appdata.xml.in.in:122
+ msgid "Show custom media type icons for installed apps"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:113
++#: data/io.elementary.files.appdata.xml.in.in:123
+ msgid "Fix appearance of inactive diskspace indicator"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:114
++#: data/io.elementary.files.appdata.xml.in.in:124
+ msgid "Improve pathbar animation"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:115
++#: data/io.elementary.files.appdata.xml.in.in:125
+ msgid "Update documentation"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:116
++#: data/io.elementary.files.appdata.xml.in.in:126
+ msgid "Update translations"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:123
++#: data/io.elementary.files.appdata.xml.in.in:133
+ msgid "Initial cloudproviders plugin support"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:124
++#: data/io.elementary.files.appdata.xml.in.in:134
+ msgid "Fix selecting pasted files"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:125
++#: data/io.elementary.files.appdata.xml.in.in:135
+ msgid "Fix color label visibility while using dark theme"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:126
++#: data/io.elementary.files.appdata.xml.in.in:136
+ msgid "Fix selecting files using Shift key"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:127
++#: data/io.elementary.files.appdata.xml.in.in:137
+ msgid "Draw checkerboard background for image items"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:128
++#: data/io.elementary.files.appdata.xml.in.in:138
+ msgid "Improved styling for disk space bars"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:136
++#: data/io.elementary.files.appdata.xml.in.in:146
+ msgid "Show more search results"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:137
++#: data/io.elementary.files.appdata.xml.in.in:147
+ msgid "Ensure valid tab name generation"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:138
++#: data/io.elementary.files.appdata.xml.in.in:148
+ msgid "Properly sort folders by date and size"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:139
++#: data/io.elementary.files.appdata.xml.in.in:149
+ msgid "Launching Files from Terminal now opens new tab instead of new window"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:140
++#: data/io.elementary.files.appdata.xml.in.in:150
+ msgid "Improve MTP support"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:141
++#: data/io.elementary.files.appdata.xml.in.in:151
+ msgid "Various tagging feature refinements"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:142
++#: data/io.elementary.files.appdata.xml.in.in:152
+ msgid "Keyboard navigation improvements"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:143
++#: data/io.elementary.files.appdata.xml.in.in:153
+ msgid "Symlink copy and paste fixes"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:144
++#: data/io.elementary.files.appdata.xml.in.in:154
+ msgid "Avoid crash when Templates folder is null"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:145
++#: data/io.elementary.files.appdata.xml.in.in:155
+ msgid "Reduce memory footprint of FileChooserDialog"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:146
++#: data/io.elementary.files.appdata.xml.in.in:156
+ msgid "Avoid crash when selecting image file in some situations"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:147
++#: data/io.elementary.files.appdata.xml.in.in:157
+ msgid ""
+ "Fix unclosable progress window while copying network files to removable "
+ "storage"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:148
++#: data/io.elementary.files.appdata.xml.in.in:158
+ msgid "Fix drag and drop after double clicking a blank area"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:149
++#: data/io.elementary.files.appdata.xml.in.in:159
+ msgid "Avoid crash while scrolling over view switcher"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:150
++#: data/io.elementary.files.appdata.xml.in.in:160
+ msgid "Avoid possible crash in some copy and paste situations"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:158
++#: data/io.elementary.files.appdata.xml.in.in:168
+ msgid "Keyboard navigation fix for cherry picking select files in icon view"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:159
++#: data/io.elementary.files.appdata.xml.in.in:169
+ msgid "Don't hardcode search placeholder text style, fixes dark theme issue"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:167
++#: data/io.elementary.files.appdata.xml.in.in:177
+ msgid "Minor spacing adjustments to location bar"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:168
++#: data/io.elementary.files.appdata.xml.in.in:178
+ msgid "Fix F2 renaming behavior"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:176
++#: data/io.elementary.files.appdata.xml.in.in:186
+ msgid "Minor spacing adjustments to location breadcrumbs"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:177
++#: data/io.elementary.files.appdata.xml.in.in:187
+ msgid "Consistently remember color tags"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:178
++#: data/io.elementary.files.appdata.xml.in.in:188
+ msgid ""
+ "Reload thumbnails when changing zoom level to avoid showing placeholder "
+ "unnecessarily"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:179
++#: data/io.elementary.files.appdata.xml.in.in:189
+ msgid "Fix running scripts with spaces in filename"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:187
++#: data/io.elementary.files.appdata.xml.in.in:197
+ msgid "Fix high CPU regression in version 4.1.4"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:188
++#: data/io.elementary.files.appdata.xml.in.in:198
+ msgid "File sorting fixes"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:196
++#: data/io.elementary.files.appdata.xml.in.in:206
+ msgid "Meson: fix soversion names"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:197
++#: data/io.elementary.files.appdata.xml.in.in:207
+ msgid "Remove CMake build system"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:198
++#: data/io.elementary.files.appdata.xml.in.in:208
+ msgid "Fix missing File System properties menu"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:199
++#: data/io.elementary.files.appdata.xml.in.in:209
+ msgid "Drop intltool dependency"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:200
++#: data/io.elementary.files.appdata.xml.in.in:210
+ msgid "Fix default file type handler logic"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:201
++#: data/io.elementary.files.appdata.xml.in.in:211
+ msgid "Fix initial search window size too small"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:202
++#: data/io.elementary.files.appdata.xml.in.in:212
+ msgid "Add option to disable local file thumbnails"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:203
++#: data/io.elementary.files.appdata.xml.in.in:213
+ msgid "Fix crash when opening multiple video files"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:204
++#: data/io.elementary.files.appdata.xml.in.in:214
+ msgid "Fix some timing issues around adding and removing files"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:205
++#: data/io.elementary.files.appdata.xml.in.in:215
+ msgid "Meson: fix missing library headers"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:206
++#: data/io.elementary.files.appdata.xml.in.in:216
+ msgid "Fix color tag display"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:207
++#: data/io.elementary.files.appdata.xml.in.in:217
+ msgid "Show reserved space in Properties window"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:215
++#: data/io.elementary.files.appdata.xml.in.in:225
+ msgid "Add border radius to text background"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:216
++#: data/io.elementary.files.appdata.xml.in.in:226
+ msgid "Fix file mimetype association regression"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:217
++#: data/io.elementary.files.appdata.xml.in.in:227
+ msgid "New pathbar tooltips"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:218
++#: data/io.elementary.files.appdata.xml.in.in:228
+ msgid "Build fixes"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:226
++#: data/io.elementary.files.appdata.xml.in.in:236
+ msgid "Plugin build fixes"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:234
++#: data/io.elementary.files.appdata.xml.in.in:244
+ msgid "Fix Ctrl+Tab behavior"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:235
++#: data/io.elementary.files.appdata.xml.in.in:245
+ msgid "Fix building without Unity library"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:242
++#: data/io.elementary.files.appdata.xml.in.in:252
+ msgid "Hide breadcrumbs and show placeholder and search icon in home folder"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:243
++#: data/io.elementary.files.appdata.xml.in.in:253
+ msgid "Style error dialogs"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:244
++#: data/io.elementary.files.appdata.xml.in.in:254
+ msgid "Right click fixes"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:245
++#: data/io.elementary.files.appdata.xml.in.in:255
+ msgid "Reload recent view when privacy setting changes"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:246
++#: data/io.elementary.files.appdata.xml.in.in:256
+ msgid "`Connect Server` fixes"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:247
++#: data/io.elementary.files.appdata.xml.in.in:257
+ msgid "Do not activate multiple files with single click"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:248
++#: data/io.elementary.files.appdata.xml.in.in:258
+ msgid "Use `Tab` to toggle View and Sidebar keyboard focus"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:249
++#: data/io.elementary.files.appdata.xml.in.in:259
+ msgid "Delete color tag database entries for trashed files"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:250
++#: data/io.elementary.files.appdata.xml.in.in:260
+ msgid "Throttle tab closing"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:251
++#: data/io.elementary.files.appdata.xml.in.in:261
+ msgid "`Ctrl` key fixes"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:252
++#: data/io.elementary.files.appdata.xml.in.in:262
+ msgid "Drag and drop fixes"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:253
++#: data/io.elementary.files.appdata.xml.in.in:263
+ msgid "Show icons in `Open with` menus"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:254
++#: data/io.elementary.files.appdata.xml.in.in:264
+ msgid "Tooltip fixes"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:255
++#: data/io.elementary.files.appdata.xml.in.in:265
+ msgid "Memory leak fixes"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:256
++#: data/io.elementary.files.appdata.xml.in.in:266
+ msgid "Crash fixes"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:257
++#: data/io.elementary.files.appdata.xml.in.in:267
+ msgid "Trash: respect sound setting"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:258
++#: data/io.elementary.files.appdata.xml.in.in:268
+ msgid "Localization fixes"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:266
++#: data/io.elementary.files.appdata.xml.in.in:276
+ msgid "Over 100 major and minor bug fixes and improvements"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:273
++#: data/io.elementary.files.appdata.xml.in.in:283
+ msgid "Honor 12/24hr system setting"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:274
++#: data/io.elementary.files.appdata.xml.in.in:284
+ msgid "Distinguish between tabs with the same name"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:275
++#: data/io.elementary.files.appdata.xml.in.in:285
+ msgid "Support launching from other applications with a target file selected"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:276
+-#: data/io.elementary.files.appdata.xml.in.in:289
+-#: data/io.elementary.files.appdata.xml.in.in:303
++#: data/io.elementary.files.appdata.xml.in.in:286
++#: data/io.elementary.files.appdata.xml.in.in:299
+ #: data/io.elementary.files.appdata.xml.in.in:313
+-#: data/io.elementary.files.appdata.xml.in.in:324
++#: data/io.elementary.files.appdata.xml.in.in:323
++#: data/io.elementary.files.appdata.xml.in.in:334
+ msgid "New translations"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:277
+-#: data/io.elementary.files.appdata.xml.in.in:290
+-#: data/io.elementary.files.appdata.xml.in.in:304
++#: data/io.elementary.files.appdata.xml.in.in:287
++#: data/io.elementary.files.appdata.xml.in.in:300
+ #: data/io.elementary.files.appdata.xml.in.in:314
+-#: data/io.elementary.files.appdata.xml.in.in:325
+-#: data/io.elementary.files.appdata.xml.in.in:332
+-#: data/io.elementary.files.appdata.xml.in.in:339
+-#: data/io.elementary.files.appdata.xml.in.in:363
++#: data/io.elementary.files.appdata.xml.in.in:324
++#: data/io.elementary.files.appdata.xml.in.in:335
++#: data/io.elementary.files.appdata.xml.in.in:342
++#: data/io.elementary.files.appdata.xml.in.in:349
++#: data/io.elementary.files.appdata.xml.in.in:373
+ msgid "Minor bug fixes"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:284
++#: data/io.elementary.files.appdata.xml.in.in:294
+ msgid "Improved networking support"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:285
++#: data/io.elementary.files.appdata.xml.in.in:295
+ msgid "Correct window geometry when snapping to left or right"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:286
++#: data/io.elementary.files.appdata.xml.in.in:296
+ msgid ""
+ "Pressing Ctrl no longer cancels renaming while the \"Reveal Pointer\" "
+ "setting is active"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:287
++#: data/io.elementary.files.appdata.xml.in.in:297
+ msgid "Switching input language cancels actions"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:288
+-#: data/io.elementary.files.appdata.xml.in.in:302
++#: data/io.elementary.files.appdata.xml.in.in:298
+ #: data/io.elementary.files.appdata.xml.in.in:312
+-#: data/io.elementary.files.appdata.xml.in.in:323
++#: data/io.elementary.files.appdata.xml.in.in:322
++#: data/io.elementary.files.appdata.xml.in.in:333
+ msgid "Various crash fixes"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:297
++#: data/io.elementary.files.appdata.xml.in.in:307
+ msgid ""
+ "Web browsers like Firefox now remember the most recently used downloads "
+ "directory"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:298
++#: data/io.elementary.files.appdata.xml.in.in:308
+ msgid "Remember preferred zoom level"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:299
++#: data/io.elementary.files.appdata.xml.in.in:309
+ msgid "Improved input method support"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:300
++#: data/io.elementary.files.appdata.xml.in.in:310
+ msgid "910x640 minimum window size"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:301
++#: data/io.elementary.files.appdata.xml.in.in:311
+ msgid "Security fixes"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:311
++#: data/io.elementary.files.appdata.xml.in.in:321
+ msgid "Enable drag and drop tabs between windows"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:321
++#: data/io.elementary.files.appdata.xml.in.in:331
+ msgid "Merge search functionality into Ctrl+F"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:322
++#: data/io.elementary.files.appdata.xml.in.in:332
+ msgid "Improved translation support"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:346
++#: data/io.elementary.files.appdata.xml.in.in:356
+ msgid "Fix appdata release dates"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:353
++#: data/io.elementary.files.appdata.xml.in.in:363
+ msgid "Improve file opening over Samba shares"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:354
++#: data/io.elementary.files.appdata.xml.in.in:364
+ msgid "Fix a crash when restoring items from the Trash"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:355
++#: data/io.elementary.files.appdata.xml.in.in:365
+ msgid "Improve cut/copy/paste sensitivity in context menu"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:356
++#: data/io.elementary.files.appdata.xml.in.in:366
+ msgid "Translation updates"
+ msgstr ""
+ 
+-#: data/io.elementary.files.appdata.xml.in.in:368
++#: data/io.elementary.files.appdata.xml.in.in:378
+ msgid "elementary LLC."
+ msgstr ""
+ 

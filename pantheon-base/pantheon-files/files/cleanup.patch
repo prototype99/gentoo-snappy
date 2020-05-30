@@ -1,0 +1,64 @@
+From 75a791f07301f9c0349a24e9cc174a812eb1e155 Mon Sep 17 00:00:00 2001
+From: Jeremy Wootten <jeremy@elementaryos.org>
+Date: Sat, 18 Apr 2020 17:48:10 +0100
+Subject: [PATCH] Remove unused ui hook from plugin interface (#1287)
+
+---
+ libcore/Plugin.vala            | 1 -
+ libcore/PluginManager.vala     | 6 ------
+ plugins/contractor/plugin.vala | 6 ------
+ 3 files changed, 13 deletions(-)
+
+diff --git a/libcore/Plugin.vala b/libcore/Plugin.vala
+index 92daa4bac..c2bb0da10 100644
+--- a/libcore/Plugin.vala
++++ b/libcore/Plugin.vala
+@@ -19,7 +19,6 @@
+ public abstract class Marlin.Plugins.Base {
+     public virtual void directory_loaded (Gtk.ApplicationWindow window, GOF.AbstractSlot view, GOF.File directory) { }
+     public virtual void context_menu (Gtk.Widget? widget, List<GOF.File> files) { }
+-    public virtual void ui (Gtk.UIManager? widget) { }
+     public virtual void sidebar_loaded (Gtk.Widget widget) { }
+     public virtual void update_sidebar (Gtk.Widget widget) { }
+     public virtual void update_file_info (GOF.File file) { }
+diff --git a/libcore/PluginManager.vala b/libcore/PluginManager.vala
+index 1d337cf0b..ec8cc8f42 100644
+--- a/libcore/PluginManager.vala
++++ b/libcore/PluginManager.vala
+@@ -214,12 +214,6 @@ public class Marlin.PluginManager : Object {
+         menus = null;
+     }
+ 
+-    public void ui (Gtk.UIManager data) {
+-        foreach (var plugin in plugin_hash.values) {
+-            plugin.ui (data);
+-        }
+-    }
+-
+     public void directory_loaded (Gtk.ApplicationWindow window, GOF.AbstractSlot view, GOF.File directory) {
+         foreach (var plugin in plugin_hash.values) {
+             plugin.directory_loaded (window, view, directory);
+diff --git a/plugins/contractor/plugin.vala b/plugins/contractor/plugin.vala
+index ece4dcdf7..c053052b9 100644
+--- a/plugins/contractor/plugin.vala
++++ b/plugins/contractor/plugin.vala
+@@ -42,7 +42,6 @@ public class Marlin.Plugins.ContractMenuItem : Gtk.MenuItem {
+ }
+ 
+ public class Marlin.Plugins.Contractor : Marlin.Plugins.Base {
+-    private Gtk.UIManager ui_manager;
+     private Gtk.Menu menu;
+     private GOF.File current_directory = null;
+ 
+@@ -104,11 +103,6 @@ public class Marlin.Plugins.Contractor : Marlin.Plugins.Base {
+         }
+     }
+ 
+-    public override void ui (Gtk.UIManager? widget) {
+-        ui_manager = widget;
+-        menu = (Gtk.Menu) ui_manager.get_widget ("/selection");
+-    }
+-
+     public override void directory_loaded (Gtk.ApplicationWindow window, GOF.AbstractSlot view, GOF.File directory) {
+         current_directory = directory;
+     }

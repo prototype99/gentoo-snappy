@@ -1,3 +1,28 @@
+*pantheon-files-4.4.2-r3
+	::prototype99
+	-put modification time patch behind use flag
+	-restore gvfs use flag
+	-add updated arabic translation through patches
+	-add updated czech translation through patches
+	-add updated danish translation through patches
+	-add updated french translation through patches
+	-add updated spanish translation through patches
+	-add updated japanese translation through patches
+	-add updated hebrew translation through patches
+	-add updated dutch translation through patches
+	-add updated portuguese translation through patches
+	-add updated brazilian translation through patches
+	-add updated russian translation through patches
+	-add updated turkish translation through patches
+	-add updated simplified chinese translation through patches
+	-patch translations to update references
+	-put some dependencies behind unity and zeitgeist use flags
+	-fix url bar rendering
+	-fix url bar hitbox
+
+*pantheon-files-4.4.2-r2
+	::prototype99	add patch to show modified time
+
 *pantheon-files-4.4.2
 	::gnome-next	improve dependencies
 	::prototype99	fix what appears to be a dependency error
