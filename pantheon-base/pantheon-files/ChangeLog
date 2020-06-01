@@ -1,3 +1,7 @@
+*pantheon-files-4.4.2-r4
+	::prototype99
+	-add passable use flags
+
 *pantheon-files-4.4.2-r3
 	::prototype99
 	-put modification time patch behind use flag
