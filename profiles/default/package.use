@@ -43,6 +43,7 @@ www-client/firefox clang
 x11-libs/libva X
 x11-wm/fvwm png
 x11-wm/fluxbox -toolbar -systray
+xfce-extra/tumbler jpeg
 # required by net-misc/curl[threads]
 net-misc/curl -adns
 # required by dev-qt/qtcore-5.12.3::gentoo
