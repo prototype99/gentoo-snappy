@@ -1,0 +1,7 @@
+*3.21.0
+::my-gnome
+-base ebuild
+::prototype99
+-update dependencies according to release notes
+-echo something from release notes because i lack the confidence myself
+-add pycairo depend line even though pygobject does that because the version dependency is different
