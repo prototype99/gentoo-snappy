@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>github@sarifria.x10.bz</email>
+		<name>Seirra Blake</name>
+	</maintainer>
+	<upstream>
+		<doc>https://support.gitkraken.com</doc>
+	</upstream>
+	<longdescription lang="en">
+		GitKraken is a Git client built on Electron, allowing
+		it to run natively on Windows, Mac and Linux desktop
+		systems. Enjoy the same luxurious experience across
+		all three!
+	</longdescription>
+</pkgmetadata>
