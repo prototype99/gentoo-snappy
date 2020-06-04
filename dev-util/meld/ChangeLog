@@ -1,3 +1,7 @@
+*3.21.0-r1
+::protoype99
+-make better use of ${PN}
+-add l10n_zh-TW use flag
 *3.21.0
 ::my-gnome
 -base ebuild
