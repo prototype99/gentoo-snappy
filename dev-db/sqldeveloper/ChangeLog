@@ -1,0 +1,19 @@
+*sqldeveloper-19.2.1.247.2212
+
+	26.11.2019;	<sophietheopossum@yandex.ru>	::prototype99	remove low priority x86 keyword
+	25.11.2019;	<sophietheopossum@yandex.ru>	::prototype99	tabulate metadata.xml
+	24.11.2019;	<sophietheopossum@yandex.ru>	::prototype99	add missing dependency
+	10.10.2019;	<fat@gentoo.org>				::gallifrey		update
+
+*sqldeveloper-19.2.0.206.2117
+
+	10.10.2019;	<fat@gentoo.org>				::gallifrey		remove
+	30.8.2019;	<fat@gentoo.org>				::gallifrey		add sybase useflag description
+
+*sqldeveloper-18.3.0.277.2354
+
+	30.8.2019;	<fat@gentoo.org>				::gallifrey		remove
+
+*sqldeveloper-17.4.0.355.2349
+
+	3.1.2018;	<fat@gentoo.org>				::gallifrey		first
