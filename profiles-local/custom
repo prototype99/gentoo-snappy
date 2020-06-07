@@ -194,6 +194,7 @@
 =dev-util/gtk-doc-am-1.32::dantrell-gnome							#bad keywording, unnecessary quotes
 =dev-util/gtk-doc-am-1.32::lanodanOverlay							#extremely broken circular dependency
 =dev-util/gtk-update-icon-cache-3.24.16::dantrell-gnome				#bad keywording, unnecessary quotes
+=dev-util/meld-3.21.0::my-gnome										#broken dependencies
 =dev-util/meson-0.52.1::dantrell-gnome								#bad keywording, unnecessary quotes, verbose python targets
 =dev-util/sysprof-3.35.2::gnome-next								#eapi6
 =dev-vcs/mercurial-5.0.2::sorrow									#no pypy support
@@ -364,6 +365,7 @@
 =x11-libs/gtk+-3.24.18::dantrell-gnome								#old workaround
 =x11-libs/gtk+-3.24.20::dantrell-gnome								#old workaround
 =x11-libs/gtk+-3.24.20::flussence									#no adwaita use flag
+=x11-libs/gtksourceview-4.6.0:4::my-gnome							#no gtk-doc use flag
 =x11-libs/libdrm-2.4.97::musl										#musl specific patch
 =x11-libs/libpciaccess-0.14::musl									#musl specific patches
 =x11-libs/libxklavier-5.4::dantrell-gnome							##bad keywording, unnecessary quotes, non-standard dependencies
