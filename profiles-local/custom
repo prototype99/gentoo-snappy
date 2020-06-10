@@ -258,6 +258,7 @@
 =media-libs/x264-0.0.20170701::lanodanOverlay						#old
 =media-libs/x264-0.0.20170701::gnux32								#x32 specific patch
 =media-sound/alsa-utils-1.1.8::poly-c								#already included in kernel?
+=media-sound/jack2-1.9.14:2::hering-overlay							#no python3_8 support
 =media-video/ffmpeg-3.4.5::gnux32									#better in other overlay
 =media-video/ffmpeg-4.1.3::gnux32									#better in other overlay
 =media-video/ffmpeg-4.1.3-r1::genpi64								#no rubberband use flag, pi specific patches
