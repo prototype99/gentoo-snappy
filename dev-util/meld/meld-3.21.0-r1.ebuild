@@ -42,7 +42,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	use l10n_zh-TW && eapply "${FILESDIR}"/0001-Update-Chinese-Taiwan-translation.patch
 	default
-)
+}
 
 python_compile_all() {
 	mydistutilsargs=( --no-update-icon-cache --no-compile-schemas )
