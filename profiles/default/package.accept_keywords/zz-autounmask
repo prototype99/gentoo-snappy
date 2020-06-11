@@ -993,3 +993,6 @@
 =sys-devel/llvmgold-10 ~amd64
 # required by pantheon-base/pantheon-files-4.4.2::elementary
 =dev-libs/libcloudproviders-0.3.0 ~amd64
+# required by x11-terms/kitty-0.17.3::prototype99
+# required by sys-apps/world-18::prototype99[terminal-fast]
+=x11-terms/kitty-terminfo-0.17.3 ~amd64
