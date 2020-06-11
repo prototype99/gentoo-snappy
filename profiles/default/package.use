@@ -1,7 +1,7 @@
 app-lyx/elyxer -python_single_target_python2_7
 app-office/libreoffice java -python_single_target_python2_7
 app-portage/layman subversion -python_targets_python2_7
-app-text/asciidoc -python_single_target_python3_6
+app-text/asciidoc -python_single_target_python3_6 -python_single_target_python3_7
 app-text/mupdf X opengl
 dev-cpp/cairomm X
 dev-cpp/gtkmm X
