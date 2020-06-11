@@ -34,6 +34,7 @@
 =sys-devel/make-9999
 =sys-fs/udev-9999
 =sys-fs/xfsdump-9999
+=sys-power/upower-0.99.11.20190604
 =virtual/rust-1.43.1-r666
 =x11-libs/libfontenc-9999
 =x11-libs/gtk+-2.24.32-r666
