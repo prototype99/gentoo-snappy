@@ -123,7 +123,7 @@
 =sci-libs/suitesparseconfig-5.4.0
 =sci-libs/vtk-8.2.0
 =sys-apps/accountsservice-0.6.54_pre
-=sys-apps/dbus-broker-18 ~amd64
+=sys-apps/dbus-broker-22 ~amd64
 =sys-apps/paludis-9999
 =sys-block/gparted-1.0.0 ~amd64
 =sys-block/gparted-1.1.0
