@@ -29,6 +29,7 @@
 =media-video/vlc-9999
 =net-misc/megasync-4.3.1.0
 =net-misc/rsync-9999
+=sys-apps/grep-9999
 =sys-devel/libtool-2.4.6-r314
 =sys-devel/make-9999
 =sys-fs/udev-9999
