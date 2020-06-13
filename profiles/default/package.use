@@ -413,3 +413,5 @@ dev-db/sqlite secure-delete
 >=sys-devel/clang-9.0.1 xml
 # required by pantheon-base/pantheon-files-4.4.2::elementary
 >=dev-libs/libcloudproviders-0.3.0 vala
+# required by sys-apps/world-19::prototype99[-pcmanfm-qt]
+>=lxqt-base/lxqt-meta-0.14.1-r1 -filemanager
