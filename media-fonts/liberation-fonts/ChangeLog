@@ -1,8 +1,3 @@
-*2.1.0
-
-	25.4.2020	::gentoo		update copyright, switch back to official repository, update keywording, new dependency logic, sync changes
-	25.4.2020	::prototype99	make better use of ${PN}
-
 *2.1.0_pre20190923-r2
 	4.6.2020	::prototype99	make better use of ${PN}
 
