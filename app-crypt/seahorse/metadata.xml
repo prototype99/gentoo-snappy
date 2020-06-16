@@ -6,7 +6,6 @@
 	<name>Gentoo GNOME Desktop</name>
 </maintainer>
 <use>
-	<flag name="help">Add application help</flag>
 	<flag name="ldap">Enable seahorse to manipulate GPG keys on a LDAP server.</flag>
 </use>
 <longdescription>Seahorse is a GNOME application for managing encryption keys.
