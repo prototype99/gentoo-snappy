@@ -9,6 +9,8 @@
 =dev-lang/python-exec-9999
 =dev-libs/fribidi-1.0.5-r1337
 =dev-libs/glib-9999
+=dev-libs/mpc-1.1.0-r314
+=dev-libs/mpfr-4.0.2-r314
 =dev-python/pillow-1000
 =dev-libs/zziplib-9999
 =dev-qt/qtcore-5.9999
