@@ -180,6 +180,7 @@
 =dev-python/urllib3-1.24.1::HomeAssistantRepository					#no pypy support
 =dev-qt/qtgui-5.12.3-r1::poly-c										#disables avx2
 =dev-qt/qtgui-5.12.5::poly-c										#no avx2 patch
+=dev-qt/qtgui-5.14.2::poly-c										#no avx2 patch
 =dev-qt/qtnetwork-5.14.1::libressl									#libressl patch not behind use flag
 =dev-util/boost-build-1.65.0::gnux32								#x32 specific patch
 =dev-util/boost-build-1.70.0::gnux32								#better in other overlay
