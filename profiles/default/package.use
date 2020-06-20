@@ -415,3 +415,6 @@ dev-db/sqlite secure-delete
 >=dev-libs/libcloudproviders-0.3.0 vala
 # required by sys-apps/world-19::prototype99[-pcmanfm-qt]
 >=lxqt-base/lxqt-meta-0.14.1-r1 -filemanager
+# required by media-libs/mesa-20.0.8::poly-c[zstd]
+# required by x11-terms/kitty-0.17.4::prototype99
+>=app-arch/zstd-1.4.4-r4 abi_x86_32
