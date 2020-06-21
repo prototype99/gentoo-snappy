@@ -1,4 +1,8 @@
-*dev-util/gtk-doc-1.32-r1
+*gtk-doc-1.32-r2
+::prototype99
+-improve python use flags
+
+*gtk-doc-1.32-r1
 	::gentoo			base ebuild
 	::lanodanOverlay	python3_5 support, pdf use flag, test use flag, doc use flag dependency
 	::prototype99		add required_use for test, add anytree dependency for test because it IS packaged.... also as a result no need to restrict test
