@@ -1,13 +1,6 @@
 *sandbox-2.18
 ::gentoo
--add gentoo version bump changes
--update copyright
--remove pointless spaces
--change ebuild layout
--add keywords
--standard style inherit
--add multilib
--remove pointless src_prepare
-::rindeal
 -base ebuild
--repository url
+::rindeal
+-ptrace use flag
+-remove unneeded eutils.eclass

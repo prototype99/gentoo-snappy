@@ -6,8 +6,8 @@ EAPI=7
 inherit flag-o-matic multilib-minimal multiprocessing pax-utils
 
 DESCRIPTION="sandbox'd LD_PRELOAD hack"
-HOMEPAGE="https://gitweb.gentoo.org/proj/${PN}.git https://wiki.gentoo.org/wiki/Project:Sandbox"
-SRC_URI="https://gitweb.gentoo.org/proj/${PN}.git/snapshot/${P}.tar.bz2"
+HOMEPAGE="https://www.gentoo.org/proj/en/portage/sandbox/"
+SRC_URI="https://dev.gentoo.org/~slyfox/distfiles/${P}.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="0"
