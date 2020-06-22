@@ -156,6 +156,7 @@
 =x11-misc/picom-7.5-r1
 =x11-terms/kitty-0.17.3 ~amd64
 =x11-terms/kitty-0.17.4 ~amd64
+=x11-terms/kitty-0.18.0 ~amd64
 =x11-themes/fvwm-crystal-3.4.1-r2
 =x11-wm/fvwm-2.6.8-r2
 =xfce-extra/tumbler-0.2.8 ~amd64
