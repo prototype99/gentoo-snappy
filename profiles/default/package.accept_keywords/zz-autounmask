@@ -28,6 +28,7 @@
 =dev-lang/spidermonkey-1.8.5-r7 ~amd64
 =dev-libs/atk-2.35.1
 =dev-libs/glib-2.65.0
+=dev-libs/fribidi-1.0.9 ~amd64
 =dev-libs/icu-66.1
 =dev-libs/intel-common-19.0.4.243
 =dev-libs/libsigc++-2.10.3
