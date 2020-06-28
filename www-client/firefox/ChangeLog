@@ -1,6 +1,17 @@
-*firefox-72.0.2
+*firefox-77.0.1-r1
+::gentoo		base ebuild
+::bobwya
+-add python3_6
+-remove extra spaces
+-add kde
+-egl use flag
+-add more informative die messages
+-add rust version check for simd
+-add pkg_default_pref_dir variable
+::pg_overlay	improve python use flags, add dbus use flag, add lto use flags, remove more pre built code
+::prototype99	remove release candidate specific code, remove esr specific code, make better use of PN, be more specific about when official patches are applied
 
-THIS EBUILD MAY NOT WORK
+*firefox-72.0.2
 
 	3.2.2020	::bobwya
 	-remove unnecessary quotes and spaces
