@@ -103,9 +103,8 @@
 =dev-libs/libgusb-0.2.11::dantrell-gnome							#bad keywording, unnecessary quotes
 =dev-libs/libgweather-3.33.92::dantrell-gnome-3-34					#bad keywording, unnecessary quotes
 =dev-libs/libnl-3.4.0:3::musl										#adds musl specific patch, no python3_7 compatibility
-=dev-libs/libpcre2-10.32::dantrell-gnome							#bad keywording, unnecessary quotes
-=dev-libs/libpcre2-10.33::dantrell-gnome							#bad keywording, unnecessary quotes
 =dev-libs/libpcre2-10.33-r1::dantrell-gnome							#bad keywording, unnecessary quotes
+=dev-libs/libpcre2-10.34::dantrell-gnome							#bad keywording, unnecessary quotes
 =dev-libs/libpwquality-1.4.0::gentoo								#less python compatibility
 =dev-libs/libpwquality-1.4.0::pg_overlay							#less python compatibility
 =dev-libs/libsigc++-2.10.3::dantrell-gnome							#bad keywording, unnecessary quotes
