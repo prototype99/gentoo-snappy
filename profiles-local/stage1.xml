@@ -3356,6 +3356,18 @@
     <feed>https://github.com/Bfgeshka/octopus/commits/master.atom</feed>
   </repo>
   <repo quality="experimental" status="unofficial">
+    <name>oddlama</name>
+    <description lang="en">oddlama's gentoo overlay</description>
+    <homepage>https://github.com/oddlama/overlay</homepage>
+    <owner type="person">
+      <email>overlay@oddlama.org</email>
+      <name>oddlama</name>
+    </owner>
+    <source type="git">https://github.com/oddlama/overlay.git</source>
+    <source type="git">git+ssh://git@github.com/oddlama/overlay.git</source>
+    <feed>https://github.com/oddlama/overlay/commits/master.atom</feed>
+  </repo>
+  <repo quality="experimental" status="unofficial">
     <name>olifre</name>
     <description lang="en">Personal overlay of Oliver Freyermuth.</description>
     <homepage>https://github.com/olifre/olifre-portage</homepage>
@@ -3779,6 +3791,18 @@
     <source type="git">git://github.com/qgp/gentoo-qgp.git</source>
     <source type="git">git+ssh://git@github.com:qgp/gentoo-qgp.git</source>
     <feed>https://github.com/qgp/gentoo-qgp/commits/master.atom</feed>
+  </repo>
+  <repo quality="experimental" status="unofficial">
+    <name>qownnotes-overlay</name>
+    <description lang="en">QOwnNotes overlay</description>
+    <homepage>http://www.qownnotes.org</homepage>
+    <owner type="person">
+      <email>patrizio@bekerle.com</email>
+      <name>Patrizio Bekerle</name>
+    </owner>
+    <source type="git">https://github.com/qownnotes/gentoo-overlay.git</source>
+    <source type="git">git+ssh://git@github.com/qownnotes/gentoo-overlay.git</source>
+    <feed>https://github.com/qownnotes/gentoo-overlay/commits/master.atom</feed>
   </repo>
   <repo quality="experimental" status="unofficial">
     <name>qsx</name>
