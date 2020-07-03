@@ -116,6 +116,7 @@
 =net-misc/persepolis-3.1.0
 =net-misc/scrcpy-1.10
 =net-p2p/go-ipfs-0.4.23
+=net-p2p/qbittorrent-4.2.5
 =net-vpn/protonvpn-cli-2.2.2
 =net-wireless/iwd-1.4
 =sci-libs/colamd-2.9.6
