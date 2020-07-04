@@ -294,6 +294,7 @@
 =net-print/cups-filters-1.23.0::dantrell-gnome						#bad keywording, unnecessary quotes
 =net-print/cups-filters-1.24.0::dantrell-gnome						#bad keywording, unnecessary quotes
 =net-print/cups-filters-1.25.13::dantrell-gnome						#bad keywording, unnecessary quotes
+=net-vpn/nordvpn-3.7.2::yuego										#3.7.3 is better
 =net-wireless/gnome-bluetooth-3.34.0::dantrell-gnome-3-34			#bad keywording, unnecessary quotes, bad dependencies
 =pantheon-base/pantheon-files-4.4.2::elementary						#worse dependencies
 =perl-core/File-Temp-0.230.400-r1::argent-main						#better in other overlay
