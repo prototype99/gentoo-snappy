@@ -418,3 +418,5 @@ dev-db/sqlite secure-delete
 # required by media-libs/mesa-20.0.8::poly-c[zstd]
 # required by x11-terms/kitty-0.17.4::prototype99
 >=app-arch/zstd-1.4.4-r4 abi_x86_32
+# required by net-p2p/qbittorrent-4.2.5::gentoo
+>=dev-qt/qtsingleapplication-2.6.1_p20171024 X
