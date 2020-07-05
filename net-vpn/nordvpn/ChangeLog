@@ -1,0 +1,6 @@
+*nordvpn-3.7.4
+
+features improvements for nordlynx users
+
+::jorgicio		base ebuild
+::prototype99	post install instruction for systemd users
