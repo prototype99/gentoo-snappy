@@ -1009,3 +1009,5 @@
 # required by x11-terms/kitty-0.17.4::prototype99
 # required by sys-apps/world-18::prototype99[terminal-fast]
 =x11-terms/kitty-terminfo-0.17.3 ~amd64
+# required by net-vpn/nordvpn-3.7.1::jorgicio[nordlynx]
+=net-vpn/wireguard-modules-1.0.20200623 ~amd64
