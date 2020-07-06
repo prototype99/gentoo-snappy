@@ -1,0 +1,25 @@
+[Unit]
+Description=rclone mount service - '%i' instance
+
+# NOTE: make sure network-online.target works on your system (ie. your network manager of choice brings it up and down)
+# I'm not aware of any more suitable solution that would bring this service safely up and down according to the internet availability
+Wants=network-online.target
+After=network-online.target
+
+
+[Service]
+WorkingDirectory=~
+
+ExecStartPre=/usr/bin/test -d ${MNT_POINT}
+ExecStartPre=/bin/sh -c '/usr/bin/fusermount -z -u "${MNT_POINT}" ; true'
+
+ExecStart=/usr/bin/rclone --checkers 8 --contimeout 30s --drive-use-trash --drive-upload-cutoff 20M --retries 10 --timeout 1m --transfers 4 $ARGS mount ${REMOTE_NAME}: ${MNT_POINT}
+
+ExecStopPost=/bin/sh -c '/usr/bin/fusermount -z -u "${MNT_POINT}" ; true'
+
+Restart=on-failure
+RestartSec=2min
+
+
+[Install]
+WantedBy=default.target
