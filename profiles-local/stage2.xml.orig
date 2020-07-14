@@ -2381,18 +2381,6 @@
     <source type="git">https://github.com/JBoro/portage.git</source>
   </repo>
   <repo quality="experimental" status="unofficial">
-    <name>jellybean</name>
-    <description lang="en">My personal overlay</description>
-    <homepage>https://github.com/qi777xj/jellybean</homepage>
-    <owner type="person">
-      <email>qi777xj@gmail.com</email>
-      <name>Hyogeon Gi</name>
-    </owner>
-    <source type="git">https://github.com/qi777xj/jellybean.git</source>
-    <source type="git">git+ssh://git@github.com/qi777xj/jellybean.git</source>
-    <feed>https://github.com/qi777xj/jellybean/commits/master.atom</feed>
-  </repo>
-  <repo quality="experimental" status="unofficial">
     <name>jkolo</name>
     <description lang="en">Jerzy Kolosowski's Gentoo overlay</description>
     <homepage>https://git.kolosowscy.pl/jurek/gentoo-overlay</homepage>
@@ -4758,6 +4746,17 @@
       <name>tastytea</name>
     </owner>
     <source type="git">https://schlomp.space/tastytea/overlay.git</source>
+  </repo>
+  <repo quality="experimental" status="unofficial">
+    <name>telans</name>
+    <description lang="en">Overlay from telans - gaming/misc</description>
+    <homepage>https://github.com/telans/EBUILDS</homepage>
+    <owner type="person">
+      <email>telans@posteo.de</email>
+      <name>telans</name>
+    </owner>
+    <source type="git">https://github.com/telans/EBUILDS.git</source>
+    <feed>https://github.com/telans/EBUILDS/commits/master.atom</feed>
   </repo>
   <repo quality="experimental" status="unofficial">
     <name>tengine-overlay</name>
