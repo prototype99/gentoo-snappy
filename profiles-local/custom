@@ -54,8 +54,9 @@
 =dev-lang/ifc-19.0.4.243::science									#no good for cluster edition
 =dev-lang/python-2.7.17-r2::gentoo									#no optimisation
 =dev-lang/python-3.6.11-r1::gentoo									#no pgo use flag
-=dev-lang/python-3.7.7-r2::mv										#no pgo use flag
+=dev-lang/python-3.7.8-r1::mv										#no pgo use flag
 =dev-lang/python-3.7.8-r2::lto-overlay								#missing dependency that blocks old sandbox
+=dev-lang/python-3.8.3-r1::gentoo									#no pgo
 =dev-lang/python-3.8.3-r1::pg_overlay								#no lto
 =dev-lang/rust-1.42.0::pg_overlay									#broken
 =dev-lang/rust-1.42.0-r666::rust									#seems very outdated
