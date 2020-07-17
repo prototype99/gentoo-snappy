@@ -55,6 +55,7 @@
 #not needed at all
 >=x11-terms/xterm-0
 #old
+<app-accessibility/at-spi2-atk-2.34.2
 <app-crypt/gnupg-2.2.17
 <app-eselect/eselect-pinentry-0.7
 <=app-text/asciidoc-8.6.10_p20181016-r1
