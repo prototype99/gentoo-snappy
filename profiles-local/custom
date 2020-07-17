@@ -55,7 +55,8 @@
 =dev-lang/python-2.7.17-r2::gentoo									#no optimisation
 =dev-lang/python-3.6.11-r1::gentoo									#no pgo use flag
 =dev-lang/python-3.7.7-r2::mv										#no pgo use flag
-=dev-lang/python-3.7.7-r3::lto-overlay								#missing dependency
+=dev-lang/python-3.7.8-r2::lto-overlay								#missing dependency that blocks old sandbox
+=dev-lang/python-3.8.3-r1::pg_overlay								#no lto
 =dev-lang/rust-1.42.0::pg_overlay									#broken
 =dev-lang/rust-1.42.0-r666::rust									#seems very outdated
 =dev-lang/spidermonkey-1.8.5-r7::gnux32								#x32 specific patches
@@ -331,6 +332,7 @@
 =sys-devel/gettext-0.19.8.1::dantrell-gnome							#bad keywording, unnecessary quotes
 =sys-devel/gettext-0.19.8.1::muslx32								#old, missing patch
 =sys-devel/gettext-0.20.1::dantrell-gnome							#bad keywording, unnecessary quotes
+=sys-devel/lld-10.0.0::gentoo										#no musl workaround
 =sys-fs/e2fsprogs-1.44.5::gnux32									#x32 specific patch
 =sys-fs/e2fsprogs-1.45.2::gnux32									#x32 specific patch
 =sys-fs/lvm2-2.02.187-r3::musl										#musl specific patches
