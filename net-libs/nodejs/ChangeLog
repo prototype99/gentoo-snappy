@@ -1,5 +1,10 @@
+*nodejs-14.4.0
+				::gentoo		icu use flag is now default, add pax_kernel use flag, update deps, remove old patch
+				::KBrown-pub	add python2_7 support, switch to a more provider agnostic ssl model, improve libressl dependency
+				::pg_overlay	add up to python3_9 support
+				::prototype99	improve python use flags, improve defaults
 *nodejs-12.16.1
-	24.4.2020;	::libressl		remove python 2 support, update snapdhot use flag logic
+	24.4.2020;	::libressl		remove python 2 support, update snapshot use flag logic
 *nodejs-12.14.0
 
 	8.12.2019;	::gentoo		add python 3 support, mark x86 stable, update copyright year, update dependencies
