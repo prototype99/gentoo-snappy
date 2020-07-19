@@ -1,3 +1,13 @@
+*sys-libs/glibc-2.30-r8
+	::gentoo
+	-keywords
+	-newer patchset
+	-updated dependencies
+	-test whitelist
+	-simplify some commands
+	-updated ssp behaviour
+	::prototype99		simplify dependencies with IDN variable, improve python use flags
+	::sabayon-distro	base ebuild
 *sys-libs/glibc-2.29-r7
 	::gentoo			base ebuild
 	::sabayon-distro
