@@ -350,7 +350,7 @@ src_prepare() {
 
 	[[ ${ABI} == x32 ]] && PATCHES+=( "${FILESDIR}"/${PN}-4.1.3-x32.patch )
 
-	use ! cpu_flags_x86_ssse3 && PATCHES+=( "${FILESDIR}"/${PN}-4.3-fix-build-without-SSSE3.patch )
+	! use cpu_flags_x86_ssse3 && PATCHES+=( "${FILESDIR}"/${PN}-4.3-fix-build-without-SSSE3.patch )
 
 	default
 	echo 'include $(SRC_PATH)/ffbuild/libffmpeg.mak' >> Makefile || die
