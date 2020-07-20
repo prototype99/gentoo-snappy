@@ -131,7 +131,7 @@ multilib_src_configure() {
 	use curl_ssl_nss && einfo "SSL provided by nss"
 	use curl_ssl_openssl && einfo "SSL provided by openssl"
 	use curl_ssl_winssl && einfo "SSL provided by Windows"
-	use ! ssl && einfo "SSL disabled"
+	! use ssl && einfo "SSL disabled"
 	local myconf=()
 	if use curl_ssl_libressl || use curl_ssl_openssl; then
 		myconf+=( --with-ssl --with-ca-path="${EPREFIX}"/etc/ssl/certs )
@@ -227,9 +227,9 @@ multilib_src_configure() {
 
 	use fish && myconf+=( --with-fish-functions-dir=yes ) || myconf+=( --without-fish-functions-dir )
 
-	use !shared-libs && myconf+=( --disable-shared )
+	! use shared-libs && myconf+=( --disable-shared )
 
-	use !static-libs && myconf+=( --disable-static )
+	! use static-libs && myconf+=( --disable-static )
 
 	use zsh && myconf+=( --with-zsh-functions-dir="${EPREFIX}"/usr/share/zsh/site-functions )
 
