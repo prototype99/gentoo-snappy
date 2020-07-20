@@ -7,23 +7,17 @@ PYTHON_COMPAT=( py{py,thon{2_7,3_{5..8}}} )
 DISTUTILS_OPTIONAL="1"
 DISTUTILS_IN_SOURCE_BUILD="1"
 
-# TODO: add jni wrapper support
-JAVA_SRC_DIR="java"
-
-inherit cmake-multilib distutils-r1 java-pkg-2 java-pkg-simple
+inherit cmake-multilib distutils-r1
 
 DESCRIPTION="Generic-purpose lossless compression algorithm"
 HOMEPAGE="https://github.com/google/brotli"
 
 SLOT="0/$(ver_cut 1)"
 
-CDEPEND="python? ( ${PYTHON_DEPS} )"
-RDEPEND="${CDEPEND}
-	java? ( >=virtual/jre-1.7 )"
-DEPEND="${CDEPEND}
-	java? ( >=virtual/jdk-1.7 )"
+RDEPEND="python? ( ${PYTHON_DEPS} )"
+DEPEND="${RDEPEND}"
 
-IUSE="java python test"
+IUSE="python test"
 REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 
 LICENSE="MIT python? ( Apache-2.0 )"
@@ -35,21 +29,9 @@ SRC_URI="https://github.com/google/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 RESTRICT="!test? ( test )"
 
-S="${WORKDIR}/${P}"
-
-pkg_setup() {
-	use java && java-pkg-2_pkg_setup
-}
-
 src_prepare() {
 	use python && distutils-r1_src_prepare
 	cmake-utils_src_prepare
-	if use java
-	then
-		find "${JAVA_SRC_DIR}" -name "*Test.java" -print -delete || die
-
-		java-pkg-2_src_prepare
-	fi
 }
 
 multilib_src_configure() {
@@ -69,7 +51,6 @@ multilib_src_compile() {
 src_compile() {
 	cmake-multilib_src_compile
 	use python && distutils-r1_src_compile
-	use java && java-pkg-simple_src_compile
 }
 
 python_test(){
@@ -89,9 +70,4 @@ multilib_src_install() {
 }
 multilib_src_install_all() {
 	use python && distutils-r1_src_install
-	use java && java-pkg-simple_src_install
-}
-
-pkg_preinst() {
-	use java && java-pkg-2_pkg_preinst
 }
