@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>dev.rindeal+ebuild-repo@gmail.com</email>
+    <name>Jan Chren (rindeal)</name>
+  </maintainer>
+  <longdescription>
+PycURL is a Python interface to libcurl. PycURL can be used to fetch
+objects identified by a URL from a Python program, similar to the urllib
+Python module. All the functionality provided by libcurl can used through
+the pycurl interface.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">pycurl/pycurl</remote-id>
+    <remote-id type="sourceforge">pycurl</remote-id>
+    <remote-id type="pypi">pycurl</remote-id>
+  </upstream>
+  <use>
+    <flag name="ssl_gnutls">ssl_gnutls</flag>
+    <flag name="ssl_nss">ssl_nss</flag>
+    <flag name="ssl_openssl">ssl_openssl</flag>
+  </use>
+</pkgmetadata>
