@@ -1,5 +1,5 @@
 *ffmpeg-4.3
-::fem-overlay			add decklink and ndi support, better differentiate X/xcb for gpl licencing critical situations, block clashing package
+::fem-overlay			add decklink support, better differentiate X/xcb for gpl licencing critical situations, block clashing package
 ::genpi64				add keywords, add v4l2m2m-fix use flag, add versioning for dependency
 ::gnux32				add x32 patch
 ::poly-c				base ebuild
