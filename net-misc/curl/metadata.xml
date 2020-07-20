@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>dev.rindeal+ebuild-repo@gmail.com</email>
+    <name>Jan Chren (rindeal)</name>
+  </maintainer>
+  <use>
+    <!-- ### Compilation options -->
+    <flag name="curldebug">curl debug memory tracking</flag>
+    <flag name="largefile">Support large files (2GB+)</flag>
+    <flag name="libgcc">Use libgcc when linking</flag>
+    <flag name="rt">Add dependency on -lrt</flag>
+    <!-- static-libs -->
+    <flag name="symbol-hiding">Hide library internal symbols ("-fvisibility=hidden"; https://gcc.gnu.org/wiki/Visibility)</flag>
+    <flag name="versioned-symbols">Versioned symbols in shared library (https://gcc.gnu.org/wiki/SymbolVersioning)</flag>
+    <!-- ### Docs -->
+    <flag name="libcurl-option">libcurl C code generation support</flag>
+    <flag name="manual">Built-in manual</flag>
+    <flag name="verbose">Verbose strings (disable to reduce size)</flag>
+    <!-- ### Features (SUPPORT_FEATURES) -->
+    <flag name="ipv6">IPv6 support</flag>
+    <flag name="unix-sockets">Unix domain sockets</flag>
+    <!-- zlib -->
+    <flag name="brotli">Brotli content encoding support</flag>
+    <flag name="adns">Use c-ares library for DNS lookups</flag>
+    <flag name="threads">Use threaded DNS resolver</flag>
+    <!-- idn -->
+    <flag name="psl">PSL (Publix Suffix List) - avoids privacy-leaking "supercookies"</flag>
+    <!-- ### Other Features -->
+    <flag name="cookies">Cookies support</flag>
+    <flag name="metalink">metalink (.meta4, .metalink files)</flag>
+    <flag name="proxy">Proxy support</flag>
+    <flag name="ssh2">libssh2 support for (SCP, SFTP)</flag>
+    <flag name="ssh-old">libssh support for (SCP, SFTP)</flag>
+    <flag name="alt-svc">Alternative Service HTTP header support</flag>
+    <!-- ### Authentication methods -->
+    <flag name="digest">Digest access authentication</flag>
+    <flag name="kerberos">Kerberos</flag>
+    <flag name="ntlm-wb">NTLM delegation to winbind's ntlm_auth helper</flag>
+    <flag name="tls-srp">TLS-SRP authentication</flag>
+    <!-- ### Protocols (SUPPORT_PROTOCOLS) -->
+    <flag name="http">HTTP (Hypertext Transfer Protocol)</flag>
+    <flag name="https">HTTPS</flag>
+    <flag name="http2">HTTP/2 - a major revision of the HTTP network protocol</flag>
+    <flag name="ftp">FTP (File Transfer Protocol)</flag>
+    <flag name="ftps">FTPS</flag>
+    <flag name="file">file</flag>
+    <flag name="telnet">telnet</flag>
+    <flag name="ldap">LDAP (Lightweight Directory Access Protocol)</flag>
+    <flag name="ldaps">LDAPS</flag>
+    <flag name="dict">DICT protocol</flag>
+    <flag name="tftp">TFTP (Trivial File Transfer Protocol)</flag>
+    <flag name="gopher">Gopher</flag>
+    <flag name="pop3">POP3 (Post Office Protocol version 3)</flag>
+    <flag name="pop3s">POP3S</flag>
+    <flag name="imap">IMAP (Internet Message Access Protocol)</flag>
+    <flag name="imaps">IMAPS</flag>
+    <flag name="samba">SMB/CIFS (Server Message Block/Common Internet File System)</flag>
+    <flag name="sambas">SMBS/CIFS</flag>
+    <flag name="smtp">SMTP (Simple Mail Transfer Protocol)</flag>
+    <flag name="smtps">SMTPS</flag>
+    <flag name="rtsp">RTSP (Real Time Streaming Protocol)</flag>
+    <flag name="rtmp">RTMP (Real-Time Messaging Protocol) Streaming Media</flag>
+    <flag name="sftp">SFTP (SSH File Transfer Protocol)</flag>
+    <!-- ### SSL -->
+    <flag name="ssl">Crypto engine support. After enabling, choose one of the ssl options.</flag>
+    <flag name="openssl-auto-load-config">Automatic loading of OpenSSL configuration</flag>
+    <flag name="curl_ssl_gnutls">GnuTLS</flag>
+    <flag name="curl_ssl_mbedtls">mbed TLS (previously PolarSSL)</flag>
+    <flag name="curl_ssl_nss">Mozilla Network Security Services</flag>
+    <flag name="curl_ssl_openssl">OpenSSL</flag>
+  </use>
+</pkgmetadata>
