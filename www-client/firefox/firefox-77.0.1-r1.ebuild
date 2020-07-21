@@ -322,8 +322,8 @@ src_prepare() {
 		eapply "${WORKDIR}/${PN}/0024-bmo-1639197-Use-correct-icon-name-for-search-provide.patch"
 	fi
 	if use lto; then
-		tc-is-gcc && eapply "${WORKDIR}/${PN}/0021-bmo-1516803-force-one-LTO-partition-for-sandbox-when.patch"
 		eapply "${WORKDIR}/${PN}/0009-bmo-1516803-Fix-building-sandbox.patch"
+		tc-is-gcc && eapply "${WORKDIR}/${PN}/0021-bmo-1516803-force-one-LTO-partition-for-sandbox-when.patch"
 	fi
 	if use pgo; then
 		eapply "${WORKDIR}/${PN}/0019-Make-PGO-use-toolchain.patch"
