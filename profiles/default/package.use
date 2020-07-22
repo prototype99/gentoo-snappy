@@ -9,6 +9,7 @@ dev-db/oracle-instantclient odbc
 dev-lang/python-exec -python_targets_pypy
 dev-libs/gobject-introspection -python_single_target_python2_7
 dev-libs/libical -vala
+dev-libs/openssl sslv3
 dev-tex/tex4ht java
 dev-util/gdbus-codegen -python_single_target_python2_7
 dev-util/lldb -python_single_target_python2_7
