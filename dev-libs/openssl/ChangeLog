@@ -1,0 +1,3 @@
+*openssl-1.1.1g
+::gentoo		base ebuild
+::prototype99	add option to enable weak ciphers
