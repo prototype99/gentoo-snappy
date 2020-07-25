@@ -1,0 +1,10 @@
+[Unit]
+Description=@DESCRIPTION@
+Documentation=@HOMEPAGE@
+
+[Service]
+ExecStart=@EPREFIX@/usr/bin/@BIN_NAME@ $OPTIONS
+Restart=on-abnormal
+
+[Install]
+WantedBy=graphical.target

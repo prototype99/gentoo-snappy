@@ -1,0 +1,23 @@
+From d00a6430651baa1717ee81036c2cd40ef416d731 Mon Sep 17 00:00:00 2001
+From: Jan Chren <dev.rindeal+github.com@gmail.com>
+Date: Sun, 3 Dec 2017 04:01:02 +0100
+Subject: [PATCH] Makefile: make developer CFLAGS optional
+
+---
+ Makefile | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/Makefile b/Makefile
+index 1d5e9ce..d7fc3c1 100644
+--- a/Makefile
++++ b/Makefile
+@@ -12,7 +12,8 @@ HDR =	src/error.h \
+ 
+ VPATH = src
+ 
+-CFLAGS += -std=c99 -g -Wall -Wextra -pedantic -Werror
++CFLAGS ?= -g -pedantic -Werror
++CFLAGS += -std=c99 -Wall -Wextra
+ 
+ SPARSE ?= sparse
+ SPARSEFLAGS=-Wsparse-all -Wno-decl

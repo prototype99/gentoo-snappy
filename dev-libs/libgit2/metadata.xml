@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>dev.rindeal+ebuild-repo@gmail.com</email>
+    <name>Jan Chren (rindeal)</name>
+  </maintainer>
+  <use>
+    <flag name="curl">Use <pkg>net-misc/curl</pkg> for HTTP support (otherwise, limited built-in implementation will be used)</flag>
+    <flag name="gssapi">Enable GSSAPI support for SPNEGO auth</flag>
+    <flag name="ssh">Enable SSH transport support</flag>
+    <flag name="trace">Enable tracing support</flag>
+    <flag name="https">Secure HTTP support</flag>
+    <flag name="https_openssl">OpenSSL HTTPS backend</flag>
+    <flag name="https_mbedtls">mbedTLS HTTPS backend</flag>
+    <flag name="sha1_collision_detection">CollisionDetection SHA1 backend</flag>
+    <flag name="sha1_generic">Generic SHA1 backend</flag>
+    <flag name="sha1_openssl">OpenSSL SHA1 backend</flag>
+    <flag name="sha1_mbedtls">mbedTLS SHA1 backend</flag>
+  </use>
+</pkgmetadata>

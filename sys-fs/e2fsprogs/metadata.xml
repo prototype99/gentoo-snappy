@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>dev.rindeal+ebuild-repo@gmail.com</email>
+    <name>Jan Chren (rindeal)</name>
+  </maintainer>
+  <use>
+    <flag name="backtrace">Enable backtraces in e2fsck's signal catcher</flag>
+    <flag name="debugfs">debugfs(8) - ext2/ext3/ext4 file system debugger</flag>
+    <flag name="imager">e2image(8) - Save critical ext2/ext3/ext4 filesystem metadata to a file</flag>
+    <flag name="resizer">resize2fs(8) - ext2/ext3/ext4 file system resizer</flag>
+    <flag name="defrag">e4defrag(8) - online defragmenter for ext4 filesystem</flag>
+    <flag name="e2initrd-helper">e2initrd-helper program - Get the filesystem table</flag>
+    <flag name="mmp">Multi Mount Protection (MMP)</flag>
+    <flag name="tdb">Samba's Trivial Database (TDB) - used to accelerate certain operations</flag>
+    <flag name="bmap-stats">bitmap stats, print them with `E2FSPROGS_BITMAP_STATS` env var set to anything when running the tools</flag>
+    <flag name="bmap-stats-ops">additional bitmap stats</flag>
+    <flag name="fuse">Build fuse2fs, a FUSE file system client for ext2/ext3/ext4 file systems</flag>
+  </use>
+</pkgmetadata>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>dev.rindeal+ebuild-repo@gmail.com</email>
+    <name>Jan Chren (rindeal)</name>
+  </maintainer>
+  <longdescription>
+    htop is an interactive process viewer for Linux. It aims to be a 'better top':
+    you can scroll the process list vertically and horizontally, and select a
+    process to be killed with the arrow keys instead of by typing its process id.
+  </longdescription>
+  <use>
+    <flag name="cgroup">Enable cgroup support</flag>
+    <flag name="hwloc">enable <pkg>sys-apps/hwloc</pkg> support for CPU affinity</flag>
+    <flag name="linux-affinity">Enable Linux sched_setaffinity() and sched_getaffinity() for affinity support, disables hwloc</flag>
+    <flag name="delayacct">Delay accounting</flag>
+    <flag name="taskstats">Enable per-task IO Stats (taskstats kernel support required)</flag>
+    <flag name="openvz">Enable openvz support</flag>
+    <flag name="vserver">Enable vserver support</flag>
+  </use>
+</pkgmetadata>

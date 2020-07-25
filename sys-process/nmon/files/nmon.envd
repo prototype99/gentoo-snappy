@@ -1,0 +1,8 @@
+# Use these keys to toggle statistics on/off:
+#     c = CPU         l = CPU Long-term     - = Faster screen updates
+#     C = " WideView  U = Utilisation       + = Slower screen updates
+#     m = Memory      V = Virtual memory    j = File Systems
+#     d = Disks       n = Network           . = only busy disks/procs
+#     r = Resource    N = NFS               h = more options
+#     k = Kernel      t = Top-processes     q = Quit
+NMON=mklndt.

@@ -1,0 +1,130 @@
+From 228b0b93aa6c3b6ae7074f2a0a5cacb51a0c9dc2 Mon Sep 17 00:00:00 2001
+From: "Jan Chren (rindeal)" <dev.rindeal@gmail.com>
+Date: Tue, 9 May 2017 16:19:43 +0200
+Subject: [PATCH 1/2] rename PROCESS_D_STATE to PROCESS_ALERT_STATE
+
+Closes: https://github.com/hishamhm/htop/pull/140
+Thanks-To: Valmiky Arquissandas (Kayvlim)
+---
+ CRT.c     | 14 +++++++-------
+ CRT.h     |  2 +-
+ Process.c |  2 +-
+ 3 files changed, 9 insertions(+), 9 deletions(-)
+
+diff --git a/CRT.c b/CRT.c
+index 0d516989..e30f0523 100644
+--- a/CRT.c
++++ b/CRT.c
+@@ -85,7 +85,7 @@ typedef enum ColorElements_ {
+    PROCESS_MEGABYTES,
+    PROCESS_TREE,
+    PROCESS_R_STATE,
+-   PROCESS_D_STATE,
++   PROCESS_ALERT_STATE,
+    PROCESS_BASENAME,
+    PROCESS_HIGH_PRIORITY,
+    PROCESS_LOW_PRIORITY,
+@@ -189,7 +189,7 @@ int CRT_colorSchemes[LAST_COLORSCHEME][LAST_COLORELEMENT] = {
+       [PROCESS_BASENAME] = A_BOLD | ColorPair(Cyan,Black),
+       [PROCESS_TREE] = ColorPair(Cyan,Black),
+       [PROCESS_R_STATE] = ColorPair(Green,Black),
+-      [PROCESS_D_STATE] = A_BOLD | ColorPair(Red,Black),
++      [PROCESS_ALERT_STATE] = A_BOLD | ColorPair(Red,Black),
+       [PROCESS_HIGH_PRIORITY] = ColorPair(Red,Black),
+       [PROCESS_LOW_PRIORITY] = ColorPair(Green,Black),
+       [PROCESS_THREAD] = ColorPair(Green,Black),
+@@ -248,7 +248,7 @@ int CRT_colorSchemes[LAST_COLORSCHEME][LAST_COLORELEMENT] = {
+       [PROCESS_BASENAME] = A_BOLD,
+       [PROCESS_TREE] = A_BOLD,
+       [PROCESS_R_STATE] = A_BOLD,
+-      [PROCESS_D_STATE] = A_BOLD,
++      [PROCESS_ALERT_STATE] = A_BOLD,
+       [PROCESS_HIGH_PRIORITY] = A_BOLD,
+       [PROCESS_LOW_PRIORITY] = A_DIM,
+       [PROCESS_THREAD] = A_BOLD,
+@@ -307,7 +307,7 @@ int CRT_colorSchemes[LAST_COLORSCHEME][LAST_COLORELEMENT] = {
+       [PROCESS_BASENAME] = ColorPair(Blue,White),
+       [PROCESS_TREE] = ColorPair(Green,White),
+       [PROCESS_R_STATE] = ColorPair(Green,White),
+-      [PROCESS_D_STATE] = A_BOLD | ColorPair(Red,White),
++      [PROCESS_ALERT_STATE] = A_BOLD | ColorPair(Red,White),
+       [PROCESS_HIGH_PRIORITY] = ColorPair(Red,White),
+       [PROCESS_LOW_PRIORITY] = ColorPair(Green,White),
+       [PROCESS_THREAD] = ColorPair(Blue,White),
+@@ -366,7 +366,7 @@ int CRT_colorSchemes[LAST_COLORSCHEME][LAST_COLORELEMENT] = {
+       [PROCESS_BASENAME] = ColorPair(Green,Black),
+       [PROCESS_TREE] = ColorPair(Blue,Black),
+       [PROCESS_R_STATE] = ColorPair(Green,Black),
+-      [PROCESS_D_STATE] = A_BOLD | ColorPair(Red,Black),
++      [PROCESS_ALERT_STATE] = A_BOLD | ColorPair(Red,Black),
+       [PROCESS_HIGH_PRIORITY] = ColorPair(Red,Black),
+       [PROCESS_LOW_PRIORITY] = ColorPair(Green,Black),
+       [PROCESS_THREAD] = ColorPair(Blue,Black),
+@@ -425,7 +425,7 @@ int CRT_colorSchemes[LAST_COLORSCHEME][LAST_COLORELEMENT] = {
+       [PROCESS_BASENAME] = A_BOLD | ColorPair(Cyan,Blue),
+       [PROCESS_TREE] = ColorPair(Cyan,Blue),
+       [PROCESS_R_STATE] = ColorPair(Green,Blue),
+-      [PROCESS_D_STATE] = A_BOLD | ColorPair(Red,Blue),
++      [PROCESS_ALERT_STATE] = A_BOLD | ColorPair(Red,Blue),
+       [PROCESS_HIGH_PRIORITY] = ColorPair(Red,Blue),
+       [PROCESS_LOW_PRIORITY] = ColorPair(Green,Blue),
+       [PROCESS_THREAD] = ColorPair(Green,Blue),
+@@ -486,7 +486,7 @@ int CRT_colorSchemes[LAST_COLORSCHEME][LAST_COLORELEMENT] = {
+       [PROCESS_THREAD] = ColorPair(Green,Black),
+       [PROCESS_THREAD_BASENAME] = A_BOLD | ColorPair(Blue,Black),
+       [PROCESS_R_STATE] = ColorPair(Green,Black),
+-      [PROCESS_D_STATE] = A_BOLD | ColorPair(Red,Black),
++      [PROCESS_ALERT_STATE] = A_BOLD | ColorPair(Red,Black),
+       [PROCESS_HIGH_PRIORITY] = ColorPair(Red,Black),
+       [PROCESS_LOW_PRIORITY] = ColorPair(Green,Black),
+       [BAR_BORDER] = A_BOLD | ColorPair(Green,Black),
+diff --git a/CRT.h b/CRT.h
+index fb824136..a75c9c31 100644
+--- a/CRT.h
++++ b/CRT.h
+@@ -75,7 +75,7 @@ typedef enum ColorElements_ {
+    PROCESS_MEGABYTES,
+    PROCESS_TREE,
+    PROCESS_R_STATE,
+-   PROCESS_D_STATE,
++   PROCESS_ALERT_STATE,
+    PROCESS_BASENAME,
+    PROCESS_HIGH_PRIORITY,
+    PROCESS_LOW_PRIORITY,
+diff --git a/Process.c b/Process.c
+index fea5533c..b1b39c3b 100644
+--- a/Process.c
++++ b/Process.c
+@@ -446,7 +446,7 @@ void Process_writeField(Process* this, RichString* str, ProcessField field) {
+               attr = CRT_colors[PROCESS_R_STATE];
+               break;
+           case 'D':
+-              attr = CRT_colors[PROCESS_D_STATE];
++              attr = CRT_colors[PROCESS_ALERT_STATE];
+               break;
+       }
+       break;
+
+From 6693790779659d5a54f97c66dbd5aa12810fe15b Mon Sep 17 00:00:00 2001
+From: "Jan Chren (rindeal)" <dev.rindeal@gmail.com>
+Date: Tue, 9 May 2017 16:21:20 +0200
+Subject: [PATCH 2/2] mark 'Z' state as PROCESS_ALERT_STATE
+
+Closes: https://github.com/hishamhm/htop/pull/140
+Thanks-To: Valmiky Arquissandas (Kayvlim)
+---
+ Process.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/Process.c b/Process.c
+index b1b39c3b..4f1e2c7b 100644
+--- a/Process.c
++++ b/Process.c
+@@ -445,6 +445,7 @@ void Process_writeField(Process* this, RichString* str, ProcessField field) {
+           case 'R':
+               attr = CRT_colors[PROCESS_R_STATE];
+               break;
++          case 'Z':
+           case 'D':
+               attr = CRT_colors[PROCESS_ALERT_STATE];
+               break;

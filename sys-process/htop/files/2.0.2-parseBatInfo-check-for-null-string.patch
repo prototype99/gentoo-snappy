@@ -1,0 +1,13 @@
+diff --git a/linux/Battery.c b/linux/Battery.c
+index 4bee340..caf117e 100644
+--- a/linux/Battery.c
++++ b/linux/Battery.c
+@@ -74,6 +74,8 @@ static unsigned long int parseBatInfo(const char *fileName, const unsigned short
+ 
+       fclose(file);
+ 
++      if (!line) break;
++
+       char *foundNumStr = String_getToken(line, wordNum);
+       const unsigned long int foundNum = atoi(foundNumStr);
+       free(foundNumStr);

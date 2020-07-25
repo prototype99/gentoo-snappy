@@ -1,0 +1,25 @@
+From bb8dec15829bb90ef2e637312e45e90b8ab4c64b Mon Sep 17 00:00:00 2001
+From: Hisham <hisham@gobolinux.org>
+Date: Wed, 15 Feb 2017 22:47:03 -0200
+Subject: [PATCH] Cap battery at 100%.
+
+Apparently invalid results can be returned by buggy drivers in old laptops,
+as reported by @thukydides. See #596.
+---
+ linux/Battery.c | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/linux/Battery.c b/linux/Battery.c
+index b7a004b..4bee340 100644
+--- a/linux/Battery.c
++++ b/linux/Battery.c
+@@ -310,6 +310,9 @@ void Battery_getData(double* level, ACPresence* isOnAC) {
+       *level = -1;
+       *isOnAC = AC_ERROR;
+    }
++   if (*level > 100.0) {
++      *level = 100.0;
++   }
+    Battery_cacheLevel = *level;
+    Battery_cacheIsOnAC = *isOnAC;
+    Battery_cacheTime = now;

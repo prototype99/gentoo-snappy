@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>dev.rindeal+ebuild-repo@gmail.com</email>
+    <name>Jan Chren (rindeal)</name>
+  </maintainer>
+  <use>
+    <flag name="external-fuse">
+        Use <pkg>sys-fs/fuse</pkg> library instead of internal one. Must be disabled
+        for unprivileged mounting to work.
+    </flag>
+    <flag name="ntfsprogs">Include internal version of ntfsprogs utilities</flag>
+    <flag name="ldscript">Use ldscript instead of .so symlink</flag>
+    <flag name="pedantic">Enable compiler's pedantic mode</flag>
+    <!-- static libs -->
+    <flag name="really-static">Create fully static binaries</flag>
+    <flag name="mount-helper">Install mount helper</flag>
+    <flag name="library">Install libntfs-3g</flag>
+    <flag name="mtab">Use /etc/mtab</flag>
+    <flag name="acl">POSIX ACL support</flag>
+    <flag name="xattr">Enable system extended attributes mappings</flag>
+    <flag name="device-default-io-ops">Install default IO ops</flag>
+    <flag name="ntfs-3g">Enable the ntfs-3g FUSE driver</flag>
+    <flag name="quarantined">Install quarantined (non functional) ntfsprogs utilities</flag>
+    <flag name="crypto">Enable crypto related code and utilities (ntfsdecrypt)</flag>
+    <flag name="extras">Enable extra ntfsprogs utilities</flag>
+    <flag name="uuid">Generate DCE compliant UUIDs, requires <pkg>sys-libs/libuuid</pkg></flag>
+    <flag name="hd">Use Windows compliant disk geometry, requires libhd from <pkg>sys-apps/hwinfo</pkg></flag>
+  </use>
+</pkgmetadata>
