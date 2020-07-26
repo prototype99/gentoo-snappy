@@ -1,10 +1,10 @@
-# Copyright 2016 Jan Chren (rindeal)
+# Copyright 2016, 2019 Jan Chren (rindeal)
 # Distributed under the terms of the GNU General Public License v2
 
 ##
 # @ECLASS: l10n-r1.eclass
 # @MAINTAINER:
-#   Jan Chren <dev.rindeal+gentoo@gmail.com>
+#   Seirra Blake <sophietheopossum@yandex.ru>
 # @BLURB: convenience functions to handle localizations
 # @DESCRIPTION:
 # The l10n-r1 (localization) eclass offers a number of functions to more
@@ -17,31 +17,31 @@
 
 if [ -z "${_L10N_R1_ECLASS}" ] ; then
 
-[[ -v _L10N_ECLASS ]] && die "You've inheritted both l10n.eclass and l10n-r1.eclass"
+[[ -v _L10N_ECLASS ]] && die "Inherited both l10n.eclass and l10n-r1.eclass"
 
 case "${EAPI:-0}" in
-	6) : ;;
-	*) die "Unsupported EAPI='${EAPI}' (unknown) for '${ECLASS}'" ;;
+'6' | '7' ) ;;
+* ) die "EAPI='${EAPI}' is not supported by '${ECLASS}' eclass" ;;
 esac
 
 
 inherit rindeal
 
 
-_l10n_var_is_defined() {
-	# https://unix.stackexchange.com/a/56846/53317
-	eval "[[ \" \${!${1}*} \" == *\" ${1} \"* ]]"
+_l10n_var_is_defined()
+{
+	declare -p "${1}" &>/dev/null
 }
 
 _l10n_var_is_type() {
 	local type="${1:0:1}" varname="${2}"
 
 	case "${type}" in
-		'-' | 's' ) type='-' ;;
-		'a' ) ;;
-		'A' ) ;;
-		'i' ) ;;
-		* ) die "Invalid type: '${type}'" ;;
+	'-' | 's' ) type='-' ;;
+	'a' ) ;;
+	'A' ) ;;
+	'i' ) ;;
+	* ) die "Invalid type: '${type}'" ;;
 	esac
 
 	_l10n_var_is_defined "${varname}" || die "Variable '${varname}' doesn't exist"
@@ -49,26 +49,28 @@ _l10n_var_is_type() {
 	[[ "$(declare -p "${varname}" 2>/dev/null)" == "declare -${type}"* ]]
 }
 
-# Usage: _l10n_var_ensure_type <type> <varname>
+# Usage: _l10n_ensure_var_type <type> <varname>
 # Types:
 # 	`a` = array
 # 	`A` = associative array
 # 	`i` = integer
 # 	`s` = string
 #
-_l10n_var_ensure_type() {
+_l10n_ensure_var_type()
+{
 	local type="${1:0:1}" varname="${2}"
 	local typename
 
 	case "${type}" in
-		'-' | 's' ) typename='a string' ; type='-' ;;
-		'a' ) typename='an array' ;;
-		'A' ) typename='an associative array' ;;
-		'i' ) typename='an integer' ;;
-		* ) die "Invalid type: '${type}'" ;;
+	'-' | 's' ) typename='a string' ; type='-' ;;
+	'a' ) typename='an array' ;;
+	'A' ) typename='an associative array' ;;
+	'i' ) typename='an integer' ;;
+	* ) die "Invalid type: '${type}'" ;;
 	esac
 
-	if ! _l10n_var_is_type "${type}" "${varname}" ; then
+	if ! _l10n_var_is_type "${type}" "${varname}"
+	then
 		die "Variable '${varname}' must be ${typename}"
 	fi
 }
@@ -165,11 +167,12 @@ fi
 # L10N_LOCALES=( cy de el_GR en_US pt_BR vi zh_CN )
 # @CODE
 ##
-if [[ -z "${L10N_LOCALES}" ]] ; then
+if [[ -z "${L10N_LOCALES}" ]]
+then
 	die "L10N_LOCALES is not defined or empty"
 fi
 debug-print "${ECLASS}: $(declare -p L10N_LOCALES)"
-_l10n_var_ensure_type a L10N_LOCALES
+_l10n_ensure_var_type a L10N_LOCALES
 readonly L10N_LOCALES
 
 
@@ -186,9 +189,10 @@ readonly L10N_LOCALES
 # L10N_LOCALES_BACKUP="en_US"
 # @CODE
 ##
-if [[ -n "${L10N_LOCALES_BACKUP}" ]] ; then
+if [[ -n "${L10N_LOCALES_BACKUP}" ]]
+then
 	debug-print "${ECLASS}: $(declare -p L10N_LOCALES_BACKUP)"
-	_l10n_var_ensure_type s L10N_LOCALES_BACKUP
+	_l10n_ensure_var_type s L10N_LOCALES_BACKUP
 	readonly L10N_LOCALES_BACKUP
 fi
 
@@ -204,16 +208,19 @@ fi
 # L10N_LOCALES_MAP+=( ['en']='eng' ['de']='ger german' )
 # @CODE
 ##
-if ! _l10n_var_is_defined L10N_LOCALES_MAP ; then
+if ! _l10n_var_is_defined L10N_LOCALES_MAP
+then
 	declare -g -A L10N_LOCALES_MAP=()
 fi
 debug-print "${ECLASS}: $(declare -p L10N_LOCALES_MAP)"
-_l10n_var_ensure_type A L10N_LOCALES_MAP
+_l10n_ensure_var_type A L10N_LOCALES_MAP
 
 # generate deault map
-for _l in "${L10N_LOCALES[@]}" ; do
+for _l in "${L10N_LOCALES[@]}"
+do
 	# overwrite only if not already set
-	if [[ -z "${L10N_LOCALES_MAP["${_l}"]}" ]] ; then
+	if [[ -z "${L10N_LOCALES_MAP["${_l}"]}" ]]
+	then
 		L10N_LOCALES_MAP+=(
 			# values are same as keys by default
 			["${_l}"]="${_l}"
@@ -234,11 +241,13 @@ readonly L10N_LOCALES_MAP
 ##
 declare -g -A _L10N_LOCALES_MASK=() # lookup table
 
-if [[ -v L10N_LOCALES_MASK ]] ; then
+if [[ -v L10N_LOCALES_MASK ]]
+then
 	debug-print "${ECLASS}: $(declare -p L10N_LOCALES_MASK)"
-	_l10n_var_ensure_type a L10N_LOCALES_MASK
+	_l10n_ensure_var_type a L10N_LOCALES_MASK
 
-	for _l in "${L10N_LOCALES_MASK[@]}" ; do
+	for _l in "${L10N_LOCALES_MASK[@]}"
+	do
 		[[ -v L10N_LOCALES_MAP["${_l}"] ]] && \
 			die "Error: L10N_LOCALES_MASK must not contain values from L10N_LOCALES_MAP, but '${_l}' was found in both"
 		_L10N_LOCALES_MASK+=( ["${_l}"]= )
@@ -259,7 +268,8 @@ _l10n_generate_locale_caches() {
 
 	## skip generation if vars are already set
 	local v
-	for v in "${_var_names[@]}" ; do
+	for v in "${_var_names[@]}"
+	do
 		_l10n_var_is_defined ${v} && return 0
 	done
 
@@ -270,13 +280,15 @@ _l10n_generate_locale_caches() {
 	declare -g -- _app_locales_all= _app_locales_on= _app_locales_off=
 
 	local l
-	for l in "${L10N_LOCALES[@]}" ; do
+	for l in "${L10N_LOCALES[@]}"
+	do
 		local ll="${L10N_LOCALES_MAP["${l}"]}"
 
 		_global_locales_all+=" ${l} "
 		_app_locales_all+=" ${ll} "
 
-		if use l10n_${l} ; then
+		if use l10n_${l}
+		then
 			_global_locales_on+=" ${l} "
 			_app_locales_on+=" ${ll} "
 		else
@@ -286,7 +298,8 @@ _l10n_generate_locale_caches() {
 	done
 
 	### implementation of L10N_LOCALES_BACKUP
-	if [[ -n "${L10N_LOCALES_BACKUP}" && -z "${_global_locales_on}" ]] ; then
+	if [[ -n "${L10N_LOCALES_BACKUP}" && -z "${_global_locales_on}" ]]
+	then
 		# check that L10N_LOCALES_BACKUP exists in L10N_LOCALES
 		[[ -v L10N_LOCALES_MAP["${L10N_LOCALES_BACKUP}"] ]] || \
 			die "L10N_LOCALES_BACKUP='${L10N_LOCALES_BACKUP}' doesn't exist in L10N_LOCALES"
@@ -307,8 +320,9 @@ _l10n_generate_locale_caches() {
 
 	## trim/squeeze spaces and sort
 	local v
-	for v in "${_var_names[@]}" ; do
-		declare -g -- ${v}="$(echo $(printf "%s\n" ${!v} | LC_ALL=C sort))"
+	for v in "${_var_names[@]}"
+	do
+		declare -g -- "${v}=$(echo $(printf "%s\n" ${!v} | LC_ALL=C sort))"
 	done
 }
 
@@ -331,16 +345,16 @@ l10n_get_locales() {
 	# src_var will contain one of _{global,l10n}_locales_{all,on,off}
 	local src_var=
 	case "${type}" in
-		'global')	src_var+="_global" ;;
-		'app')		src_var+="_app" ;;
-		*) die "Unknown type: '${type}'" ;;
+	'global') src_var+="_global" ;;
+	'app')    src_var+="_app" ;;
+	* ) die "Unknown type: '${type}'" ;;
 	esac
 	src_var+="_locales"
 	case "${flag}" in
-		'all')	src_var+="_all" ;;
-		'on')	src_var+="_on" ;;
-		'off')	src_var+="_off" ;;
-		*) die "Unknown flag: '${flag}'" ;;
+	'all') src_var+="_all" ;;
+	'on')  src_var+="_on"  ;;
+	'off') src_var+="_off" ;;
+	* ) die "Unknown flag: '${flag}'" ;;
 	esac
 
 	### make sure caches are generated
@@ -369,46 +383,51 @@ l10n_find_changes_in_dir() {
 	## known = codes specified in the ebuild
 	##
 	## Note: it uses assoc array to allow instant lookups
-	declare -A found known
+	local -A known found
+
+	## added = codes that were found, but not known
+	## removed = codes that were known, but not found
+	local -a added removed
 
 	## do the search
 	rpushd "${dir}"
-	for l in "${pre}"*"${post}" ; do
+	for l in "${pre}"*"${post}"
+	do
 		l="${l#"${pre}"}"
 		l="${l%"${post}"}"
 		# skip if masked
 		[[ -v _L10N_LOCALES_MASK["${l}"] ]] && continue
-		found+=( ["${l}"]="${l}" )
+		found+=( ["${l}"]= )
 	done
 	rpopd
 
 	local locales
 	l10n_get_locales locales app all
-	for l in ${locales} ; do
-		known+=( ["${l}"]="${l}" )
+	for l in ${locales}
+	do
+		known+=( ["${l}"]= )
 	done
 
-	local added=() removed=()
-	# known but not found
-	for l in "${!known[@]}" ; do
+	for l in "${!known[@]}"
+	do
 		[[ -v found["${l}"] ]] || removed+=( "${l}" )
 	done
-	# found but not known
-	for l in "${!found[@]}" ; do
+	for l in "${!found[@]}"
+	do
 		[[ -v known["${l}"] ]] || added+=( "${l}" )
 	done
 
-	if (( $(( ${#added[@]} + ${#removed[@]} )) > 0 )) ; then
-		elog "There are changes in locales!"
+	if (( ( ${#added[@]} + ${#removed[@]} ) > 0 ))
+	then
+		eqawarn "There are changes in locales!"
 
-		__my_sort() {
-			echo $(printf '%s\n' "${@}" | LC_ALL=C sort)
-		}
+		__my_sort(){ echo $(printf '%s\n' "${@}" | LC_ALL=C sort); }
 
 		(( ${#added[@]} > 0 )) && \
-			elog "Locales added: '$(__my_sort "${added[@]}")'"
+			eqawarn "Locales added: '$(__my_sort "${added[@]}")'"
 		(( ${#removed[@]} > 0 )) && \
-			elog "Locales removed: '$(__my_sort "${removed[@]}")'"
+			eqawarn "Locales removed: '$(__my_sort "${removed[@]}")'"
+		eqawarn "All locales found: '$(__my_sort "${!found[@]}")'"
 	fi
 }
 
