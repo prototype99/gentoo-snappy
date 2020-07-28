@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>dev.rindeal+ebuild-repo@gmail.com</email>
+    <name>Jan Chren (rindeal)</name>
+  </maintainer>
+  <use>
+    <flag name="abstract-socket">Use abstract UNIX socket for IPC</flag>
+    <flag name="gtk2">Use GTK2 version of gtkui plugin</flag>
+    <flag name="gtk3">Use GTK3 version of gtkui plugin</flag>
+    <flag name="rpath">Hardcode runtime library paths</flag>
+    <!-- ### DB_PLUGIN_DECODER = 1 -->
+    <flag name="plugin_decoder_aac">AAC decoder based on FAAD2</flag>
+    <flag name="plugin_decoder_adplug">adplug plugin</flag>
+    <flag name="plugin_decoder_alac">ALAC plugin</flag>
+    <flag name="plugin_decoder_psf">AOSDK-based PSF(,QSF,SSF,DSF) plugin</flag>
+    <flag name="plugin_decoder_cdda">CD-Audio plugin</flag>
+    <flag name="plugin_decoder_cdda-paranoia">CD-Audio error correction during ripping</flag>
+    <flag name="plugin_decoder_dca">dca (DTS audio) plugin</flag>
+    <flag name="plugin_decoder_dumb">DUMB plugin</flag>
+    <flag name="plugin_decoder_ffap">Monkey's Audio plugin</flag>
+    <flag name="plugin_decoder_ffmpeg">FFMPEG plugin for WMA, AMR, etc</flag>
+    <flag name="plugin_decoder_flac">FLAC player plugin</flag>
+    <flag name="plugin_decoder_gme">Game Music Emu plugin for NSF, AY, etc</flag>
+    <flag name="plugin_decoder_mp3">mp3 plugin</flag>
+    <flag name="plugin_decoder_mp3-libmpg123">libmpg123 support in mp3 plugin</flag>
+    <flag name="plugin_decoder_mp3-libmad">libmad support in mp3 plugin</flag>
+    <flag name="plugin_decoder_musepack">musepack plugin</flag>
+    <flag name="plugin_decoder_opus">opus plugin</flag>
+    <flag name="plugin_decoder_sc68">sc68 Atari ST and Amiga music player</flag>
+    <flag name="plugin_decoder_shn">SHN plugin</flag>
+    <flag name="plugin_decoder_sid">commodore64 SID music player plugin</flag>
+    <flag name="plugin_decoder_sndfile">libsndfile plugin for PCM wave files</flag>
+    <flag name="plugin_decoder_tta">tta plugin</flag>
+    <flag name="plugin_decoder_vorbis">Ogg Vorbis player plugin</flag>
+    <flag name="plugin_decoder_vtx">libayemy VTX ZX-Spectrum music player plugin</flag>
+    <flag name="plugin_decoder_wavpack">wavpack plugin</flag>
+    <flag name="plugin_decoder_wildmidi">wildmidi plugin</flag>
+    <flag name="plugin_decoder_wma">WMA plugin</flag>
+    <!-- ### DB_PLUGIN_DSP = 3 -->
+    <flag name="plugin_dsp_mono2stereo">mono2stereo DSP plugin</flag>
+    <flag name="plugin_dsp_src">libsamplerate (SRC) plugin</flag>
+    <flag name="plugin_dsp_supereq">plugin_dsp_supereq</flag>
+    <!-- ### DB_PLUGIN_MISC = 4 -->
+    <flag name="plugin_misc_artwork">album art loader plugin</flag>
+    <flag name="plugin_misc_artwork-imlib2">use imlib2 in artwork plugin</flag>
+    <flag name="plugin_misc_artwork-network">album art network loading support</flag>
+    <flag name="plugin_misc_converter">plugin_misc_converter</flag>
+    <flag name="plugin_misc_hotkeys">global hotkeys plugin</flag>
+    <flag name="plugin_misc_lfm">last.fm/libre.fm scrobbler plugin</flag>
+    <flag name="plugin_misc_notify">notification-daemon support plugin</flag>
+    <flag name="plugin_misc_oggedit">Allow editing OGG files</flag>
+    <flag name="plugin_misc_pltbrowser">playlist browser gui plugin</flag>
+    <flag name="plugin_misc_rgscanner">ReplayGain Scanner pluginr</flag>
+    <flag name="plugin_misc_shellexec">shell commands plugin</flag>
+    <flag name="plugin_misc_shellexecui">shellexec GTK UI plugin</flag>
+    <!-- ### DB_PLUGIN_OUTPUT = 2 -->
+    <flag name="plugin_output_alsa">plugin_output_alsa</flag>
+    <!-- MacOSX only - <flag name="plugin_output_coreaudio">plugin_output_coreaudio</flag> -->
+    <flag name="plugin_output_nullout">plugin_output_nullout</flag>
+    <flag name="plugin_output_oss">plugin_output_oss</flag>
+    <flag name="plugin_output_pulse">plugin_output_pulse</flag>
+    <!-- ### DB_PLUGIN_PLAYLIST = 6 -->
+    <flag name="plugin_playlist_m3u">m3u plugin</flag>
+    <!-- ### DB_PLUGIN_VFS = 5 -->
+    <flag name="plugin_vfs_curl">HTTP streaming vfs plugin</flag>
+    <flag name="plugin_vfs_mms">MMS streaming vfs plugin</flag>
+    <flag name="plugin_vfs_zip">vfs_zip plugin</flag>
+  </use>
+</pkgmetadata>
