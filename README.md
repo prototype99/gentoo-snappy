@@ -3,7 +3,7 @@ An unofficial Gentoo Overlay that enables installation of Canonical's "Snappy" b
 
 note that you may need to set dev-python/pypy low-memory and dev-util/cmake -system-jsoncpp in your package.use to avoid circular dependencies upon initial profile migration.
 
-ebuilds from ::whiledev and ::nginx-overlay have been added in order to preserve them as the overlay has since been deleted
+ebuilds from ::whiledev, ::rindeal and ::nginx-overlay have been added in order to preserve them as the overlays have since been deleted
 
 ##Current defaults
 
@@ -18,11 +18,16 @@ fortran compiler (when needed): intel fortran compiler
 overlays: layman
 python: 2_7,3_6,pypy,pypy3 (pypy to be upgraded, 2_7 to be removed)
 
+##Possible future QA
+-ensure only virtual/libffi is used until it disappears
+-ensure shortest possible python target strings
+
 ##Packaging differences
 
 There are differences in packaging. most notably:
 -by default the world file is empty and replaced by sys-apps/world, which features descriptive use flags designed to help you choose what to use
 -virtual/linux sources is still available but it is versioned and slotted to various kernel versions.
+-app-misc/mime-types is now a virtual package, due to two choices being in this overlay
 
 ## Add the Overlay using layman
 Gentoo's currently preferred Overlay system is through using a git sync.  What follows are abbreviated instructions assuming that you already have the `dev-vcs/git` and  `app-portage/layman` packages installed. (there are other methods, however layman allows you to keep your packages organised. Compare it to ubuntu's ppas if you must)
