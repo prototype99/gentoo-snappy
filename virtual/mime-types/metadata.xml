@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>sophietheopossum@yandex.ru</email>
+		<name>seirra blake</name>
+	</maintainer>
+	<use>
+		<flag name="gentoo">Install official mime-types</flag>
+		<flag name="mailcap">Install mailcap mime-types, these are used in arch linux</flag>
+	</use>
+</pkgmetadata>
