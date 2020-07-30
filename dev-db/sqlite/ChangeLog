@@ -1,3 +1,8 @@
+*sqlite-3.32.3-r1
+::gentoo		update keywords, add features, update ebuild
+::prototype99	remove 9999 code
+
+
 *sqlite-3.31.1
 
 ::oubliette		base ebuild
