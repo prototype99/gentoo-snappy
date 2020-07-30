@@ -66,6 +66,7 @@
 =dev-lang/spidermonkey-60.5.2_p0-r4::gentoo-clang					#clang specific patch
 =dev-lang/spidermonkey-60.8.0::dantrell-gnome						#bad keywording, unnecessary quotes
 =dev-lang/swig-4.0.0::gentoo-zh										#old eapi
+=dev-lang/tcl-8.6.10::oubliette										#no multilib support
 =dev-lang/vala-0.42.7::dantrell-gnome								#bad keywording, unnecessary quotes, missing valadoc flag
 =dev-lang/vala-0.44.7::dantrell-gnome								#bad keywording, unnecessary quotes, missing valadoc flag
 =dev-lang/vala-0.44.9::dantrell-gnome								#bad keywording, unnecessary quotes, missing valadoc flag
@@ -96,9 +97,8 @@
 =dev-libs/libassuan-2.5.3::dantrell-gnome							#bad keywording, unnecessary quotes
 =dev-libs/libcroco-0.6.13::dantrell-gnome							#bad keywording, unnecessary quotes, bad dependency, old patches
 =dev-libs/libdazzle-3.34.1::dantrell-gnome-3-34						#bad keywording, unnecessary quotes
-=dev-libs/libgcrypt-1.8.4::dantrell-gnome							#bad keywording, unnecessary quotes
-=dev-libs/libgcrypt-1.8.5::dantrell-gnome							#bad keywording, unnecessary quotes
 =dev-libs/libgcrypt-1.8.5::gentoo-clang								#clang specific patch
+=dev-libs/libgcrypt-1.8.6::dantrell-gnome							#bad keywording, unnecessary quotes
 =dev-libs/libgdata-0.17.10::gnome-next								#very different to ::gentoo
 =dev-libs/libgpg-error-1.36::dantrell-gnome							#bad keywording, unnecessary quotes, old
 =dev-libs/libgpg-error-1.37::dantrell-gnome							#bad keywording, unnecessary quotes
@@ -334,6 +334,7 @@
 =sys-devel/gettext-0.19.8.1::dantrell-gnome							#bad keywording, unnecessary quotes
 =sys-devel/gettext-0.19.8.1::muslx32								#old, missing patch
 =sys-devel/gettext-0.20.1::dantrell-gnome							#bad keywording, unnecessary quotes
+=sys-devel/gettext-0.20.2::dantrell-gnome							#bad keywording, unnecessary quotes
 =sys-devel/lld-10.0.0::gentoo										#no musl workaround
 =sys-fs/e2fsprogs-1.44.5::gnux32									#x32 specific patch
 =sys-fs/e2fsprogs-1.45.2::gnux32									#x32 specific patch

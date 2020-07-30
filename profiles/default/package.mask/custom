@@ -72,12 +72,14 @@
 <dev-python/pygments-2.6.1
 <dev-python/ply-3.9
 <dev-python/setuptools-40.6.3
+<dev-scheme/guile-2.2.4
 <dev-util/glib-utils-2.58.3
 <dev-util/gtk-update-icon-cache-3.24.8
 <dev-util/meson-0.50.1
 <gnome-base/gnome-common-3.18.0-r1
 <gnome-extra/nm-applet-1.8.20
 <gnome-extra/zenity-3.30.0
+<media-libs/libuninameslist-20200313
 <media-video/vlc-3.0.8
 <net-libs/glib-networking-2.61.90
 <net-libs/libpsl-0.21.0
