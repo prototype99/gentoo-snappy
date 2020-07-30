@@ -1,0 +1,4 @@
+- manpages
+- .desktop menu entries
+- OpenSuse patches
+- config file

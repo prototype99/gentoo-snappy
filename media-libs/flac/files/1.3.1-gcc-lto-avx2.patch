@@ -1,0 +1,39 @@
+Source: Jan Chren (rindeal)
+Status: not upstreamed
+Reason: fix compilation with LTO enabled
+
+```
+libtool: link: x86_64-pc-linux-gnu-gcc -std=gnu99 -shared  -fPIC -DPIC  .libs/bitmath.o .libs/bitreader.o .libs/bitwriter.o .libs/cpu.o .libs/crc.o .libs/fixed.o .libs/fixed_intrin_sse2.o .libs/fixed_intrin_ssse3.o .libs/float.o .libs/format.o .libs/lpc.o .libs/lpc_intrin_sse.o .libs/lpc_intrin_sse2.o .libs/lpc_intrin_sse41.o .libs/lpc_intrin_avx2.o .libs/md5.o .libs/memory.o .libs/metadata_iterators.o .libs/metadata_object.o .libs/stream_decoder.o .libs/stream_encoder.o .libs/stream_encoder_intrin_sse2.o .libs/stream_encoder_intrin_ssse3.o .libs/stream_encoder_intrin_avx2.o .libs/stream_encoder_framing.o .libs/window.o .libs/ogg_decoder_aspect.o .libs/ogg_encoder_aspect.o .libs/ogg_helper.o .libs/ogg_mapping.o   -Wl,--as-needed -L/usr/lib -logg -lm  -O1 -march=x86-64 -mtune=generic -g1 -mmmx -msse -msse2 -msse3 -mssse3 -mcx16 -msahf -mfxsr -flto -fuse-linker-plugin -msse2 -Wl,-O1 -flto -fuse-linker-plugin   -Wl,-soname -Wl,libFLAC.so.8 -o .libs/libFLAC.so.8.3.0
+/usr/lib/gcc/x86_64-pc-linux-gnu/4.9.3/include/avx2intrin.h: In function 'FLAC__lpc_compute_residual_from_qlp_coefficients_wide_intrin_avx2':
+/usr/lib/gcc/x86_64-pc-linux-gnu/4.9.3/include/avx2intrin.h:529:3: internal compiler error: in copy_to_mode_reg, at explow.c:654
+   return (__m256i) __builtin_ia32_pmuldq256 ((__v8si)__X, (__v8si)__Y);
+      ^
+```
+
+--- a/src/libFLAC/include/private/cpu.h	2015-12-22 06:12:20.370104292 +0100
++++ b/src/libFLAC/include/private/cpu.h	2015-12-22 06:13:00.362103123 +0100
+@@ -72,16 +72,6 @@
+     #define FLAC__FMA_SUPPORTED 1
+   #endif
+ #elif defined __GNUC__
+-  #if (__GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 9)) /* since GCC 4.9 -msse.. compiler options aren't necessary */
+-    #define FLAC__SSE_TARGET(x) __attribute__ ((__target__ (x)))
+-    #define FLAC__SSE_SUPPORTED 1
+-    #define FLAC__SSE2_SUPPORTED 1
+-    #define FLAC__SSSE3_SUPPORTED 1
+-    #define FLAC__SSE4_1_SUPPORTED 1
+-    #define FLAC__AVX_SUPPORTED 1
+-    #define FLAC__AVX2_SUPPORTED 1
+-    #define FLAC__FMA_SUPPORTED 1
+-  #else /* for GCC older than 4.9 */
+     #define FLAC__SSE_TARGET(x)
+     #ifdef __SSE__
+       #define FLAC__SSE_SUPPORTED 1
+@@ -104,7 +94,6 @@
+     #ifdef __FMA__
+       #define FLAC__FMA_SUPPORTED 1
+     #endif
+-  #endif /* GCC version */
+ #endif /* compiler version */
+ #endif /* intrinsics support */
+ 

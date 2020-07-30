@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>dev.rindeal+ebuild-repo@gmail.com</email>
+    <name>Jan Chren (rindeal)</name>
+  </maintainer>
+  <use>
+    <flag name="drm">drm buffer</flag>
+    <!--     <flag name="aiq">Aiq 3A algorithm</flag> -->
+    <flag name="gst">gstreamer plugin</flag>
+    <flag name="libcl">libcl image processor</flag>
+    <flag name="opencv">opencv</flag>
+    <flag name="capi">libxcam-capi</flag>
+    <!--     <flag name="3alib">3A lib</flag> -->
+    <flag name="smartlib">smart analysis lib</flag>
+    <flag name="profiling">profiling</flag>
+  </use>
+</pkgmetadata>
