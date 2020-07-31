@@ -1,4 +1,7 @@
-*media-gfx/fontforge-20200314
+*fontforge-20200314-r1
+	::prototype99	improve python use flags
+
+*fontforge-20200314
 	::4nykey		gui use flag, more advanced required_use, libspiro use flag, use flag metadata
 	::gentoo		base ebuild
 	::prototype99	make better use of ${PN}, new take on gui use flag using required_use better, remove redundant cmake argument (already default)
