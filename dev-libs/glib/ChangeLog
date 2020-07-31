@@ -1,0 +1,4 @@
+*glib-2.65.0
+::gentoo		update gtk-doc dependency
+::pg_overlay	base ebuild
+::rindeal		improve python compatibility, add an actual homepage, add libmount, man use flags, add L10N support
