@@ -78,10 +78,10 @@
 =dev-libs/boost-1.72.0-r1::FireBurn									#less specific dependency
 =dev-libs/boost-1.72.0-r1::gnux32									#better in other overlay
 =dev-libs/boost-1.72.0-r1::pg_overlay								#less specific dependency
-=dev-libs/glib-2.61.1::gnome-next									#less python compatibility, less use flags, no separate packages
 =dev-libs/glib-2.62.6::dantrell-gnome								#less use flags, no separate packages
 =dev-libs/glib-2.62.6-r1::dantrell-gnome							#less use flags, no separate packages
 =dev-libs/glib-2.64.3::dantrell-gnome								#less use flags, no separate packages
+=dev-libs/glib-2.65.0::gnome-next									#no separate packages
 =dev-libs/gmp-6.1.2::srcshelton										#no musl support
 =dev-libs/gmp-6.1.2-r1::gentoo										#no pgo
 =dev-libs/gmp-6.2.0-r1::gentoo										#no pgo
