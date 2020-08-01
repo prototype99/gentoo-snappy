@@ -696,6 +696,15 @@
 		<feed>https://cgit.gentoo.org/proj/printer-drivers.git/atom/</feed>
 	</repo>
 	<repo quality="experimental" status="official">
+		<name>programmador</name>
+		<description lang="en">programmador overlay</description>
+		<homepage>https://bitbucket.org/programmador/gentoo-overlay/</homepage>
+		<owner type="person">
+			<name>Alexander Konotop</name>
+		</owner>
+		<source type="git">https://bitbucket.org/programmador/gentoo-overlay/</source>
+	</repo>
+	<repo quality="experimental" status="official">
 		<name>prometheanfire</name>
 		<description lang="en">Developer overlay</description>
 		<homepage>https://cgit.gentoo.org/dev/prometheanfire.git/</homepage>
