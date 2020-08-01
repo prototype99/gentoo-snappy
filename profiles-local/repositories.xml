@@ -316,6 +316,18 @@
 		<source type="git">git@github.com:prototype99/mesos-gentoo-overlay.git</source>
 		<feed>https://github.com/prototype99/mesos-gentoo-overlay/commits/master.atom</feed>
 	</repo>
+	<repo quality="experimental" status="unofficial">
+		<name>dustin</name>
+		<description lang="en">dustin overlay</description>
+		<homepage>https://bitbucket.org/AdmiralNemo/overlay</homepage>
+		<owner type="person">
+			<name>Dustin hatch</name>
+		</owner>
+		<source type="mercurial">https://bitbucket.org/AdmiralNemo/overlay</source>
+		<source type="mercurial">ssh://hg@bitbucket.org/AdmiralNemo/overlay</source>
+		<feed>https://bitbucket.org/AdmiralNemo/overlay/atom</feed>
+		<feed>https://bitbucket.org/AdmiralNemo/overlay/rss</feed>
+	</repo>
 	<repo quality="experimental" status="unoffficial">
 		<name>el-overlay</name>
 		<homepage>http://github.com/lamskoy/el-overlay</homepage>
