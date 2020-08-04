@@ -497,6 +497,17 @@
 		<source type="git">git://github.com/prototype99/kniolet.git</source>
 		<feed>https://github.com/prototype99/kniolet/commits/master.atom</feed>
 	</repo>
+	<repo quality="experimental" status="unofficial">
+		<name>kressh</name>
+		<description>Kressh Overlay</description>
+		<homepage>https://github.com/kressh/gentoo-repo</homepage>
+		<owner>
+			<name>sergey besedin</name>
+		</owner>
+		<source type="git">https://github.com/kressh/gentoo-repo.git</source>
+		<source type="git">git://github.com/kressh/gentoo-repo.git</source>
+		<feed>https://github.com/kressh/gentoo-repo/commits/master.atom</feed>
+	</repo>
 	<repo quality="experimental" status="official">
 		<name>kveer</name>
 		<description lang="fr">Veovis's overlay</description>
