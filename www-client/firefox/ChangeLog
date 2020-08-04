@@ -1,3 +1,23 @@
+*firefox-78.0.2-r1
+::gentoo
+-update patches version
+-make better use of {PN}
+-reduce unnecessary white-space
+-add openh264
+-screencast use flags
+-update dependencies
+-remove old code
+-pgo is not locked to clang anymore
+-improve binary support
+-increase required disk space
+-improve parallelism
+-add new workarounds
+::prototype99
+-make better use of {PN}
+-use a more compact way to disable elf-hack
+-add dependency changes as per the release notes
+-add mips support as debian&mozilla seems to believe it possible to some degree (as well as related patch)
+
 *firefox-77.0.1-r1
 ::gentoo		base ebuild
 ::bobwya
