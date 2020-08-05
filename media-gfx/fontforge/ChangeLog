@@ -1,8 +1,12 @@
+*fontforge-20200314-r2
+::gentoo		add big endian patch, update dependencies, update workarounds
+::prototype99	improve patch logic, make better use of PV, trial not having python use flag default to on, as it appears to be a wee bit broken...
+
 *fontforge-20200314-r1
-	::prototype99	improve python use flags
+::prototype99	improve python use flags
 
 *fontforge-20200314
-	::4nykey		gui use flag, more advanced required_use, libspiro use flag, use flag metadata
-	::gentoo		base ebuild
-	::prototype99	make better use of ${PN}, new take on gui use flag using required_use better, remove redundant cmake argument (already default)
-	::trolltoo		extra python compatibility
+::4nykey		gui use flag, more advanced required_use, libspiro use flag, use flag metadata
+::gentoo		base ebuild
+::prototype99	make better use of ${PN}, new take on gui use flag using required_use better, remove redundant cmake argument (already default)
+::trolltoo		extra python compatibility
