@@ -29,8 +29,30 @@ There are differences in packaging. most notably:
 -virtual/linux sources is still available but it is versioned and slotted to various kernel versions.
 -app-misc/mime-types is now a virtual package, due to two choices being in this overlay
 
-## Add the Overlay using layman
-Gentoo's currently preferred Overlay system is through using a git sync.  What follows are abbreviated instructions assuming that you already have the `dev-vcs/git` and  `app-portage/layman` packages installed. (there are other methods, however layman allows you to keep your packages organised. Compare it to ubuntu's ppas if you must)
+## Add the Overlay
+You at least need to install `dev-vcs/git`, so if you wish feel to pre-emptively run:
+
+	# sudo emerge -1a dev-vcs/git
+
+You can use manual methods to add the overlay, however I feel that using an overlay manager is far better, so I will only detail those methods.
+
+### Using eselect-repository
+This is the recommended software. Install using the following command:
+
+	# sudo emerge -a dev-vcs/git app-eselect/eselect-repository
+
+Add the overlay:
+
+	# sudo eselect repository add prototype99 git https://github.com/prototype99/prototype99.git
+
+Sync overlay:
+
+	# sudo emerge --sync prototype99
+
+### Using layman
+This is considered to be deprecated software. Install using the following command:
+
+	# sudo emerge -a app-portage/layman[git]
 
 Add the overlay:
 
@@ -38,10 +60,10 @@ Add the overlay:
 
 Sync overlay:
 
-	# layman -S
+	# sudo emerge --sync prototype99
 
 # Notice
-This overlay is being worked on less due to a switch to the paludis package manager. If this would interest you please look at the newer fork: blood-of-the-chimera!
+This overlay is gradually being worked on less due to a gradual switch to the paludis package manager. If this would interest you please look at the newer fork: blood-of-the-chimera
 
 ## Packages
 ### `app-admin/system-config-printer`
