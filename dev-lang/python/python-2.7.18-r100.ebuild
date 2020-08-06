@@ -18,7 +18,7 @@ S="${WORKDIR}/${MY_P}"
 LICENSE="PSF-2"
 SLOT="2.7"
 KEYWORDS="~alpha amd64 arm arm64 hppa ~ia64 ~m68k ~mips ppc ppc64 s390 sparc x86"
-IUSE="-berkdb bluetooth build elibc_uclibc examples gdbm hardened ipv6 l10n_et-EE libressl +lto +ncurses +pgo +readline sqlite +ssl +threads tk +wide-unicode wininst +xml"
+IUSE="-berkdb bluetooth build elibc_uclibc examples gdbm hardened ipv6 l10n_et-EE libressl +lto +ncurses +pgo +readline sqlite +ssl test +threads tk +wide-unicode wininst +xml"
 
 # Do not add a dependency on dev-lang/${PN} to this ebuild.
 # If you need to apply a patch which requires ${PN} for bootstrapping, please
