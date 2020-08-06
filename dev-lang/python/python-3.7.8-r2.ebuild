@@ -276,7 +276,7 @@ src_install() {
 	newconfd "${FILESDIR}/pydoc.conf" pydoc-3.7
 	newinitd "${FILESDIR}/pydoc.init" pydoc-3.7
 	sed \
-		-e "s:@PYDOC_PORT_VARIABLE@:PYDOC${3.7/./_}_PORT:" \
+		-e "s:@PYDOC_PORT_VARIABLE@:PYDOC3_7_PORT:" \
 		-e "s:@PYDOC@:pydoc3.7:" \
 		-i "${ED}/etc/conf.d/pydoc-3.7" \
 		"${ED}/etc/init.d/pydoc-3.7" || die "sed failed"
@@ -290,26 +290,25 @@ src_install() {
 		local -x PYTHON=${EPREFIX}/usr/bin/${EPYTHON}
 	fi
 
-	echo "EPYTHON='${EPYTHON}'" > e${PN}.py || die
+	echo "EPYTHON='${PN}3.7'" > e${PN}.py || die
 	${PN}_domodule e${PN}.py
 
 	# ${PN}-exec wrapping support
-	local pymajor=${3.7%.*}
 	local scriptdir=${D}$(${PN}_get_scriptdir)
 	mkdir -p "${scriptdir}" || die
 	# ${PN} and ${PN}X
 	ln -s "../../../bin/${abiver}" \
-		"${scriptdir}/${PN}${pymajor}" || die
-	ln -s "${PN}${pymajor}" "${scriptdir}/${PN}" || die
+		"${scriptdir}/${PN}3" || die
+	ln -s "${PN}3" "${scriptdir}/${PN}" || die
 	# ${PN}-config and ${PN}X-config
 	# note: we need to create a wrapper rather than symlinking it due
 	# to some random dirname(argv[0]) magic performed by ${PN}-config
-	cat > "${scriptdir}/${PN}${pymajor}-config" <<-EOF || die
+	cat > "${scriptdir}/${PN}3-config" <<-EOF || die
 		#!/bin/sh
 		exec "${abiver}-config" "\${@}"
 	EOF
-	chmod +x "${scriptdir}/${PN}${pymajor}-config" || die
-	ln -s "${PN}${pymajor}-config" \
+	chmod +x "${scriptdir}/${PN}3-config" || die
+	ln -s "${PN}3-config" \
 		"${scriptdir}/${PN}-config" || die
 	# 2to3, pydoc, pyvenv
 	ln -s "../../../bin/2to3-3.7" \
