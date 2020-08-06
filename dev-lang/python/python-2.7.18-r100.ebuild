@@ -345,7 +345,7 @@ src_install() {
 	newconfd "${FILESDIR}/pydoc.conf" pydoc-2.7
 	newinitd "${FILESDIR}/pydoc.init" pydoc-2.7
 	sed \
-		-e "s:@PYDOC_PORT_VARIABLE@:PYDOC${2.7/./_}_PORT:" \
+		-e "s:@PYDOC_PORT_VARIABLE@:PYDOC2_7_PORT:" \
 		-e "s:@PYDOC@:pydoc2.7:" \
 		-i "${ED}/etc/conf.d/pydoc-2.7" \
 		"${ED}/etc/init.d/pydoc-2.7" || die "sed failed"
@@ -361,15 +361,14 @@ src_install() {
 	${PN}_domodule e${PN}.py
 
 	# ${PN}-exec wrapping support
-	local pymajor=${2.7%.*}
 	local scriptdir=${D}${PN}2.7
 	mkdir -p "${scriptdir}" || die
 	# ${PN} and ${PN}X
-	ln -s "../../../bin/${PN}2.7" "${scriptdir}/${PN}${pymajor}" || die
-	ln -s "${PN}${pymajor}" "${scriptdir}/${PN}" || die
+	ln -s "../../../bin/${PN}2.7" "${scriptdir}/${PN}2" || die
+	ln -s "${PN}2" "${scriptdir}/${PN}" || die
 	# ${PN}-config and ${PN}X-config
-	ln -s "../../../bin/${PN}2.7-config" "${scriptdir}/${PN}${pymajor}-config" || die
-	ln -s "${PN}${pymajor}-config" "${scriptdir}/${PN}-config" || die
+	ln -s "../../../bin/${PN}2.7-config" "${scriptdir}/${PN}2-config" || die
+	ln -s "${PN}2-config" "${scriptdir}/${PN}-config" || die
 	# 2to3, pydoc, pyvenv
 	ln -s "../../../bin/2to3-2.7" "${scriptdir}/2to3" || die
 	ln -s "../../../bin/pydoc2.7" "${scriptdir}/pydoc" || die
