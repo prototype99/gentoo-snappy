@@ -64,7 +64,6 @@ src_prepare() {
 	else
 		eapply "${FILESDIR}/${PN}-3.25.0-nonfull_archive-build.patch"
 	fi
-	eapply "${FILESDIR}/"${PN}-3.32.3-backports_{1,2,3}.patch
 
 	eapply_user
 
