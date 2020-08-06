@@ -1,0 +1,19 @@
+*python-2.7.18-r100
+::gentoo			base ebuild
+::prototype99
+-remove PYVER variable
+-add virtual/mime-types support
+-make better use of HOMEPAGE, PN & PV
+-improve patch logic
+-include patch info
+-improve gcc blocker
+-make gen-594768 fix more specific
+::stefantalpalaru
+-add lto, pgo use flags
+-use virtual/libffi
+-protect against old portage
+-improve parallelisation
+-remove broken tests
+-add more informative failure messages
+-optimise use of variables
+-don't prewrap lines
