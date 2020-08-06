@@ -350,18 +350,19 @@ src_install() {
 		-i "${ED}/etc/conf.d/pydoc-2.7" \
 		"${ED}/etc/init.d/pydoc-2.7" || die "sed failed"
 
+	local -x EPYTHON=${PN}2.7
 	# if not using a cross-compiler, use the fresh binary
 	if ! tc-is-cross-compiler; then
 		local -x PYTHON=./${PN}
 		local -x LD_LIBRARY_PATH=${LD_LIBRARY_PATH+${LD_LIBRARY_PATH}:}${PWD}
 	fi
 
-	echo "EPYTHON='${EPYTHON}'" > e${PN}.py || die
+	echo "EPYTHON='${PN}2.7'" > e${PN}.py || die
 	${PN}_domodule e${PN}.py
 
 	# ${PN}-exec wrapping support
 	local pymajor=${2.7%.*}
-	local scriptdir=${D}${PYTHON_SCRIPTDIR}
+	local scriptdir=${D}${PN}2.7
 	mkdir -p "${scriptdir}" || die
 	# ${PN} and ${PN}X
 	ln -s "../../../bin/${PN}2.7" "${scriptdir}/${PN}${pymajor}" || die
