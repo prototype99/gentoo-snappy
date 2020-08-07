@@ -230,7 +230,7 @@ llvm_check_deps() {
 }
 
 pkg_pretend() {
-	if [[ ${MERGE_TYPE} != binary ]] ; then
+	if [[ ${MERGE_TYPE} != binary ]]; then
 		if use pgo; then
 			if ! has usersandbox $FEATURES; then
 				die "You must enable usersandbox as X server can not run as root!"
@@ -238,7 +238,7 @@ pkg_pretend() {
 		fi
 
 		# Ensure we have enough disk space to compile
-		if use pgo || use lto || use debug || use test ; then
+		if use pgo || use lto || use debug || use test; then
 			CHECKREQS_DISK_BUILD="10G"
 		else
 			CHECKREQS_DISK_BUILD="5G"
@@ -251,8 +251,7 @@ pkg_pretend() {
 pkg_setup() {
 	moz_pkgsetup
 
-	if [[ ${MERGE_TYPE} != binary ]] ; then
-
+	if [[ ${MERGE_TYPE} != binary ]]; then
 		# Ensure we have enough disk space to compile
 		if use pgo || use lto || use debug || use test; then
 			CHECKREQS_DISK_BUILD="10G"
@@ -313,6 +312,23 @@ src_prepare() {
 		eapply "${WORKDIR}/${PN}/0023-bmo-1634293-Implement-icon-search-for-gnome-shell-se.patch"
 		eapply "${WORKDIR}/${PN}/0024-bmo-1639197-Use-correct-icon-name-for-search-provide.patch"
 	fi
+	if use kde; then
+		sed -e 's:@BINPATH@/defaults/pref/kde.js:@RESPATH@/browser/@PREF_DIR@/kde.js:' \
+			"${DISTDIR}/${PN}-${HG_MOZ_PV}-firefox-kde.patch" > \
+			"${T}/${PN}-${HG_MOZ_PV}-firefox-kde.patch" || die "sed failed"
+		# Toolkit OpenSUSE KDE integration patchset
+			eapply "${DISTDIR}/${PN}-${HG_MOZ_PV}-mozilla-kde.patch"
+			eapply "${DISTDIR}/${PN}-${HG_MOZ_PV}-mozilla-nongnome-proxies.patch"
+		# Firefox OpenSUSE KDE integration patchset
+			eapply "${DISTDIR}/${PN}-${HG_MOZ_PV}-firefox-branded-icons.patch"
+			eapply "${DISTDIR}/${PN}-${HG_MOZ_PV}-firefox-kde.patch"
+		# Uncomment the next line to enable KDE support debugging (additional console output)...
+		#PATCHES+=( "${FILESDIR}/${PN}-kde-debug.patch" )
+		# Uncomment the following patch line to force Plasma/Qt file dialog for Firefox...
+		#PATCHES+=( "${FILESDIR}/${PN}-force-qt-dialog.patch" )
+		# ... _OR_ install the patch file as a User patch (/etc/portage/patches/www-client/firefox/)
+		# ... _OR_ add to your user .xinitrc: "xprop -root -f KDE_FULL_SESSION 8s -set KDE_FULL_SESSION true"
+	fi
 	if use lto; then
 		eapply "${WORKDIR}/${PN}/0009-bmo-1516803-Fix-building-sandbox.patch"
 		tc-is-gcc && eapply "${WORKDIR}/${PN}/0021-bmo-1516803-force-one-LTO-partition-for-sandbox-when.patch"
@@ -352,8 +368,7 @@ src_prepare() {
 		"${S}"/python/mozbuild/mozbuild/configure/check_debug_ranges.py \
 		|| die "sed failed to set toolchain prefix"
 
-	# Allow user to apply any additional patches without modifing ebuild
-	eapply_user
+	default
 
 	einfo "Removing pre-built binaries ..."
 	find "${S}"/third_party -type f \( -name '*.so' -o -name '*.o' -o -name '*.la' -o -name '*.a' \) -print -delete || die "sed failed"
@@ -401,11 +416,11 @@ src_prepare() {
 
 	! use dbus && eapply "${FILESDIR}/${PN}-$(get_major_version)-no-dbus.patch"
 
-	if has_version ">=virtual/rust-1.45.0" ; then
+	if has_version ">=virtual/rust-1.45.0"; then
 		einfo "Unbreak build with >=rust-1.45.0, bmo#1640982 ..."
 		sed -i \
 			-e 's/\(^cargo_rustc_flags +=.* \)-Clto\( \|$\)/\1/' \
-			"${S}/config/makefiles/rust.mk" || die
+			"${S}/config/makefiles/rust.mk" || die "sed failed"
 	fi
 
 	# Autotools configure is now called old-configure.in
@@ -692,7 +707,7 @@ src_configure() {
 
 	# workaround for funky/broken upstream configure...
 	SHELL="${SHELL:-${EPREFIX}/bin/bash}" MOZ_NOSPAM=1 \
-	./mach configure || die "echo failed"
+	./mach configure || die "./mach failed"
 }
 
 src_compile() {
@@ -713,7 +728,7 @@ src_compile() {
 		MOZ_NOSPAM=1 \
 		${_virtx} \
 		./mach build --verbose \
-		|| die "echo failed"
+		|| die "./mach failed"
 }
 
 src_install() {
@@ -779,7 +794,7 @@ src_install() {
 
 	cd "${S}" || die "cd failed"
 	MOZ_MAKE_FLAGS="${MAKEOPTS}" SHELL="${SHELL:-${EPREFIX}/bin/bash}" MOZ_NOSPAM=1 \
-	DESTDIR="${D}" ./mach install || die "echo failed"
+	DESTDIR="${D}" ./mach install || die "./mach failed"
 
 	if use geckodriver; then
 		cp "${BUILD_OBJ_DIR}"/dist/bin/geckodriver "${ED%/}"${MOZILLA_FIVE_HOME} || die "cp failed"

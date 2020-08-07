@@ -1,4 +1,5 @@
 *firefox-78.0.2-r1
+::bobwya		add more descriptive die messages, remove excess whitespace
 ::gentoo
 -update patches version
 -make better use of {PN}
