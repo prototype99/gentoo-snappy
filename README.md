@@ -7,16 +7,16 @@ ebuilds from ::whiledev, ::rindeal and ::nginx-overlay have been added in order 
 
 ##Current defaults
 
-jdk: openjdk 11
-kernel: pf-sources-5+ (it has come to attention that different kernel versions are suited to different work loads... this is still under consideration, but the kernel may become 'downgraded' for performance reasons)
+jdk: openjdk 11, a transition to 8 is being considered for performance reasons
+kernel: 5.3+, a transition to using an automated build is being considered.
 kernel-compiler: gcc
 kernel-linker: bfd
 linker: lld
-browser: chrome-78+
-compiler: gcc:9.1.0 (clang-9 to become default, gcc 8.3/9.1/10 to be installed as fallbacks)
+browser: chrome-78+, a transition to firefox-78+ and vivaldi (for quick 'n' dirty chromium compatibility) is being considered as a more optimal choice
+compiler: defaults to gcc for now, further research required
 fortran compiler (when needed): intel fortran compiler
-overlays: layman
-python: 2_7,3_6,pypy,pypy3 (pypy to be upgraded, 2_7 to be removed)
+overlays: layman ( for mercurial compatibility )
+python: 2_7,3_7,pypy,pypy3
 
 ##Possible future QA
 -ensure only virtual/libffi is used until it disappears
@@ -176,8 +176,16 @@ firefox ebuild created using the bobwya and pg_overlay ebuilds. this ebuild cont
 just a simple version bump, I was impatient.
 ## FAQ
 ### why isn't there snapd without systemd?
-good question, with openrc being the more popular init system, you  would think it would be an available option. sadly this is not a mistake, snappy is designed in such a way that systemd is required. obviously much like funtoo has proven with their solution with gnome, it is theoretically possible. so possible in fact, that early ubuntu (which used upstart) even used a modified version of systemd to run snappy. however to the best of my knowledge there is no updated version of that, hence no openrc compatible ebuilds. feel free to contribute and make this otherwise however i have no interest myself in doing so (i personally use systemd). that being said, elogind may or may not help
+I have not yet been able to test this out enough to comfortably say it is possible, however here are some ways that could remove the need for systemd:
+-use https://github.com/goose121/initify to convert the systemd services into openrc services (credit to necrose99 for the suggestion!)
+-take inspiration from gnome without systemd
+-try and adapt ubuntu's old approach from back when they used the upstart init system
+-see if elogind can be used
 ### why are there ebuilds without file extensions?
-these are in production or archived, and thus not considered stable enough for real use.
+these are in production or archived, and thus not considered stable enough for real use. I have since switched to just sticking them in branches in case I want to work on them later, so this faq item may soon disappear
 ### why are some of the listed packages lacking a description?
 they have a readme/changelog in their directory
+### why is the package list incomplete?
+yeah, I should automate that some time
+### can I add one of the overlay branches?
+those really are not intended for non-development use.
