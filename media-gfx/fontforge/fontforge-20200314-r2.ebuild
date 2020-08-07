@@ -55,7 +55,6 @@ BDEPEND="
 "
 
 PATCHES=(
-	"${FILESDIR}"/${PV}-stylemap.patch
 	"${FILESDIR}"/${PV}-tilepath.patch
 )
 
@@ -66,6 +65,7 @@ pkg_setup() {
 src_prepare() {
 	[[ $(tc-endian) == "big" ]] && eapply "${FILESDIR}"/${PV}-big-endian.patch
 	use elibc_musl && eapply "${FILESDIR}"/${PV}-MacServiceReadFDs.patch
+	use sparc && eapply "${FILESDIR}"/${PV}-stylemap.patch
 	cmake_src_prepare
 	default
 }
