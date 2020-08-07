@@ -66,6 +66,7 @@ pkg_setup() {
 src_prepare() {
 	[[ $(tc-endian) == "big" ]] && eapply "${FILESDIR}"/${PV}-big-endian.patch
 	use elibc_musl && eapply "${FILESDIR}"/${PV}-MacServiceReadFDs.patch
+	cmake_src_prepare
 	default
 }
 
