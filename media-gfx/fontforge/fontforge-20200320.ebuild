@@ -8,12 +8,15 @@ inherit python-single-r1 xdg cmake
 
 DESCRIPTION="postscript font editor and converter"
 HOMEPAGE="https://${PN}.org/"
-SRC_URI="https://github.com/${PN}/${PN}/releases/download/${PV}/${PN}-${PV}.tar.xz"
+MY_PV="43e6087ec9bdbb23b8bb61c07efe6490fab23d73"
+SRC_URI="https://github.com/${PN}/${PN}/archive/${MY_PV}.zip -> ${P}.zip"
+S="${WORKDIR}/${PN}-${MY_PV}"
 
 LICENSE="BSD GPL-3+"
 SLOT="0"
-KEYWORDS="~alpha amd64 arm ~arm64 ~hppa ~ia64 ~mips ppc ~ppc64 ~s390 ~sparc x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos"
-IUSE="doc truetype-debugger extras gif gtk gui jpeg libspiro png python readline test tiff svg unicode woff2 X"
+IUSE="doc truetype-debugger gif gtk jpeg png python readline test tiff svg unicode woff2 X"
+IUSE+=" extras libspiro"
+IUSE+=" gui"
 RESTRICT="!test? ( test )"
 
 REQUIRED_USE="
@@ -39,10 +42,10 @@ RDEPEND="
 		x11-libs/libXi:0=
 	)
 	python? ( ${PYTHON_DEPS} )
-	libspiro? ( media-libs/libspiro )
 	readline? ( sys-libs/readline:0= )
 	unicode? ( media-libs/libuninameslist:0= )
 	woff2? ( media-libs/woff2:0= )
+	libspiro? ( media-libs/libspiro )
 "
 DEPEND="${RDEPEND}
 	X? ( x11-base/xorg-proto )
@@ -53,10 +56,6 @@ BDEPEND="
 	python? ( ${PYTHON_DEPS} )
 	test? ( ${RDEPEND} )
 "
-
-PATCHES=(
-	"${FILESDIR}"/${PV}-tilepath.patch
-)
 
 pkg_setup() {
 	:

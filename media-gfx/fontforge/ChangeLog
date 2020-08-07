@@ -1,6 +1,7 @@
-*fontforge-20200314-r2
+*fontforge-20200320
+::4nykey		alter libspiro dependency location
 ::gentoo		add big endian patch, update dependencies, update workarounds
-::prototype99	improve patch logic, make better use of PV, trial not having python use flag default to on, as it appears to be a wee bit broken...
+::prototype99	improve patch logic, make better use of PV, trial not having python use flag default to on, switch to a version that makes more sense
 
 *fontforge-20200314-r1
 ::prototype99	improve python use flags
