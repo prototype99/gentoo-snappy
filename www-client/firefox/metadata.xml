@@ -2,6 +2,7 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 <use>
+	<flag name="asm">x86* specific assembly optimisations</flag>
 	<flag name="bindist">Disable official Firefox branding (icons, name) which
 		are not binary-redistributable according to upstream.</flag>
 	<flag name="clang">Build with clang instead of gcc

@@ -44,7 +44,7 @@ KEYWORDS="~amd64 ~arm64 ~mips ~ppc64 ~x86"
 
 SLOT="0"
 LICENSE="MPL-2.0 GPL-2 LGPL-2.1"
-IUSE="bindist clang cpu_flags_x86_avx2 debug egl eme-free flash geckodriver kde
+IUSE="asm bindist clang cpu_flags_x86_avx2 debug egl eme-free flash geckodriver kde
 	+gmp-autoupdate gnome hardened hwaccel jack lto cpu_flags_arm_neon
 	+openh264 pgo pulseaudio screencast +screenshot selinux startup-notification +system-av1
 	+system-harfbuzz +system-icu +system-jpeg +system-libevent +system-libvpx
@@ -55,7 +55,9 @@ REQUIRED_USE="pgo? ( lto )
 	cross-lto? ( clang lto )
 	thinlto? ( lto )
 	kde? ( !bindist )
-	?? ( cross-lto thinlto )"
+	?? ( cross-lto thinlto )
+	amd64? ( asm )
+	x86? ( asm )"
 
 RESTRICT="!bindist? ( bindist )
 	!test? ( test )"
@@ -188,12 +190,10 @@ DEPEND="${CDEPEND}
 		)
 	)
 	wayland? ( >=x11-libs/gtk+-3.11:3[wayland] )
-	amd64? ( >=dev-lang/yasm-1.1 virtual/opengl )
-	x86? ( >=dev-lang/yasm-1.1 virtual/opengl )
-	!elibc_musl?( >=sys-libs/glibc-2.17 )
+	asm? ( >=dev-lang/yasm-1.1 virtual/opengl )
+	!elibc_musl? ( >=sys-libs/glibc-2.17 )
 	!system-av1? (
-		amd64? ( >=dev-lang/nasm-2.13 )
-		x86? ( >=dev-lang/nasm-2.13 )
+		asm? ( >=dev-lang/nasm-2.13 )
 	)"
 
 S="${WORKDIR}/${PN}-${PV%_*}"
