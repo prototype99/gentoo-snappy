@@ -39,8 +39,8 @@ KEYWORDS="~amd64 ~arm64 ~mips ~ppc64 ~x86"
 
 SLOT="0"
 LICENSE="MPL-2.0 GPL-2 LGPL-2.1"
-IUSE="asm bindist clang cpu_flags_x86_avx2 debug egl eme-free flash geckodriver kde
-	+gmp-autoupdate gnome hardened hwaccel jack lto cpu_flags_arm_neon
+IUSE="asm bindist buffer clang cpu_flags_x86_avx2 debug egl eme-free flash geckodriver kde
+	+gmp-autoupdate hardened hwaccel jack lto cpu_flags_arm_neon
 	+openh264 pgo pulseaudio screencast +screenshot selinux startup-notification +system-av1
 	+system-harfbuzz +system-icu +system-jpeg +system-libevent +system-libvpx
 	+system-webp test wayland wifi dbus cross-lto thinlto"
@@ -291,8 +291,16 @@ src_prepare() {
 	eapply "${WORKDIR}/${PN}/0001-Install-the-Gentoo-preference-file-into-the-omni.jar.patch"
 	eapply "${WORKDIR}/${PN}/0003-Fortify-sources-properly.patch"
 	eapply "${WORKDIR}/${PN}/0008-bmo-878089-Don-t-fail-when-TERM-is-not-set.patch"
-	eapply "${WORKDIR}/${PN}/0022-bmo-1196777-Set-GDK_FOCUS_CHANGE_MASK.patch"
+	eapply "${WORKDIR}/${PN}/0023-bmo-1196777-Set-GDK_FOCUS_CHANGE_MASK.patch"
+	eapply "${WORKDIR}/${PN}/0029-bmo-1632429-enum34-and-enum-virtualenv-packages-are-.patch"
+	eapply "${WORKDIR}/${PN}/0030-bmo-1650299-Unify-the-inclusion-of-the-ICU-data-file.patch"
+	#add automatic big endian support
+	eapply "${WORKDIR}/${PN}/0031-bmo-1264836-Automatically-convert-the-little-endian-.patch"
+	#hard requires the previous patch
+	eapply "${WORKDIR}/${PN}/0032-bmo-1651207-Build-the-ICU-data-through-an-assembly-f.patch"
+	eapply "${WORKDIR}/${PN}/0033-Add-support-for-PipeWire-0.3.patch"
 	use arm64 && eapply "${WORKDIR}/${PN}/0011-bmo-1526653-Include-struct-definitions-for-user_vfp-.patch"
+	use buffer && eapply "${WORKDIR}/${PN}/0025-VAAPI-Add-extra-frames.patch"
 	if use elibc_musl; then
 		eapply "${WORKDIR}/${PN}/0012-musl-Support-custom-vendor-strings.patch"
 		eapply "${WORKDIR}/${PN}/0013-musl-Add-alternate-name-for-private-siginfo-struct-m.patch"
@@ -301,12 +309,10 @@ src_prepare() {
 		eapply "${WORKDIR}/${PN}/0016-musl-Set-pthread-name-for-non-glibc-systems.patch"
 		eapply "${WORKDIR}/${PN}/0017-musl-getcontext-is-only-avaliable-on-glibc-systems.patch"
 		eapply "${WORKDIR}/${PN}/0018-musl-sys-auvx.h-avaliable-on-more-then-just-glibc-sy.patch"
+		eapply "${WORKDIR}/${PN}/0019-musl-make-SYS_fork-non-fatal-musl-uses-it-for-fork-2.patch"
 	fi
 	use flash && eapply "${WORKDIR}/${PN}/0004-Check-additional-plugins-dir.patch"
-	if use gnome; then
-		eapply "${WORKDIR}/${PN}/0023-bmo-1634293-Implement-icon-search-for-gnome-shell-se.patch"
-		eapply "${WORKDIR}/${PN}/0024-bmo-1639197-Use-correct-icon-name-for-search-provide.patch"
-	fi
+	use geckodriver && eapply "${WORKDIR}/${PN}/0034-geckodriver-Build-regex-with-unicode-feature.patch"
 	if use kde; then
 		sed -e 's:@BINPATH@/defaults/pref/kde.js:@RESPATH@/browser/@PREF_DIR@/kde.js:' \
 			"${DISTDIR}/${PN}-${HG_MOZ_PV}-firefox-kde.patch" > \
@@ -326,23 +332,33 @@ src_prepare() {
 	fi
 	if use lto; then
 		eapply "${WORKDIR}/${PN}/0009-bmo-1516803-Fix-building-sandbox.patch"
-		tc-is-gcc && eapply "${WORKDIR}/${PN}/0021-bmo-1516803-force-one-LTO-partition-for-sandbox-when.patch"
+		tc-is-gcc && eapply "${WORKDIR}/${PN}/0022-bmo-1516803-force-one-LTO-partition-for-sandbox-when.patch"
 	fi
 	use mips && eapply "${FILESDIR}/moz-1642265.patch"
 	if use pgo; then
-		eapply "${WORKDIR}/${PN}/0019-Make-PGO-use-toolchain.patch"
-		eapply "${WORKDIR}/${PN}/0020-bmo-1516081-Disable-watchdog-during-PGO-builds.patch"
-		eapply "${WORKDIR}/${PN}/0029-bmo-1634646-PGO-When-running-Firefox-for-pgo-use-tex.patch"
-		if tc-is-gcc && gcc-major-version < 9; then
-			local bug-patch = && eapply "${WORKDIR}/${PN}/0010-Fix-building-spellchecker-when-using-GCC-and-PGO.patch"
-			gcc-major-version == 7 && gcc-minor-version < 5 $(bug-patch)
-			gcc-major-version == 8 && gcc-minor-version < 3 $(bug-patch)
+		eapply "${WORKDIR}/${PN}/0020-Make-PGO-use-toolchain.patch"
+		eapply "${WORKDIR}/${PN}/0021-bmo-1516081-Disable-watchdog-during-PGO-builds.patch"
+		if tc-is-gcc; then
+			if gcc-major-version < 9; then
+				local bug-patch = && eapply "${WORKDIR}/${PN}/0010-Fix-building-spellchecker-when-using-GCC-and-PGO.patch"
+				gcc-major-version == 7 && gcc-minor-version < 5 $(bug-patch)
+				gcc-major-version == 8 && gcc-minor-version < 3 $(bug-patch)
+			fi
+			eapply "${WORKDIR}/${PN}/0026-Fix-building-with-PGO-when-using-GCC.patch"
 		fi
 	fi
-	use system-av1 && eapply "${WORKDIR}/${PN}/0007-bmo-1559213-Support-system-av1.patch"
+	if use system-av1; then
+		eapply "${WORKDIR}/${PN}/0007-bmo-1559213-Support-system-av1.patch"
+	else
+		use arm64 && eapply "${WORKDIR}/${PN}/0028-libaom-Use-NEON_FLAGS-instead-of-VPX_ASFLAGS-for-lib.patch"
+	fi
 	if use system-harfbuzz; then
 		eapply "${WORKDIR}/${PN}/0005-bmo-847568-Support-system-harfbuzz.patch"
 		eapply "${WORKDIR}/${PN}/0006-bmo-847568-Support-system-graphite2.patch"
+	fi
+	if use wayland; then
+		eapply "${WORKDIR}/${PN}/0024-Wayland-Disable-FFVPX-with-VAAPI.patch"
+		eapply "${WORKDIR}/${PN}/0027-bmo-1634213-Wayland-Use-dmabuf-WebGL-surfaces-by-def.patch"
 	fi
 
 	# Make LTO respect MAKEOPTS

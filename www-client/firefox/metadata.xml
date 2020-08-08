@@ -9,6 +9,7 @@
 	<flag name="asm">x86* specific assembly optimisations</flag>
 	<flag name="bindist">Disable official Firefox branding (icons, name) which
 		are not binary-redistributable according to upstream.</flag>
+	<flag name="buffer">add extra frames to combat render lag in ffmpeg vaapi</flag>
 	<flag name="clang">Build with clang instead of gcc
 		see https://developer.mozilla.org/en-US/docs/Mozilla/Developer_guide/Build_Instructions/Compiling_Firefox_With_Clang_On_Linux
 		for more info</flag>

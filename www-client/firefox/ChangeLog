@@ -14,6 +14,13 @@
 -improve parallelism
 -add new workarounds
 -add missing metadata
+-add a new musl patch
+-add new wayland patches
+-remove gnome patches
+-add workaround for pgo and gcc
+-add a big endian patch
+-add geckodriver patch
+-add assorted other patches
 ::prototype99
 -make better use of {PN}
 -use a more compact way to disable elf-hack
