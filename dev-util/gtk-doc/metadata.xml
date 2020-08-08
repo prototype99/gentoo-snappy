@@ -6,6 +6,7 @@
 	<name>Gentoo GNOME Desktop</name>
 </maintainer>
 <use>
+	<flag name="glib-doc">add fix for dev-libs/glib[gtk-doc]</flag>
 	<flag name="highlight">Enable source code highlighting</flag>
 	<flag name="vim">Enable source code highlighting through
 	<pkg>app-editors/vim</pkg></flag>
