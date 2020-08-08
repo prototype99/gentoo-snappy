@@ -1,7 +1,6 @@
-# Copyright 2016, 2019 Jan Chren (rindeal)
+# Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-##
 # @ECLASS: l10n-r1.eclass
 # @MAINTAINER:
 #   Seirra Blake <sophietheopossum@yandex.ru>
@@ -13,7 +12,6 @@
 # determining the cross-section between the user's set LINGUAS and what
 # is offered by the package; and generating the right list of l10n_*
 # USE flags.
-##
 
 if [ -z "${_L10N_R1_ECLASS}" ] ; then
 

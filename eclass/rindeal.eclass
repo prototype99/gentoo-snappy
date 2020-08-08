@@ -61,8 +61,7 @@ fi
 
 rindeal:__death_hook() {
 	eerror ""
-	eerror "Ask for help at https://github.com/rindeal/rindeal-ebuild-repo/issues"
-	eerror "instead of posting to https://forums.gentoo.org/ or worse https://bugs.gentoo.org/."
+	eerror "Please consider contacting the overlay maintainer before escalating it to official places"
 	eerror ""
 }
 
