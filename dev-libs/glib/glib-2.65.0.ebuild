@@ -13,7 +13,7 @@ HOMEPAGE="https://developer.gnome.org/glib"
 
 LICENSE="LGPL-2.1+"
 SLOT="2"
-IUSE="dbus debug elibc_glibc fam gtk-doc kernel_linux +libmount +man +mime selinux static-libs systemtap test utils xattr"
+IUSE="dbus debug elibc_glibc fam gtk-doc kernel_linux +libmount +man +mime selinux static-libs test trace utils xattr"
 RESTRICT="!test? ( test )"
 
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~amd64-linux ~x86-linux"
@@ -48,12 +48,12 @@ DEPEND="${RDEPEND}"
 # libxml2 used for optional tests that get automatically skipped
 BDEPEND="
 	app-text/docbook-xsl-stylesheets
-	dev-libs/libxslt
+	man? ( dev-libs/libxslt )
 	>=sys-devel/gettext-0.19.8
 	gtk-doc? ( >=dev-util/gtk-doc-1.32-r2
 		app-text/docbook-xml-dtd:4.2
 		app-text/docbook-xml-dtd:4.5 )
-	systemtap? ( >=dev-util/systemtap-1.3 )
+	trace? ( >=dev-util/systemtap-1.3 )
 	${PYTHON_DEPS}
 	test? ( >=sys-apps/dbus-1.2.14 )
 	virtual/pkgconfig[${MULTILIB_USEDEP}]
@@ -185,18 +185,18 @@ multilib_src_configure() {
 	local emesonargs=(
 		-Ddefault_library=$(usex static-libs both shared)
 		$(meson_feature selinux)
-		$(meson_use xattr)
-		$(meson_use libmount)
-		-Dinternal_pcre=false
-		$(meson_use man)
-		$(meson_use systemtap dtrace)
-		$(meson_use systemtap)
-		-Dgtk_doc=$(multilib_native_usex gtk-doc true false)
-		$(meson_use fam)
-		-Dinstalled_tests=false
-		-Dnls=enabled
-		-Doss_fuzz=disabled
+		$(meson_feature libmount)
 	)
+	use fam && emesonargs+=( -Dfam=true )
+	use gtk-doc && emesonargs+=( -Dgtk_doc=true )
+	use man && emesonargs+=( -Dman=true )
+	if use systemtap; then
+		emesonargs+=(
+			-Ddtrace=true
+			-Dsystemtap=true
+		)
+	fi
+	! use xattr && emesonargs+=( -Dxattr=false )
 	meson_src_configure
 }
 

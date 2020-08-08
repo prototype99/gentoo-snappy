@@ -1,5 +1,9 @@
 *glib-2.65.0
 ::gentoo		update gtk-doc dependency
 ::pg_overlay	base ebuild
-::prototype99	add compatibility with more util-linux packages
+::prototype99
+-add compatibility with more util-linux packages
+-only change meson options when there's actually a change from the default
+-change systemtap use flag to trace
+-do not set default arguments
 ::rindeal		improve python compatibility, add an actual homepage, add libmount, man use flags, add L10N support
