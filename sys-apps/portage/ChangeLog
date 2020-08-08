@@ -1,0 +1,4 @@
+*portage-3.0.1
+::gentoo		base ebuild
+::poly-c		non-verbose patch
+::prototype99	put rsync and patch behind use flags
