@@ -13,12 +13,14 @@
 -increase required disk space
 -improve parallelism
 -add new workarounds
+-add missing metadata
 ::prototype99
 -make better use of {PN}
 -use a more compact way to disable elf-hack
 -add dependency changes as per the release notes
 -add mips support as debian&mozilla seems to believe it possible to some degree (as well as related patch)
 -simplify dependencies with required_use
+-remove more irrelevant version specific code
 
 *firefox-77.0.1-r1
 ::gentoo		base ebuild
