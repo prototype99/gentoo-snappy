@@ -485,8 +485,7 @@ src_configure() {
 	mozconfig_init
 	# common config components
 	mozconfig_annotate 'system_libs' \
-		--with-system-zlib \
-		--with-system-bz2
+		--with-system-zlib
 
 	# Must pass release in order to properly select linker
 	mozconfig_annotate 'Enable by Gentoo' --enable-release
