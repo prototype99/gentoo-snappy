@@ -325,7 +325,7 @@ src_install() {
 	fi
 }
 
-eselect_${PN}_update() {
+eselect_python_update() {
 	if [[ -z "$(eselect ${PN} show)" || \
 			! -f "${EROOT}/usr/bin/$(eselect ${PN} show)" ]]; then
 		eselect ${PN} update
