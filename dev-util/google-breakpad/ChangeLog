@@ -1,0 +1,4 @@
+*google-breakpad-20200805
+::4nykey		update copyright, update homepage, use real quotes, use eapi7
+::prototype99	actually version it, make better use of ${PN}, expand questionably useful lss variable, make use of hardlink, pull in gtest dependency
+::SonicFrog		base ebuild
