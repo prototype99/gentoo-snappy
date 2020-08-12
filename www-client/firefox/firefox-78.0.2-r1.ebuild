@@ -41,7 +41,7 @@ SLOT="0"
 LICENSE="MPL-2.0 GPL-2 LGPL-2.1"
 IUSE="asm bindist buffer clang cpu_flags_x86_avx2 debug egl eme-free flash geckodriver kde
 	+gmp-autoupdate hardened hwaccel jack lto cpu_flags_arm_neon
-	+openh264 pgo pulseaudio screencast +screenshot selinux startup-notification +system-av1
+	+openh264 pgo pulseaudio screencast +screenshot selinux +system-av1
 	+system-harfbuzz +system-icu +system-jpeg +system-libevent +system-libvpx
 	+system-webp test wayland wifi dbus cross-lto thinlto"
 
@@ -86,7 +86,6 @@ CDEPEND="
 	virtual/freedesktop-icon-theme
 	sys-apps/dbus
 	dev-libs/dbus-glib
-	startup-notification? ( >=x11-libs/startup-notification-0.8 )
 	>=x11-libs/pixman-0.19.2
 	>=dev-libs/glib-2.26:2
 	>=sys-libs/zlib-1.2.3
@@ -656,7 +655,6 @@ src_configure() {
 		mozconfig_annotate '' --enable-default-toolkit=cairo-gtk3
 	fi
 
-	mozconfig_use_enable startup-notification
 	mozconfig_use_with system-av1
 	mozconfig_use_with system-harfbuzz
 	mozconfig_use_with system-harfbuzz system-graphite2
@@ -852,12 +850,6 @@ PROFILE_EOF
 	done
 	# Install a 48x48 icon into /usr/share/pixmaps for legacy DEs
 	newicon "${icon_path}/default48.png" "${icon}.png"
-
-	# Add StartupNotify=true bug 237317
-	local startup_notify="false"
-	if use startup-notification; then
-		startup_notify="true"
-	fi
 
 	local display_protocols="auto X11" use_wayland="false"
 	if use wayland; then
