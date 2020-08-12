@@ -13,7 +13,7 @@ HOMEPAGE="https://developer.gnome.org/glib"
 
 LICENSE="LGPL-2.1+"
 SLOT="2"
-IUSE="dbus debug elibc_glibc fam gtk-doc kernel_linux +libmount +man +mime selinux static-libs test trace utils xattr"
+IUSE="dbus debug elibc_glibc fam gtk-doc kernel_linux +libmount +man +mime selinux static-libs systemtap test trace utils xattr"
 RESTRICT="!test? ( test )"
 
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~amd64-linux ~x86-linux"
