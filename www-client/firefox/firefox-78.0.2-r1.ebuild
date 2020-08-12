@@ -631,7 +631,6 @@ src_configure() {
 	mozconfig_annotate '' --disable-crashreporter
 	mozconfig_annotate 'Gentoo default' --with-system-png
 	mozconfig_annotate '' --enable-system-ffi
-	mozconfig_annotate '' --disable-gconf
 	mozconfig_annotate '' --with-intl-api
 	mozconfig_annotate '' --enable-system-pixman
 	# Instead of the standard --build= and --host=, mozilla uses --host instead
