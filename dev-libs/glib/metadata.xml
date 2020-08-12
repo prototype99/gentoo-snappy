@@ -7,9 +7,11 @@
   </maintainer>
   <use>
     <flag name="dbus">Enable dependencies required by glib libraries using dbus service to manage settings saving</flag>
+    <flag name="man">generate man pages</flag>
     <flag name="mime">Pull in shared MIME database that many glib-based applications require at runtime to detect or open files.
       Warning: do not disable this flag unless installing on a headless server.</flag>
     <flag name="systemtap">Build support for profiling and tracing using <pkg>dev-util/systemtap</pkg></flag>
+    <flag name="trace">Build support for profiling and tracing using <pkg>dev-util/systemtap</pkg> and dtrace</flag>
     <flag name="utils">Install gtester-report utility to generate test report files for your software; build gresource utility with ELF support.</flag>
     <flag name="iconv_gnu">iconv_gnu</flag>
     <flag name="iconv_libc">iconv_libc</flag>
