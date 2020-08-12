@@ -797,7 +797,7 @@ src_prepare() {
 
 	# move the external locale-gen to its old place
 	mkdir extra || die
-	mv locale-gen-${LOCALE_GEN_VER} extra/locale || die
+	mv locale-gen-2.00 extra/locale || die
 
 	eprefixify extra/locale/locale-gen
 
