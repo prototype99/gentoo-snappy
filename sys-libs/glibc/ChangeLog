@@ -1,15 +1,19 @@
+*sys-libs/glibc-2.31-r6
+::gentoo			alter ebuild order, use locale-gen, remove some excessive variables, add static-pie use flag
+::pg_overlay		add python3_9 compatibility
+::prototype99		remove 9999 specific code
 *sys-libs/glibc-2.30-r8
-	::gentoo
-	-keywords
-	-newer patchset
-	-updated dependencies
-	-test whitelist
-	-simplify some commands
-	-updated ssp behaviour
-	::prototype99		simplify dependencies with IDN variable, improve python use flags
-	::sabayon-distro	base ebuild
+::gentoo
+-keywords
+-newer patchset
+-updated dependencies
+-test whitelist
+-simplify some commands
+-updated ssp behaviour
+::prototype99		simplify dependencies with IDN variable, improve python use flags
+::sabayon-distro	base ebuild
 *sys-libs/glibc-2.29-r7
-	::gentoo			base ebuild
-	::sabayon-distro
-	-better dependency checking
-	-better sparc cpu support
+::gentoo			base ebuild
+::sabayon-distro
+-better dependency checking
+-better sparc cpu support
