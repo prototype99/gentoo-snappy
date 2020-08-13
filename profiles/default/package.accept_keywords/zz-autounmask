@@ -152,6 +152,7 @@
 =virtual/linux-sources-8
 =virtual/man-9
 =virtual/rust-1.42.0
+=www-client/brave-bin-1.12.112
 =www-client/chromium-78.0.3904.63
 =www-client/firefox-73.0
 =x11-libs/gtk+-3.24.20
