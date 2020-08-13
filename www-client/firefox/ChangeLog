@@ -21,6 +21,7 @@
 -add a big endian patch
 -add geckodriver patch
 -add assorted other patches
+::pg_overlay	add missing use flag metadata
 ::prototype99
 -make better use of {PN}
 -use a more compact way to disable elf-hack
@@ -28,6 +29,8 @@
 -add mips support as debian&mozilla seems to believe it possible to some degree (as well as related patch)
 -simplify dependencies with required_use
 -remove more irrelevant version specific code
+-implement lto use flag logic that makes more sense
+-add flash use flag metadata
 
 *firefox-77.0.1-r1
 ::gentoo		base ebuild

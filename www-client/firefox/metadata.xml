@@ -13,10 +13,13 @@
 	<flag name="clang">Build with clang instead of gcc
 		see https://developer.mozilla.org/en-US/docs/Mozilla/Developer_guide/Build_Instructions/Compiling_Firefox_With_Clang_On_Linux
 		for more info</flag>
+	<flag name="cross-lto">Enable ThinLTO across C++ and Rust code</flag>
 	<flag name="custom-optimization">Build with user-specified compiler optimizations
 		(-Os, -O0, -O1, -O2, -O3) from CFLAGS (unsupported)</flag>
 	<flag name="egl">Enable EGL as the GL provider (unsupported).</flag>
 	<flag name="eme-free">Disable EME (DRM plugin) cabability at build time</flag>
+	<flag name="flash">build with flash support</flag>
+	<flag name="full-lto">build with 'normal lto', which may yield slightly more performance, but is very taxing on the system</flag>
 	<flag name="geckodriver">Enable WebDriver support</flag>
 	<flag name="gmp-autoupdate">Allow Gecko Media Plugins (binary blobs) to be automatically
 		downloaded and kept up-to-date in user profiles</flag>
@@ -47,7 +50,7 @@
 		installation with secure-delete enabled</flag>
 	<flag name="system-webp">Use the system-wide <pkg>media-libs/libwebp</pkg>
 		instead of bundled.</flag>
-
+	<flag name="thinlto">Enable ThinLTO. Requires LDD linker when using Clang</flag>
 
 </use>
 </pkgmetadata>

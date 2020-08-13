@@ -43,14 +43,13 @@ IUSE="asm bindist buffer clang cpu_flags_x86_avx2 debug egl eme-free flash gecko
 	+gmp-autoupdate hardened hwaccel jack lto cpu_flags_arm_neon
 	+openh264 pgo pulseaudio screencast +screenshot selinux +system-av1
 	+system-harfbuzz +system-icu +system-jpeg +system-libevent +system-libvpx
-	+system-webp test wayland wifi dbus cross-lto thinlto"
+	+system-webp test wayland wifi dbus cross-lto full-lto thinlto"
 
 REQUIRED_USE="pgo? ( lto )
 	screencast? ( wayland )
-	cross-lto? ( clang lto )
-	thinlto? ( lto )
+	cross-lto? ( clang )
 	kde? ( !bindist )
-	?? ( cross-lto thinlto )
+	lto? ( ^^ ( cross-lto full-lto thinlto ) )
 	amd64? ( asm )
 	x86? ( asm )"
 
@@ -560,11 +559,13 @@ src_configure() {
 			mozconfig_annotate '+lto-cross' MOZ_LTO=1
 			mozconfig_annotate '+lto-cross' MOZ_LTO=cross
 			mozconfig_annotate '+lto-cross' MOZ_LTO_RUST=1
-		elif use thinlto; then
+		fi
+		if use thinlto; then
 			mozconfig_annotate '+lto-thin' --enable-lto=thin
 			mozconfig_annotate '+lto-thin' MOZ_LTO=1
 			mozconfig_annotate '+lto-thin' MOZ_LTO=thin
-		else
+		fi
+		if use full-lto; then
 			mozconfig_annotate '+lto-full' --enable-lto=full
 			mozconfig_annotate '+lto-full' MOZ_LTO=1
 			mozconfig_annotate '+lto-full' MOZ_LTO=full
