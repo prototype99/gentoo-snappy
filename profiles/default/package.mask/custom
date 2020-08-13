@@ -88,7 +88,7 @@
 <net-libs/glib-networking-2.61.90
 <net-libs/libpsl-0.21.0
 <net-misc/modemmanager-1.8.2-r1
-<net-print/cups-filters-1.21.6
+<net-print/cups-filters-1.27.4
 <net-wireless/bluez-5.50-r3
 <sys-apps/dbus-1.12.16
 <sys-apps/dbus-broker-18
