@@ -1,11 +1,6 @@
+*flameshot-0.6.0-r1
+::gentoo	use more concise copyright string, description, correct licence, adopt official dependencies, add patches
 *flameshot-0.6.0
-
-::riru
--dbus use flag
--locale use flags
-
-::gig
--check toolchain earlier to save time
-
-::jorgicio
--base ebuild
+::riru		dbus use flag, locale use flags
+::gig		check toolchain earlier to save time
+::jorgicio	base ebuild
