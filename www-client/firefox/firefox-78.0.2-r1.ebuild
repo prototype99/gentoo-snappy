@@ -890,7 +890,6 @@ PROFILE_EOF
 			-e "s:@NAME@:${app_name}:" \
 			-e "s:@EXEC@:${exec_command}:" \
 			-e "s:@ICON@:${icon}:" \
-			-e "s:@STARTUP_NOTIFY@:${startup_notify}:" \
 			"${ED%/}/usr/share/applications/${desktop_filename}" || die "sed failed"
 	done
 
