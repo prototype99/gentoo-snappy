@@ -1,0 +1,7 @@
+*kmod-26-r6
+::calculate		add zstd use flag
+::gentoo		update copyright, update keywords, rename ssl use flag, optimise any python, optimise variable usage
+::prototype99	improve python use flags
+*kmod-26-r1
+::gentoo		base ebuild
+::prototype99	put libressl patch behind use flag, remove 9999 code, add python3_4 support
