@@ -1,6 +1,10 @@
 *world-19
 
-	22.3.2020	simplify window manager logic, include file manager use flags, prefer firefox over chrome as firefox is faster when compileds
+	25.8.2020	rename repo-gen script to r, remove interactive error message that halts the process, improve some documentation, drop old versions
+	14.6.2020	remove dated dependency
+	1.6.2020	improve use flag naming
+	27.5.2020	do not allow a situation where a user has both systemd and openrc, prefer freshplayer over vanilla, out of date adobe flash
+	22.3.2020	simplify window manager logic, include file manager use flags, prefer firefox over chrome as firefox is faster when compiled
 
 *world-18
 

@@ -8,7 +8,7 @@ DESCRIPTION="Meta package to pull in packages and scripts to help keep the world
 HOMEPAGE="https://github.com/sophietheopossum/blood-of-the-chimera"
 SLOT="0"
 KEYWORDS="~alpha amd64 ~arm ~arm64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
-IUSE="amd anaconda archive ath9k +bfq bmq broadcom +browser btrfs bzip2 cad +chrome +composite context-background context-bluetooth context-compress context-email context-resize copy-notification debug dev discord dolphin +efi ext2 exfat +extended-glyphs f2fs +fat firefox flash +fluxbox fslint ftp fvwm gentoo-patches gentoo-sources +gnomekeyring-admin gzip hygon image-resolution +index indicate-transparency inkscape intel irc ivybridge java-ide +jpeg-thumbnail kate kyber latex logisim lz4 lzma +lzo mail-client mips-emulate +network-tray odt +odt-thumbnail openbox openrc overlay pantheon-files pcmanfm-qt pdf-edit parted pdf-view pdf-view-accurate +pf-sources php-ide +png-thumbnail +processviewer progress-icon remote-desktop screenshot secondlife secure spreadsheet sql steam sublime sublimelinter +sudo svg-edit +svg-thumbnail system-flake8 system-pylint +systemd terminal +terminal-fast test +text-editor text-editor-color-highlight text-editor-js-complete text-editor-js-lint text-editor-php-lint text-editor-py-complete text-editor-py-lint threads-4 threads-16 threads-512 +uefi viewfont xeon +xfs xz yandex-disk zhaoxin"
+IUSE="amd anaconda archive ath9k +bfq bmq broadcom +browser btrfs bzip2 cad +chrome +composite copy-notify debug dev discord dolphin +efi ext2 exfat +extended-glyphs f2fs +fat +filemanager firefox flash +fluxbox fslint ftp fvwm gentoo-patches gentoo-sources +gnomekeyring-admin gzip hygon img-dim img-dim-hover img-dim-hover-list img-dim-hover-tile img-dim-jpg img-dim-prop +index inkscape intel irc ivybridge java-ide kate kyber latex logisim lz4 lzma +lzo mail-client mips-emulate mod-date-list mod-date-prop mod-time-list +network-tray odt openbox openrc overlay +pantheon-files pcmanfm-qt pdf-edit parted +pf-sources php-ide +processviewer progress-icon remote-desktop save-state screenshot secondlife secure show-read show-sym show-write spreadsheet sql steam sublime sublimelinter +sudo svg-edit system-flake8 system-pylint +systemd terminal +terminal-fast test +text-editor text-editor-color-highlight text-editor-js-complete text-editor-js-lint text-editor-php-lint text-editor-py-complete text-editor-py-lint threads-4 threads-16 threads-512 +thumbnail-jpg thumbnail-odp +thumbnail-odt +thumbnail-png thumbnail-pptx +thumbnail-svg +uefi view-font view-pdf view-pdf-accurate view-png xeon +xfs xz yandex-disk zhaoxin"
 S="${WORKDIR}"
 
 REQUIRED_USE="
@@ -19,33 +19,35 @@ REQUIRED_USE="
 ^^ ( gentoo-sources pf-sources )
 ^^ ( terminal-fast terminal )
 ^^ ( threads-4 threads-16 threads-512 )
-^^ ( pantheon-files pcmanfm-qt dolphin )
 anaconda? ( sublime )
 bmq? ( pf-sources )
 browser? ( || ( firefox chrome ) )
-context-background? ( pantheon-files )
-context-bluetooth? ( pantheon-files )
-context-compress? ( pantheon-files )
-context-email? ( pantheon-files )
-context-resize? ( pantheon-files )
-copy-notification? ( ^^ ( pantheon-files dolphin ) )
+copy-notify? ( dolphin )
 efi? ( fat )
-gentoo-patches? ( || ( openrc systemd ) )
+filemanager? ( ^^ ( pantheon-files pcmanfm-qt dolphin ) )
+gentoo-patches? ( ^^ ( openrc systemd ) )
 gentoo-sources? ( gentoo-patches )
-image-resolution? ( pantheon-files )
-indicate-transparency? ( pantheon-files )
+img-dim? ( ^^ ( img-dim-hover img-dim-prop ) )
+img-dim-hover? ( || ( img-dim-hover-list img-dim-hover-tile ) )
+img-dim-hover-list? ( pantheon-files )
+img-dim-hover-tile? ( pantheon-files )
+img-dim-jpg? ( pantheon-files )
+img-dim-prop? ( pantheon-files )
 ivybridge? ( intel threads-4 )
-jpeg-thumbnail? ( pantheon-files pcmanfm-qt )
 kate? ( text-editor )
-odt-thumbnail? ( pcmanfm-qt )
-pdf-view? ( || ( browser inkscape pdf-view-accurate ) )
+mod-date-list? ( || ( pantheon-files pcmanfm-qt ) )
+mod-date-prop? ( || ( pantheon-files pcmanfm-qt ) )
+mod-time-list? ( pcmanfm-qt )
+view-pdf? ( || ( browser inkscape view-pdf-accurate ) )
+view-png? ( || ( browser inkscape view-pdf-accurate ) )
 pf-sources? ( gentoo-patches )
-png-thumbnail? ( pantheon-files pcmanfm-qt )
-progress-icon? ( pantheon-files )
+save-state? ( pantheon-files )
+show-read? ( pantheon-files )
+show-sym? ( pantheon-files )
+show-write? ( pantheon-files )
 sublime? ( text-editor )
 sublimelinter? ( sublime )
 svg-edit? ( inkscape )
-svg-thumbnail? ( pcmanfm-qt )
 system-flake8? ( sublimelinter )
 system-pylint? ( sublimelinter )
 text-editor ( || ( kate sublime ) )
@@ -54,6 +56,12 @@ text-editor-js-lint? ( sublimelinter )
 text-editor-php-lint? ( sublimelinter )
 text-editor-py-complete? ( anaconda )
 text-editor-py-lint? ( || ( ( system-flake8 system-pylint ) anaconda ) )
+thumbnail-jpg? ( || ( pantheon-files pcmanfm-qt ) )
+thumbnail-odp? ( || ( pantheon-files pcmanfm-qt ) )
+thumbnail-odt? ( || ( pantheon-files pcmanfm-qt ) )
+thumbnail-png? ( || ( pantheon-files pcmanfm-qt ) )
+thumbnail-pptx? ( || ( pantheon-files pcmanfm-qt ) )
+thumbnail-svg? ( || ( pantheon-files pcmanfm-qt ) )
 xeon? ( intel )
 "
 
@@ -68,7 +76,7 @@ RDEPEND="
 	dolphin? ( kde-apps/dolphin )
 	extended-glyphs? ( media-fonts/noto )
 	fat? ( sys-fs/dosfstools )
-	firefox? ( || ( www-client/firefox www-client/firefox-bin ) flash? ( www-plugins/adobe-flash ) )
+	firefox? ( || ( www-client/firefox www-client/firefox-bin ) flash? ( www-plugins/freshplayerplugin ) )
 	fluxbox? ( x11-wm/fluxbox )
 	fvwm? ( x11-wm/fvwm )
 	font_family_arial? ( media-fonts/liberation-fonts )
@@ -97,10 +105,11 @@ RDEPEND="
 	odt? ( || ( app-office/libreoffice app-office/libreoffice-bin ) )
 	!openbox? ( lxqt-base/lxqt-meta[minimal] )
 	overlay? ( app-portage/layman )
-	pantheon-files? ( pantheon-base/pantheon-files )
+	pantheon-files? (
+		pantheon-base/pantheon-files[mod-date-prop?,img-dim-hover-list?,img-dim-jpg?,progress-icon?,thumbnail-jpg?]
+	)
 	parted? ( sys-block/gparted )
 	!pcmanfm-qt? ( lxqt-base/lxqt-meta[-filemanager] )
-	pdf-view-accurate? ( app-text/mupdf )
 	php-ide? ( dev-php/phpstorm )
 	processviewer? ( kde-plasma/plasma-meta[processviewer] )
 	remote-desktop? ( net-misc/anydesk )
@@ -117,10 +126,10 @@ RDEPEND="
 	terminal-fast? ( x11-terms/kitty )
 	text-editor-js-lint? ( net-libs/nodejs[npm] )
 	text-editor-php-lint? ( dev-lang/php )
-	viewfont? ( media-gfx/fontforge[X] )
+	view-font? ( media-gfx/fontforge[X] )
+	view-pdf-accurate? ( app-text/mupdf )
 	xfs? ( sys-fs/xfsprogs )
 	yandex-disk? ( net-misc/yandex-disk )
-	virtual/linux-sources[btrfs?,fat?]
 "
 
 pkg_setup() {
@@ -257,7 +266,7 @@ pkg_setup() {
 }
 
 src_install() {
-	use dev && newbin "${FILESDIR}"/repo-gen.sh repo-gen
+	use dev && newbin "${FILESDIR}"/r.sh r
 	use dev && systemd_dounit "${FILESDIR}/${PN}.service"
 	use dev && systemd_dounit "${FILESDIR}/${PN}.timer"
 }
