@@ -9,7 +9,8 @@
 #=app-crypt/gcr-3.28.1::dantrell-gnome								#dependencies seem dated
 =app-crypt/gcr-3.33.4::my-gnome										#odd dependencies
 =app-crypt/gcr-3.34.0-r1::dantrell-gnome-3-34						#bad keywording, unnecessary quotes, no support for old gnome-keyring
-=app-crypt/gnupg-2.2.19::dantrell-gnome								#bad keywording, unnecessary quotes
+=app-crypt/gnupg-2.2.20::dantrell-gnome								#bad keywording, unnecessary quotes
+=app-crypt/gnupg-2.2.21::dantrell-gnome								#bad keywording, unnecessary quotes
 =app-crypt/libsecret-0.20.2::gentoo									#no python3_8, less multilib support
 =app-crypt/seahorse-3.32.2::dantrell-gnome-3-32						#missing dependency
 =app-crypt/seahorse-3.34.1::dantrell-gnome-3-34						#bad keywording, unnecessary quotes, no help use flag
@@ -20,6 +21,7 @@
 =app-eselect/eselect-pinentry-0.7::dantrell-gnome					#bad keywording, unnecessary quotes
 =app-i18n/ibus-1.5.19-r1::dantrell-gnome							#bad vala dependency
 =app-i18n/unicode-data-12.0.0::dantrell-gnome						#bad keywording, unnecessary quotes
+=app-misc/ca-certificates-20200601.3.53::zscheile					#verbose python compatibility
 =app-misc/geoclue-2.4.10::dantrell-gnome							#poor dependency logic
 =app-misc/mime-types-20180617::rindeal								#bad versioning
 =app-office/libreoffice-l10n-6.2.4.1::pg_overlay					#better in other overlay
@@ -74,7 +76,6 @@
 =dev-lang/vala-0.44.9::dantrell-gnome								#bad keywording, unnecessary quotes, missing valadoc flag
 =dev-libs/appstream-glib-0.7.9::musl								#musl specific patch
 =dev-libs/atk-2.34.1::dantrell-gnome-3-34							#bad keywording, unnecessary quotes
-=dev-libs/atk-2.34.1::my-gnome										#old
 =dev-libs/boost-1.65.0::gnux32										#x32 specific patch
 =dev-libs/boost-1.70.0::gnux32										#better in other overlay
 =dev-libs/boost-1.72.0-r1::FireBurn									#less specific dependency
@@ -91,7 +92,7 @@
 =dev-libs/gobject-introspection-common-1.62.0::my-gnome				#no gtk-doc use flag
 =dev-libs/gobject-introspection-common-1.64.0::gnome-next			#eapi6
 =dev-libs/hyphen-2.8.8::muslx32										#eapi 4, old
-=dev-libs/icu-65.1-r1::gentoo										#no python3_8
+=dev-libs/icu-67.1::gentoo											#verbose python compatibility
 =dev-libs/intel-common-19.0.4.243::science							#no good for cluster edition
 =dev-libs/json-glib-1.2.8::dantrell-gnome							#seems dated
 =dev-libs/json-glib-1.4.4::gnome-next								#disables optimisation
@@ -187,17 +188,18 @@
 =dev-util/boost-build-1.70.0::gnux32								#better in other overlay
 =dev-util/gdbus-codegen-2.62.6::dantrell-gnome						#dummy package
 =dev-util/gdbus-codegen-2.64.3::dantrell-gnome						#dummy package
+=dev-util/gdbus-codegen-2.65.0::gnome-next							#verbose python targets
 =dev-util/gdbus-codegen-2.99::rindeal								#dummy package
 <=dev-util/glib-utils-2.60.7::dantrell-gnome						#dummy package
-=dev-util/glib-utils-2.63.4::gnome-next								#less python compatibility
-=dev-util/glib-utils-2.64.1::gnome-next								#less python compatibility
 =dev-util/glib-utils-2.64.3::dantrell-gnome							#dummy package
+=dev-util/glib-utils-2.65.0::gnome-next								#verbose python targets
 =dev-util/glib-utils-2.99.99::rindeal								#dummy package
 =dev-util/gtk-doc-1.32-r1::dantrell-gnome							#no test or pdf use flag, bad keywording, unnecessary quotes
 =dev-util/gtk-doc-1.32-r1::lanodanOverlay							#extremely broken circular dependency
 =dev-util/gtk-doc-am-1.32::dantrell-gnome							#bad keywording, unnecessary quotes
 =dev-util/gtk-doc-am-1.32::lanodanOverlay							#extremely broken circular dependency
 =dev-util/gtk-update-icon-cache-3.24.16::dantrell-gnome				#bad keywording, unnecessary quotes
+=dev-util/itstool-2.0.6-r1::gentoo									#verbose python targets
 =dev-util/meld-3.21.0::my-gnome										#broken dependencies
 =dev-util/meson-0.52.1::dantrell-gnome								#bad keywording, unnecessary quotes, verbose python targets
 =dev-util/sysprof-3.35.2::gnome-next								#eapi6
@@ -208,7 +210,6 @@
 =gnome-base/gnome-desktop-3.34.2::dantrell-gnome-3-34				#pointless use flag renaming
 =gnome-base/gnome-keyring-3.34.0::dantrell-gnome-3-34				#bad keywording, unnecessary quotes
 =gnome-base/gnome-keyring-3.34.0::pentoo							#python2, less keywords, odd depends
-=gnome-base/gnome-keyring-3.34.0-r1::pentoo							#less keywords, odd depends
 =gnome-base/gnome-menus-3.32.0::dantrell-gnome						#bad keywording
 =gnome-base/gnome-session-3.34.1::dantrell-gnome-3-34				#unclear benefits
 =gnome-base/gsettings-desktop-schemas-3.34.0::dantrell-gnome-3-34	#bad keywording, unnecessary quotes, outdated dependency
@@ -252,6 +253,7 @@
 =media-libs/glm-0.9.9.7::gnux32										#x32 specific patch
 =media-libs/gsound-1.0.2-r1::dantrell-gnome							#bad keywording, unnecessary quotes
 =media-libs/libepoxy-1.5.3-r1::gnux32								#x32 specific patch
+=media-libs/libepoxy-1.5.4::gentoo									#verbose python targets
 =media-libs/libepoxy-1.5.4::gnux32									#x32 specific patch
 =media-libs/libid3tag-0.15.1b-r5::rinaldus-overlay					#use flag not defined in ebuild
 =media-libs/libjpeg-turbo-2.0.4::gnux32								#x32 specific patch
@@ -355,6 +357,7 @@
 =sys-power/upower-0.99.12.20190903::dantrell-gnome					#bad keywording, unnecessary quotes, eapi 6, unexplained use flags
 =sys-power/upower-0.99.12.20190903-r1::dantrell-gnome				#bad keywording, unnecessary quotes, eapi 6, unexplained use flags
 =sys-process/procps-3.3.15-r1::poly-c								#behind on patches?
+=sys-process/procps-3.3.16-r2::poly-c								#behind on patches?
 =virtual/linux-sources-3-r9::calculate								#no firmware use flag
 =virtual/modutils-0-r1::calculate									#eapi 2, less architecture support
 =virtual/mta-1::argent-main											#old
@@ -363,6 +366,7 @@
 =www-client/firefox-67.0::pg_overlay								#better in other overlay, old
 =www-client/firefox-70.0.1::gallifrey								#less use flags
 =www-client/firefox-72.0.2::gallifrey								#less use flags
+=x11-base/xcb-proto-1.14-r1::gentoo									#verbose python targets
 =x11-base/xorg-drivers-1.20::redcore								#dummy ebuild
 =x11-base/xorg-proto-2019.2-r1::dantrell-gnome						#chromebook specific patch
 =x11-base/xorg-server-1.20.3::musl									#arm only
