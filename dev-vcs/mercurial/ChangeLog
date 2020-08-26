@@ -1,0 +1,4 @@
+*mercurial-5.5
+::gentoo		base ebuild
+::pg_overlay	add python3_9 compatibility
+::prototype99	add version check for python2_7, missing python use flag
