@@ -21,6 +21,7 @@
 =app-eselect/eselect-pinentry-0.7::dantrell-gnome					#bad keywording, unnecessary quotes
 =app-i18n/ibus-1.5.19-r1::dantrell-gnome							#bad vala dependency
 =app-i18n/unicode-data-12.0.0::dantrell-gnome						#bad keywording, unnecessary quotes
+=app-misc/ca-certificates-20200601.3.53::gentoo						#no python3_9
 =app-misc/ca-certificates-20200601.3.53::zscheile					#verbose python compatibility
 =app-misc/geoclue-2.4.10::dantrell-gnome							#poor dependency logic
 =app-misc/mime-types-20180617::rindeal								#bad versioning
