@@ -78,6 +78,7 @@
 =games-simulation/firestorm-bin-6.3.2-r1
 =games-util/steam-launcher-1.0.0.59-r3
 =gnome-base/gnome-desktop-3.34.0
+=gnome-base/librsvg-2.49.3
 =gnome-extra/budgie-desktop-10.5
 =kde-frameworks/kio-5.58.0
 =kde-frameworks/qqc2-desktop-style-5.58.000
