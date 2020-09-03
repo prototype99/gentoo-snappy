@@ -3,7 +3,7 @@
 =app-admin/eselect-1.4.15
 =app-admin/eselect-1.4.16 ~amd64
 =app-arch/brotli-1.0.7
-=app-crypt/gcr-3.34.0-r1
+=app-crypt/gcr-3.34.0-r2
 =app-editors/sublime-text-3_p3211-r1
 =app-eselect/eselect-opencascade-1
 =app-i18n/ibus-1.5.19
