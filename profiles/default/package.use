@@ -1,4 +1,5 @@
-app-arch/libarchive bzip2
+app-arch/unzip -bzip2
+app-crypt/gnupg -bzip2
 app-lyx/elyxer -python_single_target_python2_7
 app-office/libreoffice java -python_single_target_python2_7
 app-portage/layman subversion -python_targets_python2_7
@@ -8,9 +9,10 @@ dev-cpp/cairomm X
 dev-cpp/gtkmm X
 dev-db/oracle-instantclient odbc
 dev-lang/python-exec -python_targets_pypy
+dev-libs/elfutils -bzip2
 dev-libs/gobject-introspection -python_single_target_python2_7
 dev-libs/libical -vala
-dev-python/pypy3 bzip2
+dev-libs/libpcre -bzip2
 dev-tex/tex4ht java
 dev-util/gdbus-codegen -python_single_target_python2_7
 dev-util/lldb -python_single_target_python2_7
@@ -34,6 +36,7 @@ sci-libs/hdf5 -cxx -threads
 sci-libs/openblas -openmp
 #sci-libs/vtk -tbb
 sys-apps/dbus X
+sys-apps/file -bzip2
 sys-apps/portage -xattr
 sys-apps/world archive latex screenshot sublime
 sys-devel/clang -python_single_target_python2_7
