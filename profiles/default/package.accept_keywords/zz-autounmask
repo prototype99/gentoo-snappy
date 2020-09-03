@@ -74,7 +74,7 @@
 =dev-util/pybind11-2.3.0
 =dev-util/smartgit-19.1.4
 =dev-util/smartgit-20.1.2
-=dev-vcs/mercurial-5.3.2
+=dev-vcs/mercurial-5.5
 =games-simulation/firestorm-bin-6.3.2-r1
 =games-util/steam-launcher-1.0.0.59-r3
 =gnome-base/gnome-desktop-3.34.0
