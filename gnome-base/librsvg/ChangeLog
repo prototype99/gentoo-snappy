@@ -1,6 +1,6 @@
 *2.49.3
 ::gnome-next	base ebuild
-::pg_overlay	add sparc keyword, add debug & tools use flags, improve dependency versioning, add darwin workaround
+::pg_overlay	add sparc keyword, add debug & tools use flags, improve dependency versioning, add darwin workaround, do not turn on vala by default
 *2.46.3
 ::prototype99	add rust fix
 *<=2.45.90

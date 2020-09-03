@@ -14,7 +14,7 @@ LICENSE="LGPL-2+"
 SLOT="2"
 KEYWORDS="~amd64 ~arm ~arm64 ~ppc64 ~sparc ~x86"
 
-IUSE="debug gtk-doc +introspection tools +vala"
+IUSE="debug gtk-doc +introspection tools vala"
 REQUIRED_USE="vala? ( introspection )"
 
 RDEPEND="
