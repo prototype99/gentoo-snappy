@@ -1,3 +1,14 @@
+*firefox-80.0.1
+::gentoo		better alphabetise use flags, only pull in dbus when using it
+::prototype99	use required_use better
+*firefox-80.0
+::bobwya		update patches
+::gentoo		update patches, remove old workaround
+*firefox-79.0-r2
+::bobwya		use git kde patch
+::gentoo		update patches & dependencies
+::pg_overlay	remove outdated patch, add new patches, update max llvm
+::prototype99	add arm & s390 keywords based on patches
 *firefox-78.0.2-r1
 ::bobwya		add more descriptive die messages, remove excess whitespace
 ::gentoo

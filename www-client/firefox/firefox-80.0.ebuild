@@ -17,17 +17,15 @@ nb-NO nl nn-NO oc pa-IN pl pt-BR pt-PT rm ro ru si sk sl son sq sr sv-SE ta te
 th tr uk ur uz vi xh zh-CN zh-TW )
 
 # Patch version
-PATCH="${PN}-78.0-patches-05"
+PATCH="${PN}-80.0-patches-02"
 
 MOZ_HTTP_URI="https://archive.mozilla.org/pub/${PN}/releases"
 
 # Mercurial repository for Mozilla ${PN} patches to provide better KDE Integration (developed by Wolfgang Rosenauer for OpenSUSE)
-HG_MOZ_REVISION="4ac678bd2a26"
-HG_MOZ_PV="${MOZ_PV/%.*/.0}"
-HG_MOZILLA_URI="https://www.rosenauer.org/hg/mozilla"
-MOZ_SRC_URI="${MOZ_HTTP_URI}/${PV}/source/${PN}-${PV}.source.tar.xz"
+GIT_MOZ_REVISION="0d8818883a2a1d201d7eb40ca0094be91432d2a1"
+GIT_MOZ_URI="https://raw.githubusercontent.com/openSUSE/${PN}-maintenance"
 
-LLVM_MAX_SLOT=10
+LLVM_MAX_SLOT=11
 
 inherit check-reqs eapi7-ver flag-o-matic toolchain-funcs eutils \
 		gnome2-utils llvm mozcoreconf-v6 pax-utils xdg-utils autotools mozlinguas-v2 multiprocessing virtualx
@@ -35,13 +33,13 @@ inherit check-reqs eapi7-ver flag-o-matic toolchain-funcs eutils \
 DESCRIPTION="${PN} Web Browser"
 HOMEPAGE="https://www.mozilla.com/${PN}"
 
-KEYWORDS="~amd64 ~arm64 ~mips ~ppc64 ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~mips ~ppc64 ~s390 ~x86"
 
 SLOT="0"
 LICENSE="MPL-2.0 GPL-2 LGPL-2.1"
 IUSE="asm bindist buffer clang cpu_flags_x86_avx2 debug egl eme-free flash geckodriver kde
 	+gmp-autoupdate hardened hwaccel jack lto cpu_flags_arm_neon
-	+openh264 pgo pulseaudio screencast +screenshot selinux +system-av1
+	+openh264 pgo privacy pulseaudio screencast +screenshot selinux +system-av1
 	+system-harfbuzz +system-icu +system-jpeg +system-libevent +system-libvpx
 	+system-webp test wayland wifi dbus cross-lto full-lto thinlto"
 
@@ -61,15 +59,15 @@ SRC_URI="${SRC_URI}
 	${MOZ_SRC_URI}
 	${PATCH_URIS[@]}
 	kde? (
-		${HG_MOZILLA_URI}/raw-file/${HG_MOZ_REVISION}/mozilla-kde.patch -> ${PN}-${HG_MOZ_PV}-mozilla-kde.patch
-		${HG_MOZILLA_URI}/raw-file/${HG_MOZ_REVISION}/mozilla-nongnome-proxies.patch -> ${PN}-${HG_MOZ_PV}-mozilla-nongnome-proxies.patch
-		${HG_MOZILLA_URI}/raw-file/${HG_MOZ_REVISION}/${PN}-branded-icons.patch -> ${PN}-${HG_MOZ_PV}-${PN}-branded-icons.patch
-		${HG_MOZILLA_URI}/raw-file/${HG_MOZ_REVISION}/${PN}-kde.patch -> ${PN}-${HG_MOZ_PV}-${PN}-kde.patch
+		${GIT_MOZ_URI}/${GIT_MOZ_REVISION}/mozilla-kde.patch -> ${PN}-mozilla-kde-${GIT_MOZ_REVISION}.patch
+		${GIT_MOZ_URI}/${GIT_MOZ_REVISION}/mozilla-nongnome-proxies.patch -> ${PN}-mozilla-nongnome-proxies-${GIT_MOZ_REVISION}.patch
+		${GIT_MOZ_URI}/${GIT_MOZ_REVISION}/${PN}/${PN}-branded-icons.patch -> ${PN}-${PN}-branded-icons-${GIT_MOZ_REVISION}.patch
+		${GIT_MOZ_URI}/${GIT_MOZ_REVISION}/${PN}/${PN}-kde.patch -> ${PN}-${PN}-kde-${GIT_MOZ_REVISION}.patch
 	)"
 
 CDEPEND="
-	>=dev-libs/nss-3.53.1
-	>=dev-libs/nspr-4.25
+	>=dev-libs/nss-3.55
+	>=dev-libs/nspr-4.26
 	dev-libs/atk
 	dev-libs/expat
 	>=x11-libs/cairo-1.10[X]
@@ -102,7 +100,7 @@ CDEPEND="
 		>=media-libs/dav1d-0.3.0:=
 		>=media-libs/libaom-1.0.0:=
 	)
-	system-harfbuzz? ( >=media-libs/harfbuzz-2.6.4:0= >=media-gfx/graphite2-1.3.13 )
+	system-harfbuzz? ( >=media-libs/harfbuzz-2.6.8:0= >=media-gfx/graphite2-1.3.13 )
 	system-icu? ( >=dev-libs/icu-67.1:= )
 	system-jpeg? ( >=media-libs/libjpeg-turbo-1.2.1 )
 	system-libevent? ( >=dev-libs/libevent-2.0:0=[threads] )
@@ -132,13 +130,22 @@ RDEPEND="${CDEPEND}
 DEPEND="${CDEPEND}
 	app-arch/zip
 	app-arch/unzip
-	>=dev-util/cbindgen-0.14.1
+	>=dev-util/cbindgen-0.14.3
 	>=net-libs/nodejs-10.19.0
 	>=sys-devel/binutils-2.30
 	sys-apps/findutils
 	virtual/pkgconfig
-	>=virtual/rust-1.41.0
+	>=virtual/rust-1.43.0
 	|| (
+		(
+			sys-devel/clang:11
+			!clang? ( sys-devel/llvm:11 )
+			clang? (
+				=sys-devel/lld-11*
+				sys-devel/llvm:11
+				pgo? ( =sys-libs/compiler-rt-sanitizers-11*[profile] )
+			)
+		)
 		(
 			sys-devel/clang:10
 			!clang? ( sys-devel/llvm:10 )
@@ -232,7 +239,7 @@ pkg_pretend() {
 
 		# Ensure we have enough disk space to compile
 		if use pgo || use lto || use debug || use test; then
-			CHECKREQS_DISK_BUILD="10G"
+			CHECKREQS_DISK_BUILD="11G"
 		else
 			CHECKREQS_DISK_BUILD="5G"
 		fi
@@ -247,7 +254,7 @@ pkg_setup() {
 	if [[ ${MERGE_TYPE} != binary ]]; then
 		# Ensure we have enough disk space to compile
 		if use pgo || use lto || use debug || use test; then
-			CHECKREQS_DISK_BUILD="10G"
+			CHECKREQS_DISK_BUILD="11G"
 		else
 			CHECKREQS_DISK_BUILD="5G"
 		fi
@@ -286,17 +293,17 @@ src_unpack() {
 }
 
 src_prepare() {
+	eapply "${FILESDIR}/79-deb-552426.patch"
+	eapply "${FILESDIR}/system-dpi-80.patch" #tbd
 	eapply "${WORKDIR}/${PN}/0001-Install-the-Gentoo-preference-file-into-the-omni.jar.patch"
 	eapply "${WORKDIR}/${PN}/0003-Fortify-sources-properly.patch"
+	#moz-1432867?
 	eapply "${WORKDIR}/${PN}/0008-bmo-878089-Don-t-fail-when-TERM-is-not-set.patch"
 	eapply "${WORKDIR}/${PN}/0023-bmo-1196777-Set-GDK_FOCUS_CHANGE_MASK.patch"
-	eapply "${WORKDIR}/${PN}/0029-bmo-1632429-enum34-and-enum-virtualenv-packages-are-.patch"
-	eapply "${WORKDIR}/${PN}/0030-bmo-1650299-Unify-the-inclusion-of-the-ICU-data-file.patch"
-	#add automatic big endian support
-	eapply "${WORKDIR}/${PN}/0031-bmo-1264836-Automatically-convert-the-little-endian-.patch"
-	#hard requires the previous patch
-	eapply "${WORKDIR}/${PN}/0032-bmo-1651207-Build-the-ICU-data-through-an-assembly-f.patch"
-	eapply "${WORKDIR}/${PN}/0033-Add-support-for-PipeWire-0.3.patch"
+	eapply "${WORKDIR}/${PN}/0028-Add-support-for-PipeWire-0.3.patch"
+	eapply "${WORKDIR}/${PN}/0030-bmo-1656436-Release-VAAPI-surface-data-before-we-re-.patch"
+	eapply "${WORKDIR}/${PN}/0031-build-Disable-Werror.patch"
+	use arm && eapply "${FILESDIR}/debian-patchset-79/debian-hacks/Avoid-using-vmrs-vmsr-on-armel.patch"
 	use arm64 && eapply "${WORKDIR}/${PN}/0011-bmo-1526653-Include-struct-definitions-for-user_vfp-.patch"
 	use buffer && eapply "${WORKDIR}/${PN}/0025-VAAPI-Add-extra-frames.patch"
 	if use elibc_musl; then
@@ -309,30 +316,33 @@ src_prepare() {
 		eapply "${WORKDIR}/${PN}/0018-musl-sys-auvx.h-avaliable-on-more-then-just-glibc-sy.patch"
 		eapply "${WORKDIR}/${PN}/0019-musl-make-SYS_fork-non-fatal-musl-uses-it-for-fork-2.patch"
 	fi
-	use flash && eapply "${WORKDIR}/${PN}/0004-Check-additional-plugins-dir.patch"
-	use geckodriver && eapply "${WORKDIR}/${PN}/0034-geckodriver-Build-regex-with-unicode-feature.patch"
+	if use flash; then
+		eapply "${WORKDIR}/${PN}/0004-Check-additional-plugins-dir.patch"
+	else
+		eapply "${FILESDIR}/Don-t-register-plugins-if-the-MOZILLA_DISABLE_PLUGIN-80.patch" #tbd
+	fi
+	use geckodriver && eapply "${WORKDIR}/${PN}/0029-geckodriver-Build-regex-with-unicode-feature.patch"
 	if use kde; then
 		sed -e 's:@BINPATH@/defaults/pref/kde.js:@RESPATH@/browser/@PREF_DIR@/kde.js:' \
-			"${DISTDIR}/${PN}-${HG_MOZ_PV}-firefox-kde.patch" > \
-			"${T}/${PN}-${HG_MOZ_PV}-firefox-kde.patch" || die "sed failed"
+			"${DISTDIR}/${PN}-${PN}-kde-${GIT_MOZ_REVISION}.patch" > \
+			"${T}/${PN}-${PN}-kde-${GIT_MOZ_REVISION}.patch" || die "sed failed"
 		# Toolkit OpenSUSE KDE integration patchset
-			eapply "${DISTDIR}/${PN}-${HG_MOZ_PV}-mozilla-kde.patch"
-			eapply "${DISTDIR}/${PN}-${HG_MOZ_PV}-mozilla-nongnome-proxies.patch"
-		# Firefox OpenSUSE KDE integration patchset
-			eapply "${DISTDIR}/${PN}-${HG_MOZ_PV}-firefox-branded-icons.patch"
-			eapply "${DISTDIR}/${PN}-${HG_MOZ_PV}-firefox-kde.patch"
+			eapply "${DISTDIR}/${PN}-mozilla-kde-${GIT_MOZ_REVISION}.patch"
+			eapply "${DISTDIR}/${PN}-mozilla-nongnome-proxies-${GIT_MOZ_REVISION}.patch"
+		# ${PN} OpenSUSE KDE integration patchset
+			eapply "${DISTDIR}/${PN}-${PN}-branded-icons-${GIT_MOZ_REVISION}.patch"
+			eapply "${DISTDIR}/${PN}-${PN}-kde-${GIT_MOZ_REVISION}.patch"
 		# Uncomment the next line to enable KDE support debugging (additional console output)...
 		#PATCHES+=( "${FILESDIR}/${PN}-kde-debug.patch" )
-		# Uncomment the following patch line to force Plasma/Qt file dialog for Firefox...
+		# Uncomment the following patch line to force Plasma/Qt file dialog for ${PN}...
 		#PATCHES+=( "${FILESDIR}/${PN}-force-qt-dialog.patch" )
-		# ... _OR_ install the patch file as a User patch (/etc/portage/patches/www-client/firefox/)
+		# ... _OR_ install the patch file as a User patch (/etc/portage/patches/www-client/${PN}/)
 		# ... _OR_ add to your user .xinitrc: "xprop -root -f KDE_FULL_SESSION 8s -set KDE_FULL_SESSION true"
 	fi
 	if use lto; then
 		eapply "${WORKDIR}/${PN}/0009-bmo-1516803-Fix-building-sandbox.patch"
 		tc-is-gcc && eapply "${WORKDIR}/${PN}/0022-bmo-1516803-force-one-LTO-partition-for-sandbox-when.patch"
 	fi
-	use mips && eapply "${FILESDIR}/moz-1642265.patch"
 	if use pgo; then
 		eapply "${WORKDIR}/${PN}/0020-Make-PGO-use-toolchain.patch"
 		eapply "${WORKDIR}/${PN}/0021-bmo-1516081-Disable-watchdog-during-PGO-builds.patch"
@@ -344,20 +354,24 @@ src_prepare() {
 			fi
 			eapply "${WORKDIR}/${PN}/0026-Fix-building-with-PGO-when-using-GCC.patch"
 		fi
+	else
+		eapply "${WORKDIR}/${PN}/0032-LTO-Only-enable-LTO-for-Rust-when-complete-build-use.patch"
+	fi
+	if use privacy; then
+		eapply "${FILESDIR}/${PN}-60-disable-data-sharing-infobar.patch"
+		eapply "${FILESDIR}/${PN}-60-disable-telemetry.patch"
 	fi
 	if use system-av1; then
 		eapply "${WORKDIR}/${PN}/0007-bmo-1559213-Support-system-av1.patch"
 	else
-		use arm64 && eapply "${WORKDIR}/${PN}/0028-libaom-Use-NEON_FLAGS-instead-of-VPX_ASFLAGS-for-lib.patch"
+		use cpu_flags_arm_neon && eapply "${WORKDIR}/${PN}/0027-libaom-Use-NEON_FLAGS-instead-of-VPX_ASFLAGS-for-lib.patch"
 	fi
 	if use system-harfbuzz; then
 		eapply "${WORKDIR}/${PN}/0005-bmo-847568-Support-system-harfbuzz.patch"
 		eapply "${WORKDIR}/${PN}/0006-bmo-847568-Support-system-graphite2.patch"
 	fi
-	if use wayland; then
-		eapply "${WORKDIR}/${PN}/0024-Wayland-Disable-FFVPX-with-VAAPI.patch"
-		has_version ">=media-libs/mesa-20.0.5" && eapply "${WORKDIR}/${PN}/0027-bmo-1634213-Wayland-Use-dmabuf-WebGL-surfaces-by-def.patch"
-	fi
+	! use test && eapply "${FILESDIR}/dont-build-image-gtests-80.patch" #tbd
+	use wayland && eapply "${WORKDIR}/${PN}/0024-Wayland-Disable-FFVPX-with-VAAPI.patch"
 
 	# Make LTO respect MAKEOPTS
 	sed -i \
@@ -423,14 +437,7 @@ src_prepare() {
 	sed -i -e "s@check_prog('RUSTFMT', add_rustup_path('rustfmt')@check_prog('RUSTFMT', add_rustup_path('rustfmt_do_not_use')@" \
 		"${S}"/build/moz.configure/rust.configure || die "sed failed"
 
-	! use dbus && eapply "${FILESDIR}/${PN}-$(get_major_version)-no-dbus.patch"
-
-	if has_version ">=virtual/rust-1.45.0"; then
-		einfo "Unbreak build with >=rust-1.45.0, bmo#1640982 ..."
-		sed -i \
-			-e 's/\(^cargo_rustc_flags +=.* \)-Clto\( \|$\)/\1/' \
-			"${S}/config/makefiles/rust.mk" || die "sed failed"
-	fi
+	! use dbus && eapply "${FILESDIR}/${PN}-79-no-dbus.patch"
 
 	# Autotools configure is now called old-configure.in
 	# This works because there is still a configure.in that happens to be for the
