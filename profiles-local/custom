@@ -69,7 +69,7 @@
 =dev-lang/spidermonkey-1.8.5-r7::gnux32								#x32 specific patches
 =dev-lang/spidermonkey-60.5.2_p0-r4::dantrell-gnome					#bad keywording, unnecessary quotes
 =dev-lang/spidermonkey-60.5.2_p0-r4::gentoo-clang					#clang specific patch
-=dev-lang/spidermonkey-60.8.0::dantrell-gnome						#bad keywording, unnecessary quotes
+=dev-lang/spidermonkey-60.9.0::dantrell-gnome						#bad keywording, unnecessary quotes, not a true standalone package
 =dev-lang/swig-4.0.0::gentoo-zh										#old eapi
 =dev-lang/tcl-8.6.10::oubliette										#no multilib support
 =dev-lang/vala-0.42.7::dantrell-gnome								#bad keywording, unnecessary quotes, missing valadoc flag
