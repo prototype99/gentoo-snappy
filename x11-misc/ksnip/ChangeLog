@@ -1,0 +1,10 @@
+*ksnip-1.7.2
+::guru			base ebuild
+::linxon		use correct licence, pull in the full dependencies
+::prototype99
+-don't use PN for this short name
+-use upstream description
+-remove excess(?) dependencies
+-catch minimum cmake quicker
+-version qt dependencies
+-add missing dependencies
