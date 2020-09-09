@@ -107,6 +107,7 @@
 =media-libs/coin-4.0.0a_pre20181221
 =media-libs/fmod-4.44.50
 =media-libs/fontconfig-ultimate-2016.04.23
+=media-libs/harfbuzz-2.7.2 ~amd64
 =media-libs/libuninameslist-20200313
 =media-libs/SoQt-1.6.0a_pre20181221
 =media-sound/pulseaudio-13.99.1
