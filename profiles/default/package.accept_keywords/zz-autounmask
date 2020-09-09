@@ -164,6 +164,7 @@
 =x11-misc/cairo-compmgr-0.4.8_pre20141005
 =x11-misc/compton-7.3
 =x11-misc/ftmenu-0.4.0-r1
+=x11-misc/ksnip-1.7.2
 =x11-misc/picom-7.5-r1
 =x11-terms/kitty-0.17.3 ~amd64
 =x11-terms/kitty-0.17.4 ~amd64
