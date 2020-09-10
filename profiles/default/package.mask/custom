@@ -72,6 +72,7 @@
 <dev-libs/atk-2.35.1
 <dev-libs/libical-3.0.8
 <dev-libs/libassuan-2.5.1
+<dev-libs/libevdev-1.9.0
 <dev-libs/libgcrypt-1.8.3
 <dev-libs/libgpg-error-1.36
 <dev-libs/libunistring-0.9.10
