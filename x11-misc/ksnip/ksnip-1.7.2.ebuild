@@ -19,13 +19,11 @@ RDEPEND="
 		>=dev-qt/qtdbus${QV}
 		>=dev-qt/qtnetwork${QV}
 		>=dev-qt/qtprintsupport${QV}
-		>=dev-qt/qtsvg${QV}
-		>=dev-qt/qtwidgets${QV}
 		>=dev-qt/qtx11extras${QV}
 		>=dev-qt/qtxml${QV}
 		>=x11-libs/kimageannotator-0.3.1"
 DEPEND="${RDEPEND}"
-BDEPEND=">=dev-util/cmake-3.5"
+BDEPEND=""
 
 src_install() {
 	cmake_src_install
