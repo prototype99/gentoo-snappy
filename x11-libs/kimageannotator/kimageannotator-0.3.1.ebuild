@@ -19,12 +19,11 @@ IUSE="test"
 RESTRICT="!test? ( test )"
 
 QV="-5.9.4:5"
-RDEPEND=">=dev-qt/qtwidgets${QV}
-	>=dev-qt/qtsvg${QV}
+RDEPEND=">=dev-qt/qtsvg${QV}
 	>=x11-libs/kcolorpicker-0.1.4"
 DEPEND="${RDEPEND}
 	test? ( >=dev-qt/qttest${QV} )"
-BDEPEND=">=dev-util/cmake-3.5"
+BDEPEND=""
 
 S="${WORKDIR}/${MY_P}"
 
