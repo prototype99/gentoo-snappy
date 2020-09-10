@@ -23,7 +23,6 @@ RDEPEND="
 		>=dev-qt/qtwidgets${QV}
 		>=dev-qt/qtx11extras${QV}
 		>=dev-qt/qtxml${QV}
-		x11-libs/kcolorpicker
 		>=x11-libs/kimageannotator-0.3.1"
 DEPEND="${RDEPEND}"
 BDEPEND=">=dev-util/cmake-3.5"
