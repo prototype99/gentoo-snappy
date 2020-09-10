@@ -10,6 +10,7 @@
 =app-crypt/gcr-3.33.4::my-gnome										#odd dependencies
 =app-crypt/gcr-3.34.0-r1::dantrell-gnome-3-34						#bad keywording, unnecessary quotes, no support for old gnome-keyring
 =app-crypt/gnupg-2.2.21::dantrell-gnome								#bad keywording, unnecessary quotes
+=app-crypt/gnupg-2.2.22-r1::dantrell-gnome							#bad keywording, unnecessary quotes
 =app-crypt/gnupg-2.2.23::dantrell-gnome								#bad keywording, unnecessary quotes
 =app-crypt/libsecret-0.20.2::gentoo									#no python3_8, less multilib support
 =app-crypt/seahorse-3.32.2::dantrell-gnome-3-32						#missing dependency
