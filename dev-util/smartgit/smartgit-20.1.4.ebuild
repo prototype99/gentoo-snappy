@@ -1,0 +1,1 @@
+/var/db/repos/prototype99/dev-util/smartgit/smartgit-20.1.2.ebuild
