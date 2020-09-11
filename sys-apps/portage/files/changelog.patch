@@ -1,0 +1,303 @@
+From 156527033d2bd76959a859dc57df2cc51868fc2f Mon Sep 17 00:00:00 2001
+From: seirra <sophietheopossum@yandex.com>
+Date: Thu, 10 Sep 2020 14:43:33 +0100
+Subject: [PATCH] Revert "emerge: Remove deprecated --changelog option (bug
+ 699256)"
+
+This reverts commit 25b22ab96b2fabcc9e53ad399591c3e6fd29ec7f.
+---
+ lib/_emerge/actions.py                 |   5 ++
+ lib/_emerge/main.py                    |   3 +-
+ lib/_emerge/resolver/output.py         |  32 ++++++-
+ lib/_emerge/resolver/output_helpers.py | 113 ++++++++++++++++++++++++-
+ man/emerge.1                           |   6 ++
+ 5 files changed, 156 insertions(+), 3 deletions(-)
+
+diff --git a/lib/_emerge/actions.py b/lib/_emerge/actions.py
+index a4ecfe43d..1b03200fc 100644
+--- a/lib/_emerge/actions.py
++++ b/lib/_emerge/actions.py
+@@ -2936,6 +2936,11 @@ def run_action(emerge_config):
+ 
+ 	adjust_configs(emerge_config.opts, emerge_config.trees)
+ 
++	if "--changelog" in emerge_config.opts:
++		writemsg_level(
++			" %s The emerge --changelog (or -l) option is deprecated\n" %
++			warn("*"), level=logging.WARNING, noiselevel=-1)
++
+ 	if profile_check(emerge_config.trees, emerge_config.action) != os.EX_OK:
+ 		return 1
+ 
+diff --git a/lib/_emerge/main.py b/lib/_emerge/main.py
+index 975738762..2fd9de19d 100644
+--- a/lib/_emerge/main.py
++++ b/lib/_emerge/main.py
+@@ -26,7 +26,7 @@ options=[
+ "--ask-enter-invalid",
+ "--buildpkgonly",
+ "--changed-use",
+-"--columns",
++"--changelog",    "--columns",
+ "--debug",
+ "--digest",
+ "--emptytree",
+@@ -58,6 +58,7 @@ shortmapping={
+ "e":"--emptytree",
+ "f":"--fetchonly", "F":"--fetch-all-uri",
+ "h":"--help",
++"L":"--changelog",
+ "n":"--noreplace", "N":"--newuse",
+ "o":"--onlydeps",  "O":"--nodeps",
+ "p":"--pretend",   "P":"--prune",
+diff --git a/lib/_emerge/resolver/output.py b/lib/_emerge/resolver/output.py
+index 0c90abefb..b6c77ecad 100644
+--- a/lib/_emerge/resolver/output.py
++++ b/lib/_emerge/resolver/output.py
+@@ -26,7 +26,7 @@ from portage.versions import best, cpv_getversion
+ from _emerge.Blocker import Blocker
+ from _emerge.create_world_atom import create_world_atom
+ from _emerge.resolver.output_helpers import ( _DisplayConfig, _tree_display,
+-	_PackageCounters, _create_use_string, PkgInfo)
++	_PackageCounters, _create_use_string, _calc_changelog, PkgInfo)
+ from _emerge.show_invalid_depstring_notice import show_invalid_depstring_notice
+ 
+ class Display:
+@@ -39,6 +39,7 @@ class Display:
+ 	"""
+ 
+ 	def __init__(self):
++		self.changelogs = []
+ 		self.print_msg = []
+ 		self.blockers = []
+ 		self.counters = _PackageCounters()
+@@ -560,6 +561,14 @@ class Display:
+ 				noiselevel=-1)
+ 
+ 
++	def print_changelog(self):
++		"""Prints the changelog text to std_out
++		"""
++		for chunk in self.changelogs:
++			writemsg_stdout(chunk,
++				noiselevel=-1)
++
++
+ 	def get_display_list(self, mylist):
+ 		"""Determines the display list to process
+ 
+@@ -659,6 +668,23 @@ class Display:
+ 		return pkg_info
+ 
+ 
++	def do_changelog(self, pkg, pkg_info):
++		"""Processes and adds the changelog text to the master text for output
++
++		@param pkg: _emerge.Package.Package instance
++		@param pkg_info: dictionay
++		Modifies self.changelogs
++		"""
++		if pkg_info.previous_pkg is not None:
++			ebuild_path_cl = pkg_info.ebuild_path
++			if ebuild_path_cl is None:
++				# binary package
++				ebuild_path_cl = self.portdb.findname(pkg.cpv, myrepo=pkg.repo)
++			if ebuild_path_cl is not None:
++				self.changelogs.extend(_calc_changelog(
++					ebuild_path_cl, pkg_info.previous_pkg, pkg.cpv))
++
++
+ 	def check_system_world(self, pkg):
+ 		"""Checks for any occurances of the package in the system or world sets
+ 
+@@ -754,6 +780,8 @@ class Display:
+ 				pkg_info.attr_display.new_slot = True
+ 				if pkg_info.ordered:
+ 					self.counters.newslot += 1
++			if self.conf.changelog:
++				self.do_changelog(pkg, pkg_info)
+ 		else:
+ 			pkg_info.attr_display.new = True
+ 			if pkg_info.ordered:
+@@ -881,6 +909,8 @@ class Display:
+ 							noiselevel=-1)
+ 			spawn_nofetch(self.conf.trees[pkg.root]["porttree"].dbapi,
+ 				pkg_info.ebuild_path)
++		if self.conf.changelog:
++			self.print_changelog()
+ 
+ 		return os.EX_OK
+ 
+diff --git a/lib/_emerge/resolver/output_helpers.py b/lib/_emerge/resolver/output_helpers.py
+index 30000e93f..932e66e1b 100644
+--- a/lib/_emerge/resolver/output_helpers.py
++++ b/lib/_emerge/resolver/output_helpers.py
+@@ -8,15 +8,20 @@ in output.py
+ __all__ = (
+ 	)
+ 
++import io
++import re
++
+ from portage import os
++from portage import _encodings, _unicode_encode
+ from portage._sets.base import InternalPackageSet
+ from portage.exception import PackageSetNotFound
+ from portage.localization import localized_size
+-from portage.output import (blue, colorize, create_color_func,
++from portage.output import (blue, bold, colorize, create_color_func,
+ 	green, red, teal, turquoise, yellow)
+ bad = create_color_func("BAD")
+ from portage.util import writemsg
+ from portage.util.SlotObject import SlotObject
++from portage.versions import catpkgsplit
+ 
+ from _emerge.Blocker import Blocker
+ from _emerge.Package import Package
+@@ -171,6 +176,7 @@ class _DisplayConfig:
+ 		self.quiet = "--quiet" in frozen_config.myopts
+ 		self.all_flags = self.verbosity == 3 or self.quiet
+ 		self.print_use_string = self.verbosity != 1 or "--verbose" in frozen_config.myopts
++		self.changelog = "--changelog" in frozen_config.myopts
+ 		self.edebug = frozen_config.edebug
+ 		self.unordered_display = "--unordered-display" in frozen_config.myopts
+ 
+@@ -462,6 +468,90 @@ def _prune_tree_display(display_list):
+ 			depth >= display_list[i+1][1]:
+ 				del display_list[i]
+ 
++
++def _calc_changelog(ebuildpath,current,next): # pylint: disable=redefined-builtin
++	if ebuildpath == None or not os.path.exists(ebuildpath):
++		return []
++	current = '-'.join(catpkgsplit(current)[1:])
++	if current.endswith('-r0'):
++		current = current[:-3]
++	next = '-'.join(catpkgsplit(next)[1:])
++	if next.endswith('-r0'):
++		next = next[:-3]
++
++	changelogdir = os.path.dirname(ebuildpath)
++	changelogs = ['ChangeLog']
++	# ChangeLog-YYYY (see bug #389611)
++	changelogs.extend(sorted((fn for fn in os.listdir(changelogdir)
++		if fn.startswith('ChangeLog-')), reverse=True))
++
++	divisions = []
++	found_current = False
++	for fn in changelogs:
++		changelogpath = os.path.join(changelogdir, fn)
++		try:
++			with io.open(_unicode_encode(changelogpath,
++				encoding=_encodings['fs'], errors='strict'),
++				mode='r', encoding=_encodings['repo.content'],
++				errors='replace') as f:
++				changelog = f.read()
++		except EnvironmentError:
++			return []
++		for node in _find_changelog_tags(changelog):
++			if node[0] == current:
++				found_current = True
++				break
++			else:
++				divisions.append(node)
++		if found_current:
++			break
++
++	if not found_current:
++		return []
++
++	#print 'XX from',current,'to',next
++	#for div,text in divisions: print 'XX',div
++	# skip entries for all revisions above the one we are about to emerge
++	later_rev_index = None
++	for i, node in enumerate(divisions):
++		if node[0] == next:
++			if later_rev_index is not None:
++				first_node = divisions[later_rev_index]
++				# Discard the later revision and the first ChangeLog entry
++				# that follows it. We want to display all the entries after
++				# that first entry, as discussed in bug #373009.
++				trimmed_lines = []
++				iterator = iter(first_node[1])
++				for l in iterator:
++					if not l:
++						# end of the first entry that's discarded
++						break
++				first_node = (None, list(iterator))
++				divisions = [first_node] + divisions[later_rev_index+1:]
++			break
++		if node[0] is not None:
++			later_rev_index = i
++
++	output = []
++	prev_blank = False
++	prev_rev = False
++	for rev, lines in divisions:
++		if rev is not None:
++			if not (prev_blank or prev_rev):
++				output.append("\n")
++			output.append(bold('*' + rev) + '\n')
++			prev_rev = True
++			prev_blank = False
++		if lines:
++			prev_rev = False
++			if not prev_blank:
++				output.append("\n")
++			for l in lines:
++				output.append(l + "\n")
++			output.append("\n")
++			prev_blank = True
++	return output
++
+ def _strip_header_comments(lines):
+ 	# strip leading and trailing blank or header/comment lines
+ 	i = 0
+@@ -473,6 +563,27 @@ def _strip_header_comments(lines):
+ 		lines.pop()
+ 	return lines
+ 
++def _find_changelog_tags(changelog):
++	divs = []
++	if not changelog:
++		return divs
++	release = None
++	release_end = 0
++	for match in re.finditer(r'^\*\ ?([-a-zA-Z0-9_.+]*)(?:\ .*)?$',
++		changelog, re.M):
++		divs.append((release, _strip_header_comments(
++			changelog[release_end:match.start()].splitlines())))
++		release_end = match.end()
++		release = match.group(1)
++		if release.endswith('.ebuild'):
++			release = release[:-7]
++		if release.endswith('-r0'):
++			release = release[:-3]
++
++	divs.append((release,
++		_strip_header_comments(changelog[release_end:].splitlines())))
++	return divs
++
+ class PkgInfo:
+ 	"""Simple class to hold instance attributes for current
+ 	information about the pkg being printed.
+diff --git a/man/emerge.1 b/man/emerge.1
+index fe7d05a21..250eaead5 100644
+--- a/man/emerge.1
++++ b/man/emerge.1
+@@ -504,6 +504,12 @@ NOTE: This option ignores the state of the "test" USE flag, since that flag
+ has a special binding to FEATURES="test" (see \fBmake.conf\fR(5) for more
+ information about \fBFEATURES\fR settings).
+ .TP
++.BR \-\-changelog ", " \-l
++Use this in conjunction with the \fB\-\-pretend\fR option.  This will
++show the ChangeLog entries for all the packages that will be upgraded.
++This option is deprecated because ChangeLog files are no longer
++distributed with Gentoo's ebuild repository.
++.TP
+ .BR "\-\-color < y | n >"
+ Enable or disable color output.  This option will override \fINOCOLOR\fR
+ (see \fBmake.conf\fR(5)) and may also be used to force color output when stdout
+-- 
+2.26.2
+
