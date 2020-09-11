@@ -1,3 +1,6 @@
+*file-5.39-r3
+::gentoo			remove unused eclass and function, add musl patch
+::prototype99		only apply musl patch when using musl
 *file-5.39-r2
 ::gentoo			general updates, update keywords, add bzip2, lzma, seccomp use flags
 ::prototype99		remove 9999 code, make better use of built in variables, only apply seccomp patches when using seccomp
