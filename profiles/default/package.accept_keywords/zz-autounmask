@@ -1018,3 +1018,6 @@
 =x11-terms/kitty-terminfo-0.17.3 ~amd64
 # required by net-vpn/nordvpn-3.7.1::jorgicio[nordlynx]
 =net-vpn/wireguard-modules-1.0.20200623 ~amd64
+# required by x11-libs/kimageannotator-0.3.2::guru
+# required by x11-misc/ksnip-1.7.2::prototype99
+=x11-libs/kcolorpicker-0.1.4 ~amd64
