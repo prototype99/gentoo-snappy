@@ -1,0 +1,4 @@
+*kimageannotator-0.3.1
+::guru			base ebuild
+::linxon		add test use flag
+::prototype99	add missing dependencies, improve dependency versioning, make better use of variables, correct licence, only touch test flag when needed

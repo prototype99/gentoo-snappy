@@ -1021,3 +1021,5 @@
 # required by x11-libs/kimageannotator-0.3.2::guru
 # required by x11-misc/ksnip-1.7.2::prototype99
 =x11-libs/kcolorpicker-0.1.4 ~amd64
+# required by x11-misc/ksnip-1.7.2::prototype99
+=x11-libs/kimageannotator-0.3.1 ~amd64
