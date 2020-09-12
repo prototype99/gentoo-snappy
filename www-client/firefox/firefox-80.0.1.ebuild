@@ -20,6 +20,8 @@ th tr uk ur uz vi xh zh-CN zh-TW )
 PATCH="${PN}-80.0-patches-02"
 
 MOZ_HTTP_URI="https://archive.mozilla.org/pub/${PN}/releases"
+MOZ_PV="80.0.1"
+MOZ_SRC_URI="${MOZ_HTTP_URI}/${MOZ_PV}/source/${PN}-${MOZ_PV}.source.tar.xz"
 
 # Mercurial repository for Mozilla ${PN} patches to provide better KDE Integration (developed by Wolfgang Rosenauer for OpenSUSE)
 GIT_MOZ_REVISION="0d8818883a2a1d201d7eb40ca0094be91432d2a1"
@@ -73,7 +75,7 @@ CDEPEND="
 	dev-libs/expat
 	>=x11-libs/cairo-1.10[X]
 	>=x11-libs/gtk+-2.18:2
-	>=x11-libs/gtk+-3.14.0:3[X]
+	>=x11-libs/gtk+-3.4.0:3[X]
 	x11-libs/gdk-pixbuf
 	>=x11-libs/pango-1.22.0
 	>=media-libs/libpng-1.6.35:0=[apng]
@@ -82,8 +84,6 @@ CDEPEND="
 	>=media-libs/freetype-2.4.10
 	kernel_linux? ( !pulseaudio? ( media-libs/alsa-lib ) )
 	virtual/freedesktop-icon-theme
-	sys-apps/dbus
-	dev-libs/dbus-glib
 	>=x11-libs/pixman-0.19.2
 	>=dev-libs/glib-2.26:2
 	>=sys-libs/zlib-1.2.3
@@ -96,6 +96,10 @@ CDEPEND="
 	x11-libs/libXfixes
 	x11-libs/libXrender
 	x11-libs/libXt
+	dbus? (
+		sys-apps/dbus
+		dev-libs/dbus-glib
+	)
 	screencast? ( media-video/pipewire:0/0.3 )
 	system-av1? (
 		>=media-libs/dav1d-0.3.0:=
@@ -113,11 +117,11 @@ CDEPEND="
 		)
 	)
 	jack? ( virtual/jack )
-	openh264? ( media-libs/openh264:*[plugin] )
 	selinux? ( sec-policy/selinux-mozilla )"
 
 RDEPEND="${CDEPEND}
 	jack? ( virtual/jack )
+	openh264? ( media-libs/openh264:*[plugin] )
 	pulseaudio? (
 		|| (
 			media-sound/pulseaudio
