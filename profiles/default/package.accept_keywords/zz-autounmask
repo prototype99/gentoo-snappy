@@ -114,6 +114,7 @@
 =media-video/ffmpeg-4.3
 =media-video/pipewire-0.2.7
 =net-fs/samba-4.9.0
+=net-im/teams-1.3.00.16851
 =net-libs/nodejs-8.15.1-r2
 =net-libs/webkit-gtk-2.26.2
 =net-misc/anydesk-5.0.0 ~amd64
