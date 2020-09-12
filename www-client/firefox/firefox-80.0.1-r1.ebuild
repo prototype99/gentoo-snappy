@@ -17,7 +17,7 @@ nb-NO nl nn-NO oc pa-IN pl pt-BR pt-PT rm ro ru si sk sl son sq sr sv-SE ta te
 th tr uk ur uz vi xh zh-CN zh-TW )
 
 # Patch version
-PATCH="${PN}-80.0-patches-02"
+PATCH="${PN}-80.0-patches-03"
 
 MOZ_HTTP_URI="https://archive.mozilla.org/pub/${PN}/releases"
 MOZ_PV="80.0.1"
@@ -323,6 +323,7 @@ src_prepare() {
 	fi
 	if use flash; then
 		eapply "${WORKDIR}/${PN}/0004-Check-additional-plugins-dir.patch"
+		eapply "${WORKDIR}/${PN}/0033-bmo-1661715-Move-GTK-function-stubs-to-the-correct-s.patch"
 	else
 		eapply "${FILESDIR}/Don-t-register-plugins-if-the-MOZILLA_DISABLE_PLUGIN-80.patch" #tbd
 	fi
