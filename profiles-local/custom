@@ -121,6 +121,7 @@
 =dev-libs/libsigc++-2.10.3::dantrell-gnome							#bad keywording, unnecessary quotes
 =dev-libs/libunistring-0.9.10::dantrell-gnome						#bad keywording, unnecessary quotes
 =dev-libs/npth-1.5::dantrell-gnome									#bad keywording, unnecessary quotes & whitespace
+=dev-libs/npth-1.6-r1::dantrell-gnome								#bad keywording, unnecessary quotes & whitespace
 =dev-libs/nspr-4.21::mozilla										#less architecture support
 =dev-libs/openssl-1.1.1d-r3::poly-c									#removes use flags, odd slotting
 =dev-libs/openssl-1.1.1f::poly-c									#removes use flags, odd slotting
@@ -221,6 +222,7 @@
 =gnome-base/gsettings-desktop-schemas-3.34.0::dantrell-gnome-3-34	#bad keywording, unnecessary quotes, outdated dependency
 =gnome-base/gvfs-1.42.2::dantrell-gnome-3-34						#bad keywording, unnecessary quotes, no sftp use flag
 =gnome-base/gvfs-1.42.1::my-gnome									#no sftp use flag, less keywords, missing dependencies
+=gnome-base/libgnome-keyring-3.12.0-r1::dantrell-gnome				#no test use flag
 =gnome-base/libgnomekbd-3.26.1::dantrell-gnome						#bad keywording, unnecessary quotes
 =gnome-base/libgtop-2.40.0::gnome-next								#bad slotting
 =gnome-base/librsvg-2.45.8::gnome-next								#better in other overlay
@@ -284,6 +286,7 @@
 =net-fs/samba-4.8.6-r2::musl										#musl specific patches
 =net-fs/samba-4.8.6-r3::stowe-verlay								#missing use flag
 =net-im/discord-bin-0.0.9::earshark									#old, less use flags, old gtk
+=net-im/teams-1.3.00.16851::tkurbad									#less detailed dependencies
 =net-libs/serf-1.3.9::pg_overlay									#unclear benefits
 =net-libs/webkit-gtk-2.26.1-r1::dantrell-gnome						#no icu 65 patch
 =net-misc/anydesk-5.1.2::adrien-overlay								#old
@@ -322,6 +325,7 @@
 =sys-apps/bubblewrap-0.3.1-r100::ag-ops								#broken build, unclear benefits
 =sys-apps/bubblewrap-0.3.1-r101::ag-ops								#unclear benefits
 =sys-apps/dbus-broker-18::dantrell-gnome							#patch doesn't work
+=sys-apps/file-5.39-r3::tgbugs-overlay								#broken filesystem structure
 =sys-apps/findutils-4.6.0-r1::muslx32								#old, no supported python, missing patch
 =sys-apps/portage-2.3.99-r2::poly-c									#removes useful error reporting (non_verbose patch)
 =sys-apps/portage-3.0.1::poly-c									#removes useful error reporting (non_verbose patch)
