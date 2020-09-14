@@ -299,7 +299,7 @@ src_unpack() {
 
 src_prepare() {
 	eapply "${FILESDIR}/79-deb-552426.patch"
-	eapply "${FILESDIR}/system-dpi-80.patch" #tbd
+	eapply "${FILESDIR}/system-dpi80.patch"
 	eapply "${WORKDIR}/${PN}/0001-Install-the-Gentoo-preference-file-into-the-omni.jar.patch"
 	eapply "${WORKDIR}/${PN}/0003-Fortify-sources-properly.patch"
 	#moz-1432867?
@@ -325,7 +325,7 @@ src_prepare() {
 		eapply "${WORKDIR}/${PN}/0004-Check-additional-plugins-dir.patch"
 		eapply "${WORKDIR}/${PN}/0033-bmo-1661715-Move-GTK-function-stubs-to-the-correct-s.patch"
 	else
-		eapply "${FILESDIR}/Don-t-register-plugins-if-the-MOZILLA_DISABLE_PLUGIN-80.patch" #tbd
+		eapply "${FILESDIR}/Don-t-register-plugins-if-the-MOZILLA_DISABLE_PLUGIN80.patch"
 	fi
 	use geckodriver && eapply "${WORKDIR}/${PN}/0029-geckodriver-Build-regex-with-unicode-feature.patch"
 	if use kde; then
@@ -376,7 +376,7 @@ src_prepare() {
 		eapply "${WORKDIR}/${PN}/0005-bmo-847568-Support-system-harfbuzz.patch"
 		eapply "${WORKDIR}/${PN}/0006-bmo-847568-Support-system-graphite2.patch"
 	fi
-	! use test && eapply "${FILESDIR}/dont-build-image-gtests-80.patch" #tbd
+	! use test && eapply "${FILESDIR}/dont-build-image-gtests80.patch"
 	use wayland && eapply "${WORKDIR}/${PN}/0024-Wayland-Disable-FFVPX-with-VAAPI.patch"
 
 	# Make LTO respect MAKEOPTS
