@@ -10,16 +10,9 @@ inherit jetbrains-intellij
 
 DESCRIPTION="Cross-platform .NET IDE based on the IntelliJ platform and ReSharper"
 
-	# TODO: unbundle mono
-	# "dev-lang/mono"
 RDEPEND=""
 
 src_prepare() {
-	JBIJ_ADDITIONAL_EXECUTABLES=(
-		lib/ReSharperHost/runtime.sh
-		lib/ReSharperHost/*/mono/bin/*
-	)
-
 	jetbrains-intellij_src_prepare
 }
 
