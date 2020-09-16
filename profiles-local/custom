@@ -1,6 +1,7 @@
 =acct-group/plugdev-0::tatsh-overlay								#poor description
 =app-accessibility/at-spi2-atk-2.34.1::dantrell-gnome-3-34			#bad keywording, unnecessary quotes
 =app-accessibility/at-spi2-atk-2.34.2::dantrell-gnome				#bad keywording, unnecessary quotes
+=app-accessibility/at-spi2-atk-2.37.90:2::my-gnome					#broken dependency
 =app-accessibility/at-spi2-core-2.34.0::dantrell-gnome-3-34			#bad keywording, unnecessary quotes
 =app-accessibility/at-spi2-core-2.34.0::my-gnome					#eapi 6
 =app-admin/eselect-1.4.16-r2::dantrell-gnome						#systemd free by default
