@@ -111,7 +111,7 @@
 <x11-libs/gdk-pixbuf-2.40.0
 <x11-libs/gtk+-3.24.8
 <x11-libs/gtksourceview-4.4.0
-<=x11-libs/pango-1.42.4-r2
+<x11-libs/pango-1.42.4-r2
 <x11-themes/adwaita-icon-theme-3.30.1
 <x11-themes/gtk-engines-adwaita-3.28
 #old, no supported python
