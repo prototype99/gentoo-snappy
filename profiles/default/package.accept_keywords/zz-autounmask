@@ -1026,3 +1026,5 @@
 # required by net-im/teams-1.3.00.16851::gentoo
 =gnome-base/libgnome-keyring-3.12.0-r3 ~amd64
 =x11-libs/kimageannotator-0.3.2 ~amd64
+# required by net-vpn/nordvpn-3.7.4::prototype99[nordlynx]
+=net-vpn/wireguard-modules-1.0.20200908 ~amd64
