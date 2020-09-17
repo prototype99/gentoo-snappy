@@ -52,6 +52,7 @@
 =dev-cpp/gtkmm-3.24.2::pg_overlay									#missing dependency version
 =dev-cpp/pangomm-2.40.2::dantrell-gnome								#bad keywording, unnecessary quotes, duplicate dependency
 =dev-cpp/pangomm-2.42.1::pg_overlay									#less specific dependency
+=dev-dotnet/libgdiplus-6.0.5::oiledmachine-overlay					#under renovation
 =dev-java/commons-codec-1.11::rindeal								#no doc, source or test use flags
 =dev-java/java-config-2.2.0-r4::FireBurn							#pointless added dev-python/setuptools dependency
 =dev-java/java-config-2.2.0-r5::miramir								#pointless added dev-python/setuptools dependency
