@@ -443,8 +443,6 @@ src_prepare() {
 	sed -i -e "s@check_prog('RUSTFMT', add_rustup_path('rustfmt')@check_prog('RUSTFMT', add_rustup_path('rustfmt_do_not_use')@" \
 		"${S}"/build/moz.configure/rust.configure || die "sed failed"
 
-	! use dbus && eapply "${FILESDIR}/${PN}-79-no-dbus.patch"
-
 	# Autotools configure is now called old-configure.in
 	# This works because there is still a configure.in that happens to be for the
 	# shell wrapper configure script
