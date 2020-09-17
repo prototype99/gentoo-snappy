@@ -8,6 +8,7 @@ app-text/mupdf X opengl
 dev-cpp/cairomm X
 dev-cpp/gtkmm X
 dev-db/oracle-instantclient odbc
+dev-lang/mono minimal
 dev-lang/python-exec -python_targets_pypy
 dev-libs/elfutils -bzip2
 dev-libs/gobject-introspection -python_single_target_python2_7
