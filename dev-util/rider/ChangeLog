@@ -1,4 +1,6 @@
 #TODO: dev-dotnet/dotnetcore-runtime-bin-3.1.6(3acd9b0cd1) or a special virtual, dev-dotnet/dotnetcore-sdk (see ::oiledmachine-overlay, ::lanodanOverlay), a load of assorted other unbundlings
+*rider-2020.2.2-r2
+::prototype99	add missing dependency
 *rider-2020.2.2-r1
 ::prototype99	set executable permissions correctly, add default-on mono flag
 *rider-2020.2.2
