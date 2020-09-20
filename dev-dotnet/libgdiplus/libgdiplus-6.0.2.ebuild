@@ -30,7 +30,7 @@ RDEPEND="dev-libs/glib
 	virtual/jpeg:0
 	!cairo? ( x11-libs/pango )"
 DEPEND="${RDEPEND}"
-PATCHES=( "FILESDIR"/gen-700280.patch )
+PATCHES=( "${FILESDIR}"/gen-700280.patch )
 
 src_configure() {
 	econf \
