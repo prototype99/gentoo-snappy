@@ -15,6 +15,8 @@
 =dev-db/mariadb-10.5.5
 =dev-db/oracle-instantclient-18.5.0.0
 =dev-db/sqldeveloper-19.2.1.247.2212
+=dev-dotnet/dotnetcore-sdk-bin-5.0.100_rc1 **
+=dev-dotnet/dotnetcore-sdk-bin-common-5.0.100_rc1 **
 =dev-java/idea-community-2020.1.0.201.6668.121
 =dev-java/openjdk-11.0.4_p11 ~amd64
 =dev-java/openjdk-11.0.5_p10
