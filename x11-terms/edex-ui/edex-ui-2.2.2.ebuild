@@ -3,7 +3,9 @@
 
 EAPI=7
 
-inherit npm
+NODE_MODULE_DEPEND="uglify-es:3.3.9"
+
+inherit node-module
 
 HOMEPAGE="https://github.com/GitSquared/${PN}/"
 SRC_URI="${HOMEPAGE}archive/v2.2.2.tar.gz -> ${P}.tar.gz"
@@ -15,9 +17,9 @@ LICENSE="GPL-3"
 SLOT="0"
 IUSE=""
 
-RDEPEND="dev-nodejs/uglify-es"
-
-DEPEND="${RDEPEND}"
+RDEPEND="${RDEPEND}"
+DEPEND="${RDEPEND}
+net-libs/nodejs[npm]"
 
 src_compile() {
 	npm run build-linux || die
