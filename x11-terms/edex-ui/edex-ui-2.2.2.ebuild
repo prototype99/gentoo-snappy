@@ -15,10 +15,10 @@ LICENSE="GPL-3"
 SLOT="0"
 IUSE=""
 
-RDEPEND=""
+RDEPEND="dev-nodejs/uglify-es"
 
-DEPEND=""
+DEPEND="${RDEPEND}"
 
 src_compile() {
-	npm run build-linux
+	npm run build-linux || die
 }
