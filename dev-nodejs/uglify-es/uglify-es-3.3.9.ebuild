@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit npm
+inherit node-module
 
 DESCRIPTION="A JavaScript parser, mangler/compressor and beautifier toolkit for ES6+"
 
