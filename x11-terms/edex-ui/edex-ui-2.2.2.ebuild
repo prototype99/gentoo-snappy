@@ -3,7 +3,7 @@
 
 EAPI=7
 
-NODE_MODULE_DEPEND="uglify-es:3.3.9"
+NODE_MODULE_DEPEND="uglify-es"
 
 inherit node-module
 
