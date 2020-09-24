@@ -18,3 +18,7 @@ IUSE=""
 RDEPEND=""
 
 DEPEND=""
+
+src_compile() {
+	npm run build-linux
+}
