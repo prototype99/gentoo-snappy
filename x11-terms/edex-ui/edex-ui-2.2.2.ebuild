@@ -3,7 +3,7 @@
 
 EAPI=7
 
-NODE_MODULE_DEPEND="uglify-es"
+NODE_MODULE_DEPEND="uglify-es:3.3.9"
 
 inherit node-module
 
@@ -24,5 +24,6 @@ net-libs/nodejs[npm]"
 S="${WORKDIR}/${P}"
 
 src_compile() {
+	install_node_module_depend "${NODE_MODULE_DEPEND}"
 	npm run build-linux || die
 }
