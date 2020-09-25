@@ -28,6 +28,5 @@ src_compile() {
 src_install(){
 	mkdir -p "${D}/opt/${PN}/"
 	mv "${S}"/dist/linux-unpacked/* "${D}/opt/${PN}/"
-	mkdir -p "${D}/usr/bin/"
-	dosym "${D}opt/${PN}/${PN}" "usr/bin/${PN}"
+	newbin "${FILESDIR}/${PN}.sh" "${PN}"
 }
