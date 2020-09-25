@@ -16,6 +16,6 @@ IUSE=""
 DEPEND="net-libs/nodejs[npm]"
 
 src_compile() {
-	npm install
+	npm install || die
 	npm run build-linux || die
 }
