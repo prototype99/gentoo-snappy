@@ -21,6 +21,8 @@ RDEPEND="${RDEPEND}"
 DEPEND="${RDEPEND}
 net-libs/nodejs[npm]"
 
+S="${WORKDIR}/${P}"
+
 src_compile() {
 	npm run build-linux || die
 }
