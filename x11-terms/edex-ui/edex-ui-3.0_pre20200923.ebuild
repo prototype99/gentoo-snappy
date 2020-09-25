@@ -16,6 +16,8 @@ IUSE=""
 
 DEPEND="net-libs/nodejs[npm]"
 
+RESTRICT="network-sandbox"
+
 S="${WORKDIR}/${PN}-${NUM}"
 
 src_compile() {
