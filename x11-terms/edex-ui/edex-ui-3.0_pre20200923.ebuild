@@ -24,3 +24,8 @@ src_compile() {
 	npm install || die
 	npm run build-linux || die
 }
+
+src_install(){
+	cp -r "${S}"/dist/linux-unpacked/ "${D}/opt/${PN}/"
+	dobin "${D}/opt/${PN}/${PN}"
+}
