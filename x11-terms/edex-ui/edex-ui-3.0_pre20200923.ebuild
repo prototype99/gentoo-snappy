@@ -4,7 +4,8 @@
 EAPI=7
 
 HOMEPAGE="https://github.com/GitSquared/${PN}/"
-SRC_URI="${HOMEPAGE}archive/v2.2.2.tar.gz -> ${P}.tar.gz"
+NUM="b4456a650d13a441c8c957279a0b62ad0f90d5f4"
+SRC_URI="${HOMEPAGE}archive/${NUM}.zip -> ${P}.zip"
 KEYWORDS="amd64"
 
 DESCRIPTION="A cross-platform, customizable science fiction terminal emulator with advanced monitoring & touchscreen support."
@@ -14,6 +15,8 @@ SLOT="0"
 IUSE=""
 
 DEPEND="net-libs/nodejs[npm]"
+
+S="${WORKDIR}/${PN}-${NUM}"
 
 src_compile() {
 	npm install || die
