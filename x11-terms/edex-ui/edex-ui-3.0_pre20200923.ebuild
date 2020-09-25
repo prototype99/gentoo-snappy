@@ -26,6 +26,7 @@ src_compile() {
 }
 
 src_install(){
+	mkdir -p "${D}/opt/${PN}/"
 	cp -r "${S}"/dist/linux-unpacked/ "${D}/opt/${PN}/"
 	dobin "${D}/opt/${PN}/${PN}"
 }
