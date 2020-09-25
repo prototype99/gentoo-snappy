@@ -28,5 +28,6 @@ src_compile() {
 src_install(){
 	mkdir -p "${D}/opt/${PN}/"
 	mv "${S}"/dist/linux-unpacked/* "${D}/opt/${PN}/"
-	dobin "${D}/opt/${PN}/${PN}"
+	mkdir -p "${D}/usr/bin/"
+	dosym "${D}/opt/${PN}/${PN}" "${D}/usr/bin/${PN}"
 }
