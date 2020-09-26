@@ -9,4 +9,10 @@
 #xfs>ext4>btrfs
 *3.12.72
 ::gentoo		base ebuild
-::prototype99	remove i686 compatibility for now, make better use of variables, add more use flags, remove incompatible flags
+::prototype99
+-remove i686 compatibility for now
+-make better use of variables
+-add more use flags
+-remove incompatible flags
+-remove obvious comment
+-only apply needed patches

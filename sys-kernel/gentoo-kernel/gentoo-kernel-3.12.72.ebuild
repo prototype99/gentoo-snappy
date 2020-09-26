@@ -22,7 +22,7 @@ S=${WORKDIR}/${MY_P}
 
 LICENSE="GPL-2"
 KEYWORDS="amd64"
-IUSE="abi_x86_x32 debug"
+IUSE="+deadline debug fbcondec infiniband pax pogoplug selinux systemd thinkpad-backlight thinkpad-micled"
 
 RDEPEND="
 	!sys-kernel/vanilla-kernel:${SLOT}
@@ -34,26 +34,62 @@ pkg_pretend() {
 
 src_prepare() {
 	local PATCHES=(
-		# meh, genpatches have no directory
-		"${WORKDIR}"/*.patch
+		"${WORKDIR}"/2900_dev-root-proc-mount-fix.patch
+		"${WORKDIR}"/4567_distro-Gentoo-Kconfig.patch
 	)
+	if use fbcondec; then
+		PATCHES+=(
+			"${WORKDIR}"/4200_fbcondecor-0.9.6.patch
+		)
+	fi
+	if use infiniband; then
+		PATCHES+=(
+			"${WORKDIR}"/2400_kcopy-patch-for-infiniband-driver.patch
+		)
+	fi
+	if use pax; then
+		PATCHES+=(
+			"${WORKDIR}"/1500_XATTR_USER_PREFIX.patch
+		)
+	fi
+	if use pogoplug; then
+		PATCHES+=(
+			"${WORKDIR}"/4500_support-for-pogoplug-e02.patch
+		)
+	fi
+	if use selinux; then
+		PATCHES+=(
+			"${WORKDIR}"/1500_selinux-add-SOCK_DIAG_BY_FAMILY-to-the-list-of-netli.patch
+		)
+	fi
+	if use thinkpad-backlight; then
+		PATCHES+=(
+			"${WORKDIR}"/2700_ThinkPad-30-brightness-control-fix.patch
+		)
+	fi
+	if use thinkpad-micled; then
+		PATCHES+=(
+			"${WORKDIR}"/1700_enable-thinkpad-micled.patch
+		)
+	fi
 	default
 
 	# prepare the default config
-	cp "${DISTDIR}"/${CONFIG_VER} .config || die
+	cp "${DISTDIR}/${CONFIG_VER}" .config || die
 
 	local config_tweaks=(
 		# shove arch under the carpet!
 		-e 's:^CONFIG_DEFAULT_HOSTNAME=:&"gentoo":'
-		# disable signatures
-		-e '/CONFIG_MODULE_SIG/d'
-		-e '/CONFIG_SECURITY_LOCKDOWN/d'
 	)
-	#use abi_x86_x32 || config_tweaks+=(
-	#	-e '/CONFIG_X86_X32/s:.*:CONFIG_X86_X32=y:'
+	#use deadline && config_tweaks+=(
+	#	-e '/CONFIG_DEBUG_INFO/s:.*:CONFIG_DEBUG_INFO=y:'
 	#)
-	use debug || config_tweaks+=(
+	use debug && config_tweaks+=(
 		-e '/CONFIG_DEBUG_INFO/s:.*:CONFIG_DEBUG_INFO=y:'
+	)
+	use systemd && config_tweaks+=(
+		'$ a CONFIG_GENTOO_LINUX_INIT_SCRIPT=n'
+		'$ a CONFIG_GENTOO_LINUX_INIT_SYSTEMD=y'
 	)
 	sed -i "${config_tweaks[@]}" .config || die
 }
