@@ -1,2 +1,11 @@
+#todo:
+#linux xanmod > linux low latency
+#linux zen
+#best of 4.*:
+#linux 4.19
+#best of 5.*:
+#linux 5.1
+#deadline scheduler
+#xfs>ext4>btrfs
 *3.12.72
 ::gentoo	base ebuild
