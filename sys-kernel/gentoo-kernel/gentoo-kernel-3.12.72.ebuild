@@ -6,67 +6,54 @@ EAPI=7
 inherit kernel-build
 
 MY_P=linux-${PV}
-GENPATCHES_P=genpatches-${PV%.*}-93
-AMD64_CONFIG_VER=4.19.92-arch1
-AMD64_CONFIG_HASH=bf97de6a2e405659aaad4c251b7f0bb48d5ed3c9
+#i know.... i know..... the versioning is slightly wrong
+GENPATCHES_P=https://dev.gentoo.org/~mpagano/genpatches/tarballs/genpatches-3.12-71
+CONFIG_VER=linux-3.10.45-arch1.amd64.config
+CONFIG_HASH=da3f71839fe67a897cd61c03f1347059a2079e69
 
 DESCRIPTION="Linux kernel built with Gentoo patches"
 HOMEPAGE="https://www.kernel.org/"
 SRC_URI+=" https://cdn.kernel.org/pub/linux/kernel/v$(ver_cut 1).x/${MY_P}.tar.xz
-	https://dev.gentoo.org/~mpagano/genpatches/tarballs/${GENPATCHES_P}.base.tar.xz
-	https://dev.gentoo.org/~mpagano/genpatches/tarballs/${GENPATCHES_P}.extras.tar.xz
-	https://git.archlinux.org/svntogit/packages.git/plain/trunk/config?h=packages/linux-lts&id=${AMD64_CONFIG_HASH}
-		-> linux-${AMD64_CONFIG_VER}.amd64.config"
+	${GENPATCHES_P}.base.tar.xz
+	${GENPATCHES_P}.extras.tar.xz
+	https://git.archlinux.org/svntogit/packages.git/plain/trunk/config?h=packages/linux-lts&id=${CONFIG_HASH}
+		-> ${CONFIG_VER}"
 S=${WORKDIR}/${MY_P}
 
 LICENSE="GPL-2"
-KEYWORDS="~amd64"
+KEYWORDS="amd64"
+IUSE="abi_x86_x32 debug"
 
 RDEPEND="
 	!sys-kernel/vanilla-kernel:${SLOT}
 	!sys-kernel/vanilla-kernel-bin:${SLOT}"
 
 pkg_pretend() {
-	mount-boot_pkg_pretend
-
-	ewarn "This is an experimental package.  The built kernel and/or initramfs"
-	ewarn "may not work at all or fail with your bootloader configuration.  Please"
-	ewarn "make sure to keep a backup kernel available before testing it."
+	kernel-install_pkg_pretend
 }
 
 src_prepare() {
 	local PATCHES=(
 		# meh, genpatches have no directory
-		# (skip patch release patches, we just fetch newer sources)
-		"${WORKDIR}"/[2-9]*.patch
+		"${WORKDIR}"/*.patch
 	)
 	default
 
 	# prepare the default config
-	case ${ARCH} in
-		amd64)
-			cp "${DISTDIR}"/linux-${AMD64_CONFIG_VER}.amd64.config .config || die
-			;;
-		x86)
-			cp "${DISTDIR}"/linux-${I686_CONFIG_VER}.i686.config .config || die
-			;;
-		*)
-			die "Unsupported arch ${ARCH}"
-			;;
-	esac
+	cp "${DISTDIR}"/${CONFIG_VER} .config || die
 
 	local config_tweaks=(
 		# shove arch under the carpet!
 		-e 's:^CONFIG_DEFAULT_HOSTNAME=:&"gentoo":'
-		# we do support x32
-		-e '/CONFIG_X86_X32/s:.*:CONFIG_X86_X32=y:'
 		# disable signatures
 		-e '/CONFIG_MODULE_SIG/d'
 		-e '/CONFIG_SECURITY_LOCKDOWN/d'
-		# disable compression to allow stripping
-		-e '/CONFIG_MODULE_COMPRESS/d'
-		# disable gcc plugins to unbreak distcc
-		-e '/CONFIG_GCC_PLUGIN_STRUCTLEAK/d'
+	)
+	#use abi_x86_x32 || config_tweaks+=(
+	#	-e '/CONFIG_X86_X32/s:.*:CONFIG_X86_X32=y:'
+	#)
+	use debug || config_tweaks+=(
+		-e '/CONFIG_DEBUG_INFO/s:.*:CONFIG_DEBUG_INFO=y:'
 	)
 	sed -i "${config_tweaks[@]}" .config || die
 }
