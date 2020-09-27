@@ -96,12 +96,8 @@ src_prepare() {
 
 src_compile() {
 	kernel-build_src_compile
-	die
-}
-
-src_install() {
-	echo "${WORKDIR} FIRMWARE REMOVAL PHASE"
 	local firmdir="${WORKDIR}/build/firmware/"
+	local firmdir2="${S}/firmware/"
 	local firmrm=(
 		"${firmdir}"mts_cdma.fw
 		"${firmdir}"mts_gsm.fw
@@ -190,7 +186,93 @@ src_install() {
 		"${firmdir}"kaweth/trigger_code_fix.bin
 		"${firmdir}"keyspan_pda/keyspan_pda.fw
 		"${firmdir}"keyspan_pda/xircom_pgs.fw
+		"${firmdir2}"mts_cdma.fw
+		"${firmdir2}"mts_gsm.fw
+		"${firmdir2}"mts_edge.fw
+		"${firmdir2}"bnx2x/bnx2x-e1-6.2.9.0.fw
+		"${firmdir2}"bnx2x/bnx2x-e1h-6.2.9.0.fw
+		"${firmdir2}"bnx2x/bnx2x-e2-6.2.9.0.fw
+		"${firmdir2}"bnx2/bnx2-mips-09-6.2.1a.fw
+		"${firmdir2}"bnx2/bnx2-rv2p-09-6.0.17.fw
+		"${firmdir2}"bnx2/bnx2-rv2p-09ax-6.0.17.fw
+		"${firmdir2}"bnx2/bnx2-mips-06-6.2.1.fw
+		"${firmdir2}"bnx2/bnx2-rv2p-06-6.0.15.fw
+		"${firmdir2}"cxgb3/t3b_psram-1.1.0.bin
+		"${firmdir2}"cxgb3/t3c_psram-1.1.0.bin
+		"${firmdir2}"cxgb3/ael2005_opt_edc.bin
+		"${firmdir2}"cxgb3/ael2005_twx_edc.bin
+		"${firmdir2}"cxgb3/ael2020_twx_edc.bin
+		"${firmdir2}"matrox/g200_warp.fw
+		"${firmdir2}"matrox/g400_warp.fw
+		"${firmdir2}"r128/r128_cce.bin
+		"${firmdir2}"radeon/R100_cp.bin
+		"${firmdir2}"radeon/R200_cp.bin
+		"${firmdir2}"radeon/R300_cp.bin
+		"${firmdir2}"radeon/R420_cp.bin
+		"${firmdir2}"radeon/RS690_cp.bin
+		"${firmdir2}"radeon/RS600_cp.bin
+		"${firmdir2}"radeon/R520_cp.bin
+		"${firmdir2}"radeon/R600_pfp.bin
+		"${firmdir2}"radeon/R600_me.bin
+		"${firmdir2}"radeon/RV610_pfp.bin
+		"${firmdir2}"radeon/RV610_me.bin
+		"${firmdir2}"radeon/RV630_pfp.bin
+		"${firmdir2}"radeon/RV630_me.bin
+		"${firmdir2}"radeon/RV620_pfp.bin
+		"${firmdir2}"radeon/RV620_me.bin
+		"${firmdir2}"radeon/RV635_pfp.bin
+		"${firmdir2}"radeon/RV635_me.bin
+		"${firmdir2}"radeon/RV670_pfp.bin
+		"${firmdir2}"radeon/RV670_me.bin
+		"${firmdir2}"radeon/RS780_pfp.bin
+		"${firmdir2}"radeon/RS780_me.bin
+		"${firmdir2}"radeon/RV770_pfp.bin
+		"${firmdir2}"radeon/RV770_me.bin
+		"${firmdir2}"radeon/RV730_pfp.bin
+		"${firmdir2}"radeon/RV730_me.bin
+		"${firmdir2}"radeon/RV710_pfp.bin
+		"${firmdir2}"radeon/RV710_me.bin
+		"${firmdir2}"av7110/bootcode.bin
+		"${firmdir2}"e100/d101m_ucode.bin
+		"${firmdir2}"e100/d101s_ucode.bin
+		"${firmdir2}"e100/d102e_ucode.bin
+		"${firmdir2}"cis/LA-PCM.cis
+		"${firmdir2}"cis/PCMLM28.cis
+		"${firmdir2}"cis/DP83903.cis
+		"${firmdir2}"cis/NE2K.cis
+		"${firmdir2}"cis/tamarack.cis
+		"${firmdir2}"cis/PE-200.cis
+		"${firmdir2}"cis/PE520.cis
+		"${firmdir2}"cis/3CXEM556.cis
+		"${firmdir2}"cis/3CCFEM556.cis
+		"${firmdir2}"cis/MT5634ZLX.cis
+		"${firmdir2}"cis/RS-COM-2P.cis
+		"${firmdir2}"cis/COMpad2.cis
+		"${firmdir2}"cis/COMpad4.cis
+		"${firmdir2}"cis/SW_555_SER.cis
+		"${firmdir2}"cis/SW_7xx_SER.cis
+		"${firmdir2}"cis/SW_8xx_SER.cis
+		"${firmdir2}"advansys/mcode.bin
+		"${firmdir2}"advansys/38C1600.bin
+		"${firmdir2}"advansys/3550.bin
+		"${firmdir2}"advansys/38C0800.bin
+		"${firmdir2}"qlogic/1040.bin
+		"${firmdir2}"qlogic/1280.bin
+		"${firmdir2}"qlogic/12160.bin
+		"${firmdir2}"tehuti/bdx.bin
+		"${firmdir2}"tigon/tg3.bin
+		"${firmdir2}"tigon/tg3_tso.bin
+		"${firmdir2}"tigon/tg3_tso5.bin
+		"${firmdir2}"3com/typhoon.bin
+		"${firmdir2}"emi26/loader.fw
+		"${firmdir2}"emi26/firmware.fw
+		"${firmdir2}"emi26/bitstream.fw
+		"${firmdir2}"kaweth/new_code.bin
+		"${firmdir2}"kaweth/trigger_code.bin
+		"${firmdir2}"kaweth/new_code_fix.bin
+		"${firmdir2}"kaweth/trigger_code_fix.bin
+		"${firmdir2}"keyspan_pda/keyspan_pda.fw
+		"${firmdir2}"keyspan_pda/xircom_pgs.fw
 	)
 	rm "${firmrm[@]}" || die "file collision detected"
-	kernel-build_src_install
 }
