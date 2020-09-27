@@ -87,9 +87,9 @@ src_prepare() {
 	use debug && config_tweaks+=(
 		-e '/CONFIG_DEBUG_INFO/s:.*:CONFIG_DEBUG_INFO=y:'
 	)
-	use systemd && config_tweaks+=(
-		'$ a CONFIG_GENTOO_LINUX_INIT_SCRIPT=n'
-		'$ a CONFIG_GENTOO_LINUX_INIT_SYSTEMD=y'
-	)
 	sed -i "${config_tweaks[@]}" .config || die
+	if use systemd; then
+		echo '/$/i CONFIG_GENTOO_LINUX_INIT_SCRIPT=n' >> .config
+		echo '/$/i CONFIG_GENTOO_LINUX_INIT_SYSTEMD=y' >> .config
+	fi
 }
