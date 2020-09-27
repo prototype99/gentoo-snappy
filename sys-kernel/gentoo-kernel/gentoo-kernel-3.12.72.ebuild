@@ -94,6 +94,11 @@ src_prepare() {
 	fi
 }
 
+src_compile() {
+	kernel-build_src_compile
+	die
+}
+
 src_install() {
 	echo "${WORKDIR} FIRMWARE REMOVAL PHASE"
 	local firmdir="${WORKDIR}/build/firmware/"
