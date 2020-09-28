@@ -94,10 +94,9 @@ src_prepare() {
 	fi
 }
 
-src_compile() {
-	kernel-build_src_compile
-	local firmdir="${WORKDIR}/build/firmware/"
-	local firmdir2="${S}/firmware/"
+pkg_postinst() {
+	kernel-build_pkg_postinst
+	local firmdir="${D}/lib/firmware/"
 	local firmrm=(
 		"${firmdir}"mts_cdma.fw
 		"${firmdir}"mts_gsm.fw
@@ -186,93 +185,6 @@ src_compile() {
 		"${firmdir}"kaweth/trigger_code_fix.bin
 		"${firmdir}"keyspan_pda/keyspan_pda.fw
 		"${firmdir}"keyspan_pda/xircom_pgs.fw
-		"${firmdir2}"mts_cdma.fw.ihex
-		"${firmdir2}"mts_gsm.fw.ihex
-		"${firmdir2}"mts_edge.fw.ihex
-		"${firmdir2}"bnx2x/bnx2x-e1-6.2.9.0.fw.ihex
-		"${firmdir2}"bnx2x/bnx2x-e1h-6.2.9.0.fw.ihex
-		"${firmdir2}"bnx2x/bnx2x-e2-6.2.9.0.fw.ihex
-		"${firmdir2}"bnx2/bnx2-mips-09-6.2.1a.fw.ihex
-		"${firmdir2}"bnx2/bnx2-rv2p-09-6.0.17.fw.ihex
-		"${firmdir2}"bnx2/bnx2-rv2p-09ax-6.0.17.fw.ihex
-		"${firmdir2}"bnx2/bnx2-mips-06-6.2.1.fw.ihex
-		"${firmdir2}"bnx2/bnx2-rv2p-06-6.0.15.fw.ihex
-		"${firmdir2}"cxgb3/t3b_psram-1.1.0.bin.ihex
-		"${firmdir2}"cxgb3/t3c_psram-1.1.0.bin.ihex
-		"${firmdir2}"cxgb3/ael2005_opt_edc.bin.ihex
-		"${firmdir2}"cxgb3/ael2005_twx_edc.bin.ihex
-		"${firmdir2}"cxgb3/ael2020_twx_edc.bin.ihex
-		"${firmdir2}"matrox/g200_warp.H16
-		"${firmdir2}"matrox/g400_warp.H16
-		"${firmdir2}"r128/r128_cce.bin.ihex
-		"${firmdir2}"radeon/R100_cp.bin.ihex
-		"${firmdir2}"radeon/R200_cp.bin.ihex
-		"${firmdir2}"radeon/R300_cp.bin.ihex
-		"${firmdir2}"radeon/R420_cp.bin.ihex
-		"${firmdir2}"radeon/RS690_cp.bin.ihex
-		"${firmdir2}"radeon/RS600_cp.bin.ihex
-		"${firmdir2}"radeon/R520_cp.bin.ihex
-		"${firmdir2}"radeon/R600_pfp.bin.ihex
-		"${firmdir2}"radeon/R600_me.bin.ihex
-		"${firmdir2}"radeon/RV610_pfp.bin.ihex
-		"${firmdir2}"radeon/RV610_me.bin.ihex
-		"${firmdir2}"radeon/RV630_pfp.bin.ihex
-		"${firmdir2}"radeon/RV630_me.bin.ihex
-		"${firmdir2}"radeon/RV620_pfp.bin.ihex
-		"${firmdir2}"radeon/RV620_me.bin.ihex
-		"${firmdir2}"radeon/RV635_pfp.bin.ihex
-		"${firmdir2}"radeon/RV635_me.bin.ihex
-		"${firmdir2}"radeon/RV670_pfp.bin.ihex
-		"${firmdir2}"radeon/RV670_me.bin.ihex
-		"${firmdir2}"radeon/RS780_pfp.bin.ihex
-		"${firmdir2}"radeon/RS780_me.bin.ihex
-		"${firmdir2}"radeon/RV770_pfp.bin.ihex
-		"${firmdir2}"radeon/RV770_me.bin.ihex
-		"${firmdir2}"radeon/RV730_pfp.bin.ihex
-		"${firmdir2}"radeon/RV730_me.bin.ihex
-		"${firmdir2}"radeon/RV710_pfp.bin.ihex
-		"${firmdir2}"radeon/RV710_me.bin.ihex
-		"${firmdir2}"av7110/bootcode.bin.ihex
-		"${firmdir2}"e100/d101m_ucode.bin.ihex
-		"${firmdir2}"e100/d101s_ucode.bin.ihex
-		"${firmdir2}"e100/d102e_ucode.bin.ihex
-		"${firmdir2}"cis/LA-PCM.cis.ihex
-		"${firmdir2}"cis/PCMLM28.cis.ihex
-		"${firmdir2}"cis/DP83903.cis.ihex
-		"${firmdir2}"cis/NE2K.cis.ihex
-		"${firmdir2}"cis/tamarack.cis.ihex
-		"${firmdir2}"cis/PE-200.cis.ihex
-		"${firmdir2}"cis/PE520.cis.ihex
-		"${firmdir2}"cis/3CXEM556.cis.ihex
-		"${firmdir2}"cis/3CCFEM556.cis.ihex
-		"${firmdir2}"cis/MT5634ZLX.cis.ihex
-		"${firmdir2}"cis/RS-COM-2P.cis.ihex
-		"${firmdir2}"cis/COMpad2.cis.ihex
-		"${firmdir2}"cis/COMpad4.cis.ihex
-		"${firmdir2}"cis/SW_555_SER.cis.ihex
-		"${firmdir2}"cis/SW_7xx_SER.cis.ihex
-		"${firmdir2}"cis/SW_8xx_SER.cis.ihex
-		"${firmdir2}"advansys/mcode.bin.ihex
-		"${firmdir2}"advansys/38C1600.bin.ihex
-		"${firmdir2}"advansys/3550.bin.ihex
-		"${firmdir2}"advansys/38C0800.bin.ihex
-		"${firmdir2}"qlogic/1040.bin.ihex
-		"${firmdir2}"qlogic/1280.bin.ihex
-		"${firmdir2}"qlogic/12160.bin.ihex
-		"${firmdir2}"tehuti/bdx.bin.ihex
-		"${firmdir2}"tigon/tg3.bin.ihex
-		"${firmdir2}"tigon/tg3_tso.bin.ihex
-		"${firmdir2}"tigon/tg3_tso5.bin.ihex
-		"${firmdir2}"3com/typhoon.bin.ihex
-		"${firmdir2}"emi26/loader.HEX
-		"${firmdir2}"emi26/firmware.HEX
-		"${firmdir2}"emi26/bitstream.HEX
-		"${firmdir2}"kaweth/new_code.bin.ihex
-		"${firmdir2}"kaweth/trigger_code.bin.ihex
-		"${firmdir2}"kaweth/new_code_fix.bin.ihex
-		"${firmdir2}"kaweth/trigger_code_fix.bin.ihex
-		"${firmdir2}"keyspan_pda/keyspan_pda.HEX
-		"${firmdir2}"keyspan_pda/xircom_pgs.HEX
 	)
 	rm "${firmrm[@]}" || die "file collision detected"
 }
