@@ -90,7 +90,7 @@ src_prepare() {
 	)
 	sed -i "${config_tweaks[@]}" .config || die
 	if use systemd; then
-		echo '/$/i CONFIG_GENTOO_LINUX_INIT_SCRIPT=n' >> .config
-		echo '/$/i CONFIG_GENTOO_LINUX_INIT_SYSTEMD=y' >> .config
+		echo 'CONFIG_GENTOO_LINUX_INIT_SCRIPT=n' >> .config
+		echo 'CONFIG_GENTOO_LINUX_INIT_SYSTEMD=y' >> .config
 	fi
 }
