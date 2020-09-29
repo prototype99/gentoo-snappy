@@ -81,6 +81,7 @@ src_prepare() {
 	local config_tweaks=(
 		# shove arch under the carpet!
 		-e 's:^CONFIG_DEFAULT_HOSTNAME=:&"gentoo":'
+		-e '/CONFIG_64BIT/s:.*:CONFIG_64BIT=y:'
 	)
 	#use deadline && config_tweaks+=(
 	#	-e '/CONFIG_DEBUG_INFO/s:.*:CONFIG_DEBUG_INFO=y:'
