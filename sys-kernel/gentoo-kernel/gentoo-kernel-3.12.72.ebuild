@@ -22,7 +22,7 @@ S=${WORKDIR}/${MY_P}
 
 LICENSE="GPL-2"
 KEYWORDS="amd64"
-IUSE="+deadline debug fbcondec infiniband pax pogoplug selinux systemd thinkpad-backlight thinkpad-micled"
+IUSE="+deadline debug fbcondec infiniband pax pogoplug selinux systemd thinkpad-backlight thinkpad-micled +xfs"
 
 RDEPEND="
 	!sys-kernel/vanilla-kernel:${SLOT}
@@ -86,6 +86,15 @@ src_prepare() {
 	use debug && config_tweaks+=(
 		-e '/CONFIG_DEBUG_INFO/s:.*:CONFIG_DEBUG_INFO=y:'
 	)
+	if use xfs; then
+		config_tweaks+=(
+			-e '/CONFIG_XFS_FS/s:.*:CONFIG_XFS_FS=y:'
+		)
+	else
+		config_tweaks+=(
+			-e '/CONFIG_XFS_FS/s:.*:CONFIG_XFS_FS=n:'
+		)
+	fi
 	sed -i "${config_tweaks[@]}" .config || die
 	if use systemd; then
 		echo 'CONFIG_GENTOO_LINUX_INIT_SCRIPT=n' >> .config

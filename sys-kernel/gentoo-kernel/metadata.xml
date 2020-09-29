@@ -14,5 +14,6 @@
 		<flag name='systemd'>use systemd for the init system</flag>
 		<flag name='thinkpad-backlight'>add fix for lenovo thinkpad backlights</flag>
 		<flag name='thinkpad-micled'>add support for the thinkpad microphone led</flag>
+		<flag name='xfs'>add support for the xfs filesystem</flag>
 	</use>
 </pkgmetadata>
