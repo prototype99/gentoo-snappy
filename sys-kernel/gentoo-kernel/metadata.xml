@@ -6,7 +6,6 @@
 		<name>Distribution Kernel Project</name>
 	</maintainer>
 	<use>
-		<flag name='deadline'>use the deadline I/O scheduler</flag>
 		<flag name='fbcondec'>add support for fbcondecor, which allows you to add backgrounds to framebuffers</flag>
 		<flag name='initramfs'>Build initramfs along with the kernel.</flag>
 		<flag name='pax'>patch in some sort of pax/hardened xattr stuff</flag>
