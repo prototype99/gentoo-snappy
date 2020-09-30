@@ -22,7 +22,7 @@ S=${WORKDIR}/${MY_P}
 
 LICENSE="GPL-2"
 KEYWORDS="amd64"
-IUSE="amd ath9k btrfs debug +efi ext4 +fat fbcondec +fuse infiniband intel nilfs2 pax pogoplug reiserfs selinux systemd thinkpad-backlight thinkpad-micled threads-4 threads-16 wireless +xfs"
+IUSE="amd ath9k btrfs debug +efi ext4 +fat fbcondec +fuse infiniband intel pax pogoplug selinux systemd thinkpad-backlight thinkpad-micled threads-4 threads-16 wireless +xfs"
 
 REQUIRED_USE="
 ^^ ( amd intel )
