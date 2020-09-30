@@ -45,9 +45,14 @@ src_prepare() {
 		"${WORKDIR}"/2900_dev-root-proc-mount-fix.patch
 		"${WORKDIR}"/4567_distro-Gentoo-Kconfig.patch
 	)
-	gcc-major-version < 9 || PATCHES+=(
-		"${FILESDIR}"/gcc9.patch
-	)
+	if ! gcc-major-version < 8; then
+		PATCHES+=(
+			"${FILESDIR}"/gcc8.patch
+		)
+		gcc-major-version < 9 || PATCHES+=(
+			"${FILESDIR}"/gcc9.patch
+		)
+	fi
 	if use fbcondec; then
 		PATCHES+=(
 			"${WORKDIR}"/4200_fbcondecor-0.9.6.patch
