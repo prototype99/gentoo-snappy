@@ -6,7 +6,10 @@
 		<name>Distribution Kernel Project</name>
 	</maintainer>
 	<use>
+		<flag name='btrfs'>add support for the btrfs filesystem</flag>
+		<flag name='ext4'>add support for the ext4 filesystem</flag>
 		<flag name='fbcondec'>add support for fbcondecor, which allows you to add backgrounds to framebuffers</flag>
+		<flag name='fuse'>add support for the fuse library (used for userspace filesystems)</flag>
 		<flag name='initramfs'>Build initramfs along with the kernel.</flag>
 		<flag name='pax'>patch in some sort of pax/hardened xattr stuff</flag>
 		<flag name='pogoplug'>add support for the pogoplug filesharing device</flag>
@@ -14,6 +17,7 @@
 		<flag name='systemd'>use systemd for the init system</flag>
 		<flag name='thinkpad-backlight'>add fix for lenovo thinkpad backlights</flag>
 		<flag name='thinkpad-micled'>add support for the thinkpad microphone led</flag>
+		<flag name='wireless'>add support for wireless networking, including the rf (wifi) switch, as seen on some laptops</flag>
 		<flag name='xfs'>add support for the xfs filesystem</flag>
 	</use>
 </pkgmetadata>
