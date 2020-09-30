@@ -41,6 +41,7 @@ sys-apps/portage -xattr
 sys-apps/world archive latex screenshot sublime
 sys-devel/clang -python_single_target_python2_7
 sys-devel/gcc -jit
+sys-kernel/gentoo-kernel wireless
 sys-libs/libblockdev -python_single_target_python2_7
 sys-libs/pam cracklib
 virtual/linux-sources debug
