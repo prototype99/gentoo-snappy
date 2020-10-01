@@ -1,8 +1,27 @@
+From c65c4831656582f2858c2187cc1ea3d1f04dc8bb Mon Sep 17 00:00:00 2001
+From: seirra <sophietheopossum@yandex.com>
+Date: Wed, 30 Sep 2020 21:50:44 +0100
+Subject: [PATCH] remove gcc8 warning
+
+---
+ fs/exec.c             | 15 +++++++--------
+ include/linux/sched.h |  6 +++++-
+ 2 files changed, 12 insertions(+), 9 deletions(-)
+
 diff --git a/fs/exec.c b/fs/exec.c
-index 6be2aa0ab26f..156f56acfe8e 100644
+index 8875dd10ae7a..c7259521a55d 100644
 --- a/fs/exec.c
 +++ b/fs/exec.c
-@@ -1216,15 +1216,14 @@  static int de_thread(struct task_struct *tsk)
+@@ -19,7 +19,7 @@
+  * current->executable is only used by the procfs.  This allows a dispatch
+  * table to check for several different types  of binary formats.  We keep
+  * trying until we recognize the file or we run out of supported binary
+- * formats. 
++ * formats.
+  */
+ 
+ #include <linux/slab.h>
+@@ -1025,15 +1025,14 @@ killed:
  	return -EAGAIN;
  }
  
@@ -21,14 +40,34 @@ index 6be2aa0ab26f..156f56acfe8e 100644
  
  /*
   * These functions flushes out all traces of the currently running executable
-diff --git a/include/linux/sched.h b/include/linux/sched.h
-index 21991d668d35..5124ba709830 100644
---- a/include/linux/sched.h
-+++ b/include/linux/sched.h
-@@ -1503,7 +1503,11 @@  static inline void set_task_comm(struct task_struct *tsk, const char *from)
- 	__set_task_comm(tsk, from, false);
+@@ -1143,7 +1142,7 @@ void setup_new_exec(struct linux_binprm * bprm)
+ 	   group */
+ 
+ 	current->self_exec_id++;
+-			
++
+ 	flush_signal_handlers(current, 0);
+ 	do_close_on_exec(current->files);
+ }
+@@ -1269,8 +1268,8 @@ static int check_unsafe_exec(struct linux_binprm *bprm)
+ 	return res;
  }
  
+-/* 
+- * Fill the binprm structure from the inode. 
++/*
++ * Fill the binprm structure from the inode.
+  * Check permissions, then read the first 128 (BINPRM_BUF_SIZE) bytes
+  *
+  * This may be called multiple times for binary chains (scripts for example).
+diff --git a/include/linux/sched.h b/include/linux/sched.h
+index e27baeeda3f4..0b3708a25477 100644
+--- a/include/linux/sched.h
++++ b/include/linux/sched.h
+@@ -2127,7 +2127,11 @@ struct task_struct *fork_idle(int);
+ extern pid_t kernel_thread(int (*fn)(void *), void *arg, unsigned long flags);
+ 
+ extern void set_task_comm(struct task_struct *tsk, char *from);
 -extern char *get_task_comm(char *to, struct task_struct *tsk);
 +extern char *__get_task_comm(char *to, size_t len, struct task_struct *tsk);
 +#define get_task_comm(buf, tsk) ({			\
@@ -38,3 +77,6 @@ index 21991d668d35..5124ba709830 100644
  
  #ifdef CONFIG_SMP
  void scheduler_ipi(void);
+-- 
+2.26.2
+
