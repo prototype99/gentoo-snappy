@@ -1,14 +1,14 @@
-From 3d1126ddd086df66ef73531e2bed01296f5b5410 Mon Sep 17 00:00:00 2001
+From 6da39d70045d80634e7afc0941c6936f2d9adfe7 Mon Sep 17 00:00:00 2001
 From: seirra <sophietheopossum@yandex.com>
 Date: Fri, 2 Oct 2020 17:15:36 +0100
 Subject: [PATCH] make gcc 9.1 compatible
 
 ---
- arch/x86/include/asm/bootparam_utils.h | 64 ++++++++++++++++++++------
- 1 file changed, 49 insertions(+), 15 deletions(-)
+ arch/x86/include/asm/bootparam_utils.h | 62 +++++++++++++++++++-------
+ 1 file changed, 47 insertions(+), 15 deletions(-)
 
 diff --git a/arch/x86/include/asm/bootparam_utils.h b/arch/x86/include/asm/bootparam_utils.h
-index 4a8cb8d7cbd5..82b1890a94cc 100644
+index 4a8cb8d7cbd5..b8b33f88b500 100644
 --- a/arch/x86/include/asm/bootparam_utils.h
 +++ b/arch/x86/include/asm/bootparam_utils.h
 @@ -17,9 +17,23 @@
@@ -36,7 +36,7 @@ index 4a8cb8d7cbd5..82b1890a94cc 100644
  	 * IMPORTANT NOTE TO BOOTLOADER AUTHORS: do not simply clear
  	 * this field.  The purpose of this field is to guarantee
  	 * compliance with the x86 boot spec located in
-@@ -34,20 +48,40 @@ static void sanitize_boot_params(struct boot_params *boot_params)
+@@ -34,20 +48,38 @@ static void sanitize_boot_params(struct boot_params *boot_params)
  	 * problems again.
  	 */
  	if (boot_params->sentinel) {
