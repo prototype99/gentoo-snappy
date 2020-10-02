@@ -55,13 +55,11 @@ src_prepare() {
 			)
 			if gcc-major-version < 10; then
 				gcc-minor-version > 0 && PATCHES+=(
-					"${FILESDIR}"/gcc9.1a.patch
-					"${FILESDIR}"/gcc9.1b.patch
+					"${FILESDIR}"/3.12gcc9.1.patch
 				)
 			else
 				PATCHES+=(
-					"${FILESDIR}"/gcc9.1a.patch
-					"${FILESDIR}"/gcc9.1b.patch
+					"${FILESDIR}"/3.12gcc9.1.patch
 				)
 			fi
 		fi
