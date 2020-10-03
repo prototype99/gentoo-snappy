@@ -120,7 +120,6 @@ src_prepare() {
 		-e '/CONFIG_BATMAN_ADV/s:.*:CONFIG_BATMAN_ADV=n:'
 		-e '/CONFIG_BLK_DEV_INITRD/s:.*:CONFIG_BLK_DEV_INITRD=n:'
 		-e '/CONFIG_BLK_DEV_SD/s:.*:CONFIG_BLK_DEV_SD=n:'
-		-e '/CONFIG_BLK_DEV_ST/s:.*:CONFIG_BLK_DEV_ST=n:'
 		-e '/CONFIG_BLK_DEV_SR/s:.*:CONFIG_BLK_DEV_SR=n:'
 		-e '/CONFIG_CARL9170/s:.*:CONFIG_CARL9170=n:'
 		-e '/CONFIG_CEPH_FS/s:.*:CONFIG_CEPH_FS=n:'
@@ -331,6 +330,7 @@ src_prepare() {
 		)
 	fi
 	sed -i "${config_tweaks[@]}" .config || die
+	echo 'CONFIG_BLK_DEV_ST=n' >> .config
 	if use systemd; then
 		echo 'CONFIG_GENTOO_LINUX_INIT_SCRIPT=n' >> .config
 		echo 'CONFIG_GENTOO_LINUX_INIT_SYSTEMD=y' >> .config
