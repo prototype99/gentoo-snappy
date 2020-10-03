@@ -1,0 +1,35 @@
+From b6b16c77f618eac6e2f511a7a3989658c6702bd1 Mon Sep 17 00:00:00 2001
+From: seirra <sophietheopossum@yandex.com>
+Date: Sat, 3 Oct 2020 23:05:59 +0100
+Subject: [PATCH] make gcc7+ compatible
+
+---
+ include/net/iw_handler.h | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/include/net/iw_handler.h b/include/net/iw_handler.h
+index 5d5a6a4732ef..35760eeead3d 100644
+--- a/include/net/iw_handler.h
++++ b/include/net/iw_handler.h
+@@ -130,7 +130,7 @@
+  * Functions prototype uses union iwreq_data
+  * -----------------------------------------
+  * Some would have preferred functions defined this way :
+- *	static int mydriver_ioctl_setrate(struct net_device *dev, 
++ *	static int mydriver_ioctl_setrate(struct net_device *dev,
+  *					  long rate, int auto)
+  * 1) The kernel code doesn't "validate" the content of iwreq_data, and
+  * can't do it (different hardware may have different notion of what a
+@@ -551,7 +551,8 @@ iwe_stream_add_point(struct iw_request_info *info, char *stream, char *ends,
+ 		memcpy(stream + lcp_len,
+ 		       ((char *) &iwe->u) + IW_EV_POINT_OFF,
+ 		       IW_EV_POINT_PK_LEN - IW_EV_LCP_PK_LEN);
+-		memcpy(stream + point_len, extra, iwe->u.data.length);
++		if (iwe->u.data.length && extra)
++				memcpy(stream + point_len, extra, iwe->u.data.length);
+ 		stream += event_len;
+ 	}
+ 	return stream;
+-- 
+2.26.2
+
