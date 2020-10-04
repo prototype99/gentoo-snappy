@@ -51,6 +51,7 @@ src_prepare() {
 		)
 		if gcc-major-version > 7; then
 			PATCHES+=(
+				"${FILESDIR}"/gcc8.patch
 				"${FILESDIR}"/3.12.70gcc8.patch
 			)
 			if gcc-major-version > 8; then
