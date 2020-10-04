@@ -1,27 +1,18 @@
-From c65c4831656582f2858c2187cc1ea3d1f04dc8bb Mon Sep 17 00:00:00 2001
+From ecd9135d2ec6cfd83cb26ee62eccf3445f45aeff Mon Sep 17 00:00:00 2001
 From: seirra <sophietheopossum@yandex.com>
 Date: Wed, 30 Sep 2020 21:50:44 +0100
 Subject: [PATCH] remove gcc8 warning
 
 ---
- fs/exec.c             | 15 +++++++--------
+ fs/exec.c             | 13 ++++++-------
  include/linux/sched.h |  6 +++++-
- 2 files changed, 12 insertions(+), 9 deletions(-)
+ 2 files changed, 11 insertions(+), 8 deletions(-)
 
 diff --git a/fs/exec.c b/fs/exec.c
-index 8875dd10ae7a..c7259521a55d 100644
+index f33c0fff702c..b48429fbb698 100644
 --- a/fs/exec.c
 +++ b/fs/exec.c
-@@ -19,7 +19,7 @@
-  * current->executable is only used by the procfs.  This allows a dispatch
-  * table to check for several different types  of binary formats.  We keep
-  * trying until we recognize the file or we run out of supported binary
-- * formats. 
-+ * formats.
-  */
- 
- #include <linux/slab.h>
-@@ -1025,15 +1025,14 @@ killed:
+@@ -1028,15 +1028,14 @@ killed:
  	return -EAGAIN;
  }
  
@@ -40,17 +31,17 @@ index 8875dd10ae7a..c7259521a55d 100644
  
  /*
   * These functions flushes out all traces of the currently running executable
-@@ -1143,7 +1142,7 @@ void setup_new_exec(struct linux_binprm * bprm)
+@@ -1153,7 +1152,7 @@ void setup_new_exec(struct linux_binprm * bprm)
  	   group */
  
  	current->self_exec_id++;
 -			
 +
  	flush_signal_handlers(current, 0);
- 	do_close_on_exec(current->files);
  }
-@@ -1269,8 +1268,8 @@ static int check_unsafe_exec(struct linux_binprm *bprm)
- 	return res;
+ EXPORT_SYMBOL(setup_new_exec);
+@@ -1325,8 +1324,8 @@ static void bprm_fill_uid(struct linux_binprm *bprm)
+ 	}
  }
  
 -/* 
@@ -61,10 +52,10 @@ index 8875dd10ae7a..c7259521a55d 100644
   *
   * This may be called multiple times for binary chains (scripts for example).
 diff --git a/include/linux/sched.h b/include/linux/sched.h
-index e27baeeda3f4..0b3708a25477 100644
+index 2bc93e252fef..b85bf394825a 100644
 --- a/include/linux/sched.h
 +++ b/include/linux/sched.h
-@@ -2127,7 +2127,11 @@ struct task_struct *fork_idle(int);
+@@ -2162,7 +2162,11 @@ struct task_struct *fork_idle(int);
  extern pid_t kernel_thread(int (*fn)(void *), void *arg, unsigned long flags);
  
  extern void set_task_comm(struct task_struct *tsk, char *from);
