@@ -236,6 +236,7 @@ src_prepare() {
 		-e '/CONFIG_W35UND/s:.*:CONFIG_W35UND=n:'
 		-e '/CONFIG_VT665/s:.*:CONFIG_VT6655=n:'
 		-e '/CONFIG_VT665/s:.*:CONFIG_VT6656=n:'
+		-e '/CONFIG_WATCHDOG/s:.*:CONFIG_WATCHDOG=n:'
 		-e '/CONFIG_WIL6210/s:.*:CONFIG_WIL6210=n:'
 		-e '/CONFIG_X86/s:.*:CONFIG_X86=n:'
 	)
