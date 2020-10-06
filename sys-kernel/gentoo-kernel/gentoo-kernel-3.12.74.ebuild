@@ -13,7 +13,7 @@ CONFIG_HASH=da3f71839fe67a897cd61c03f1347059a2079e69
 
 DESCRIPTION="Linux kernel built with Gentoo patches"
 HOMEPAGE="https://www.kernel.org/"
-SRC_URI+=" https://cdn.kernel.org/pub/linux/kernel/v$(ver_cut 1).x/${MY_P}.tar.xz
+SRC_URI+="https://cdn.kernel.org/pub/linux/kernel/v3.x/${MY_P}.tar.xz
 	${GENPATCHES_P}.base.tar.xz
 	${GENPATCHES_P}.extras.tar.xz
 	https://git.archlinux.org/svntogit/packages.git/plain/trunk/config?h=packages/linux-lts&id=${CONFIG_HASH}
