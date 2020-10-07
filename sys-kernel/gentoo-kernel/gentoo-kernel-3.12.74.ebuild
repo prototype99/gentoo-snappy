@@ -51,7 +51,9 @@ src_prepare() {
 		)
 		if gcc-major-version > 7; then
 			PATCHES+=(
-				"${FILESDIR}"/3.12.70gcc8.patch
+				"${FILESDIR}/3.12.70fs)exec.c-gcc8.patch"
+				"${FILESDIR}/3.12.73include)linux)log2.h-gcc8.patch"
+				"${FILESDIR}/3.12.59include)linux)sched.h-gcc8.patch"
 			)
 			if gcc-major-version > 8; then
 				PATCHES+=(

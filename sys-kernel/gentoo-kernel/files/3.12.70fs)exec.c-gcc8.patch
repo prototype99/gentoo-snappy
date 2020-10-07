@@ -1,0 +1,55 @@
+From b0d25575a99d3a4e0655ef6704f1b52d7067daaa Mon Sep 17 00:00:00 2001
+From: seirra <sophietheopossum@yandex.com>
+Date: Wed, 7 Oct 2020 20:30:12 +0100
+Subject: [PATCH] remove gcc8 warning
+
+---
+ fs/exec.c | 13 ++++++-------
+ 1 file changed, 6 insertions(+), 7 deletions(-)
+
+diff --git a/fs/exec.c b/fs/exec.c
+index f33c0fff702c..b48429fbb698 100644
+--- a/fs/exec.c
++++ b/fs/exec.c
+@@ -1028,15 +1028,14 @@ killed:
+ 	return -EAGAIN;
+ }
+ 
+-char *get_task_comm(char *buf, struct task_struct *tsk)
++char *__get_task_comm(char *buf, size_t buf_size, struct task_struct *tsk)
+ {
+-	/* buf must be at least sizeof(tsk->comm) in size */
+ 	task_lock(tsk);
+-	strncpy(buf, tsk->comm, sizeof(tsk->comm));
++	strncpy(buf, tsk->comm, buf_size);
+ 	task_unlock(tsk);
+ 	return buf;
+ }
+-EXPORT_SYMBOL_GPL(get_task_comm);
++EXPORT_SYMBOL_GPL(__get_task_comm);
+ 
+ /*
+  * These functions flushes out all traces of the currently running executable
+@@ -1153,7 +1152,7 @@ void setup_new_exec(struct linux_binprm * bprm)
+ 	   group */
+ 
+ 	current->self_exec_id++;
+-			
++
+ 	flush_signal_handlers(current, 0);
+ }
+ EXPORT_SYMBOL(setup_new_exec);
+@@ -1325,8 +1324,8 @@ static void bprm_fill_uid(struct linux_binprm *bprm)
+ 	}
+ }
+ 
+-/* 
+- * Fill the binprm structure from the inode. 
++/*
++ * Fill the binprm structure from the inode.
+  * Check permissions, then read the first 128 (BINPRM_BUF_SIZE) bytes
+  *
+  * This may be called multiple times for binary chains (scripts for example).
+-- 
+2.26.2
+
