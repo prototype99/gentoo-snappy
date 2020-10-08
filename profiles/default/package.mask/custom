@@ -54,7 +54,7 @@
 =virtual/notification-daemon-1337
 =virtual/notification-daemon-9999
 #lower performance
->=sys-kernel/gentoo-kernel-3.13
+>=sys-kernel/gentoo-kernel-3.17
 #no mkl
 =virtual/cblas-3.8
 #not needed at all

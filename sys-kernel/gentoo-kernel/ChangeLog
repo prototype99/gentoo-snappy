@@ -1,8 +1,10 @@
+#AUDIT?
 #todo:
 #linux xanmod > linux low latency
 #FSGSBASE patches
 #clearlinux patches
 #linux zen
+#jfs>ntfs>nilfs2>xfs>ext4>btrfs>reiserfs>ext3
 #3.12>3.16>3.17>4.9>4.15>4.20>5.2>5.3>3.18
 #linux 3.16
 #!REGULATOR_ACT8865, !REGULATOR_AXP20X, !REGULATOR_BCM590XX, !REGULATOR_LTC3589, !REGULATOR_MAX14577

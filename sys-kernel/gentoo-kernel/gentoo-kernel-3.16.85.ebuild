@@ -7,9 +7,9 @@ inherit kernel-build
 
 MY_P=linux-${PV}
 #i know.... i know..... the versioning is slightly wrong
-GENPATCHES_P=https://dev.gentoo.org/~mpagano/genpatches/tarballs/genpatches-3.12-71
-CONFIG_VER=linux-3.10.45-arch1.amd64.config
-CONFIG_HASH=da3f71839fe67a897cd61c03f1347059a2079e69
+GENPATCHES_P=https://dev.gentoo.org/~mpagano/genpatches/tarballs/genpatches-3.16-9
+CONFIG_VER=linux-3.14.48-arch1.amd64.config
+CONFIG_HASH=4a12839b0cf7c3cc5d90c04af3f0c4650f78df33
 
 DESCRIPTION="Linux kernel built with Gentoo patches"
 HOMEPAGE="https://www.kernel.org/"
@@ -73,7 +73,7 @@ src_prepare() {
 	fi
 	if use fbcondec; then
 		PATCHES+=(
-			"${WORKDIR}"/4200_fbcondecor-0.9.6.patch
+			"${WORKDIR}"/4200_fbcondecor-3.15.patch
 		)
 	fi
 	if use infiniband; then
@@ -122,6 +122,8 @@ src_prepare() {
 		-e '/CONFIG_AGP_AMD64/s:.*:CONFIG_AGP_AMD64=n:'
 		-e '/CONFIG_AGP_SIS/s:.*:CONFIG_AGP_SIS=n:'
 		-e '/CONFIG_AGP_VIA/s:.*:CONFIG_AGP_VIA=n:'
+		-e '/CONFIG_AIX_PARTITION/s:.*:CONFIG_AIX_PARTITION=n:'
+		-e '/CONFIG_ALIX/s:.*:CONFIG_ALIX=n:'
 		-e '/CONFIG_AR5523/s:.*:CONFIG_AR5523=n:'
 		-e '/CONFIG_ATA/s:.*:CONFIG_ATA=y:'
 		-e '/CONFIG_ATH5K/s:.*:CONFIG_ATH5K=n:'
@@ -129,6 +131,7 @@ src_prepare() {
 		-e '/CONFIG_ATH6KL/s:.*:CONFIG_ATH6KL=n:'
 		-e '/CONFIG_ATH9K_AHB/s:.*:CONFIG_ATH9K_AHB=n:'
 		-e '/CONFIG_ATH9K_HTC/s:.*:CONFIG_ATH9K_HTC=n:'
+		-e '/CONFIG_ATH10K/s:.*:CONFIG_ATH10K=n:'
 		-e '/CONFIG_BATMAN_ADV/s:.*:CONFIG_BATMAN_ADV=n:'
 		-e '/CONFIG_BLK_DEV_INITRD/s:.*:CONFIG_BLK_DEV_INITRD=n:'
 		-e '/CONFIG_BLK_DEV_SD/s:.*:CONFIG_BLK_DEV_SD=n:'
@@ -166,6 +169,7 @@ src_prepare() {
 		-e '/CONFIG_FEALNX/s:.*:CONFIG_FEALNX=n:'
 		-e '/CONFIG_FRAMEBUFFER_CONSOLE_ROTATION/s:.*:CONFIG_FRAMEBUFFER_CONSOLE_ROTATION=n:'
 		-e '/CONFIG_GFS2_FS/s:.*:CONFIG_GFS2_FS=n:'
+		-e '/CONFIG_HSR/s:.*:CONFIG_HSR=n:'
 		-e '/CONFIG_I8K/s:.*:CONFIG_I8K=n:'
 		-e '/CONFIG_IP1000/s:.*:CONFIG_IP1000=n:'
 		-e '/CONFIG_ISCSI_IBFT/s:.*:CONFIG_ISCSI_IBFT=n:'
@@ -175,7 +179,6 @@ src_prepare() {
 		-e '/CONFIG_JME/s:.*:CONFIG_JME=n:'
 		-e '/CONFIG_LOGO/s:.*:CONFIG_LOGO=y:'
 		-e '/CONFIG_MACINTOSH_DRIVERS/s:.*:CONFIG_MACINTOSH_DRIVERS=n:'
-		-e '/CONFIG_MICROCODE/s:.*:CONFIG_MICROCODE=y:'
 		-e '/CONFIG_NCP_FS/s:.*:CONFIG_NCP_FS=n:'
 		-e '/CONFIG_NET_CALXEDA_XGMAC/s:.*:CONFIG_NET_CALXEDA_XGMAC=n:'
 		-e '/CONFIG_NET_PACKET_ENGINE/s:.*:CONFIG_NET_PACKET_ENGINE=n:'
@@ -220,16 +223,19 @@ src_prepare() {
 		-e '/CONFIG_NET_VENDOR_XILINX/s:.*:CONFIG_NET_VENDOR_XILINX=n:'
 		-e '/CONFIG_NET_VENDOR_XIRCOM/s:.*:CONFIG_NET_VENDOR_XIRCOM=n:'
 		-e '/CONFIG_NETWORK_FILESYSTEMS/s:.*:CONFIG_NETWORK_FILESYSTEMS=n:'
+		-e '/CONFIG_NFC/s:.*:CONFIG_NFC=n:'
 		-e '/CONFIG_NFS_FS/s:.*:CONFIG_NFS_FS=n:'
 		-e '/CONFIG_NFSD/s:.*:CONFIG_NFSD=n:'
 		-e '/CONFIG_NILFS2_FS/s:.*:CONFIG_NILFS2_FS=n:'
 		-e '/CONFIG_NTFS_FS/s:.*:CONFIG_NTFS_FS=n:'
 		-e '/CONFIG_OCFS2_FS/s:.*:CONFIG_OCFS2_FS=n:'
+		-e '/CONFIG_OPENVSWITCH/s:.*:CONFIG_OPENVSWITCH=n:'
 		-e '/CONFIG_PCMCIA_FDOMAIN/s:.*:CONFIG_PCMCIA_FDOMAIN=n:'
 		-e '/CONFIG_PCMCIA_RAYCS/s:.*:CONFIG_PCMCIA_RAYCS=n:'
 		-e '/CONFIG_PRISM2_USB/s:.*:CONFIG_PRISM2_USB=n:'
 		-e '/CONFIG_R8187SE/s:.*:CONFIG_R8187SE=n:'
 		-e '/CONFIG_R8712U/s:.*:CONFIG_R8712U=n:'
+		-e '/CONFIG_RAPIDIO/s:.*:CONFIG_RAPIDIO=n:'
 		-e '/CONFIG_REISERFS_FS/s:.*:CONFIG_REISERFS_FS=n:'
 		-e '/CONFIG_RTL8192U/s:.*:CONFIG_RTL8192U=n:'
 		-e '/CONFIG_RTLLIB/s:.*:CONFIG_RTLLIB=n:'
@@ -270,12 +276,14 @@ src_prepare() {
 		-e '/CONFIG_WATCHDOG/s:.*:CONFIG_WATCHDOG=n:'
 		-e '/CONFIG_WIL6210/s:.*:CONFIG_WIL6210=n:'
 		-e '/CONFIG_X86/s:.*:CONFIG_X86=n:'
+		-e '/CONFIG_X86_16BIT/s:.*:CONFIG_X86_16BIT=n:'
 		-e '/LOGO_LINUX_MONO/s:.*:LOGO_LINUX_MONO=n:'
 		-e '/LOGO_LINUX_VGA16/s:.*:LOGO_LINUX_VGA16=n:'
 	)
 	use amd || config_tweaks+=(
 		-e '/CONFIG_CPU_SUP_AMD/s:.*:CONFIG_CPU_SUP_AMD=n:'
 		-e '/CONFIG_MICROCODE_AMD/s:.*:CONFIG_MICROCODE_AMD=n:'
+		-e '/CONFIG_MICROCODE_AMD_EARLY/s:.*:CONFIG_MICROCODE_AMD_EARLY=n:'
 	)
 	if use ath9k; then
 		config_tweaks+=(
@@ -304,10 +312,12 @@ src_prepare() {
 	if use debug; then
 		config_tweaks+=(
 			-e '/CONFIG_DEBUG_INFO/s:.*:CONFIG_DEBUG_INFO=y:'
+			-e '/CONFIG_ACPI_EXTLOG/s:.*:CONFIG_ACPI_EXTLOG=y:'
 		)
 	else
 		config_tweaks+=(
 			-e '/CONFIG_KALLSYMS/s:.*:CONFIG_KALLSYMS=y:'
+			-e '/CONFIG_ACPI_EXTLOG/s:.*:CONFIG_ACPI_EXTLOG=n:'
 		)
 	fi
 	if use ext4; then
