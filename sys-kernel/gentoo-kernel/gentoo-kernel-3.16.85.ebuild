@@ -41,7 +41,7 @@ pkg_pretend() {
 
 src_prepare() {
 	local PATCHES=(
-		"${FILESDIR}"/3.16.85no-firmware.patch
+		"${FILESDIR}/${PV}"no-firmware.patch
 		"${WORKDIR}"/2900_dev-root-proc-mount-fix.patch
 		"${WORKDIR}"/4567_distro-Gentoo-Kconfig.patch
 	)
@@ -51,9 +51,7 @@ src_prepare() {
 		)
 		if gcc-major-version > 7; then
 			PATCHES+=(
-				"${FILESDIR}/3.12.70fs-exec.c-gcc8.patch"
-				"${FILESDIR}/3.12.73include-linux-log2.h-gcc8.patch"
-				"${FILESDIR}/3.12.59include-linux-sched.h-gcc8.patch"
+				"${FILESDIR}/${PV}"gcc8.patch
 			)
 			if gcc-major-version > 8; then
 				PATCHES+=(
