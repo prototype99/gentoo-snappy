@@ -7,7 +7,7 @@ inherit kernel-build
 
 MY_P=linux-${PV}
 #i know.... i know..... the versioning is slightly wrong
-GENPATCHES_P=https://dev.gentoo.org/~mpagano/genpatches/tarballs/genpatches-3.16-9
+GENPATCHES_P=https://dev.gentoo.org/~mpagano/genpatches/tarballs/genpatches-3.17-11
 CONFIG_VER=linux-3.14.48-arch1.amd64.config
 CONFIG_HASH=4a12839b0cf7c3cc5d90c04af3f0c4650f78df33
 
@@ -15,6 +15,7 @@ DESCRIPTION="Linux kernel built with Gentoo patches"
 HOMEPAGE="https://www.kernel.org/"
 SRC_URI+="https://cdn.kernel.org/pub/linux/kernel/v3.x/${MY_P}.tar.xz
 	${GENPATCHES_P}.base.tar.xz
+	${GENPATCHES_P}.experimental.tar.xz
 	${GENPATCHES_P}.extras.tar.xz
 	https://git.archlinux.org/svntogit/packages.git/plain/trunk/config?h=packages/linux-lts&id=${CONFIG_HASH}
 		-> ${CONFIG_VER}"
@@ -22,7 +23,7 @@ S=${WORKDIR}/${MY_P}
 
 LICENSE="GPL-2"
 KEYWORDS="amd64"
-IUSE="amd ath9k btrfs debug +efi ext4 +fat fbcondec +fuse infiniband intel pax pogoplug selinux systemd thinkpad-backlight thinkpad-micled threads-4 threads-16 wireless +xfs"
+IUSE="amd ath9k btrfs debug +efi ext4 +fat fbcondec +fuse infiniband intel pax systemd thinkpad-backlight thinkpad-dock threads-4 threads-16 wireless +xfs"
 
 REQUIRED_USE="
 ^^ ( amd intel )
@@ -41,9 +42,10 @@ pkg_pretend() {
 
 src_prepare() {
 	local PATCHES=(
-		"${FILESDIR}/${PV}"no-firmware.patch
+		"${FILESDIR}"/3.16.85no-firmware.patch
 		"${WORKDIR}"/2900_dev-root-proc-mount-fix.patch
 		"${WORKDIR}"/4567_distro-Gentoo-Kconfig.patch
+		"${WORKDIR}"/5000_enable-additional-cpu-optimizations-for-gcc.patch
 	)
 	if gcc-major-version > 6; then
 		PATCHES+=(
@@ -51,8 +53,8 @@ src_prepare() {
 		)
 		if gcc-major-version > 7; then
 			PATCHES+=(
-				"${FILESDIR}/${PV}"log2.h-gcc8.patch
-				"${FILESDIR}/${PV}"exec.c-sched.h-gcc8.patch
+				"${FILESDIR}"/3.16.85log2.h-gcc8.patch
+				"${FILESDIR}"/3.16.85exec.c-sched.h-gcc8.patch
 			)
 			if gcc-major-version > 8; then
 				PATCHES+=(
@@ -72,7 +74,7 @@ src_prepare() {
 	fi
 	if use fbcondec; then
 		PATCHES+=(
-			"${WORKDIR}"/4200_fbcondecor-3.15.patch
+			"${WORKDIR}"/4200_fbcondecor-3.16.patch
 		)
 	fi
 	if use infiniband; then
@@ -85,24 +87,14 @@ src_prepare() {
 			"${WORKDIR}"/1500_XATTR_USER_PREFIX.patch
 		)
 	fi
-	if use pogoplug; then
-		PATCHES+=(
-			"${WORKDIR}"/4500_support-for-pogoplug-e02.patch
-		)
-	fi
-	if use selinux; then
-		PATCHES+=(
-			"${WORKDIR}"/1500_selinux-add-SOCK_DIAG_BY_FAMILY-to-the-list-of-netli.patch
-		)
-	fi
 	if use thinkpad-backlight; then
 		PATCHES+=(
 			"${WORKDIR}"/2700_ThinkPad-30-brightness-control-fix.patch
 		)
 	fi
-	if use thinkpad-micled; then
+	if use thinkpad-dock; then
 		PATCHES+=(
-			"${WORKDIR}"/1700_enable-thinkpad-micled.patch
+			"${WORKDIR}"/2710_ultra-dock-support-for-Thinkpad-X240.patch
 		)
 	fi
 	default

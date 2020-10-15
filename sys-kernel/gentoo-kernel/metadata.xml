@@ -17,11 +17,9 @@
 		<flag name='initramfs'>Build initramfs along with the kernel.</flag>
 		<flag name="intel">Add support for intel cpus</flag>
 		<flag name='pax'>patch in some sort of pax/hardened xattr stuff</flag>
-		<flag name='pogoplug'>add support for the pogoplug filesharing device</flag>
-		<flag name='selinux'>fix a selinux bug</flag>
 		<flag name='systemd'>use systemd for the init system</flag>
 		<flag name='thinkpad-backlight'>add fix for lenovo thinkpad backlights</flag>
-		<flag name='thinkpad-micled'>add support for the thinkpad microphone led</flag>
+		<flag name='thinkpad-dock'>add support for using the thinkpad X240 with the ultra dock</flag>
 		<flag name="threads-4">Add support for a 4 threaded system</flag>
 		<flag name="threads-16">Add support for a 16 threaded system</flag>
 		<flag name='wireless'>add support for wireless networking, including the rf (wifi) switch, as seen on some laptops</flag>
