@@ -1,17 +1,17 @@
-From 7978075864d031a022b5f410aee975786007cf49 Mon Sep 17 00:00:00 2001
+From 72fe37fce4c4d72da6eb39ef41a8dbb846546f2d Mon Sep 17 00:00:00 2001
 From: seirra <sophietheopossum@yandex.com>
-Date: Mon, 12 Oct 2020 10:19:42 +0100
+Date: Thu, 15 Oct 2020 23:05:03 +0100
 Subject: [PATCH] remove gcc8 warning
 
 ---
- include/linux/log2.h | 44 ++++++++++++++++++++++++++++++--------------
- 1 file changed, 30 insertions(+), 14 deletions(-)
+ include/linux/log2.h | 42 +++++++++++++++++++++++++++++-------------
+ 1 file changed, 29 insertions(+), 13 deletions(-)
 
 diff --git a/include/linux/log2.h b/include/linux/log2.h
-index f38fae23bdac..13cb8b1a7f55 100644
+index fd7ff3d91e6a..efd875681567 100644
 --- a/include/linux/log2.h
 +++ b/include/linux/log2.h
-@@ -37,9 +37,13 @@ int __ilog2_u64(u64 n)
+@@ -43,9 +43,13 @@ int __ilog2_u64(u64 n)
  }
  #endif
  
@@ -27,7 +27,7 @@ index f38fae23bdac..13cb8b1a7f55 100644
   */
  
  static inline __attribute__((const))
-@@ -48,8 +52,9 @@ bool is_power_of_2(unsigned long n)
+@@ -54,8 +58,9 @@ bool is_power_of_2(unsigned long n)
  	return (n != 0 && ((n & (n - 1)) == 0));
  }
  
@@ -39,7 +39,7 @@ index f38fae23bdac..13cb8b1a7f55 100644
   */
  static inline __attribute__((const))
  unsigned long __roundup_pow_of_two(unsigned long n)
-@@ -57,8 +62,9 @@ unsigned long __roundup_pow_of_two(unsigned long n)
+@@ -63,8 +68,9 @@ unsigned long __roundup_pow_of_two(unsigned long n)
  	return 1UL << fls_long(n - 1);
  }
  
@@ -51,7 +51,7 @@ index f38fae23bdac..13cb8b1a7f55 100644
   */
  static inline __attribute__((const))
  unsigned long __rounddown_pow_of_two(unsigned long n)
-@@ -67,12 +73,12 @@ unsigned long __rounddown_pow_of_two(unsigned long n)
+@@ -73,12 +79,12 @@ unsigned long __rounddown_pow_of_two(unsigned long n)
  }
  
  /**
@@ -67,16 +67,7 @@ index f38fae23bdac..13cb8b1a7f55 100644
   *
   * selects the appropriately-sized optimised version depending on sizeof(n)
   */
-@@ -142,7 +148,7 @@ unsigned long __rounddown_pow_of_two(unsigned long n)
- 		(n) & (1ULL <<  4) ?  4 :	\
- 		(n) & (1ULL <<  3) ?  3 :	\
- 		(n) & (1ULL <<  2) ?  2 :	\
--		1 ) :				\
-+		1) :				\
- 	(sizeof(n) <= 4) ?			\
- 	__ilog2_u32(n) :			\
- 	__ilog2_u64(n)				\
-@@ -150,7 +156,7 @@ unsigned long __rounddown_pow_of_two(unsigned long n)
+@@ -159,7 +165,7 @@ unsigned long __rounddown_pow_of_two(unsigned long n)
  
  /**
   * roundup_pow_of_two - round the given value up to nearest power of two
@@ -85,7 +76,7 @@ index f38fae23bdac..13cb8b1a7f55 100644
   *
   * round the given value up to the nearest power of two
   * - the result is undefined when n == 0
-@@ -180,6 +186,12 @@ unsigned long __rounddown_pow_of_two(unsigned long n)
+@@ -189,6 +195,12 @@ unsigned long __rounddown_pow_of_two(unsigned long n)
  	__rounddown_pow_of_two(n)		\
   )
  
@@ -98,7 +89,7 @@ index f38fae23bdac..13cb8b1a7f55 100644
  /**
   * order_base_2 - calculate the (rounded up) base 2 order of the argument
   * @n: parameter
-@@ -193,7 +205,11 @@ unsigned long __rounddown_pow_of_two(unsigned long n)
+@@ -202,7 +214,11 @@ unsigned long __rounddown_pow_of_two(unsigned long n)
   *  ob2(5) = 3
   *  ... and so on.
   */
