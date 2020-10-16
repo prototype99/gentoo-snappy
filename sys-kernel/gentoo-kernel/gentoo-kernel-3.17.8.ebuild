@@ -47,27 +47,32 @@ src_prepare() {
 		"${WORKDIR}"/4567_distro-Gentoo-Kconfig.patch
 		"${WORKDIR}"/5000_enable-additional-cpu-optimizations-for-gcc.patch
 	)
-	if gcc-major-version > 6; then
+	if gcc-major-version > 4; then
 		PATCHES+=(
-			"${FILESDIR}"/3.12gcc7.patch
+				"${FILESDIR}"/3.17compiler-gcc5+.patch
 		)
-		if gcc-major-version > 7; then
+		if gcc-major-version > 6; then
 			PATCHES+=(
-				"${FILESDIR}"/3.17log2.h-gcc8.patch
-				"${FILESDIR}"/3.16.85exec.c-sched.h-gcc8.patch
+				"${FILESDIR}"/3.12gcc7.patch
 			)
-			if gcc-major-version > 8; then
+			if gcc-major-version > 7; then
 				PATCHES+=(
-					"${FILESDIR}"/gcc9.patch
+					"${FILESDIR}"/3.17log2.h-gcc8.patch
+					"${FILESDIR}"/3.16.85exec.c-sched.h-gcc8.patch
 				)
-				if gcc-major-version < 10; then
-					gcc-minor-version > 0 && PATCHES+=(
-						"${FILESDIR}"/3.12gcc9.1.patch
-					)
-				else
+				if gcc-major-version > 8; then
 					PATCHES+=(
-						"${FILESDIR}"/3.12gcc9.1.patch
+						"${FILESDIR}"/gcc9.patch
 					)
+					if gcc-major-version < 10; then
+						gcc-minor-version > 0 && PATCHES+=(
+							"${FILESDIR}"/3.12gcc9.1.patch
+						)
+					else
+						PATCHES+=(
+							"${FILESDIR}"/3.12gcc9.1.patch
+						)
+					fi
 				fi
 			fi
 		fi
