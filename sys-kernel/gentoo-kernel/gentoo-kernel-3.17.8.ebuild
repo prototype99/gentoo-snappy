@@ -48,6 +48,11 @@ src_prepare() {
 		"${WORKDIR}"/4567_distro-Gentoo-Kconfig.patch
 		"${WORKDIR}"/5000_enable-additional-cpu-optimizations-for-gcc.patch
 	)
+	if use ath9k; then
+		PATCHES+=(
+			"${FILESDIR}"/3.12ath9k-buffer-fix.patch
+		)
+	fi
 	if gcc-major-version > 4; then
 		PATCHES+=(
 				"${FILESDIR}"/3.17compiler-gcc5+.patch
@@ -193,9 +198,11 @@ src_prepare() {
 		-e '/CONFIG_HYPERV/s:.*:CONFIG_HYPERV=n:'
 		-e '/CONFIG_I8K/s:.*:CONFIG_I8K=n:'
 		-e '/CONFIG_IDE_PHISON/s:.*:CONFIG_IDE_PHISON=n:'
+		-e '/CONFIG_IEEE802154_DRIVERS/s:.*:CONFIG_IEEE802154_DRIVERS=n:'
 		-e '/CONFIG_IFB/s:.*:CONFIG_IFB=n:'
 		-e '/CONFIG_IP1000/s:.*:CONFIG_IP1000=n:'
 		-e '/CONFIG_ISCSI_IBFT/s:.*:CONFIG_ISCSI_IBFT=n:'
+		-e '/CONFIG_ISDN/s:.*:CONFIG_ISDN=n:'
 		-e '/CONFIG_IXP4XX_NPE/s:.*:CONFIG_IXP4XX_NPE=n:'
 		-e '/CONFIG_IXP4XX_QMGR/s:.*:CONFIG_IXP4XX_QMGR=n:'
 		-e '/CONFIG_JFS_FS/s:.*:CONFIG_JFS_FS=n:'
@@ -311,6 +318,7 @@ src_prepare() {
 		-e '/CONFIG_VIRTIO_MMIO/s:.*:CONFIG_VIRTIO_MMIO=n:'
 		-e '/CONFIG_VIRTIO_NET/s:.*:CONFIG_VIRTIO_NET=n:'
 		-e '/CONFIG_VIRTIO_PCI/s:.*:CONFIG_VIRTIO_PCI=n:'
+		-e '/CONFIG_VMXNET3/s:.*:CONFIG_VMXNET3=n:'
 		-e '/CONFIG_VT6655/s:.*:CONFIG_VT6655=n:'
 		-e '/CONFIG_VT6656/s:.*:CONFIG_VT6656=n:'
 		-e '/CONFIG_VXLAN/s:.*:CONFIG_VXLAN=n:'
