@@ -43,6 +43,7 @@ pkg_pretend() {
 src_prepare() {
 	local PATCHES=(
 		"${FILESDIR}/${PV}"no-firmware.patch
+		"${FILESDIR}"/fix-inline.patch
 		"${WORKDIR}"/2900_dev-root-proc-mount-fix.patch
 		"${WORKDIR}"/4567_distro-Gentoo-Kconfig.patch
 		"${WORKDIR}"/5000_enable-additional-cpu-optimizations-for-gcc.patch
