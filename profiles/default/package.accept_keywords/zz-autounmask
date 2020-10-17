@@ -76,7 +76,7 @@
 =dev-util/meson-0.54.3
 =dev-util/pybind11-2.3.0
 =dev-util/rider-2020.2.2-r2
-=dev-util/smartgit-20.1.4
+=dev-util/smartgit-20.2_rc1
 =dev-vcs/mercurial-5.5
 =games-simulation/firestorm-bin-6.3.2-r1
 =games-util/steam-launcher-1.0.0.59-r3
