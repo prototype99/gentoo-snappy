@@ -50,7 +50,7 @@ src_prepare() {
 	)
 	if use ath9k; then
 		PATCHES+=(
-			"${FILESDIR}"/3.12ath9k-buffer-fix.patch
+			"${FILESDIR}"/3.17ath9k-buffer-fix.patch
 		)
 	fi
 	if gcc-major-version > 4; then
