@@ -55,7 +55,7 @@ src_prepare() {
 	fi
 	if gcc-major-version > 4; then
 		PATCHES+=(
-				"${FILESDIR}"/3.17compiler-gcc5+.patch
+				"${FILESDIR}"/3.17gcc5+compiler.patch
 		)
 		if gcc-major-version > 6; then
 			PATCHES+=(
@@ -63,12 +63,13 @@ src_prepare() {
 			)
 			if gcc-major-version > 7; then
 				PATCHES+=(
-					"${FILESDIR}"/3.17log2.h-gcc8.patch
-					"${FILESDIR}"/3.16.85exec.c-sched.h-gcc8.patch
+					"${FILESDIR}"/3.16.85gcc8exec.c-sched.h.patch
+					"${FILESDIR}"/3.17gcc8log2.h.patch
 				)
 				if gcc-major-version > 8; then
 					PATCHES+=(
-						"${FILESDIR}"/gcc9.patch
+						"${FILESDIR}"/gcc9trace.patch
+						"${FILESDIR}"/gcc9vclock_gettime.c.patch
 					)
 					if gcc-major-version < 10; then
 						gcc-minor-version > 0 && PATCHES+=(
