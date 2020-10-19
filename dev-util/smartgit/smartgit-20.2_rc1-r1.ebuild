@@ -83,6 +83,6 @@ src_install()
 	domenu "${dme_file}"
 
 	## move files to the install image
-	mkdir "${ED}${install_dir}"
+	mkdir --parents "${ED}${install_dir}" || die "target destination creation failed"
 	mv --strip-trailing-slashes --no-target-directory "${S}" "${ED}${install_dir}"
 }
