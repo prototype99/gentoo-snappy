@@ -52,7 +52,7 @@ src_install()
 	chmod a+x {bin,lib}/*.sh jre/bin/*
 
 	## install entrypoint
-	dosym --rel -- "${install_dir}/bin/${PN}.sh" "/usr/bin/${MY_PNS}"
+	dosym "${install_dir}/bin/${PN}.sh" "/usr/bin/${MY_PNS}"
 
 	## install icons
 	newicon -s 'scalable' "bin/${PN,,}.svg" "${MY_PNS}.png"
