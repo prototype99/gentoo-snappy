@@ -2,21 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
-inherit rindeal
-
-## EXPORT_FUNCTIONS: src_prepare, pkg_preinst, pkg_postinst, pkg_postrm
-inherit xdg
-
-## functions: newicon, domenu
-inherit desktop
+inherit desktop xdg
 
 DESCRIPTION="Git client with support for GitHub Pull Requests+Comments, SVN and Mercurial"
-HOMEPAGE_A=(
-	"https://www.syntevo.com/${PN,,}"
-)
-LICENSE_A=(
-	"${PN}"
-)
+HOMEPAGE="https://www.syntevo.com/${PN,,}"
+LICENSE="${PN}"
 
 # slot number is based on the upstream slotting mechanism which creates a new subdir
 # in `~/.smartgit/` for each new major release. The subdir name corresponds with SLOT.
@@ -25,9 +15,7 @@ PV_MIN="$(ver_cut 2)"
 SLOT="${PV_MAJ}$( (( PV_MIN )) && echo ".${PV_MIN}" )"
 MY_PNS="${PN}${SLOT%%/*}"
 
-SRC_URI_A=(
-	"https://www.syntevo.com/downloads/${PN}/${PN}-linux-20_2-rc-1.tar.gz -> ${P}.tar.gz"
-)
+SRC_URI="https://www.syntevo.com/downloads/${PN}/${PN}-linux-20_2-rc-1.tar.gz -> ${P}.tar.gz"
 
 KEYWORDS="~amd64 ~arm64"
 IUSE="+kernel"
@@ -35,8 +23,6 @@ IUSE="+kernel"
 RDEPEND="arm64? ( virtual/jre )"
 
 RESTRICT+=" mirror strip"
-
-inherit arrays
 
 S="${WORKDIR}/${PN}"
 
@@ -59,18 +45,18 @@ src_install()
 	local -r -- install_dir="/opt/${vendor_ns}/${MY_PNS}"
 
 	## remove files not needed
-	NO_V=1 rrm -r licenses jre/legal
-	rrm bin/{add,remove}-menuitem.sh
+	NO_V=1 rm -r licenses jre/legal
+	rm bin/{add,remove}-menuitem.sh
 
 	# remove executable bit
 	find -type f -executable -print0 | xargs -0 chmod --changes a-x
 	assert
 
 	## make scripts and java executable
-	rchmod a+x {bin,lib}/*.sh jre/bin/*
+	chmod a+x {bin,lib}/*.sh jre/bin/*
 
 	## install entrypoint
-	rdosym --rel -- "${install_dir}/bin/${PN}.sh" "/usr/bin/${MY_PNS}"
+	dosym --rel -- "${install_dir}/bin/${PN}.sh" "/usr/bin/${MY_PNS}"
 
 	## install icons
 	newicon -s 'scalable' "bin/${PN,,}.svg" "${MY_PNS}.png"
@@ -79,7 +65,7 @@ src_install()
 	do
 		newicon -s ${s} "bin/${PN,,}-${s}.png" "${MY_PNS}.png"
 	done
-	rrm bin/*.{png,svg}
+	rm bin/*.{png,svg}
 
 	local -- dme_file="${T}/${PN,,}_${SLOT%%/*}.desktop"
 	cat <<-_EOF_ > "${dme_file}" || die
@@ -101,6 +87,6 @@ src_install()
 	domenu "${dme_file}"
 
 	## move files to the install image
-	rmkdir "${ED}${install_dir}"
-	rmv --strip-trailing-slashes --no-target-directory "${S}" "${ED}${install_dir}"
+	mkdir "${ED}${install_dir}"
+	mv --strip-trailing-slashes --no-target-directory "${S}" "${ED}${install_dir}"
 }
