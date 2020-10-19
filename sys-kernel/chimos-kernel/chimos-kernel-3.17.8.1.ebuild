@@ -11,9 +11,9 @@ GENPATCHES_P=https://dev.gentoo.org/~mpagano/genpatches/tarballs/genpatches-3.17
 CONFIG_VER=linux-3.14.48-arch1.amd64.config
 CONFIG_HASH=4a12839b0cf7c3cc5d90c04af3f0c4650f78df33
 
-DESCRIPTION="Linux kernel built with Gentoo patches"
+DESCRIPTION="Linux kernel built with Gentoo patches as well as extra fixes"
 HOMEPAGE="https://www.kernel.org/"
-SRC_URI+="https://cdn.kernel.org/pub/linux/kernel/v3.x/${MY_P}.tar.xz
+SRC_URI+="https://github.com/prototype99/linux/archive/v${PV}.tar.gz -> ${P}.tar.gz
 	${GENPATCHES_P}.base.tar.xz
 	${GENPATCHES_P}.experimental.tar.xz
 	${GENPATCHES_P}.extras.tar.xz
@@ -42,7 +42,6 @@ pkg_pretend() {
 
 src_prepare() {
 	local PATCHES=(
-		"${FILESDIR}/${PV}"no-firmware.patch
 		"${FILESDIR}"/fix-inline.patch
 		"${WORKDIR}"/2900_dev-root-proc-mount-fix.patch
 		"${WORKDIR}"/4567_distro-Gentoo-Kconfig.patch
@@ -115,7 +114,7 @@ src_prepare() {
 
 	local config_tweaks=(
 		# shove arch under the carpet!
-		-e 's:^CONFIG_DEFAULT_HOSTNAME=:&"gentoo":'
+		-e 's:^CONFIG_DEFAULT_HOSTNAME=:&"chimos":'
 		-e '/CONFIG_64BIT/s:.*:CONFIG_64BIT=y:'
 		-e '/CONFIG_9P_FS/s:.*:CONFIG_9P_FS=n:'
 		-e '/CONFIG_ACPI_CMPC/s:.*:CONFIG_ACPI_CMPC=n:'
@@ -208,6 +207,7 @@ src_prepare() {
 		-e '/CONFIG_JFS_FS/s:.*:CONFIG_JFS_FS=n:'
 		-e '/CONFIG_JME/s:.*:CONFIG_JME=n:'
 		-e '/CONFIG_LINE6_USB/s:.*:CONFIG_LINE6_USB=n:'
+		-e '/CONFIG_LOCALVERSION/s:.*:CONFIG_LOCALVERSION=".1":'
 		-e '/CONFIG_LOGO/s:.*:CONFIG_LOGO=y:'
 		-e '/CONFIG_MACINTOSH_DRIVERS/s:.*:CONFIG_MACINTOSH_DRIVERS=n:'
 		-e '/CONFIG_MACVLAN/s:.*:CONFIG_MACVLAN=n:'
