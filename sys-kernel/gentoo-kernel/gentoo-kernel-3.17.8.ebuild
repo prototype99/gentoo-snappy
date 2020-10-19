@@ -69,7 +69,6 @@ src_prepare() {
 				if gcc-major-version > 8; then
 					PATCHES+=(
 						"${FILESDIR}"/gcc9trace.patch
-						"${FILESDIR}"/gcc9vclock_gettime.c.patch
 					)
 					if gcc-major-version < 10; then
 						gcc-minor-version > 0 && PATCHES+=(
