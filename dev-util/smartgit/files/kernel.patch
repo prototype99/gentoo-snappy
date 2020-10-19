@@ -1,0 +1,25 @@
+From 35639ca003fe507ad916de6c36215584cfe20089 Mon Sep 17 00:00:00 2001
+From: seirra <sophietheopossum@yandex.com>
+Date: Sun, 18 Oct 2020 21:23:27 +0100
+Subject: [PATCH] bump max memory
+
+---
+ bin/smartgit.sh | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/bin/smartgit.sh b/bin/smartgit.sh
+index c5e32a8..1a15a30 100755
+--- a/bin/smartgit.sh
++++ b/bin/smartgit.sh
+@@ -122,7 +122,7 @@ if [ "$GTK_THEME" != "Adwaita" ] ; then
+ 	echo "If you experience strange GUI bugs or crashes, try setting GTK_THEME=Adwaita."
+ fi
+ 
+-_GC_OPTS="-XX:+UseG1GC -XX:MaxGCPauseMillis=100 -XX:InitiatingHeapOccupancyPercent=25 -Xmx1024m -Xss2m"
++_GC_OPTS="-XX:+UseG1GC -XX:MaxGCPauseMillis=100 -XX:InitiatingHeapOccupancyPercent=25 -Xmx3072m -Xss2m"
+ _MISC_OPTS="-Xverify:none -XX:MaxJavaStackTraceDepth=1000000 -Dsun.io.useCanonCaches=false -XX:ErrorFile=$APP_CONFIG_DIR/20.2/hs_err_pid%p.log"
+ 
+ APP_PATH="$PATH$SMARTGIT_PATH"
+-- 
+2.26.2
+
