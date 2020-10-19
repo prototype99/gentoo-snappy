@@ -28,12 +28,8 @@ S="${WORKDIR}/${PN}"
 
 src_prepare()
 {
-	local PATCHES=(
-		"${FILESDIR}"/fast-start.patch
-	)
-	use kernel && PATCHES+=(
-		"${FILESDIR}"/kernel.patch
-	)
+	eapply "${FILESDIR}"/fast-start.patch
+	use kernel && eapply "${FILESDIR}"/kernel.patch
 	default
 
 	xdg_src_prepare
