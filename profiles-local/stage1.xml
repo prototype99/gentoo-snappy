@@ -839,7 +839,7 @@
     <owner type="person">
       <email>at@calculate.ru</email>
     </owner>
-    <source type="git">git://git.calculate.ru/calculate/overlay.git</source>
+    <source type="git">git://git.calculate-linux.org/calculate/calculate-overlay.git</source>
   </repo>
   <repo quality="experimental" status="unofficial">
     <name>canutethegreat-overlay</name>
@@ -1170,7 +1170,7 @@
     <owner type="person">
       <email>at@calculate.ru</email>
     </owner>
-    <source type="git">git://git.calculate.ru/calculate/distros.git</source>
+    <source type="git">git://git.calculate-linux.org/calculate/distros-overlay.git</source>
   </repo>
   <repo quality="experimental" status="unofficial">
     <name>djc</name>
@@ -1705,15 +1705,15 @@
   <repo quality="experimental" status="unofficial">
     <name>foxiverlay</name>
     <description lang="en">Personal overlay for unofficial ebuilds</description>
-    <homepage>https://github.com/PikkuJose/foxiverlay</homepage>
+    <homepage>https://github.com/Pekkari/foxiverlay</homepage>
     <owner type="person">
       <email>koalinux@gmail.com</email>
       <name>José Pekkarinen</name>
     </owner>
-    <source type="git">https://github.com/PikkuJose/foxiverlay.git</source>
-    <source type="git">git://github.com/PikkuJose/foxiverlay.git</source>
-    <source type="git">git@github.com:PikkuJose/foxiverlay.git</source>
-    <feed>https://github.com/PikkuJose/foxiverlay/commits/master.atom</feed>
+    <source type="git">https://github.com/Pekkari/foxiverlay.git</source>
+    <source type="git">git://github.com/Pekkari/foxiverlay.git</source>
+    <source type="git">git@github.com:Pekkari/foxiverlay.git</source>
+    <feed>https://github.com/Pekkari/foxiverlay/commits/master.atom</feed>
   </repo>
   <repo quality="experimental" status="unofficial">
     <name>freeswitch</name>
@@ -2638,6 +2638,18 @@
     <source type="git">git://github.com/laurentb/gentoo-overlay.git</source>
     <source type="git">https://github.com/laurentb/gentoo-overlay.git</source>
     <feed>https://github.com/feeds/laurentb/commits/gentoo-overlay/master</feed>
+  </repo>
+  <repo quality="experimental" status="unofficial">
+    <name>leechcraft</name>
+    <description>Overlay with LeechCraft ebuilds</description>
+    <homepage>https://github.com/0xd34df00d/leechcraft-overlay</homepage>
+    <owner type="person">
+      <email>0xd34df00d@gmail.com</email>
+      <name>Georg Rudoy</name>
+    </owner>
+    <source type="git">https://github.com/0xd34df00d/leechcraft-overlay.git</source>
+    <source type="git">git://github.com/0xd34df00d/leechcraft-overlay.git</source>
+    <feed>https://github.com/0xd34df00d/leechcraft-overlay/commits/master.atom</feed>
   </repo>
   <repo quality="experimental" status="official">
     <name>leio</name>
@@ -5052,6 +5064,18 @@
     <source type="git">git://github.com/vifino/vifino-overlay.git</source>
     <source type="git">git@github.com:vifino/vifino-overlay.git</source>
     <feed>https://github.com/vifino/vifino-overlay/commits/master.atom</feed>
+  </repo>
+    <repo quality="experimental" status="unofficial">
+    <name>vklimovs</name>
+    <description lang="en">vklimovs' personal portage overlay</description>
+    <homepage>https://github.com/vklimovs/portage-overlay</homepage>
+    <owner type="person">
+      <email>vklimovs@gmail.com</email>
+      <name>Vjaceslavs Klimovs</name>
+    </owner>
+    <source type="git">https://github.com/vklimovs/portage-overlay.git</source>
+    <source type="git">git+ssh://git@github.com/vklimovs/portage-overlay.git</source>
+    <feed>https://github.com/vklimovs/portage-overlay/commits/master.atom</feed>
   </repo>
   <repo quality="experimental" status="unofficial">
     <name>vmacs</name>
