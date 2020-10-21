@@ -6,7 +6,6 @@ EAPI=7
 inherit kernel-build
 
 MY_P=linux-${PV}
-#i know.... i know..... the versioning is slightly wrong
 GENPATCHES_P=https://dev.gentoo.org/~mpagano/genpatches/tarballs/genpatches-3.17-11
 CONFIG_VER=linux-3.14.48-arch1.amd64.config
 CONFIG_HASH=4a12839b0cf7c3cc5d90c04af3f0c4650f78df33
@@ -207,7 +206,8 @@ src_prepare() {
 		-e '/CONFIG_JFS_FS/s:.*:CONFIG_JFS_FS=n:'
 		-e '/CONFIG_JME/s:.*:CONFIG_JME=n:'
 		-e '/CONFIG_LINE6_USB/s:.*:CONFIG_LINE6_USB=n:'
-		-e '/CONFIG_LOCALVERSION/s:.*:CONFIG_LOCALVERSION=".1":'
+		-e '/CONFIG_LOCALVERSION/d'
+		-e '/CONFIG_LOCALVERSION_AUTO/s:.*:CONFIG_LOCALVERSION_AUTO=n:'
 		-e '/CONFIG_LOGO/s:.*:CONFIG_LOGO=y:'
 		-e '/CONFIG_MACINTOSH_DRIVERS/s:.*:CONFIG_MACINTOSH_DRIVERS=n:'
 		-e '/CONFIG_MACVLAN/s:.*:CONFIG_MACVLAN=n:'
