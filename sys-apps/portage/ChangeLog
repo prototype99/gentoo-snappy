@@ -1,3 +1,5 @@
+*portage-3.0.8
+::gentoo		bump dependencies, update keywords, add missing dependency
 *portage-3.0.5
 ::gentoo		update dependencies, change eclass logic
 ::prototype99	add support for changelog viewing in newer versions
