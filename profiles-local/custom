@@ -94,8 +94,8 @@
 =dev-libs/gmp-6.1.2-r1::gentoo										#no pgo
 =dev-libs/gmp-6.2.0-r1::gentoo										#no pgo
 =dev-libs/gobject-introspection-common-1.60.2::dantrell-gnome-3-32	#bad keywording, unnecessary quotes
-=dev-libs/gobject-introspection-common-1.62.0::my-gnome				#no gtk-doc use flag
 =dev-libs/gobject-introspection-common-1.64.0::gnome-next			#eapi6
+=dev-libs/gobject-introspection-common-1.66.1::my-gnome				#no gtk-doc use flag
 =dev-libs/hyphen-2.8.8::muslx32										#eapi 4, old
 =dev-libs/icu-67.1::gentoo											#verbose python compatibility
 =dev-libs/intel-common-19.0.4.243::science							#no good for cluster edition
@@ -195,12 +195,14 @@
 =dev-util/boost-build-1.65.0::gnux32								#x32 specific patch
 =dev-util/boost-build-1.70.0::gnux32								#better in other overlay
 =dev-util/gdbus-codegen-2.62.6::dantrell-gnome						#dummy package
-=dev-util/gdbus-codegen-2.64.3::dantrell-gnome						#dummy package
+=dev-util/gdbus-codegen-2.64.6::dantrell-gnome						#dummy package
 =dev-util/gdbus-codegen-2.65.0::gnome-next							#verbose python targets
+=dev-util/gdbus-codegen-2.66.1::dantrell-gnome						#dummy package
 =dev-util/gdbus-codegen-2.99::rindeal								#dummy package
 <=dev-util/glib-utils-2.60.7::dantrell-gnome						#dummy package
-=dev-util/glib-utils-2.64.3::dantrell-gnome							#dummy package
+=dev-util/glib-utils-2.64.6::dantrell-gnome							#dummy package
 =dev-util/glib-utils-2.65.0::gnome-next								#verbose python targets
+=dev-util/glib-utils-2.66.1::dantrell-gnome							#dummy package
 =dev-util/glib-utils-2.99.99::rindeal								#dummy package
 =dev-util/gtk-doc-1.32-r1::dantrell-gnome							#no test or pdf use flag, bad keywording, unnecessary quotes
 =dev-util/gtk-doc-1.32-r1::lanodanOverlay							#extremely broken circular dependency
@@ -379,6 +381,7 @@
 =virtual/modutils-0-r1::calculate									#eapi 2, less architecture support
 =virtual/mta-1::argent-main											#old
 =virtual/pam-0-r1::argent-main										#old, eapi 5
+=virtual/rust-1337-r1::redcore										#no binary support, amd64 only
 =virtual/tmpfiles-0::srcshelton										#pointless modification, just mask the whole package?
 =www-client/firefox-67.0::pg_overlay								#better in other overlay, old
 =www-client/firefox-70.0.1::gallifrey								#less use flags
