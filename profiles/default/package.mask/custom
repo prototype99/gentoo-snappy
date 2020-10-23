@@ -120,3 +120,4 @@
 >=dev-lang/python-3.8
 #unclear benefits
 =net-misc/curl-7.72.0
+=sys-apps/kmod-27-r2
