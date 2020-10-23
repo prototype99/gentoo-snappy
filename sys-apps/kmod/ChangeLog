@@ -1,3 +1,5 @@
+*kmod-26-r7
+::poly-c		bump to eapi7, only change gtk-doc where required, only do openrc stuff for openrc
 *kmod-26-r6
 ::calculate		add zstd use flag
 ::gentoo		update copyright, update keywords, rename ssl use flag, optimise any python, optimise variable usage
