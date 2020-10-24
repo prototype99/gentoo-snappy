@@ -102,6 +102,7 @@
 <sys-apps/dbus-broker-18
 <sys-auth/pambase-20150213-r2
 <sys-auth/polkit-0.116-r1
+<sys-devel/binutils-2.32
 <sys-devel/gettext-0.19.8.1
 <sys-fs/udisks-2.8.2
 <virtual/cargo-1.37.0

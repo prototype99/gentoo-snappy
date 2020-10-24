@@ -347,7 +347,6 @@
 =sys-block/gparted-1.0.0::menelkir									#no ufs use flag
 =sys-block/parted-3.2-r2::musl										#musl specific
 =sys-block/thin-provisioning-tools-0.7.0::musl						#musl patch
-=sys-devel/binutils-2.31.1-r6::gentoo								#better in other overlay
 =sys-devel/clang-9.0.1-r100::dev1990-overlay						#apple specific patch
 =sys-devel/gcc-8.3.0-r1::musl										#musl specific patches
 =sys-devel/gcc-9.1.0::musl											#better in other overlay
