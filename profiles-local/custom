@@ -371,6 +371,7 @@
 =sys-libs/libunwind-1.3_rc1:7::ineluctable-overlay					#old
 =sys-libs/libutempter-1.1.6-r2::musl								#musl specific patch
 =sys-libs/pam-1.3.1-r2::musl										#better in other overlay
+=sys-libs/pam-1.3.1_p20200128-r1::dantrell-gnome					#bad keywording, unnecessary quotes
 =sys-libs/zlib-1.2.11-r3::clx										#old
 =sys-power/upower-0.99.12.20190903::dantrell-gnome					#bad keywording, unnecessary quotes, eapi 6, unexplained use flags
 =sys-power/upower-0.99.12.20190903-r1::dantrell-gnome				#bad keywording, unnecessary quotes, eapi 6, unexplained use flags
