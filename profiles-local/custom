@@ -1,7 +1,7 @@
 =acct-group/plugdev-0::tatsh-overlay								#poor description
 =app-accessibility/at-spi2-atk-2.34.1::dantrell-gnome-3-34			#bad keywording, unnecessary quotes
 =app-accessibility/at-spi2-atk-2.34.2::dantrell-gnome				#bad keywording, unnecessary quotes
-=app-accessibility/at-spi2-atk-2.37.90:2::my-gnome					#broken dependency
+=app-accessibility/at-spi2-atk-2.38.0::my-gnome						#unclear benefits
 =app-accessibility/at-spi2-core-2.34.0::dantrell-gnome-3-34			#bad keywording, unnecessary quotes
 =app-accessibility/at-spi2-core-2.34.0::my-gnome					#eapi 6
 =app-admin/eselect-1.4.16-r2::dantrell-gnome						#systemd free by default
@@ -80,6 +80,7 @@
 =dev-lang/vala-0.44.9::dantrell-gnome								#bad keywording, unnecessary quotes, missing valadoc flag
 =dev-libs/appstream-glib-0.7.9::musl								#musl specific patch
 =dev-libs/atk-2.34.1::dantrell-gnome-3-34							#bad keywording, unnecessary quotes
+=dev-libs/atk-2.36.0::dantrell-gnome								#bad keywording, unnecessary quotes, missing dependencies
 =dev-libs/atk-2.36.0::gentoo										#worse dependencies
 =dev-libs/boost-1.65.0::gnux32										#x32 specific patch
 =dev-libs/boost-1.70.0::gnux32										#better in other overlay
@@ -93,9 +94,9 @@
 =dev-libs/gmp-6.1.2::srcshelton										#no musl support
 =dev-libs/gmp-6.1.2-r1::gentoo										#no pgo
 =dev-libs/gmp-6.2.0-r1::gentoo										#no pgo
+=dev-libs/gobject-introspection-1.66.1::my-gnome					#no python3_9
 =dev-libs/gobject-introspection-common-1.60.2::dantrell-gnome-3-32	#bad keywording, unnecessary quotes
 =dev-libs/gobject-introspection-common-1.64.0::gnome-next			#eapi6
-=dev-libs/gobject-introspection-common-1.66.1::my-gnome				#no gtk-doc use flag
 =dev-libs/hyphen-2.8.8::muslx32										#eapi 4, old
 =dev-libs/icu-67.1::gentoo											#verbose python compatibility
 =dev-libs/intel-common-19.0.4.243::science							#no good for cluster edition
@@ -176,6 +177,7 @@
 =dev-python/beautifulsoup-4.9.0::HomeAssistantRepository			#no python2_7, no pypy3
 =dev-python/lxml-4.5.2-r2::stefantalpalaru							#no pypy
 =dev-python/mako-1.1.3::gentoo										#no pypy
+=dev-python/markupsafe-1.1.1::FireBurn								#no python3_9
 =dev-python/markupsafe-1.1.1-r2::stefantalpalaru					#no pypy
 =dev-python/numpy-1.8.2-r1000::progress								#old
 =dev-python/numpy-1.9.2-r1000::progress								#old
@@ -346,6 +348,7 @@
 =sys-apps/util-linux-2.34::rindeal									#broken locales
 =sys-auth/polkit-0.115-r4::musl										#musl specific patch
 =sys-auth/polkit-0.116-r1::musl										#musl specific patch
+=sys-auth/polkit-0.116-r2::pentoo									#uses slower duktape js engine
 =sys-auth/polkit-0.116-r3::miramir									#no jit
 =sys-auth/polkit-0.117-r1::miramir									#no jit
 =sys-block/gparted-1.0.0::menelkir									#no ufs use flag
