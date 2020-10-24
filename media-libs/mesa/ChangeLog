@@ -1,3 +1,13 @@
+*mesa-20.2.0
+::gentoo
+-update keywords
+-improve workarounds
+-add python 3_9 compatibility
+-reorganise use flags
+-no libglvnd use flag
+-fix flags
+-add v3d flag
+-fail if tests fail
 *mesa-20.0.8-r1
 ::bobwya				extend python support
 ::musl					add musl workaround
