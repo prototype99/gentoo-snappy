@@ -118,8 +118,6 @@ sys-libs/zlib minizip
 # required by dev-qt/qtgui-5.12.3-r1:5/5.12::gentoo
 # required by x11-libs/libxkbcommon-0.8.4:0/0::gentoo
 x11-libs/libxcb xkb
-# required by net-wireless/blueman-2.1::gentoo[pulseaudio]
-media-sound/pulseaudio bluetooth dbus
 # required by lxqt-base/lxqt-session-0.13.0::gentoo
 # required by lxqt-base/liblxqt-0.14.1::gentoo
 # required by lxqt-base/lxqt-config-0.14.1::gentoo
