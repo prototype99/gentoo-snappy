@@ -246,7 +246,7 @@ x86? (
 )"
 
 PATCHES=(
-	"${FILESDIR}"/${PN}-19.3.0-add-disable-tls-support.patch
+	"${FILESDIR}"/${P}-add-disable-tls-support.patch
 )
 
 llvm_check_deps() {
