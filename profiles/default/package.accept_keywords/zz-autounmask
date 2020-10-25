@@ -52,7 +52,7 @@
 =dev-python/shiboken-5.11.1
 =dev-python/versioneer-0.18
 =dev-qt/designer-5.12.3
-=dev-qt/qtdeclarative-5.12.3
+=dev-qt/qtdeclarative-5.15.1
 =dev-qt/qtgraphicaleffects-5.12.3
 =dev-qt/qtgui-5.12.3-r1
 =dev-qt/qtmultimedia-5.12.3
