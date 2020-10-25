@@ -7,6 +7,7 @@
 =dev-lang/spidermonkey-1.8.5-r7
 =dev-lang/spidermonkey-60.5.2_p0-r2
 =dev-libs/boost-1.70.0
+=dev-libs/gobject-introspection-1.66.1
 =dev-libs/libassuan-2.5.3
 =dev-python/pycups-1.9.73-r2
 =dev-util/boost-build-1.70.0
