@@ -37,6 +37,9 @@
 =dev-libs/libsigc++-2.10.3
 =dev-libs/OpenNI2-2.2_beta2
 =dev-perl/Archive-Zip-1.680.0
+=dev-perl/ExtUtils-InstallPaths-0.12.0
+=dev-perl/File-BaseDir-0.80.0
+=dev-perl/File-MimeInfo-0.290.0
 =dev-perl/Params-ValidationCompiler-0.300.0
 =dev-perl/Ref-Util-0.204.0
 =dev-perl/Specio-0.440.0

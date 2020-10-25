@@ -352,6 +352,7 @@
 =sys-auth/polkit-0.116-r2::pentoo									#uses slower duktape js engine
 =sys-auth/polkit-0.116-r3::miramir									#no jit
 =sys-auth/polkit-0.117-r1::miramir									#no jit
+=sys-auth/polkit-qt-0.113.0-r10::redcore							#...why?
 =sys-block/gparted-1.0.0::menelkir									#no ufs use flag
 =sys-block/parted-3.2-r2::musl										#musl specific
 =sys-block/thin-provisioning-tools-0.7.0::musl						#musl patch
