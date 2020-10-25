@@ -96,7 +96,7 @@ pkg_pretend() {
 python_prepare_all() {
 	distutils-r1_python_prepare_all
 
-	use changelog && eapply "${FILESDIR}/${PV}changelog.patch"
+	use changelog && eapply "${FILESDIR}/3.0.5changelog.patch"
 
 	! use verbose && eapply "${FILESDIR}/${PN}-2.3.84-eapply_non_verbose.patch"
 
