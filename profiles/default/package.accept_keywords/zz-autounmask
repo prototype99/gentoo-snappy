@@ -115,6 +115,7 @@
 =media-libs/SoQt-1.6.0a_pre20181221
 =media-sound/pulseaudio-13.99.1
 =media-video/ffmpeg-4.3
+=media-video/obs-studio-25.0.8-r1
 =media-video/pipewire-0.2.7
 =net-fs/samba-4.9.0
 =net-im/teams-1.3.00.16851
