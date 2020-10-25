@@ -4,9 +4,9 @@
 EAPI=7
 PYTHON_COMPAT=( python3_{5..9} )
 
-L10N_LOCALES=( af am an ar as ast az be be@latin bg bn bn_IN bs ca ca@valencia cs cy da de dz el en@shaw en_CA en_GB eo es et eu fa fi fr fur ga gd gl gu he hi hr hu hy id is it ja ka kk kn ko ku lt lv mai mg mk ml mn mr ms nb nds ne nl nn oc or pa pl ps pt pt_BR ro ru rw si sk sl sq sr sr@ije sr@latin sv ta te tg th tl tr tt ug uk vi wa xh yi zh_CN zh_HK zh_TW )
+PLOCALES="af am an ar as ast az be be@latin bg bn bn_IN bs ca ca@valencia cs cy da de dz el en@shaw en_CA en_GB eo es et eu fa fi fr fur ga gd gl gu he hi hr hu hy id is it ja ka kk kn ko ku lt lv mai mg mk ml mn mr ms nb nds ne nl nn oc or pa pl ps pt pt_BR ro ru rw si sk sl sq sr sr@ije sr@latin sv ta te tg th tl tr tt ug uk vi wa xh yi zh_CN zh_HK zh_TW"
 
-inherit flag-o-matic gnome.org gnome2-utils l10n-r1 linux-info meson multilib multilib-minimal python-any-r1 toolchain-funcs xdg
+inherit flag-o-matic gnome.org gnome2-utils linux-info meson multilib multilib-minimal python-any-r1 toolchain-funcs xdg
 
 DESCRIPTION="The GLib library of C routines"
 HOMEPAGE="https://developer.gnome.org/glib"
@@ -87,20 +87,6 @@ pkg_setup() {
 	python-any-r1_pkg_setup
 }
 
-src_prepare:locales()
-{
-	local l locales dir="po" pre="" post=".po"
-
-	l10n_find_changes_in_dir "${dir}" "${pre}" "${post}"
-
-	l10n_get_locales locales app off
-	for l in ${locales}
-	do
-		NO_V=1 rrm "${dir}/${pre}${l}${post}"
-		rsed -e "/${l}/d" -i -- "${dir}/LINGUAS"
-	done
-}
-
 src_prepare() {
 	if use elibc_musl; then
 		# Musl fix
@@ -161,7 +147,16 @@ src_prepare() {
 	xdg_src_prepare
 	gnome2_environment_reset
 
-	src_prepare:locales
+	l10n_find_plocales_changes po "" .po
+
+	local locales
+	l10n_get_locales locales app off
+	local l
+	for l in ${locales}
+	do
+		rm po/"${l}".po
+		sed -e "/${l}/d" -i -- "po/LINGUAS"
+	done
 	# TODO: python_name sedding for correct python shebang? Might be relevant mainly for glib-utils only
 }
 

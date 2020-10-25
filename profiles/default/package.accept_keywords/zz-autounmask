@@ -29,7 +29,7 @@
 =dev-lang/rust-1.42.0
 =dev-lang/spidermonkey-1.8.5-r7 ~amd64
 =dev-libs/atk-2.35.1
-=dev-libs/glib-2.65.0
+=dev-libs/glib-2.67.0
 =dev-libs/fribidi-1.0.9 ~amd64
 =dev-libs/gobject-introspection-1.66.1 ~amd64
 =dev-libs/icu-66.1
