@@ -68,8 +68,7 @@
 =dev-util/cargo-ebuild-0.3.0
 =dev-util/eclipse-sdk-bin-4.13.0
 =dev-util/gdbus-codegen-2.65.0
-=dev-util/glib-utils-2.64.3
-=dev-util/glib-utils-2.65.0
+=dev-util/glib-utils-2.67.0
 =dev-util/gn-0.1616
 =dev-util/gtk-doc-1.32-r1
 =dev-util/gtk-doc-am-1.32 ~amd64
