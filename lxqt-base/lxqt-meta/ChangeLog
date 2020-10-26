@@ -1,0 +1,4 @@
+*lxqt-meta-0.15.0
+::gentoo		base ebuild
+::nerdboy		add lightdm&screenlock&screensaver&virtkeyboard use flags
+::prototype99	add required use logic, give the virtual keyboard options use flags so they can be selected properly, remove 9999 specific code
