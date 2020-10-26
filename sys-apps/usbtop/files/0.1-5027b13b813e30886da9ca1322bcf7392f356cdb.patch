@@ -1,0 +1,27 @@
+From 5027b13b813e30886da9ca1322bcf7392f356cdb Mon Sep 17 00:00:00 2001
+From: Adrien Guinet <aguinet@quarkslab.com>
+Date: Sun, 22 Jan 2017 12:37:01 +0100
+Subject: [PATCH] Exit when no USB buses have been open.
+
+Close issue #3
+---
+ src/main.cpp | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/src/main.cpp b/src/main.cpp
+index fc5a48c..8ee2533 100644
+--- a/src/main.cpp
++++ b/src/main.cpp
+@@ -223,6 +223,12 @@ int main(int argc, char** argv)
+ 		}
+ 	);
+ 
++	if (pcap_hs.size() == 0) {
++		std::cerr << "FATAL ERROR: couldn't open any USB buses with pcap. Did you load the usbmon module (sudo modprobe usbmon)?" << std::endl;
++		std::cerr << "You might also need to run this software as root." << std::endl;
++		return 1;
++	}
++
+ 	// Launch capturing thread
+ 	boost::thread capturing_th(boost::bind(pcap_usb_async_loop, pcap_hs));
+ 

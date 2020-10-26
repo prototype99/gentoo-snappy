@@ -1,0 +1,23 @@
+From 22730b09b57a763c4c7f69f5126d2648ec1a378f Mon Sep 17 00:00:00 2001
+From: Adrien Guinet <aguinet@quarkslab.com>
+Date: Sat, 4 Mar 2017 09:46:47 +0100
+Subject: [PATCH] Update INSTALL instruction w/ boost dev packages
+
+Closes #4
+---
+ INSTALL | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/INSTALL b/INSTALL
+index d5053f9..3e8795a 100644
+--- a/INSTALL
++++ b/INSTALL
+@@ -8,7 +8,7 @@ Prerequisites:
+ 
+  Under Debian, install these packages :
+ 
+-  # aptitude install libboost-dev libpcap-dev
++  # aptitude install libboost-dev libpcap-dev libboost-thread-dev libboost-system-dev
+ 
+ Compilation instructions:
+ -------------------------

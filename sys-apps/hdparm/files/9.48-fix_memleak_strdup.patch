@@ -1,0 +1,24 @@
+Source: OpenSuse
+Status: unknown
+Reason: fix a memory leak
+
+--- a/hdparm.c	2009-08-02 22:08:56.000000000 +0200
++++ b/hdparm.c	2009-09-17 09:57:44.000000000 +0200
+@@ -880,7 +880,7 @@
+ {
+ 	__u64 start_lba;
+ 	int i, err, shortened = 0;
+-	char *fdevname = strdup(devname);
++	char *fdevname = strdupa(devname);
+ 
+ 	err = get_dev_geometry(fd, NULL, NULL, NULL, &start_lba, NULL);
+ 	if (err)
+@@ -891,7 +891,7 @@
+ 	}
+ 
+ 	if (!shortened)
+-		fdevname = strdup("the full disk");
++		fdevname = strdupa("the full disk");
+ 
+ 	if (start_lba == 0ULL)
+ 		return 0;

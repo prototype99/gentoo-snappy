@@ -1,0 +1,69 @@
+From bdac07fdafa689e06e6e54fcfea0008a07b0a27c Mon Sep 17 00:00:00 2001
+From: Adrien Guinet <aguinet@quarkslab.com>
+Date: Sun, 30 Mar 2014 22:41:41 +0200
+Subject: [PATCH] Fix compatibility issues with GCC 4.6. Closes #2
+
+---
+ include/usbtop/cxx_compat.h | 10 ++++++++++
+ src/buses.cpp               |  2 +-
+ src/main.cpp                |  9 +++++++++
+ 3 files changed, 20 insertions(+), 1 deletion(-)
+ create mode 100644 include/usbtop/cxx_compat.h
+
+diff --git a/include/usbtop/cxx_compat.h b/include/usbtop/cxx_compat.h
+new file mode 100644
+index 0000000..c01665d
+--- /dev/null
++++ b/include/usbtop/cxx_compat.h
+@@ -0,0 +1,10 @@
++#ifndef CXX_COMPAT_H
++#define CXX_COMPAT_H
++
++#ifdef __GNUC__
++	#if GCC_VERSION >= 40700
++		#define __STD_EMPLACE_SUPPORT
++	#endif
++#endif
++
++#endif
+diff --git a/src/buses.cpp b/src/buses.cpp
+index 23782fe..81b7595 100644
+--- a/src/buses.cpp
++++ b/src/buses.cpp
+@@ -47,7 +47,7 @@ bool usbtop::UsbBuses::_populated = false;
+ 
+ usbtop::UsbBuses::~UsbBuses()
+ {
+-	decltype(_buses)::const_iterator it;
++	list_buses_t::const_iterator it;
+ 	for (it = _buses.begin(); it != _buses.end(); it++) {
+ 		delete it->second;
+ 	}
+diff --git a/src/main.cpp b/src/main.cpp
+index 154acb6..fc5a48c 100644
+--- a/src/main.cpp
++++ b/src/main.cpp
+@@ -41,6 +41,11 @@
+ #include <usbtop/console_output.h>
+ #include <usbtop/pcap_compat.h>
+ #include <usbtop/should_stop.h>
++#include <usbtop/cxx_compat.h>
++
++#ifndef __STD_EMPLACE_SUPPORT
++#include <utility>
++#endif
+ 
+ #include <boost/thread.hpp>
+ 
+@@ -97,7 +102,11 @@ void pcap_usb_async_loop(pcap_buses_t const& pcap_hs)
+ 		if (fd > maxfd) {
+ 			maxfd = fd;
+ 		}
++#ifdef __STD_EMPLACE_SUPPORT
+ 		map_fd.emplace(fd, i);
++#else
++		map_fd.insert(std::make_pair(fd, i));
++#endif
+ 		FD_SET(fd, &fd_pcaps_org);
+ 	}
+ 

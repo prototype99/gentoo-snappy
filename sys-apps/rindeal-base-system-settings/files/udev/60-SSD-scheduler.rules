@@ -1,0 +1,5 @@
+## set noop/deadline scheduler for non-rotating disks
+
+ACTION=="add|change", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="0", PROGRAM="/bin/cat /sys/block/%k/queue/scheduler", RESULT=="*noop*", ATTR{queue/scheduler}="noop"
+# deadline beats noop
+ACTION=="add|change", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="0", PROGRAM="/bin/cat /sys/block/%k/queue/scheduler", RESULT=="*deadline*", ATTR{queue/scheduler}="deadline"

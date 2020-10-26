@@ -1,0 +1,19 @@
+Source: Fedora
+Status: unknown
+Reason: fix division by zero
+
+X-FedoraBug: https://bugzilla.redhat.com/show_bug.cgi?id=986072
+
+Index: hdparm-9.43/geom.c
+===================================================================
+--- hdparm-9.43.orig/geom.c
++++ hdparm-9.43/geom.c
+@@ -201,7 +201,7 @@ int get_dev_geometry (int fd, __u32 *cyl
+ 			__u64 hs  = (*heads) * (*sects);
+ 			__u64 cyl = (*cyls);
+ 			__u64 chs = cyl * hs;
+-			if (chs < (*nsectors))
++			if (chs < (*nsectors) && hs)
+ 				*cyls = (*nsectors) / hs;
+ 		}
+ 	}
