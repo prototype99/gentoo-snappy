@@ -6,9 +6,9 @@ EAPI=7
 inherit kernel-build
 
 MY_P=linux-${PV}
-GENPATCHES_P=https://dev.gentoo.org/~mpagano/genpatches/tarballs/genpatches-3.17-11
-CONFIG_VER=linux-3.14.48-arch1.amd64.config
-CONFIG_HASH=4a12839b0cf7c3cc5d90c04af3f0c4650f78df33
+GENPATCHES_P=https://dev.gentoo.org/~mpagano/genpatches/tarballs/genpatches-4.9-245
+CONFIG_VER=linux-4.9.77-arch1.amd64.config
+CONFIG_HASH=bc8f2c3d6e03768966f91582b78db1e9f804e16a
 
 DESCRIPTION="Linux kernel built with Gentoo patches as well as extra fixes"
 HOMEPAGE="https://www.kernel.org/"
@@ -22,7 +22,7 @@ S=${WORKDIR}/${MY_P}
 
 LICENSE="GPL-2"
 KEYWORDS="amd64"
-IUSE="amd ath9k btrfs debug +efi ext4 +fat fbcondec +fuse infiniband intel pax systemd thinkpad-backlight thinkpad-dock threads-4 threads-16 wireless +xfs"
+IUSE="amd apparmor ath9k bluetooth2 btrfs debug +efi ext4 +fat +fuse infiniband intel mac-pro11-shutdown pax secure systemd threads-4 threads-16 wireless +xfs"
 
 REQUIRED_USE="
 ^^ ( amd intel )
@@ -44,13 +44,8 @@ src_prepare() {
 		"${FILESDIR}"/fix-inline.patch
 		"${WORKDIR}"/2900_dev-root-proc-mount-fix.patch
 		"${WORKDIR}"/4567_distro-Gentoo-Kconfig.patch
-		"${WORKDIR}"/5000_enable-additional-cpu-optimizations-for-gcc.patch
+		"${WORKDIR}"/5010_enable-additional-cpu-optimizations-for-gcc.patch
 	)
-	if use ath9k; then
-		PATCHES+=(
-			"${FILESDIR}"/3.17ath9k-buffer-fix.patch
-		)
-	fi
 	if gcc-major-version > 4; then
 		PATCHES+=(
 				"${FILESDIR}"/3.17gcc5+compiler.patch
@@ -81,9 +76,19 @@ src_prepare() {
 			fi
 		fi
 	fi
-	if use fbcondec; then
+	if use apparmor; then
 		PATCHES+=(
-			"${WORKDIR}"/4200_fbcondecor-3.16.patch
+			"${WORKDIR}"/1520_security-apparmor-Use-POSIX-compatible-printf.patch
+		)
+	fi
+	if use ath9k; then
+		PATCHES+=(
+			"${FILESDIR}"/3.17ath9k-buffer-fix.patch
+		)
+	fi
+	if use bluetooth2; then
+		PATCHES+=(
+			"${WORKDIR}"/2000_BT-Check-key-sizes-only-if-Secure-Simple-Pairing-enabled.patch
 		)
 	fi
 	if use infiniband; then
@@ -91,19 +96,19 @@ src_prepare() {
 			"${WORKDIR}"/2400_kcopy-patch-for-infiniband-driver.patch
 		)
 	fi
+	if use mac-pro11-shutdown; then
+		PATCHES+=(
+			"${WORKDIR}"/2300_enable-poweroff-on-Mac-Pro-11.patch
+		)
+	fi
 	if use pax; then
 		PATCHES+=(
 			"${WORKDIR}"/1500_XATTR_USER_PREFIX.patch
 		)
 	fi
-	if use thinkpad-backlight; then
+	if use secure; then
 		PATCHES+=(
-			"${WORKDIR}"/2700_ThinkPad-30-brightness-control-fix.patch
-		)
-	fi
-	if use thinkpad-dock; then
-		PATCHES+=(
-			"${WORKDIR}"/2710_ultra-dock-support-for-Thinkpad-X240.patch
+			"${WORKDIR}"/1510_fs-enable-link-security-restrictions-by-default.patch
 		)
 	fi
 	default
