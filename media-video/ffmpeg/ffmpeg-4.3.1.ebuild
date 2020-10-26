@@ -320,6 +320,10 @@ S=${WORKDIR}/${P/_/-}
 
 PATCHES=(
 	"${FILESDIR}"/chromium-r1.patch
+	"${FILESDIR}"/libsvt_av1.patch
+	"${FILESDIR}"/libsvt_hevc.patch
+	"${FILESDIR}"/libsvt_hevc-docs.patch
+	"${FILESDIR}"/libsvt_vp9.patch
 )
 
 MULTILIB_WRAPPED_HEADERS=(
@@ -331,18 +335,6 @@ build_separate_libffmpeg() {
 }
 
 src_prepare() {
-	if use svt_av1; then
-		PATCHES+=("${FILESDIR}"/libsvt_av1.patch)
-	fi
-	if use svt_hevc; then
-		PATCHES+=(
-			"${FILESDIR}"/libsvt_hevc.patch
-			"${FILESDIR}"/libsvt_hevc-docs.patch)
-	fi
-	if use svt_vp9; then
-		PATCHES+=("${FILESDIR}"/libsvt_vp9.patch)
-	fi
-
 	if use v4l2m2m-fix; then
 	local LEP="${FILESDIR}/LibreELEC-patches"
 		PATCHES+=(
