@@ -447,3 +447,5 @@ dev-db/sqlite secure-delete
 # required by dev-util/msbuild-15.9.20.62856-r3::shnurise[roslyn]
 # required by dev-util/rider-2020.2.2-r2::prototype99
 >=dev-dotnet/system-reflection-metadata-2.0.0_pre pkg-config
+# required by media-video/obs-studio-25.0.8-r1::gentoo
+>=media-video/ffmpeg-4.3.1 x264
