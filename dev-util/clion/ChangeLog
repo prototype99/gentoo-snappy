@@ -1,0 +1,4 @@
+*clion-2020.2.4
+::gentoo		add licences, add keyword, update description, custom-jdk use flag, add more things to remove
+::prototype99	remove some pointless extras, default enable system use flags, add arm keyword seeing as gentoo sort of has it
+::rindeal		base ebuild
