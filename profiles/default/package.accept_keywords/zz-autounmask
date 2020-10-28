@@ -171,6 +171,7 @@
 =sys-cluster/openmpi-2.0.4
 =sys-config/ltoize-0.9.3-r2
 =sys-devel/clang-9.0.1
+=sys-devel/clang-10.0.1-r1
 =sys-devel/lld-9.0.1
 =sys-devel/llvm-9.0.1
 =sys-kernel/gentoo-sources-5.1.11 ~amd64
