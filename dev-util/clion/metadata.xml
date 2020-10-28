@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>dev.rindeal+ebuild-repo@gmail.com</email>
+    <name>Jan Chren (rindeal)</name>
+  </maintainer>
+  <use>
+    <flag name="system-clang">Use <pkg>sys-devel/clang</pkg> instead of the bundled copy</flag>
+    <flag name="system-cmake">Use <pkg>dev-util/cmake</pkg> instead of the bundled copy</flag>
+    <flag name="system-gdb">Use <pkg>sys-devel/gdb</pkg> instead of the bundled copy</flag>
+    <flag name="system-lldb">Use <pkg>sys-devel/llvm</pkg> instead of the bundled copy</flag>
+  </use>
+</pkgmetadata>
