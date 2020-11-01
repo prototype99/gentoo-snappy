@@ -1,0 +1,3 @@
+*packettracer-7.3.1
+::jorgicio		base ebuild
+::protoype99	don't put url behind an arch flag when there is only one anyway, update file paths, don't use outdated executables
