@@ -41,49 +41,13 @@ pkg_pretend() {
 
 src_prepare() {
 	local PATCHES=(
-		"${FILESDIR}"/fix-inline.patch
 		"${WORKDIR}"/2900_dev-root-proc-mount-fix.patch
 		"${WORKDIR}"/4567_distro-Gentoo-Kconfig.patch
 		"${WORKDIR}"/5010_enable-additional-cpu-optimizations-for-gcc.patch
 	)
-	if gcc-major-version > 4; then
-		PATCHES+=(
-				"${FILESDIR}"/3.17gcc5+compiler.patch
-		)
-		if gcc-major-version > 6; then
-			PATCHES+=(
-				"${FILESDIR}"/3.12gcc7.patch
-			)
-			if gcc-major-version > 7; then
-				PATCHES+=(
-					"${FILESDIR}"/3.16.85gcc8exec.c-sched.h.patch
-					"${FILESDIR}"/3.17gcc8log2.h.patch
-				)
-				if gcc-major-version > 8; then
-					PATCHES+=(
-						"${FILESDIR}"/gcc9trace.patch
-					)
-					if gcc-major-version < 10; then
-						gcc-minor-version > 0 && PATCHES+=(
-							"${FILESDIR}"/3.12gcc9.1.patch
-						)
-					else
-						PATCHES+=(
-							"${FILESDIR}"/3.12gcc9.1.patch
-						)
-					fi
-				fi
-			fi
-		fi
-	fi
 	if use apparmor; then
 		PATCHES+=(
 			"${WORKDIR}"/1520_security-apparmor-Use-POSIX-compatible-printf.patch
-		)
-	fi
-	if use ath9k; then
-		PATCHES+=(
-			"${FILESDIR}"/3.17ath9k-buffer-fix.patch
 		)
 	fi
 	if use bluetooth2; then
