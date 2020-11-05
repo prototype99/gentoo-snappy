@@ -15,5 +15,9 @@ LICENSE="GPL-2"
 SLOT="0"
 IUSE=""
 
-DEPEND=">=virtual/jdk-1.9"
+DEPEND=">=dev-java/commons-net-3.6
+dev-java/jna
+dev-java/json-simple
+>=dev-java/xz-java-1.8
+>=virtual/jdk-1.9"
 RDEPEND=">=virtual/jre-1.9 ${DEPEND}"
