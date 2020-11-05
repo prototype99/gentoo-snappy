@@ -3,7 +3,7 @@
 
 EAPI=7
 
-PYTHON_COMPAT=( python3_{6..8} )
+PYTHON_COMPAT=( python3_{6,7} )
 
 inherit python-any-r1 prefix eutils toolchain-funcs flag-o-matic gnuconfig \
 	multilib systemd multiprocessing
@@ -19,7 +19,7 @@ if [[ ${PV} == 9999* ]]; then
 	EGIT_REPO_URI="https://sourceware.org/git/glibc.git"
 	inherit git-r3
 else
-	KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
+	KEYWORDS="~alpha amd64 arm arm64 hppa ~ia64 ~m68k ~mips ppc ppc64 ~riscv s390 sparc x86"
 	SRC_URI="mirror://gnu/glibc/${P}.tar.xz"
 fi
 
@@ -28,15 +28,13 @@ RELEASE_VER=${PV}
 GCC_BOOTSTRAP_VER=20180511
 
 # Gentoo patchset
-PATCH_VER=10
-PATCH_DEV=dilfridge
-
-IDN=">=net-dns/libidn2-2.3.0"
+PATCH_VER=9
+PATCH_DEV=slyfox
 
 SRC_URI+=" https://dev.gentoo.org/~${PATCH_DEV}/distfiles/${P}-patches-${PATCH_VER}.tar.xz"
 SRC_URI+=" multilib? ( https://dev.gentoo.org/~dilfridge/distfiles/gcc-multilib-bootstrap-${GCC_BOOTSTRAP_VER}.tar.xz )"
 
-IUSE="audit caps cet compile-locales +crypt custom-cflags doc gd headers-only +multiarch multilib nscd profile selinux +ssp +static-libs suid systemtap test vanilla"
+IUSE="audit caps cet compile-locales doc gd headers-only +multiarch multilib nscd profile selinux +ssp suid systemtap test vanilla"
 
 # Minimum kernel version that glibc requires
 MIN_KERN_VER="3.2.0"
@@ -95,7 +93,6 @@ BDEPEND="
 	doc? ( sys-apps/texinfo )
 "
 COMMON_DEPEND="
-	gd? ( media-libs/gd:2= )
 	nscd? ( selinux? (
 		audit? ( sys-process/audit )
 		caps? ( sys-libs/libcap )
@@ -105,7 +102,7 @@ COMMON_DEPEND="
 	systemtap? ( dev-util/systemtap )
 "
 DEPEND="${COMMON_DEPEND}
-	test? ( ${IDN} )
+	test? ( >=net-dns/libidn2-2.0.5 )
 "
 RDEPEND="${COMMON_DEPEND}
 	sys-apps/gentoo-functions
@@ -126,30 +123,11 @@ else
 	"
 	DEPEND+=" virtual/os-headers "
 	RDEPEND+="
-		${IDN}
+		>=net-dns/libidn2-2.0.5
 		vanilla? ( !sys-libs/timezone-data )
 	"
 	PDEPEND+=" !vanilla? ( sys-libs/timezone-data )"
 fi
-
-	# Ignore tests whitelisted below
-GENTOO_GLIBC_XFAIL_TESTS="${GENTOO_GLIBC_XFAIL_TESTS:-yes}"
-# The following tests fail due to the Gentoo build system and are thus
-# executed but ignored:
-XFAIL_TEST_LIST=(
-	# 1) Sandbox
-	tst-ldconfig-bad-aux-cache
-	tst-pldd
-	tst-mallocfork2
-	tst-nss-db-endgrent
-	tst-nss-db-endpwent
-	tst-nss-files-hosts-long
-	tst-nss-test3
-	# 2) Namespaces and cgroup
-	tst-locale-locpath
-	# 9) Failures of unknown origin
-	tst-latepthread
-)
 
 #
 # Small helper functions
@@ -221,7 +199,7 @@ do_compile_test() {
 	rm -f glibc-test*
 	printf '%b' "$*" > glibc-test.c
 
-	nonfatal emake glibc-test
+	nonfatal emake -s glibc-test
 	ret=$?
 
 	popd >/dev/null
@@ -269,7 +247,7 @@ setup_target_flags() {
 			# We could change main to _start and pass -nostdlib here so that we
 			# only test the gcc code compilation.  Or we could do a compile and
 			# then look for the symbol via scanelf.
-			if ! do_compile_test "" 'void f(int i, void *p) {if (__sync_fetch_and_add(&i, 1)) f(i, p);}\nint main(){return 0;}\n'; then
+			if ! do_compile_test "" 'void f(int i, void *p) {if (__sync_fetch_and_add(&i, 1)) f(i, p);}\nint main(){return 0;}\n' 2>/dev/null ; then
 				local t=${CTARGET_OPT:-${CTARGET}}
 				t=${t%%-*}
 				filter-flags '-march=*'
@@ -279,9 +257,10 @@ setup_target_flags() {
 		;;
 		amd64)
 			# -march needed for #185404 #199334
+			# Note: This test only matters when the x86 ABI is enabled, so we could
+			# optimize a bit and elide it.
 			# TODO: See cross-compile issues listed above for x86.
-			[[ ${ABI} == x86 ]] &&
-			if ! do_compile_test "${CFLAGS_x86}" 'void f(int i, void *p) {if (__sync_fetch_and_add(&i, 1)) f(i, p);}\nint main(){return 0;}\n'; then
+			if ! do_compile_test "${CFLAGS_x86}" 'void f(int i, void *p) {if (__sync_fetch_and_add(&i, 1)) f(i, p);}\nint main(){return 0;}\n' 2>/dev/null ; then
 				local t=${CTARGET_OPT:-${CTARGET}}
 				t=${t%%-*}
 				# Normally the target is x86_64-xxx, so turn that into the -march that
@@ -291,7 +270,7 @@ setup_target_flags() {
 				# ugly, ugly, ugly.  ugly.
 				CFLAGS_x86=$(CFLAGS=${CFLAGS_x86} filter-flags '-march=*'; echo "${CFLAGS}")
 				export CFLAGS_x86="${CFLAGS_x86} -march=${t}"
-				einfo "Auto adding -march=${t} to CFLAGS_x86 #185404 (ABI=${ABI})"
+				einfo "Auto adding -march=${t} to CFLAGS_x86 #185404"
 			fi
 		;;
 		mips)
@@ -303,20 +282,11 @@ setup_target_flags() {
 			filter-flags "-fcall-used-g7"
 			append-flags "-fcall-used-g6"
 
-			# If the CHOST is the basic one (e.g. not sparcv9-xxx already),
-			# try to pick a better one so glibc can use cpu-specific .S files.
-			# We key off the CFLAGS to get a good value.  Also need to handle
-			# version skew.
-			# We can't force users to set their CHOST to their exact machine
-			# as many of these are not recognized by config.sub/gcc and such :(.
-			# Note: If the mcpu values don't scale, we might try probing CPP defines.
-			# Note: Should we factor in -Wa,-AvXXX flags too ?  Or -mvis/etc... ?
-
 			local cpu
 			case ${CTARGET} in
 			sparc64-*)
 				case $(get-flag mcpu) in
-				niagara[234])
+					niagara[234])
 					if ver_test -ge 2.8 ; then
 						cpu="sparc64v2"
 					elif ver_test -ge 2.4 ; then
@@ -397,18 +367,11 @@ setup_flags() {
 	ASFLAGS_BASE=${ASFLAGS_BASE-${ASFLAGS}}
 	ASFLAGS=${ASFLAGS_BASE}
 
-	# Allow users to explicitly avoid flag sanitization via
-	# USE=custom-cflags.
-	if ! use custom-cflags; then
-		# Over-zealous CFLAGS can often cause problems.  What may work for one
-		# person may not work for another.  To avoid a large influx of bugs
-		# relating to failed builds, we strip most CFLAGS out to ensure as few
-		# problems as possible.
-		strip-flags
-		# Lock glibc at -O2; we want to be conservative here.
-		filter-flags '-O?'
-		append-flags -O2
-	fi
+	# Over-zealous CFLAGS can often cause problems.  What may work for one
+	# person may not work for another.  To avoid a large influx of bugs
+	# relating to failed builds, we strip most CFLAGS out to ensure as few
+	# problems as possible.
+	strip-flags
 	strip-unsupported-flags
 	filter-flags -m32 -m64 '-mabi=*'
 
@@ -430,9 +393,10 @@ setup_flags() {
 		CBUILD_OPT=${CTARGET_OPT}
 	fi
 
-	# glibc's headers disallow -O0 and fail at build time:
-	#  include/libc-symbols.h:75:3: #error "glibc cannot be compiled without optimization"
-	replace-flags -O0 -O1
+	# Lock glibc at -O2; we want to be conservative here.
+	# -fno-strict-aliasing is to work around #155906.
+	filter-flags '-O?'
+	append-flags -O2 -fno-strict-aliasing
 
 	filter-flags '-fstack-protector*'
 }
@@ -890,11 +854,7 @@ glibc_do_configure() {
 			myconf+=( --enable-stack-protector=no )
 			;;
 		*)
-			# Use '=strong' instead of '=all' to protect only functions
-			# worth protecting from stack smashes.
-			# '=all' is also known to have a problem in IFUNC resolution
-			# tests: https://sourceware.org/PR25680, bug #712356.
-			myconf+=( --enable-stack-protector=$(usex ssp strong no) )
+			myconf+=( --enable-stack-protector=$(usex ssp all no) )
 			;;
 	esac
 	myconf+=( --enable-stackguard-randomization )
@@ -954,7 +914,7 @@ glibc_do_configure() {
 		--host=${CTARGET_OPT:-${CTARGET}}
 		$(use_enable profile)
 		$(use_with gd)
-		--with-headers=$(build_eprefix)$(alt_build_headers)
+		--with-headers=$(alt_build_headers)
 		--prefix="$(host_eprefix)/usr"
 		--sysconfdir="$(host_eprefix)/etc"
 		--localstatedir="$(host_eprefix)/var"
@@ -964,7 +924,6 @@ glibc_do_configure() {
 		--libexecdir='$(libdir)'/misc/glibc
 		--with-bugurl=https://bugs.gentoo.org/
 		--with-pkgversion="$(glibc_banner)"
-		$(use_enable crypt)
 		$(use_multiarch || echo --disable-multi-arch)
 		$(use_enable systemtap)
 		$(use_enable nscd)
@@ -1109,7 +1068,7 @@ glibc_headers_configure() {
 		--enable-bind-now
 		--build=${CBUILD_OPT:-${CBUILD}}
 		--host=${CTARGET_OPT:-${CTARGET}}
-		--with-headers=$(build_eprefix)$(alt_build_headers)
+		--with-headers=$(alt_build_headers)
 		--prefix="$(host_eprefix)/usr"
 		${EXTRA_ECONF}
 	)
@@ -1160,13 +1119,7 @@ src_compile() {
 
 glibc_src_test() {
 	cd "$(builddir nptl)"
-	local myxfailparams=""
-	if [[ "${GENTOO_GLIBC_XFAIL_TESTS}" == "yes" ]] ; then
-		for myt in ${XFAIL_TEST_LIST[@]} ; do
-			myxfailparams+="test-xfail-${myt}=yes "
-		done
-	fi
-	emake ${myxfailparams} check
+	emake check
 }
 
 do_src_test() {
@@ -1429,11 +1382,6 @@ src_install() {
 	fi
 
 	foreach_abi glibc_do_src_install
-
-	if ! use static-libs ; then
-		elog "Not installing static glibc libraries"
-		find "${ED}" -name "*.a" -and -not -name "*_nonshared.a" -delete
-	fi
 }
 
 # Simple test to make sure our new glibc isn't completely broken.

@@ -15,7 +15,7 @@ SLOT="2.2"
 
 EMULTILIB_PKG="true"
 
-KEYWORDS="~alpha amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
 SRC_URI="mirror://gnu/glibc/${P}.tar.xz"
 SRC_URI+=" https://dev.gentoo.org/~dilfridge/distfiles/${P}-patches-8.tar.xz"
 
