@@ -14,3 +14,6 @@ DESCRIPTION="Powerfull download accelerator and video downloader"
 LICENSE="GPL-2"
 SLOT="0"
 IUSE=""
+
+DEPEND=">=virtual/jdk-1.9"
+RDEPEND=">=virtual/jre-1.9 ${DEPEND}"
