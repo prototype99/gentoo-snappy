@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit java-pkg-2
+inherit java-pkg-2 java-pkg-simple
 
 HOMEPAGE="https://subhra74.github.io/xdm/"
 SRC_URI="https://github.com/subhra74/xdm/archive/7.2.11.tar.gz -> ${P}.tar.gz"
