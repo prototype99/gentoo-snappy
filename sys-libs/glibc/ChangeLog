@@ -13,6 +13,7 @@
 ::prototype99		simplify dependencies with IDN variable, improve python use flags
 ::sabayon-distro	base ebuild
 *glibc-2.29-r8
+::gentoo			add workaround
 *glibc-2.29-r7
 ::gentoo			base ebuild
 ::sabayon-distro
