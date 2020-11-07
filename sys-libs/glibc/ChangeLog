@@ -7,13 +7,25 @@
 -keywords
 -newer patchset
 -updated dependencies
--test whitelist
+-test yeslist
 -simplify some commands
 -updated ssp behaviour
 ::prototype99		simplify dependencies with IDN variable, improve python use flags
 ::sabayon-distro	base ebuild
 *glibc-2.29-r8
-::gentoo			add workaround
+::gentoo
+-add workaround
+-add more python compatibility
+-add missing dependencies
+-don't do unnecessary actions
+-support custom cflags
+::prototype99
+-improve python use flags
+-remove 9999 specific code
+-remove some excessive variables
+-improve patch logic
+-add required use logic
+-add extra use flags
 *glibc-2.29-r7
 ::gentoo			base ebuild
 ::sabayon-distro

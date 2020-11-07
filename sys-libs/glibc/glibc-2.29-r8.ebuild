@@ -3,7 +3,7 @@
 
 EAPI=7
 
-PYTHON_COMPAT=( python3_{6,7} )
+PYTHON_COMPAT=( python3_{6..9} )
 
 inherit python-any-r1 prefix eutils toolchain-funcs flag-o-matic gnuconfig \
 	multilib systemd multiprocessing
@@ -15,26 +15,28 @@ SLOT="2.2"
 
 EMULTILIB_PKG="true"
 
-if [[ ${PV} == 9999* ]]; then
-	EGIT_REPO_URI="https://sourceware.org/git/glibc.git"
-	inherit git-r3
-else
-	KEYWORDS="~alpha amd64 arm arm64 hppa ~ia64 ~m68k ~mips ppc ppc64 ~riscv s390 sparc x86"
-	SRC_URI="mirror://gnu/glibc/${P}.tar.xz"
-fi
+KEYWORDS="~alpha amd64 arm arm64 hppa ~ia64 ~m68k ~mips ppc ppc64 ~riscv s390 sparc x86"
+SRC_URI="mirror://gnu/glibc/${P}.tar.xz"
 
-RELEASE_VER=${PV}
+SRC_URI+=" https://dev.gentoo.org/~slyfox/distfiles/${P}-patches-9.tar.xz"
+SRC_URI+=" multilib? ( https://dev.gentoo.org/~dilfridge/distfiles/gcc-multilib-bootstrap-20180511.tar.xz )"
 
-GCC_BOOTSTRAP_VER=20180511
+IUSE="audit caps cet compile-locales custom-cflags doc gd headers-only l10n_ja-JP +multiarch multilib nscd profile secure selinux +ssp suid systemtap test vanilla"
 
-# Gentoo patchset
-PATCH_VER=9
-PATCH_DEV=slyfox
-
-SRC_URI+=" https://dev.gentoo.org/~${PATCH_DEV}/distfiles/${P}-patches-${PATCH_VER}.tar.xz"
-SRC_URI+=" multilib? ( https://dev.gentoo.org/~dilfridge/distfiles/gcc-multilib-bootstrap-${GCC_BOOTSTRAP_VER}.tar.xz )"
-
-IUSE="audit caps cet compile-locales doc gd headers-only +multiarch multilib nscd profile selinux +ssp suid systemtap test vanilla"
+REQUIRED_USE="
+alpha? ( !vanilla )
+arm? ( !vanilla )
+arm64? ( !vanilla )
+hppa? ( !vanilla )
+l10n_ja-JP? ( !vanilla )
+mips? ( !vanilla )
+riscv? ( !vanilla )
+s390? ( !vanilla )
+secure? ( !vanilla )
+selinux? ( !vanilla )
+sparc? ( !vanilla )
+x86? ( !vanilla )
+"
 
 # Minimum kernel version that glibc requires
 MIN_KERN_VER="3.2.0"
@@ -84,6 +86,11 @@ fi
 # We need a new-enough binutils/gcc to match upstream baseline.
 # Also we need to make sure our binutils/gcc supports TLS,
 # and that gcc already contains the hardened patches.
+TOOLDEP="
+	app-arch/gzip
+	sys-apps/grep
+	virtual/awk
+"
 BDEPEND="
 	${PYTHON_DEPS}
 	>=app-misc/pax-utils-0.1.10
@@ -91,8 +98,12 @@ BDEPEND="
 	!<sys-devel/bison-2.7
 	!<sys-devel/make-4
 	doc? ( sys-apps/texinfo )
+	!compile-locales? (
+		${TOOLDEP}
+	)
 "
 COMMON_DEPEND="
+	gd? ( media-libs/gd:2= )
 	nscd? ( selinux? (
 		audit? ( sys-process/audit )
 		caps? ( sys-libs/libcap )
@@ -101,33 +112,39 @@ COMMON_DEPEND="
 	selinux? ( sys-libs/libselinux )
 	systemtap? ( dev-util/systemtap )
 "
+IDN=">=net-dns/libidn2-2.0.5"
 DEPEND="${COMMON_DEPEND}
-	test? ( >=net-dns/libidn2-2.0.5 )
+	compile-locales? (
+		${TOOLDEP}
+	)
+	test? ( ${IDN} )
 "
 RDEPEND="${COMMON_DEPEND}
+	${TOOLDEP}
 	sys-apps/gentoo-functions
 "
-
-RESTRICT="!test? ( test )"
-
+TCDEP="
+	>=${CATEGORY}/binutils-2.24
+	>=${CATEGORY}/gcc-6
+"
 if [[ ${CATEGORY} == cross-* ]] ; then
 	BDEPEND+=" !headers-only? (
-		>=${CATEGORY}/binutils-2.24
-		>=${CATEGORY}/gcc-6
+		${TCDEP}
 	)"
 	[[ ${CATEGORY} == *-linux* ]] && DEPEND+=" ${CATEGORY}/linux-headers"
 else
 	BDEPEND+="
-		>=sys-devel/binutils-2.24
-		>=sys-devel/gcc-6
+		${TCDEP}
 	"
 	DEPEND+=" virtual/os-headers "
 	RDEPEND+="
-		>=net-dns/libidn2-2.0.5
+		${IDN}
 		vanilla? ( !sys-libs/timezone-data )
 	"
 	PDEPEND+=" !vanilla? ( sys-libs/timezone-data )"
 fi
+
+RESTRICT="!test? ( test )"
 
 #
 # Small helper functions
@@ -257,9 +274,8 @@ setup_target_flags() {
 		;;
 		amd64)
 			# -march needed for #185404 #199334
-			# Note: This test only matters when the x86 ABI is enabled, so we could
-			# optimize a bit and elide it.
 			# TODO: See cross-compile issues listed above for x86.
+			[[ ${ABI} == x86 ]] &&
 			if ! do_compile_test "${CFLAGS_x86}" 'void f(int i, void *p) {if (__sync_fetch_and_add(&i, 1)) f(i, p);}\nint main(){return 0;}\n' 2>/dev/null ; then
 				local t=${CTARGET_OPT:-${CTARGET}}
 				t=${t%%-*}
@@ -367,11 +383,18 @@ setup_flags() {
 	ASFLAGS_BASE=${ASFLAGS_BASE-${ASFLAGS}}
 	ASFLAGS=${ASFLAGS_BASE}
 
-	# Over-zealous CFLAGS can often cause problems.  What may work for one
-	# person may not work for another.  To avoid a large influx of bugs
-	# relating to failed builds, we strip most CFLAGS out to ensure as few
-	# problems as possible.
-	strip-flags
+	# Allow users to explicitly avoid flag sanitization via
+	# USE=custom-cflags.
+	if ! use custom-cflags; then
+		# Over-zealous CFLAGS can often cause problems.  What may work for one
+		# person may not work for another.  To avoid a large influx of bugs
+		# relating to failed builds, we strip most CFLAGS out to ensure as few
+		# problems as possible.
+		strip-flags
+		# Lock glibc at -O2; we want to be conservative here.
+		filter-flags '-O?'
+		append-flags -O2
+	fi
 	strip-unsupported-flags
 	filter-flags -m32 -m64 '-mabi=*'
 
@@ -393,10 +416,9 @@ setup_flags() {
 		CBUILD_OPT=${CTARGET_OPT}
 	fi
 
-	# Lock glibc at -O2; we want to be conservative here.
-	# -fno-strict-aliasing is to work around #155906.
-	filter-flags '-O?'
-	append-flags -O2 -fno-strict-aliasing
+	# glibc's headers disallow -O0 and fail at build time:
+	#  include/libc-symbols.h:75:3: #error "glibc cannot be compiled without optimization"
+	replace-flags -O0 -O1
 
 	filter-flags '-fstack-protector*'
 }
@@ -515,7 +537,7 @@ foreach_abi() {
 
 glibc_banner() {
 	local b="Gentoo ${PVR}"
-	[[ -n ${PATCH_VER} ]] && ! use vanilla && b+=" p${PATCH_VER}"
+	[[ -n 9 ]] && ! use vanilla && b+=" p9"
 	echo "${b}"
 }
 
@@ -753,24 +775,113 @@ src_unpack() {
 	# Consistency is not guaranteed between pkg_ and src_ ...
 	sanity_prechecks
 
-	use multilib && unpack gcc-multilib-bootstrap-${GCC_BOOTSTRAP_VER}.tar.xz
+	use multilib && unpack gcc-multilib-bootstrap-20180511.tar.xz
 
 	setup_env
 
-	if [[ -n ${EGIT_REPO_URI} ]] ; then
-		git-r3_src_unpack
-	else
-		unpack ${P}.tar.xz
-	fi
+	unpack ${P}.tar.xz
 
 	cd "${WORKDIR}" || die
-	unpack glibc-${RELEASE_VER}-patches-${PATCH_VER}.tar.xz
+	unpack ${P}-patches-9.tar.xz
 }
 
 src_prepare() {
 	if ! use vanilla ; then
-		elog "Applying Gentoo Glibc Patchset ${RELEASE_VER}-${PATCH_VER}"
-		eapply "${WORKDIR}"/patches
+		elog "Applying Gentoo Glibc Patchset 2.29-9"
+		#patch 18 is for grep
+		local PATCHES=(
+			"${WORKDIR}"/0001-Gentoo-disable-ldconfig-during-install.patch
+			"${WORKDIR}"/0002-Gentoo-support-running-tests-under-sandbox.patch
+			"${WORKDIR}"/0004-Revert-sysdeps-posix-getaddrinfo.c-gaih_inet-Only-us.patch
+			"${WORKDIR}"/0005-Gentoo-disable-tests-that-fail-only-in-sandbox.patch
+			"${WORKDIR}"/0006-Gentoo-Disable-test-that-fails-because-of-the-gethos.patch
+			"${WORKDIR}"/0007-Gentoo-Adapt-to-Gentoo-specific-etc-mail-aliases.patch
+			"${WORKDIR}"/0008-Gentoo-Add-a-C.UTF-8-locale.patch
+			"${WORKDIR}"/0009-Gentoo-force-O0-in-conform-tests-to-survive-CC-chang.patch
+			"${WORKDIR}"/0010-Gentoo-Adapt-nss-tst-nss-files-alias-leak-to-Gentoo-.patch
+			"${WORKDIR}"/0011-nptl-Fix-pthread_rwlock_try-lock-stalls-Bug-23844.patch
+			"${WORKDIR}"/0018-regex-fix-read-overrun-BZ-24114.patch
+			"${WORKDIR}"/0029-Fix-crash-in-_IO_wfile_sync-bug-20568.patch
+			"${WORKDIR}"/0040-io-Remove-copy_file_range-emulation-BZ-24744.patch
+			"${WORKDIR}"/0048-Improve-performance-of-strstr.patch
+			"${WORKDIR}"/0049-Improve-performance-of-memmem.patch
+			"${WORKDIR}"/0057-Fix-assertion-in-malloc.c-tcache_get.patch
+			"${WORKDIR}"/0058-Small-tcache-improvements.patch
+			"${WORKDIR}"/0059-malloc-Remove-unwanted-leading-whitespace-in-malloc_.patch
+		)
+		if gcc-major-version > 8; then
+			PATCHES+=(
+				"${FILESDIR}"/0033-malloc-Fix-warnings-in-tests-with-GCC-9.patch
+			)
+		fi
+		if use alpha; then
+			PATCHES+=(
+				"${WORKDIR}"/0045-alpha-Do-not-redefine-__NR_shmat-or-__NR_osf_shmat.patch
+				"${WORKDIR}"/0047-Update-Alpha-libm-test-ulps.patch
+				"${WORKDIR}"/0050-alpha-force-old-OSF1-syscalls-for-getegid-geteuid-an.patch
+			)
+		fi
+		if use arm; then
+			PATCHES+=(
+				"${WORKDIR}"/0013-arm-Use-nr-constraint-for-Systemtap-probes-BZ-24164.patch
+				"${WORKDIR}"/0016-nptl-Fix-invalid-Systemtap-probe-in-pthread_join-BZ-.patch
+			)
+		fi
+		if use arm64; then
+			PATCHES+=(
+				"${WORKDIR}"/0042-aarch64-add-STO_AARCH64_VARIANT_PCS-and-DT_AARCH64_V.patch
+				"${WORKDIR}"/0043-aarch64-handle-STO_AARCH64_VARIANT_PCS.patch
+			)
+		fi
+		if use hppa; then
+			PATCHES+=(
+				"${WORKDIR}"/0046-hppa-Update-libm-tests-ulps.patch
+			)
+		fi
+		if use l10n_ja-JP; then
+			PATCHES+=(
+				"${WORKDIR}"/0021-ja_JP-Change-the-offset-for-Taisho-gan-nen-from-2-to.patch
+				"${WORKDIR}"/0022-ja_JP-locale-Add-entry-for-the-new-Japanese-era-BZ-2.patch
+			)
+		fi
+		if use mips; then
+			PATCHES+=(
+				"${WORKDIR}"/0044-posix-Fix-large-mmap64-offset-for-mips64n32-BZ-24699.patch
+				"${WORKDIR}"/0055-mips-Force-RWX-stack-for-hard-float-builds-that-can-.patch
+			)
+		fi
+		if use riscv; then
+			PATCHES+=(
+				"${WORKDIR}"/0039-Fix-RISC-V-vfork-build-with-Linux-5.3-kernel-headers.patch
+			)
+		fi
+		if use s390; then
+			PATCHES+=(
+				"${WORKDIR}"/0014-Add-compiler-barriers-around-modifications-of-the-ro.patch
+				"${WORKDIR}"/0020-S390-Mark-vx-and-vxe-as-important-hwcap.patch
+			)
+		fi
+		if use secure; then
+			PATCHES+=(
+				"${WORKDIR}"/0012-x86-64-memcmp-Use-unsigned-Jcc-instructions-on-size-.patch
+				"${WORKDIR}"/0028-malloc-Check-for-large-bin-list-corruption-when-inse.patch
+			)
+		fi
+		if use selinux; then
+			PATCHES+=(
+				"${WORKDIR}"/0053-nss_db-fix-endent-wrt-NULL-mappings-BZ-24695-BZ-2469.patch
+			)
+		fi
+		if use sparc; then
+			PATCHES+=(
+				"${WORKDIR}"/0067-sparc-Move-sigreturn-stub-to-assembly.patch
+			)
+		fi
+		if use x86; then
+			PATCHES+=(
+				"${WORKDIR}"/0051-Call-_dl_open_check-after-relocation-BZ-24259.patch
+			)
+		fi
 		einfo "Done."
 	fi
 
@@ -973,10 +1084,10 @@ glibc_do_configure() {
 	# is built with MULTILIB_ABIS="amd64 x86" but we want to
 	# add x32 to it, gcc/glibc don't yet support x32.
 	#
-	if [[ -n ${GCC_BOOTSTRAP_VER} ]] && use multilib ; then
+	if [[ -n 20180511 ]] && use multilib ; then
 		echo 'main(){}' > "${T}"/test.c
 		if ! $(tc-getCC ${CTARGET}) ${CFLAGS} ${LDFLAGS} "${T}"/test.c -Wl,-emain -lgcc 2>/dev/null ; then
-			sed -i -e '/^CC = /s:$: -B$(objdir)/../'"gcc-multilib-bootstrap-${GCC_BOOTSTRAP_VER}/${ABI}:" config.make || die
+			sed -i -e '/^CC = /s:$: -B$(objdir)/../'"gcc-multilib-bootstrap-20180511/${ABI}:" config.make || die
 		fi
 	fi
 }
