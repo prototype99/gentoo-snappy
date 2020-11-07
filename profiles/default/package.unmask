@@ -60,3 +60,15 @@
 # required by sys-devel/bison-3.7.1-r1::gentoo
 # required by sys-apps/iproute2-5.7.0::poly-c
 =sys-devel/gettext-0.21
+# /var/db/repos/gentoo/profiles/package.mask:
+# Michał Górny <mgorny@gentoo.org>, Andreas K. Hüttel <dilfridge@gentoo.org>,
+# Matthias Maier <tamiko@gentoo.org> (2017-05-21 and later updates)
+# These old versions of toolchain packages (binutils, gcc, glibc) are no
+# longer officially supported and are not suitable for general use. Using
+# these packages can result in build failures (and possible breakage) for
+# many packages, and may leave your system vulnerable to known security
+# exploits.
+# If you still use one of these old toolchain packages, please upgrade (and
+# switch the compiler / the binutils) ASAP. If you need them for a specific
+# (isolated) use case, feel free to unmask them on your system.
+=sys-libs/glibc-2.29-r8
