@@ -347,11 +347,11 @@
 =sys-apps/tcp-wrappers-7.6.22-r1::musl								#musl specific patch
 =sys-apps/tcp-wrappers-7.6.28::musl									#musl specific patch
 =sys-apps/util-linux-2.34::rindeal									#broken locales
-=sys-auth/polkit-0.115-r4::musl										#musl specific patch
-=sys-auth/polkit-0.116-r1::musl										#musl specific patch
 =sys-auth/polkit-0.116-r2::pentoo									#uses slower duktape js engine
 =sys-auth/polkit-0.116-r3::miramir									#no jit
+=sys-auth/polkit-0.117::musl										#musl specific patch
 =sys-auth/polkit-0.117-r1::miramir									#no jit
+=sys-auth/polkit-0.118-r1::FireBurn									#uses slower duktape js engine
 =sys-auth/polkit-qt-0.113.0-r10::redcore							#...why?
 =sys-block/gparted-1.0.0::menelkir									#no ufs use flag
 =sys-block/parted-3.2-r2::musl										#musl specific
