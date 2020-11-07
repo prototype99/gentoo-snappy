@@ -1,3 +1,6 @@
+*glibc-2.31-r7
+pull in glibc 2.29 improvements
+::gentoo			update keywords, add more workarounds, add more ppc support
 *glibc-2.31-r6
 ::gentoo			alter ebuild order, use locale-gen, remove some excessive variables, add static-pie use flag
 ::pg_overlay		add python3_9 compatibility
