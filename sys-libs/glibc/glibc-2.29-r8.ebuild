@@ -123,18 +123,16 @@ RDEPEND="${COMMON_DEPEND}
 	${TOOLDEP}
 	sys-apps/gentoo-functions
 "
-TCDEP="
-	>=${CATEGORY}/binutils-2.24
-	>=${CATEGORY}/gcc-6
-"
 if [[ ${CATEGORY} == cross-* ]] ; then
 	BDEPEND+=" !headers-only? (
-		${TCDEP}
+		>=${CATEGORY}/binutils-2.24
+		>=${CATEGORY}/gcc-6
 	)"
 	[[ ${CATEGORY} == *-linux* ]] && DEPEND+=" ${CATEGORY}/linux-headers"
 else
 	BDEPEND+="
-		${TCDEP}
+		>=sys-devel/binutils-2.24
+		>=sys-devel/gcc-6
 	"
 	DEPEND+=" virtual/os-headers "
 	RDEPEND+="
