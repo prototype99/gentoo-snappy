@@ -18,6 +18,7 @@
 =dev-db/sqldeveloper-19.2.1.247.2212
 =dev-dotnet/dotnetcore-sdk-bin-5.0.100_rc1 **
 =dev-dotnet/dotnetcore-sdk-bin-common-5.0.100_rc1 **
+=dev-java/icedtea-3.17.0
 =dev-java/idea-community-2020.1.0.201.6668.121
 =dev-java/openjdk-11.0.4_p11 ~amd64
 =dev-java/openjdk-11.0.5_p10
