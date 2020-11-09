@@ -1124,3 +1124,5 @@
 =kde-frameworks/kcodecs-5.75.0 ~amd64
 # required by kde-frameworks/knewstuff-5.75.0::gentoo
 =kde-frameworks/attica-5.75.0 ~amd64
+# required by net-misc/xdm-7.2.11::prototype99
+=dev-java/commons-net-3.6 ~amd64
