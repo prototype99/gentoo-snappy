@@ -22,10 +22,19 @@ SRC_URI+=" https://dev.gentoo.org/~dilfridge/distfiles/${P}-patches-9.tar.xz"
 SRC_URI+=" https://gitweb.gentoo.org/proj/locale-gen.git/snapshot/locale-gen-2.00.tar.gz"
 SRC_URI+=" multilib? ( https://dev.gentoo.org/~dilfridge/distfiles/gcc-multilib-bootstrap-20180511.tar.xz )"
 
-IUSE="audit caps cet compile-locales +crypt custom-cflags doc gd headers-only +multiarch multilib nscd profile selinux +ssp +static-libs static-pie suid systemtap test vanilla"
+IUSE="abi_x86_x32 audit caps cet compile-locales +crypt custom-cflags doc gd headers-only +multiarch multilib nscd profile selinux +ssp +static-libs static-pie suid systemtap test vanilla"
 
 REQUIRED_USE="
-sparc? ( !vanilla )
+abi_x86_x32 ( !vanilla )
+arm ( !vanilla )
+arm64 ( !vanilla )
+hppa ( !vanilla )
+ia64 ( !vanilla )
+mips ( !vanilla )
+ppc ( !vanilla )
+riscv ( !vanilla )
+sparc ( !vanilla )
+x86 ( !vanilla )
 "
 
 # Minimum kernel version that glibc requires
