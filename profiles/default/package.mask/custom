@@ -83,10 +83,12 @@
 <dev-perl/libwww-perl-6.410.0
 <dev-perl/LWP-MediaTypes-6.40.0
 <dev-perl/Module-Build-0.422.900
+<dev-perl/namespace-autoclean-0.290.0
 <dev-perl/Net-HTTP-6.190.0
 <dev-perl/Package-Stash-0.380.0
+<dev-perl/Package-Stash-XS-0.290.0
 <dev-perl/Params-ValidationCompiler-0.300.0
-<dev-perl/Ref-Util-0.203.0
+<dev-perl/Ref-Util-0.204.0
 <dev-perl/Ref-Util-XS-0.117.0
 <dev-perl/Role-Tiny-2.1.4
 <dev-perl/Socket6-0.290.0
