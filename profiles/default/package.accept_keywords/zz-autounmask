@@ -20,9 +20,6 @@
 =dev-dotnet/dotnetcore-sdk-bin-common-5.0.100_rc1 **
 =dev-java/icedtea-3.17.0
 =dev-java/idea-community-2020.1.0.201.6668.121
-=dev-java/openjdk-11.0.4_p11 ~amd64
-=dev-java/openjdk-11.0.5_p10
-=dev-java/openjdk-bin-11.0.4_p11 ~amd64
 =dev-lang/ifc-19.0.4.243
 =dev-lang/orc-0.4.31
 =dev-lang/python-3.6.9-r1
