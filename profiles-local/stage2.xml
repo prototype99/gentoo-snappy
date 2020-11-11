@@ -27,6 +27,18 @@
     <feed>https://github.com/0x4d4c/gentoo-overlay/commits/master.atom</feed>
   </repo>
   <repo quality="experimental" status="unofficial">
+    <name>2xsaiko</name>
+    <description lang="en">Personal overlay with no special focus</description>
+    <homepage>https://git.sr.ht/~dblsaiko/ebuilds</homepage>
+    <owner type="person">
+      <email>gentoo@dblsaiko.net</email>
+      <name>2xsaiko</name>
+    </owner>
+    <source type="git">https://git.sr.ht/~dblsaiko/ebuilds</source>
+    <source type="git">git@git.sr.ht:~dblsaiko/ebuilds</source>
+    <feed>https://git.sr.ht/~dblsaiko/ebuilds/log/rss.xml</feed>
+  </repo>
+  <repo quality="experimental" status="unofficial">
     <name>4nykey</name>
     <description lang="en">An experimental portage overlay</description>
     <homepage>https://github.com/4nykey/4nykey</homepage>
@@ -1187,6 +1199,16 @@
     <source type="git">git+ssh://git@git.gentoo.org/user/dMaggot.git</source>
     <feed>https://cgit.gentoo.org/user/dMaggot.git/atom/</feed>
     <!-- <feed>https://cgit.gentoo.org/user/dMaggot.git/rss/</feed> -->
+  </repo>
+  <repo quality="experimental" status="unofficial">
+    <name>dm9pZCAq</name>
+    <description lang="en">personal overlay with different packages, mainly with packages with KISS mindset</description>
+    <homepage>https://notabug.org/dm9pZCAq/dm9pZCAq-overlay</homepage>
+    <owner type="person">
+      <email>v@0x0c.xyz</email>
+      <name>dm9pZCAq</name>
+    </owner>
+    <source type="git">https://notabug.org/dm9pZCAq/dm9pZCAq-overlay.git</source>
   </repo>
   <repo quality="experimental" status="unofficial">
     <name>dmchurch</name>
@@ -3076,6 +3098,18 @@
     <source type="git">git://anongit.gentoo.org/proj/mozilla.git</source>
     <source type="git">git+ssh://git@git.gentoo.org/proj/mozilla.git</source>
     <feed>https://cgit.gentoo.org/proj/mozilla.git/atom/</feed>
+  </repo>
+  <repo quality="experimental" status="unofficial">
+    <name>mrhappyhof-gentoo</name>
+    <description lang="en">mr_happy_hof's personal Overlay</description>
+    <homepage>https://github.com/mrhappyhof/mrhappyhof-gentoo</homepage>
+    <owner type="person">
+      <email>mrhappyhof@gmail.com</email>
+      <name>mr_happy_hof</name>
+    </owner>
+    <source type="git">https://github.com/mrhappyhof/mrhappyhof-gentoo.git</source>
+    <source type="git">git+ssh://git@github.com/mrhappyhof/mrhappyhof-gentoo.git</source>
+    <feed>https://github.com/mrhappyhof/mrhappyhof-gentoo/commits/master.atom</feed>
   </repo>
   <repo quality="experimental" status="official">
     <name>mschiff</name>
@@ -5158,6 +5192,18 @@
     <source type="git">https://github.com/waebbl/waebbl-gentoo.git</source>
     <source type="git">git+ssh://git@github.com/waebbl/waebbl-gentoo.git</source>
     <feed>https://github.com/waebbl/waebbl-gentoo/commits/master.atom</feed>
+  </repo>
+  <repo quality="experimental" status="unofficial">
+    <name>waffle-builds</name>
+    <description lang="en">FlyingWaffle's personal ebuild overlay.</description>
+    <homepage>https://github.com/FlyingWaffleDev/waffle-builds</homepage>
+    <owner type="person">
+      <email>flyingwaffle@pm.me</email>
+      <name>FlyingWaffle</name>
+    </owner>
+    <source type="git">https://github.com/FlyingWaffleDev/waffle-builds.git</source>
+    <source type="git">git+ssh://git@github.com/FlyingWaffleDev/waffle-builds.git</source>
+    <feed>https://github.com/FlyingWaffleDev/waffle-builds/commits/master.atom</feed>
   </repo>
   <repo quality="experimental" status="unofficial">
     <name>wayland-desktop</name>
