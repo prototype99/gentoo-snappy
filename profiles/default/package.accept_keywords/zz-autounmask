@@ -20,6 +20,8 @@
 =dev-dotnet/dotnetcore-sdk-bin-common-5.0.100_rc1 **
 =dev-java/icedtea-3.17.0
 =dev-java/idea-community-2020.1.0.201.6668.121
+=dev-java/openjdk-15_p36
+=dev-java/openjdk-bin-15_p36
 =dev-lang/ifc-19.0.4.243
 =dev-lang/orc-0.4.31
 =dev-lang/python-3.6.9-r1
@@ -180,6 +182,8 @@
 =sys-kernel/gentoo-sources-5.2.5 ~amd64
 =sys-libs/compiler-rt-sanitizers-9.0.1
 =virtual/cblas-2.0-r4
+=virtual/jdk-15
+=virtual/jre-15
 =virtual/linux-sources-3-r2
 =virtual/linux-sources-5
 =virtual/linux-sources-7
