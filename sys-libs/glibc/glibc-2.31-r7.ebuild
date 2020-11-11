@@ -803,83 +803,84 @@ src_prepare() {
 	if ! use vanilla ; then
 		elog "Applying Gentoo Glibc Patchset 2.31-9"
 		#patch 18 is for grep
+		local PATCHDIR="${WORKDIR}"/patches
 		local PATCHES=(
-			"${WORKDIR}"/0001-Gentoo-disable-ldconfig-during-install.patch
-			"${WORKDIR}"/0004-Revert-sysdeps-posix-getaddrinfo.c-gaih_inet-Only-us.patch
-			"${WORKDIR}"/0006-Gentoo-Disable-test-that-fails-because-of-the-gethos.patch
-			"${WORKDIR}"/0007-Gentoo-Adapt-to-Gentoo-specific-etc-mail-aliases.patch
-			"${WORKDIR}"/0008-Gentoo-Add-a-C.UTF-8-locale.patch
-			"${WORKDIR}"/0009-Gentoo-force-O0-in-conform-tests-to-survive-CC-chang.patch
-			"${WORKDIR}"/0010-Gentoo-Adapt-tests-to-etc-mail-alias-location.patch
-			"${WORKDIR}"/0017-malloc-tst-mallocfork2-Kill-lingering-process-for-un.patch
-			"${WORKDIR}"/0025-math-test-sinl-pseudo-Use-stack-protector-only-if-av.patch
-			"${WORKDIR}"/0039-nios2-delete-sysdeps-unix-sysv-linux-nios2-kernel-fe.patch
-			"${WORKDIR}"/0050-oc_FR-locale-Fix-spelling-of-Thursday-bug-25639.patch
-			"${WORKDIR}"/0051-oc_FR-locale-Fix-spelling-of-April-bug-25639.patch
-			"${WORKDIR}"/0053-x86-64-Use-RDX_LP-on-__x86_shared_non_temporal_thres.patch
-			"${WORKDIR}"/0061-sparc-Use-Linux-kABI-for-syscall-return.patch
-			"${WORKDIR}"/0067-arm-CVE-2020-6096-fix-memcpy-and-memmove-for-negativ.patch
-			"${WORKDIR}"/0068-arm-CVE-2020-6096-Fix-multiarch-memcpy-for-negative-.patch
-			"${WORKDIR}"/0072-powerpc-Fix-incorrect-cache-line-size-load-in-memset.patch
+			"${PATCHDIR}"/0001-Gentoo-disable-ldconfig-during-install.patch
+			"${PATCHDIR}"/0004-Revert-sysdeps-posix-getaddrinfo.c-gaih_inet-Only-us.patch
+			"${PATCHDIR}"/0006-Gentoo-Disable-test-that-fails-because-of-the-gethos.patch
+			"${PATCHDIR}"/0007-Gentoo-Adapt-to-Gentoo-specific-etc-mail-aliases.patch
+			"${PATCHDIR}"/0008-Gentoo-Add-a-C.UTF-8-locale.patch
+			"${PATCHDIR}"/0009-Gentoo-force-O0-in-conform-tests-to-survive-CC-chang.patch
+			"${PATCHDIR}"/0010-Gentoo-Adapt-tests-to-etc-mail-alias-location.patch
+			"${PATCHDIR}"/0017-malloc-tst-mallocfork2-Kill-lingering-process-for-un.patch
+			"${PATCHDIR}"/0025-math-test-sinl-pseudo-Use-stack-protector-only-if-av.patch
+			"${PATCHDIR}"/0039-nios2-delete-sysdeps-unix-sysv-linux-nios2-kernel-fe.patch
+			"${PATCHDIR}"/0050-oc_FR-locale-Fix-spelling-of-Thursday-bug-25639.patch
+			"${PATCHDIR}"/0051-oc_FR-locale-Fix-spelling-of-April-bug-25639.patch
+			"${PATCHDIR}"/0053-x86-64-Use-RDX_LP-on-__x86_shared_non_temporal_thres.patch
+			"${PATCHDIR}"/0061-sparc-Use-Linux-kABI-for-syscall-return.patch
+			"${PATCHDIR}"/0067-arm-CVE-2020-6096-fix-memcpy-and-memmove-for-negativ.patch
+			"${PATCHDIR}"/0068-arm-CVE-2020-6096-Fix-multiarch-memcpy-for-negative-.patch
+			"${PATCHDIR}"/0072-powerpc-Fix-incorrect-cache-line-size-load-in-memset.patch
 		)
 		if use abi_x86_x32; then
 			PATCHES+=(
-				"${WORKDIR}"/0043-x32-Properly-pass-long-to-syscall-BZ-25810.patch
-				"${WORKDIR}"/0044-Add-SYSCALL_ULONG_ARG_-12-to-pass-long-to-syscall-BZ.patch
+				"${PATCHDIR}"/0043-x32-Properly-pass-long-to-syscall-BZ-25810.patch
+				"${PATCHDIR}"/0044-Add-SYSCALL_ULONG_ARG_-12-to-pass-long-to-syscall-BZ.patch
 			)
 		fi
 		if use arm; then
 			PATCHES+=(
-				"${WORKDIR}"/0023-arm-Fix-softp-fp-Implies-BZ-25635.patch
+				"${PATCHDIR}"/0023-arm-Fix-softp-fp-Implies-BZ-25635.patch
 			)
 		fi
 		if use arm64; then
 			PATCHES+=(
-				"${WORKDIR}"/0028-Update-syscall-lists-for-Linux-5.5.patch
-				"${WORKDIR}"/0057-aarch64-Accept-PLT-calls-to-__getauxval-within-libc..patch
-				"${WORKDIR}"/0058-aarch64-fix-strcpy-and-strnlen-for-big-endian-BZ-258.patch
+				"${PATCHDIR}"/0028-Update-syscall-lists-for-Linux-5.5.patch
+				"${PATCHDIR}"/0057-aarch64-Accept-PLT-calls-to-__getauxval-within-libc..patch
+				"${PATCHDIR}"/0058-aarch64-fix-strcpy-and-strnlen-for-big-endian-BZ-258.patch
 			)
 		fi
 		if use hppa; then
 			PATCHES+=(
-				"${WORKDIR}"/0040-Fix-data-race-in-setting-function-descriptors-during.patch
-				"${WORKDIR}"/0041-Add-new-file-missed-in-previous-hppa-commit.patch
+				"${PATCHDIR}"/0040-Fix-data-race-in-setting-function-descriptors-during.patch
+				"${PATCHDIR}"/0041-Add-new-file-missed-in-previous-hppa-commit.patch
 			)
 		fi
 		if use ia64; then
 			PATCHES+=(
-				"${WORKDIR}"/0063-Fix-miscompilation-on-ia64-s-gcc-10.patch
+				"${PATCHDIR}"/0063-Fix-miscompilation-on-ia64-s-gcc-10.patch
 			)
 		fi
 		if use mips; then
 			PATCHES+=(
-				"${WORKDIR}"/0014-mips-Fix-argument-passing-for-inlined-syscalls-on-Li.patch
-				"${WORKDIR}"/0038-mips-Fix-bracktrace-result-for-signal-frames.patch
+				"${PATCHDIR}"/0014-mips-Fix-argument-passing-for-inlined-syscalls-on-Li.patch
+				"${PATCHDIR}"/0038-mips-Fix-bracktrace-result-for-signal-frames.patch
 			)
 		fi
 		if use ppc || use ppc64; then
 			PATCHES+=(
-				"${WORKDIR}"/0048-powerpc-Rename-argN-to-_argN-in-LOADARGS_N-BZ-25902.patch
+				"${PATCHDIR}"/0048-powerpc-Rename-argN-to-_argN-in-LOADARGS_N-BZ-25902.patch
 			)
 		fi
 		if use riscv; then
 			PATCHES+=(
-				"${WORKDIR}"/0016-riscv-Avoid-clobbering-register-parameters-in-syscal.patch
+				"${PATCHDIR}"/0016-riscv-Avoid-clobbering-register-parameters-in-syscal.patch
 			)
 		fi
 		if use sparc; then
 			PATCHES+=(
-				"${WORKDIR}"/0024-sparc-Move-sigreturn-stub-to-assembly.patch
-				"${WORKDIR}"/0062-sparc-Avoid-clobbering-register-parameters-in-syscal.patch
+				"${PATCHDIR}"/0024-sparc-Move-sigreturn-stub-to-assembly.patch
+				"${PATCHDIR}"/0062-sparc-Avoid-clobbering-register-parameters-in-syscal.patch
 			)
 		fi
 		if use x86; then
 			PATCHES+=(
-				"${WORKDIR}"/0020-i386-Use-comdat-instead-of-.gnu.linkonce-for-i386-se.patch
+				"${PATCHDIR}"/0020-i386-Use-comdat-instead-of-.gnu.linkonce-for-i386-se.patch
 			)
 			if gcc-major-version > 4; then
 				PATCHES+=(
-					"${FILESDIR}"/0031-i386-Disable-check_consistency-for-GCC-5-and-above-B.patch
+					"${PATCHDIR}"/0031-i386-Disable-check_consistency-for-GCC-5-and-above-B.patch
 				)
 			fi
 		fi
