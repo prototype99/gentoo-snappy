@@ -80,6 +80,7 @@
 =dev-util/pybind11-2.3.0
 =dev-util/rider-2020.2.2-r2
 =dev-util/smartgit-20.2_rc4
+=dev-vcs/git-2.29.2
 =dev-vcs/mercurial-5.5
 =games-simulation/firestorm-bin-6.3.2-r1
 =games-util/steam-launcher-1.0.0.59-r3
