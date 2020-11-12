@@ -802,7 +802,7 @@ src_unpack() {
 src_prepare() {
 	if ! use vanilla ; then
 		elog "Applying Gentoo Glibc Patchset 2.31-9"
-		#patch 25 depends on patch 18
+		#patch 25 depends on patch 18 depends on patch 14
 		local PATCHDIR="${WORKDIR}"/patches
 		local PATCHES=(
 			"${PATCHDIR}"/0001-Gentoo-disable-ldconfig-during-install.patch
@@ -812,6 +812,7 @@ src_prepare() {
 			"${PATCHDIR}"/0008-Gentoo-Add-a-C.UTF-8-locale.patch
 			"${PATCHDIR}"/0009-Gentoo-force-O0-in-conform-tests-to-survive-CC-chang.patch
 			"${PATCHDIR}"/0010-Gentoo-Adapt-tests-to-etc-mail-alias-location.patch
+			"${PATCHDIR}"/0014-mips-Fix-argument-passing-for-inlined-syscalls-on-Li.patch
 			"${PATCHDIR}"/0017-malloc-tst-mallocfork2-Kill-lingering-process-for-un.patch
 			"${PATCHDIR}"/0018-Avoid-ldbl-96-stack-corruption-from-range-reduction-.patch
 			"${PATCHDIR}"/0025-math-test-sinl-pseudo-Use-stack-protector-only-if-av.patch
@@ -855,7 +856,6 @@ src_prepare() {
 		fi
 		if use mips; then
 			PATCHES+=(
-				"${PATCHDIR}"/0014-mips-Fix-argument-passing-for-inlined-syscalls-on-Li.patch
 				"${PATCHDIR}"/0038-mips-Fix-bracktrace-result-for-signal-frames.patch
 			)
 		fi
