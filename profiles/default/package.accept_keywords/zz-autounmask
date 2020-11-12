@@ -81,7 +81,7 @@
 =dev-util/meson-0.54.3
 =dev-util/pybind11-2.3.0
 =dev-util/rider-2020.2.2-r2
-=dev-util/smartgit-20.2_rc4
+=dev-util/smartgit-20.2_rc5
 =dev-vcs/git-2.29.2
 =dev-vcs/mercurial-5.5
 =games-simulation/firestorm-bin-6.3.2-r1

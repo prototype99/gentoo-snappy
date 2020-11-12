@@ -1,3 +1,5 @@
+*smartgit-20.2_rc5
+::prototype99	add vanilla and sytem-jre use flags
 *smartgit-20.2_rc1-r1
 ::prototype99
 -don't use some outdated shell script from the files dir
