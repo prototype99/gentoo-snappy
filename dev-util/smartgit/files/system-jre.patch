@@ -1,0 +1,51 @@
+From 008b9d71f9d72de1113ea48314adeca981c479c1 Mon Sep 17 00:00:00 2001
+From: seirra <sophietheopossum@yandex.com>
+Date: Thu, 12 Nov 2020 11:09:56 +0000
+Subject: [PATCH] use system jre
+
+---
+ bin/smartgit.sh | 24 +-----------------------
+ 1 file changed, 1 insertion(+), 23 deletions(-)
+
+diff --git a/bin/smartgit.sh b/bin/smartgit.sh
+index 13e7070..08ba323 100755
+--- a/bin/smartgit.sh
++++ b/bin/smartgit.sh
+@@ -35,28 +35,6 @@ APP_CONFIG_DIR=${XDG_CONFIG_HOME:-$HOME/.config}/smartgit
+ APP_HOME=`dirname "$APP_BIN"`
+ APP_JAVA_HOME=$SMARTGIT_JAVA_HOME
+ 
+-# Determine Java Runtime
+-_JAVA_EXEC="java"
+-if [ "$APP_JAVA_HOME" != "" ] ; then
+-    _TMP="$APP_JAVA_HOME/bin/java"
+-    if [ -f "$_TMP" ] ; then
+-        if [ -x "$_TMP" ] ; then
+-            _JAVA_EXEC="$_TMP"
+-        else
+-            echo "Warning: $_TMP is not executable"
+-        fi
+-    else
+-        echo "Warning: $_TMP does not exist"
+-    fi
+-elif [ -e "$APP_HOME/jre/bin/java" ] && [ `uname -m` == "x86_64" ] ; then
+-    _JAVA_EXEC="$APP_HOME/jre/bin/java"
+-fi
+-
+-if ! which "$_JAVA_EXEC" >/dev/null 2>&1 ; then
+-    echo "Error: No Java Runtime Environment (JRE) 11 or higher found"
+-    exit 1
+-fi
+-
+ if type "lsb_release" > /dev/null 2> /dev/null ; then
+     if [ "$XDG_CURRENT_DESKTOP" == "Unity" ] ; then
+         # work-around for https://bugs.eclipse.org/bugs/show_bug.cgi?id=419729
+@@ -93,4 +71,4 @@ fi
+ 
+ APP_PATH="$PATH$SMARTGIT_PATH"
+ 
+-(export PATH="$APP_PATH"; "$_JAVA_EXEC" -XX:+UseG1GC -XX:MaxGCPauseMillis=100 -XX:InitiatingHeapOccupancyPercent=25 -Xmx1024m -Xss2m -Xverify:none -XX:MaxJavaStackTraceDepth=1000000 -Dsun.io.useCanonCaches=false -XX:ErrorFile=$APP_CONFIG_DIR/20.2/hs_err_pid%p.log $_VM_PROPERTIES -jar "$APP_HOME/lib/bootloader.jar" "$@")
++(export PATH="$APP_PATH"; java -XX:+UseG1GC -XX:MaxGCPauseMillis=100 -XX:InitiatingHeapOccupancyPercent=25 -Xmx1024m -Xss2m -Xverify:none -XX:MaxJavaStackTraceDepth=1000000 -Dsun.io.useCanonCaches=false -XX:ErrorFile=$APP_CONFIG_DIR/20.2/hs_err_pid%p.log $_VM_PROPERTIES -jar "$APP_HOME/lib/bootloader.jar" "$@")
+-- 
+2.26.2
+
