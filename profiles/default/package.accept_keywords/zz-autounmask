@@ -11,6 +11,7 @@
 =app-lyx/elyxer-1.2.5
 =app-misc/spacenavd-0.6 ~amd64
 =app-mobilephone/scrcpy-1.10
+=app-office/libreoffice-7.0.3.1
 =app-portage/layman-2.4.2-r3
 =dev-cpp/gtkmm-3.24.2 ~amd64
 =dev-db/mariadb-10.5.5
