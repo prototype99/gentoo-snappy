@@ -193,6 +193,7 @@
 =www-client/brave-bin-1.12.112
 =www-client/chromium-78.0.3904.63
 =www-client/firefox-80.0.1-r1
+=www-client/uget-2.2.1
 =x11-libs/gtk+-3.24.20
 =x11-misc/cairo-compmgr-0.4.8_pre20141005
 =x11-misc/compton-7.3
