@@ -4481,19 +4481,6 @@
     <feed>https://gitlab.com/eternal-sorrow/gentoo-local/commits/master?format=atom</feed>
   </repo>
   <repo quality="experimental" status="unofficial">
-    <name>sortsmill</name>
-    <description lang="en">Personal overlay of Barry Schwartz for font projects</description>
-    <homepage>https://bitbucket.org/sortsmill/sortsmill-gentoo-overlay</homepage>
-    <owner type="person">
-      <email>chemoelectric@chemoelectric.org</email>
-      <name>Barry Schwartz</name>
-    </owner>
-    <source type="mercurial">https://bitbucket.org/sortsmill/sortsmill-gentoo-overlay</source>
-    <source type="mercurial">ssh://hg@bitbucket.org/sortsmill/sortsmill-gentoo-overlay</source>
-    <feed>https://bitbucket.org/sortsmill/sortsmill-gentoo-overlay/atom</feed>
-    <feed>https://bitbucket.org/sortsmill/sortsmill-gentoo-overlay/rss</feed>
-  </repo>
-  <repo quality="experimental" status="unofficial">
     <name>spikyatlinux</name>
     <description>Here are some of my own or modified ebuilds. Also some of them I've found in the web.</description>
     <homepage>https://github.com/spikyatlinux/ebuilds_for_gentoo</homepage>
