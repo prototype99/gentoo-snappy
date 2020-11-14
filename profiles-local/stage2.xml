@@ -3188,7 +3188,7 @@
       <email>egurevich@smscoin.com</email>
       <name>Evgeniy Gurevich</name>
     </owner>
-    <source type="mercurial">https://bitbucket.org/angry_elf/nashedelo</source>
+    <source type="git">https://bitbucket.org/angry_elf/nashedelo</source>
     <feed>https://bitbucket.org/angry_elf/nashedelo/rss</feed>
   </repo>
   <repo quality="experimental" status="unofficial">
