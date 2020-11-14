@@ -650,19 +650,6 @@
 		<feed>https://github.com/necrose99/necromancy-overlay/commits/master.atom</feed>
 	</repo>
 	<repo quality="experimental" status="unofficial">
-		<name>nirvana</name>
-		<description lang="en">Ebuilds not good enough to make it to Sabayon's for-gentoo.</description>
-		<homepage>https://bitbucket.org/danysk/nirvana-overlay</homepage>
-		<owner type="person">
-			<email>danilo.pianini@gmail.com</email>
-			<name>Danilo Pianini</name>
-		</owner>
-		<source type="mercurial">https://bitbucket.org/danysk/nirvana-overlay</source>
-		<source type="mercurial">ssh://hg@bitbucket.org/danysk/nirvana-overlay</source>
-		<feed>https://bitbucket.org/danysk/nirvana-overlay/atom</feed>
-		<feed>https://bitbucket.org/danysk/nirvana-overlay/rss</feed>
-	</repo>
-	<repo quality="experimental" status="unofficial">
 		<name>odroidc1-overlay</name>
 		<description>Odroid-C1 Overlay</description>
 		<homepage>https://github.com/nemunaire/odroidc1-overlay</homepage>
