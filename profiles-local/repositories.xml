@@ -619,8 +619,19 @@
 			<feed>http://github.com/feeds/miniBill/commits/overlay/master</feed>
 	</repo>
 	<repo priority="50" quality="experimental" status="unofficial">
+		<name>musl-extras</name>
+		<description lang="en">Extra ebuilds for Gentoo systems, mostly packages fixed to work with musl</description>
+		<homepage>https://github.com/thyrc/musl-extras</homepage>
+		<owner type="person">
+			<name>thyrc</name>
+		</owner>
+		<source type="git">https://github.com/thyrc/musl-extras.git</source>
+		<source type="git">git+ssh://git@github.com/thyrc/musl-extras.git</source>
+		<feed>https://github.com/thyrc/musl-extras/commits/master.atom</feed>
+	</repo>
+	<repo priority="50" quality="experimental" status="unofficial">
 		<name>muslx32</name>
-		<description lang="en">muslx32 (musl libc and x32 abi) overlay for Gentoo Linux </description>
+		<description lang="en">muslx32 (musl libc and x32 abi) overlay for Gentoo Linux</description>
 		<homepage>https://github.com/orsonteodoro/muslx32</homepage>
 		<owner type="person">
 			<email>orsonteodoro@hotmail.com</email>
