@@ -116,8 +116,6 @@ dev-qt/qtwebchannel qml
 dev-libs/libxml2 icu
 # required by dev-qt/qtwebengine-5.12.3::gentoo
 media-libs/libvpx svc
-# required by dev-qt/qtwebengine-5.12.3::gentoo
-sys-libs/zlib minizip
 # required by dev-qt/qtgui-5.12.3-r1:5/5.12::gentoo
 # required by x11-libs/libxkbcommon-0.8.4:0/0::gentoo
 x11-libs/libxcb xkb
@@ -180,11 +178,18 @@ app-crypt/pinentry gnome-keyring
 # required by kde-frameworks/plasma-5.57.0::gentoo
 # required by kde-apps/kate-18.12.3::gentoo[addons]
 dev-qt/qtcore icu
+# required by x11-libs/libpciaccess-0.14::gentoo[zlib]
+# required by x11-libs/libdrm-2.4.97::gentoo[video_cards_intel]
+# required by media-libs/mesa-18.3.6::gentoo
+# required by virtual/opengl-7.0-r2::gentoo
+# required by games-util/steam-launcher-1.0.0.59-r3::steam-overlay[steamruntime]
+sys-libs/zlib abi_x86_32
 # required by media-video/vlc-3.0.6-r1::gentoo
 # required by media-libs/phonon-vlc-0.10.2::gentoo
 # required by media-libs/phonon-4.10.2::gentoo[vlc]
 # required by kde-frameworks/khtml-5.57.0::gentoo
 # required by kde-apps/kio-extras-18.12.3::gentoo[man]
+# required by dev-qt/qtwebengine-5.12.3::gentoo
 sys-libs/zlib minizip
 # required by dev-util/itstool-2.0.2::gentoo
 # required by gnome-extra/yelp-xsl-3.30.1::gentoo
@@ -242,12 +247,6 @@ media-libs/mesa abi_x86_32
 # required by virtual/opengl-7.0-r2::gentoo
 # required by games-util/steam-launcher-1.0.0.59-r3::steam-overlay[steamruntime]
 dev-libs/expat abi_x86_32
-# required by x11-libs/libpciaccess-0.14::gentoo[zlib]
-# required by x11-libs/libdrm-2.4.97::gentoo[video_cards_intel]
-# required by media-libs/mesa-18.3.6::gentoo
-# required by virtual/opengl-7.0-r2::gentoo
-# required by games-util/steam-launcher-1.0.0.59-r3::steam-overlay[steamruntime]
-sys-libs/zlib abi_x86_32
 # required by media-libs/mesa-18.3.6::gentoo
 # required by virtual/opengl-7.0-r2::gentoo
 # required by games-util/steam-launcher-1.0.0.59-r3::steam-overlay[steamruntime]
