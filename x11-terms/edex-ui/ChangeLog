@@ -1,3 +1,15 @@
-#todo: unbundle stuff
+#todo:
+#unbundle stuff
+#try removing theme support
+#maybe make a desktop icon
+#check out https://github.com/lukexor/edex-ui, it has various tweaks
+#check out https://github.com/geosp/edex-ui, it has some sort of video module, 'fixes', mock ip, 'cleanup', 'tweak'
+#check out https://github.com/D4rkia/edex-ui, it has italian keyboard
+#check out https://github.com/SuhasBk/edex-ui, it has how to change boot text, maybe some other things too
+#check out https://github.com/chloe-lam/edex-ui, it has branding changes, how to change shell, whitespace changes
+#check out https://github.com/94KeyboardsSmashed/edex-ui, it has 'responsiveness' changes
+#check out https://github.com/tiramo/edex-ui, it has closing animation
+#check out https://github.com/erbesharat/edex-ui, it has candidate for start script, other changes
+#check out https://github.com/arthurgeron/edex-ui/commit/683fea6c0963be5133cdff4120bae7faf4131e97, it changes default port
 *edex-ui-3.0_pre20200923
 ::prototype99	base ebuild
