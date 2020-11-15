@@ -1104,6 +1104,18 @@
     <feed>https://github.com/paraenggu/delicious-absurdities-overlay/commits/master.atom</feed>
   </repo>
   <repo quality="experimental" status="unofficial">
+    <name>dequbed</name>
+    <description>Personal overlay containing mostly small utilities and less stable package versions</description>
+    <homepage>https://github.com/dequbed/overlay.git</homepage>
+    <owner type="person">
+      <email>me@dequbed.space</email>
+    </owner>
+    <source type="git">https://github.com/dequbed/overlay.git</source>
+    <source type="git">git://github.com/dequbed/overlay.git</source>
+    <source type="git">git@github.com:dequbed/overlay.git</source>
+    <feed>https://github.com/dequbed/overlay/commits/master.atom</feed>
+  </repo>
+  <repo quality="experimental" status="unofficial">
     <name>deter</name>
     <description lang="en">Custom stuff from deterenkelt.</description>
     <homepage>https://github.com/deterenkelt/deter</homepage>
@@ -2953,19 +2965,6 @@
     </owner>
     <source type="git">https://github.com/metafarion/metahax.git</source>
     <feed>https://github.com/metafarion/metahax/commits/master.atom</feed>
-  </repo>
-  <repo quality="experimental" status="official">
-    <name>mgorny</name>
-    <description>Michał Górny developer overlay</description>
-    <homepage>https://cgit.gentoo.org/repo/dev/mgorny.git</homepage>
-    <owner type="person">
-      <email>mgorny@gentoo.org</email>
-      <name>Michał Górny</name>
-    </owner>
-    <source type="git">https://anongit.gentoo.org/git/repo/dev/mgorny.git</source>
-    <source type="git">git://anongit.gentoo.org/repo/dev/mgorny.git</source>
-    <source type="git">git+ssh://git@git.gentoo.org/repo/dev/mgorny.git</source>
-    <feed>https://cgit.gentoo.org/repo/dev/mgorny.git/atom/</feed>
   </repo>
   <repo quality="experimental" status="unofficial">
     <name>milos-rs</name>
@@ -5197,13 +5196,13 @@
   <repo quality="experimental" status="unofficial">
     <name>wayland-desktop</name>
     <description lang="en">gentoo overlay for wayland related ebuilds</description>
-    <homepage>https://github.com/epsilon-0/wayland-desktop</homepage>
+    <homepage>https://github.com/bsd-ac/wayland-desktop</homepage>
     <owner type="person">
       <email>gentoo@aisha.cc</email>
       <name>Aisha Tammy</name>
     </owner>
-    <source type="git">https://github.com/epsilon-0/wayland-desktop.git</source>
-    <source type="git">git+ssh://git@github.com/epsilon-0/wayland-desktop.git</source>
+    <source type="git">https://github.com/bsd-ac/wayland-desktop.git</source>
+    <source type="git">git+ssh://git@github.com/bsd-ac/wayland-desktop.git</source>
   </repo>
   <repo quality="experimental" status="unofficial">
     <name>wbrana</name>

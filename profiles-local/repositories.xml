@@ -687,6 +687,17 @@
 		<feed>https://github.com/necrose99/necromancy-overlay/commits/master.atom</feed>
 	</repo>
 	<repo quality="experimental" status="unofficial">
+		<name>nuteater</name>
+		<description>Nuteater's overlay</description>
+		<homepage>http://github.com/prototype99/nuteater</homepage>
+		<owner>
+			<email>perttu.luukko@iki.fi</email>
+			<name>Perttu Luukko</name>
+		</owner>
+		<source type="git">git://github.com/prototype99/nuteater.git</source>
+		<feed>https://github.com/prototype99/nuteater/commits/master.atom</feed>
+	</repo>
+	<repo quality="experimental" status="unofficial">
 		<name>odroidc1-overlay</name>
 		<description>Odroid-C1 Overlay</description>
 		<homepage>https://github.com/nemunaire/odroidc1-overlay</homepage>
