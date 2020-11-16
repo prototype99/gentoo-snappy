@@ -766,7 +766,7 @@
 		<owner>
 			<email>ronan@dunklau.fr</email>
 		</owner>
-		<source type="git">git://github.com/rdunklau/pgxn_overlay.git</source>
+		<source type="git">git://github.com/prototype99/pgxn_overlay.git</source>
 	</repo>
 	<repo quality="experimental" status="unofficial">
 		<name>portage-backup</name>
