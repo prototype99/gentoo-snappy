@@ -2561,6 +2561,18 @@
     <feed>https://github.com/konsolebox/overlay/commits/master.atom</feed>
   </repo>
   <repo quality="experimental" status="unofficial">
+    <name>kripton-overlay</name>
+    <description lang="en">Gentoo portage overlay with packages needed or developed by kripton</description>
+    <homepage>https://github.com/kripton/kripton-overlay</homepage>
+    <owner type="person">
+      <email>kripton@kripserver.net</email>
+      <name>Jannis Achstetter</name>
+    </owner>
+    <source type="git">https://github.com/kripton/kripton-overlay.git</source>
+    <source type="git">git+ssh://git@github.com/kripton/kripton-overlay.git</source>
+    <feed>https://github.com/kripton/kripton-overlay/commits/master.atom</feed>
+  </repo>
+  <repo quality="experimental" status="unofficial">
     <name>Krontage</name>
     <description lang="en">Personal overlay of Kron</description>
     <homepage>https://github.com/undying/krontage</homepage>
@@ -4379,12 +4391,12 @@
   <repo quality="experimental" status="unofficial">
     <name>soft</name>
     <description>Soft's personal overlay for miscellaneous ebuilds</description>
-    <homepage>https://bitbucket.org/Soft/overlay</homepage>
+    <homepage>https://github.com/Soft/gentoo-overlay</homepage>
     <owner type="person">
       <email>samuel.lauren@iki.fi</email>
       <name>Samuel Laurén</name>
     </owner>
-    <source type="mercurial">https://bitbucket.org/Soft/overlay</source>
+    <source type="git">https://github.com/Soft/gentoo-overlay</source>
   </repo>
   <repo quality="experimental" status="unofficial">
     <name>sogo-connector</name>
