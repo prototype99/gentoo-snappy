@@ -712,6 +712,17 @@
 		</owner>
 		<source type="git">https://github.com/prototype99/n8x0-overlay.git</source>
 	</repo>
+	<repo quality="experimental" status="unofficial">
+		<name>nana4gonta-prefix</name>
+		<description lang="en">Personal User Overlay for Prefix</description>
+		<homepage>http://github.com/prototype99/gentoo-prefix-overlay</homepage>
+		<owner type="person">
+			<email>kazuhiro@rhodonit.com</email>
+			<name>Kazuhiro Karino</name>
+		</owner>
+		<source type="git">git://github.com/prototype99/gentoo-prefix-overlay.git</source>
+		<feed>http://github.com/prototype99/gentoo-prefix-overlay/commits/master.atom</feed>
+	</repo>
 	<repo priority="50" quality="experimental" status="unofficial">
 		<name>necromancy</name>
 		<description>This repository contains the ebuild from Necrose99 (some are works in progress) </description>
