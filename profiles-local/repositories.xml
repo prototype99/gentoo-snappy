@@ -12,13 +12,13 @@
 		<feed>https://github.com/adjust/gentoo-overlay/commits/master.atom</feed>
 	</repo>
 	<repo priority="50" quality="experimental" status="unofficial">
-		<name>Alex-s-personal-overlay</name>
+		<name>alexs-overlay</name>
 		<description>My personal Gentoo Overlay which contains random ebuilds.</description>
-		<homepage>https://github.com/stsquad/Gentoo-Overlay</homepage>
+		<homepage>https://github.com/prototype99/alexs-overlay</homepage>
 		<owner>
 			<email>alex@bennee.com</email>
 		</owner>
-		<source type="git">https://github.com/stsquad/Gentoo-Overlay.git</source>
+		<source type="git">https://github.com/prototype99/alexs-overlay.git</source>
 	</repo>
 	<repo priority="50" quality="experimental" status="unofficial">
 		<name>amielke-overlay</name>
