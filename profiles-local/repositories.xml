@@ -309,17 +309,6 @@
 		<feed>https://github.com/gedia/discworld-overlay/commits/master.atom</feed>
 	</repo>
 	<repo quality="experimental" status="unofficial">
-		<name>dlambda</name>
-		<description lang="en">Gentoo Overlay</description>
-		<homepage>http://github.com/de9uch1/overlay.git</homepage>
-		<owner type="person">
-			<email>d@dlambda.org</email>
-			<name>Hiroyuki Deguchi</name>
-		</owner>
-		<source type="git">git://github.com/de9uch1/overlay.git</source>
-		<feed>http://github.com/de9uch1/overlay/commits/master.atom</feed>
-	</repo>
-	<repo quality="experimental" status="unofficial">
 		<name>dmol</name>
 		<description lang="en">Overlay to store java-related ebuilds, for further reviewing</description>
 		<homepage>https://cgit.gentoo.org/user/dmol.git/</homepage>
