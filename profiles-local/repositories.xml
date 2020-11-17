@@ -475,6 +475,12 @@
 		<homepage>https://github.com/prototype99/jauhien-overlay</homepage>
 		<source type="git">git://github.com/prototype99/jauhien-overlay.git</source>
 	</repo>
+	<repo quality="experimental" status="unofficial">
+		<name>jellybean</name>
+		<description>experimental ebuilds</description>
+		<homepage>https://github.com/prototype99/jellybean</homepage>
+		<source type="git">git://github.com/prototype99/jellybean.git</source>
+	</repo>
 	<repo priority="50" quality="experimental" status="unofficial">
 		<name>jmd-gentoo-main</name>
 		<description lang="en">gentoo overlay</description>
