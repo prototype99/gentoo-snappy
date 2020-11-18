@@ -922,15 +922,14 @@
 	<repo quality="experimental" status="unofficial">
 		<name>srcshelton</name>
 		<description lang="en">Out-of-tree ebuilds</description>
-		<homepage>https://cgit.gentoo.org/user/srcshelton.git/</homepage>
+		<homepage>https://github.com/srcshelton/gentoo-ebuilds.git/</homepage>
 		<owner type="person">
 			<email>srcshelton@gmail.com</email>
 			<name>Stuart Shelton</name>
 		</owner>
-		<source type="git">https://anongit.gentoo.org/git/user/srcshelton.git</source>
-		<source type="git">git://anongit.gentoo.org/user/srcshelton.git</source>
-		<source type="git">git+ssh://git@git.gentoo.org/user/srcshelton.git</source>
-		<feed>https://cgit.gentoo.org/user/srcshelton.git/atom/</feed>
+		<source type="git">https://github.com/srcshelton/gentoo-ebuilds.git</source>
+		<source type="git">git://github.com/srcshelton/gentoo-ebuilds.git</source>
+		<feed>https://github.com/srcshelton/gentoo-ebuilds/commits/master.atom</feed>
 	</repo>
 	<repo quality="testing" status="official">
 		<name>steev</name>
