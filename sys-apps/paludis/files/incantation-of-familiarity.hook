@@ -70,6 +70,11 @@ hook_run_sync_post() {
 	#if [[ $TARGET == 'x-kressh' || $TARGET == 'kressh' ]]; then
 	#	patch /var/db/repos/kressh/profiles/repo_name /etc/paludis/patches/kressh.patch
 	#fi
+	#paludis didn't like this news...
+	if [[ $TARGET == 'x-somasis' || $TARGET == 'somasis' ]]; then
+		rm -R /var/db/repos/somasis/metadata/news/2015-04-21-syncthing-protocol-breaking
+		rm -R /var/db/repos/somasis/metadata/news/2015-09-16-connman-gtk-renamed
+	fi
 	#remove packages we don't want
 	if [[ $TARGET == 'x-srcshelton' || $TARGET == 'srcshelton' ]]; then
 		#dated design
