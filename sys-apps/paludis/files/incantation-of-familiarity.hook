@@ -1,0 +1,82 @@
+#!/usr/bin/env bash
+
+hook_run_sync_post() {
+	#source ${PALUDIS_ECHO_FUNCTIONS_DIR:-${PALUDIS_EBUILD_DIR}}/echo_functions.bash
+
+	if [[ $TARGET == 'x-dantrell-gnome' || $TARGET == 'dantrell-gnome' ]]; then
+		#remove aggressively anti gentoo config
+		rm /var/db/repos/dantrell-gnome/profiles/package.mask
+		#old eapi
+		rm /var/db/repos/dantrell-gnome/sys-devel/gettext/gettext-0.19.8.1.ebuild
+		#bad keywording, unnecessary quotes
+		rm /var/db/repos/dantrell-gnome/sys-devel/gettext/gettext-0.20.1.ebuild
+	fi
+	#fix incompatible reponames
+	if [[ $TARGET == 'x-dantrell-gnome14' || $TARGET == 'dantrell-gnome14' ]]; then
+		patch /var/db/repos/dantrell-gnome14/profiles/repo_name /etc/paludis/patches/14.patch
+		rm /var/db/repos/dantrell-gnome14/profiles/package.mask
+	fi
+	if [[ $TARGET == 'x-dantrell-gnome16' || $TARGET == 'dantrell-gnome16' ]]; then
+		patch /var/db/repos/dantrell-gnome16/profiles/repo_name /etc/paludis/patches/16.patch
+		rm /var/db/repos/dantrell-gnome16/profiles/package.mask
+	fi
+	if [[ $TARGET == 'x-dantrell-gnome18' || $TARGET == 'dantrell-gnome18' ]]; then
+		patch /var/db/repos/dantrell-gnome18/profiles/repo_name /etc/paludis/patches/18.patch
+		rm /var/db/repos/dantrell-gnome18/profiles/package.mask
+	fi
+	if [[ $TARGET == 'x-dantrell-gnome20' || $TARGET == 'dantrell-gnome20' ]]; then
+		patch /var/db/repos/dantrell-gnome20/profiles/repo_name /etc/paludis/patches/20.patch
+		rm /var/db/repos/dantrell-gnome20/profiles/package.mask
+	fi
+	if [[ $TARGET == 'x-dantrell-gnome22' || $TARGET == 'dantrell-gnome22' ]]; then
+		patch /var/db/repos/dantrell-gnome22/profiles/repo_name /etc/paludis/patches/22.patch
+		rm /var/db/repos/dantrell-gnome22/profiles/package.mask
+	fi
+	if [[ $TARGET == 'x-dantrell-gnome24' || $TARGET == 'dantrell-gnome24' ]]; then
+		patch /var/db/repos/dantrell-gnome24/profiles/repo_name /etc/paludis/patches/24.patch
+		rm /var/db/repos/dantrell-gnome24/profiles/package.mask
+	fi
+	if [[ $TARGET == 'x-dantrell-gnome26' || $TARGET == 'dantrell-gnome26' ]]; then
+		patch /var/db/repos/dantrell-gnome26/profiles/repo_name /etc/paludis/patches/26.patch
+		rm /var/db/repos/dantrell-gnome26/profiles/package.mask
+	fi
+	if [[ $TARGET == 'x-dantrell-gnome28' || $TARGET == 'dantrell-gnome28' ]]; then
+		patch /var/db/repos/dantrell-gnome28/profiles/repo_name /etc/paludis/patches/28.patch
+		rm /var/db/repos/dantrell-gnome28/profiles/package.mask
+	fi
+	if [[ $TARGET == 'x-dantrell-gnome30' || $TARGET == 'dantrell-gnome30' ]]; then
+		patch /var/db/repos/dantrell-gnome30/profiles/repo_name /etc/paludis/patches/30.patch
+		rm /var/db/repos/dantrell-gnome30/profiles/package.mask
+	fi
+	if [[ $TARGET == 'x-dantrell-gnome32' || $TARGET == 'dantrell-gnome32' ]]; then
+		patch /var/db/repos/dantrell-gnome32/profiles/repo_name /etc/paludis/patches/32.patch
+		rm /var/db/repos/dantrell-gnome32/profiles/package.mask
+	fi
+	if [[ $TARGET == 'x-dantrell-gnome34' || $TARGET == 'dantrell-gnome34' ]]; then
+		patch /var/db/repos/dantrell-gnome34/profiles/repo_name /etc/paludis/patches/34.patch
+		rm /var/db/repos/dantrell-gnome34/profiles/package.mask
+	fi
+	if [[ $TARGET == 'x-dantrell-gnome36' || $TARGET == 'dantrell-gnome36' ]]; then
+		patch /var/db/repos/dantrell-gnome36/profiles/repo_name /etc/paludis/patches/36.patch
+		rm /var/db/repos/dantrell-gnome36/profiles/package.mask
+	fi
+	if [[ $TARGET == 'x-dantrell-gnome38' || $TARGET == 'dantrell-gnome38' ]]; then
+		patch /var/db/repos/dantrell-gnome38/profiles/repo_name /etc/paludis/patches/38.patch
+		rm /var/db/repos/dantrell-gnome38/profiles/package.mask
+	fi
+	if [[ $TARGET == 'x-go-overlay' || $TARGET == 'go-overlay' ]]; then
+		rm /var/db/repos/go-overlay/profiles/package.mask
+	fi
+	#if [[ $TARGET == 'x-kressh' || $TARGET == 'kressh' ]]; then
+	#	patch /var/db/repos/kressh/profiles/repo_name /etc/paludis/patches/kressh.patch
+	#fi
+	#remove packages we don't want
+	if [[ $TARGET == 'x-srcshelton' || $TARGET == 'srcshelton' ]]; then
+		#dated design
+		rm /var/db/repos/srcshelton/dev-libs/libxslt/libxslt-1.1.28-r2.ebuild
+		#no aqua use flag
+		rm /var/db/repos/srcshelton/dev-lang/python/python-2.7.12.ebuild
+		rm /var/db/repos/srcshelton/dev-lang/python/python-2.7.14.ebuild
+		rm /var/db/repos/srcshelton/dev-lang/python/python-2.7.14-r1.ebuild
+	fi
+}

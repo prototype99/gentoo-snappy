@@ -1,0 +1,20 @@
+From 1d879596d1e835aab2d1255a37f0a85cf0faada0 Mon Sep 17 00:00:00 2001
+From: layman <layman@localhost>
+Date: Sat, 14 Nov 2020 18:49:13 +0000
+Subject: [PATCH] fix repository name
+
+---
+ profiles/repo_name | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/profiles/repo_name b/profiles/repo_name
+index ad5b538..6eafdd2 100644
+--- a/profiles/repo_name
++++ b/profiles/repo_name
+@@ -1 +1 @@
+-dantrell-gnome-3-36
++dantrell-gnome36
+\ No newline at end of file
+-- 
+2.29.2
+

@@ -1,0 +1,5 @@
+--- /var/db/repos/dantrell-gnome32/profiles/repo_name
++++ /var/db/repos/dantrell-gnome32/profiles/repo_name
+@@ -1 +1 @@
+-dantrell-gnome-3-32
++dantrell-gnome32
