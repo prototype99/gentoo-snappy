@@ -71,6 +71,13 @@ hook_run_sync_post() {
 	#	patch /var/db/repos/kressh/profiles/repo_name /etc/paludis/patches/kressh.patch
 	#fi
 	#paludis didn't like this news...
+	if [[ $TARGET == 'x-aegypius' || $TARGET == 'aegypius' ]]; then
+		rm -R /var/db/repos/aegypius/metadata/news/2015-05-28-getting-ready-for-atom-1.0-release
+		rm -R /var/db/repos/aegypius/metadata/news/2017-10-03-introducing-atom-bin-slots
+	fi
+	if [[ $TARGET == 'x-kdecherf' || $TARGET == 'kdecherf' ]]; then
+		rm -R /var/db/repos/kdecherf/metadata/news/2017-10-21-neomutt-update
+	fi
 	if [[ $TARGET == 'x-somasis' || $TARGET == 'somasis' ]]; then
 		rm -R /var/db/repos/somasis/metadata/news/2015-04-21-syncthing-protocol-breaking
 		rm -R /var/db/repos/somasis/metadata/news/2015-09-16-connman-gtk-renamed
