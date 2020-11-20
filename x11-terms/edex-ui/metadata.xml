@@ -5,4 +5,7 @@
 		<email>sophietheopossum@yandex.ru</email>
 		<name>Seirra Blake</name>
 	</maintainer>
+	<use>
+		<flag name="vanilla">Do not patch in custom intro</flag>
+	</use>
 </pkgmetadata>

@@ -1,0 +1,48 @@
+From c921691acf9a538a3e8cff6a3009801f6d43c6e6 Mon Sep 17 00:00:00 2001
+From: seirra <sophietheopossum@yandex.com>
+Date: Fri, 20 Nov 2020 19:54:25 +0000
+Subject: [PATCH] add custom branding (inspired by SuhasBk fork)
+
+---
+ src/_renderer.js               | 2 +-
+ src/assets/css/boot_screen.css | 4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/src/_renderer.js b/src/_renderer.js
+index 4ed3b9a..31d9379 100644
+--- a/src/_renderer.js
++++ b/src/_renderer.js
+@@ -287,7 +287,7 @@ async function displayTitleScreen() {
+ 
+     document.body.setAttribute("class", "");
+     bootScreen.setAttribute("class", "center");
+-    bootScreen.innerHTML = "<h1>eDEX-UI</h1>";
++    bootScreen.innerHTML = "<h1>ChimOS</h1>";
+     let title = document.querySelector("section > h1");
+ 
+     await _delay(200);
+diff --git a/src/assets/css/boot_screen.css b/src/assets/css/boot_screen.css
+index c79b4dd..94bb8a8 100644
+--- a/src/assets/css/boot_screen.css
++++ b/src/assets/css/boot_screen.css
+@@ -50,7 +50,7 @@ section#boot_screen h1.glitch {
+ }
+ 
+ section#boot_screen h1::before {
+-    content: "eDEX-UI";
++    content: "ChimeraOS";
+     display: block;
+     transform: translateY(100%) translateX(-2%);
+     clip-path: polygon(100% 0%, 100% 40%, 0% 40%, 0% 0%);
+@@ -78,7 +78,7 @@ section#boot_screen h1.glitch::before {
+ }
+ 
+ section#boot_screen h1::after {
+-    content: "eDEX-UI";
++    content: "Welcome to a new era!";
+     display: block;
+     transform: translateY(-100%) translateX(2%);
+     clip-path: polygon(100% 40%, 100% 100%, 0% 100%, 0% 40%);
+-- 
+2.29.2
+

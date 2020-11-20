@@ -12,13 +12,22 @@ DESCRIPTION="A cross-platform, customizable science fiction terminal emulator wi
 
 LICENSE="GPL-3"
 SLOT="0"
-IUSE=""
+IUSE="vanilla"
 
 DEPEND="net-libs/nodejs[npm]"
 
 RESTRICT="network-sandbox"
 
 S="${WORKDIR}/${PN}-${NUM}"
+
+src_prepare() {
+	if ! use vanilla; then
+		PATCHES=(
+			"${FILESDIR}"/chimos.patch
+		)
+	fi
+	default
+}
 
 src_compile() {
 	npm install || die
