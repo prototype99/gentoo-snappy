@@ -71,6 +71,7 @@ hook_run_sync_post() {
 	#	patch /var/db/repos/kressh/profiles/repo_name /etc/paludis/patches/kressh.patch
 	#fi
 	#paludis didn't like this news...
+	#see https://github.com/aegypius/overlay/pull/75
 	if [[ $TARGET == 'x-aegypius' || $TARGET == 'aegypius' ]]; then
 		rm -R /var/db/repos/aegypius/metadata/news/2015-05-28-getting-ready-for-atom-1.0-release
 		rm -R /var/db/repos/aegypius/metadata/news/2017-10-03-introducing-atom-bin-slots
