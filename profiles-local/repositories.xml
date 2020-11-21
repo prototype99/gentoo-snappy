@@ -666,14 +666,14 @@
 	<repo priority="50" quality="experimental" status="unofficial">
 		<name>muslx32</name>
 		<description lang="en">muslx32 (musl libc and x32 abi) overlay for Gentoo Linux</description>
-		<homepage>https://github.com/orsonteodoro/muslx32</homepage>
+		<homepage>https://github.com/prototype99/muslx32</homepage>
 		<owner type="person">
 			<email>orsonteodoro@hotmail.com</email>
 			<name>Orson Teodoro</name>
 		</owner>
-		<source type="git">https://github.com/orsonteodoro/muslx32.git</source>
-		<source type="git">git+ssh://git@github.com/orsonteodoro/muslx32.git</source>
-		<feed>https://github.com/orsonteodoro/muslx32/commits/master.atom</feed>
+		<source type="git">https://github.com/prototype99/muslx32.git</source>
+		<source type="git">git+ssh://git@github.com/prototype99/muslx32.git</source>
+		<feed>https://github.com/prototype99/muslx32/commits/master.atom</feed>
 	</repo>
 	<repo priority="50" quality="experimental" status="unofficial">
 		<name>my-gnome</name>
