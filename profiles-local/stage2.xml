@@ -2471,8 +2471,7 @@
       <email>k_f@gentoo.org</email>
       <name>Kristian Fiskerstrand</name>
     </owner>
-    <source type="git">git://git.sumptuouscapital.com/portage-overlay.git</source>
-    <feed>http://git.sumptuouscapital.com/?p=portage-overlay.git;a=atom</feed>
+    <source type="git">git://github.com/prototype99/k_f.git</source>
   </repo>
   <repo quality="experimental" status="unofficial">
     <name>kaa</name>
