@@ -2,13 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=4
+EAPI=5
 
-PYTHON_DEPEND="2"
-SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.*"
+PYTHON_COMPAT=( python2_7 )
 
-inherit distutils
+inherit distutils-r1
 
 DESCRIPTION="Euca2ools are command-line tools for interacting with Web services
 		that export a REST/Query-based API compatible with Amazon EC2 and S3
