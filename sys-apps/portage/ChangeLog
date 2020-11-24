@@ -1,9 +1,13 @@
+*portage-3.0.10-r1
+::gentoo			update keywords, add new fixes
+::prototype99		add use flags to simplify dependencies
+::BWGentooPrefix	add prefix support, add freebsd&aix&solaris&mac support
 *portage-3.0.8
-::gentoo		bump dependencies, update keywords, add missing dependency
+::gentoo			bump dependencies, update keywords, add missing dependency
 *portage-3.0.5
-::gentoo		update dependencies, change eclass logic
-::prototype99	add support for changelog viewing in newer versions
+::gentoo			update dependencies, change eclass logic
+::prototype99		add support for changelog viewing in newer versions
 *portage-3.0.1
-::gentoo		base ebuild
-::poly-c		non-verbose patch
-::prototype99	put rsync and patch behind use flags
+::gentoo			base ebuild
+::poly-c			non-verbose patch
+::prototype99		put rsync and patch behind use flags
