@@ -1029,13 +1029,13 @@
 	<repo priority="50" quality="experimental" status="unofficial">
 		<name>xeon-phi</name>
 		<description lang="en"> This is an portage overlay for containing ebuilds for a clean install of the Intel Manycore Platform Software Stack (MPSS) for Gentoo</description>
-		<homepage>https://github.com/prototype99/xeon-phi-overlay</homepage>
+		<homepage>https://github.com/agravgaard/xeon-phi-overlay</homepage>
 		<owner type="person">
 			<name>Andreas Gravgaard Andersen</name>
 		</owner>
-		<source type="git">https://github.com/prototype99/xeon-phi-overlay.git</source>
-		<source type="git">git+ssh://git@github.com/prototype99/xeon-phi-overlay.git</source>
-		<feed>https://github.com/prototype99/xeon-phi-overlay/commits/master.atom</feed>
+		<source type="git">https://github.com/agravgaard/xeon-phi-overlay.git</source>
+		<source type="git">git+ssh://git@github.com/agravgaard/xeon-phi-overlay.git</source>
+		<feed>https://github.com/agravgaard/xeon-phi-overlay/commits/master.atom</feed>
 	</repo>
 	<repo priority="50" quality="experimental" status="unofficial">
 		<name>yoza</name>
