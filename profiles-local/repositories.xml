@@ -439,14 +439,14 @@
 	<repo priority="50" quality="experimental" status="unofficial">
 		<name>heather</name>
 		<description lang="en">gentoo overlay</description>
-		<homepage>https://github.com/Heather/gentoo-heather</homepage>
+		<homepage>https://github.com/prototype99/gentoo-heather</homepage>
 		<owner type="person">
 			<email>cynede@gentoo.org</email>
 			<name>Mikhail Pukhlikov</name>
 		</owner>
-		<source type="git">https://github.com/Heather/gentoo-heather.git</source>
-		<source type="git">git+ssh://git@github.com/Heather/gentoo-heather.git</source>
-		<feed>https://github.com/Heather/gentoo-heather/commits/master.atom</feed>
+		<source type="git">https://github.com/prototype99/gentoo-heather.git</source>
+		<source type="git">git+ssh://git@github.com/prototype99/gentoo-heather.git</source>
+		<feed>https://github.com/prototype99/gentoo-heather/commits/master.atom</feed>
 	</repo>
 	<repo priority="50" quality="experimental" status="unofficial">
 		<name>JamesB192</name>
