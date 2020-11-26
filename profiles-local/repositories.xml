@@ -1,6 +1,17 @@
 <?xml version="1.0" ?>
 <repositories version="1.0">
 	<repo priority="50" quality="experimental" status="unofficial">
+		<name>ada</name>
+		<description lang="en">ada Gentoo overlay</description>
+		<homepage>https://github.com/prototype99/ada-overlay</homepage>
+		<owner type="person">
+			<name>Luke A. Guest</name>
+		</owner>
+		<source type="git">https://github.com/prototype99/ada-overlay.git</source>
+		<source type="git">git+ssh://git@github.com/prototype99/ada-overlay.git</source>
+		<feed>https://github.com/prototype99/ada-overlay/commits/master.atom</feed>
+	</repo>
+	<repo priority="50" quality="experimental" status="unofficial">
 		<name>adjust</name>
 		<description lang="en">adjust Gentoo overlay</description>
 		<homepage>https://github.com/adjust/gentoo-overlay</homepage>
