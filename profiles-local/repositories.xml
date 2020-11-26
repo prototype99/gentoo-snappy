@@ -117,7 +117,7 @@
 	<repo priority="50" quality="experimental" status="unofficial">
 		<name>chymeric</name>
 		<description lang="en">gentoo overlay</description>
-		<homepage>https://github.com/Heather/gentoo-heather</homepage>
+		<homepage>https://github.com/TheChymera/overlay</homepage>
 		<owner type="person">
 			<email>horea.christ@yandex.com</email>
 			<name>Horea Christian</name>
