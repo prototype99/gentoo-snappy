@@ -1,5 +1,6 @@
 *world-19
 
+	3.12.2020	add use flags to better record file manager capabilities, improve use flag naming, create stricter dependencies
 	25.8.2020	rename repo-gen script to r, remove interactive error message that halts the process, improve some documentation, drop old versions
 	14.6.2020	remove dated dependency
 	1.6.2020	improve use flag naming
