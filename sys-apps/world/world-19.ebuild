@@ -8,7 +8,7 @@ DESCRIPTION="Meta package to pull in packages and scripts to help keep the world
 HOMEPAGE="https://github.com/sophietheopossum/blood-of-the-chimera"
 SLOT="0"
 KEYWORDS="~alpha amd64 ~arm ~arm64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
-IUSE="amd anaconda archive ath9k +bfq bmq broadcom +browser btrfs bzip2 cad +chrome +composite copy-notify ddefm debug dev discord dolphin doublecmd +efi ext2 exfat +extended-glyphs f2fs +fat firefox flash +fluxbox +fm fm-archdir fm-comp fm-comp-split fm-goup fm-paste-img fm-search fm-search-contents fm-session fm-tabs fslint ftp fvwm gentoo-patches gentoo-sources +gnomekeyring-admin gzip hygon img-dim img-dim-hover img-dim-hover-list img-dim-hover-tile img-dim-jpg img-dim-prop +index inkscape intel irc ivybridge java-ide kate kyber latex logisim lz4 lzma +lzo mail-client manyfiles maui-index mips-emulate mod-date-list mod-date-prop mod-time-list nemo +network-tray odt openbox openrc overlay +pantheon-files pcmanfm-qt pdf-edit parted +pf-sources php-ide +processviewer progress-icon remote-desktop save-state screenshot secondlife secure show-read show-sym show-write spreadsheet sql steam sublime sublimelinter +sudo svg-edit system-flake8 system-pylint +systemd terminal +terminal-fast test +text-editor text-editor-color-highlight text-editor-js-complete text-editor-js-lint text-editor-php-lint text-editor-py-complete text-editor-py-lint threads-4 threads-16 threads-512 +thumbnail-jpg thumbnail-odp +thumbnail-odt +thumbnail-png thumbnail-pptx +thumbnail-svg thunar +uefi view-font view-pdf view-pdf-accurate view-png xeon xfe +xfs xz yandex-disk zhaoxin"
+IUSE="amd anaconda archive ath9k +bfq bmq broadcom +browser btrfs bzip2 cad +chrome +composite copy-notify ddefm debug dev discord dolphin doublecmd +efi ext2 exfat +extended-glyphs f2fs +fat firefox flash +fluxbox +fm fm-archdir fm-bigdir fm-comp fm-comp-split fm-goup fm-paste-img fm-search fm-search-contents fm-session fm-tabs fslint ftp fvwm gentoo-patches gentoo-sources +gnomekeyring-admin gzip hygon img-dim img-dim-hover img-dim-hover-list img-dim-hover-tile img-dim-jpg img-dim-prop +index inkscape intel irc ivybridge java-ide kate kyber latex logisim lz4 lzma +lzo mail-client maui-index mips-emulate mod-date-list mod-date-prop mod-time-list nemo +network-tray odt openbox openrc overlay +pantheon-files pcmanfm-qt pdf-edit parted +pf-sources php-ide +processviewer progress-icon remote-desktop save-state screenshot secondlife secure show-read show-sym show-write spreadsheet sql steam sublime sublimelinter +sudo svg-edit system-flake8 system-pylint +systemd terminal +terminal-fast test +text-editor text-editor-color-highlight text-editor-js-complete text-editor-js-lint text-editor-php-lint text-editor-py-complete text-editor-py-lint threads-4 threads-16 threads-512 +thumbnail-jpg thumbnail-odp +thumbnail-odt +thumbnail-png thumbnail-pptx +thumbnail-svg thunar +uefi view-font view-pdf view-pdf-accurate view-png xeon xfe +xfs xz yandex-disk zhaoxin"
 S="${WORKDIR}"
 
 REQUIRED_USE="
@@ -26,6 +26,7 @@ copy-notify? ( dolphin )
 efi? ( fat )
 fm? ( ^^ ( pantheon-files pcmanfm-qt dolphin xfe doublecmd thunar nemo ddefm maui-index ) )
 fm-archdir? ( dolphin doublecmd )
+fm-bigdir? ( pcmanfm-qt )
 fm-comp? ( ddefm dolphin doublecmd xfe maui-index )
 fm-comp-split? ( ddefm )
 fm-goup? ( pcmanfm-qt dolphin xfe thunar doublecmd nemo )
@@ -44,7 +45,6 @@ img-dim-jpg? ( pantheon-files )
 img-dim-prop? ( pantheon-files )
 ivybridge? ( intel threads-4 )
 kate? ( text-editor )
-manyfiles? ( pcmanfm-qt )
 maui-index? ( x11-misc/index )
 mod-date-list? ( || ( pantheon-files pcmanfm-qt ) )
 mod-date-prop? ( || ( pantheon-files pcmanfm-qt ) )
