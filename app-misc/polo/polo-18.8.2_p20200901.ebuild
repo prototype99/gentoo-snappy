@@ -10,7 +10,7 @@ SRC_URI="${HOMEPAGE}archive/${NUM}.zip -> ${P}.zip"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="cloud +fm-comp-prog prop-exif prop-media +thumb-vid"
 
 DEPEND="x11-libs/gtk+
