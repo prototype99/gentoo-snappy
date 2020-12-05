@@ -38,6 +38,7 @@
 		<flag name="fluxbox">use <pkg>x11-wm/fluxbox</pkg> as the window manager of choice. typically this has medium performance and can  even be used as a full desktop solution if so desired</flag>
 		<flag name="fm">require that the system have a graphical file manager</flag>
 		<flag name="fm-archdir">require that the file manager browse archives like directories</flag>
+		<flag name="fm-bigdir">require that the filemanager be able to handle heavily populated directories. in our test scenario: 1979 files/folders on a USB 2.0 hard drive connection. largest recorded working scenario for other file managers is 1052 files on native sata</flag>
 		<flag name="fm-comp">require that the file manager have an option to compress files</flag>
 		<flag name="fm-comp-split">require that the file manager have an option to split compressed files</flag>
 		<flag name="fm-goup">require that the file manager have an up arrow</flag>
@@ -73,7 +74,6 @@
 		<flag name="logisim">install <pkg>sci-electronics/logisim-evolution-holy-cross</pkg>, a fork of a fork of logisom that performs well</flag>
 		<flag name="lz4">compress the kernel with lz4</flag>
 		<flag name="lzo">compress the kernel with lzo, this usually boots fastest</flag>
-		<flag name="manyfiles">require that the filemanager be able to handle large lists of files. in our test scenario: 1979 files/folders on a USB 2.0 hard drive connection. largest recorded working scenario for other file managers is 1052 files on native sata</flag>
 		<flag name="mail-client">install <pkg>mail-client/mailspring</pkg>, a partially open source mail client</flag>
 		<flag name="maui-index">install <pkg>x11-misc/index</pkg>, a cross device file manager</flag>
 		<flag name="mips-emulate">install <pkg>app-emulation/mars-mips</pkg>, a MIPS assembly emulator</flag>
