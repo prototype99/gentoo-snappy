@@ -17,6 +17,7 @@ llvm_targets_Sparc
 llvm_targets_SystemZ
 llvm_targets_XCore
 pie
+python_single_target_python3_8
 python_targets_python3_8
 sane_backends_abaton
 sane_backends_agfafocus
