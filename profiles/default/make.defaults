@@ -1,6 +1,7 @@
 # consult /usr/share/portage/config/make.conf.example for a
 # detailed example.
 #source /usr/share/fetchcommandwrapper/make.conf
+ACCEPT_KEYWORDS="~amd64"
 ACCEPT_LICENSE="*"
 ALSA_CARDS="-ali5451 -als4000 -atiixp -atiixp-modem -bt87x -ca0106 -cmipci -emu10k1x -ens1370 -ens1371 -es1938 -es1968 -fm801 -intel8x0 -intel8x0m -maestro3 -trident -usb-audio -via82xx -via82xx-modem -ymfpci"
 COMMON_FLAGS="-march=native -pipe"
