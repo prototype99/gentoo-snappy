@@ -3,15 +3,14 @@
 
 EAPI=6
 
-EGIT_REPO_URI="https://github.com/MageSlayer/paludis-gentoo-patches.git"
 PYTHON_COMPAT=( python2_7 )
 RUBY_VER=2.4
 
-inherit bash-completion-r1 cmake-utils git-r3 python-single-r1 user
+inherit bash-completion-r1 cmake-utils python-single-r1 user
 
 DESCRIPTION="paludis, the other package mangler"
 HOMEPAGE="http://paludis.exherbo.org/"
-SRC_URI=""
+SRC_URI="https://github.com/MageSlayer/paludis-gentoo-patches.git"
 
 IUSE="doc pbins pink python ruby ruby_targets_ruby${RUBY_VER/./} search-index test +xml +eapi7"
 LICENSE="GPL-2 vim"
@@ -71,17 +70,6 @@ pkg_setup() {
 	enewuser "paludisbuild" -1 -1 "/var/tmp/paludis" "paludisbuild,tty"
 
 	use python && python-single-r1_pkg_setup
-}
-
-src_unpack() {
-        if use eapi7; then
-		# want experimental EAPI7 support?
-		EGIT_BRANCH="eapi7"
-        else
-		EGIT_BRANCH="master"
-        fi
-        git-r3_fetch
-        git-r3_checkout
 }
 
 src_prepare() {
