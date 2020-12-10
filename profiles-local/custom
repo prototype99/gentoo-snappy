@@ -94,6 +94,7 @@
 =dev-libs/gmp-6.1.2::srcshelton										#no musl support
 =dev-libs/gmp-6.1.2-r1::gentoo										#no pgo
 =dev-libs/gmp-6.2.0-r1::gentoo										#no pgo
+=dev-libs/gmp-6.2.1::gentoo											#no pgo
 =dev-libs/gobject-introspection-1.66.1::my-gnome					#no python3_9
 =dev-libs/gobject-introspection-common-1.60.2::dantrell-gnome-3-32	#bad keywording, unnecessary quotes
 =dev-libs/gobject-introspection-common-1.64.0::gnome-next			#eapi6
@@ -332,7 +333,7 @@
 =sys-apps/attr-2.4.47-r2::argent-main								#old
 =sys-apps/attr-2.4.47-r2::musl										#musl specific patches
 =sys-apps/baselayout-2.6.1-r1::clx									#unclear benefits
-=sys-apps/baselayout-2.7::poly-c									#unclear benefits
+=sys-apps/baselayout-2.7-r1::poly-c									#unclear benefits
 =sys-apps/bubblewrap-0.3.1-r1::musl									#musl specific patch
 =sys-apps/bubblewrap-0.3.1-r100::ag-ops								#broken build, unclear benefits
 =sys-apps/bubblewrap-0.3.1-r101::ag-ops								#unclear benefits
@@ -379,6 +380,7 @@
 =sys-libs/libomp-9.0.1::gentoo										#no python3_8
 =sys-libs/libunwind-1.3_rc1:7::ineluctable-overlay					#old
 =sys-libs/libutempter-1.1.6-r2::musl								#musl specific patch
+=sys-libs/ncurses-6.2_p20201003::pg_overlay							#unclear benefits
 =sys-libs/pam-1.3.1-r2::musl										#better in other overlay
 =sys-libs/pam-1.3.1_p20200128-r1::dantrell-gnome					#bad keywording, unnecessary quotes
 =sys-libs/zlib-1.2.11-r3::clx										#old
