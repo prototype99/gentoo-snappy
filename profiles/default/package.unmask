@@ -56,3 +56,17 @@
 # required by sys-devel/bison-3.7.1-r1::gentoo
 # required by sys-apps/iproute2-5.7.0::poly-c
 =sys-devel/gettext-0.21
+# required by sys-apps/paludis-3.0.0.1::prototype99
+# required by sys-apps/paludis (argument)
+# /var/db/repos/gentoo/profiles/package.mask:
+# Michał Górny <mgorny@gentoo.org> (2020-11-17)
+# Fail to build with gcc-10.  No recent activity upstream.  Seems that
+# Exherbo is dead and buried.
+# Removal in 30 days.  Bug #708528.
+=sys-apps/sydbox-1.0.7
+# required by app-accessibility/at-spi2-atk-2.38.0::gentoo
+# required by x11-libs/gtk+-3.24.24-r1::dantrell-gnome[X]
+# required by dev-libs/gdl-3.34.0::gentoo
+# required by media-gfx/inkscape-1.0.1::dantrell-gnome
+# required by media-gfx/inkscape (argument)
+=dev-libs/atk-2.36.0
