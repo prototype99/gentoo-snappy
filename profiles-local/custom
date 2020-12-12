@@ -94,6 +94,7 @@
 =dev-libs/gmp-6.1.2::srcshelton										#no musl support
 =dev-libs/gmp-6.1.2-r1::gentoo										#no pgo
 =dev-libs/gmp-6.2.0-r1::gentoo										#no pgo
+=dev-libs/gmp-6.2.0-r1::srcshelton									#no musl support
 =dev-libs/gmp-6.2.1::gentoo											#no pgo
 =dev-libs/gobject-introspection-1.66.1::my-gnome					#no python3_9
 =dev-libs/gobject-introspection-common-1.60.2::dantrell-gnome-3-32	#bad keywording, unnecessary quotes
@@ -217,6 +218,7 @@
 =dev-util/gtk-doc-1.32-r1::lanodanOverlay							#extremely broken circular dependency
 =dev-util/gtk-doc-am-1.32::dantrell-gnome							#bad keywording, unnecessary quotes
 =dev-util/gtk-doc-am-1.32::lanodanOverlay							#extremely broken circular dependency
+=dev-util/gtk-doc-am-1.33.1::dantrell-gnome							#bad keywording, unnecessary quotes
 =dev-util/gtk-update-icon-cache-3.24.16::dantrell-gnome				#bad keywording, unnecessary quotes
 =dev-util/itstool-2.0.6-r1::gentoo									#verbose python targets
 =dev-util/meld-3.21.0::my-gnome										#broken dependencies
