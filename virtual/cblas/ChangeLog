@@ -1,0 +1,5 @@
+*cblas-3.8
+::BWGentooPrefix	more cblas options, user specifiable int64 support, multilib support
+::gentoo			base ebuild
+::petkovich			more cblas options, user specifiable int64 support, multilib support
+::prototype99		properly pass use flags
