@@ -453,3 +453,6 @@ dev-db/sqlite secure-delete
 >=media-video/ffmpeg-4.3.1 x264
 # required by www-client/uget-2.2.1::gentoo[aria2]
 >=net-misc/aria2-1.34.0-r2 xmlrpc
+# required by dev-libs/boost-1.72.0-r2::gentoo[mpi]
+# required by media-gfx/inkscape-1.0.1::dantrell-gnome
+>=virtual/mpi-2.0-r5 cxx
