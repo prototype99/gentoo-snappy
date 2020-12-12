@@ -398,6 +398,7 @@
 =virtual/pam-0-r1::argent-main										#old, eapi 5
 =virtual/rust-1337-r1::redcore										#no binary support, amd64 only
 =virtual/tmpfiles-0::srcshelton										#pointless modification, just mask the whole package?
+=virtual/tmpfiles-0-r1::srcshelton									#pointless modification, just mask the whole package?
 =www-client/firefox-67.0::pg_overlay								#better in other overlay, old
 =www-client/firefox-70.0.1::gallifrey								#less use flags
 =www-client/firefox-72.0.2::gallifrey								#less use flags
