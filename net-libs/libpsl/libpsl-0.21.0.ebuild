@@ -2,116 +2,45 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
-inherit rindeal
 
-## python-*.eclass:
-PYTHON_COMPAT=( python2_7 python3_{5,6,7} )
+PYTHON_COMPAT=( python{2_7,3_{5..9}} )
+inherit multilib-minimal python-any-r1
 
-## git-hosting.eclass:
-GH_RN="github:rockdaboot"
-GH_REF="${PN}-${PV}"
-
-## EXPORT_FUNCTIONS: src_unpack
-inherit git-hosting
-
-## functions: eautoreconf
-inherit autotools
-
-## EXPORT_FUNCTIONS: pkg_setup
-inherit python-any-r1
-
-## functions: dsf:eval
-inherit dsf-utils
-
-## functions: prune_libtool_files
-inherit ltprune
-
-DESCRIPTION="C library for the Publix Suffix List"
-HOMEPAGE="${GH_HOMEPAGE} https://rockdaboot.github.io/${PN}"
+DESCRIPTION="C library for the Public Suffix List"
+HOMEPAGE="https://rockdaboot.github.io/${PN}"
+SRC_URI="https://github.com/rockdaboot/${PN}/releases/download/${PV}/${P}.tar.gz"
 LICENSE="MIT"
-
 SLOT="0"
-git-hosting_gen_snapshot_url "github:publicsuffix:list" "c45eff1" psl_list_url PSL_LIST_DISTFILE
-SRC_URI+="
-	${psl_list_url} -> ${PSL_LIST_DISTFILE}
+KEYWORDS="~alpha amd64 arm arm64 hppa ~ia64 ppc ppc64 ~riscv s390 sparc x86"
+IUSE="doc icu +idn +man static-libs nls +rpath"
+
+RDEPEND="sys-devel/libtool
+	icu? ( !idn? ( dev-libs/icu:=[${MULTILIB_USEDEP}] ) )
+	idn? (
+		dev-libs/libunistring[${MULTILIB_USEDEP}]
+		net-dns/libidn2:=[${MULTILIB_USEDEP}]
+	)
+"
+DEPEND="${RDEPEND}"
+BDEPEND="${PYTHON_DEPS}
+	doc? ( dev-util/gtk-doc-am )
+	sys-devel/gettext
+	virtual/pkgconfig
+	man? ( dev-libs/libxslt )
 "
 
-KEYWORDS="amd64 arm arm64"
-IUSE_A=( doc man static-libs nls +rpath
-	+builtin +builtin_libicu builtin_libidn2 builtin_libidn
-	+runtime +runtime_libicu runtime_libidn2 runtime_libidn
-)
-
-CDEPEND_A=(
-	"$(dsf:eval \
-		'(builtin & builtin_libicu) | (runtime & runtime_libicu)' \
-			"dev-libs/icu[static-libs?]" )"
-	"$(dsf:eval \
-		'(builtin & builtin_libidn) | (runtime & runtime_libidn)' \
-			"net-dns/libidn[static-libs?]" )"
-	"$(dsf:eval \
-		'(builtin & builtin_libidn2) | (runtime & runtime_libidn2)' \
-			"net-dns/libidn2[static-libs?]" )"
-
-	"${PYTHON_DEPS}"
-)
-DEPEND_A=( "${CDEPEND_A[@]}"
-	"sys-devel/gettext"
-	"virtual/pkgconfig"
-	"sys-devel/libtool"
-
-	"doc? ( dev-util/gtk-doc )"
-	# xsltproc
-	"man? ( dev-libs/libxslt )"
-)
-RDEPEND_A=( "${CDEPEND_A[@]}" )
-
-REQUIRED_USE_A=(
-	"builtin? ("
-		"^^ ("
-			"builtin_libicu"
-			"builtin_libidn"
-			"builtin_libidn2"
-		")"
-	")"
-	"runtime? ("
-		"^^ ("
-			"runtime_libicu"
-			"runtime_libidn"
-			"runtime_libidn2"
-		")"
-	")"
-)
-
-inherit arrays
-
-src_unpack() {
-	git-hosting_src_unpack
-
-	rrmdir "${S}/list"
-	git-hosting_unpack "${DISTDIR}/${PSL_LIST_DISTFILE}" "${S}/list"
-}
-
-src_prepare() {
-	default
-
-	if ! use doc
-	then
-		## this copies ./autogen.sh
-		rrm -f gtk-doc.make
-		echo "EXTRA_DIST =" >gtk-doc.make || die
-		echo "CLEANFILES =" >>gtk-doc.make || die
+pkg_pretend() {
+	if use icu && use idn ; then
+		ewarn "\"icu\" and \"idn\" USE flags are enabled."
+		ewarn "Using \"idn\"."
 	fi
-
-	eautoreconf
 }
 
-src_configure() {
+multilib_src_configure() {
 	local myeconfargs=(
+		--disable-asan
 		--disable-cfi
 		--disable-ubsan
-		--disable-asan
-
 		$(use_enable doc gtk-doc)
 		$(use_enable doc gtk-doc-html)
 		$(use_enable doc gtk-doc-pdf)
@@ -120,14 +49,27 @@ src_configure() {
 		$(use_enable nls)
 		$(use_enable rpath)
 	)
-	econf "${myeconfargs[@]}"
+
+	# Prefer idn even if icu is in USE as well
+	if use idn ; then
+		myeconfargs+=(
+			--enable-builtin=libidn2
+			--enable-runtime=libidn2
+		)
+	elif use icu ; then
+		myeconfargs+=(
+			--enable-builtin=libicu
+			--enable-runtime=libicu
+		)
+	else
+		myeconfargs+=( --disable-runtime )
+	fi
+
+	ECONF_SOURCE="${S}" econf "${myeconfargs[@]}"
 }
 
-src_install() {
+multilib_src_install() {
 	default
 
-	exeinto /usr/libexec
-	doexe src/psl-make-dafsa
-
-	prune_libtool_files
+	find "${ED}" -type f -name "*.la" -delete || die
 }
