@@ -343,6 +343,7 @@
 =sys-apps/dbus-broker-18::dantrell-gnome							#patch doesn't work
 =sys-apps/file-5.39-r3::tgbugs-overlay								#broken filesystem structure
 =sys-apps/findutils-4.6.0-r1::muslx32								#old, no supported python, missing patch
+=sys-apps/gawk-5.1.0::srcshelton									#not quite up to date
 =sys-apps/lsb-release-1.4-r2004::redcore							#redcore specific
 =sys-apps/portage-2.3.99-r2::poly-c									#removes useful error reporting (non_verbose patch)
 =sys-apps/portage-3.0.1::poly-c										#removes useful error reporting (non_verbose patch)
@@ -410,6 +411,7 @@
 =x11-base/xorg-server-1.20.3::musl									#arm only
 =x11-base/xorg-server-1.20.5-r1::vifino-overlay						#patches break build
 =x11-libs/cairo-1.16.0-r3::dantrell-gnome							#bad keywording, unnecessary quotes
+=x11-libs/cairo-1.17.2::pg_overlay									#unclear benefits
 =x11-libs/colord-gtk-0.1.26-r1::gnome-next							#stripped bug number
 =x11-libs/gdk-pixbuf-2.39.2::my-gnome								#eapi 6
 =x11-libs/gdk-pixbuf-2.40.0::my-gnome								#eapi 6
