@@ -10,6 +10,7 @@ dev-cpp/gtkmm X
 dev-db/oracle-instantclient odbc
 dev-lang/perl minimal
 dev-lang/python-exec -python_targets_pypy
+dev-lang/spidermonkey minimal
 dev-libs/elfutils -bzip2
 dev-libs/gobject-introspection -python_single_target_python2_7
 dev-libs/libical -vala
@@ -43,6 +44,7 @@ sys-apps/dbus X
 sys-apps/file -bzip2
 sys-apps/portage -xattr
 sys-apps/world archive latex screenshot sublime
+sys-auth/pambase gnome-keyring minimal
 sys-devel/clang -python_single_target_python2_7
 sys-devel/gcc -jit
 sys-libs/libblockdev -python_single_target_python2_7
