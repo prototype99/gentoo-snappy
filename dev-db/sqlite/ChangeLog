@@ -1,3 +1,5 @@
+*sqlite-3.34.0
+::prototype99	don't check for something that is always true
 *sqlite-3.33.0
 ::prototype99	remove backports and workaround, update patches, add more urls for info, improve doc use flag handling
 *sqlite-3.32.3-r1
