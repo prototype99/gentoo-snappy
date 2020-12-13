@@ -154,5 +154,6 @@
 =sys-apps/kmod-27-r2
 =sys-devel/binutils-2.33.1-r1
 =sys-devel/binutils-2.34-r2
+=sys-devel/binutils-2.34-r314
 =sys-devel/binutils-2.35.1
 =sys-devel/binutils-2.35.1-r1

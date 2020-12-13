@@ -22,6 +22,7 @@
 =app-emulation/snapd-2.38::fol4										#better in other overlay
 =app-emulation/snapd-2.38::JamesB192								#better in other overlay
 =app-emulation/snapd-2.38::ROKO__									#better in other overlay
+=app-eselect/eselect-awk-0.3::srcshelton							#unclear benefits
 =app-eselect/eselect-pinentry-0.7::dantrell-gnome					#bad keywording, unnecessary quotes
 =app-i18n/ibus-1.5.19-r1::dantrell-gnome							#bad vala dependency
 =app-i18n/unicode-data-12.0.0::dantrell-gnome						#bad keywording, unnecessary quotes
