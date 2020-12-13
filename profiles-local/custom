@@ -196,6 +196,7 @@
 =dev-python/pillow-6.1.0::stefantalpalaru							#no clear benefits
 =dev-python/pivy-0.6.4::cg											#seems to disregard known bugs
 =dev-python/ply-3.11-r2::stefantalpalaru							#no pypy support
+=dev-python/pyasn1-0.4.8-r2::stefantalpalaru						#no pypy support
 =dev-python/pycparser-2.14-r1000::progress							#odd use flag configuration
 =dev-python/pycparser-2.20-r2::stefantalpalaru						#no pypy
 =dev-python/pycups-1.9.73-r2::dantrell-gnome						#bad keywording, unnecessary quotes
@@ -322,6 +323,7 @@
 =net-libs/glib-networking-2.62.3::gentoo							#no smartcard support
 =net-libs/glib-networking-2.62.3::dantrell-gnome-3-34				#bad keywording, unnecessary quotes, no smartcard support
 =net-libs/glib-networking-2.64.1::my-gnome							#no smartcard support
+=net-libs/glib-networking-2.66.0::lanodanOverlay					#no smartcard support
 =net-libs/gnutls-3.6.7::gnux32										#missing use flag
 =net-libs/libsoup-2.64.2:2.4::unity-gentoo							#missing use flags
 =net-libs/libtirpc-1.1.4-r1::musl									#musl specific patch
@@ -406,6 +408,7 @@
 =sys-power/upower-0.99.12.20191024::dantrell-gnome					#bad keywording, unnecessary quotes, eapi 6, unexplained use flags
 =sys-process/procps-3.3.15-r1::poly-c								#behind on patches?
 =sys-process/procps-3.3.16-r2::poly-c								#behind on patches?
+=virtual/cblas-3.8::gentoo											#supports less options
 =virtual/jdk-1.8.0-r314::redcore									#less java compatibility
 =virtual/jre-1.8.0-r314::redcore									#weird enforced openjdk dependency
 =virtual/linux-sources-3-r9::calculate								#no firmware use flag
