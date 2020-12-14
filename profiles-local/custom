@@ -16,6 +16,7 @@
 =app-crypt/gnupg-2.2.24::dantrell-gnome								#bad keywording, unnecessary quotes
 =app-crypt/gnupg-2.2.25::dantrell-gnome								#bad keywording, unnecessary quotes
 =app-crypt/libsecret-0.20.2::gentoo									#no python3_8, less multilib support
+=app-crypt/libsecret-0.20.3::gentoo									#no python3_8
 =app-crypt/libsecret-0.20.3-r1::alxu								#no blocker for older gnome-keyring
 =app-crypt/seahorse-3.32.2::dantrell-gnome-3-32						#missing dependency
 =app-crypt/seahorse-3.34.1::dantrell-gnome-3-34						#bad keywording, unnecessary quotes, no help use flag
@@ -275,10 +276,12 @@
 =media-gfx/flameshot-0.6.0::supertux88								#incorrect home page
 =media-gfx/flameshot-0.6.0::yuego									#no lingua support, no dbus use flag
 =media-gfx/flameshot-0.6.0-r1::adrien-overlay						#incorrect home page
+=media-gfx/fontforge-20201107::gentoo								#enables python by default
 =media-gfx/freecad-0.18.3::waebbl									#missing dependency
 =media-gfx/graphviz-2.40.1-r1::gnux32								#x32 specific patch
 =media-gfx/imagemagick-7.0.8.68::stowe-verlay						#broken url
 =media-gfx/inkscape-0.92.4-r3::dantrell-gnome						#not the best way to handle dependencies
+=media-gfx/inkscape-1.0.1::dantrell-gnome							#unclear benefits
 =media-gfx/opencsg-1.4.2::waebbl									#broken patch
 =media-libs/alsa-lib-1.1.8::gnux32									#missing use flag
 =media-libs/alsa-lib-1.2.1.2::gnux32								#x32 specific patch
@@ -325,10 +328,12 @@
 =net-libs/glib-networking-2.62.3::gentoo							#no smartcard support
 =net-libs/glib-networking-2.62.3::dantrell-gnome-3-34				#bad keywording, unnecessary quotes, no smartcard support
 =net-libs/glib-networking-2.64.1::my-gnome							#no smartcard support
+=net-libs/glib-networking-2.65.90::gnome-next						#no smartcard support
 =net-libs/glib-networking-2.66.0::gentoo							#no smartcard support
 =net-libs/glib-networking-2.66.0::lanodanOverlay					#no smartcard support
 =net-libs/gnutls-3.6.7::gnux32										#missing use flag
 =net-libs/libpsl-0.21.1::dantrell-gnome								#too new
+=net-libs/libpsl-0.21.1::gentoo										#too new
 =net-libs/libsoup-2.64.2:2.4::unity-gentoo							#missing use flags
 =net-libs/libtirpc-1.1.4-r1::musl									#musl specific patch
 =net-libs/rest-0.8.1::dantrell-gnome								#bad keywording

@@ -4,6 +4,7 @@
 <dev-lang/vala-0.42.7
 #bad versioning
 =app-arch/tar-9999
+=app-crypt/pinentry-1.1.0.20180107-r1
 =app-office/lyx-2.3.99
 =app-pda/libplist-9999
 =app-pda/libusbmuxd-9999
@@ -147,15 +148,14 @@
 #old, no supported python
 <=app-emulation/lxc-1.0.8
 #too new
->=sys-auth/polkit-0.117
-=sys-libs/glibc-2.32-r2
-=sys-libs/glibc-2.32-r3
-#unclear benefits
->=dev-java/openjdk-0
 =net-misc/curl-7.72.0
 =sys-apps/kmod-27-r2
+>=sys-auth/polkit-0.117
 =sys-devel/binutils-2.33.1-r1
 =sys-devel/binutils-2.34-r2
 =sys-devel/binutils-2.34-r314
 =sys-devel/binutils-2.35.1
 =sys-devel/binutils-2.35.1-r1
+=sys-libs/glibc-2.32-r2
+=sys-libs/glibc-2.32-r3
+=x11-libs/gtk+:4
