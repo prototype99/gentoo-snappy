@@ -7,7 +7,6 @@
 -update keywords
 -update dependencies and ordering
 -update to meson
-::prototype99			do not default enable introspection
 *gcr-3.34.0-r2
 ::prototype99			improve python use flags
 *gcr-3.34.0-r1
