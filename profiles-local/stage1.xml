@@ -517,20 +517,6 @@
     </owner>
     <source type="git">https://gitlab.awesome-it.de/overlays/awesome.git</source>
   </repo>
-  <repo quality="experimental" status="official">
-    <name>axs</name>
-    <description lang="en">Developer overlay</description>
-    <homepage>https://cgit.gentoo.org/dev/axs.git/</homepage>
-    <owner type="person">
-      <email>axs@gentoo.org</email>
-      <name>Ian Stakenvicius</name>
-    </owner>
-    <source type="git">https://anongit.gentoo.org/git/dev/axs.git</source>
-    <source type="git">git://anongit.gentoo.org/dev/axs.git</source>
-    <source type="git">git+ssh://git@git.gentoo.org/dev/axs.git</source>
-    <feed>https://cgit.gentoo.org/dev/axs.git/atom/</feed>
-    <!-- <feed>https://cgit.gentoo.org/dev/axs.git/rss/</feed> -->
-  </repo>
   <repo quality="experimental" status="unofficial">
     <name>AzP</name>
     <description lang="en">Peter's own software playground</description>
@@ -2094,6 +2080,19 @@
     </owner>
     <source type="git">https://github.com/Godin/gentoo-overlay.git</source>
     <source type="git">git://github.com/Godin/gentoo-overlay.git</source>
+    <feed>https://github.com/Godin/gentoo-overlay/commits/master.atom</feed>
+  </repo>
+  <repo quality="experimental" status="unofficial">
+    <name>goduck777</name>
+    <description lang="en">Personal overlay containing some not-so-popular apps</description>
+    <homepage>https://github.com/goduck777/gentoo-overlay</homepage>
+    <owner type="person">
+      <email>goduck777@gmail.com</email>
+      <name>Chang Liu</name>
+    </owner>
+    <source type="git">https://github.com/goduck777/gentoo-overlay.git</source>
+    <source type="git">git://github.com/goduck777/gentoo-overlay.git</source>
+    <source type="git">git@github.com:goduck777/gentoo-overlay.git</source>
     <feed>https://github.com/Godin/gentoo-overlay/commits/master.atom</feed>
   </repo>
   <repo quality="experimental" status="unofficial">
@@ -3952,20 +3951,6 @@
     <source type="git">https://gitlab.com/reagentoo/gentoo-overlay.git</source>
     <source type="git">git+ssh://git@gitlab.com/reagentoo/gentoo-overlay.git</source>
     <feed>https://gitlab.com/reagentoo/gentoo-overlay/commits/master.atom</feed>
-  </repo>
-  <repo quality="experimental" status="unofficial">
-    <name>rebutia</name>
-    <description lang="en">Rebutia overlay</description>
-    <homepage>https://cgit.gentoo.org/user/rebutia.git/</homepage>
-    <owner type="person">
-      <email>ps@twin.jikos.cz</email>
-      <name>Pavel Sanda</name>
-    </owner>
-    <source type="git">https://anongit.gentoo.org/git/user/rebutia.git</source>
-    <source type="git">git://anongit.gentoo.org/user/rebutia.git</source>
-    <source type="git">git+ssh://git@git.gentoo.org/user/rebutia.git</source>
-    <feed>https://cgit.gentoo.org/user/rebutia.git/atom/</feed>
-    <!-- <feed>https://cgit.gentoo.org/user/rebutia.git/rss/</feed> -->
   </repo>
   <repo quality="experimental" status="unofficial">
     <name>regina-gentoo</name>
