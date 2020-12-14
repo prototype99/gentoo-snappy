@@ -16,6 +16,7 @@
 =app-crypt/gnupg-2.2.24::dantrell-gnome								#bad keywording, unnecessary quotes
 =app-crypt/gnupg-2.2.25::dantrell-gnome								#bad keywording, unnecessary quotes
 =app-crypt/libsecret-0.20.2::gentoo									#no python3_8, less multilib support
+=app-crypt/libsecret-0.20.3-r1::alxu								#no blocker for older gnome-keyring
 =app-crypt/seahorse-3.32.2::dantrell-gnome-3-32						#missing dependency
 =app-crypt/seahorse-3.34.1::dantrell-gnome-3-34						#bad keywording, unnecessary quotes, no help use flag
 =app-crypt/seahorse-3.36::my-gnome									#old
@@ -243,6 +244,7 @@
 =gnome-base/gnome-keyring-3.34.0::dantrell-gnome-3-34				#bad keywording, unnecessary quotes
 =gnome-base/gnome-keyring-3.34.0::pentoo							#python2, less keywords, odd depends
 =gnome-base/gnome-keyring-3.36.0::pentoo							#python2, less keywords, odd depends
+=gnome-base/gnome-keyring-3.36.0-r10::os-xtoo						#worse dependencies
 =gnome-base/gnome-menus-3.32.0::dantrell-gnome						#bad keywording
 =gnome-base/gnome-session-3.34.1::dantrell-gnome-3-34				#unclear benefits
 =gnome-base/gsettings-desktop-schemas-3.34.0::dantrell-gnome-3-34	#bad keywording, unnecessary quotes, outdated dependency
@@ -323,6 +325,7 @@
 =net-libs/glib-networking-2.62.3::gentoo							#no smartcard support
 =net-libs/glib-networking-2.62.3::dantrell-gnome-3-34				#bad keywording, unnecessary quotes, no smartcard support
 =net-libs/glib-networking-2.64.1::my-gnome							#no smartcard support
+=net-libs/glib-networking-2.66.0::gentoo							#no smartcard support
 =net-libs/glib-networking-2.66.0::lanodanOverlay					#no smartcard support
 =net-libs/gnutls-3.6.7::gnux32										#missing use flag
 =net-libs/libpsl-0.21.1::dantrell-gnome								#too new
