@@ -78,5 +78,15 @@ src_configure() {
 }
 
 src_test() {
-	virtx emake check
+	dbus-run-session meson test -C "${BUILD_DIR}" || die 'tests failed'
+}
+
+pkg_postinst() {
+	xdg_pkg_postinst
+	gnome2_schemas_update
+}
+
+pkg_postrm() {
+	xdg_pkg_postrm
+	gnome2_schemas_update
 }
