@@ -842,7 +842,6 @@
 		<source type="git">https://github.com/prototype99/qmule.git</source>
 		<source type="git">git://github.com/prototype99/qmule.git</source>
 	</repo>
-	</repo>
 	<repo quality="experimental" status="unofficial">
 		<name>rebutia</name>
 		<description lang="en">Rebutia overlay</description>
@@ -855,6 +854,7 @@
 		<source type="git">git://anongit.gentoo.org/user/rebutia.git</source>
 		<source type="git">git+ssh://git@git.gentoo.org/user/rebutia.git</source>
 		<feed>https://cgit.gentoo.org/user/rebutia.git/atom/</feed>
+	</repo>
 	<repo priority="50" quality="experimental" status="unofficial">
 		<name>redcore</name>
 		<description lang="en">official redcore repository</description>
