@@ -1,3 +1,5 @@
+*scour-0.37-r1
+::prototype99	add pypy3 support, update keyword
 *scour-0.37
 ::gentoo		base ebuild
 ::prototype99	improve python use flags,add pypy support
