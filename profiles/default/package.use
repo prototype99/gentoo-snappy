@@ -30,7 +30,7 @@ media-fonts/liberation-fonts fontforge
 media-fonts/noto cjk
 media-gfx/fontforge -python_single_target_python2_7
 media-gfx/imagemagick jpeg
-media-gfx/inkscape python_single_target_python2_7
+media-gfx/inkscape python_single_target_python3_7
 media-plugins/alsa-plugins jack
 media-libs/clutter X
 media-libs/tiff -cxx
