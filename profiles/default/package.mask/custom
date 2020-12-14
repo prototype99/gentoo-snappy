@@ -148,6 +148,8 @@
 <=app-emulation/lxc-1.0.8
 #too new
 >=sys-auth/polkit-0.117
+=sys-libs/glibc-2.32-r2
+=sys-libs/glibc-2.32-r3
 #unclear benefits
 >=dev-java/openjdk-0
 =net-misc/curl-7.72.0
