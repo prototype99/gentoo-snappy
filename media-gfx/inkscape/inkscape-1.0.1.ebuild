@@ -33,16 +33,16 @@ COMMON_DEPEND="${PYTHON_DEPS}
 	|| ( dev-lang/python:=[xml] dev-python/pypy3 )
 	>=app-text/poppler-0.57.0:=[cairo]
 	>=dev-cpp/cairomm-1.12
-	>=dev-cpp/glibmm-2.54.1
+	>=dev-cpp/glibmm-2.65.2
 	dev-cpp/gtkmm:3.0
 	>=dev-cpp/pangomm-2.40
-	>=dev-libs/boehm-gc-7.1:=
+	>=dev-libs/boehm-gc-7.2:=
 	dev-libs/double-conversion:=
-	>=dev-libs/glib-2.41
+	>=dev-libs/glib-2.48
 	>=dev-libs/libsigc++-2.8
 	>=dev-libs/libxml2-2.7.4
 	>=dev-libs/libxslt-1.1.25
-	dev-libs/gdl:3
+	>=dev-libs/gdl-3.4:3
 	dev-libs/popt
 	media-gfx/potrace
 	media-libs/fontconfig
@@ -50,9 +50,10 @@ COMMON_DEPEND="${PYTHON_DEPS}
 	media-libs/libpng:0=
 	net-libs/libsoup
 	sci-libs/gsl:=
+	>=x11-libs/cairo-1.14
 	x11-libs/libX11
 	>=x11-libs/pango-1.37.2
-	x11-libs/gtk+:3
+	>=x11-libs/gtk+-3.22:3
 	$(python_gen_cond_dep '
 		dev-python/lxml[${PYTHON_MULTI_USEDEP}]
 		media-gfx/scour[${PYTHON_MULTI_USEDEP}]
@@ -70,7 +71,7 @@ COMMON_DEPEND="${PYTHON_DEPS}
 	)
 	jemalloc? ( dev-libs/jemalloc )
 	jpeg? ( virtual/jpeg:0 )
-	lcms? ( media-libs/lcms:2 )
+	lcms? ( >=media-libs/lcms-2.2:2 )
 	spell? (
 		app-text/aspell
 		app-text/gtkspell:3
