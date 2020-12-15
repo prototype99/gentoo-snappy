@@ -1,3 +1,5 @@
+*portage-3.0.12
+::gentoo			remove unnecessary fix
 *portage-3.0.10-r1
 ::gentoo			update keywords, add new fixes
 ::prototype99		add use flags to simplify dependencies
