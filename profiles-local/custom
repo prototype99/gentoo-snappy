@@ -85,6 +85,7 @@
 =dev-lang/vala-0.44.7::dantrell-gnome								#bad keywording, unnecessary quotes, missing valadoc flag
 =dev-lang/vala-0.44.9::dantrell-gnome								#bad keywording, unnecessary quotes, missing valadoc flag
 =dev-libs/appstream-glib-0.7.9::musl								#musl specific patch
+=dev-libs/appstream-glib-0.7.18::dantrell-gnome						#bad keywording, unnecessary quotes, no copyright, weird dependency
 =dev-libs/atk-2.34.1::dantrell-gnome-3-34							#bad keywording, unnecessary quotes
 =dev-libs/atk-2.36.0::dantrell-gnome								#bad keywording, unnecessary quotes, missing dependencies
 =dev-libs/atk-2.36.0::gentoo										#worse dependencies

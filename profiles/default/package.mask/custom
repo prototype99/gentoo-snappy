@@ -148,6 +148,7 @@
 #old, no supported python
 <=app-emulation/lxc-1.0.8
 #too new
+>=dev-lang/python-3.8
 =net-misc/curl-7.72.0
 =sys-apps/kmod-27-r2
 >=sys-auth/polkit-0.117
