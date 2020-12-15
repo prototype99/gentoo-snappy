@@ -13,10 +13,11 @@ SRC_URI="https://inkscape.org/gallery/item/21571/${P}.tar.xz"
 LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~arm64 ~hppa ~ia64 ~ppc ~ppc64 ~s390 ~sparc ~x86"
-IUSE="cdr dbus dia exif graphicsmagick imagemagick inkjar jemalloc jpeg latex lcms
+IUSE="cdr dbus dia exif glibmm-new +glibmm-old graphicsmagick imagemagick inkjar jemalloc jpeg latex lcms
 nls openmp postscript spell static-libs svg2 visio wpg"
 
 REQUIRED_USE="${PYTHON_REQUIRED_USE}
+	^^ ( glibmm-old glibmm-new )
 	graphicsmagick? ( imagemagick )"
 
 PATCHES=(
@@ -33,7 +34,8 @@ COMMON_DEPEND="${PYTHON_DEPS}
 	|| ( dev-lang/python:=[xml] dev-python/pypy3 )
 	>=app-text/poppler-0.57.0:=[cairo]
 	>=dev-cpp/cairomm-1.12
-	>=dev-cpp/glibmm-2.65.2
+	glibmm-old? ( <dev-cpp/glibmm-2.64 )
+	glibmm-new? ( >=dev-cpp/glibmm-2.65.2 )
 	dev-cpp/gtkmm:3.0
 	>=dev-cpp/pangomm-2.40
 	>=dev-libs/boehm-gc-7.2:=
