@@ -3231,6 +3231,18 @@
     <source type="git">git+ssh://git@git.gentoo.org/user/nico.git</source>
     <feed>https://cgit.gentoo.org/user/nico.git/atom/</feed>
   </repo>
+    <repo quality="experimental" status="unofficial">
+    <name>nitratesky</name>
+    <description lang="en">Personal overlay of Vladimir Timofeenko</description>
+    <homepage>https://github.com/VTimofeenko/nitratesky</homepage>
+    <owner type="person">
+      <email>overlay.maintain@vtimofeenko.com</email>
+      <name>Vladimir Timofeenko</name>
+    </owner>
+    <source type="git">https://github.com/VTimofeenko/nitratesky.git</source>
+    <source type="git">git+ssh://git@github.com/VTimofeenko/nitratesky.git</source>
+    <feed>https://github.com/VTimofeenko/nitratesky/commits/master.atom</feed>
+  </repo>
   <repo quality="experimental" status="official">
     <name>nix-guix</name>
     <description lang="en">Overlay for nix anf guix functional package managers</description>
