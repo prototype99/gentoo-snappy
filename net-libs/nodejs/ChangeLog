@@ -1,60 +1,38 @@
+*nodejs-15.4.0
+::gentoo		remove pointless whitespace, adopt slotting, add system use flags, update dependencies
 *nodejs-14.4.0
-				::gentoo		icu use flag is now default, add pax_kernel use flag, update deps, remove old patch
-				::KBrown-pub	add python2_7 support, switch to a more provider agnostic ssl model, improve libressl dependency
-				::pg_overlay	add up to python3_9 support
-				::prototype99	improve python use flags, improve defaults
+::gentoo		icu use flag is now default, add pax_kernel use flag, update deps, remove old patch
+::KBrown-pub	add python2_7 support, switch to a more provider agnostic ssl model, improve libressl dependency
+::pg_overlay	add up to python3_9 support
+::prototype99	improve python use flags, improve defaults
 *nodejs-12.16.1
-	24.4.2020;	::libressl		remove python 2 support, update snapshot use flag logic
+::libressl		remove python 2 support, update snapshot use flag logic
 *nodejs-12.14.0
-
-	8.12.2019;	::gentoo		add python 3 support, mark x86 stable, update copyright year, update dependencies
-
+::gentoo		add python 3 support, mark x86 stable, update copyright year, update dependencies
 *nodejs-12.13.0
-
-	8.12.2019;	::chaoslab		update clang patch
-	8.12.2019;	::gentoo		sync ebuild with latest ::gentoo stable
-	-remove RESTRICT test
-	-update inherited eclasses
-	-remove unnecessary empty lines
-	-pad source url
-	-bump dependencies
-	-give depend more white-space
-	-add fresh patch
-	-pad out myconf line
-	-sync scripting
-	-alter function order
-	-update post install message
-	-change keywords
-	8.12.2019;	::libressl		add new one-line ssl conf logic
-
+::chaoslab		update clang patch
+::gentoo
+-remove RESTRICT test
+-update inherited eclasses
+-remove unnecessary empty lines
+-pad source url
+-bump dependencies
+-give depend more white-space
+-add fresh patch
+-pad out myconf line
+-sync scripting
+-alter function order
+-update post install message
+-change keywords
+::libressl		add new one-line ssl conf logic
 *nodejs-8.15.1-r3
-
-	1.12.2019;	::prototype99	gentoo has native ebuilds for a lot of packages, therefore stop default enabling npm
-
+::prototype99	gentoo has native ebuilds for a lot of packages, therefore stop default enabling npm
 *nodejs-8.15.1-r2
-
-	25.11.2019;	::prototype99	remove trailing white-space
-	??????????;	::prototype99	pypy
-
+::prototype99	remove trailing white-space, pypy
 *nodejs-8.15.1-r1
-
-	25.11.2019;	::prototype99	remove trailing white-space
-	??????????;	::prototype99
-		-replace instances of nodejs with ${PN}
-		-simplify src url
-	??????????;	::pigfoot
-		-shared libressl support
-		-remove pointless extra line
-	??????????;	::gentoo
-		-python-any
-		-openssl dependency version
-		-install html docs
-		-less einfo
-
+::pigfoot		shared libressl support, remove pointless extra line
+::prototype99	remove trailing white-space, replace instances of nodejs with ${PN}, simplify src url
+::gentoo		python-any, openssl dependency version, install html docs, less einfo
 *nodejs-8.15.1
-
-	??????????;	::prototype99
-		-fixed ssl configure logic
-		-remove extra speech marks
-		-remove unnecessary comments
-	??????????;	::chaoslab		base ebuild
+::chaoslab		base ebuild
+::prototype99	fixed ssl configure logic, remove extra speech marks, remove unnecessary comments
