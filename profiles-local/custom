@@ -52,6 +52,8 @@
 =dev-cpp/cairomm-1.12.2::pg_overlay									#less specific dependency
 =dev-cpp/cairomm-1.15.4::my-gnome									#too new
 =dev-cpp/glibmm-2.60.1::dantrell-gnome								#bad keywording, unnecessary quotes, duplicate dependency
+=dev-cpp/glibmm-2.64.5::dantrell-gnome								#bad keywording, unnecessary quotes, duplicate dependency
+=dev-cpp/glibmm-2.65.3::my-gnome									#too new
 =dev-cpp/glibmm-2.65.3::pg_overlay									#less specific dependency
 =dev-cpp/gtkmm-2.24.5::dantrell-gnome								#bad keywording, unnecessary quotes, duplicate dependency, no docs
 =dev-cpp/gtkmm-3.24.2::dantrell-gnome								#bad keywording, unnecessary quotes
