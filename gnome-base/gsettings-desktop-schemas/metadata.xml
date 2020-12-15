@@ -6,6 +6,6 @@
 	<name>Gentoo GNOME Desktop</name>
 </maintainer>
 <use>
-	<flag name="vanilla-fonts">Don't patch in other fonts</flag>
+	<flag name="vanilla-fonts">Don't patch in the ability to use other fonts. These are the hardcoded fonts GNOME originally envisioned.</flag>
 </use>
 </pkgmetadata>
