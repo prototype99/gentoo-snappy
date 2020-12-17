@@ -51,6 +51,7 @@
 =dev-cpp/cairomm-1.12.2::dantrell-gnome								#bad keywording, unnecessary quotes, duplicate dependency
 =dev-cpp/cairomm-1.12.2::pg_overlay									#less specific dependency
 =dev-cpp/cairomm-1.15.4::my-gnome									#too new
+=dev-cpp/cairomm-1.15.5::dantrell-gnome								#bad keywording, unnecessary quotes, duplicate dependency
 =dev-cpp/glibmm-2.60.1::dantrell-gnome								#bad keywording, unnecessary quotes, duplicate dependency
 =dev-cpp/glibmm-2.64.5::dantrell-gnome								#bad keywording, unnecessary quotes, duplicate dependency
 =dev-cpp/glibmm-2.65.3::my-gnome									#too new
@@ -348,8 +349,9 @@
 =net-misc/curl-7.66.0::gentoo										#less use flags
 =net-misc/curl-7.68.0::gentoo										#less use flags
 =net-misc/curl-7.69.1::gentoo										#less use flags
-=net-print/cups-filters-1.27.4::dantrell-gnome						#bad keywording, unnecessary quotes
 =net-print/cups-filters-1.27.5::dantrell-gnome						#bad keywording, unnecessary quotes
+=net-print/cups-filters-1.28.2::dantrell-gnome						#bad keywording, unnecessary quotes
+=net-print/cups-filters-1.28.3::dantrell-gnome						#bad keywording, unnecessary quotes
 =net-vpn/nordvpn-3.7.2::yuego										#3.7.3 is better
 =net-wireless/gnome-bluetooth-3.34.0::dantrell-gnome-3-34			#bad keywording, unnecessary quotes, bad dependencies
 =pantheon-base/pantheon-files-4.4.2::elementary						#worse dependencies
