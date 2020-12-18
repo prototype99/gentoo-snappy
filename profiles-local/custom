@@ -136,6 +136,7 @@
 =dev-libs/libpcre2-10.33-r1::dantrell-gnome							#bad keywording, unnecessary quotes
 =dev-libs/libpcre2-10.34::dantrell-gnome							#bad keywording, unnecessary quotes
 =dev-libs/libpcre2-10.35::dantrell-gnome							#bad keywording, unnecessary quotes
+=dev-libs/libpcre2-10.36::dantrell-gnome							#bad keywording, unnecessary quotes
 =dev-libs/libpwquality-1.4.0::gentoo								#less python compatibility
 =dev-libs/libpwquality-1.4.0::pg_overlay							#less python compatibility
 =dev-libs/libsigc++-2.10.3::dantrell-gnome							#bad keywording, unnecessary quotes
