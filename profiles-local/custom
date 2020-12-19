@@ -112,6 +112,7 @@
 =dev-libs/gobject-introspection-common-1.64.0::gnome-next			#eapi6
 =dev-libs/hyphen-2.8.8::muslx32										#eapi 4, old
 =dev-libs/icu-67.1::gentoo											#verbose python compatibility
+=dev-libs/icu-68.2::gentoo											#no python3_9
 =dev-libs/intel-common-19.0.4.243::science							#no good for cluster edition
 =dev-libs/json-glib-1.2.8::dantrell-gnome							#seems dated
 =dev-libs/json-glib-1.4.4::gnome-next								#disables optimisation
