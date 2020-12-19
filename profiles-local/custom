@@ -5,6 +5,7 @@
 =app-accessibility/at-spi2-core-2.34.0::dantrell-gnome-3-34			#bad keywording, unnecessary quotes
 =app-accessibility/at-spi2-core-2.34.0::my-gnome					#eapi 6
 =app-admin/eselect-1.4.16-r2::dantrell-gnome						#systemd free by default
+=app-admin/eselect-1.4.17::dantrell-gnome							#why?
 =app-admin/system-config-printer-1.5.11-r2::dantrell-gnome			#bad keywording, unnecessary quotes
 =app-arch/gcab-1.2::dantrell-gnome									#seems dated
 #=app-crypt/gcr-3.28.1::dantrell-gnome								#dependencies seem dated
