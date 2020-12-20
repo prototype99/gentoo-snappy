@@ -3,7 +3,7 @@
 
 EAPI=7
 
-PYTHON_COMPAT=( py{py,thon3_{7..9}} )
+PYTHON_COMPAT=( py{py{,3},thon3_{7..9}} )
 PYTHON_REQ_USE="threads(+)"
 
 FORTRAN_NEEDED=lapack
