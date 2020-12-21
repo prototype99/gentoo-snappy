@@ -5,7 +5,7 @@ EAPI=6
 
 DESCRIPTION="ptrace-based sandbox"
 HOMEPAGE="https://git.exherbo.org/sydbox-1.git"
-SRC_URI="http://distfiles.exherbo.org/distfiles/${P}.tar.bz2"
+SRC_URI="https://dev.exherbo.org/distfiles/${PN}/${P}.tar.bz2"
 
 LICENSE="BSD"
 SLOT="0"
