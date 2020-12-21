@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>sophietheopossum@yandex.ru</email>
+		<name>seirra blake</name>
+	</maintainer>
+	<use>
+        <flag name="cloud">Add support for cloud storage using <pkg>net-misc/rclone</pkg></flag>
+        <flag name="fm-comp-prog">Add support for viewing compression progress using <pkg>sys-apps/pv</pkg></flag>
+        <flag name="prop-exif">Add support for viewing exif properties using <pkg>media-libs/exiftool</pkg></flag>
+        <flag name="prop-media">Add support for viewing audio and video properties using <pkg>media-video/mediainfo</pkg></flag>
+        <flag name="thumb-vid">Add support for video thumbnails using <pkg>media-video/ffmpeg</pkg></flag>
+	</use>
+</pkgmetadata>
