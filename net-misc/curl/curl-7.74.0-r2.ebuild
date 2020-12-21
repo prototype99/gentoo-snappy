@@ -147,10 +147,6 @@ multilib_src_configure() {
 	ECONF_SOURCE="${S}" \
 	myconf+=(
 		--without-polarssl
-		$(use_with curl_ssl_gnutls default-ssl-backend=gnutls)
-		$(use_with curl_ssl_mbedtls default-ssl-backend=mbedtls)
-		$(use_with curl_ssl_nss default-ssl-backend=nss)
-		$(use_with curl_ssl_winssl default-ssl-backend=winssl)
 		$(use_with gnutls gnutls)
 		$(use_with gnutls nettle)
 		$(use_with mbedtls mbedtls)
@@ -237,6 +233,28 @@ multilib_src_configure() {
 		# "Don't use the built-in CA store of the SSL library"
 		--without-ca-fallback
 	)
+
+		if use curl_ssl_gnutls; then
+			einfo "Default SSL provided by gnutls"
+			myconf+=( --with-default-ssl-backend=gnutls )
+		elif use curl_ssl_libressl; then
+			einfo "Default SSL provided by LibreSSL"
+			myconf+=( --with-default-ssl-backend=openssl )  # NOTE THE HACK HERE
+		elif use curl_ssl_mbedtls; then
+			einfo "Default SSL provided by mbedtls"
+			myconf+=( --with-default-ssl-backend=mbedtls )
+		elif use curl_ssl_nss; then
+			einfo "Default SSL provided by nss"
+			myconf+=( --with-default-ssl-backend=nss )
+		elif use curl_ssl_openssl; then
+			einfo "Default SSL provided by openssl"
+			myconf+=( --with-default-ssl-backend=openssl )
+		elif use curl_ssl_winssl; then
+			einfo "Default SSL provided by Windows"
+			myconf+=( --with-default-ssl-backend=winssl )
+		else
+			eerror "We can't be here because of REQUIRED_USE."
+		fi
 
 	use fish && myconf+=( --with-fish-functions-dir=yes ) || myconf+=( --without-fish-functions-dir )
 
