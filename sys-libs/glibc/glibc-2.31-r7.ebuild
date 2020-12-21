@@ -812,6 +812,7 @@ src_prepare() {
 			"${PATCHDIR}"/0008-Gentoo-Add-a-C.UTF-8-locale.patch
 			"${PATCHDIR}"/0009-Gentoo-force-O0-in-conform-tests-to-survive-CC-chang.patch
 			"${PATCHDIR}"/0010-Gentoo-Adapt-tests-to-etc-mail-alias-location.patch
+			"${PATCHDIR}"/0013-mips-Use-long-int-and-long-long-int-in-linux-syscall.patch
 			"${PATCHDIR}"/0014-mips-Fix-argument-passing-for-inlined-syscalls-on-Li.patch
 			"${PATCHDIR}"/0017-malloc-tst-mallocfork2-Kill-lingering-process-for-un.patch
 			"${PATCHDIR}"/0018-Avoid-ldbl-96-stack-corruption-from-range-reduction-.patch
