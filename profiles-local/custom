@@ -1,6 +1,7 @@
 =acct-group/plugdev-0::tatsh-overlay								#poor description
 =app-accessibility/at-spi2-atk-2.34.1::dantrell-gnome-3-34			#bad keywording, unnecessary quotes
 =app-accessibility/at-spi2-atk-2.34.2::dantrell-gnome				#bad keywording, unnecessary quotes
+=app-accessibility/at-spi2-atk-2.38.0::gentoo						#no pkgconfig version dependency
 =app-accessibility/at-spi2-atk-2.38.0::my-gnome						#unclear benefits
 =app-accessibility/at-spi2-core-2.34.0::dantrell-gnome-3-34			#bad keywording, unnecessary quotes
 =app-accessibility/at-spi2-core-2.34.0::my-gnome					#eapi 6
