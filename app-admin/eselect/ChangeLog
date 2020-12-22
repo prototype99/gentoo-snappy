@@ -1,6 +1,5 @@
+*1.4.17
+::gentoo	update copyright, eapi7, update licence, update keywords, update dependencies, update structure, update inherit
 *1.4.15
-::gentoo
--extra keywords
--better dependencies
-::science
--base ebuild
+::gentoo	extra keywords, better dependencies
+::science	base ebuild
