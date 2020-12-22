@@ -1,3 +1,5 @@
+*file-5.39-r4
+::srcshelton		add split-usr use flag
 *file-5.39-r3
 ::gentoo			remove unused eclass and function, add musl patch
 ::prototype99		only apply musl patch when using musl
