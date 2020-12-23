@@ -803,6 +803,7 @@ src_prepare() {
 	if ! use vanilla ; then
 		elog "Applying Gentoo Glibc Patchset 2.31-9"
 		#patch 25 depends on patch 18 depends on patch 14
+		#patch 72 depends on patch 71 deoends on patch 65 depends on patch 59 depends on patch 54 depends on patch 52
 		local PATCHDIR="${WORKDIR}"/patches
 		local PATCHES=(
 			"${PATCHDIR}"/0001-Gentoo-disable-ldconfig-during-install.patch
@@ -824,7 +825,6 @@ src_prepare() {
 			"${PATCHDIR}"/0061-sparc-Use-Linux-kABI-for-syscall-return.patch
 			"${PATCHDIR}"/0067-arm-CVE-2020-6096-fix-memcpy-and-memmove-for-negativ.patch
 			"${PATCHDIR}"/0068-arm-CVE-2020-6096-Fix-multiarch-memcpy-for-negative-.patch
-			"${PATCHDIR}"/0072-powerpc-Fix-incorrect-cache-line-size-load-in-memset.patch
 		)
 		if use abi_x86_x32; then
 			PATCHES+=(
