@@ -1,0 +1,3 @@
+*zstd-1.4.7
+::gentoo		base ebuild
+::lto-overlay	default multithread patch

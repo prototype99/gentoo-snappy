@@ -9,6 +9,7 @@
 =app-admin/eselect-1.4.17::dantrell-gnome							#why?
 =app-admin/system-config-printer-1.5.11-r2::dantrell-gnome			#bad keywording, unnecessary quotes
 =app-arch/gcab-1.2::dantrell-gnome									#seems dated
+=app-arch/zstd-1.4.8::gentoo										#no default multithreading patch
 #=app-crypt/gcr-3.28.1::dantrell-gnome								#dependencies seem dated
 =app-crypt/gcr-3.33.4::my-gnome										#odd dependencies
 =app-crypt/gcr-3.34.0-r1::dantrell-gnome-3-34						#bad keywording, unnecessary quotes, no support for old gnome-keyring
