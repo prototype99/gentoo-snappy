@@ -1,5 +1,5 @@
 *python-3.7.9-r1
-::gentoo			add jobs fix, remove extra whitespace
+::gentoo			add jobs fix, remove extra whitespace,update keywords, update patches
 ::lto-overlay		simplify pgo, remove extra whitespace
 *python-3.7.9
 ::gentoo			update keywords
