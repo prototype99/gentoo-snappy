@@ -248,6 +248,9 @@
 =dev-util/itstool-2.0.6-r1::gentoo									#verbose python targets
 =dev-util/meld-3.21.0::my-gnome										#broken dependencies
 =dev-util/meson-0.52.1::dantrell-gnome								#bad keywording, unnecessary quotes, verbose python targets
+=dev-util/meson-0.55.3::dantrell-gnome								#bad keywording, unnecessary quotes, verbose python targets
+=dev-util/meson-0.56.0_pre::pg_overlay								#unnecessary inherit
+=dev-util/meson-0.56.0_pre::poly-c									#unnecessary inherit
 =dev-util/sysprof-3.35.2::gnome-next								#eapi6
 =dev-vcs/mercurial-5.0.2::sorrow									#no pypy support
 =games-simulation/firestorm-bin-6.3.2-r1::lmiphay					#missing dependency
