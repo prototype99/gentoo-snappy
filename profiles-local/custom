@@ -9,7 +9,7 @@
 =app-admin/eselect-1.4.17::dantrell-gnome							#why?
 =app-admin/system-config-printer-1.5.11-r2::dantrell-gnome			#bad keywording, unnecessary quotes
 =app-arch/gcab-1.2::dantrell-gnome									#seems dated
-=app-arch/zstd-1.4.8::gentoo										#no default multithreading patch
+=app-arch/zstd-1.4.8-r1::gentoo										#no default multithreading patch
 #=app-crypt/gcr-3.28.1::dantrell-gnome								#dependencies seem dated
 =app-crypt/gcr-3.33.4::my-gnome										#odd dependencies
 =app-crypt/gcr-3.34.0-r1::dantrell-gnome-3-34						#bad keywording, unnecessary quotes, no support for old gnome-keyring
@@ -110,6 +110,7 @@
 =dev-libs/gmp-6.2.0-r1::gentoo										#no pgo
 =dev-libs/gmp-6.2.0-r1::srcshelton									#no musl support
 =dev-libs/gmp-6.2.1::gentoo											#no pgo
+=dev-libs/gmp-6.2.1::srcshelton										#no musl support
 =dev-libs/gobject-introspection-1.66.1::my-gnome					#no python3_9
 =dev-libs/gobject-introspection-common-1.60.2::dantrell-gnome-3-32	#bad keywording, unnecessary quotes
 =dev-libs/gobject-introspection-common-1.64.0::gnome-next			#eapi6
