@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+    <maintainer type="person">
+        <email>dev.rindeal+ebuild-repo@gmail.com</email>
+        <name>Jan Chren (rindeal)</name>
+    </maintainer>
+    <use>
+        <flag name="audio">Add support for cleaning certain audio files</flag>
+        <flag name="image">Add support for cleaning certain image files</flag>
+        <flag name="video">Add support for cleaning certain video files</flag>
+
+        <flag name="sandbox">Use <pkg>sys-apps/bubblewrap</pkg> to to sandbox any external processes mat2 invokes</flag>
+    </use>
+</pkgmetadata>
