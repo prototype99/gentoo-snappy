@@ -70,3 +70,5 @@
 # required by media-gfx/inkscape-1.0.1::dantrell-gnome
 # required by media-gfx/inkscape (argument)
 =dev-libs/atk-2.36.0
+# required by dev-python/numpy-1.21.0_pre20201202::prototype99
+=virtual/cblas-3.8
