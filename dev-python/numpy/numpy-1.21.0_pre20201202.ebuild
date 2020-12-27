@@ -46,6 +46,8 @@ PATCHES=(
 	"${FILESDIR}"/${PN}-1.17.4-no-hardcode-blasv2.patch
 )
 
+S="${WORKDIR}/${PN}-1.21.0.dev0"
+
 distutils_enable_tests pytest
 
 src_unpack() {
