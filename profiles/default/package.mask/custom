@@ -157,4 +157,6 @@
 =sys-devel/binutils-2.35.1-r1
 =sys-libs/glibc-2.32-r2
 =sys-libs/glibc-2.32-r3
+=sys-libs/glibc-2.32-r5
+=sys-libs/glibc-2.32-r6
 >=x11-libs/gtk+-3.90
