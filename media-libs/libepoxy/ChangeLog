@@ -1,0 +1,5 @@
+*libepoxy-1.5.5
+::gentoo		metadata
+::gnux32		less whitespace
+::pg_overlay	base ebuild
+::prototype99	only apply patch when needed
