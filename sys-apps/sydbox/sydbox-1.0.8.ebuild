@@ -1,1 +1,0 @@
-/var/db/repos/prototype99/sys-apps/sydbox/sydbox-1.0.7.ebuild
