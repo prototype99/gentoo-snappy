@@ -16,7 +16,7 @@ DOC_PV="1.16.4"
 DESCRIPTION="Fast array and numerical python library"
 HOMEPAGE="https://www.numpy.org"
 SRC_URI="
-	https://github.com/numpy/numpy/archive/v1.21.0.dev0.tar.gz
+	https://github.com/numpy/numpy/archive/v1.21.0.dev0.tar.gz -> ${PN}-1.21.0.dev0.tar.gz
 	doc? (
 		https://numpy.org/doc/$(ver_cut 1-2 ${DOC_PV})/numpy-html.zip -> numpy-html-${DOC_PV}.zip
 		https://numpy.org/doc/$(ver_cut 1-2 ${DOC_PV})/numpy-ref.pdf -> numpy-ref-${DOC_PV}.pdf
