@@ -6,12 +6,13 @@
 *python-3.7.8-r2
 ::gentoo			update patches
 ::prototype99		make better use of PV
-
 *python-3.7.7-r2
 ::genpi64			base ebuild
 ::gentoo			update keywords
 ::prototype99		remove PYVER variable, remove alpha code, make better use of HOMEPAGE, PN & PV, add virtual/mime-types support
-
+*python-2.7.18-r101
+::gentoo			update patches, add an extra dependency, update symlink logic
+::prototype99		make better use of PN
 *python-2.7.18-r100
 ::gentoo			base ebuild
 ::prototype99
