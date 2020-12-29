@@ -107,12 +107,21 @@
 		<name>chef-gentoo-bootstrap-overlay</name>
 		<description>chef bootstrapping</description>
 		<homepage>https://github.com/prototype99/chef-gentoo-bootstrap-overlay</homepage>
-		<owner type="project">
+		<owner type="person">
 			<email>sophietheopossum@yandex.com</email>
 			<name>seirra blake</name>
 		</owner>
 		<source type="git">https://github.com/prototype99/chef-gentoo-bootstrap-overlay.git</source>
 		<source type="git">git://github.com/prototype99/chef-gentoo-bootstrap-overlay.git</source>
+	</repo>
+	<repo quality="experimental" status="unofficial">
+		<name>chromiumos-overlay</name>
+		<description>Chromium OS ebuild overlay (Contains ebuilds that were modified for Chromium OS)</description>
+		<homepage>https://chromium.googlesource.com/chromiumos/overlays/chromiumos-overlay</homepage>
+		<owner type="project">
+			<name>Chromium OS</name>
+		</owner>
+		<source type="git">https://chromium.googlesource.com/chromiumos/overlays/chromiumos-overlay</source>
 	</repo>
 	<repo priority="50" quality="experimental" status="unofficial">
 		<name>chymeric</name>
