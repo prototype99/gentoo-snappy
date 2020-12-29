@@ -16,7 +16,7 @@ DOC_PV="1.16.4"
 DESCRIPTION="Fast array and numerical python library"
 HOMEPAGE="https://www.numpy.org"
 SRC_URI="
-	https://github.com/numpy/numpy/archive/v1.21.0.dev0.tar.gz -> ${PN}-1.21.0.dev0.tar.gz
+	https://github.com/prototype99/numpy/archive/v1.21.0.1.tar.gz -> ${P}.tar.gz
 	doc? (
 		https://numpy.org/doc/$(ver_cut 1-2 ${DOC_PV})/numpy-html.zip -> numpy-html-${DOC_PV}.zip
 		https://numpy.org/doc/$(ver_cut 1-2 ${DOC_PV})/numpy-ref.pdf -> numpy-ref-${DOC_PV}.pdf
@@ -41,12 +41,6 @@ BDEPEND="${RDEPEND}
 		>=dev-python/pytz-2019.3[${PYTHON_USEDEP}]
 		>=dev-python/cffi-1.14.0[${PYTHON_USEDEP}]
 	)"
-
-PATCHES=(
-	"${FILESDIR}"/${PN}-1.17.4-no-hardcode-blasv2.patch
-)
-
-S="${WORKDIR}/${PN}-1.21.0.dev0"
 
 distutils_enable_tests pytest
 
