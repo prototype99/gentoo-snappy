@@ -401,6 +401,17 @@
 		<feed>https://github.com/feeds/emcek/commits/gentoo.mipl/master</feed>
 	</repo>
 	<repo priority="50" quality="experimental" status="unofficial">
+		<name>freeswitch</name>
+		<description lang="en">Freeswitch Gentoo overlay</description>
+		<homepage>https://github.com/alphallc/freeswitch/</homepage>
+		<owner type="person">
+			<email>mva@gentoo.org</email>
+			<name>Vadim A. Misbakh-Soloviov</name>
+		</owner>
+		<source type="git">git://github.com/alphallc/freeswitch</source>
+		<feed>https://github.com/alphallc/freeswitch/commits/master.atom</feed>
+	</repo>
+	<repo quality="experimental" status="unofficial">
 		<name>gbin</name>
 		<description>gbin Overlay</description>
 		<homepage>http://klaig.blogspot.com/</homepage>
@@ -603,6 +614,19 @@
 		<source type="git">git+ssh://git@github.com/xen0n/loongson-overlay.git</source>
 		<feed>https://github.com/xen0n/loongson-overlay/commits/master.atom</feed>
 	</repo>
+	<repo quality="experimental" status="official">
+		<name>lua</name>
+		<description lang="en">Lua development overlay</description>
+		<homepage>https://cgit.gentoo.org/proj/lua.git/</homepage>
+		<owner type="person">
+			<email>rafaelmartins@gentoo.org</email>
+			<name>Rafael G. Martins</name>
+		</owner>
+		<source type="git">https://anongit.gentoo.org/git/proj/lua.git</source>
+		<source type="git">git://anongit.gentoo.org/proj/lua.git</source>
+		<source type="git">git+ssh://git@git.gentoo.org/proj/lua.git</source>
+		<feed>https://cgit.gentoo.org/proj/lua.git/atom/</feed>
+	</repo>
 	<repo quality="experimental" status="unofficial">
 		<name>lucy</name>
 		<description lang="en">lucy's public overlay</description>
@@ -761,6 +785,18 @@
 		</owner>
 		<source type="git">git://github.com/prototype99/nuteater.git</source>
 		<feed>https://github.com/prototype99/nuteater/commits/master.atom</feed>
+	</repo>
+	<repo quality="experimental" status="unofficial">
+		<name>octave</name>
+		<description lang="en">octave-forge packages</description>
+		<homepage>https://github.com/rafaelmartins/octave-overlay</homepage>
+		<owner type="person">
+			<email>rafaelmartins@gentoo.org</email>
+			<name>Rafael G. Martins</name>
+		</owner>
+		<source type="git">https://github.com/rafaelmartins/octave-overlay.git</source>
+		<source type="git">git://github.com/rafaelmartins/octave-overlay.git</source>
+		<feed>https://github.com/rafaelmartins/octave-overlay/commits/master.atom</feed>
 	</repo>
 	<repo quality="experimental" status="unofficial">
 		<name>odroidc1-overlay</name>
