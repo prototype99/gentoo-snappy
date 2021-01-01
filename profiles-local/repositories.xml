@@ -115,7 +115,7 @@
 		<source type="git">git://github.com/prototype99/chef-gentoo-bootstrap-overlay.git</source>
 	</repo>
 	<repo quality="experimental" status="unofficial">
-		<name>chromiumos-overlay</name>
+		<name>chromiumos</name>
 		<description>Chromium OS ebuild overlay (Contains ebuilds that were modified for Chromium OS)</description>
 		<homepage>https://chromium.googlesource.com/chromiumos/overlays/chromiumos-overlay</homepage>
 		<owner type="project">
