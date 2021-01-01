@@ -7,19 +7,11 @@ PYTHON_COMPAT=( python3_{6..9} )
 
 inherit bash-completion-r1 check-reqs estack flag-o-matic llvm multiprocessing multilib-build python-any-r1 rust-toolchain toolchain-funcs
 
-if [[ ${PV} = *beta* ]]; then
-	betaver=${PV//*beta}
-	BETA_SNAPSHOT="${betaver:0:4}-${betaver:4:2}-${betaver:6:2}"
-	MY_P="rustc-beta"
-	SLOT="beta/${PV}"
-	SRC="${BETA_SNAPSHOT}/rustc-beta-src.tar.xz -> rustc-${PV}-src.tar.xz"
-else
-	ABI_VER="$(ver_cut 1-2)"
-	SLOT="stable/${ABI_VER}"
-	MY_P="rustc-${PV}"
-	SRC="${MY_P}-src.tar.xz"
-	KEYWORDS="~amd64 ~arm ~arm64 ~ppc64 ~x86"
-fi
+ABI_VER="$(ver_cut 1-2)"
+SLOT="stable/${ABI_VER}"
+MY_P="rustc-${PV}"
+SRC="${MY_P}-src.tar.xz"
+KEYWORDS="~amd64 ~arm ~arm64 ~ppc64 ~x86"
 
 RUST_STAGE0_VERSION="1.$(($(ver_cut 2) - 1)).0"
 
@@ -30,7 +22,6 @@ SRC_URI="
 	https://static.rust-lang.org/dist/${SRC}
 	!system-bootstrap? ( $(rust_all_arch_uris rust-${RUST_STAGE0_VERSION}) )
 "
-
 # keep in sync with llvm ebuild of the same version as bundled one.
 ALL_LLVM_TARGETS=( AArch64 AMDGPU ARM AVR BPF Hexagon Lanai Mips MSP430
 	NVPTX PowerPC RISCV Sparc SystemZ WebAssembly X86 XCore )
@@ -39,7 +30,7 @@ LLVM_TARGET_USEDEPS=${ALL_LLVM_TARGETS[@]/%/?}
 
 LICENSE="|| ( MIT Apache-2.0 ) BSD-1 BSD-2 BSD-4 UoI-NCSA"
 
-IUSE="clippy cpu_flags_x86_sse2 debug doc libressl miri nightly parallel-compiler rls rustfmt system-bootstrap system-llvm test wasm ${ALL_LLVM_TARGETS[*]}"
+IUSE="clippy cpu_flags_x86_sse2 debug doc libressl +lto miri nightly parallel-compiler rls rustfmt system-bootstrap system-llvm test wasm ${ALL_LLVM_TARGETS[*]}"
 
 # Please keep the LLVM dependency block separate. Since LLVM is slotted,
 # we need to *really* make sure we're not pulling more than one slot
@@ -131,7 +122,6 @@ QA_SONAME="
 RESTRICT="test"
 
 PATCHES=(
-	"${FILESDIR}"/1.47.0-libressl.patch
 	"${FILESDIR}"/1.46.0-don-t-create-prefix-at-time-of-check.patch
 	"${FILESDIR}"/1.47.0-ignore-broken-and-non-applicable-tests.patch
 	"${FILESDIR}"/1.47.0-llvm-tensorflow-fix.patch
@@ -217,6 +207,8 @@ src_prepare() {
 			--destdir="${rust_stage0_root}" --prefix=/ || die
 	fi
 
+	use libressl && eapply ${FILESDIR}/${P}-1.47.0-libressl.patch
+
 	default
 }
 
@@ -263,12 +255,15 @@ src_configure() {
 	cat <<- _EOF_ > "${S}"/config.toml
 		[llvm]
 		optimize = $(toml_usex !debug)
+		thin-lto = $(toml_usex lto)
 		release-debuginfo = $(toml_usex debug)
 		assertions = $(toml_usex debug)
 		ninja = true
 		targets = "${LLVM_TARGETS// /;}"
 		experimental-targets = ""
+		link-jobs = $(makeopts_jobs)
 		link-shared = $(toml_usex system-llvm)
+		use-linker = "lld"
 		[build]
 		build = "${rust_target}"
 		host = ["${rust_target}"]
@@ -295,13 +290,12 @@ src_configure() {
 		libdir = "lib"
 		mandir = "share/man"
 		[rust]
-		# https://github.com/rust-lang/rust/issues/54872
 		codegen-units-std = 1
 		optimize = true
 		debug = $(toml_usex debug)
 		debug-assertions = $(toml_usex debug)
 		debuginfo-level-rustc = 0
-		backtrace = true
+		backtrace = $(toml_usex debug)
 		incremental = false
 		default-linker = "$(tc-getCC)"
 		parallel-compiler = $(toml_usex parallel-compiler)
@@ -309,9 +303,9 @@ src_configure() {
 		rpath = false
 		verbose-tests = true
 		optimize-tests = $(toml_usex !debug)
-		codegen-tests = true
-		dist-src = false
-		remap-debuginfo = true
+		codegen-tests = $(toml_usex debug)
+		dist-src = $(toml_usex debug)
+		remap-debuginfo = $(toml_usex debug)
 		lld = $(usex system-llvm false $(toml_usex wasm))
 		backtrace-on-ice = true
 		jemalloc = false
