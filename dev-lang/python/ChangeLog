@@ -10,6 +10,9 @@
 ::genpi64			base ebuild
 ::gentoo			update keywords
 ::prototype99		remove PYVER variable, remove alpha code, make better use of HOMEPAGE, PN & PV, add virtual/mime-types support
+*python-2.7.18-r102
+::gentoo			fix scriptdir variable, add new symlinks
+::prototype99		make better use of variables
 *python-2.7.18-r101
 ::gentoo			update patches, add an extra dependency, update symlink logic
 ::prototype99		make better use of PN
