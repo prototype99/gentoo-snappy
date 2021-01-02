@@ -5,6 +5,7 @@
 -only apply libressl patch for libressl
 -better support for parallelism
 -use lld
+-use lto
 -remove pointless comment
 -put more debug info behind debug flag
 ::prototype99	remove beta code, try putting more stuff behind debug flag, add an lto use flag
