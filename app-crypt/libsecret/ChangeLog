@@ -1,8 +1,6 @@
+*libsecret-0.20.4
+::gentoo		eapi7, add python3_9 compatibility, switch to meson, gtk-doc use flag
 *libsecret-0.20.2
-::gentoo
--base ebuild
-::my-gnome
--add python3_8 compatibility
--add more multilib compatibility
-::prototype99
--add range for python flags
+::gentoo		base ebuild
+::my-gnome		add python3_8 compatibility, add more multilib compatibility
+::prototype99	add range for python flags
