@@ -941,6 +941,18 @@
 		<source type="git">https://github.com/focs/Gentoo-ROS-Overlay.git</source>
 	</repo>
 	<repo quality="experimental" status="unofficial">
+		<name>rust-dev</name>
+		<description>new rust packaging for gentoo</description>
+		<homepage>http://www.github.com/kentnl-gentoo-rust/rust-dev-overlay</homepage>
+		<owner>
+			<email>kentfredric@gmail.com</email>
+			<name>Kent Fredric</name>
+		</owner>
+		<source type="git">git://github.com/kentnl-gentoo-rust/rust-dev-overlay.git</source>
+		<source type="git">http://github.com/kentnl-gentoo-rust/rust-dev-overlay.git</source>
+		<feed>http://github.com/feeds/kentnl-gentoo-rust/commits/rust-dev-overlay/master</feed>
+	</repo>
+	<repo quality="experimental" status="unofficial">
 		<name>rwald</name>
 		<description lang="en">Personal overlay of Randall Wald</description>
 		<homepage>https://cgit.gentoo.org/user/rwald.git/</homepage>
