@@ -1,0 +1,10 @@
+--- a/test/dlwrap.c
++++ b/test/dlwrap.c
+@@ -238,6 +238,7 @@
+          * hard-coded version list as people report bugs. */
+         const char *version[] = {
+             "GLIBC_2.17",
++            "GLIBC_2.16",
+             "GLIBC_2.4",
+             "GLIBC_2.3",
+             "GLIBC_2.2.5",
