@@ -56,11 +56,6 @@ pkg_setup() {
 }
 
 src_prepare() {
-	# Disable stupid flag changes
-	sed -e 's/CFLAGS="$CFLAGS -g"//' \
-		-e 's/CFLAGS="$CFLAGS -O0"//' \
-		-i configure.ac configure || die
-
 	use vala && vala_src_prepare
 	xdg_src_prepare
 }

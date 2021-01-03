@@ -7,6 +7,7 @@
 -update keywords
 -update dependencies and ordering
 -update to meson
+-remove old workaround
 *gcr-3.34.0-r2
 ::prototype99			improve python use flags
 *gcr-3.34.0-r1
