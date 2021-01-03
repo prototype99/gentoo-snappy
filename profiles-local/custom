@@ -292,6 +292,7 @@
 =media-gfx/flameshot-0.6.0::supertux88								#incorrect home page
 =media-gfx/flameshot-0.6.0::yuego									#no lingua support, no dbus use flag
 =media-gfx/flameshot-0.6.0-r1::adrien-overlay						#incorrect home page
+=media-gfx/fontforge-20201107::4nykey								#enables python by default
 =media-gfx/fontforge-20201107::gentoo								#enables python by default
 =media-gfx/freecad-0.18.3::waebbl									#missing dependency
 =media-gfx/graphviz-2.40.1-r1::gnux32								#x32 specific patch
