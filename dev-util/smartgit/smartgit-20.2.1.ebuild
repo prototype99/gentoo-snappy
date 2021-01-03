@@ -31,9 +31,9 @@ S="${WORKDIR}/${PN}"
 
 src_prepare()
 {
-	use vanilla || eapply "${FILESDIR}"/fast-start.patch
-	use system-jre && eapply "${FILESDIR}"/system-jre.patch
-	use kernel && eapply "${FILESDIR}"/kernel.patch
+	use vanilla || eapply "${FILESDIR}/fast-start${PV}".patch
+	use system-jre && eapply "${FILESDIR}/system-jre${PV}".patch
+	use kernel && eapply "${FILESDIR}/kernel${PV}".patch
 	default
 
 	xdg_src_prepare
