@@ -36,6 +36,7 @@ src_prepare() {
 	fi
 
 	gnome2_src_prepare
+	default
 }
 
 src_configure() {
