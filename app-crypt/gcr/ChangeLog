@@ -1,15 +1,16 @@
-*gcr-3.34.0-r2
-
-::prototype99
--improve python use flags
-
-*gcr-3.34.0-r1
-
-::dantrell-gnome-3-34
--add python 3.5 support
-
-::my-gnome
--extra safeguard for old gnome-keyring versions
-
+*gcr-3.36.0
 ::gentoo
--base ebuild
+-update copyright
+-eapi7
+-improve comments
+-gtk-doc use flag
+-update keywords
+-update dependencies and ordering
+-update to meson
+-remove old workaround
+*gcr-3.34.0-r2
+::prototype99			improve python use flags
+*gcr-3.34.0-r1
+::dantrell-gnome-3-34	add python 3.5 support
+::my-gnome				extra safeguard for old gnome-keyring versions
+::gentoo				base ebuild
