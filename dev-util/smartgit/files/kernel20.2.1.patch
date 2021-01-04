@@ -15,8 +15,8 @@ index 13e7070..8430405 100755
  
  APP_PATH="$PATH$SMARTGIT_PATH"
  
--(export PATH="$APP_PATH"; "$_JAVA_EXEC" -XX:+UseG1GC -XX:MaxGCPauseMillis=100 -XX:InitiatingHeapOccupancyPercent=25 -Xmx1024m -Xss2m -Xverify:none -XX:MaxJavaStackTraceDepth=1000000 -Dsun.io.useCanonCaches=false -XX:ErrorFile=$APP_CONFIG_DIR/20.2/hs_err_pid%p.log $_VM_PROPERTIES -jar "$APP_HOME/lib/bootloader.jar" "$@")
-+(export PATH="$APP_PATH"; "$_JAVA_EXEC" -XX:+UseG1GC -XX:MaxGCPauseMillis=100 -XX:InitiatingHeapOccupancyPercent=25 -Xmx3072m -Xss2m -Xverify:none -XX:MaxJavaStackTraceDepth=1000000 -Dsun.io.useCanonCaches=false -XX:ErrorFile=$APP_CONFIG_DIR/20.2/hs_err_pid%p.log $_VM_PROPERTIES -jar "$APP_HOME/lib/bootloader.jar" "$@")
+-(export PATH="$APP_PATH"; java -XX:+UseG1GC -XX:MaxGCPauseMillis=100 -XX:InitiatingHeapOccupancyPercent=25 -Xmx1024m -Xss2m -Xverify:none -XX:MaxJavaStackTraceDepth=1000000 -Dsun.io.useCanonCaches=false -XX:ErrorFile=$APP_CONFIG_DIR/20.2/hs_err_pid%p.log $_VM_PROPERTIES -jar "$APP_HOME/lib/bootloader.jar" "$@")
++(export PATH="$APP_PATH"; java -XX:+UseG1GC -XX:MaxGCPauseMillis=100 -XX:InitiatingHeapOccupancyPercent=25 -Xmx3072m -Xss2m -Xverify:none -XX:MaxJavaStackTraceDepth=1000000 -Dsun.io.useCanonCaches=false -XX:ErrorFile=$APP_CONFIG_DIR/20.2/hs_err_pid%p.log $_VM_PROPERTIES -jar "$APP_HOME/lib/bootloader.jar" "$@")
 -- 
 2.29.2
 
