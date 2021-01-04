@@ -32,6 +32,7 @@ RDEPEND="${COMMON_DEPEND}
 "
 S="${WORKDIR}/${PN}-${NUM}"
 multilib_src_configure() {
+	"${S}"/autogen.sh
 	ECONF_SOURCE="${S}" gnome2_src_configure \
 		$(multilib_native_use_enable doc documentation)
 }
