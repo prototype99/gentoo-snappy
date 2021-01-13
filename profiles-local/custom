@@ -444,6 +444,7 @@
 =virtual/linux-sources-3-r9::calculate								#no firmware use flag
 =virtual/modutils-0-r1::calculate									#eapi 2, less architecture support
 =virtual/mta-1::argent-main											#old
+=virtual/notification-daemon-1::alxu								#no gnome-shell support
 =virtual/pam-0-r1::argent-main										#old, eapi 5
 =virtual/rust-1337-r1::redcore										#no binary support, amd64 only
 =virtual/tmpfiles-0::srcshelton										#pointless modification, just mask the whole package?
