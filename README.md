@@ -107,9 +107,6 @@ fixed dependency version of the libressl ebuild. archived due to presence in ups
 includes a patch designed to remove an error
 ### `dev-tex/tex4ht`
 tex, except it builds as a 1.6 java target for newer java versions that can't handle 1.5
-### `dev-vcs/gitkraken-bin`
-WORK IN PROGRESS
-gitkraken ebuild based off of the anomen and chaoslab overlay ebuilds. anomen is used as the base as it was closer to the layout of an official ebuild. added in from the chaoslab ebuild: newer copyright date, runtime dependencies, metadata.xml (with updated authors). personal edits: copied most up to date description from website, got rid of electron slot variable as it is unneeded.
 ### `games-simulation/firestorm-bin`
 firestorm ebuilds with a functional url and better depends
 ### `games-util/steam-launcher`
