@@ -1,4 +1,9 @@
 *gitkraken-7.4.1
 ::anomen		base ebuild
 ::chaoslab		newer copyright date, runtime dependencies, metadata.xml (with updated authors)
-::prototype99	copied most up to date description from website, got rid of electron slot variable as it is unneeded, update source url
+::prototype99
+-copied most up to date description from website
+-got rid of electron slot variable as it is unneeded
+-update source url
+-update dependencies
+-add gnome keyring use flag
