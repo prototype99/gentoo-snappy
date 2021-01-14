@@ -14,6 +14,7 @@ IUSE="gnome-keyring"
 RDEPEND="gnome-keyring? ( gnome-base/libgnome-keyring )
 	dev-libs/libgcrypt
 	dev-libs/nss
+	media-video/ffmpeg[chromium]
 	virtual/udev
 	x11-libs/gtk+:3
 	x11-libs/libnotify
@@ -35,6 +36,7 @@ src_install() {
 	doexe gitkraken
 	doicon -s 512 "$FILESDIR"/gitkraken.png
 	dosym $destdir/gitkraken /usr/bin/gitkraken
+	dosym /usr/lib/chromium/libffmpeg.so $destdir/libffmpeg.so
 	make_desktop_entry gitkraken Gitkraken "gitkraken" Network
 }
 
