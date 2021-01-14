@@ -30,13 +30,7 @@ S=${WORKDIR}/gitkraken
 src_install() {
 	local destdir="/opt/${PN}"
 	insinto $destdir
-	doins -r locales resources
-	doins	content_shell.pak \
-		icudtl.dat \
-		natives_blob.bin \
-		snapshot_blob.bin \
-		libffmpeg.so \
-		libnode.so
+	doins -r /
 	exeinto $destdir
 	doexe gitkraken
 	doicon -s 512 "$FILESDIR"/gitkraken.png
