@@ -1,0 +1,125 @@
+From 3d2958c6d96ae01e6074aa49aae46e4656eefb10 Mon Sep 17 00:00:00 2001
+From: seirra <sophietheopossum@yandex.com>
+Date: Sun, 18 Oct 2020 21:22:13 +0100
+Subject: [PATCH] remove architecture check, do not use --login, don't use vm
+ options, remove irrelevant functions and notice
+
+---
+ bin/smartgit.sh | 69 ++++---------------------------------------------
+ 1 file changed, 5 insertions(+), 64 deletions(-)
+
+diff --git a/bin/smartgit.sh b/bin/smartgit.sh
+index 1f1a6d8..13e7070 100755
+--- a/bin/smartgit.sh
++++ b/bin/smartgit.sh
+@@ -1,38 +1,4 @@
+-#!/bin/bash --login
+-#
+-# Editing this script should not be required.
+-#
+-# To specify additional VM options, add them to smartgit.vmoptions files.
+-
+-APP_NAME=SmartGit
+-APP_LOWER=smartgit
+-SWT_VERSION=
+-
+-parseVmOptions() {
+-  if [ -f $1 ]; then
+-    while read LINE || [[ -n "$LINE" ]]; do
+-      LINE="${LINE#"${LINE%%[![:space:]]*}"}"
+-      if [ ${#LINE} -gt 0 ] && [ ! ${LINE:0:1} == '#' ]; then
+-        if [ ${LINE:0:4} == 'jre=' ]; then
+-          echo "Ignoring following line in file $1"
+-          echo "$LINE"
+-        elif [ ${LINE:0:5} == 'path=' ]; then
+-          APP_PATH="$APP_PATH:${LINE:5}"
+-        elif [ ${LINE:0:7} == 'swtver=' ]; then
+-          SWT_VERSION="${LINE:7}"
+-        else
+-          _VM_PROPERTIES="$_VM_PROPERTIES $LINE"
+-        fi
+-      fi
+-    done < $1
+-  fi
+-}
+-
+-echoJreConfigurationAndExit() {
+-    mkdir --parents $APP_CONFIG_DIR
+-    touch $APP_CONFIG_DIR/$APP_LOWER.vmoptions
+-    exit 1
+-}
++#!/bin/bash
+ 
+ case "$BASH" in
+     */bash) :
+@@ -42,14 +8,6 @@ case "$BASH" in
+         ;;
+ esac
+ 
+-
+-# check system architecture
+-ARCHITECTURE=`uname -m`
+-if [ "$ARCHITECTURE" != "x86_64" ] && [ "$ARCHITECTURE" != "aarch64" ] ; then
+-    echo "$APP_NAME is not supported any more on 32-bit systems."
+-    exit 1
+-fi
+-
+ # Resolve the location of the SmartGit installation.
+ # This includes resolving any symlinks.
+ PRG=$0
+@@ -72,13 +30,10 @@ APP_BIN=`pwd`
+ cd "${oldpwd}";
+ unset oldpwd
+ 
+-APP_CONFIG_DIR=${XDG_CONFIG_HOME:-$HOME/.config}/$APP_LOWER
++APP_CONFIG_DIR=${XDG_CONFIG_HOME:-$HOME/.config}/smartgit
+ 
+ APP_HOME=`dirname "$APP_BIN"`
+ APP_JAVA_HOME=$SMARTGIT_JAVA_HOME
+-parseVmOptions $APP_BIN/$APP_LOWER.vmoptions
+-parseVmOptions $HOME/.$APP_LOWER/$APP_LOWER.vmoptions
+-parseVmOptions $APP_CONFIG_DIR/$APP_LOWER.vmoptions
+ 
+ # Determine Java Runtime
+ _JAVA_EXEC="java"
+@@ -93,13 +48,13 @@ if [ "$APP_JAVA_HOME" != "" ] ; then
+     else
+         echo "Warning: $_TMP does not exist"
+     fi
+-elif [ -e "$APP_HOME/jre/bin/java" ] && [ "$ARCHITECTURE" == "x86_64" ] ; then
++elif [ -e "$APP_HOME/jre/bin/java" ] && [ `uname -m` == "x86_64" ] ; then
+     _JAVA_EXEC="$APP_HOME/jre/bin/java"
+ fi
+ 
+ if ! which "$_JAVA_EXEC" >/dev/null 2>&1 ; then
+     echo "Error: No Java Runtime Environment (JRE) 11 or higher found"
+-    echoJreConfigurationAndExit
++    exit 1
+ fi
+ 
+ if type "lsb_release" > /dev/null 2> /dev/null ; then
+@@ -136,20 +91,6 @@ if [ "$GTK_THEME" != "Adwaita" ] ; then
+ 	echo "If you experience strange GUI bugs or crashes, try setting GTK_THEME=Adwaita."
+ fi
+ 
+-_GC_OPTS="-XX:+UseG1GC -XX:MaxGCPauseMillis=100 -XX:InitiatingHeapOccupancyPercent=25 -Xmx1024m -Xss2m"
+-_MISC_OPTS="-Xverify:none -XX:MaxJavaStackTraceDepth=1000000 -Dsun.io.useCanonCaches=false -XX:ErrorFile=$APP_CONFIG_DIR/20.2/hs_err_pid%p.log"
+-
+-if [ "$SWT_VERSION" != "" ] ; then
+-	echo "Configured custom SWT_VERSION=$SWT_VERSION."
+-	_JAR_FILE=$(realpath ${APP_BIN}/../opt/org.eclipse.swt.gtk.linux.x86_64.$SWT_VERSION.jar)
+-	if [ ! -f $_JAR_FILE ] ; then
+-		echo "Custom SWT JAR '$_JAR_FILE' does not exist!"
+-	else
+-  		_MISC_OPTS="$_MISC_OPTS -Dsmartboot.additionalJars="
+-  		_MISC_OPTS="$_MISC_OPTS -Dsmartboot.prefixClassPath=file://$_JAR_FILE"
+-	fi
+-fi
+-
+ APP_PATH="$PATH$SMARTGIT_PATH"
+ 
+-(export PATH="$APP_PATH"; "$_JAVA_EXEC" $_GC_OPTS $_MISC_OPTS $_VM_PROPERTIES -jar "$APP_HOME/lib/bootloader.jar" "$@")
++(export PATH="$APP_PATH"; "$_JAVA_EXEC" -XX:+UseG1GC -XX:MaxGCPauseMillis=100 -XX:InitiatingHeapOccupancyPercent=25 -Xmx1024m -Xss2m -Xverify:none -XX:MaxJavaStackTraceDepth=1000000 -Dsun.io.useCanonCaches=false -XX:ErrorFile=$APP_CONFIG_DIR/20.2/hs_err_pid%p.log $_VM_PROPERTIES -jar "$APP_HOME/lib/bootloader.jar" "$@")
+-- 
+2.29.2
+
