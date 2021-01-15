@@ -21,11 +21,6 @@ RDEPEND="gnome-keyring? ( gnome-base/libgnome-keyring )
 	x11-libs/libxkbfile
 	x11-libs/libXtst"
 
-QA_PREBUILT="opt/gitkraken-bin/resources/app.asar.unpacked/node_modules/nodegit/build/Release/nodegit.node
-	opt/gitkraken-bin/gitkraken"KEYWORDS="-* ~amd64"
-QA_PRESTRIPPED="/opt/gitkraken-bin/libffmpeg.so
-	/opt/gitkraken-bin/libnode.so"
-
 S=${WORKDIR}/gitkraken
 
 src_install() {
