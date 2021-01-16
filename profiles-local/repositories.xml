@@ -376,6 +376,16 @@
 		<feed>https://bitbucket.org/AdmiralNemo/overlay/atom</feed>
 		<feed>https://bitbucket.org/AdmiralNemo/overlay/rss</feed>
 	</repo>
+	<repo quality="experimental" status="unofficial">
+		<name>eclass-overlay</name>
+		<description>Master overlay to hold custom eclasses and related data (that override all others including portage-stable)
+</description>
+		<homepage>https://chromium.googlesource.com/chromiumos/overlays/eclass-overlay</homepage>
+		<owner type="project">
+			<name>Chromium OS</name>
+		</owner>
+		<source type="git">https://chromium.googlesource.com/chromiumos/overlays/eclass-overlay</source>
+	</repo>
 	<repo quality="experimental" status="unoffficial">
 		<name>el-overlay</name>
 		<homepage>http://github.com/lamskoy/el-overlay</homepage>
