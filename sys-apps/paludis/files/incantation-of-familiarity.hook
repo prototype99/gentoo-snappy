@@ -3,6 +3,9 @@
 hook_run_sync_post() {
 	#source ${PALUDIS_ECHO_FUNCTIONS_DIR:-${PALUDIS_EBUILD_DIR}}/echo_functions.bash
 
+	if [[ $TARGET == 'x-chromiumos' || $TARGET == 'chromiumos' ]]; then
+		patch /var/db/repos/chromiumos/metadata/layout.conf /etc/paludis/patches/the-root-of-all-gentoo.patch
+	fi
 	if [[ $TARGET == 'x-dantrell-gnome' || $TARGET == 'dantrell-gnome' ]]; then
 		#remove aggressively anti gentoo config
 		rm /var/db/repos/dantrell-gnome/profiles/package.mask

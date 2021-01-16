@@ -1,0 +1,23 @@
+From c82b1110bc19ced2468f750e452436060c083e19 Mon Sep 17 00:00:00 2001
+From: layman <layman@localhost>
+Date: Sat, 16 Jan 2021 19:57:20 +0000
+Subject: [PATCH] switch to gentoo
+
+---
+ metadata/layout.conf | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/metadata/layout.conf b/metadata/layout.conf
+index fd29350b9f8..10492d5702e 100644
+--- a/metadata/layout.conf
++++ b/metadata/layout.conf
+@@ -1,5 +1,5 @@
+ cache-format = md5-dict
+-masters = portage-stable eclass-overlay
++masters = gentoo eclass-overlay
+ profile-formats = portage-2
+ repo-name = chromiumos
+ thin-manifests = true
+-- 
+2.29.2
+
