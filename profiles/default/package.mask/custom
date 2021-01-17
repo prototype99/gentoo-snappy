@@ -164,4 +164,5 @@
 =sys-libs/glibc-2.32-r3
 =sys-libs/glibc-2.32-r5
 =sys-libs/glibc-2.32-r6
+=sys-libs/glibc-2.32-r7
 >=x11-libs/gtk+-3.90
