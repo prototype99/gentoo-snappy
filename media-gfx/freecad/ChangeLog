@@ -1,0 +1,7 @@
+*0.18.3
+
+	25.11.2019	::prototype99
+		-remove unused patch
+		-remove 9999 code
+		-add missing dependency on libspnav[X]
+	??????????	::waebbl	base ebuild
