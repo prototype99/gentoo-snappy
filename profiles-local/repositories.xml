@@ -614,6 +614,15 @@
 		<feed>https://github.com/lbryio/lbry-gentoo-overlay/commits/master.atom</feed>
 	</repo>
 	<repo priority="50" quality="experimental" status="unofficial">
+		<name>librewolf</name>
+		<description lang="en">Librewolf packaging for Gentoo.</description>
+		<homepage>https://gitlab.com/librewolf-community/browser/gentoo</homepage>
+		<owner type="project">
+			<name>librewolf</name>
+		</owner>
+		<source type="git">https://gitlab.com/librewolf-community/browser/gentoo.git</source>
+	</repo>
+	<repo priority="50" quality="experimental" status="unofficial">
 		<name>loongson</name>
 		<description lang="en">Support overlay for Gentoo/Loongson users</description>
 		<homepage>https://github.com/xen0n/loongson-overlay</homepage>
