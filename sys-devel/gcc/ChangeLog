@@ -1,0 +1,4 @@
+*gcc-10.2.0-r5
+::gentoo		base ebuild
+::musl			add musl patches
+::prototype99	better patch logic
