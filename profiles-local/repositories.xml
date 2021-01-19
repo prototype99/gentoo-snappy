@@ -1138,6 +1138,15 @@
 		<feed>https://github.com/agravgaard/xeon-phi-overlay/commits/master.atom</feed>
 	</repo>
 	<repo priority="50" quality="experimental" status="unofficial">
+		<name>xor-overlay</name>
+		<description lang="en">xor overlay</description>
+		<homepage>https://gitlab.com/liguros/xor-overlay</homepage>
+		<owner type="person">
+			<name>_x0r</name>
+		</owner>
+		<source type="git">https://gitlab.com/liguros/xor-overlay.git</source>
+	</repo>
+	<repo priority="50" quality="experimental" status="unofficial">
 		<name>yoza</name>
 		<description lang="en">gentoo overlay</description>
 		<homepage>https://github.com/yoza/yoza</homepage>
