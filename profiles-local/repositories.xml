@@ -422,6 +422,17 @@
 		<feed>https://github.com/alphallc/freeswitch/commits/master.atom</feed>
 	</repo>
 	<repo quality="experimental" status="unofficial">
+		<name>funtoo-overlay</name>
+		<description>ebuild fixes, updates, and additions to funtoo meta-repo/kits</description>
+		<homepage>https://github.com/bradlyatc/funtoo-overlay</homepage>
+		<owner>
+			<name>Bradly Teaford Cowan</name>
+		</owner>
+		<source type="git">git://github.com/bradlyatc/funtoo-overlay.git</source>
+		<source type="git">https://github.com/bradlyatc/funtoo-overlay.git</source>
+		<feed>https://github.com/feeds/bradlyatc/commits/funtoo-overlay/master</feed>
+	</repo>
+	<repo quality="experimental" status="unofficial">
 		<name>gbin</name>
 		<description>gbin Overlay</description>
 		<homepage>http://klaig.blogspot.com/</homepage>
