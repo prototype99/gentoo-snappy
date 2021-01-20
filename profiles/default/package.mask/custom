@@ -18,7 +18,6 @@
 =dev-libs/mpc-1.1.0-r314
 =dev-libs/mpfr-4.0.2-r314
 =dev-libs/zziplib-9999
-=dev-python/certifi-9999
 =dev-python/pillow-1000
 =dev-qt/qtcore-5.9999
 =dev-qt/qtdbus-5.9999
@@ -105,6 +104,7 @@
 <dev-perl/URI-1.760.0
 <dev-perl/XML-Parser-2.460.0
 <dev-perl/XML-XPath-1.440.0
+<dev-python/certifi-9999
 <dev-python/pygments-2.6.1
 <dev-python/ply-3.9
 <dev-python/setuptools-40.6.3
