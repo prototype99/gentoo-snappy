@@ -1092,6 +1092,17 @@
 		<feed>https://github.com/feeds/Sabayon/commits/systemd-love/master</feed>
 	</repo>
 	<repo quality="experimental" status="unofficial">
+		<name>tafsm</name>
+		<description lang="en">tafsm overlay</description>
+		<homepage>https://github.com/prototype99/tafsm</homepage>
+		<owner type="person">
+			<email>sophietheopossum@yandex.ru</email>
+			<name>seirra blake</name>
+		</owner>
+		<source type="git">git://github.com/prototype99/tafsm.git</source>
+		<feed>https://github.com/feeds/prototype99/commits/tafsm/master</feed>
+	</repo>
+	<repo quality="experimental" status="unofficial">
 		<name>undesktop</name>
 		<description>Overlay containing Undesktop projects</description>
 		<homepage>https://github.com/undesktop/undesktop-overlay</homepage>
