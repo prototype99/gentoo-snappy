@@ -146,12 +146,16 @@
 #old, no supported python
 <=app-emulation/lxc-1.0.8
 #too new
+=app-crypt/gcr-3.38.0
 =app-portage/eix-0.34.11
 =app-shells/push-3.1-r5
 =app-shells/push-3.4
 =app-shells/quoter-4.1-r1
 =app-shells/quoter-4.2
+=dev-java/jansi-native-1.8
+=dev-java/openjdk-15.0.1_p9
 >=dev-lang/python-3.8
+=dev-util/cmake-3.19.3
 =net-misc/curl-7.72.0
 =sys-apps/kmod-27-r2
 >=sys-auth/polkit-0.117

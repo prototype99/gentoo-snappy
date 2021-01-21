@@ -125,6 +125,7 @@
 =dev-libs/libassuan-2.5.3::dantrell-gnome							#bad keywording, unnecessary quotes
 =dev-libs/libcroco-0.6.13::dantrell-gnome							#bad keywording, unnecessary quotes, bad dependency, old patches
 =dev-libs/libdazzle-3.34.1::dantrell-gnome-3-34						#bad keywording, unnecessary quotes
+=dev-libs/libdbusmenu-16.04.1_p20180917_p0_p06::unity-gentoo		#bad dependencies
 =dev-libs/libevdev-1.9.1::gentoo									#verbose python compatibility, no multilib
 =dev-libs/libevdev-1.10.0::gentoo									#verbose python compatibility, no multilib
 =dev-libs/libgcrypt-1.8.5::gentoo-clang								#clang specific patch
@@ -360,6 +361,8 @@
 =net-misc/curl-7.66.0::gentoo										#less use flags
 =net-misc/curl-7.68.0::gentoo										#less use flags
 =net-misc/curl-7.69.1::gentoo										#less use flags
+=net-misc/openssh-8.4_p1-r2::srcshelton								#verbose
+=net-print/cups-2.3.3-r1::srcshelton								#no libtool patch
 =net-print/cups-filters-1.27.5::dantrell-gnome						#bad keywording, unnecessary quotes
 =net-print/cups-filters-1.28.2::dantrell-gnome						#bad keywording, unnecessary quotes
 =net-print/cups-filters-1.28.3::dantrell-gnome						#bad keywording, unnecessary quotes
@@ -403,6 +406,8 @@
 =sys-block/parted-3.2-r2::musl										#musl specific
 =sys-block/thin-provisioning-tools-0.7.0::musl						#musl patch
 =sys-devel/clang-9.0.1-r100::dev1990-overlay						#apple specific patch
+=sys-devel/clang-10.0.1::gentoo										#no build-man use flag
+=sys-devel/clang-11.0.1::pg_overlay									#no build-man use flag
 =sys-devel/gcc-8.3.0-r1::musl										#musl specific patches
 =sys-devel/gcc-9.1.0::musl											#better in other overlay
 =sys-devel/gettext-0.19.8.1::dantrell-gnome							#bad keywording, unnecessary quotes
@@ -411,6 +416,9 @@
 =sys-devel/gettext-0.20.2::dantrell-gnome							#bad keywording, unnecessary quotes
 =sys-devel/gettext-0.21::dantrell-gnome								#bad keywording, unnecessary quotes
 =sys-devel/lld-10.0.0::gentoo										#no musl workaround
+=sys-devel/lld-11.0.1::gentoo										#no musl workaround
+=sys-devel/llvm-10.0.1::srcshelton									#no build-man use flag
+=sys-devel/llvm-11.0.1::pg_overlay									#no build-man use flag
 =sys-fs/e2fsprogs-1.44.5::gnux32									#x32 specific patch
 =sys-fs/e2fsprogs-1.45.2::gnux32									#x32 specific patch
 =sys-fs/lvm2-2.02.187-r3::musl										#musl specific patches
