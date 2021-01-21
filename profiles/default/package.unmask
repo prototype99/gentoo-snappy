@@ -72,3 +72,9 @@
 =dev-libs/atk-2.36.0
 # required by dev-python/numpy-1.21.0_pre20201202::prototype99
 =virtual/cblas-3.8
+# required by sys-devel/clang-11.0.1::gentoo
+# required by sys-devel/clang-common-11.0.1::gentoo
+# required by sys-devel/clang-10.0.1-r1::stha09
+# required by dev-util/lldb-10.0.1::gentoo
+# required by dev-util/idea-community-2021.3.1.203.6682.168::gentoo
+=sys-devel/llvm-11.0.1
