@@ -1,3 +1,2 @@
-*dev-java/hawtjni-runtime-1.10
-::prototype99
--fix dependency
+*hawtjni-runtime-1.10
+::prototype99	fix dependency

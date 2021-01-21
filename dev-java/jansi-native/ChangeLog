@@ -1,3 +1,2 @@
-*dev-java/jansi-native-1.5
-::prototype99
--fix dependency
+*jansi-native-1.5
+::prototype99	fix dependency
