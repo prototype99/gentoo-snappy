@@ -1,4 +1,5 @@
 *openjdk-15_p36
-::2xsaiko		nsplugin&webstart use flags
-::alxu			depend on virtual/jdk directly, either way it is still a circular dependency...
-::pg_overlay	base ebuild
+::2xsaiko			nsplugin&webstart use flags
+::alxu				depend on virtual/jdk directly, either way it is still a circular dependency...
+::gentoo-bootstrap	add musl support
+::pg_overlay		base ebuild
