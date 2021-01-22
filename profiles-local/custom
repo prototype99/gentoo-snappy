@@ -72,6 +72,10 @@
 =dev-java/java-config-2.2.0-r5::miramir								#pointless added dev-python/setuptools dependency
 =dev-java/java-config-2.2.0-r1000::progress							#nonstandard python use flags
 =dev-java/javatoolkit-0.3.0-r9::progress							#nonstandard python use flags
+=dev-java/openjdk-15_p36::2xsaiko									#pulls in java-config
+=dev-java/openjdk-15.0.0_p36::gentoo-bootstrap						#hardcodes compatible java
+=dev-java/openjdk-15.0.1_p9::alxu									#no nsplugin&webstart use flags
+=dev-java/openjdk-15.0.1_p9::pg_overlay								#no nsplugin&webstart use flags
 =dev-lang/ifc-19.0.4.243::science									#no good for cluster edition
 =dev-lang/python-2.7.17-r2::gentoo									#no optimisation
 =dev-lang/python-2.7.18-r100::stefantalpalaru						#uses app-misc/mime-types
