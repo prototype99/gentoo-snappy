@@ -248,6 +248,10 @@
 =dev-util/gtk-update-icon-cache-3.24.20::dantrell-gnome				#bad keywording, unnecessary quotes
 =dev-util/gtk-update-icon-cache-3.24.21::dantrell-gnome				#bad keywording, unnecessary quotes
 =dev-util/gtk-update-icon-cache-3.24.24::dantrell-gnome				#bad keywording, unnecessary quotes
+=dev-util/idea-community-2020.3.1::xor-overlay						#no clear benefits
+=dev-util/idea-community-2020.3.0.203.5981.155-r1::gentoo			#no clear benefits
+=dev-util/idea-community-2020.3.1.203.6682.168::gentoo				#no clear benefits
+=dev-util/idea-community-2021.3.1.203.6682.168::gentoo				#no clear benefits
 =dev-util/itstool-2.0.6-r1::gentoo									#verbose python targets
 =dev-util/meld-3.21.0::my-gnome										#broken dependencies
 =dev-util/meson-0.52.1::dantrell-gnome								#bad keywording, unnecessary quotes, verbose python targets
