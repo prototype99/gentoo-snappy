@@ -1,4 +1,5 @@
 *gcc-10.2.0-r5
-::gentoo		base ebuild
+::gentoo		update dependency, download patches
 ::musl			add musl patches
-::prototype99	better patch logic
+::prototype99	better patch logic, make better use of variables, DO pass flags over
+::xor-overlay	base ebuild
