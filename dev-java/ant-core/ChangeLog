@@ -1,0 +1,10 @@
+*ant-core-1.10.7
+::gentoo
+-bump to eapi 7
+-simpler patching
+-update depend logic
+-remake patch
+*ant-core-1.10.5-r2
+::prototype99
+-updated patches to fix libreoffice compilation (by adapting tools.jar warning to a simple dependency check)
+-allow jdk 10.
