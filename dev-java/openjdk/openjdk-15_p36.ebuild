@@ -1,9 +1,9 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 
-inherit autotools check-reqs flag-o-matic java-pkg-2 java-vm-2 multiprocessing pax-utils toolchain-funcs
+inherit autotools check-reqs flag-o-matic java-pkg-2 java-vm multiprocessing pax-utils toolchain-funcs
 
 # we need -ga tag to fetch tarball and unpack it, but exact number everywhere else to
 # set build version properly
@@ -17,7 +17,7 @@ SRC_URI="https://hg.${PN}.java.net/jdk-updates/jdk${SLOT}u/archive/jdk-${MY_PV}.
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~arm ~arm64 ~ppc64"
 
-IUSE="alsa cups debug doc examples gentoo-vm headless-awt javafx +jbootstrap nsplugin +pch selinux source systemtap webstart"
+IUSE="alsa cups debug doc examples +gentoo-vm headless-awt javafx +jbootstrap nsplugin +pch selinux source systemtap webstart"
 
 COMMON_DEPEND="
 	media-libs/freetype:2=
