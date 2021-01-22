@@ -417,6 +417,7 @@
 =sys-devel/gettext-0.21::dantrell-gnome								#bad keywording, unnecessary quotes
 =sys-devel/lld-10.0.0::gentoo										#no musl workaround
 =sys-devel/lld-11.0.1::gentoo										#no musl workaround
+=sys-devel/llvm-10.0.1::gentoo										#no build-man use flag
 =sys-devel/llvm-10.0.1::srcshelton									#no build-man use flag
 =sys-devel/llvm-11.0.1::pg_overlay									#no build-man use flag
 =sys-fs/e2fsprogs-1.44.5::gnux32									#x32 specific patch
