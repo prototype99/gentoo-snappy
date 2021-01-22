@@ -1,4 +1,3 @@
-*56.1
-
-	4.12.2019	::prototype99	bump minimum java
-	??????????	::gentoo		base ebuild
+*icu4j-56.1
+::gentoo		base ebuild
+::prototype99	bump minimum java
