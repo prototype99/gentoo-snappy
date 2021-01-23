@@ -21,6 +21,7 @@
 =app-crypt/libsecret-0.20.2::gentoo									#no python3_8, less multilib support
 =app-crypt/libsecret-0.20.3::gentoo									#no python3_8
 =app-crypt/libsecret-0.20.3-r1::alxu								#no blocker for older gnome-keyring
+=app-crypt/libsecret-0.20.4-r1::xor-overlay							#worse dependencies
 =app-crypt/seahorse-3.32.2::dantrell-gnome-3-32						#missing dependency
 =app-crypt/seahorse-3.34.1::dantrell-gnome-3-34						#bad keywording, unnecessary quotes, no help use flag
 =app-crypt/seahorse-3.36::my-gnome									#old
@@ -417,6 +418,7 @@
 =sys-devel/gettext-0.21::dantrell-gnome								#bad keywording, unnecessary quotes
 =sys-devel/lld-10.0.0::gentoo										#no musl workaround
 =sys-devel/lld-11.0.1::gentoo										#no musl workaround
+=sys-devel/llvm-10.0.0::srcshelton									#no build-man use flag
 =sys-devel/llvm-10.0.1::gentoo										#no build-man use flag
 =sys-devel/llvm-10.0.1::srcshelton									#no build-man use flag
 =sys-devel/llvm-11.0.1::pg_overlay									#no build-man use flag

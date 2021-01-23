@@ -155,6 +155,8 @@
 =dev-java/jansi-native-1.8
 =dev-java/openjdk-15.0.1_p9
 >=dev-lang/python-3.8
+=dev-python/importlib_resources-4.1.1
+=dev-python/importlib_resources-5.0.0
 =dev-util/cmake-3.19.3
 =net-misc/curl-7.72.0
 =sys-apps/kmod-27-r2
