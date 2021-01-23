@@ -1,3 +1,5 @@
+*python-3.7.9-r2
+::xor-overlay		add lto and threads use flags, better alphabetise the pgo use flag
 *python-3.7.9-r1
 ::gentoo			add jobs fix, remove extra whitespace,update keywords, update patches
 ::lto-overlay		simplify pgo, remove extra whitespace
