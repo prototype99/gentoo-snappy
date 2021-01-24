@@ -93,6 +93,15 @@
 		<feed>https://github.com/tokiclover/bar-overlay/commits/master.atom</feed>
 	</repo>
 	<repo priority="50" quality="experimental" status="unofficial">
+		<name>browser-kit</name>
+		<description lang="en">browser funtoo kit</description>
+		<homepage>https://code.funtoo.org/bitbucket/scm/auto/browser-kit</homepage>
+		<owner type="project">
+			<name>funtoo</name>
+		</owner>
+		<source type="git" branch="1.4-release">https://code.funtoo.org/bitbucket/scm/auto/browser-kit.git</source>
+	</repo>
+	<repo priority="50" quality="experimental" status="unofficial">
 		<name>BWGentooPrefix</name>
 		<description lang="en"> Gentoo Prefix overlay for Python stack on Blue Waters</description>
 		<homepage>https://github.com/prototype99/bw-python-gentoo-prefix-overlay</homepage>
@@ -134,6 +143,51 @@
 		<source type="git">https://github.com/TheChymera/overlay.git</source>
 		<source type="git">git+ssh://git@github.com/TheChymera/overlay.git</source>
 		<feed>https://github.com/TheChymera/overlay/commits/master.atom</feed>
+	</repo>
+	<repo priority="50" quality="experimental" status="unofficial">
+		<name>core-gl-kit</name>
+		<description lang="en">core-gl funtoo kit</description>
+		<homepage>https://code.funtoo.org/bitbucket/scm/auto/core-gl-kit</homepage>
+		<owner type="project">
+			<name>funtoo</name>
+		</owner>
+		<source type="git" branch="2.0-release">https://code.funtoo.org/bitbucket/scm/auto/core-gl-kit.git</source>
+	</repo>
+	<repo priority="50" quality="experimental" status="unofficial">
+		<name>core-hw-kit</name>
+		<description lang="en">core-hw funtoo kit</description>
+		<homepage>https://code.funtoo.org/bitbucket/scm/auto/core-hw-kit</homepage>
+		<owner type="project">
+			<name>funtoo</name>
+		</owner>
+		<source type="git" branch="1.4-release">https://code.funtoo.org/bitbucket/scm/auto/core-hw-kit.git</source>
+	</repo>
+	<repo priority="50" quality="experimental" status="unofficial">
+		<name>core-kit</name>
+		<description lang="en">core funtoo kit</description>
+		<homepage>https://code.funtoo.org/bitbucket/scm/auto/core-kit</homepage>
+		<owner type="project">
+			<name>funtoo</name>
+		</owner>
+		<source type="git" branch="1.4-release">https://code.funtoo.org/bitbucket/scm/auto/core-kit.git</source>
+	</repo>
+	<repo priority="50" quality="experimental" status="unofficial">
+		<name>core-server-kit</name>
+		<description lang="en">core-server funtoo kit</description>
+		<homepage>https://code.funtoo.org/bitbucket/scm/auto/core-server-kit</homepage>
+		<owner type="project">
+			<name>funtoo</name>
+		</owner>
+		<source type="git" branch="1.4-release">https://code.funtoo.org/bitbucket/scm/auto/core-server-kit.git</source>
+	</repo>
+	<repo priority="50" quality="experimental" status="unofficial">
+		<name>core-ui-kit</name>
+		<description lang="en">core-ui funtoo kit</description>
+		<homepage>https://code.funtoo.org/bitbucket/scm/auto/core-ui-kit</homepage>
+		<owner type="project">
+			<name>funtoo</name>
+		</owner>
+		<source type="git" branch="1.4-release">https://code.funtoo.org/bitbucket/scm/auto/core-ui-kit.git</source>
 	</repo>
 	<repo priority="50" quality="experimental" status="unofficial">
 		<name>cubieboard-overlay</name>
@@ -315,6 +369,24 @@
 		<source type="git">git@github.com:dantrell/gentoo-overlay-dantrell-gnome-3-38.git</source>
 		<feed>https://github.com/dantrell/gentoo-overlay-dantrell-gnome-3-34/commits/master.atom</feed>
 	</repo>
+	<repo priority="50" quality="experimental" status="unofficial">
+		<name>desktop-kit</name>
+		<description lang="en">desktop funtoo kit</description>
+		<homepage>https://code.funtoo.org/bitbucket/scm/auto/desktop-kit</homepage>
+		<owner type="project">
+			<name>funtoo</name>
+		</owner>
+		<source type="git" branch="1.4-release">https://code.funtoo.org/bitbucket/scm/auto/desktop-kit.git</source>
+	</repo>
+	<repo priority="50" quality="experimental" status="unofficial">
+		<name>dev-kit</name>
+		<description lang="en">dev funtoo kit</description>
+		<homepage>https://code.funtoo.org/bitbucket/scm/auto/dev-kit</homepage>
+		<owner type="project">
+			<name>funtoo</name>
+		</owner>
+		<source type="git" branch="1.4-release">https://code.funtoo.org/bitbucket/scm/auto/dev-kit.git</source>
+	</repo>
 	<repo quality="experimental" status="unofficial">
 		<name>discworld</name>
 		<description lang="en">Various VoIP-related ebuils</description>
@@ -378,13 +450,21 @@
 	</repo>
 	<repo quality="experimental" status="unofficial">
 		<name>eclass-overlay</name>
-		<description>Master overlay to hold custom eclasses and related data (that override all others including portage-stable)
-</description>
+		<description>Master overlay to hold custom eclasses and related data (that override all others including portage-stable)</description>
 		<homepage>https://chromium.googlesource.com/chromiumos/overlays/eclass-overlay</homepage>
 		<owner type="project">
 			<name>Chromium OS</name>
 		</owner>
 		<source type="git">https://chromium.googlesource.com/chromiumos/overlays/eclass-overlay</source>
+	</repo>
+	<repo priority="50" quality="experimental" status="unofficial">
+		<name>editors-kit</name>
+		<description lang="en">editors funtoo kit</description>
+		<homepage>https://code.funtoo.org/bitbucket/scm/auto/editors-kit</homepage>
+		<owner type="project">
+			<name>funtoo</name>
+		</owner>
+		<source type="git" branch="1.4-release">https://code.funtoo.org/bitbucket/scm/auto/editors-kit.git</source>
 	</repo>
 	<repo quality="experimental" status="unoffficial">
 		<name>el-overlay</name>
@@ -432,6 +512,15 @@
 		<source type="git">https://github.com/bradlyatc/funtoo-overlay.git</source>
 		<feed>https://github.com/feeds/bradlyatc/commits/funtoo-overlay/master</feed>
 	</repo>
+	<repo priority="50" quality="experimental" status="unofficial">
+		<name>games-kit</name>
+		<description lang="en">games funtoo kit</description>
+		<homepage>https://code.funtoo.org/bitbucket/scm/auto/games-kit</homepage>
+		<owner type="project">
+			<name>funtoo</name>
+		</owner>
+		<source type="git" branch="1.4-release">https://code.funtoo.org/bitbucket/scm/auto/games-kit.git</source>
+	</repo>
 	<repo quality="experimental" status="unofficial">
 		<name>gbin</name>
 		<description>gbin Overlay</description>
@@ -478,6 +567,15 @@
 		<feed>https://github.com/whiter4bbit/overlays/commits/master.atom</feed>
 	</repo>
 	<repo priority="50" quality="experimental" status="unofficial">
+		<name>haskell-kit</name>
+		<description lang="en">haskell funtoo kit</description>
+		<homepage>https://github.com/funtoo/haskell-kit</homepage>
+		<owner type="project">
+			<name>funtoo</name>
+		</owner>
+		<source type="git" branch="1.4-release">https://github.com/funtoo/haskell-kit.git</source>
+	</repo>
+	<repo priority="50" quality="experimental" status="unofficial">
 		<name>heather</name>
 		<description lang="en">gentoo overlay</description>
 		<homepage>https://github.com/prototype99/gentoo-heather</homepage>
@@ -515,6 +613,15 @@
 		<description>experimental ebuilds</description>
 		<homepage>https://github.com/prototype99/jauhien-overlay</homepage>
 		<source type="git">git://github.com/prototype99/jauhien-overlay.git</source>
+	</repo>
+	<repo priority="50" quality="experimental" status="unofficial">
+		<name>java-kit</name>
+		<description lang="en">java funtoo kit</description>
+		<homepage>https://code.funtoo.org/bitbucket/scm/auto/java-kit</homepage>
+		<owner type="project">
+			<name>funtoo</name>
+		</owner>
+		<source type="git" branch="1.4-release">https://code.funtoo.org/bitbucket/scm/auto/java-kit.git</source>
 	</repo>
 	<repo quality="experimental" status="unofficial">
 		<name>jellybean</name>
@@ -605,6 +712,15 @@
 		<source type="git">git://github.com/LordVeovis/gentoo.git</source>
 	</repo>
 	<repo priority="50" quality="experimental" status="unofficial">
+		<name>lang-kit</name>
+		<description lang="en">lang funtoo kit</description>
+		<homepage>https://github.com/funtoo/lang-kit</homepage>
+		<owner type="project">
+			<name>funtoo</name>
+		</owner>
+		<source type="git" branch="1.4-release">https://github.com/funtoo/lang-kit.git</source>
+	</repo>
+	<repo priority="50" quality="experimental" status="unofficial">
 		<name>larhard-overlay</name>
 		<description>Larhard's custom repositories</description>
 		<homepage>http://elgassia.com/</homepage>
@@ -632,6 +748,24 @@
 			<name>librewolf</name>
 		</owner>
 		<source type="git">https://gitlab.com/librewolf-community/browser/gentoo.git</source>
+	</repo>
+	<repo priority="50" quality="experimental" status="unofficial">
+		<name>lisp-scheme-kit</name>
+		<description lang="en">lisp-scheme funtoo kit</description>
+		<homepage>https://github.com/funtoo/lisp-scheme-kit</homepage>
+		<owner type="project">
+			<name>funtoo</name>
+		</owner>
+		<source type="git" branch="1.4-release">https://github.com/funtoo/lisp-scheme-kit.git</source>
+	</repo>
+	<repo priority="50" quality="experimental" status="unofficial">
+		<name>llvm-kit</name>
+		<description lang="en">llvm funtoo kit</description>
+		<homepage>https://code.funtoo.org/bitbucket/scm/auto/llvm-kit</homepage>
+		<owner type="project">
+			<name>funtoo</name>
+		</owner>
+		<source type="git" branch="1.4-release">https://code.funtoo.org/bitbucket/scm/auto/llvm-kit.git</source>
 	</repo>
 	<repo priority="50" quality="experimental" status="unofficial">
 		<name>loongson</name>
@@ -691,6 +825,15 @@
 		</owner>
 		<source type="git">https://bitbucket.org/prototype99/gentoo-masterlay.git</source>
 	</repo>
+	<repo priority="50" quality="experimental" status="unofficial">
+		<name>media-kit</name>
+		<description lang="en">media funtoo kit</description>
+		<homepage>https://code.funtoo.org/bitbucket/scm/auto/media-kit</homepage>
+		<owner type="project">
+			<name>funtoo</name>
+		</owner>
+		<source type="git" branch="1.4-release">https://code.funtoo.org/bitbucket/scm/auto/media-kit.git</source>
+	</repo>
 	<repo quality="experimental" status="official">
 		<name>mgorny</name>
 		<description>Michał Górny developer overlay</description>
@@ -725,6 +868,15 @@
 		<source type="git">git://github.com/miniBill/overlay.git</source>
 		<source type="git">https://github.com/miniBill/overlay.git</source>
 			<feed>http://github.com/feeds/miniBill/commits/overlay/master</feed>
+	</repo>
+	<repo priority="50" quality="experimental" status="unofficial">
+		<name>ml-lang-kit</name>
+		<description lang="en">ml-lang funtoo kit</description>
+		<homepage>https://github.com/funtoo/ml-lang-kit</homepage>
+		<owner type="project">
+			<name>funtoo</name>
+		</owner>
+		<source type="git" branch="1.4-release">https://github.com/funtoo/ml-lang-kit.git</source>
 	</repo>
 	<repo priority="50" quality="experimental" status="unofficial">
 		<name>musl-extras</name>
@@ -805,6 +957,24 @@
 		<source type="git">git@github.com:necrose99/necromancy-overlay.git</source>
 		<feed>https://github.com/necrose99/necromancy-overlay/commits/master.atom</feed>
 	</repo>
+	<repo priority="50" quality="experimental" status="unofficial">
+		<name>net-kit</name>
+		<description lang="en">net funtoo kit</description>
+		<homepage>https://code.funtoo.org/bitbucket/scm/auto/net-kit</homepage>
+		<owner type="project">
+			<name>funtoo</name>
+		</owner>
+		<source type="git" branch="1.4-release">https://code.funtoo.org/bitbucket/scm/auto/net-kit.git</source>
+	</repo>
+	<repo priority="50" quality="experimental" status="unofficial">
+		<name>nokit</name>
+		<description lang="en">no funtoo kit</description>
+		<homepage>https://code.funtoo.org/bitbucket/scm/auto/nokit</homepage>
+		<owner type="project">
+			<name>funtoo</name>
+		</owner>
+		<source type="git" branch="1.4-release">https://code.funtoo.org/bitbucket/scm/auto/nokit.git</source>
+	</repo>
 	<repo quality="experimental" status="unofficial">
 		<name>nuteater</name>
 		<description>Nuteater's overlay</description>
@@ -852,6 +1022,15 @@
 		<source type="git">git+ssh://git@github.com/orsonteodoro/oiledmachine-overlay.git</source>
 		<feed>https://github.com/orsonteodoro/oiledmachine-overlay/commits/master.atom</feed>
 	</repo>
+	<repo priority="50" quality="experimental" status="unofficial">
+		<name>perl-kit</name>
+		<description lang="en">perl funtoo kit</description>
+		<homepage>https://code.funtoo.org/bitbucket/scm/auto/perl-kit</homepage>
+		<owner type="project">
+			<name>funtoo</name>
+		</owner>
+		<source type="git" branch="5.32-release">https://code.funtoo.org/bitbucket/scm/auto/perl-kit.git</source>
+	</repo>
 	<repo quality="experimental" status="unofficial">
 		<name>pgxn_overlay</name>
 		<description>Collection of ebuilds for PostgreSQL extensions</description>
@@ -859,6 +1038,15 @@
 			<email>ronan@dunklau.fr</email>
 		</owner>
 		<source type="git">git://github.com/prototype99/pgxn_overlay.git</source>
+	</repo>
+	<repo priority="50" quality="experimental" status="unofficial">
+		<name>php-kit</name>
+		<description lang="en">php funtoo kit</description>
+		<homepage>https://code.funtoo.org/bitbucket/scm/auto/php-kit</homepage>
+		<owner type="project">
+			<name>funtoo</name>
+		</owner>
+		<source type="git">https://code.funtoo.org/bitbucket/scm/auto/php-kit.git</source>
 	</repo>
 	<repo quality="experimental" status="unofficial">
 		<name>portage-backup</name>
@@ -905,6 +1093,15 @@
 		<source type="git">git://anongit.gentoo.org/dev/prometheanfire.git</source>
 		<source type="git">git+ssh://git@git.gentoo.org/dev/prometheanfire.git</source>
 		<feed>https://cgit.gentoo.org/dev/prometheanfire.git/atom/</feed>
+	</repo>
+	<repo priority="50" quality="experimental" status="unofficial">
+		<name>python-modules-kit</name>
+		<description lang="en">python-modules funtoo kit</description>
+		<homepage>https://code.funtoo.org/bitbucket/scm/auto/python-modules-kit</homepage>
+		<owner type="project">
+			<name>funtoo</name>
+		</owner>
+		<source type="git" branch="1.4-release">https://code.funtoo.org/bitbucket/scm/auto/python-modules-kit.git</source>
 	</repo>
 	<repo quality="experimental" status="unofficial">
 		<name>qmule</name>
@@ -970,6 +1167,15 @@
 		</owner>
 		<source type="git">https://github.com/focs/Gentoo-ROS-Overlay.git</source>
 	</repo>
+	<repo priority="50" quality="experimental" status="unofficial">
+		<name>ruby-kit</name>
+		<description lang="en">ruby funtoo kit</description>
+		<homepage>https://code.funtoo.org/bitbucket/scm/auto/ruby-kit</homepage>
+		<owner type="project">
+			<name>funtoo</name>
+		</owner>
+		<source type="git" branch="2.7-prime">https://code.funtoo.org/bitbucket/scm/auto/ruby-kit.git</source>
+	</repo>
 	<repo quality="experimental" status="unofficial">
 		<name>rust-dev</name>
 		<description>new rust packaging for gentoo</description>
@@ -1029,6 +1235,24 @@
 		<source type="git">git@github.com:gentoo-science/sci.git</source>
 		<feed>https://cgit.gentoo.org/proj/sci.git/atom/</feed>
 		<feed>https://github.com/gentoo-science/sci/commits/master.atom</feed>
+	</repo>
+	<repo priority="50" quality="experimental" status="unofficial">
+		<name>science-kit</name>
+		<description lang="en">science funtoo kit</description>
+		<homepage>https://code.funtoo.org/bitbucket/scm/auto/science-kit</homepage>
+		<owner type="project">
+			<name>funtoo</name>
+		</owner>
+		<source type="git" branch="1.4-release">https://code.funtoo.org/bitbucket/scm/auto/science-kit.git</source>
+	</repo>
+	<repo priority="50" quality="experimental" status="unofficial">
+		<name>security-kit</name>
+		<description lang="en">security funtoo kit</description>
+		<homepage>https://code.funtoo.org/bitbucket/scm/auto/security-kit</homepage>
+		<owner type="project">
+			<name>funtoo</name>
+		</owner>
+		<source type="git" branch="1.4-release">https://code.funtoo.org/bitbucket/scm/auto/security-kit.git</source>
 	</repo>
 	<repo quality="experimental" status="unofficial">
 		<name>sekyfsr</name>
@@ -1101,6 +1325,15 @@
 		</owner>
 		<source type="git">git://github.com/prototype99/tafsm.git</source>
 		<feed>https://github.com/feeds/prototype99/commits/tafsm/master</feed>
+	</repo>
+	<repo priority="50" quality="experimental" status="unofficial">
+		<name>text-kit</name>
+		<description lang="en">text funtoo kit</description>
+		<homepage>https://code.funtoo.org/bitbucket/scm/auto/text-kit</homepage>
+		<owner type="project">
+			<name>funtoo</name>
+		</owner>
+		<source type="git" branch="1.4-release">https://code.funtoo.org/bitbucket/scm/auto/text-kit.git</source>
 	</repo>
 	<repo quality="experimental" status="unofficial">
 		<name>undesktop</name>
