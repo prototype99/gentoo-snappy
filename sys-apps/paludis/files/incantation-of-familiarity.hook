@@ -3,6 +3,11 @@
 hook_run_sync_post() {
 	#source ${PALUDIS_ECHO_FUNCTIONS_DIR:-${PALUDIS_EBUILD_DIR}}/echo_functions.bash
 
+	#see https://github.com/aegypius/overlay/pull/75
+	if [[ $TARGET == 'x-aegypius' || $TARGET == 'aegypius' ]]; then
+		rm -R /var/db/repos/aegypius/metadata/news/2015-05-28-getting-ready-for-atom-1.0-release
+		rm -R /var/db/repos/aegypius/metadata/news/2017-10-03-introducing-atom-bin-slots
+	fi
 	if [[ $TARGET == 'x-chromiumos' || $TARGET == 'chromiumos' ]]; then
 		patch /var/db/repos/chromiumos/metadata/layout.conf /etc/paludis/patches/the-root-of-all-gentoo.patch
 		echo "chromiumos" > /var/db/repos/chromiumos/profiles/repo_name
@@ -71,29 +76,55 @@ hook_run_sync_post() {
 	if [[ $TARGET == 'x-eclass-overlay' || $TARGET == 'eclass-overlay' ]]; then
 		echo "eclass-overlay" > /var/db/repos/eclass-overlay/profiles/repo_name
 	fi
+	if [[ $TARGET == 'x-fem-overlay' || $TARGET == 'fem-overlay' ]]; then
+		#bad versioning
+		rm /var/db/repos/fem-overlay/app-pda/libplist/libplist-9999.ebuild
+		rm /var/db/repos/fem-overlay/app-pda/libusbmuxd/libusbmuxd-9999.ebuild
+	fi
+	if [[ $TARGET == 'x-gentoo' || $TARGET == 'gentoo' ]]; then
+		#old
+		rm /var/db/repos/gentoo/dev-lang/vala/vala-0.36.20.ebuild
+		rm /var/db/repos/gentoo/dev-lang/vala/vala-0.40.20.ebuild
+		rm /var/db/repos/gentoo/dev-lang/vala/vala-0.40.23.ebuild
+		rm /var/db/repos/gentoo/dev-lang/vala/vala-0.40.24.ebuild
+	fi
+	if [[ $TARGET == 'x-gnome' || $TARGET == 'gnome' ]]; then
+		#bad versioning
+		rm /var/db/repos/gnome/dev-libs/glib/glib-9999.ebuild
+		rm /var/db/repos/gnome/dev-libs/gobject-introspection-common/gobject-introspection-common-9999.ebuild
+	fi
 	if [[ $TARGET == 'x-go-overlay' || $TARGET == 'go-overlay' ]]; then
 		rm /var/db/repos/go-overlay/profiles/package.mask
 	fi
 	#if [[ $TARGET == 'x-kressh' || $TARGET == 'kressh' ]]; then
 	#	patch /var/db/repos/kressh/profiles/repo_name /etc/paludis/patches/kressh.patch
 	#fi
-	#paludis didn't like this news...
-	#see https://github.com/aegypius/overlay/pull/75
-	if [[ $TARGET == 'x-aegypius' || $TARGET == 'aegypius' ]]; then
-		rm -R /var/db/repos/aegypius/metadata/news/2015-05-28-getting-ready-for-atom-1.0-release
-		rm -R /var/db/repos/aegypius/metadata/news/2017-10-03-introducing-atom-bin-slots
-	fi
 	if [[ $TARGET == 'x-kdecherf' || $TARGET == 'kdecherf' ]]; then
 		rm -R /var/db/repos/kdecherf/metadata/news/2017-10-21-neomutt-update
 	fi
 	if [[ $TARGET == 'x-lto-overlay' || $TARGET == 'lto-overlay' ]]; then
 		rm /var/db/repos/lto-overlay/sys-config/ltoize/files/patches/app-arch/zstd/zstd-1.4.5-multi-thread-default.patch
 	fi
+	if [[ $TARGET == 'x-mva' || $TARGET == 'mva' ]]; then
+		#bad versioning
+		rm /var/db/repos/mva/dev-libs/libgpg-error/libgpg-error-9999.ebuild
+	fi
+	if [[ $TARGET == 'x-mysql' || $TARGET == 'mysql' ]]; then
+		#bad versioning
+		rm /var/db/repos/mysql/dev-db/mariadb/mariadb-9999.ebuild
+	fi
+	if [[ $TARGET == 'x-pg_overlay' || $TARGET == 'pg_overlay' ]]; then
+		#bad versioning
+		rm /var/db/repos/pg_overlay/dev-libs/zziplib/zziplib-9999.ebuild
+	fi
+	if [[ $TARGET == 'x-progress' || $TARGET == 'progress' ]]; then
+		#bad versioning
+		rm /var/db/repos/progress/dev-python/pillow/pillow-1000.ebuild
+	fi
 	if [[ $TARGET == 'x-somasis' || $TARGET == 'somasis' ]]; then
 		rm -R /var/db/repos/somasis/metadata/news/2015-04-21-syncthing-protocol-breaking
 		rm -R /var/db/repos/somasis/metadata/news/2015-09-16-connman-gtk-renamed
 	fi
-	#remove packages we don't want
 	if [[ $TARGET == 'x-srcshelton' || $TARGET == 'srcshelton' ]]; then
 		#dated design
 		rm /var/db/repos/srcshelton/dev-libs/libxslt/libxslt-1.1.28-r2.ebuild
