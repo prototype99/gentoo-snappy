@@ -50,6 +50,7 @@
 =sys-power/upower-0.99.11.20190507
 =sys-power/upower-0.99.11.20190509
 =sys-power/upower-0.99.11.20190604
+=x11-base/xorg-server-9999
 =virtual/rust-1.43.1-r666
 =x11-libs/libfontenc-9999
 =x11-libs/gtk+-2.24.32-r666
