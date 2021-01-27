@@ -9,8 +9,14 @@ hook_run_sync_post() {
 		rm -R /var/db/repos/aegypius/metadata/news/2017-10-03-introducing-atom-bin-slots
 	fi
 	if [[ $TARGET == 'x-chromiumos' || $TARGET == 'chromiumos' ]]; then
+		#bad versioning
+		rm /var/db/repos/chromiumos/media-libs/mesa/mesa-9999.ebuild
 		patch /var/db/repos/chromiumos/metadata/layout.conf /etc/paludis/patches/the-root-of-all-gentoo.patch
 		echo "chromiumos" > /var/db/repos/chromiumos/profiles/repo_name
+	fi
+	if [[ $TARGET == 'x-core-kit' || $TARGET == 'core-kit' ]]; then
+		#remove broken update
+		rm /var/db/repos/core-kit/profiles/updates/3Q-2019
 	fi
 	if [[ $TARGET == 'x-dantrell-gnome' || $TARGET == 'dantrell-gnome' ]]; then
 		#remove aggressively anti gentoo config
@@ -87,6 +93,8 @@ hook_run_sync_post() {
 		rm /var/db/repos/gentoo/dev-lang/vala/vala-0.40.20.ebuild
 		rm /var/db/repos/gentoo/dev-lang/vala/vala-0.40.23.ebuild
 		rm /var/db/repos/gentoo/dev-lang/vala/vala-0.40.24.ebuild
+		#too old
+		rm /var/db/repos/gentoo/dev-lang/perl/perl-5.32.0-r1.ebuild
 	fi
 	if [[ $TARGET == 'x-gnome' || $TARGET == 'gnome' ]]; then
 		#bad versioning
