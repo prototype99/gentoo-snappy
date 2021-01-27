@@ -113,6 +113,10 @@ hook_run_sync_post() {
 		#bad versioning
 		rm /var/db/repos/mysql/dev-db/mariadb/mariadb-9999.ebuild
 	fi
+	if [[ $TARGET == 'x-perl-kit' || $TARGET == 'perl-kit' ]]; then
+		#too new
+		rm /var/db/repos/perl-kit/virtual/perl-JSON-PP/perl-JSON-PP-4.40.0.ebuild
+	fi
 	if [[ $TARGET == 'x-pg_overlay' || $TARGET == 'pg_overlay' ]]; then
 		#bad versioning
 		rm /var/db/repos/pg_overlay/dev-libs/zziplib/zziplib-9999.ebuild
