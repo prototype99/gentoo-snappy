@@ -11,6 +11,9 @@ hook_run_sync_post() {
 	if [[ $TARGET == 'x-chromiumos' || $TARGET == 'chromiumos' ]]; then
 		#bad versioning
 		rm /var/db/repos/chromiumos/media-libs/mesa/mesa-9999.ebuild
+		#no split build
+		rm /var/db/repos/chromiumos/sys-devel/llvm/llvm-12.0_pre408248_p20201125.ebuild
+		rm /var/db/repos/chromiumos/sys-devel/llvm/llvm-12.0_pre408248_p20201125-r4.ebuild
 		patch /var/db/repos/chromiumos/metadata/layout.conf /etc/paludis/patches/the-root-of-all-gentoo.patch
 		echo "chromiumos" > /var/db/repos/chromiumos/profiles/repo_name
 	fi
@@ -89,12 +92,13 @@ hook_run_sync_post() {
 	fi
 	if [[ $TARGET == 'x-gentoo' || $TARGET == 'gentoo' ]]; then
 		#old
+		rm /var/db/repos/gentoo/dev-lang/perl/perl-5.32.0-r1.ebuild
 		rm /var/db/repos/gentoo/dev-lang/vala/vala-0.36.20.ebuild
 		rm /var/db/repos/gentoo/dev-lang/vala/vala-0.40.20.ebuild
 		rm /var/db/repos/gentoo/dev-lang/vala/vala-0.40.23.ebuild
 		rm /var/db/repos/gentoo/dev-lang/vala/vala-0.40.24.ebuild
-		#too old
-		rm /var/db/repos/gentoo/dev-lang/perl/perl-5.32.0-r1.ebuild
+		#too new
+		rm /var/db/repos/gentoo/dev-util/idea-community/idea-community-2021.3.1.203.6682.168.ebuild
 	fi
 	if [[ $TARGET == 'x-gnome' || $TARGET == 'gnome' ]]; then
 		#bad versioning
