@@ -11,6 +11,6 @@ IUSE="+llvm nongnu"
 REQUIRED_USE="^^ ( llvm nongnu )"
 
 RDEPEND="
-	llvm? ( sys-libs/llvm-libunwind )
-	nongnu? ( sys-libs/libunwind )
+	llvm? ( >=sys-libs/llvm-libunwind-11.0.0_rc3 )
+	nongnu? ( >=sys-libs/libunwind-1.2_rc1 )
 	"
