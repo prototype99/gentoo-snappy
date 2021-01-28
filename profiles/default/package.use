@@ -37,7 +37,7 @@ media-sound/pulseaudio jack
 media-video/ffmpeg -bzip2 -iconv -network -openssl -postproc
 media-video/obs-studio v4l
 net-fs/samba -nls
-net-irc/kvirc -python_single_target_python2_7
+net-irc/kvirc -python_single_target_python2_7 -python -perl -phonon
 net-misc/megasync qt5
 net-misc/networkmanager -vanilla
 sci-libs/hdf5 -cxx -threads
