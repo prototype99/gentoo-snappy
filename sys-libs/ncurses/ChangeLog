@@ -1,0 +1,3 @@
+*ncurses-6.2_p20201205
+::gentoo		base ebuild
+::prototype99	switch source url to our own with integrated patches, remove use of variables that confuse me because they seem pointless, better use variables
