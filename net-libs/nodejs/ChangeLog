@@ -1,4 +1,6 @@
 *nodejs-15.4.0
+::gentoo		update copyright
+*nodejs-15.4.0
 ::gentoo		remove pointless whitespace, adopt slotting, add system use flags, update dependencies
 *nodejs-14.4.0
 ::gentoo		icu use flag is now default, add pax_kernel use flag, update deps, remove old patch
