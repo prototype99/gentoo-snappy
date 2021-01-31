@@ -449,8 +449,6 @@
 =sys-power/upower-0.99.12.20190903::dantrell-gnome					#bad keywording, unnecessary quotes, eapi 6, unexplained use flags
 =sys-power/upower-0.99.12.20190903-r1::dantrell-gnome				#bad keywording, unnecessary quotes, eapi 6, unexplained use flags
 =sys-power/upower-0.99.12.20191024::dantrell-gnome					#bad keywording, unnecessary quotes, eapi 6, unexplained use flags
-=sys-process/procps-3.3.15-r1::poly-c								#behind on patches?
-=sys-process/procps-3.3.16-r2::poly-c								#behind on patches?
 =virtual/cblas-3.8::gentoo											#supports less options
 =virtual/jdk-1.8.0-r314::redcore									#less java compatibility
 =virtual/jre-1.8.0-r314::redcore									#weird enforced openjdk dependency

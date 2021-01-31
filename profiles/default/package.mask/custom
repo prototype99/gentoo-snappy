@@ -1,56 +1,4 @@
-#bad versioning
-=app-arch/tar-9999
-=app-crypt/pinentry-1.1.0.20180107-r1
-=app-office/lyx-2.3.99
-=dev-lang/python-exec-9999
-=dev-libs/fribidi-1.0.10_pre
-=dev-qt/qtcore-5.9999
-=dev-qt/qtdbus-5.9999
-=dev-qt/qtdeclarative-5.9999
-=dev-qt/qtgui-5.9999
-=dev-qt/qtnetwork-5.9999
-=dev-qt/qttest-5.9999
-=dev-qt/qtwidgets-5.9999
-=media-fonts/croscorefonts-20181024-r1
-=media-fonts/croscorefonts-20190524
-=media-fonts/dejavu-9.9.9-r120809
-=media-fonts/urw-fonts-9.9.9-r120809
-=media-libs/babl-9999
-=media-libs/x264-9999
-=media-sound/pulseaudio-9999
-=media-video/vlc-3.0.9999
-=media-video/vlc-9999
-=net-misc/megasync-4.3.1.0
-=net-misc/rsync-9999
-=sys-apps/findutils-9999
-=sys-apps/gawk-9999
-=sys-apps/grep-9999
-=sys-apps/which-9999
-=sys-devel/libtool-2.4.6-r314
-=sys-devel/make-9999
-=sys-fs/udev-9999
-=sys-fs/xfsdump-9999
-=sys-libs/timezone-data-9999
-=sys-power/upower-0.99.11.20190405
-=sys-power/upower-0.99.11.20190507
-=sys-power/upower-0.99.11.20190509
-=sys-power/upower-0.99.11.20190604
-=x11-base/xorg-server-9999
-=virtual/rust-1.43.1-r666
-=x11-libs/libfontenc-9999
-=x11-libs/gtk+-2.24.32-r666
-=x11-libs/gtk+-2.24.32-r1337
-#bad versioning, less package support
-=virtual/rust-1337
-=virtual/cargo-1337-r1
-#dummy ebuild
-=virtual/notification-daemon-1337
-=virtual/notification-daemon-9999
-#not needed at all
->=x11-terms/xterm-0
 #old
-<app-accessibility/at-spi2-atk-2.34.2
-<app-crypt/gnupg-2.2.17
 <app-eselect/eselect-pinentry-0.7
 <app-misc/ca-certificates-20200601.3.53
 <=app-text/asciidoc-8.6.10_p20181016-r1
@@ -60,7 +8,6 @@
 <dev-lang/rust-bin-1.37.0
 <dev-lang/spidermonkey-60.5.2_p0-r2
 <dev-libs/appstream-glib-0.7.15
-#(preferably get rid of somehow)
 <dev-libs/atk-2.35.1
 <dev-libs/libical-3.0.8
 <dev-libs/libassuan-2.5.1
