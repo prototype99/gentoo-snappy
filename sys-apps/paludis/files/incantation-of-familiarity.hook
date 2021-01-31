@@ -172,6 +172,10 @@ hook_run_sync_post() {
 	if [[ $TARGET == 'x-kdecherf' || $TARGET == 'kdecherf' ]]; then
 		rm -r /var/db/repos/kdecherf/metadata/news/2017-10-21-neomutt-update
 	fi
+	if [[ $TARGET == 'x-libressl' || $TARGET == 'libressl' ]]; then
+		#identical
+		rm /var/db/repos/libressl/app-arch/libarchive/libarchive-3.5.1.ebuild
+	fi
 	if [[ $TARGET == 'x-lto-overlay' || $TARGET == 'lto-overlay' ]]; then
 		rm /var/db/repos/lto-overlay/sys-config/ltoize/files/patches/app-arch/zstd/zstd-1.4.5-multi-thread-default.patch
 	fi
