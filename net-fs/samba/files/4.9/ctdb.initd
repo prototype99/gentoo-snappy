@@ -1,0 +1,48 @@
+#!/sbin/openrc-run
+
+# taken & reworked from old ctdb packages
+
+extra_started_commands="reload"
+
+depend() {
+	need localmount
+	need net
+	before samba
+	after bootmisc
+}
+
+start() {
+	local i v
+	ebegin "Starting ctdb"
+	checkpath -d /var/run/ctdb
+
+	start-stop-daemon --start --background --exec /usr/sbin/ctdbd -- $CTDB_OPTIONS
+
+	# error codes too random, just OK
+	eend 0
+}
+
+stop() {
+	ebegin "Stopping ctdb"
+	ctdb stop && ctdb shutdown && for i in 1 1 1 1 5; do
+		ctdb status >/dev/null 2>&1 || break
+		echo -n .
+		sleep $i
+	done
+	start-stop-daemon --stop --exec /usr/sbin/ctdbd
+	eend 0
+}
+
+reload(){
+	for i in reloadnodes reloadips sync; do
+		ebegin "ctdb $i"
+		local e=1
+		# on recovery not accessible. workaround
+		for t in 1 2 3 4 5; do
+			ctdb $i && e=0 break
+			e=$?
+			sleep 1
+		done
+		eend $e
+	done
+}

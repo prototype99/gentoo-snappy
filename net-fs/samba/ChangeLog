@@ -1,0 +1,15 @@
+*4.9.0
+
+	8.1.2020	::gentoo
+		-add missing keywords
+		-upgrade homepage to https
+		-stop depending on deprecated pam virtual
+		-add metadata file
+		-add missing dependency information
+		-add system heimdal/mit-krb5 flags
+		-remove some empty lines
+		-add some gentoo ebuild features
+	7.1.2020	::prototype99
+		-remove broken nls use flag
+		-add missing dependency
+	??????????	::raw			base ebuild
