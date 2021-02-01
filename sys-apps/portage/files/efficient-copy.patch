@@ -1,0 +1,66 @@
+From f7e3e3753ab3a808865c2e351898b3054fd638ec Mon Sep 17 00:00:00 2001
+From: James Le Cuirot <chewi@gentoo.org>
+Date: Sat, 19 Sep 2020 22:48:50 +0100
+Subject: [PATCH] mergeme: Don't overwrite unmodified files that have a
+ matching md5sum
+
+If a file has not not been modified (according to its mtime) and the
+installed instance's md5sum matches the new md5sum then there is
+little point in overwriting these files. Not doing so results in much
+less disk churn, especially when PORTAGE_TMPDIR is on a different
+filesystem. Think of the SSDs!
+---
+ lib/portage/dbapi/vartree.py | 37 ++++++++++++++++++++++--------------
+ 1 file changed, 23 insertions(+), 14 deletions(-)
+
+diff --git a/lib/portage/dbapi/vartree.py b/lib/portage/dbapi/vartree.py
+index 1547d2f6d0..d36ff093bb 100644
+--- a/lib/portage/dbapi/vartree.py
++++ b/lib/portage/dbapi/vartree.py
+@@ -5175,23 +5175,32 @@ def mergeme(self, srcroot, destroot, outfile, secondhand, stufftomerge, cfgfiled
+ 				# whether config protection or not, we merge the new file the
+ 				# same way.  Unless moveme=0 (blocking directory)
+ 				if moveme:
+-					# Create hardlinks only for source files that already exist
+-					# as hardlinks (having identical st_dev and st_ino).
+-					hardlink_key = (mystat.st_dev, mystat.st_ino)
++					mymtime = None
+ 
+-					hardlink_candidates = self._hardlink_merge_map.get(hardlink_key)
+-					if hardlink_candidates is None:
+-						hardlink_candidates = []
+-						self._hardlink_merge_map[hardlink_key] = hardlink_candidates
++					if mydstat and self._installed_instance:
++						exobj = self._installed_instance.getcontents()[myrealdest]
++						if exobj == ("obj", str(mydstat.st_mtime_ns // 1000000000), mymd5):
++							mymtime = mydstat.st_mtime_ns
++							zing = "==="
+ 
+-					mymtime = movefile(mysrc, mydest, newmtime=thismtime,
+-						sstat=mystat, mysettings=self.settings,
+-						hardlink_candidates=hardlink_candidates,
+-						encoding=_encodings['merge'])
+ 					if mymtime is None:
+-						return 1
+-					hardlink_candidates.append(mydest)
+-					zing = ">>>"
++						# Create hardlinks only for source files that already exist
++						# as hardlinks (having identical st_dev and st_ino).
++						hardlink_key = (mystat.st_dev, mystat.st_ino)
++
++						hardlink_candidates = self._hardlink_merge_map.get(hardlink_key)
++						if hardlink_candidates is None:
++							hardlink_candidates = []
++							self._hardlink_merge_map[hardlink_key] = hardlink_candidates
++
++						mymtime = movefile(mysrc, mydest, newmtime=thismtime,
++							sstat=mystat, mysettings=self.settings,
++							hardlink_candidates=hardlink_candidates,
++							encoding=_encodings['merge'])
++						if mymtime is None:
++							return 1
++						hardlink_candidates.append(mydest)
++						zing = ">>>"
+ 
+ 					try:
+ 						self._merged_path(mydest, os.lstat(mydest))
