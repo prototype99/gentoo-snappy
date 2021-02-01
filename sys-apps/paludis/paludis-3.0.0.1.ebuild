@@ -3,17 +3,16 @@
 
 EAPI=6
 
-EGIT_REPO_URI="https://github.com/MageSlayer/paludis-gentoo-patches.git"
-PYTHON_COMPAT=( python2_7 )
+PYTHON_COMPAT=( python{2_7,3_{7,8}} )
 RUBY_VER=2.4
 
-inherit bash-completion-r1 cmake-utils git-r3 python-single-r1 user
+inherit bash-completion-r1 cmake-utils python-single-r1 user
 
-DESCRIPTION="paludis, the other package mangler"
+DESCRIPTION="${PN}, the other package mangler"
 HOMEPAGE="http://paludis.exherbo.org/"
-SRC_URI=""
+SRC_URI="https://github.com/prototype99/${PN}/archive/v${PV}.tar.gz"
 
-IUSE="doc pbins pink python ruby ruby_targets_ruby${RUBY_VER/./} search-index test +xml +eapi7"
+IUSE="doc pbins pink python ruby ruby_targets_ruby${RUBY_VER/./} search-index test +xml"
 LICENSE="GPL-2 vim"
 SLOT="0"
 KEYWORDS="amd64"
@@ -26,7 +25,7 @@ COMMON_DEPEND="
 	pbins? ( >=app-arch/libarchive-3.1.2:= )
 	python? (
 		${PYTHON_DEPS}
-		>=dev-libs/boost-1.41.0:=[python] )
+		>=dev-libs/boost-1.67.0:=[python] )
 	ruby? ( dev-lang/ruby:${RUBY_VER} )
 	search-index? ( >=dev-db/sqlite-3:= )
 	xml? ( >=dev-libs/libxml2-2.6:= )"
@@ -55,33 +54,22 @@ RESTRICT="!test? ( test )"
 
 pkg_pretend() {
 	if [[ ${MERGE_TYPE} != buildonly ]]; then
-		if id paludisbuild >/dev/null 2>/dev/null ; then
-			if ! groups paludisbuild | grep --quiet '\<tty\>' ; then
-				eerror "The 'paludisbuild' user is now expected to be a member of the"
+		if id ${PN}build >/dev/null 2>/dev/null ; then
+			if ! groups ${PN}build | grep --quiet '\<tty\>' ; then
+				eerror "The '${PN}build' user is now expected to be a member of the"
 				eerror "'tty' group. You should add the user to this group before"
-				eerror "upgrading Paludis."
-				die "Please add paludisbuild to tty group"
+				eerror "upgrading ${PN}."
+				die "Please add ${PN}build to tty group"
 			fi
 		fi
 	fi
 }
 
 pkg_setup() {
-	enewgroup "paludisbuild"
-	enewuser "paludisbuild" -1 -1 "/var/tmp/paludis" "paludisbuild,tty"
+	enewgroup "${PN}build"
+	enewuser "${PN}build" -1 -1 "/var/tmp/${PN}" "${PN}build,tty"
 
 	use python && python-single-r1_pkg_setup
-}
-
-src_unpack() {
-        if use eapi7; then
-		# want experimental EAPI7 support?
-		EGIT_BRANCH="eapi7"
-        else
-		EGIT_BRANCH="master"
-        fi
-        git-r3_fetch
-        git-r3_checkout
 }
 
 src_prepare() {
