@@ -1,5 +1,6 @@
-*dev-util/idea-community-2020.1.0.201.6668.121
-	::gentoo
-	-base ebuild
-	::tmacedo
-	-more specific lldb dependency
+*idea-community-2020.3.0.203.5981.155
+::gentoo		update licencing, update keyword, update dependency, remove more things, better patch files
+::prototype99	separate jbr from the ebuild, remove EAP code as this clearly is not an EAP build, get rid of some variables
+*idea-community-2020.1.0.201.6668.121
+::gentoo		base ebuild
+::tmacedo		more specific lldb dependency
