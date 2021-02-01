@@ -1,13 +1,10 @@
+*numpy-1.21.0.1
+::gentoo		improve python use flags, remove extra white-space, update dependencies
+::prototype99	integrate gentoo patch into a new custom version
 *numpy-1.16.5-r2
-::prototype99
--improve python use flags
-
+::prototype99	improve python use flags
 *numpy-1.14.5-r1
-::prototype99
--improve python use flags
-
+::prototype99	improve python use flags
 *???
-::gentoo
--base ebuild
-::prototype99
--extra python compatibility
+::gentoo		base ebuild
+::prototype99	extra python compatibility
