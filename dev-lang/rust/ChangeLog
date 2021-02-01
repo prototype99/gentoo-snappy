@@ -1,3 +1,15 @@
+*rust-1.49.0
+::gentoo		base ebuild
+::pg_overlay
+-remove whitespace
+-only apply libressl patch for libressl
+-better support for parallelism
+-use lld
+-use lto
+-remove pointless comment
+-put more debug info behind debug flag
+::prototype99	remove beta code, try putting more stuff behind debug flag, add an lto use flag
 *rust-1.34.2-r1
-::prototype99
--improve python use flags
+::prototype99	improve python use flags
+*rust-1.34.2
+mix of ::gentoo and ::pg_overlay
