@@ -1,0 +1,4 @@
+*pinentry-1.1.1_pre20190210
+::gentoo		base ebuild
+::os-xtoo		add efl&static use flags, add required use
+::prototype99	update source url
