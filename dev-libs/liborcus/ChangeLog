@@ -1,0 +1,3 @@
+*liborcus-0.16.1
+::muslx32		add static-libs use flag, add multilib compatibility, streamline configure
+::prototype99	improve python use, remove 9999 specific code, improve patch logic
