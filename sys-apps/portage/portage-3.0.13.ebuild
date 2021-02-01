@@ -4,7 +4,7 @@
 EAPI=7
 
 DISTUTILS_USE_SETUPTOOLS=no
-PYTHON_COMPAT=( pypy3 python3_{6..9} )
+PYTHON_COMPAT=( pypy{,3} python3_{6..9} )
 PYTHON_REQ_USE='bzip2(+),threads(+)'
 
 inherit distutils-r1 linux-info tmpfiles prefix
@@ -104,6 +104,8 @@ pkg_pretend() {
 
 python_prepare_all() {
 	distutils-r1_python_prepare_all
+
+	eapply "${FILESDIR}/efficient-copy.patch"
 
 	use changelog && eapply "${FILESDIR}/3.0.5changelog.patch"
 
