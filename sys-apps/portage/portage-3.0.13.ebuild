@@ -105,6 +105,13 @@ pkg_pretend() {
 python_prepare_all() {
 	distutils-r1_python_prepare_all
 
+	if [[ "${CHOST}" =~ "muslx32" ]] ; then
+		eapply "${FILESDIR}"/0000-portage-2.2.28-musl.patch
+		eapply "${FILESDIR}"/0001-portage-2.2.28-musl.patch
+		eapply "${FILESDIR}"/0002-portage-2.2.28-musl.patch
+		eapply "${FILESDIR}"/0003-portage-2.2.28-musl.patch
+	fi
+
 	eapply "${FILESDIR}/efficient-copy.patch"
 
 	use changelog && eapply "${FILESDIR}/3.0.5changelog.patch"
