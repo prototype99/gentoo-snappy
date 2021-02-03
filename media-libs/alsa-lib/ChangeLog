@@ -1,0 +1,3 @@
+*alsa-lib-1.2.4
+::gentoo	base ebuild
+::muslx32	more compact ebuild, add muslx32 patch
