@@ -1,0 +1,27 @@
+From 0f5b100636b5b663817b0967e0a3f4c3d3ef22a2 Mon Sep 17 00:00:00 2001
+From: seirra <sophietheopossum@yandex.com>
+Date: Thu, 4 Feb 2021 21:31:29 +0000
+Subject: [PATCH] remove wayland
+
+---
+ CMakeLists.txt | 4 ----
+ 1 file changed, 4 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 5d84a19..50c175b 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -27,10 +27,6 @@ include(KDEClangFormat)
+ 
+ find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED Core DBus Gui Test X11Extras)
+ 
+-# Wayland backend
+-find_package(KF5Wayland ${KF5_MIN_VERSION} CONFIG REQUIRED)
+-add_feature_info("KF5Wayland" KF5Wayland_FOUND "Required for building libkscreen's KWayland backend")
+-
+ # xrandr backend
+ 
+ find_package(XCB COMPONENTS XCB RANDR)
+-- 
+2.29.2
+

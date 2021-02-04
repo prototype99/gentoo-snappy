@@ -1,0 +1,44 @@
+--- a/backends/kwayland/plugins/wrapland/wrapland_output.cpp	2020-10-20 13:29:26.954573424 +0200
++++ b/backends/kwayland/plugins/wrapland/wrapland_output.cpp	2020-10-20 13:39:42.757608919 +0200
+@@ -66,11 +66,11 @@
+     return m_device != nullptr;
+ }
+ 
+ QByteArray WraplandOutput::edid() const
+ {
+-    return m_device->edid();
++    return QByteArray();
+ }
+ 
+ QRectF WraplandOutput::geometry() const
+ {
+     return m_device->geometry();
+@@ -131,10 +126,8 @@
+         mode->setSize(wlMode.size);
+         mode->setName(name);
+ 
+-        if (wlMode.flags.testFlag(Wl::OutputDeviceV1::Mode::Flag::Current)) {
+-            currentModeId = modeId;
+-        }
+-        if (wlMode.flags.testFlag(Wl::OutputDeviceV1::Mode::Flag::Preferred)) {
++        currentModeId = m_device->currentMode().id;
++        if (wlMode.preferred) {
+             preferredModeIds << modeId;
+         }
+ 
+@@ -221,13 +214,13 @@
+ QString WraplandOutput::name() const
+ {
+     Q_ASSERT(m_device);
+-    return QStringLiteral("%1 %2").arg(m_device->manufacturer(), m_device->model());
++    return QStringLiteral("%1 %2").arg(m_device->make(), m_device->model());
+ }
+ 
+ QDebug operator<<(QDebug dbg, const WraplandOutput *output)
+ {
+     dbg << "WraplandOutput(Id:" << output->id() <<", Name:" << \
+-        QString(output->outputDevice()->manufacturer() + QLatin1Char(' ') + \
++        QString(output->outputDevice()->make() + QLatin1Char(' ') + \
+         output->outputDevice()->model())  << ")";
+     return dbg;
+ }
