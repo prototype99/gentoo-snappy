@@ -28,6 +28,9 @@ hook_run_sync_post() {
 		rm /var/db/repos/cg/media-libs/babl/babl-9999.ebuild
 	fi
 	if [[ $TARGET == 'x-chromiumos' || $TARGET == 'chromiumos' ]]; then
+		#bad keywording
+		rm /var/db/repos/chromiumos/dev-libs/double-conversion/double-conversion-3.1.5.ebuild
+		rm /var/db/repos/chromiumos/dev-libs/double-conversion/double-conversion-3.1.5-r1.ebuild
 		#bad versioning
 		rm /var/db/repos/chromiumos/media-libs/mesa/mesa-9999.ebuild
 		rm /var/db/repos/chromiumos/sys-devel/binutils/binutils-9999.ebuild
@@ -148,7 +151,11 @@ hook_run_sync_post() {
 		rm /var/db/repos/gentoo/dev-python/setuptools/setuptools-51.1.2.ebuild
 		rm /var/db/repos/gentoo/dev-python/setuptools/setuptools-51.3.1.ebuild
 		rm /var/db/repos/gentoo/dev-python/setuptools/setuptools-51.3.3.ebuild
+		rm /var/db/repos/gentoo/dev-util/cmake/cmake-3.18.5.ebuild
+		rm /var/db/repos/gentoo/dev-util/cmake/cmake-3.19.3.ebuild
+		rm /var/db/repos/gentoo/dev-util/cmake/cmake-3.19.4.ebuild
 		rm /var/db/repos/gentoo/dev-util/idea-community/idea-community-2021.3.1.203.6682.168.ebuild
+		rm /var/db/repos/gentoo/x11-libs/libdrm/libdrm-2.4.104.ebuild
 	fi
 	if [[ $TARGET == 'x-gentoo-playground' || $TARGET == 'gentoo-playground' ]]; then
 		#bad versioning
@@ -169,6 +176,11 @@ hook_run_sync_post() {
 	#if [[ $TARGET == 'x-kressh' || $TARGET == 'kressh' ]]; then
 	#	patch /var/db/repos/kressh/profiles/repo_name /etc/paludis/patches/kressh.patch
 	#fi
+	if [[ $TARGET == 'x-kde' || $TARGET == 'kde' ]]; then
+		#bad versioning
+		rm /var/db/repos/kde/kde-plasma/libkscreen/libkscreen-5.21.49.9999.ebuild
+		rm /var/db/repos/kde/kde-plasma/libkscreen/libkscreen-9999.ebuild
+	fi
 	if [[ $TARGET == 'x-kdecherf' || $TARGET == 'kdecherf' ]]; then
 		rm -r /var/db/repos/kdecherf/metadata/news/2017-10-21-neomutt-update
 	fi
@@ -176,8 +188,17 @@ hook_run_sync_post() {
 		#identical
 		rm /var/db/repos/libressl/app-arch/libarchive/libarchive-3.5.1.ebuild
 	fi
+	if [[ $TARGET == 'x-llvm-kit' || $TARGET == 'llvm-kit' ]]; then
+		#no build-man use flag
+		rm /var/db/repos/llvm-kit/sys-devel/llvm/llvm-10.0.1.ebuild
+	fi
 	if [[ $TARGET == 'x-lto-overlay' || $TARGET == 'lto-overlay' ]]; then
 		rm /var/db/repos/lto-overlay/sys-config/ltoize/files/patches/app-arch/zstd/zstd-1.4.5-multi-thread-default.patch
+	fi
+	if [[ $TARGET == 'x-media-kit' || $TARGET == 'media-kit' ]]; then
+		#identical to gentoo
+		rm /var/db/repos/media-kit/media-libs/libzmf/libzmf-0.0.2.ebuild
+		rm /var/db/repos/media-kit/media-libs/raptor/raptor-2.0.15-r2.ebuild
 	fi
 	if [[ $TARGET == 'x-muslx32' || $TARGET == 'muslx32' ]]; then
 		#bad versioning
@@ -252,6 +273,7 @@ hook_run_sync_post() {
 	fi
 	if [[ $TARGET == 'x-python-modules-kit' || $TARGET == 'python-modules-kit' ]]; then
 		#no use of mirrors
+		rm /var/db/repos/python-modules-kit/dev-python/mako/mako-1.1.4.ebuild
 		rm /var/db/repos/python-modules-kit/dev-python/markupsafe/markupsafe-1.1.1.ebuild
 		#too new
 		rm /var/db/repos/python-modules-kit/dev-python/setuptools/setuptools-52.0.0.ebuild

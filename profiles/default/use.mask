@@ -21,6 +21,7 @@ fftools_pktdumper
 fftools_qt-faststart
 fftools_sidxindex
 fftools_trasher
+fortran
 gdbm
 gnutls
 grub_platforms_pc
@@ -62,6 +63,7 @@ pwhich
 python
 python_single_target_python3_8
 python_targets_python3_8
+romio
 rsync-verify
 ruby_targets_ruby23
 sane_backends_abaton
