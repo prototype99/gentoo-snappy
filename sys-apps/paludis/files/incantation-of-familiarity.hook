@@ -105,6 +105,9 @@ hook_run_sync_post() {
 		patch /var/db/repos/dantrell-gnome38/profiles/repo_name /etc/paludis/patches/38.patch
 		rm /var/db/repos/dantrell-gnome38/profiles/package.mask
 	fi
+	if [[ $TARGET == 'x-kde-kit' || $TARGET == 'kde-kit' ]]; then
+		rm /var/db/repos/dev-kit/dev-util/idea-community/idea-community-2020.3.2.ebuild
+	fi
 	if [[ $TARGET == 'x-eclass-overlay' || $TARGET == 'eclass-overlay' ]]; then
 		echo "eclass-overlay" > /var/db/repos/eclass-overlay/profiles/repo_name
 	fi
@@ -196,6 +199,8 @@ hook_run_sync_post() {
 		rm /var/db/repos/lto-overlay/sys-config/ltoize/files/patches/app-arch/zstd/zstd-1.4.5-multi-thread-default.patch
 	fi
 	if [[ $TARGET == 'x-media-kit' || $TARGET == 'media-kit' ]]; then
+		#bad keywording
+		rm /var/db/repos/media-kit/media-libs/gd/gd-2.3.0.ebuild
 		#identical to gentoo
 		rm /var/db/repos/media-kit/media-libs/libzmf/libzmf-0.0.2.ebuild
 		rm /var/db/repos/media-kit/media-libs/raptor/raptor-2.0.15-r2.ebuild
