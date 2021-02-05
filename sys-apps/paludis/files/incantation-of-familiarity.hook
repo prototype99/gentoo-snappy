@@ -50,6 +50,7 @@ hook_run_sync_post() {
 		#old eapi
 		rm /var/db/repos/dantrell-gnome/sys-devel/gettext/gettext-0.19.8.1.ebuild
 		#bad keywording, unnecessary quotes
+		rm /var/db/repos/dantrell-gnome/gnome-base/gnome-keyring/gnome-keyring-3.36.0.ebuild
 		rm /var/db/repos/dantrell-gnome/sys-devel/gettext/gettext-0.20.1.ebuild
 	fi
 	#fix incompatible reponames
@@ -147,6 +148,7 @@ hook_run_sync_post() {
 		rm /var/db/repos/gentoo/dev-lang/vala/vala-0.40.23.ebuild
 		rm /var/db/repos/gentoo/dev-lang/vala/vala-0.40.24.ebuild
 		#too new
+		rm /var/db/repos/gentoo/app-crypt/gcr/gcr-3.38.1.ebuild
 		rm /var/db/repos/gentoo/app-crypt/pinentry/pinentry-1.1.1.ebuild
 		rm /var/db/repos/gentoo/dev-python/setuptools/setuptools-51.0.0.ebuild
 		rm /var/db/repos/gentoo/dev-python/setuptools/setuptools-51.1.0.ebuild
@@ -201,6 +203,8 @@ hook_run_sync_post() {
 	if [[ $TARGET == 'x-media-kit' || $TARGET == 'media-kit' ]]; then
 		#bad keywording
 		rm /var/db/repos/media-kit/media-libs/gd/gd-2.3.0.ebuild
+		#eapi 5
+		rm /var/db/repos/media-kit/media-libs/libcanberra/libcanberra-0.30-r5.ebuild
 		#identical to gentoo
 		rm /var/db/repos/media-kit/media-libs/libzmf/libzmf-0.0.2.ebuild
 		rm /var/db/repos/media-kit/media-libs/raptor/raptor-2.0.15-r2.ebuild
