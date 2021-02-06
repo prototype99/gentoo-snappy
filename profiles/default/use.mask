@@ -2,6 +2,7 @@ berkdb
 browser-integration
 cramfs
 crda
+cryptsetup
 desktop-portal
 dhclient
 discover
