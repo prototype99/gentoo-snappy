@@ -23,6 +23,10 @@ hook_run_sync_post() {
 		rm /var/db/repos/argent-main/app-crypt/gnupg/gnupg-2.0.26-r3.ebuild
 		rm /var/db/repos/argent-main/app-crypt/gnupg/gnupg-2.0.28.ebuild
 	fi
+	if [[ $TARGET == 'x-calculate' || $TARGET == 'calculate' ]]; then
+		#uses python2
+		rm /var/db/repos/calculate/dev-python/ipaddress/ipaddress-1.0.23-r2.ebuild
+	fi
 	if [[ $TARGET == 'x-cg' || $TARGET == 'cg' ]]; then
 		#bad versioning
 		rm /var/db/repos/cg/media-libs/babl/babl-9999.ebuild
@@ -34,15 +38,24 @@ hook_run_sync_post() {
 		#bad versioning
 		rm /var/db/repos/chromiumos/media-libs/mesa/mesa-9999.ebuild
 		rm /var/db/repos/chromiumos/sys-devel/binutils/binutils-9999.ebuild
+		#chrome specific patches
+		rm /var/db/repos/chromiumos/dev-libs/openssl/openssl-1.1.1i.ebuild
+		rm /var/db/repos/chromiumos/dev-libs/openssl/openssl-1.1.1i-r1.ebuild
 		#no split build
 		rm /var/db/repos/chromiumos/sys-devel/llvm/llvm-12.0_pre408248_p20201125.ebuild
 		rm /var/db/repos/chromiumos/sys-devel/llvm/llvm-12.0_pre408248_p20201125-r4.ebuild
 		patch /var/db/repos/chromiumos/metadata/layout.conf /etc/paludis/patches/the-root-of-all-gentoo.patch
 		echo "chromiumos" > /var/db/repos/chromiumos/profiles/repo_name
 	fi
+	if [[ $TARGET == 'x-core-gl-kit' || $TARGET == 'core-gl-kit' ]]; then
+		#weird dependencies
+		rm /var/db/repos/core-gl-kit/virtual/opengl/opengl-7.0-r5.ebuild
+	fi
 	if [[ $TARGET == 'x-core-kit' || $TARGET == 'core-kit' ]]; then
 		#remove broken update
 		rm /var/db/repos/core-kit/profiles/updates/3Q-2019
+		#too new
+		rm /var/db/repos/core-kit/dev-util/cmake/cmake-3.19.4.ebuild
 	fi
 	if [[ $TARGET == 'x-dantrell-gnome' || $TARGET == 'dantrell-gnome' ]]; then
 		#remove aggressively anti gentoo config
@@ -50,6 +63,8 @@ hook_run_sync_post() {
 		#old eapi
 		rm /var/db/repos/dantrell-gnome/sys-devel/gettext/gettext-0.19.8.1.ebuild
 		#bad keywording, unnecessary quotes
+		rm /var/db/repos/dantrell-gnome/app-eselect/eselect-pinentry/eselect-pinentry-0.7.ebuild
+		rm /var/db/repos/dantrell-gnome/app-eselect/eselect-pinentry/eselect-pinentry-0.7.1.ebuild
 		rm /var/db/repos/dantrell-gnome/gnome-base/gnome-keyring/gnome-keyring-3.36.0.ebuild
 		rm /var/db/repos/dantrell-gnome/sys-devel/gettext/gettext-0.20.1.ebuild
 	fi
@@ -162,10 +177,6 @@ hook_run_sync_post() {
 		rm /var/db/repos/gentoo/dev-util/idea-community/idea-community-2021.3.1.203.6682.168.ebuild
 		rm /var/db/repos/gentoo/x11-libs/libdrm/libdrm-2.4.104.ebuild
 	fi
-	if [[ $TARGET == 'x-gentoo-playground' || $TARGET == 'gentoo-playground' ]]; then
-		#bad versioning
-		rm /var/db/repos/gentoo-playground/x11-base/xorg-server/xorg-server-9999.ebuild
-	fi
 	if [[ $TARGET == 'x-gnome' || $TARGET == 'gnome' ]]; then
 		#bad versioning
 		rm /var/db/repos/gnome/dev-libs/glib/glib-9999.ebuild
@@ -192,6 +203,7 @@ hook_run_sync_post() {
 	if [[ $TARGET == 'x-libressl' || $TARGET == 'libressl' ]]; then
 		#identical
 		rm /var/db/repos/libressl/app-arch/libarchive/libarchive-3.5.1.ebuild
+		rm /var/db/repos/libressl/dev-qt/qtnetwork/qtnetwork-5.15.2-r1.ebuild
 	fi
 	if [[ $TARGET == 'x-llvm-kit' || $TARGET == 'llvm-kit' ]]; then
 		#no build-man use flag
@@ -209,10 +221,6 @@ hook_run_sync_post() {
 		rm /var/db/repos/media-kit/media-libs/libzmf/libzmf-0.0.2.ebuild
 		rm /var/db/repos/media-kit/media-libs/raptor/raptor-2.0.15-r2.ebuild
 	fi
-	if [[ $TARGET == 'x-muslx32' || $TARGET == 'muslx32' ]]; then
-		#bad versioning
-		rm /var/db/repos/muslx32/dev-libs/libgpg-error/libgpg-error-9999.ebuild
-	fi
 	if [[ $TARGET == 'x-mva' || $TARGET == 'mva' ]]; then
 		#bad versioning
 		rm /var/db/repos/mva/dev-libs/libgpg-error/libgpg-error-9999.ebuild
@@ -223,6 +231,8 @@ hook_run_sync_post() {
 	fi
 	if [[ $TARGET == 'x-perl-kit' || $TARGET == 'perl-kit' ]]; then
 		#bad keywording
+		rm /var/db/repos/perl-kit/dev-lang/perl/perl-5.32.0.ebuild
+		rm /var/db/repos/perl-kit/dev-perl/Pod-Parser/Pod-Parser-1.630.0-r1.ebuild
 		rm /var/db/repos/perl-kit/perl-core/File-Temp/File-Temp-0.230.900.ebuild
 		rm /var/db/repos/perl-kit/virtual/perl-Carp/perl-Carp-1.500.0-r3.ebuild
 		rm /var/db/repos/perl-kit/virtual/perl-Compress-Raw-Bzip2/perl-Compress-Raw-Bzip2-2.93.0.ebuild
@@ -270,15 +280,19 @@ hook_run_sync_post() {
 	if [[ $TARGET == 'x-pg_overlay' || $TARGET == 'pg_overlay' ]]; then
 		#bad versioning
 		rm /var/db/repos/pg_overlay/dev-libs/zziplib/zziplib-9999.ebuild
+		#no fhs use flag
+		rm /var/db/repos/pg_overlay/sys-fs/udisks/udisks-2.9.2.ebuild
 	fi
 	if [[ $TARGET == 'x-poly-c' || $TARGET == 'poly-c' ]]; then
 		#behind on patches
 		rm /var/db/repos/poly-c/sys-process/procps/procps-3.3.16-r2.ebuild
 		rm /var/db/repos/poly-c/sys-process/procps/procps-3.3.16-r3.ebuild
+		#too new
+		rm /var/db/repos/poly-c/net-misc/curl/curl-7.75.0_pre.ebuild
 	fi
-	if [[ $TARGET == 'x-progress' || $TARGET == 'progress' ]]; then
-		#bad versioning
-		rm /var/db/repos/progress/dev-python/pillow/pillow-1000.ebuild
+	if [[ $TARGET == 'x-pross' || $TARGET == 'pross' ]]; then
+		#no mirror
+		rm /var/db/repos/pross/net-misc/openssh/openssh-8.4_p1-r3.ebuild
 	fi
 	if [[ $TARGET == 'x-python-modules-kit' || $TARGET == 'python-modules-kit' ]]; then
 		#no use of mirrors
@@ -299,6 +313,7 @@ hook_run_sync_post() {
 	fi
 	if [[ $TARGET == 'x-redcore' || $TARGET == 'redcore' ]]; then
 		#bad versioning
+		rm /var/db/repos/redcore/sys-devel/libtool/libtool-2.4.6-r314.ebuild
 		rm /var/db/repos/redcore/virtual/notification-daemon/notification-daemon-1337.ebuild
 		rm /var/db/repos/redcore/virtual/rust/rust-1337-r1.ebuild
 		#old
@@ -353,6 +368,7 @@ hook_run_sync_post() {
 		rm /var/db/repos/xor-overlay/dev-lang/python/python-3.8.7_p1.ebuild
 		rm /var/db/repos/xor-overlay/dev-lang/python/python-3.9.1_p1.ebuild
 		rm /var/db/repos/xor-overlay/dev-lang/python/python-3.10.0_alpha3.ebuild
+		rm /var/db/repos/xor-overlay/dev-util/idea-community/idea-community-2020.3.2.ebuild
 	fi
 	if [[ $TARGET == 'x-xwing' || $TARGET == 'xwing' ]]; then
 		#bad versioning
