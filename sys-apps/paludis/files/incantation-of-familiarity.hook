@@ -165,12 +165,14 @@ hook_run_sync_post() {
 		#too new
 		rm /var/db/repos/gentoo/app-crypt/gcr/gcr-3.38.1.ebuild
 		rm /var/db/repos/gentoo/app-crypt/pinentry/pinentry-1.1.1.ebuild
+		rm /var/db/repos/gentoo/dev-python/setuptools/setuptools-50.3.0.ebuild
 		rm /var/db/repos/gentoo/dev-python/setuptools/setuptools-51.0.0.ebuild
 		rm /var/db/repos/gentoo/dev-python/setuptools/setuptools-51.1.0.ebuild
 		rm /var/db/repos/gentoo/dev-python/setuptools/setuptools-51.1.1.ebuild
 		rm /var/db/repos/gentoo/dev-python/setuptools/setuptools-51.1.2.ebuild
 		rm /var/db/repos/gentoo/dev-python/setuptools/setuptools-51.3.1.ebuild
 		rm /var/db/repos/gentoo/dev-python/setuptools/setuptools-51.3.3.ebuild
+		rm /var/db/repos/gentoo/dev-python/setuptools/setuptools-53.0.0.ebuild
 		rm /var/db/repos/gentoo/dev-util/cmake/cmake-3.18.5.ebuild
 		rm /var/db/repos/gentoo/dev-util/cmake/cmake-3.19.3.ebuild
 		rm /var/db/repos/gentoo/dev-util/cmake/cmake-3.19.4.ebuild
@@ -295,6 +297,8 @@ hook_run_sync_post() {
 		rm /var/db/repos/pross/net-misc/openssh/openssh-8.4_p1-r3.ebuild
 	fi
 	if [[ $TARGET == 'x-python-modules-kit' || $TARGET == 'python-modules-kit' ]]; then
+		#no multicore support
+		rm /var/db/repos/python-modules-kit/dev-python/setuptools/setuptools-53.0.0.ebuild
 		#no use of mirrors
 		rm /var/db/repos/python-modules-kit/dev-python/mako/mako-1.1.4.ebuild
 		rm /var/db/repos/python-modules-kit/dev-python/markupsafe/markupsafe-1.1.1.ebuild
