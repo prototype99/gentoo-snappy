@@ -300,8 +300,14 @@ hook_run_sync_post() {
 		#no multicore support
 		rm /var/db/repos/python-modules-kit/dev-python/setuptools/setuptools-53.0.0.ebuild
 		#no use of mirrors
+		rm /var/db/repos/python-modules-kit/dev-python/alabaster/alabaster-0.7.12.ebuild
+		rm /var/db/repos/python-modules-kit/dev-python/imagesize/imagesize-1.2.0.ebuild
 		rm /var/db/repos/python-modules-kit/dev-python/mako/mako-1.1.4.ebuild
 		rm /var/db/repos/python-modules-kit/dev-python/markupsafe/markupsafe-1.1.1.ebuild
+		rm /var/db/repos/python-modules-kit/dev-python/snowballstemmer/snowballstemmer-2.1.0.ebuild
+		#redundant dependencies
+		rm /var/db/repos/python-modules-kit/dev-python/chardet/chardet-4.0.0.ebuild
+		rm /var/db/repos/python-modules-kit/dev-python/jinja/jinja-2.11.3.ebuild
 		#too new
 		rm /var/db/repos/python-modules-kit/dev-python/setuptools/setuptools-52.0.0.ebuild
 	fi
