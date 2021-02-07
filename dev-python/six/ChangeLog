@@ -1,0 +1,4 @@
+*six-1.15.0-r1
+::gentoo				base ebuild
+::prototype99			improve python use and patch logic
+::python-modules-kit	add pypy support,add doc use flag, add missing dependencies
