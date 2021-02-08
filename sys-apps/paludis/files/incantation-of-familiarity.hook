@@ -147,6 +147,7 @@ hook_run_sync_post() {
 	fi
 	if [[ $TARGET == 'x-gentoo' || $TARGET == 'gentoo' ]]; then
 		#bad versioning
+		rm /var/db/repos/gentoo/dev-libs/libevdev/libevdev-9999.ebuild
 		rm /var/db/repos/gentoo/media-libs/babl/babl-9999.ebuild
 		rm /var/db/repos/gentoo/media-libs/x264/x264-9999.ebuild
 		rm /var/db/repos/gentoo/media-video/vlc/vlc-3.0.9999.ebuild
@@ -165,6 +166,7 @@ hook_run_sync_post() {
 		#too new
 		rm /var/db/repos/gentoo/app-crypt/gcr/gcr-3.38.1.ebuild
 		rm /var/db/repos/gentoo/app-crypt/pinentry/pinentry-1.1.1.ebuild
+		rm /var/db/repos/gentoo/dev-libs/libevdev/libevdev-1.11.0.ebuild
 		rm /var/db/repos/gentoo/dev-python/setuptools/setuptools-50.3.0.ebuild
 		rm /var/db/repos/gentoo/dev-python/setuptools/setuptools-51.0.0.ebuild
 		rm /var/db/repos/gentoo/dev-python/setuptools/setuptools-51.1.0.ebuild
@@ -304,6 +306,7 @@ hook_run_sync_post() {
 		rm /var/db/repos/python-modules-kit/dev-python/imagesize/imagesize-1.2.0.ebuild
 		rm /var/db/repos/python-modules-kit/dev-python/mako/mako-1.1.4.ebuild
 		rm /var/db/repos/python-modules-kit/dev-python/markupsafe/markupsafe-1.1.1.ebuild
+		rm /var/db/repos/python-modules-kit/dev-python/pytz/pytz-2021.1.ebuild
 		rm /var/db/repos/python-modules-kit/dev-python/snowballstemmer/snowballstemmer-2.1.0.ebuild
 		#redundant dependencies
 		rm /var/db/repos/python-modules-kit/dev-python/chardet/chardet-4.0.0.ebuild
