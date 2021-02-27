@@ -1044,6 +1044,18 @@
 		<source type="git">git+ssh://git@github.com/orsonteodoro/oiledmachine-overlay.git</source>
 		<feed>https://github.com/orsonteodoro/oiledmachine-overlay/commits/master.atom</feed>
 	</repo>
+	<repo quality="experimental" status="unofficial">
+		<name>optmzr</name>
+		<description lang="en">Overlay with some goodies not found elsewhere</description>
+		<homepage>https://github.com/wstrm/gentoo-overlay</homepage>
+		<owner type="person">
+			<email>william@optmzr.se</email>
+			<name>William Wennerström</name>
+		</owner>
+		<source type="git">https://github.com/wstrm/gentoo-overlay.git</source>
+		<source type="git">git+ssh://git@github.com/wstrm/gentoo-overlay.git</source>
+		<feed>https://github.com/wstrm/gentoo-overlay/commits/master.atom</feed>
+	</repo>
 	<repo priority="50" quality="experimental" status="unofficial">
 		<name>perl-kit</name>
 		<description lang="en">perl funtoo kit</description>
@@ -1158,6 +1170,17 @@
 			<name>venerix</name>
 		</owner>
 		<source type="git">https://gitlab.com/redcore/redcore-desktop.git</source>
+	</repo>
+	<repo quality="experimental" status="unofficial">
+		<name>regina-gentoo</name>
+		<description lang="en">Regina packages for Gentoo</description>
+		<homepage>https://github.com/WPettersson/regina-gentoo/</homepage>
+		<owner type="person">
+			<email>william@ewpettersson.se</email>
+			<name>William Pettersson</name>
+		</owner>
+		<source type="git">git://github.com/WPettersson/regina-gentoo.git</source>
+		<feed>https://github.com/WPettersson/regina-gentoo/commits/master.atom</feed>
 	</repo>
 	<repo quality="experimental" status="unofficial">
 		<name>rinaldus-overlay</name>
@@ -1422,6 +1445,19 @@
 			<name>_x0r</name>
 		</owner>
 		<source type="git">https://gitlab.com/liguros/xor-overlay.git</source>
+	</repo>
+	<repo quality="experimental" status="unofficial">
+		<name>xtreemfs</name>
+		<description lang="en">XtreemFS, a cloud filesystem</description>
+		<homepage>https://github.com/xtreemfs-gentoo/overlay</homepage>
+		<owner type="person">
+			<email>p@trickhieber.de</email>
+			<name>Patrick Hieber</name>
+		</owner>
+		<source type="git">https://github.com/xtreemfs-gentoo/overlay.git</source>
+		<source type="git">git://github.com/xtreemfs-gentoo/overlay.git</source>
+		<source type="git">git@github.com:xtreemfs-gentoo/overlay.git</source>
+		<feed>https://github.com/xtreemfs-gentoo/overlay/commits/master.atom</feed>
 	</repo>
 	<repo priority="50" quality="experimental" status="unofficial">
 		<name>yoza</name>
