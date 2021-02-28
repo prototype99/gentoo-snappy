@@ -16,7 +16,6 @@ hook_run_sync_post() {
 	if [[ $TARGET == 'x-alxu' || $TARGET == 'alxu' ]]; then
 		#bad versioning
 		rm /var/db/repos/alxu/x11-base/xorg-server/xorg-server-9999.ebuild
-		rm /var/db/repos/alxu/x11-libs/cairo/cairo-9999.ebuild
 	fi
 	if [[ $TARGET == 'x-argent-main' || $TARGET == 'argent-main' ]]; then
 		#old
