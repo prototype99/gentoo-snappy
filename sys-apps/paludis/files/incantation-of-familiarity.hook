@@ -213,6 +213,9 @@ hook_run_sync_post() {
 		#identical
 		rm /var/db/repos/libressl/app-arch/libarchive/libarchive-3.5.1.ebuild
 		rm /var/db/repos/libressl/dev-qt/qtnetwork/qtnetwork-5.15.2-r1.ebuild
+		#virtual
+		rm /var/db/repos/libressl/dev-libs/openssl/openssl-2.9.2.ebuild
+		rm /var/db/repos/libressl/dev-libs/openssl/openssl-3.1.3.ebuild
 	fi
 	if [[ $TARGET == 'x-llvm-kit' || $TARGET == 'llvm-kit' ]]; then
 		#no build-man use flag
