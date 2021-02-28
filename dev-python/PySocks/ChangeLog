@@ -1,0 +1,4 @@
+*PySocks-1.7.1-r1
+::gentoo				base ebuild
+::prototype99			improve python use, improve patch logic
+::python-modules-kit	add pypy support
