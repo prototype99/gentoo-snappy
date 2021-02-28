@@ -16,6 +16,7 @@ hook_run_sync_post() {
 	if [[ $TARGET == 'x-alxu' || $TARGET == 'alxu' ]]; then
 		#bad versioning
 		rm /var/db/repos/alxu/x11-base/xorg-server/xorg-server-9999.ebuild
+		rm /var/db/repos/alxu/x11-libs/cairo/cairo-9999.ebuild
 	fi
 	if [[ $TARGET == 'x-argent-main' || $TARGET == 'argent-main' ]]; then
 		#old
@@ -288,8 +289,11 @@ hook_run_sync_post() {
 	if [[ $TARGET == 'x-pg_overlay' || $TARGET == 'pg_overlay' ]]; then
 		#bad versioning
 		rm /var/db/repos/pg_overlay/dev-libs/zziplib/zziplib-9999.ebuild
+		rm /var/db/repos/pg_overlay/x11-libs/cairo/cairo-9999.ebuild
 		#no fhs use flag
 		rm /var/db/repos/pg_overlay/sys-fs/udisks/udisks-2.9.2.ebuild
+		#too new
+		rm /var/db/repos/pg_overlay/x11-libs/cairo/cairo-1.17.4.ebuild
 	fi
 	if [[ $TARGET == 'x-poly-c' || $TARGET == 'poly-c' ]]; then
 		#behind on patches
