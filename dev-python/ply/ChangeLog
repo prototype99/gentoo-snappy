@@ -1,0 +1,4 @@
+*ply-3.11-r1
+::gentoo				base ebuild
+::prototype99			improve python use & patch logic
+::python-modules-kit	add pypy support
