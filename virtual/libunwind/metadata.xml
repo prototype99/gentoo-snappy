@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>sophietheopossum@yandex.ru</email>
+		<name>seirra blake</name>
+	</maintainer>
+	<use>
+		<flag name="llvm">Install the more performant llvm libunwind fork, a descendant of the apple fork</flag>
+		<flag name="nongnu">Install the more widely known nongnu libunwind fork, a descendant of the hp fork</flag>
+	</use>
+</pkgmetadata>
