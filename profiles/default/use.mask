@@ -30,7 +30,6 @@ gtk-doc
 gusb
 handbook
 hangouts
-icu
 initramfs
 input_devices_elographics
 input_devices_evdev
