@@ -1,0 +1,4 @@
+*libevdev-1.10_rc1_pre20200919
+::gentoo		base ebuild
+::pg_overlay	improve python use, improve multilib support
+::prototype99	remove 9999 specific code, improve variable use
