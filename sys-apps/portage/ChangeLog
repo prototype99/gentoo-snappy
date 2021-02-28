@@ -1,3 +1,7 @@
+*portage-3.0.13
+::gentoo			update copyright&deps
+::muslx32			add muslx32 patches
+::prototype99		add a patch for more efficient copying
 *portage-3.0.12
 ::gentoo			remove unnecessary fix
 *portage-3.0.10-r1
