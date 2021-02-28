@@ -1,0 +1,4 @@
+*libkscreen-5.20.80.1
+::kde			base ebuild
+::prototype99	add own source url, move kwinft patch to files directory, add ability to patch out wayland
+::seden			kwinft support
