@@ -463,3 +463,10 @@ dev-db/sqlite secure-delete
 # required by dev-libs/boost-1.72.0-r2::gentoo[mpi]
 # required by media-gfx/inkscape-1.0.1::dantrell-gnome
 >=virtual/mpi-2.0-r5 cxx
+# required by x11-libs/cairo-1.17.4::pg_overlay
+# required by media-libs/harfbuzz-2.7.4::gentoo[cairo]
+# required by dev-qt/qtgui-5.15.2-r1::poly-c
+# required by kde-frameworks/kcrash-5.79.0::gentoo
+# required by kde-frameworks/kglobalaccel-5.79.0::gentoo
+# required by kde-frameworks/kxmlgui-5.79.0::gentoo
+>=media-libs/freetype-2.10.4-r1 png
