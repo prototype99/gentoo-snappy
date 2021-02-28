@@ -52,6 +52,8 @@ hook_run_sync_post() {
 		rm /var/db/repos/core-gl-kit/virtual/opengl/opengl-7.0-r5.ebuild
 	fi
 	if [[ $TARGET == 'x-core-kit' || $TARGET == 'core-kit' ]]; then
+		#bad versioning
+		rm /var/db/repos/core-kit/sys-libs/libblockdev/libblockdev-9999.ebuild
 		#remove broken update
 		rm /var/db/repos/core-kit/profiles/updates/3Q-2019
 		#too new
@@ -154,6 +156,7 @@ hook_run_sync_post() {
 		rm /var/db/repos/gentoo/media-video/vlc/vlc-9999.ebuild
 		rm /var/db/repos/gentoo/net-misc/rsync/rsync-9999.ebuild
 		rm /var/db/repos/gentoo/sys-fs/udev/udev-9999.ebuild
+		rm /var/db/repos/gentoo/sys-libs/libblockdev/libblockdev-9999.ebuild
 		rm /var/db/repos/gentoo/x11-base/xorg-server/xorg-server-9999.ebuild
 		#bloat
 		rm -r /var/db/repos/gentoo/x11-terms/xterm
