@@ -1,5 +1,5 @@
 [Unit]
-Description=Daily Cleanup of User's Temporary Directories
+Description=Daily update of overlays
 
 [Timer]
 OnStartupSec=1min
