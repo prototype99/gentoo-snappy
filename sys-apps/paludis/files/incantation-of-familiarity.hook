@@ -201,6 +201,10 @@ hook_run_sync_post() {
 		rm /var/db/repos/kde/kde-plasma/libkscreen/libkscreen-5.21.49.9999.ebuild
 		rm /var/db/repos/kde/kde-plasma/libkscreen/libkscreen-9999.ebuild
 	fi
+	if [[ $TARGET == 'x-KBrown-pub' || $TARGET == 'KBrown-pub' ]]; then
+		#virtua;
+		rm /var/db/repos/KBrown-pub/dev-libs/openssl/openssl-9998.ebuild
+	fi
 	if [[ $TARGET == 'x-kdecherf' || $TARGET == 'kdecherf' ]]; then
 		rm -r /var/db/repos/kdecherf/metadata/news/2017-10-21-neomutt-update
 	fi
