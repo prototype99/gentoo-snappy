@@ -182,6 +182,7 @@ hook_run_sync_post() {
 		rm /var/db/repos/gentoo/dev-util/cmake/cmake-3.19.3.ebuild
 		rm /var/db/repos/gentoo/dev-util/cmake/cmake-3.19.4.ebuild
 		rm /var/db/repos/gentoo/dev-util/idea-community/idea-community-2021.3.1.203.6682.168.ebuild
+		rm /var/db/repos/gentoo/sys-kernel/linux-headers/linux-headers-5.11.ebuild
 		rm /var/db/repos/gentoo/x11-libs/libdrm/libdrm-2.4.104.ebuild
 	fi
 	if [[ $TARGET == 'x-gnome' || $TARGET == 'gnome' ]]; then
