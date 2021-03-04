@@ -345,6 +345,8 @@ hook_run_sync_post() {
 		rm /var/db/repos/redcore/virtual/rust/rust-1337-r1.ebuild
 		#old
 		rm -r /var/db/repos/redcore/virtual/cargo
+		#redcore specific patch
+		rm /var/db/repos/redcore/sys-apps/baselayout/baselayout-2.7-r10.ebuild
 	fi
 	if [[ $TARGET == 'x-rich0' || $TARGET == 'rich0' ]]; then
 		#bad versioning
