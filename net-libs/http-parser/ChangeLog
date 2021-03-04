@@ -1,0 +1,4 @@
+*http-parser-2.9.4-r1
+::core-server-kit	make better use of variables, add static-libs use flag
+::gentoo			base ebuild
+::prototype99		only apply patch where relevant, slightly change homepage
