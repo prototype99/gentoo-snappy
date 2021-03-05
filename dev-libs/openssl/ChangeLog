@@ -1,3 +1,4 @@
-*openssl-1.1.1g
+*openssl-1.1.1j
+::alxu			use optimised path again
 ::gentoo		base ebuild
-::prototype99	add option to enable weak ciphers
+::prototype99	increase mips compatibility
