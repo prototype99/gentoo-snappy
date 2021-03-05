@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -14,7 +14,7 @@ MY_P=${P/_/-}
 # - ec_curve.c (SOURCE12) -- MODIFIED
 # - ectest.c (SOURCE13)
 # - openssl-1.1.1-ec-curves.patch (PATCH37) -- MODIFIED
-BINDIST_PATCH_SET="openssl-1.1.1e-bindist-1.0.tar.xz"
+BINDIST_PATCH_SET="openssl-1.1.1i-bindist-1.0.tar.xz"
 
 DESCRIPTION="full-strength general purpose cryptography library (including SSL and TLS)"
 HOMEPAGE="https://www.openssl.org/"
@@ -28,7 +28,7 @@ LICENSE="openssl"
 SLOT="0/1.1" # .so version of libssl/libcrypto
 [[ "${PV}" = *_pre* ]] || \
 KEYWORDS="~alpha amd64 arm arm64 hppa ~ia64 ~m68k ~mips ppc ppc64 ~riscv s390 sparc x86 ~x86-linux"
-IUSE="+asm bindist elibc_musl rfc3779 sctp cpu_flags_x86_sse2 secure sslv3 static-libs test tls-heartbeat vanilla zlib"
+IUSE="+asm bindist elibc_musl rfc3779 sctp cpu_flags_x86_sse2 sslv3 static-libs test tls-heartbeat vanilla zlib"
 RESTRICT="!bindist? ( bindist )
 	!test? ( test )"
 
@@ -47,6 +47,7 @@ PDEPEND="app-misc/ca-certificates"
 
 PATCHES=(
 	"${FILESDIR}"/${PN}-1.1.0j-parallel_install_fix.patch #671602
+	"${FILESDIR}"/${PN}-1.1.1i-riscv32.patch
 )
 
 S="${WORKDIR}/${MY_P}"
@@ -183,13 +184,12 @@ multilib_src_configure() {
 	# See if our toolchain supports __uint128_t.  If so, it's 64bit
 	# friendly and can use the nicely optimized code paths. #460790
 	local ec_nistp_64_gcc_128
-	# Disable it for now though #469976
-	#if ! use bindist ; then
-	#	echo "__uint128_t i;" > "${T}"/128.c
-	#	if ${CC} ${CFLAGS} -c "${T}"/128.c -o /dev/null >&/dev/null ; then
-	#		ec_nistp_64_gcc_128="enable-ec_nistp_64_gcc_128"
-	#	fi
-	#fi
+	if ! use bindist && ! use mips ; then
+		echo "__uint128_t i;" > "${T}"/128.c
+		if ${CC} ${CFLAGS} -c "${T}"/128.c -o /dev/null >&/dev/null ; then
+			ec_nistp_64_gcc_128="enable-ec_nistp_64_gcc_128"
+		fi
+	fi
 
 	local sslout=$(./gentoo.config)
 	einfo "Use configuration ${sslout:-(openssl knows best)}"
@@ -206,16 +206,10 @@ multilib_src_configure() {
 	./${config} \
 		${sslout} \
 		$(use cpu_flags_x86_sse2 || echo "no-sse2") \
-		$(use secure || echo "enable-weak-ssl-ciphers") \
-		enable-camellia \
-		enable-ec \
 		$(use_ssl !bindist ec2m) \
-		enable-srp \
+		$(use_ssl !bindist sm2) \
 		$(use elibc_musl && echo "no-async") \
 		${ec_nistp_64_gcc_128} \
-		enable-idea \
-		enable-mdc2 \
-		enable-rc5 \
 		$(use_ssl sslv3 ssl3) \
 		$(use_ssl sslv3 ssl3-method) \
 		$(use_ssl asm) \
