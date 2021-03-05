@@ -92,7 +92,6 @@
 =dev-python/importlib_resources-5.0.0
 =dev-util/cmake-3.19.3
 =net-misc/curl-7.72.0
-=sys-apps/kmod-27-r2
 >=sys-auth/polkit-0.117
 =sys-devel/binutils-2.33.1-r1
 =sys-devel/binutils-2.34-r2

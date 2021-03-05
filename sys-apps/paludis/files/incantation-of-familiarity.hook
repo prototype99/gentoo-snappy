@@ -24,6 +24,8 @@ hook_run_sync_post() {
 		rm /var/db/repos/argent-main/app-crypt/gnupg/gnupg-2.0.28.ebuild
 	fi
 	if [[ $TARGET == 'x-calculate' || $TARGET == 'calculate' ]]; then
+		#too new
+		rm /var/db/repos/calculate/sys-apps/kmod/kmod-27-r3.ebuild
 		#uses python2
 		rm /var/db/repos/calculate/dev-python/ipaddress/ipaddress-1.0.23-r2.ebuild
 	fi
@@ -155,6 +157,7 @@ hook_run_sync_post() {
 		rm /var/db/repos/gentoo/media-video/vlc/vlc-3.0.9999.ebuild
 		rm /var/db/repos/gentoo/media-video/vlc/vlc-9999.ebuild
 		rm /var/db/repos/gentoo/net-misc/rsync/rsync-9999.ebuild
+		rm /var/db/repos/gentoo/sys-apps/kmod/kmod-9999.ebuild
 		rm /var/db/repos/gentoo/sys-fs/udev/udev-9999.ebuild
 		rm /var/db/repos/gentoo/sys-libs/libblockdev/libblockdev-9999.ebuild
 		rm /var/db/repos/gentoo/x11-base/xorg-server/xorg-server-9999.ebuild
@@ -182,6 +185,8 @@ hook_run_sync_post() {
 		rm /var/db/repos/gentoo/dev-util/cmake/cmake-3.19.3.ebuild
 		rm /var/db/repos/gentoo/dev-util/cmake/cmake-3.19.4.ebuild
 		rm /var/db/repos/gentoo/dev-util/idea-community/idea-community-2021.3.1.203.6682.168.ebuild
+		rm /var/db/repos/gentoo/sys-apps/kmod/kmod-27-r2.ebuild
+		rm /var/db/repos/gentoo/sys-apps/kmod/kmod-28.ebuild
 		rm /var/db/repos/gentoo/sys-kernel/linux-headers/linux-headers-5.11.ebuild
 		rm /var/db/repos/gentoo/x11-libs/libdrm/libdrm-2.4.104.ebuild
 	fi
@@ -306,7 +311,10 @@ hook_run_sync_post() {
 		rm /var/db/repos/poly-c/sys-process/procps/procps-3.3.16-r2.ebuild
 		rm /var/db/repos/poly-c/sys-process/procps/procps-3.3.16-r3.ebuild
 		#too new
+		rm /var/db/repos/poly-c/dev-libs/fribidi/fribidi-1.0.10_pre.ebuild
 		rm /var/db/repos/poly-c/net-misc/curl/curl-7.75.0_pre.ebuild
+		rm /var/db/repos/poly-c/sys-apps/kmod/kmod-27-r2.ebuild
+		rm /var/db/repos/poly-c/sys-apps/kmod/kmod-28.ebuild
 	fi
 	if [[ $TARGET == 'x-pross' || $TARGET == 'pross' ]]; then
 		#no mirror
@@ -369,6 +377,10 @@ hook_run_sync_post() {
 		rm /var/db/repos/srcshelton/dev-lang/python/python-2.7.14-r1.ebuild
 		#redundant dependency
 		rm /var/db/repos/srcshelton/dev-perl/Locale-gettext/Locale-gettext-1.70.0.ebuild
+		#too new
+		rm /var/db/repos/srcshelton/sys-apps/kmod/kmod-27-r1.ebuild
+		rm /var/db/repos/srcshelton/sys-apps/kmod/kmod-27-r2.ebuild
+		rm /var/db/repos/srcshelton/sys-apps/kmod/kmod-28.ebuild
 	fi
 	if [[ $TARGET == 'x-unity-gentoo' || $TARGET == 'unity-gentoo' ]]; then
 		#weird ubuntu stuff
