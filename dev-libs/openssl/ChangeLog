@@ -1,0 +1,5 @@
+*openssl-1.1.1j
+::alxu				use optimised path again
+::flewkey-overlay	add another use flag for those that need it
+::gentoo			base ebuild
+::prototype99		increase mips compatibility
