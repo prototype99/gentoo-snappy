@@ -312,6 +312,7 @@ hook_run_sync_post() {
 		rm /var/db/repos/poly-c/sys-process/procps/procps-3.3.16-r3.ebuild
 		#too new
 		rm /var/db/repos/poly-c/dev-libs/fribidi/fribidi-1.0.10_pre.ebuild
+		rm /var/db/repos/poly-c/net-misc/curl/curl-7.75.0.ebuild
 		rm /var/db/repos/poly-c/net-misc/curl/curl-7.75.0_pre.ebuild
 		rm /var/db/repos/poly-c/sys-apps/kmod/kmod-27-r2.ebuild
 		rm /var/db/repos/poly-c/sys-apps/kmod/kmod-28.ebuild
