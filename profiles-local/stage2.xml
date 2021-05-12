@@ -3389,7 +3389,6 @@
     <source type="git">git://anongit.gentoo.org/proj/ruby-overlay.git</source>
     <source type="git">git+ssh://git@git.gentoo.org/proj/ruby-overlay.git</source>
     <feed>https://cgit.gentoo.org/proj/ruby-overlay.git/atom/</feed>
-    <!-- <feed>https://cgit.gentoo.org/proj/ruby-overlay.git/rss/</feed> -->
   </repo>
   <repo quality="experimental" status="unofficial">
     <name>rukruk</name>
