@@ -3512,7 +3512,6 @@
     <source type="git">git://anongit.gentoo.org/user/sattvik.git</source>
     <source type="git">git+ssh://git@git.gentoo.org/user/sattvik.git</source>
     <feed>https://cgit.gentoo.org/user/sattvik.git/atom/</feed>
-    <!-- <feed>https://cgit.gentoo.org/user/sattvik.git/rss/</feed> -->
   </repo>
   <repo quality="experimental" status="official">
     <name>science</name>
@@ -3535,7 +3534,6 @@
     <source type="git">git://github.com/gentoo-science/sci.git</source>
     <source type="git">git@github.com:gentoo-science/sci.git</source>
     <feed>https://cgit.gentoo.org/proj/sci.git/atom/</feed>
-    <!-- <feed>https://cgit.gentoo.org/proj/sci.git/rss/</feed> -->
     <feed>https://github.com/gentoo-science/sci/commits/master.atom</feed>
   </repo>
   <repo quality="experimental" status="unofficial">
@@ -3561,7 +3559,6 @@
     <source type="git">git://anongit.gentoo.org/user/seden.git</source>
     <source type="git">git+ssh://git@git.gentoo.org/user/seden.git</source>
     <feed>https://cgit.gentoo.org/user/seden.git/atom/</feed>
-    <!-- <feed>https://cgit.gentoo.org/user/seden.git/rss/</feed> -->
   </repo>
   <repo quality="experimental" status="unofficial">
     <name>setkeh</name>
@@ -3734,7 +3731,6 @@
     <source type="git">git://anongit.gentoo.org/repo/user/sogo-connector.git</source>
     <source type="git">git+ssh://git@git.gentoo.org/repo/user/sogo-connector.git</source>
     <feed>https://cgit.gentoo.org/repo/user/sogo-connector.git/atom/</feed>
-    <!-- <feed>https://cgit.gentoo.org/repo/user/sogo-connector.git/rss/</feed> -->
   </repo>
   <repo quality="experimental" status="unofficial">
     <name>soltys</name>
