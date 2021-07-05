@@ -1821,6 +1821,32 @@
 		<source type="git">git+ssh://git@git.gentoo.org/user/palmer.git</source>
 		<feed>https://cgit.gentoo.org/user/palmer.git/atom/</feed>
 	</repo>
+	<repo quality="experimental" status="official">
+		<name>perl-experimental</name>
+		<description>Experimental ebuilds for Perl packages in Gentoo. Comments and
+		bugreports are welcome!</description>
+		<homepage>https://cgit.gentoo.org/proj/perl-overlay.git/</homepage>
+		<owner type="project">
+			<email>perl@gentoo.org</email>
+			<name>Perl Team</name>
+		</owner>
+		<source type="git">https://anongit.gentoo.org/git/proj/perl-overlay.git</source>
+		<source type="git">git://anongit.gentoo.org/proj/perl-overlay.git</source>
+		<source type="git">git+ssh://git@git.gentoo.org/proj/perl-overlay.git</source>
+		<feed>https://cgit.gentoo.org/proj/perl-overlay.git/atom/</feed>
+	</repo>
+	<repo quality="experimental" status="unofficial">
+		<name>perl-experimental-snapshots</name>
+		<description>Unofficial mirror of overlay "perl-experimental" with metadata cache</description>
+		<homepage>https://github.com/gentoo-perl/perl-experimental-snapshots</homepage>
+		<owner type="person">
+			<email>kentnl@gentoo.org</email>
+			<name>Kent Fredric</name>
+		</owner>
+		<source type="git">https://github.com/gentoo-perl/perl-experimental-snapshots.git</source>
+		<source type="git">git://github.com/gentoo-perl/perl-experimental-snapshots.git</source>
+		<feed>https://github.com/gentoo-perl/perl-experimental-snapshots/commits/master.atom</feed>
+	</repo>
 	<repo priority="50" quality="experimental" status="unofficial">
 		<name>perl-kit</name>
 		<description lang="en">perl funtoo kit</description>
@@ -2062,6 +2088,16 @@
 			<name>funtoo</name>
 		</owner>
 		<source type="git" branch="2.7-prime">https://code.funtoo.org/bitbucket/scm/auto/ruby-kit.git</source>
+	</repo>
+	<repo quality="experimental" status="unofficial">
+		<name>rust</name>
+		<description lang="en">rust modules and tools</description>
+		<homepage>https://gitweb.gentoo.org/repo/proj/rust.git</homepage>
+		<owner type="project">
+			<email>rust@gentoo.org</email>
+			<name>Rust Team</name>
+		</owner>
+		<source type="git">https://anongit.gentoo.org/git/repo/proj/rust.git</source>
 	</repo>
 	<repo quality="experimental" status="unofficial">
 		<name>rust-dev</name>
